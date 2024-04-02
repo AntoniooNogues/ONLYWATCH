@@ -1,3 +1,4 @@
+import null
 from django.db import models
 
 # Create your models here.
@@ -68,7 +69,7 @@ class comentario_serie(models.Model):
     foro_series = models.ForeignKey(foro_serie, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.usuario+ ": " + self.contenido
+        return self.usuario +  ": " + self.contenido
 class comentario_pelicula(models.Model):
     contenido = models.CharField(max_length=500)
     visibilidad = models.BooleanField(default=True)
@@ -134,3 +135,60 @@ class valoracion_pelicula(models.Model):
 
     def __str__(self):
         return self.usuario + " " + self.pelicula + " " + self.valoracion + " " + self.estado
+
+class peliculas_favoritas(models.Model):
+    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    pelicula = models.ForeignKey(pelicula, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.usuario + " " + self.pelicula
+class series_favoritas(models.Model):
+    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    serie = models.ForeignKey(serie, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.usuario + " " + self.serie
+
+class plataforma_pelicula(models.Model):
+    plataforma = models.ForeignKey(plataforma, on_delete=models.CASCADE)
+    pelicula = models.ForeignKey(pelicula, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.plataforma + " " + self.pelicula
+
+class plataforma_serie(models.Model):
+    plataforma = models.ForeignKey(plataforma, on_delete=models.CASCADE)
+    serie = models.ForeignKey(serie, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.plataforma + " " + self.serie
+
+class actor_pelicula(models.Model):
+    nombre_actor = models.CharField(max_length=50)
+    actor = models.ForeignKey(actor, on_delete=models.CASCADE)
+    pelicula = models.ForeignKey(pelicula, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nombre_actor + " " + self.actor + " " + self.pelicula
+
+class actor_serie(models.Model):
+    nombre_actor = models.CharField(max_length=50)
+    actor = models.ForeignKey(actor, on_delete=models.CASCADE)
+    serie = models.ForeignKey(serie, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nombre_actor + " " + self.actor + " " + self.serie
+
+class pelicula_genero(models.Model):
+    genero = models.ForeignKey(genero, on_delete=models.CASCADE)
+    pelicula = models.ForeignKey(pelicula, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.genero + " " + self.pelicula
+
+class serie_genero(models.Model):
+    genero = models.ForeignKey(genero, on_delete=models.CASCADE)
+    serie = models.ForeignKey(serie, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.genero + " " + self.serie
