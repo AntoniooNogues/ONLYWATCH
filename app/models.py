@@ -1,4 +1,3 @@
-import null
 from django.db import models
 
 # Create your models here.
@@ -118,9 +117,9 @@ class capitulo(models.Model):
         return self.img + " "+self.nombre + " " + self.sinopsis + " " + self.url
 
 class valoracion_serie(models.Model):
-    valoracion = models.IntegerField(default=null)
-    estado = models.IntegerField(default=null)
-    ultimo_capitulo = models.IntegerField(default=null)
+    valoracion = models.IntegerField(null=True)
+    estado = models.IntegerField(null=True)
+    ultimo_capitulo = models.IntegerField(null=True)
     usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
     serie = models.ForeignKey(serie, on_delete=models.CASCADE)
 
@@ -128,8 +127,8 @@ class valoracion_serie(models.Model):
         return self.usuario + " " + self.serie + " " + self.valoracion + " " + self.estado + " " + self.ultimo_capitulo
 
 class valoracion_pelicula(models.Model):
-    valoracion = models.IntegerField(default=null)
-    estado = models.IntegerField(default=null)
+    valoracion = models.IntegerField(null=True)
+    estado = models.IntegerField(null=True)
     usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
     pelicula = models.ForeignKey(pelicula, on_delete=models.CASCADE)
 
