@@ -15,7 +15,7 @@ class usuario(models.Model):
     tipo = models.IntegerField()
     img = models.CharField(max_length=300)
 
-    def __str__(self):
+    def __str__(self):  
         return self.nombre+" "+self.img
 
 class serie(models.Model):
