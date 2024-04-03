@@ -18,7 +18,7 @@ class usuario(models.Model):
     img = models.CharField(max_length=300)
 
     def __str__(self):
-        return self.nombre+" "+self.apellidos+" "+self.email+" "self.img
+        return self.nombre+" "+self.apellidos+" "+self.email+" "+self.img
 
 class serie(models.Model):
     nombre = models.CharField(max_length=100)
