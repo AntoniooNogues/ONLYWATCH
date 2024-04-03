@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
 class plataforma(models.Model):
     nombre = models.CharField(max_length=50)
     img = models.CharField(max_length=300)
@@ -11,9 +10,9 @@ class plataforma(models.Model):
 
 class usuario(models.Model):
     nombre = models.CharField(max_length=50)
-    apellidos = models.CharField(max_length=100)
+    apellidos = models.CharField(max_length=100, default=" ")
     password = models.CharField(max_length=50)
-    email = models.CharField(max_length=150)
+    email = models.CharField(max_length=100, default="")
     tipo = models.IntegerField()
     img = models.CharField(max_length=300)
 
