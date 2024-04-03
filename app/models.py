@@ -11,12 +11,14 @@ class plataforma(models.Model):
 
 class usuario(models.Model):
     nombre = models.CharField(max_length=50)
+    apellidos = models.CharField(max_length=100)
     password = models.CharField(max_length=50)
+    email = models.CharField(max_length=150)
     tipo = models.IntegerField()
     img = models.CharField(max_length=300)
 
     def __str__(self):
-        return self.nombre+" "+self.img
+        return self.nombre+" "+self.apellidos+" "+self.email+" "self.img
 
 class serie(models.Model):
     nombre = models.CharField(max_length=100)
