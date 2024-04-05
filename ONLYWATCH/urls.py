@@ -20,5 +20,6 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('crear_plataforma/', views.crear_plataforma),
+    path('crear_serie/', views.crear_serie),
 ]
+
