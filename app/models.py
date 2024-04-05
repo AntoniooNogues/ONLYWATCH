@@ -1,22 +1,27 @@
 from django.db import models
+from django.utils import timezone
+
 
 # Create your models here.
-
 class plataforma(models.Model):
     nombre = models.CharField(max_length=50)
     img = models.CharField(max_length=300)
 
     def __str__(self):
-        return self.nombre+" "+self.img
+        return self.nombre+" "+self.i25g
 
 class usuario(models.Model):
     nombre = models.CharField(max_length=50)
+    apellidos = models.CharField(max_length=100, default=" ")
     password = models.CharField(max_length=50)
-    tipo = models.IntegerField()
+    email = models.CharField(max_length=100, default="")
+    tipo = models.IntegerField(default=2)
     img = models.CharField(max_length=300)
+    fecha_nacimiento = models.DateField(null=True)
+    sexo = models.CharField(max_length=25, default="NS/NC")
 
-    def __str__(self):  
-        return self.nombre+" "+self.img
+    def __str__(self):
+        return f"{self.nombre} {self.apellidos} {self.email} {self.img}"
 
 class serie(models.Model):
     nombre = models.CharField(max_length=100)
@@ -68,7 +73,7 @@ class comentario_serie(models.Model):
     foro_series = models.ForeignKey(foro_serie, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.usuario +  ": " + self.contenido
+        return str(self.usuario.nombre) + ": " + self.contenido
 class comentario_pelicula(models.Model):
     contenido = models.CharField(max_length=500)
     visibilidad = models.BooleanField(default=True)
@@ -76,7 +81,7 @@ class comentario_pelicula(models.Model):
     foro_peliculas = models.ForeignKey(foro_pelicula, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.usuario+ ": " + self.contenido
+        return self.usuario.nombre + ": " + self.contenido
 
 class respuestas_series(models.Model):
     contenido = models.CharField(max_length=500)
@@ -162,24 +167,24 @@ class plataforma_serie(models.Model):
     def __str__(self):
         return self.plataforma + " " + self.serie
 
-class actor_pelicula(models.Model):
-    nombre_actor = models.CharField(max_length=50)
+class personaje_pelicula(models.Model):
+    nombre_personaje = models.CharField(max_length=50)
     actor = models.ForeignKey(actor, on_delete=models.CASCADE)
     pelicula = models.ForeignKey(pelicula, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombre_actor + " " + self.actor + " " + self.pelicula
+        return self.nombre_personaje + " " + self.actor.nombre + " " + self.pelicula
 
-class actor_serie(models.Model):
-    nombre_actor = models.CharField(max_length=50)
+class personaje_serie(models.Model):
+    nombre_personaje = models.CharField(max_length=50)
     actor = models.ForeignKey(actor, on_delete=models.CASCADE)
     serie = models.ForeignKey(serie, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombre_actor + " " + self.actor + " " + self.serie
+        return self.nombre_personaje + " " + self.actor.nombre + " " + self.serie
 
 class pelicula_genero(models.Model):
-    genero =  models.ForeignKey(genero, on_delete=models.CASCADE)
+    genero = models.ForeignKey(genero, on_delete=models.CASCADE)
     pelicula = models.ForeignKey(pelicula, on_delete=models.CASCADE)
 
     def __str__(self):
