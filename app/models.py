@@ -167,21 +167,21 @@ class plataforma_serie(models.Model):
     def __str__(self):
         return self.plataforma + " " + self.serie
 
-class actor_pelicula(models.Model):
-    nombre_actor = models.CharField(max_length=50)
+class personaje_pelicula(models.Model):
+    nombre_personaje = models.CharField(max_length=50)
     actor = models.ForeignKey(actor, on_delete=models.CASCADE)
     pelicula = models.ForeignKey(pelicula, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombre_actor + " " + self.actor + " " + self.pelicula
+        return self.nombre_personaje + " " + self.actor.nombre + " " + self.pelicula
 
-class actor_serie(models.Model):
-    nombre_actor = models.CharField(max_length=50)
+class personaje_serie(models.Model):
+    nombre_personaje = models.CharField(max_length=50)
     actor = models.ForeignKey(actor, on_delete=models.CASCADE)
     serie = models.ForeignKey(serie, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombre_actor + " " + self.actor + " " + self.serie
+        return self.nombre_personaje + " " + self.actor.nombre + " " + self.serie
 
 class pelicula_genero(models.Model):
     genero = models.ForeignKey(genero, on_delete=models.CASCADE)
