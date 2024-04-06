@@ -8,7 +8,7 @@ class plataforma(models.Model):
     img = models.CharField(max_length=300)
 
     def __str__(self):
-        return self.nombre+" "+self.i25g
+        return f"{self.nombre}  {self.img}"
 
 class usuario(models.Model):
     nombre = models.CharField(max_length=50)
