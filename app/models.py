@@ -11,11 +11,7 @@ class plataforma(models.Model):
         return f"{self.nombre}  {self.img}"
 
 class usuario(models.Model):
-    nombre = models.CharField(max_length=50)
-    apellidos = models.CharField(max_length=100, default=" ")
-    password = models.CharField(max_length=50)
-    email = models.CharField(max_length=100, default="")
-    tipo = models.IntegerField(default=2)
+    user = models.OneToOneField('auth.User', on_delete=models.CASCADE)
     img = models.CharField(max_length=300)
     fecha_nacimiento = models.DateField(null=True)
     sexo = models.CharField(max_length=25, default="NS/NC")
