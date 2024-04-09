@@ -4,6 +4,7 @@ from django.core.files import File
 from .models import *
 from django.http import HttpResponse
 from django.db import connection
+from templates import *
 
 
 # Create your views here.
@@ -226,3 +227,45 @@ def crear_serie_genero(request):
     serie_genero3.save()
     return HttpResponse(f"Genero de serie creado")
 
+
+
+def login(request):
+    if request.method == 'GET':
+        return render(request, 'login.html')
+    else:
+        return render(request, 'login.html')
+
+def register(request):
+    if request.method == 'GET':
+        return render(request, 'register.html')
+    else:
+        username = request.POST.get('username')
+        nombre_completo = request.POST.get('nombre_completo')
+        mail = request.POST.get('email')
+        password = request.POST.get('password')
+        password2 = request.POST.get('password2')
+
+        errors = []
+
+        if password != password2:
+            errors.append("Las contraseñas no coinciden")
+        existe_usuario = User.objects.filter(username=username).exists()
+        if existe_usuario:
+            errors.append("Ya existe un usuario con ese nombre")
+        existe_mail = User.objects.filter(email=mail).exists()
+        if existe_mail:
+            errors.append("Ya existe un usuario con ese email")
+
+        if len(errors) != 0:
+            return render(request, "register.html", {"errores": errors, "username": username})
+        else:
+            user = User.objects.create_user(username=username, email=mail, password=password, nombre_completo=nombre_completo)
+            user.save()
+            return redirect("login.html")
+
+
+def reset_password(request):
+    if request.method == 'GET':
+        return render(request, 'reset_password.html')
+    else:
+        return render(request, 'reset_password.html')

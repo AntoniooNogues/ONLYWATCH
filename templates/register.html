@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body class="familiy has-text-black">
+    <!-- Header -->
     <header class="py-4 header-gradient">
       <section class="columns">
         <div class="column is-one-quarter">
@@ -21,9 +22,8 @@
           </span>
         </div>
         <div class="column is-half">
-          <h1 class="title is-1 has-text-centered mali letter-spacing">Inicio de Sesión</h1>
+          <h1 class="title is-1 has-text-centered mali letter-spacing">Registro</h1>
         </div>
-
       </section>
     </header>
 
@@ -37,22 +37,27 @@
                       <div class="is-flex is-align-items-center is-justify-content-center">
                         <img src="/static/img/logoSmall.svg" alt="" class="image is-128x128" />
                       </div>
-                      <p class="is-bold is-size-4 has-text-centered">
-                        <span class="is-size-2">ONLYWATCH</span><br>
-                        EXPERIENCIAS SIN LÍMITES
-                      </p>
+                      <p class="is-bold is-size-4 has-text-centered"><span class="is-size-2">ONLYWATCH</span></p>
                   </header>
                   <div class="content">
                     <form action="" class="mt-4 ml-4 mr-4">
-                      <div class="field mb-6">
+                      <div class="field mb-4">
+                          <input type="text" name="username" id="username" placeholder="Nombre de usuario" class="input" required>
+                      </div>
+                        <div class="field mb-4">
+                          <input type="text" name="nombre_completo" id="nombre_completo" placeholder="Nombre y Apellidos" class="input" required>
+                      </div>
+                        <div class="field mb-4">
                           <input type="email" name="email" id="email" placeholder="Correo Electrónico" class="input" required>
                       </div>
-                      <div class="field mt-6 mb-6">
+                      <div class="field mt-4 mb-4">
                           <input type="password" id="password" name="password" placeholder="Contraseña" class="input" required>
-                          <a href="{% url 'reset_password' %}" class="is-pulled-right blanco mt-2">¿Has olvidado tu contraseña?</a>
+                      </div>
+                      <div class="field mt-4 mb-4">
+                          <input type="password" id="password_confirmacion" name="password_confirmacion" placeholder="Repetir Contraseña" class="input" required>
                       </div>
 
-                      <div class="field mt-6 mb-3">
+                      <div class="field mt-4 mb-3">
                         <button type="submit" class="bg_footer button is-fullwidth is-size-5" style="height: 52px;">
                           <strong class="has-text-centered ">Acceder</strong>
                         </button>
@@ -60,7 +65,7 @@
                     </form>
                   </div>
                   <footer>
-                    <p class="has-text-centered has-text-white is-size-6">¿No dispones de una cuenta? <a href="{% url 'signup' %}" class="register">Registrate</a></p>
+                    <p class="has-text-centered has-text-white is-size-6">¿Dispones de una cuenta? <a href="{% url 'login' %}" class="register">Inicia Sesión</a></p>
                   </footer>
                 </div>
             </div>
@@ -69,6 +74,7 @@
       </div>
     </main>
 
+    <!-- Footer -->
     <footer class="bg_footer is-align-items-center pb-3">
       <main class="columns is-align-items-center">
         <div class="izquierda column is-one-third">
@@ -107,4 +113,3 @@
       </main>
     </footer>
   </body>
-</html>

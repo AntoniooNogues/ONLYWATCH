@@ -20,31 +20,10 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('crear_usuario/', views.crear_usuario),
-    path('crear_pelicula/', views.crear_pelicula),
-    path('crear_genero/', views.crear_genero),
-    path('crear_actor/', views.crear_actor),
-    path('crear_serie/', views.crear_serie),
-    path('crear_plataforma/', views.crear_plataforma),
-    path('crear_foro_serie/', views.crear_foro_serie),
+    path('login/', views.login, name='login'),
+    path('register/', views.register, name='signup'),
+    path('login/reset_password', views.reset_password, name='reset_password'),
 
-    path('crear_foro_pelicula/', views.crear_foro_pelicula),
-    path('crear_comentario_serie/', views.crear_comentario_serie),
-    path('crear_comentario_pelicula/', views.crear_comentario_pelicula),
-    path('crear_respuestas_series/', views.crear_respuestas_series),
-    path('crear_respuestas_peliculas/', views.crear_respuestas_peliculas),
-    path('crear_temporada/', views.crear_temporada),
-    path('crear_capitulo/', views.crear_capitulo),
-    path('crear_valoracion_serie/', views.crear_valoracion_serie),
-    path('crear_valoracion_pelicula/', views.crear_valoracion_pelicula),
-    path('crear_pelicula_favorita/', views.crear_pelicula_favorita),
-    path('crear_serie_favorita/', views.crear_serie_favorita),
-    path('crear_plataforma_pelicula/', views.crear_plataforma_pelicula),
-    path('crear_plataforma_serie/', views.crear_plataforma_series),
-    path('crear_personaje_pelicula/', views.crear_personaje_pelicula),
-    path('crear_personaje_serie/', views.crear_personaje_series),
-    path('crear_pelicula_genero/', views.crear_pelicula_genero),
-    path('crear_serie_genero/', views.crear_serie_genero),
 
 
 
