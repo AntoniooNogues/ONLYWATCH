@@ -6,6 +6,10 @@ body{
     .fondo{
         background-image: url("/static/img/fondo_registro_login.png");
     }
+    li{
+        list-style-type: circle;
+        padding: 4px;
+    }
 }
 .mali{
     font-family: "Mali", cursive;
@@ -14,7 +18,10 @@ body{
     letter-spacing: 5px;
 }
 
-
+.icons{
+    width: 24px;
+    height: 24px;
+}
 .blanco{
   color: white;
 }
@@ -53,7 +60,9 @@ body{
     font-size: 19px;
     color: #ffea00;
 }
-
 .blanco:hover{
     font-size: 18.1px;
+}
+a{
+    color: black;
 }
