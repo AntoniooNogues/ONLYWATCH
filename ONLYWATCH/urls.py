@@ -23,7 +23,7 @@ urlpatterns = [
 
     path('', views.mostrar_admi),
     path('administrador/', views.admi, name='admi'),
-    path('administrador/', views.new_peliculas, name='new_peliculas'),
+    path('administrador/pelicula', views.new_peliculas, name='new_peliculas'),
 
 
 

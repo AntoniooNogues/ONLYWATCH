@@ -240,8 +240,5 @@ def new_peliculas(request):
         new.url_trailer = request.POST.get('url_trailer')
         new.director = request.POST.get('director')
         new.save()
-        list_peliculas = request.POST.getlist('pelicula')
-        for p in list_peliculas:
-            uno = pelicula.objects.get(id=p)
-            new.uno.add(pelicula)
+
         return redirect('/administrador/')
