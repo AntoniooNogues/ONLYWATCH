@@ -4,6 +4,7 @@ from django.core.files import File
 from .models import *
 from django.http import HttpResponse
 from django.db import connection
+from templates import *
 
 
 # Create your views here.
@@ -226,3 +227,7 @@ def crear_serie_genero(request):
     serie_genero3.save()
     return HttpResponse(f"Genero de serie creado")
 
+
+
+def mostrarLogin(request):
+    return render(request, 'login.html')
