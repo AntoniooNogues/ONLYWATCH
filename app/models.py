@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
-
+from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 # Create your models here.
 class plataforma(models.Model):
     nombre = models.CharField(max_length=50)
@@ -10,14 +9,47 @@ class plataforma(models.Model):
     def __str__(self):
         return f"{self.nombre}  {self.img}"
 
-class usuario(models.Model):
-    user = models.OneToOneField('auth.User', on_delete=models.CASCADE)
-    img = models.CharField(max_length=300)
-    fecha_nacimiento = models.DateField(null=True)
-    sexo = models.CharField(max_length=25, default="NS/NC")
+class Rol(models.TextChoices):
+    ADMINISTRADOR = 'ADMIN', 'Administrador'
+    USUARIO = 'USUARIO', 'User'
+
+
+class MyUserManager(BaseUserManager):
+    def create_user(self, email, nombre, apellidos, password=None, **extra_fields):
+        if not email:
+            raise ValueError('El usuario debe tener un email')
+        user = self.model(email=self.normalize_email(email), nombre=nombre, apellidos=apellidos, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+        return self.create_user(email, password, **extra_fields)
+
 
     def __str__(self):
         return f"{self.nombre} {self.apellidos} {self.email} {self.img}"
+
+class Usuario(AbstractBaseUser):
+    username = models.CharField(max_length=50, unique=True)
+    nombre_completo = models.CharField(max_length=150)
+    email = models.EmailField(unique=True)
+    fecha_nacimiento = models.DateField(null=True)
+    img = models.CharField(max_length=300, null=True)
+    sexo = models.CharField(max_length=25, default="NS/NC")
+    rol = models.CharField(max_length=50, choices=Rol.choices, default=Rol.USUARIO)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+
+    objects = MyUserManager()
+
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['password', 'email']
+
+
+    def __str__(self):
+        return f"{self.nombre} {self.apellidos} {self.email}"
 
 class serie(models.Model):
     nombre = models.CharField(max_length=100)
@@ -65,7 +97,7 @@ class foro_pelicula(models.Model):
 class comentario_serie(models.Model):
     contenido = models.CharField(max_length=500)
     visibilidad = models.BooleanField(default=True)
-    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     foro_series = models.ForeignKey(foro_serie, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -73,7 +105,7 @@ class comentario_serie(models.Model):
 class comentario_pelicula(models.Model):
     contenido = models.CharField(max_length=500)
     visibilidad = models.BooleanField(default=True)
-    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     foro_peliculas = models.ForeignKey(foro_pelicula, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -82,7 +114,7 @@ class comentario_pelicula(models.Model):
 class respuestas_series(models.Model):
     contenido = models.CharField(max_length=500)
     visibilidad = models.BooleanField(default=True)
-    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     comentario_series = models.ForeignKey(comentario_serie, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -91,7 +123,7 @@ class respuestas_series(models.Model):
 class respuestas_peliculas(models.Model):
     contenido = models.CharField(max_length=500)
     visibilidad = models.BooleanField(default=True)
-    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     comentario_peliculas = models.ForeignKey(comentario_pelicula, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -121,7 +153,7 @@ class valoracion_serie(models.Model):
     valoracion = models.IntegerField(null=True)
     estado = models.IntegerField(null=True)
     ultimo_capitulo = models.IntegerField(null=True)
-    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     serie = models.ForeignKey(serie, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -130,20 +162,20 @@ class valoracion_serie(models.Model):
 class valoracion_pelicula(models.Model):
     valoracion = models.IntegerField(null=True)
     estado = models.IntegerField(null=True)
-    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     pelicula = models.ForeignKey(pelicula, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.usuario + " " + self.pelicula + " " + self.valoracion + " " + self.estado
 
 class peliculas_favoritas(models.Model):
-    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     pelicula = models.ForeignKey(pelicula, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.usuario + " " + self.pelicula
 class series_favoritas(models.Model):
-    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     serie = models.ForeignKey(serie, on_delete=models.CASCADE)
 
     def __str__(self):
