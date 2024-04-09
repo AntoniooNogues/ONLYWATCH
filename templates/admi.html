@@ -68,44 +68,45 @@
         <h2 class="is-size-2 ml-6 pl-3">Películas</h2>
         <div class="box container" >
             <h4>Añadir películas:</h4>
-            <form action="" >
+            <form action="" method="post" action="{% url 'new_peliculas' %}">
+                  {% csrf_token %}
                 <div class="field columns mt-1">
                     <div class="column">
                         <label class="label">Nombre</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Nombre de la película">
+                        <input class="input" type="text" placeholder="Nombre de la película" name="nombre" value="{{ pelicula.nombre }}">
                       </div>
                         <label class="label">Sinopsis</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Sinopsis de la película">
+                        <input class="input" type="text" placeholder="Sinopsis de la película" name="sinopsis" value="{{ pelicula.sinopsis }}">
                       </div>
                     </div>
                     <div class="column">
                         <label class="label">Fecha de estreno</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Fecha de estreno de la película">
+                        <input class="input" type="text" placeholder="Fecha de estreno de la película" name="fecha_estreno" value="{{ pelicula.fecha_estreno }}">
                       </div>
                     <label class="label">Imagen</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Imagen de la película">
+                        <input class="input" type="text" placeholder="Imagen de la película" name="img" value="{{ pelicula.img }}">
                       </div>
                     </div>
                     <div class="column">
                         <label class="label">Trailer</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Url del trailer de la película">
+                        <input class="input" type="text" placeholder="Url del trailer de la película" name="url_trailer" value="{{ pelicula.url_trailer }}">
                       </div>
                     <label class="label">Director</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Nombre del director la película">
+                        <input class="input" type="text" placeholder="Nombre del director la película" name="director" value="{{ pelicula.director }}">
                       </div>
                     </div>
                 </div>
                 <div class="field is-grouped is-grouped-centered">
                       <p class="control">
-                        <button class="button is-primary">
+                          <button class="button is-primary" type="submit">
                           Añadir
-                        </button>
+                          </button>
                       </p>
                       <p class="control">
                         <a class="button is-light">

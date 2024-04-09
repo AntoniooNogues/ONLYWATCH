@@ -1,13 +1,7 @@
-from static.img import *
 import os
 from django.core.files import File
-from .models import *
-from django.http import HttpResponse
-from django.db import connection
-
-
 # Create your views here.
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from django.http import HttpResponse
 
@@ -233,3 +227,21 @@ def admi(request):
     peliculas = pelicula.objects.all()
     return render(request, 'admi.html', {'peliculas': peliculas})
 
+def new_peliculas(request):
+    if request.method == 'GET':
+        uno = pelicula.objects.all()
+        return render(request, 'admi.html', {'peliculas': uno})
+    else:
+        new = pelicula()
+        new.nombre = request.POST.get('nombre')
+        new.sinopsis = request.POST.get('sinopsis')
+        new.fecha_estreno = request.POST.get('fecha_estreno')
+        new.img = request.POST.get('img')
+        new.url_trailer = request.POST.get('url_trailer')
+        new.director = request.POST.get('director')
+        new.save()
+        list_peliculas = request.POST.getlist('pelicula')
+        for p in list_peliculas:
+            uno = pelicula.objects.get(id=p)
+            new.uno.add(pelicula)
+        return redirect('/administrador/')
