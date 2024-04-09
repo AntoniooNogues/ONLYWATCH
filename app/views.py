@@ -240,3 +240,9 @@ def register(request):
         return render(request, 'register.html')
     else:
         return render(request, 'register.html')
+
+def reset_password(request):
+    if request.method == 'GET':
+        return render(request, 'reset_password.html')
+    else:
+        return render(request, 'reset_password.html')
