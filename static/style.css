@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@500&display=swap');
+
+.mali{
+    font-family: "Mali", cursive;
+}
+.letter-spacing{
+    letter-spacing: 5px;
+}
+body{
+     font-family: "Manrope", sans-serif;
+}
+.header-gradient {
+  background: rgb(251,117,45);
+  background: linear-gradient(90deg, rgba(251,117,45,1) 0%, rgba(189,76,25,1) 50%, rgba(132,37,7,1) 100%);
+}
