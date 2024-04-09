@@ -229,5 +229,14 @@ def crear_serie_genero(request):
 
 
 
-def mostrarLogin(request):
-    return render(request, 'login.html')
+def login(request):
+    if request.method == 'GET':
+        return render(request, 'login.html')
+    else:
+        return render(request, 'login.html')
+
+def register(request):
+    if request.method == 'GET':
+        return render(request, 'register.html')
+    else:
+        return render(request, 'register.html')
