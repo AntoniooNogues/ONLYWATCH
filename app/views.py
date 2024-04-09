@@ -226,3 +226,10 @@ def crear_serie_genero(request):
     serie_genero3.save()
     return HttpResponse(f"Genero de serie creado")
 
+def mostrar_admi(request):
+    return render(request, 'admi.html')
+
+def admi(request):
+    peliculas = pelicula.objects.all()
+    return render(request, 'admi.html', {'peliculas': peliculas})
+
