@@ -93,3 +93,51 @@ def new_serie(request):
 def mostrar_series(request):
     series = serie.objects.all()
     return render(request, 'admi.html', {'series': series})
+
+def mostrar_usuarios(request):
+    usuarios = Usuario.objects.all()
+    return render(request, 'admi.html', {'usuarios': usuarios})
+
+def eliminar_usuario(request, id):
+    usuario = Usuario.objects.get(id=id)
+    usuario.delete()
+    return redirect('/administrador/')
+
+def eliminar_pelicula(request, id):
+    pelicula_eliminar = pelicula.objects.get(id=id)
+    pelicula_eliminar.delete()
+    return redirect('/administrador/')
+
+def eliminar_serie(request, id):
+    serie_eliminar = serie.objects.get(id=id)
+    serie_eliminar.delete()
+    return redirect('/administrador/')
+def editar_pelicula(request, id):
+    peli = pelicula.objects.get(id=id)
+    if request.method == 'GET':
+        return render(request, 'editar_pelicula.html', {'pelicula': peli})
+    else:
+        peli.nombre = request.POST.get('nombre')
+        peli.sinopsis = request.POST.get('sinopsis')
+        peli.fecha_estreno = request.POST.get('fecha_estreno')
+        peli.img = request.POST.get('img')
+        peli.url_trailer = request.POST.get('url_trailer')
+        peli.director = request.POST.get('director')
+        peli.save()
+
+        return redirect('/administrador/')
+
+def editar_serie(request, id):
+    serie_editar = serie.objects.get(id=id)
+    if request.method == 'GET':
+        return render(request, 'editar_serie.html', {'serie': serie_editar})
+    else:
+        serie_editar.nombre = request.POST.get('nombre')
+        serie_editar.sinopsis = request.POST.get('sinopsis')
+        serie_editar.fecha_estreno = request.POST.get('fecha_estreno')
+        serie_editar.img = request.POST.get('img')
+        serie_editar.url_trailer = request.POST.get('trailer')
+        serie_editar.director = request.POST.get('director')
+        serie_editar.save()
+
+        return redirect('/administrador/')

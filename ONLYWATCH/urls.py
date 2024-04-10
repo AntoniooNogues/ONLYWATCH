@@ -29,5 +29,11 @@ urlpatterns = [
     path('administrador/pelicula', views.new_peliculas, name='new_peliculas'),
     path('administrador/serie', views.new_serie, name='new_series'),
     path('administrador/series_actuales', views.mostrar_series, name='mostrar_series'),
+    path('administrador/usuarios', views.mostrar_usuarios, name='mostrar_usuarios'),
+    path('administrador/eliminar_usuario/<int:id>', views.eliminar_usuario, name='eliminar_usuario'),
+    path('administrador/eliminar_pelicula/<int:id>', views.eliminar_pelicula, name='eliminar_pelicula'),
+    path('administrador/eliminar_serie/<int:id>', views.eliminar_serie, name='eliminar_serie'),
+    path('administrador/editar_pelicula/<int:id>', views.editar_pelicula, name='editar_pelicula'),
+    path('administrador/editar_serie/<int:id>', views.editar_serie, name='editar_serie'),
 ]
 

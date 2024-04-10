@@ -68,37 +68,37 @@
         <h2 class="is-size-2 container">Películas</h2>
         <div class="box container" >
             <h4>Añadir películas:</h4>
-            <form method="post" action="{% url 'new_peliculas' %}">
+            <form method="post" action="{% url 'new_peliculas'  %}">
                   {% csrf_token %}
                 <div class="field columns mt-1">
                     <div class="column">
                         <label class="label">Nombre</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Nombre de la película" name="nombre">
+                        <input class="input" type="text" placeholder="Nombre de la película" name="nombre" value="{{ pelicula.nombre }}">
                       </div>
                         <label class="label">Sinopsis</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Sinopsis de la película" name="sinopsis">
+                        <input class="input" type="text" placeholder="Sinopsis de la película" name="sinopsis" value="{{ pelicula.sinopsis }}">
                       </div>
                     </div>
                     <div class="column">
                         <label class="label">Fecha de estreno</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Fecha de estreno de la película" name="fecha_estreno">
+                        <input class="input" type="text" placeholder="Fecha de estreno de la película" name="fecha_estreno" value="{{ pelicula.fecha_estreno | date:'Y-m-d' }}">
                       </div>
                     <label class="label">Imagen</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Imagen de la película" name="img">
+                        <input class="input" type="text" placeholder="Imagen de la película" name="img" value="{{ pelicula.img }}">
                       </div>
                     </div>
                     <div class="column">
                         <label class="label">Trailer</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Url del trailer de la película" name="url_trailer">
+                        <input class="input" type="text" placeholder="Url del trailer de la película" name="url_trailer" value="{{ pelicula.url_trailer }}">
                       </div>
                     <label class="label">Director</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Nombre del director la película" name="director">
+                        <input class="input" type="text" placeholder="Nombre del director la película" name="director" value="{{ pelicula.director }}">
                       </div>
                     </div>
                 </div>
@@ -127,6 +127,8 @@
                         <th>Imagen</th>
                         <th>Trailer</th>
                         <th>Director</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -138,6 +140,8 @@
                         <td> {{ p.img }}</td>
                         <td> {{ p.url_trailer }}</td>
                         <td> {{ p.director }}</td>
+                        <td><a href="{% url 'eliminar_pelicula' id=p.id %} "><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="{% url 'editar_pelicula' id=p.id %} "><i class="fa-regular fa-pen-to-square"></i></a></td>
                         </tr>
                         {% endfor %}
                 </tbody>
@@ -147,7 +151,7 @@
             </button></a>
         </div>
     </div>
-     <div class="peliculas ">
+     <div class="series ">
         <h2 class="is-size-2 container mt-6">Series</h2>
         <div class="box container" >
             <h4>Añadir series:</h4>
@@ -210,10 +214,12 @@
                         <th>Imagen</th>
                         <th>Trailer</th>
                         <th>Director</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                     {% for s in serie %}
+                     {% for s in series %}
                         <tr>
                         <td> {{ s.nombre }}</td>
                         <td> {{ s.sinopsis }}</td>
@@ -221,11 +227,48 @@
                         <td> {{ s.img }}</td>
                         <td> {{ s.url_trailer }}</td>
                         <td> {{ s.director }}</td>
+                        <td><a href="{% url 'eliminar_serie' id=s.id %} "><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="{% url 'editar_serie' id=s.id %} "><i class="fa-regular fa-pen-to-square"></i></a></td>
                         </tr>
                         {% endfor %}
                 </tbody>
             </table>
             <a href="{% url 'mostrar_series'  %} "><button class="button is-success is-grouped-centered">
+              Actualizar
+            </button></a>
+        </div>
+    </div>
+    <div class="usuarios ">
+        <h2 class="is-size-2 container mt-6">Usuarios</h2>
+        <div class="box container">
+             <h4>Listado de usarios actuales:</h4>
+            <table class="table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Nombre completo</th>
+                        <th>Email</th>
+                        <th>Fecha de nacimiento</th>
+                        <th>Imagen</th>
+                        <th>Sexo</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                     {% for u in usuarios %}
+                        <tr>
+                        <td> {{ u.username }}</td>
+                        <td> {{ u.nombre_completo }}</td>
+                        <td> {{ u.email }}</td>
+                        <td> {{ u.fecha_nacimiento }}</td>
+                        <td> {{ u.img }}</td>
+                        <td> {{ u.sexo }}</td>
+                        <td><a href="{% url 'eliminar_usuario' id=u.id  %} "><i class="fa-solid fa-trash"></i></a></td>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+            <a href="{% url 'mostrar_usuarios'  %} "><button class="button is-success is-grouped-centered">
               Actualizar
             </button></a>
         </div>
