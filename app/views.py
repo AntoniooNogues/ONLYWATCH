@@ -141,3 +141,11 @@ def editar_serie(request, id):
         serie_editar.save()
 
         return redirect('/administrador/')
+
+def settings(request):
+    username = request.session.get('username', None)
+    if username is not None:
+        user = Usuario.objects.get(username=username)
+        return render(request, 'User_information.html', {'user': user})
+    else:
+        return render(request, 'login.html')
