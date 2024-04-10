@@ -147,6 +147,89 @@
             </button></a>
         </div>
     </div>
-{% endblock %}
+     <div class="peliculas ">
+        <h2 class="is-size-2 container mt-6">Series</h2>
+        <div class="box container" >
+            <h4>Añadir series:</h4>
+            <form method="post" action="{% url 'new_series' %}">
+                  {% csrf_token %}
+                <div class="field columns mt-1">
+                    <div class="column">
+                        <label class="label">Nombre</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Nombre de la serie" name="nombre_serie">
+                      </div>
+                        <label class="label">Sinopsis</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Sinopsis de la serie" name="sinopsis_serie">
+                      </div>
+                    </div>
+                    <div class="column">
+                        <label class="label">Fecha de estreno</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Fecha de estreno de la serie" name="fecha_estreno_serie">
+                      </div>
+                    <label class="label">Imagen</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Imagen de la serie" name="img_serie">
+                      </div>
+                    </div>
+                    <div class="column">
+                        <label class="label">Trailer</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Url del trailer de la serie" name="trailer_serie">
+                      </div>
+                    <label class="label">Director</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Nombre del director la serie" name="director_serie">
+                      </div>
+                    </div>
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                      <p class="control">
+                          <button class="button is-primary" type="submit">
+                          Añadir
+                          </button>
+                      </p>
+                      <p class="control">
+                        <a class="button is-light">
+                          Cancelar
+                        </a>
+                      </p>
+                </div>
+            </form>
+        </div>
+        <div class="box container">
+             <h4>Listado de series actuales:</h4>
+            <table class="table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Sinopsis</th>
+                        <th>Fecha de estreno</th>
+                        <th>Imagen</th>
+                        <th>Trailer</th>
+                        <th>Director</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     {% for s in serie %}
+                        <tr>
+                        <td> {{ s.nombre }}</td>
+                        <td> {{ s.sinopsis }}</td>
+                        <td> {{ s.fecha_estreno }}</td>
+                        <td> {{ s.img }}</td>
+                        <td> {{ s.url_trailer }}</td>
+                        <td> {{ s.director }}</td>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+            <a href="{% url 'mostrar_series'  %} "><button class="button is-success is-grouped-centered">
+              Actualizar
+            </button></a>
+        </div>
+    </div>
+    {% endblock %}
 </body>
 </html>

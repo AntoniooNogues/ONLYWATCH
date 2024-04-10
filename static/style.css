@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@500&display=swap');
+body{
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    .fondo{
+        background-image: url("/static/img/fondo_registro_login.png");
+    }
+    li{
+        list-style-type: circle;
+        padding: 4px;
+    }
+}
+.mali{
+    font-family: "Mali", cursive;
+}
+.letter-spacing{
+    letter-spacing: 5px;
+}
+
+.icons{
+    width: 24px;
+    height: 24px;
+}
+.blanco{
+  color: white;
+}
+
+
+.header-gradient {
+  background: rgb(251,117,45);
+  background: linear-gradient(90deg, rgba(251,117,45,1) 0%, rgba(189,76,25,1) 50%, rgba(132,37,7,1) 100%);
+}
+.card-gradient{
+    background: rgb(251,117,45);
+    background: linear-gradient(180deg, rgba(251,117,45,1) 0%, rgba(116,76,76,1) 100%);
+}
+
+.bg_footer{
+    background: #FFB36D;
+    border: none;
+}
+
+.input{
+    border: 2px solid #842507;
+    background-color: #F2D9CD;
+    height: 52px;
+    font-size: 18px;
+}
+.input:hover{
+    border: 2px solid #842507;
+}
+.input::placeholder{
+    color: rgba(0, 0, 0, 0.3);
+}
+.register{
+    color: #FFC803;
+}
+.register:hover {
+    font-size: 19px;
+    color: #ffea00;
+}
+.blanco:hover{
+    font-size: 18.1px;
+}
+a{
+    color: black;
+}
+
