@@ -60,7 +60,8 @@
                   </p>
                 </header>
                 <div class="content">
-                  <form action="" class="mt-4 ml-4 mr-4">
+                  <form action="" method="POST" class="mt-4 ml-4 mr-4">
+                      {% csrf_token %}
                     <div class="field mb-4">
                       <input
                         type="text"
@@ -117,6 +118,7 @@
                         type="submit"
                         class="bg_footer button is-fullwidth is-size-5"
                         style="height: 52px"
+                        value="Save"
                       >
                         <strong class="has-text-centered">Acceder</strong>
                       </button>
@@ -137,6 +139,12 @@
         </div>
       </div>
     </main>
+
+    {% for e in errores %}
+
+        <p style="color: red">{{ e }}</p>
+
+    {% endfor %}
 
     <!-- Footer -->
     <footer class="bg_footer is-align-items-center pb-3">
