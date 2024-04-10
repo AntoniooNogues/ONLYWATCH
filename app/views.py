@@ -1,20 +1,23 @@
-from django.contrib.auth.hashers import make_password
+from static.img import *
 import os
 from django.core.files import File
-
+from .models import *
+from django.http import HttpResponse
+from django.db import connection
+from templates import *
 
 
 # Create your views here.
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .models import *
 from django.http import HttpResponse
 
 def crear_usuario(request):
-    prueba_usuario_1 = Usuario(id= 1, nombre="Pepe", apellidos="Perez", password="1234", email="prueba1@gmail.com", tipo=2, img="https://www.google.com", fecha_nacimiento="1999-01-01", sexo="Hombre")
+    prueba_usuario_1 = usuario(id= 1, nombre="Pepe", apellidos="Perez", password="1234", email="prueba1@gmail.com", tipo=2, img="https://www.google.com", fecha_nacimiento="1999-01-01", sexo="Hombre")
     prueba_usuario_1.save()
-    prueba_usuario_2 = Usuario(id= 2,nombre="Juan", apellidos="Garcia", password="1234", email="prueba2@gmai.com", tipo=2, img="https://www.google.com", fecha_nacimiento="1999-01-01", sexo="Hombre")
+    prueba_usuario_2 = usuario(id= 2,nombre="Juan", apellidos="Garcia", password="1234", email="prueba2@gmai.com", tipo=2, img="https://www.google.com", fecha_nacimiento="1999-01-01", sexo="Hombre")
     prueba_usuario_2.save()
-    prueba_usuario_3 = Usuario(id= 3,nombre="Maria", apellidos="Lopez", password="1234", email="prueba3@gmail.com", tipo=2, img="https://www.google.com", fecha_nacimiento="1999-01-01", sexo="Mujer")
+    prueba_usuario_3 = usuario(id= 3,nombre="Maria", apellidos="Lopez", password="1234", email="prueba3@gmail.com", tipo=2, img="https://www.google.com", fecha_nacimiento="1999-01-01", sexo="Mujer")
     prueba_usuario_3.save()
     return HttpResponse("Usuario creado")
 
@@ -82,38 +85,38 @@ def crear_foro_pelicula(request):
     foro3.save()
     return HttpResponse(f"Foro de pelicula creado")
 def crear_comentario_serie(request):
-    comentario1 = comentario_serie(contenido="Me encanta esta serie", visibilidad=True, usuario=Usuario.objects.get(id=1), foro_series=foro_serie.objects.get(id=1))
+    comentario1 = comentario_serie(contenido="Me encanta esta serie", visibilidad=True, usuario=usuario.objects.get(id=1), foro_series=foro_serie.objects.get(id=1))
     comentario1.save()
-    comentario2 = comentario_serie(contenido="Me encanta esta serie", visibilidad=True, usuario=Usuario.objects.get(id=2), foro_series=foro_serie.objects.get(id=2))
+    comentario2 = comentario_serie(contenido="Me encanta esta serie", visibilidad=True, usuario=usuario.objects.get(id=2), foro_series=foro_serie.objects.get(id=2))
     comentario2.save()
-    comentario3 = comentario_serie(contenido="Me encanta esta serie", visibilidad=True, usuario=Usuario.objects.get(id=3), foro_series=foro_serie.objects.get(id=3))
+    comentario3 = comentario_serie(contenido="Me encanta esta serie", visibilidad=True, usuario=usuario.objects.get(id=3), foro_series=foro_serie.objects.get(id=3))
     comentario3.save()
     return HttpResponse(f"Comentario de serie creado")
 
 def crear_comentario_pelicula(request):
-    comentario1 = comentario_pelicula(contenido="Me encanta esta pelicula", visibilidad=True, usuario=Usuario.objects.get(id=1), foro_peliculas=foro_pelicula.objects.get(id=1))
+    comentario1 = comentario_pelicula(contenido="Me encanta esta pelicula", visibilidad=True, usuario=usuario.objects.get(id=1), foro_peliculas=foro_pelicula.objects.get(id=1))
     comentario1.save()
-    comentario2 = comentario_pelicula(contenido="Me encanta esta pelicula", visibilidad=True, usuario=Usuario.objects.get(id=2), foro_peliculas=foro_pelicula.objects.get(id=2))
+    comentario2 = comentario_pelicula(contenido="Me encanta esta pelicula", visibilidad=True, usuario=usuario.objects.get(id=2), foro_peliculas=foro_pelicula.objects.get(id=2))
     comentario2.save()
-    comentario3 = comentario_pelicula(contenido="Me encanta esta pelicula", visibilidad=True, usuario=Usuario.objects.get(id=3), foro_peliculas=foro_pelicula.objects.get(id=3))
+    comentario3 = comentario_pelicula(contenido="Me encanta esta pelicula", visibilidad=True, usuario=usuario.objects.get(id=3), foro_peliculas=foro_pelicula.objects.get(id=3))
     comentario3.save()
     return HttpResponse(f"Comentario de pelicula creado")
 
 def crear_respuestas_series(request):
-    respuesta1 = respuestas_series(contenido="Me encanta esta serie", visibilidad=True, usuario=Usuario.objects.get(id=1), comentario_series=comentario_serie.objects.get(id=1))
+    respuesta1 = respuestas_series(contenido="Me encanta esta serie", visibilidad=True, usuario=usuario.objects.get(id=1), comentario_series=comentario_serie.objects.get(id=1))
     respuesta1.save()
-    respuesta2 = respuestas_series(contenido="Me encanta esta serie", visibilidad=True, usuario=Usuario.objects.get(id=2), comentario_series=comentario_serie.objects.get(id=2))
+    respuesta2 = respuestas_series(contenido="Me encanta esta serie", visibilidad=True, usuario=usuario.objects.get(id=2), comentario_series=comentario_serie.objects.get(id=2))
     respuesta2.save()
-    respuesta3 = respuestas_series(contenido="Me encanta esta serie", visibilidad=True, usuario=Usuario.objects.get(id=3), comentario_series=comentario_serie.objects.get(id=3))
+    respuesta3 = respuestas_series(contenido="Me encanta esta serie", visibilidad=True, usuario=usuario.objects.get(id=3), comentario_series=comentario_serie.objects.get(id=3))
     respuesta3.save()
     return HttpResponse(f"Respuesta de serie creada")
 
 def crear_respuestas_peliculas(request):
-    respuesta1 = respuestas_peliculas(contenido="Me encanta esta pelicula", visibilidad=True, usuario=Usuario.objects.get(id=1), comentario_peliculas=comentario_pelicula.objects.get(id=1))
+    respuesta1 = respuestas_peliculas(contenido="Me encanta esta pelicula", visibilidad=True, usuario=usuario.objects.get(id=1), comentario_peliculas=comentario_pelicula.objects.get(id=1))
     respuesta1.save()
-    respuesta2 = respuestas_peliculas(contenido="Me encanta esta pelicula", visibilidad=True, usuario=Usuario.objects.get(id=2), comentario_peliculas=comentario_pelicula.objects.get(id=2))
+    respuesta2 = respuestas_peliculas(contenido="Me encanta esta pelicula", visibilidad=True, usuario=usuario.objects.get(id=2), comentario_peliculas=comentario_pelicula.objects.get(id=2))
     respuesta2.save()
-    respuesta3 = respuestas_peliculas(contenido="Me encanta esta pelicula", visibilidad=True, usuario=Usuario.objects.get(id=3), comentario_peliculas=comentario_pelicula.objects.get(id=3))
+    respuesta3 = respuestas_peliculas(contenido="Me encanta esta pelicula", visibilidad=True, usuario=usuario.objects.get(id=3), comentario_peliculas=comentario_pelicula.objects.get(id=3))
     respuesta3.save()
     return HttpResponse(f"Respuesta de pelicula creada")
 
@@ -136,38 +139,38 @@ def crear_capitulo(request):
     return HttpResponse(f"Capitulo creado")
 
 def crear_valoracion_serie(request):
-    valoracion1 = valoracion_serie(valoracion=5, estado=1, ultimo_capitulo=1, usuario=Usuario.objects.get(id=1), serie=serie.objects.get(id=1))
+    valoracion1 = valoracion_serie(valoracion=5, estado=1, ultimo_capitulo=1, usuario=usuario.objects.get(id=1), serie=serie.objects.get(id=1))
     valoracion1.save()
-    valoracion2 = valoracion_serie(valoracion=5, estado=1, ultimo_capitulo=1, usuario=Usuario.objects.get(id=2), serie=serie.objects.get(id=2))
+    valoracion2 = valoracion_serie(valoracion=5, estado=1, ultimo_capitulo=1, usuario=usuario.objects.get(id=2), serie=serie.objects.get(id=2))
     valoracion2.save()
-    valoracion3 = valoracion_serie(valoracion=5, estado=1, ultimo_capitulo=1, usuario=Usuario.objects.get(id=3), serie=serie.objects.get(id=3))
+    valoracion3 = valoracion_serie(valoracion=5, estado=1, ultimo_capitulo=1, usuario=usuario.objects.get(id=3), serie=serie.objects.get(id=3))
     valoracion3.save()
     return HttpResponse(f"Valoracion de serie creada")
 
 def crear_valoracion_pelicula(request):
-    valoracion1 = valoracion_pelicula(valoracion=5, estado=1, usuario=Usuario.objects.get(id=1), pelicula=pelicula.objects.get(id=1))
+    valoracion1 = valoracion_pelicula(valoracion=5, estado=1, usuario=usuario.objects.get(id=1), pelicula=pelicula.objects.get(id=1))
     valoracion1.save()
-    valoracion2 = valoracion_pelicula(valoracion=5, estado=1, usuario=Usuario.objects.get(id=2), pelicula=pelicula.objects.get(id=2))
+    valoracion2 = valoracion_pelicula(valoracion=5, estado=1, usuario=usuario.objects.get(id=2), pelicula=pelicula.objects.get(id=2))
     valoracion2.save()
-    valoracion3 = valoracion_pelicula(valoracion=5, estado=1, usuario=Usuario.objects.get(id=3), pelicula=pelicula.objects.get(id=3))
+    valoracion3 = valoracion_pelicula(valoracion=5, estado=1, usuario=usuario.objects.get(id=3), pelicula=pelicula.objects.get(id=3))
     valoracion3.save()
     return HttpResponse(f"Valoracion de pelicula creada")
 
 def crear_pelicula_favorita(request):
-    pelicula_favorita1 = peliculas_favoritas(usuario=Usuario.objects.get(id=1), pelicula=pelicula.objects.get(id=1))
+    pelicula_favorita1 = peliculas_favoritas(usuario=usuario.objects.get(id=1), pelicula=pelicula.objects.get(id=1))
     pelicula_favorita1.save()
-    pelicula_favorita2 = peliculas_favoritas(usuario=Usuario.objects.get(id=2), pelicula=pelicula.objects.get(id=2))
+    pelicula_favorita2 = peliculas_favoritas(usuario=usuario.objects.get(id=2), pelicula=pelicula.objects.get(id=2))
     pelicula_favorita2.save()
-    pelicula_favorita3 = peliculas_favoritas(usuario=Usuario.objects.get(id=3), pelicula=pelicula.objects.get(id=3))
+    pelicula_favorita3 = peliculas_favoritas(usuario=usuario.objects.get(id=3), pelicula=pelicula.objects.get(id=3))
     pelicula_favorita3.save()
     return HttpResponse(f"Pelicula favorita creada")
 
 def crear_serie_favorita(request):
-    serie_favorita1 = series_favoritas(usuario=Usuario.objects.get(id=1), serie=serie.objects.get(id=1))
+    serie_favorita1 = series_favoritas(usuario=usuario.objects.get(id=1), serie=serie.objects.get(id=1))
     serie_favorita1.save()
-    serie_favorita2 = series_favoritas(usuario=Usuario.objects.get(id=2), serie=serie.objects.get(id=2))
+    serie_favorita2 = series_favoritas(usuario=usuario.objects.get(id=2), serie=serie.objects.get(id=2))
     serie_favorita2.save()
-    serie_favorita3 = series_favoritas(usuario=Usuario.objects.get(id=3), serie=serie.objects.get(id=3))
+    serie_favorita3 = series_favoritas(usuario=usuario.objects.get(id=3), serie=serie.objects.get(id=3))
     serie_favorita3.save()
     return HttpResponse(f"Serie favorita creada")
 
@@ -230,7 +233,7 @@ def login(request):
     if request.method == 'GET':
         return render(request, 'login.html')
     else:
-        return render(request, '')
+        return render(request, 'login.html')
 
 def register(request):
     if request.method == 'GET':
@@ -240,25 +243,25 @@ def register(request):
         nombre_completo = request.POST.get('nombre_completo')
         mail = request.POST.get('email')
         password = request.POST.get('password')
-        password_confirmacion = request.POST.get('password_confirmacion')
+        password2 = request.POST.get('password2')
 
         errors = []
 
-        if password != password_confirmacion:
+        if password != password2:
             errors.append("Las contraseñas no coinciden")
-        existe_usuario = Usuario.objects.filter(username=username).exists()
+        existe_usuario = User.objects.filter(username=username).exists()
         if existe_usuario:
             errors.append("Ya existe un usuario con ese nombre")
-        existe_mail = Usuario.objects.filter(email=mail).exists()
+        existe_mail = User.objects.filter(email=mail).exists()
         if existe_mail:
             errors.append("Ya existe un usuario con ese email")
 
         if len(errors) != 0:
             return render(request, "register.html", {"errores": errors, "username": username})
         else:
-            user = Usuario.objects.create_user(username=username, email=mail, password=make_password(password), nombre_completo=nombre_completo)
+            user = User.objects.create_user(username=username, email=mail, password=password, nombre_completo=nombre_completo)
             user.save()
-            return redirect("login")
+            return redirect("login.html")
 
 
 def reset_password(request):

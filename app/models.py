@@ -55,6 +55,7 @@ class serie(models.Model):
     nombre = models.CharField(max_length=100)
     sinopsis = models.TextField()
     img = models.CharField(max_length=300)
+    fecha_estreno = models.DateField()
     trailer = models.CharField(max_length=300)
     director = models.CharField(max_length=50)
 
