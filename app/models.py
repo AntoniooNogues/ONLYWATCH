@@ -31,7 +31,7 @@ class MyUserManager(BaseUserManager):
     def __str__(self):
         return f"{self.nombre} {self.apellidos} {self.email} {self.img}"
 
-class Usuario(AbstractUser):
+class Usuario(AbstractBaseUser):
     username = models.CharField(max_length=50, unique=True)
     nombre_completo = models.CharField(max_length=150)
     email = models.EmailField(unique=True)

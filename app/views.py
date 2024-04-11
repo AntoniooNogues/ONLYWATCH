@@ -10,7 +10,13 @@ from .models import *
 from django.http import HttpResponse
 
 
-def login(request):
+def mostrar_admi(request):
+    return render(request, 'admi.html')
+
+def mostrar_peliculas(request):
+    peliculas = pelicula.objects.all()
+    return render(request, 'admi.html', {'peliculas': peliculas})
+def do_login(request):
     if request.method == 'GET':
         return render(request, 'login.html')
     else:
