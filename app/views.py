@@ -57,11 +57,6 @@ def reset_password(request):
     else:
         return render(request, 'reset_password.html')
 
-def reset_password(request):
-    if request.method == 'GET':
-        return render(request, 'reset_password.html')
-    else:
-        return render(request, 'reset_password.html')
 def new_peliculas(request):
     if request.method == 'GET':
         uno = pelicula.objects.all()
