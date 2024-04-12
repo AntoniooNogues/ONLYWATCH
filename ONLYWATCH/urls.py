@@ -35,6 +35,7 @@ urlpatterns = [
     path('administrador/eliminar_serie/<int:id>', views.eliminar_serie, name='eliminar_serie'),
     path('administrador/editar_pelicula/<int:id>', views.editar_pelicula, name='editar_pelicula'),
     path('administrador/editar_serie/<int:id>', views.editar_serie, name='editar_serie'),
-    path('usuario/configuracion', views.settings, name='configuracion'),
+    path('usuario/perfil', views.settings, name='configuracion'),
+
 ]
 
