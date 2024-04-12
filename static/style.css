@@ -26,7 +26,6 @@ body{
   color: white;
 }
 
-
 .header-gradient {
   background: rgb(251,117,45);
   background: linear-gradient(90deg, rgba(251,117,45,1) 0%, rgba(189,76,25,1) 50%, rgba(132,37,7,1) 100%);
@@ -44,7 +43,6 @@ body{
 .input{
     border: 2px solid #842507;
     background-color: #F2D9CD;
-    height: 52px;
     font-size: 18px;
 }
 .input:hover{

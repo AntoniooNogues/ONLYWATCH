@@ -60,30 +60,31 @@
                 </header>
                 <div class="content">
                   <form action="" class="mt-4 ml-4 mr-4">
-                    <div class="field mb-6">
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="Correo Electrónico"
-                        class="input"
-                        required
-                      />
+                    <div class="field">
+                        <div class="control has-icons-left is-flex">
+                            <input type="email" name="email" id="email" class="input is-medium" placeholder="Correo Electrónico" required />
+                            <span class="icon is-left has-text-black">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                        </div>
                     </div>
                     <div class="field mt-6 mb-6">
-                      <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="Contraseña"
-                        class="input"
-                        required
-                      />
-                      <a
-                        href="{% url 'reset_password' %}"
-                        class="is-pulled-right blanco mt-2"
-                        >¿Has olvidado tu contraseña?</a
-                      >
+                        <div class="control has-icons-left is-flex">
+                            <input type="password" id="password" name="password" placeholder="Contraseña" class="input is-medium is-fullwidth" required />
+                            <span class="icon is-left has-text-black">
+                                <i class="fa-solid fa-lock"></i>
+                            </span>
+                            <button type="button" class="button is-right is-small input is-medium" id="togglePasswordVisibility">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        <a href="{% url 'reset_password' %}" class="is-pulled-right blanco mt-2">¿Has olvidado tu contraseña?</a>
+                    </div>
+
+
+                    <div class="field ">
+
+
                     </div>
 
                     <div class="field mt-6 mb-3">
@@ -185,5 +186,6 @@
         </div>
       </main>
     </footer>
+    <script src="/static/js/index.js"></script>
   </body>
 </html>
