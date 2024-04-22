@@ -21,7 +21,12 @@ def do_login(request):
         return render(request, 'login.html')
     else:
         return render(request, '')
+def do_logout(request):
+    logout(request)
+    return redirect('login')
 
+def mostrar_inicio(request):
+    return render(request, 'inicio.html')
 def register(request):
     if request.method == 'GET':
         return render(request, 'register.html')
@@ -139,6 +144,14 @@ def editar_serie(request, id):
         serie_editar.save()
 
         return redirect('/administrador/')
+
+def settings(request):
+    usuario = request.user.username
+    if usuario is not None:
+        user = User.objects.get(username=usuario)
+        return render(request, 'User_information.html', {'user': user})
+    else:
+        return render(request, 'login.html')
 
 def plataformas (request):
     return render(request, 'plataformas.html')
