@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script src="https://kit.fontawesome.com/2eb7a633b0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/bulma/css/style.css" />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body class="familiy has-text-black">
+    <!-- Header -->
+    <header class="py-4 ">
+      <section class="columns">
+        <div class="column is-one-quarter is-flex is-align-content-start">
+          <span class="level-item ml-4">
+            <img src="/static/img/logoSmall.svg" alt="Logo pequeño de Onlywatch" class="is-hidden-mobile"/>
+          </span>
+          <a class="level-item ml-5 mt-1 is-size-4">Inicio</a>
+        </div>
+        <div class="column is-one-quarter is-align-content-end">
+          <div>
+            <p>Bienvenido, <span>{% User.username %}</span> </p>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <!-- Main -->
+    
+    <!-- Formulario -->
+    {% include "footer.html" %}
+    <script src="/static/js/index.js"></script>
+  </body>
+</html>

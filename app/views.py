@@ -139,3 +139,6 @@ def editar_serie(request, id):
         serie_editar.save()
 
         return redirect('/administrador/')
+
+def plataformas (request):
+    return render(request, 'plataformas.html')

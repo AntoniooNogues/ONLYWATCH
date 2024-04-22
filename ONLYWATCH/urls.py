@@ -23,6 +23,8 @@ urlpatterns = [
     path('login/', views.do_login, name='login'),
     path('register/', views.register, name='signup'),
     path('login/reset_password', views.reset_password, name='reset_password'),
+    path('plataformas', views.plataformas, name='plataformas'),
+
 
     path('', views.mostrar_admi),
     path('administrador/', views.mostrar_peliculas, name='admi'),
