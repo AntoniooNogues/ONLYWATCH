@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Información Usuario</title>
+    <link rel="stylesheet" href="/static/bulma/css/style.css">
+    <script src="https://kit.fontawesome.com/b9d5886cee.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    {% load static %}
+    {% block content %}
+    <header>
+         <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #FFE8D3">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="#">
+                        <img src="/static/img/logo_sinfondo%201-min.svg" alt="">
+                    </a>
+    
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                       data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+    
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item">
+                            Inicio
+                        </a>
+                        
+                    </div>
+                </div>
+                 <div class="navbar-end">
+                     <div class="navbar-item">
+                         <i class="fa-regular fa-bell"></i>
+                     </div>
+                    <div class="navbar-item">
+                        <div class="button">
+                            {% csrf_token %}
+                            <img src="{{ user.img }}" alt="">
+                            <p>Bienvenido, {{ user.username }}</p>
+                        </div>
+                    </div>
+                </div>
+         </nav>
+    </header>
+    
+    <h1>Bienvenido, {{ user.nombre_completo }}</h1>
+    {% endblock %}
+</body>
+</html>
