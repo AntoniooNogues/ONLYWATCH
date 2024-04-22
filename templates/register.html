@@ -60,7 +60,7 @@
                   </p>
                 </header>
                 <div class="content">
-                  <form action="" method="POST" class="mt-4 ml-4 mr-4">
+                  <form action="{% url 'signup' %}" method="post" class="mt-4 ml-4 mr-4">
                       {% csrf_token %}
                     <div class="field mb-4">
                       <input
@@ -74,19 +74,9 @@
                     </div>
                     <div class="field mb-4">
                       <input
-                        type="text"
-                        name="nombre_completo"
-                        id="nombre_completo"
-                        placeholder="Nombre y Apellidos"
-                        class="input"
-                        required
-                      />
-                    </div>
-                    <div class="field mb-4">
-                      <input
                         type="email"
-                        name="email"
-                        id="email"
+                        name="mail"
+                        id="mail"
                         placeholder="Correo Electrónico"
                         class="input"
                         required
@@ -105,8 +95,8 @@
                     <div class="field mt-4 mb-4">
                       <input
                         type="password"
-                        id="password_confirmacion"
-                        name="password_confirmacion"
+                        id="repeatPassword"
+                        name="repeatPassword"
                         placeholder="Repetir Contraseña"
                         class="input"
                         required

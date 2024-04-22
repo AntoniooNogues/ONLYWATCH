@@ -21,6 +21,7 @@ from app import views
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('login/', views.do_login, name='login'),
+    path('logout/', views.do_logout, name='logout'),
     path('register/', views.register, name='signup'),
     path('login/reset_password', views.reset_password, name='reset_password'),
 
@@ -36,6 +37,7 @@ urlpatterns = [
     path('administrador/editar_pelicula/<int:id>', views.editar_pelicula, name='editar_pelicula'),
     path('administrador/editar_serie/<int:id>', views.editar_serie, name='editar_serie'),
     path('usuario/perfil', views.settings, name='configuracion'),
+    path('home/', views.mostrar_inicio, name='home'),
 
 ]
 

@@ -1,4 +1,7 @@
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import check_password
+
 import os
 from django.core.files import File
 
@@ -17,38 +20,55 @@ def mostrar_peliculas(request):
     peliculas = pelicula.objects.all()
     return render(request, 'admi.html', {'peliculas': peliculas})
 def do_login(request):
-    if request.method == 'GET':
-        return render(request, 'login.html')
-    else:
-        return render(request, '')
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            # Redirección tras un login exitoso
+            return redirect('home')
+        else:
+            # Mensaje de error si la autenticación falla
+            return render(request, 'login.html', {"error": "No se ha podido iniciar sesión intentalo de nuevo"})
+
+    # Mostrar formulario de login para método GET
+    return render(request, 'login.html')
+def do_logout(request):
+    logout(request)
+    return redirect('login')
+def mostrar_inicio(request):
+    return render(request, 'inicio.html')
 
 def register(request):
-    if request.method == 'GET':
-        return render(request, 'register.html')
+    if request.method == "GET":
+        return render(request, "register.html")
     else:
         username = request.POST.get('username')
-        nombre_completo = request.POST.get('nombre_completo')
-        mail = request.POST.get('email')
+        mail = request.POST.get('mail')
         password = request.POST.get('password')
-        password_confirmacion = request.POST.get('password_confirmacion')
+        passwaord2 = request.POST.get('repeatPassword')
 
         errors = []
 
-        if password != password_confirmacion:
+        if password != passwaord2:
             errors.append("Las contraseñas no coinciden")
-        existe_usuario = Usuario.objects.filter(username=username).exists()
+        existe_usuario = User.objects.filter(username=username).exists()
         if existe_usuario:
             errors.append("Ya existe un usuario con ese nombre")
-        existe_mail = Usuario.objects.filter(email=mail).exists()
+        existe_mail = User.objects.filter(email=mail).exists()
         if existe_mail:
             errors.append("Ya existe un usuario con ese email")
 
         if len(errors) != 0:
             return render(request, "register.html", {"errores": errors, "username": username})
         else:
-            user = Usuario.objects.create_user(username=username, email=mail, password=make_password(password), nombre_completo=nombre_completo)
+            user = User.objects.create(username=username, password=make_password(password), email=mail)
             user.save()
-            return redirect("login")
+
+            return redirect('login')
 
 
 def reset_password(request):
@@ -98,11 +118,11 @@ def mostrar_series(request):
     return render(request, 'admi.html', {'series': series})
 
 def mostrar_usuarios(request):
-    usuarios = Usuario.objects.all()
+    usuarios = User.objects.all()
     return render(request, 'admi.html', {'usuarios': usuarios})
 
 def eliminar_usuario(request, id):
-    usuario = Usuario.objects.get(id=id)
+    usuario = User.objects.get(id=id)
     usuario.delete()
     return redirect('/administrador/')
 
@@ -146,9 +166,9 @@ def editar_serie(request, id):
         return redirect('/administrador/')
 
 def settings(request):
-    username = request.session.get('username', None)
-    if username is not None:
-        user = Usuario.objects.get(username=username)
+    usuario = request.user.username
+    if usuario is not None:
+        user = User.objects.get(username=usuario)
         return render(request, 'User_information.html', {'user': user})
     else:
         return render(request, 'login.html')

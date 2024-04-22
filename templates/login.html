@@ -59,10 +59,11 @@
                   </p>
                 </header>
                 <div class="content">
-                  <form action="" class="mt-4 ml-4 mr-4">
+                  <form action="{% url 'login'  %}" class="mt-4 ml-4 mr-4" method="post">
+                      {% csrf_token %}  
                     <div class="field">
                         <div class="control has-icons-left is-flex">
-                            <input type="email" name="email" id="email" class="input is-medium" placeholder="Correo Electrónico" required />
+                            <input type="text" name="username" id="username" class="input is-medium" placeholder="Usuario" required />
                             <span class="icon is-left has-text-black">
                                 <i class="fa-solid fa-envelope"></i>
                             </span>
@@ -78,6 +79,9 @@
                                 <i class="fa-solid fa-eye"></i>
                             </button>
                         </div>
+                        {% if error %}
+                            <p>{{ error }}</p>
+                        {% endif %}
                         <a href="{% url 'reset_password' %}" class="is-pulled-right blanco mt-2">¿Has olvidado tu contraseña?</a>
                     </div>
 
@@ -91,8 +95,7 @@
                       <button
                         type="submit"
                         class="bg_footer button is-fullwidth is-size-5"
-                        style="height: 52px"
-                      >
+                        style="height: 52px">
                         <strong class="has-text-centered">Acceder</strong>
                       </button>
                     </div>
