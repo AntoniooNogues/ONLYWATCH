@@ -8,6 +8,7 @@
     ></script>
     <link rel="stylesheet" href="/static/bulma/css/style.css" />
     <link rel="stylesheet" href="/static/style.css" />
+
   </head>
   <body class="familiy has-text-black">
     <!-- Header -->
@@ -90,27 +91,42 @@
                         required
                       />
                     </div>
-                    <div class="field mt-4 mb-4">
-                      <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="Contraseña"
-                        class="input"
-                        required
-                      />
+                    <div class="control has-icons-left">
+                      <div class="field has-addons">
+                        <div class="control is-expanded">
+                          <input type="password" id="password1" name="password" placeholder="Contraseña" class="input is-medium is-fullwidth" required />
+                          <span class="icon is-left has-text-black">
+                            <i class="fa-solid fa-lock"></i>
+                          </span>
+                        </div>
+                        <div class="control">
+                            <button type="button" class="button is-medium" id="togglePasswordVisibility1" style=" border: 2px solid #842507; background-color: #F2D9CD;">
+                                <span class="icon is-small has-text-black">
+                                    <i class="fa-solid fa-eye"></i>
+                                </span>
+                            </button>
+                        </div>
+                      </div>
                     </div>
-                    <div class="field mt-4 mb-4">
-                      <input
-                        type="password"
-                        id="password_confirmacion"
-                        name="password_confirmacion"
-                        placeholder="Repetir Contraseña"
-                        class="input"
-                        required
-                      />
+                    <div class="field mt-4 mb-5">
+                      <div class="control has-icons-left">
+                          <div class="field has-addons">
+                            <div class="control is-expanded">
+                              <input type="password" id="password2" name="password2" placeholder="Repetir Contraseña" class="input is-medium is-fullwidth" required />
+                              <span class="icon is-left has-text-black">
+                                <i class="fa-solid fa-lock"></i>
+                              </span>
+                            </div>
+                            <div class="control">
+                                <button type="button" class="button is-medium" id="togglePasswordVisibility2"  style=" border: 2px solid #842507; background-color: #F2D9CD;" on-cl>
+                                    <span class="icon is-small has-text-black">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </span>
+                                </button>
+                            </div>
+                          </div>
+                      </div>
                     </div>
-
                     <div class="field mt-4 mb-3">
                       <button
                         type="submit"
@@ -121,7 +137,6 @@
                         <strong class="has-text-centered">Acceder</strong>
                       </button>
                     </div>
-                  </form>
                 </div>
                 <footer>
                   <p class="has-text-centered has-text-white is-size-6">
@@ -220,5 +235,6 @@
         </div>
       </main>
     </footer>
+  <script src="/static/js/index.js"></script>
   </body>
 </html>

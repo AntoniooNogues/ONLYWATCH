@@ -65,21 +65,21 @@
                     </div>
                     <div class="field mt-6 mb-6">
                       <div class="control has-icons-left">
-                          <div class="field has-addons">
-                              <div class="control is-expanded">
-                                  <input type="password" id="password" name="password" placeholder="Contraseña" class="input is-medium is-fullwidth" required />
-                                  <span class="icon is-left has-text-black">
-                                    <i class="fa-solid fa-lock"></i>
-                                  </span>
-                              </div>
-                              <div class="control">
-                                    <button type="button" class="button is-medium" id="togglePasswordVisibility" onclick="togglePasswordVisibility()" style=" border: 2px solid #842507; background-color: #F2D9CD;">
-                                        <span class="icon is-small has-text-black">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </span>
-                                    </button>
-                              </div>
+                        <div class="field has-addons">
+                          <div class="control is-expanded">
+                            <input type="password" id="password1" name="password" placeholder="Contraseña" class="input is-medium is-fullwidth" required />
+                            <span class="icon is-left has-text-black">
+                              <i class="fa-solid fa-lock"></i>
+                            </span>
                           </div>
+                          <div class="control">
+                              <button type="button" class="button is-medium" id="togglePasswordVisibility1" style=" border: 2px solid #842507; background-color: #F2D9CD;">
+                                  <span class="icon is-small has-text-black">
+                                      <i class="fa-solid fa-eye"></i>
+                                  </span>
+                              </button>
+                          </div>
+                        </div>
                       </div>
                       <a href="{% url 'reset_password' %}" class="is-pulled-right blanco mt-2">¿Has olvidado tu contraseña?</a>
                     </div>
