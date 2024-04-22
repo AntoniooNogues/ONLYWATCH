@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="/static/bulma/css/style.css" />
     <link rel="stylesheet" href="/static/style.css" />
   </head>
-  <body class="familiy has-text-black">
+  <body style="background-color: #FFE8D3" class="familiy has-text-black">
     {% csrf_token %} 
     <!-- Header -->
-    <header class="py-4 ">
+    <header class="py-4">
       <section class="columns">
         <div class="column is-one-quarter is-flex is-align-content-start">
           <span class="level-item ml-4">
@@ -21,14 +21,30 @@
         </div>
         <div class="column is-one-quarter is-align-content-end">
           <div>
-              <p>Bienvenido, <span>{{ user.username }}</span> </p>          
+              <p>Bienvenido, <span>{{ user.username }}</span> </p>
           </div>
         </div>
       </section>
     </header>
 
     <!-- Main -->
-    
+    <main class="ml-5 hero is-small">
+        <section class="hero-body">
+            <div class="title ml-4">
+                <h3 class="has-text-black">Elige las plataformas que dispongas de streaming:</h3>
+            </div>
+            <div class="columns is-multiline subtitle">
+                {% for plataforma in plataformas %}
+                    <div class="column is-one-sixth"> <!-- Para tener seis columnas por fila -->
+                        <figure class="image is-128x128">
+                            <img src="{{ plataforma.img }}" alt="{{plataforma.nombre}}">
+                        </figure>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </section>
+    </main>
     <!-- Formulario -->
     {% include "footer.html" %}
     <script src="/static/js/index.js"></script>
