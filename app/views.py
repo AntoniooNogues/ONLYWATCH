@@ -1,11 +1,17 @@
-import os
-
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import check_password
+
+import os
 from django.core.files import File
+
+
+
 # Create your views here.
 from django.shortcuts import render, redirect
 from .models import *
-from django.conf import settings
+from django.http import HttpResponse
+
 
 def mostrar_admi(request):
     return render(request, 'admi.html')
@@ -33,9 +39,9 @@ def do_login(request):
 def do_logout(request):
     logout(request)
     return redirect('login')
-
 def mostrar_inicio(request):
     return render(request, 'inicio.html')
+
 def register(request):
     if request.method == 'GET':
         return render(request, 'register.html')
