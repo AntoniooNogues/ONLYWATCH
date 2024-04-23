@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
@@ -40,6 +42,9 @@ urlpatterns = [
     path('administrador/editar_serie/<int:id>', views.editar_serie, name='editar_serie'),
     path('usuario/perfil', views.settings, name='configuracion'),
     path('home/', views.mostrar_inicio, name='home'),
-
 ]
 
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -4,8 +4,7 @@ from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 # Create your models here.
 class plataforma(models.Model):
     nombre = models.CharField(max_length=50)
-    img = models.CharField(max_length=300)
-
+    img = models.ImageField(upload_to='plataformas/')
     def __str__(self):
         return f"{self.nombre}  {self.img}"
 

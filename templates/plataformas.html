@@ -34,10 +34,10 @@
                 <h3 class="has-text-black">Elige las plataformas que dispongas de streaming:</h3>
             </div>
             <div class="columns is-multiline subtitle">
-                {% for plataforma in plataformas %}
+                {% for plt in plataforma %}
                     <div class="column is-one-sixth"> <!-- Para tener seis columnas por fila -->
                         <figure class="image is-128x128">
-                            <img src="{{ plataforma.img }}" alt="{{plataforma.nombre}}">
+                            <img src="{{ plt.img.url }}" alt="{{plt.nombre}}">
                         </figure>
                     </div>
                 {% endfor %}

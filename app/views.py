@@ -1,13 +1,10 @@
-from django.contrib.auth.hashers import make_password
 import os
+
+from django.contrib.auth.hashers import make_password
 from django.core.files import File
-
-
-
 # Create your views here.
 from django.shortcuts import render, redirect
 from .models import *
-from django.http import HttpResponse
 
 
 def mostrar_admi(request):
@@ -22,7 +19,7 @@ def do_login(request):
     else:
         return render(request, '')
 def do_logout(request):
-    logout(request)
+    "logout(request)"
     return redirect('login')
 
 def mostrar_inicio(request):
@@ -41,17 +38,17 @@ def register(request):
 
         if password != password_confirmacion:
             errors.append("Las contraseñas no coinciden")
-        existe_usuario = Usuario.objects.filter(username=username).exists()
+        existe_usuario = User.objects.filter(username=username).exists()
         if existe_usuario:
             errors.append("Ya existe un usuario con ese nombre")
-        existe_mail = Usuario.objects.filter(email=mail).exists()
+        existe_mail = User.objects.filter(email=mail).exists()
         if existe_mail:
             errors.append("Ya existe un usuario con ese email")
 
         if len(errors) != 0:
             return render(request, "register.html", {"errores": errors, "username": username})
         else:
-            user = Usuario.objects.create_user(username=username, email=mail, password=make_password(password), nombre_completo=nombre_completo)
+            user = User.objects.create_user(username=username, email=mail, password=make_password(password), nombre_completo=nombre_completo)
             user.save()
             return redirect("login")
 
@@ -98,11 +95,11 @@ def mostrar_series(request):
     return render(request, 'admi.html', {'series': series})
 
 def mostrar_usuarios(request):
-    usuarios = Usuario.objects.all()
+    usuarios = User.objects.all()
     return render(request, 'admi.html', {'usuarios': usuarios})
 
 def eliminar_usuario(request, id):
-    usuario = Usuario.objects.get(id=id)
+    usuario = User.objects.get(id=id)
     usuario.delete()
     return redirect('/administrador/')
 
@@ -153,5 +150,18 @@ def settings(request):
     else:
         return render(request, 'login.html')
 
-def plataformas (request):
-    return render(request, 'plataformas.html')
+def plataformas(request):
+    plt = plataforma.objects.all()
+    return render(request, 'plataformas.html', {'plataforma': plt})
+
+
+def add_plataformas():
+    directory = 'media/plataformas'
+    for filename in os.listdir(directory):
+        if filename.endswith('.svg'):
+            path = os.path.join(directory, filename)
+            name = os.path.splitext(filename)[0]  # get the file name without the extension
+            if not plataforma.objects.filter(nombre=name).exists():  # check if a Platform with the same name already exists
+                with open(path, 'rb') as img_file:
+                    plt = plataforma(nombre=name)
+                    plt.img.save(filename, File(img_file), save=True)
