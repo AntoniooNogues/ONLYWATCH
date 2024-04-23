@@ -38,6 +38,7 @@ urlpatterns = [
     path('administrador/editar_serie/<int:id>', views.editar_serie, name='editar_serie'),
     path('usuario/perfil', views.settings, name='configuracion'),
     path('home/', views.mostrar_inicio, name='home'),
+    path('plataformas/', views.plataformas, name='plataformas'),
 
 ]
 
