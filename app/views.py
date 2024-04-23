@@ -1,12 +1,9 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
-
 import os
 from django.core.files import File
-
-
-
+from django.conf import settings
 # Create your views here.
 from django.shortcuts import render, redirect
 from .models import *
