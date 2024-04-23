@@ -33,16 +33,15 @@
             <div class="title ml-4">
                 <h3 class="has-text-black">Elige las plataformas que dispongas de streaming:</h3>
             </div>
-            <div class="columns is-multiline subtitle">
+            <div class="columns is-multiline">
                 {% for plt in plataforma %}
-                    <div class="column is-one-sixth"> <!-- Para tener seis columnas por fila -->
+                    <div class="column is-one-quarter">
                         <figure class="image is-128x128">
                             <img src="{{ plt.img.url }}" alt="{{plt.nombre}}">
                         </figure>
                     </div>
                 {% endfor %}
             </div>
-
         </section>
     </main>
     <!-- Formulario -->
