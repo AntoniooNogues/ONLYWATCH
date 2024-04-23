@@ -4,18 +4,17 @@ from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 # Create your models here.
 class plataforma(models.Model):
     nombre = models.CharField(max_length=50)
-    img = models.CharField(max_length=300)
-
+    img = models.ImageField(upload_to='plataformas/')
     def __str__(self):
         return f"{self.nombre}  {self.img}"
 
 class Rol(models.TextChoices):
     ADMINISTRADOR = 'ADMIN', 'Administrador'
-    USUARIO = 'USUARIO', 'Usuario'
+    USUARIO = 'USER', 'user'
 
 
 class UserManager(BaseUserManager):
-    def create_user(self,  email, password=None, **extra_fields):
+    def create_user(self, email, password=None, **extra_fields):
         if not email:
             raise ValueError('El usuario debe tener un email')
         email = self.normalize_email(email)
@@ -31,8 +30,6 @@ class UserManager(BaseUserManager):
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('Superuser debe tener is_superuser=True.')
         return self.create_user(email, password, **extra_fields)
-
-
 
 class User(AbstractBaseUser):
     username = models.CharField(max_length=50, unique=True)

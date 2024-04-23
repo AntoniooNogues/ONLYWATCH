@@ -1,17 +1,11 @@
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.hashers import make_password
-from django.contrib.auth.hashers import check_password
-
 import os
+
+from django.contrib.auth.hashers import make_password
 from django.core.files import File
-
-
-
 # Create your views here.
 from django.shortcuts import render, redirect
 from .models import *
-from django.http import HttpResponse
-
+from django.conf import settings
 
 def mostrar_admi(request):
     return render(request, 'admi.html')
@@ -39,21 +33,22 @@ def do_login(request):
 def do_logout(request):
     logout(request)
     return redirect('login')
+
 def mostrar_inicio(request):
     return render(request, 'inicio.html')
-
 def register(request):
-    if request.method == "GET":
-        return render(request, "register.html")
+    if request.method == 'GET':
+        return render(request, 'register.html')
     else:
         username = request.POST.get('username')
-        mail = request.POST.get('mail')
+        nombre_completo = request.POST.get('nombre_completo')
+        mail = request.POST.get('email')
         password = request.POST.get('password')
-        passwaord2 = request.POST.get('repeatPassword')
+        password_confirmacion = request.POST.get('password_confirmacion')
 
         errors = []
 
-        if password != passwaord2:
+        if password != password_confirmacion:
             errors.append("Las contraseñas no coinciden")
         existe_usuario = User.objects.filter(username=username).exists()
         if existe_usuario:
@@ -65,23 +60,17 @@ def register(request):
         if len(errors) != 0:
             return render(request, "register.html", {"errores": errors, "username": username})
         else:
-            user = User.objects.create(username=username, password=make_password(password), email=mail)
+            user = User.objects.create_user(username=username, email=mail, password=make_password(password), nombre_completo=nombre_completo)
             user.save()
+            return redirect("login")
 
-            return redirect('login')
-
-
-def reset_password(request):
-    if request.method == 'GET':
-        return render(request, 'reset_password.html')
-    else:
-        return render(request, 'reset_password.html')
 
 def reset_password(request):
     if request.method == 'GET':
         return render(request, 'reset_password.html')
     else:
         return render(request, 'reset_password.html')
+
 def new_peliculas(request):
     if request.method == 'GET':
         uno = pelicula.objects.all()
@@ -165,10 +154,31 @@ def editar_serie(request, id):
 
         return redirect('/administrador/')
 
-def settings(request):
+def configuracion(request):
     usuario = request.user.username
     if usuario is not None:
         user = User.objects.get(username=usuario)
         return render(request, 'User_information.html', {'user': user})
     else:
         return render(request, 'login.html')
+
+def plataformas(request):
+    add_plataformas()
+    plt = plataforma.objects.all()
+    return render(request, 'plataformas.html', {'plataforma': plt})
+
+
+def add_plataformas():
+    # Directory where the images are located
+    directory = os.path.join(settings.MEDIA_ROOT, 'plataformas')    # Iterate over all files in the directory
+    for filename in os.listdir(directory):
+        if filename.endswith('.png'):
+            # Get the file name without the extension
+            name = os.path.splitext(filename)[0]
+            # Construct the relative path by adding 'plataformas'
+            relative_path = os.path.join('plataformas', filename)
+            # Check if the name already exists in the database to avoid duplicates
+            if not plataforma.objects.filter(nombre=name).exists():
+                # Create a new instance of the model with the desired path
+                new_plataforma = plataforma(nombre=name, img=relative_path)
+                new_plataforma.save()

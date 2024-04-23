@@ -61,7 +61,14 @@ body{
 .blanco:hover{
     font-size: 18.1px;
 }
+
 a{
     color: black;
 }
 
+.boton{
+    border: 3px solid #FFB36D;
+    border-radius: 25px;
+    background-color: #FB752D;
+
+}
