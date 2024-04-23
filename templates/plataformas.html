@@ -13,8 +13,8 @@
     <!-- Header -->
     <header class="py-4">
       <section class="columns">
-        <div class="column is-one-quarter is-flex is-align-content-start">
-          <span class="level-item ml-4">
+        <div class="column is-one-quarter is-flex is-align-content-center">
+          <span class="level-item ml-4 is-align-content-center">
             <img src="/static/img/logoSmall.svg" alt="Logo pequeño de Onlywatch" class="is-hidden-mobile"/>
           </span>
           <a class="level-item ml-5 mt-1 is-size-4">Inicio</a>
@@ -28,22 +28,22 @@
     </header>
 
     <!-- Main -->
-    <main class="ml-5 hero is-small">
-        <section class="hero-body">
-            <div class="title ml-4">
-                <h3 class="has-text-black">Elige las plataformas que dispongas de streaming:</h3>
-            </div>
-            <div class="columns is-multiline">
-                {% for plt in plataforma %}
-                    <div class="column is-one-quarter">
-                        <figure class="image is-128x128">
-                            <img src="{{ plt.img.url }}" alt="{{plt.nombre}}">
-                        </figure>
-                    </div>
-                {% endfor %}
-            </div>
-        </section>
+    <main class="container mt-5 mb-1">
+        <div class="title ml-4 mb-4">
+            <h3 class="has-text-black">Elige las plataformas que dispongas de streaming:</h3>
+        </div>
+        <div class="columns is-multiline is-mobile is-justify-content-center imagenes mt-5">
+            {% for plt in plataforma %}
+                <div class="column is-2-desktop is-3-tablet is-6-mobile mt-5 mb-5 center-image">
+                    <figure class="image is-128x128 imagenes">
+                        <img src="{{ plt.img.url }}" alt="{{ plt.nombre }}">
+                    </figure>
+                </div>
+            {% endfor %}
+        </div>
     </main>
+    <br>
+
     <!-- Formulario -->
     {% include "footer.html" %}
     <script src="/static/js/index.js"></script>
