@@ -43,8 +43,8 @@ def register(request):
         username = request.POST.get('username')
         nombre_completo = request.POST.get('nombre_completo')
         mail = request.POST.get('email')
-        password = request.POST.get('password')
-        password_confirmacion = request.POST.get('password_confirmacion')
+        password = request.POST.get('password1')
+        password_confirmacion = request.POST.get('password2')
 
         errors = []
 
