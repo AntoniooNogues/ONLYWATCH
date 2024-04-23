@@ -5,7 +5,7 @@ from django.core.files import File
 # Create your views here.
 from django.shortcuts import render, redirect
 from .models import *
-
+from django.conf import settings
 
 def mostrar_admi(request):
     return render(request, 'admi.html')
@@ -14,12 +14,24 @@ def mostrar_peliculas(request):
     peliculas = pelicula.objects.all()
     return render(request, 'admi.html', {'peliculas': peliculas})
 def do_login(request):
-    if request.method == 'GET':
-        return render(request, 'login.html')
-    else:
-        return render(request, '')
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            # Redirección tras un login exitoso
+            return redirect('home')
+        else:
+            # Mensaje de error si la autenticación falla
+            return render(request, 'login.html', {"error": "No se ha podido iniciar sesión intentalo de nuevo"})
+
+    # Mostrar formulario de login para método GET
+    return render(request, 'login.html')
 def do_logout(request):
-    "logout(request)"
+    logout(request)
     return redirect('login')
 
 def mostrar_inicio(request):
@@ -142,7 +154,7 @@ def editar_serie(request, id):
 
         return redirect('/administrador/')
 
-def settings(request):
+def configuracion(request):
     usuario = request.user.username
     if usuario is not None:
         user = User.objects.get(username=usuario)
@@ -157,17 +169,16 @@ def plataformas(request):
 
 
 def add_plataformas():
-    # Directorio donde están las imágenes
-    directory = 'media/plataformas'
-    # Recorre todos los archivos en el directorio
+    # Directory where the images are located
+    directory = os.path.join(settings.MEDIA_ROOT, 'plataformas')    # Iterate over all files in the directory
     for filename in os.listdir(directory):
         if filename.endswith('.png'):
-            # Obtén el nombre del archivo sin la extensión
+            # Get the file name without the extension
             name = os.path.splitext(filename)[0]
-            # Construye la ruta relativa desde /plataformas/
-            relative_path = os.path.join('/plataformas', filename)
-            # Comprueba si el nombre ya existe en la base de datos para evitar duplicados
+            # Construct the relative path by adding 'plataformas'
+            relative_path = os.path.join('plataformas', filename)
+            # Check if the name already exists in the database to avoid duplicates
             if not plataforma.objects.filter(nombre=name).exists():
-                # Crea una nueva instancia del modelo con la ruta deseada
+                # Create a new instance of the model with the desired path
                 new_plataforma = plataforma(nombre=name, img=relative_path)
                 new_plataforma.save()
