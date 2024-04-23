@@ -151,17 +151,23 @@ def settings(request):
         return render(request, 'login.html')
 
 def plataformas(request):
+    add_plataformas()
     plt = plataforma.objects.all()
     return render(request, 'plataformas.html', {'plataforma': plt})
 
 
 def add_plataformas():
+    # Directorio donde están las imágenes
     directory = 'media/plataformas'
+    # Recorre todos los archivos en el directorio
     for filename in os.listdir(directory):
-        if filename.endswith('.svg'):
-            path = os.path.join(directory, filename)
-            name = os.path.splitext(filename)[0]  # get the file name without the extension
-            if not plataforma.objects.filter(nombre=name).exists():  # check if a Platform with the same name already exists
-                with open(path, 'rb') as img_file:
-                    plt = plataforma(nombre=name)
-                    plt.img.save(filename, File(img_file), save=True)
+        if filename.endswith('.png'):
+            # Obtén el nombre del archivo sin la extensión
+            name = os.path.splitext(filename)[0]
+            # Construye la ruta relativa desde /plataformas/
+            relative_path = os.path.join('/plataformas', filename)
+            # Comprueba si el nombre ya existe en la base de datos para evitar duplicados
+            if not plataforma.objects.filter(nombre=name).exists():
+                # Crea una nueva instancia del modelo con la ruta deseada
+                new_plataforma = plataforma(nombre=name, img=relative_path)
+                new_plataforma.save()
