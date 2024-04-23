@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Información Usuario</title>
+    <link rel="stylesheet" href="/static/bulma/css/style.css">
+    <link rel="stylesheet" href="/static/perfil_usuario.css">
+    <script src="https://kit.fontawesome.com/b9d5886cee.js" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: #FFE8D3" class="is-size-4">
+    {% load static %}
+    {% block content %}
+    {% csrf_token %}
+    <header>
+         <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #FFE8D3">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="#">
+                        <img src="/static/img/logo_sinfondo%201-min.svg" alt="">
+                    </a>
+    
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                       data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+    
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item">
+                            Inicio
+                        </a>
+                        <a class="navbar-item" href=""><i class="fa-solid fa-magnifying-glass "></i></a>
+                    </div>
+                </div>
+                 <div class="navbar-end">
+                     <div class="navbar-item">
+                         <i class="fa-regular fa-bell"></i>
+                     </div>
+                    <div class="navbar-item">
+                        <div class="button is-size-5 " style="background-color: #FDA657; border-radius: 15px">
+                            <img style="border-radius: 5px" src="{{ user.img }}" alt="">
+                            <p class="ml-2 " style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
+                        </div>
+                    </div>
+                </div>
+         </nav>
+    </header>
+    
+
+    <main class=" ml-6 pl-4 mr-6 pr-4">
+        <h1 class="is-size-2 ">Bienvenido, {{ user.nombre_completo }} </h1>
+        <div style="background-color: #FFB36D; border-radius: 15px" class="mt-4">
+            <section class="columns">
+                <div class="column is-one-quarter mx-4">
+{#                    oscurecer la imgen al hacer hover y que salga un mas#}
+                    <img src="{{ user.img }}" alt="" style="border-radius: 100px" class="">
+                </div>
+            </section>
+        </div>
+    </main>
+    {% endblock %}
+</body>
+</html>
