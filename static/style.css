@@ -58,11 +58,17 @@ body{
     font-size: 19px;
     color: #ffea00;
 }
-.blanco:hover{
-    font-size: 18.1px;
+.blanco:hover {
+    font-size: 18px;
 }
 
 a{
     color: black;
 }
+
+.btt{
+    background-color: #FDA657; border-radius: 15px
+}
+
+
 

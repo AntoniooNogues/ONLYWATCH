@@ -38,7 +38,7 @@ def do_logout(request):
     logout(request)
     return redirect('login')
 def mostrar_inicio(request):
-    return render(request, 'inicio.html')
+    return render(request, 'user_home.html')
 
 def register(request):
     if request.method == 'GET':

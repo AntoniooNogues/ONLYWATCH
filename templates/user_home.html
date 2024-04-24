@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://kit.fontawesome.com/2eb7a633b0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/bulma/css/style.css" />
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+
+</head>
+<body style="background-color: #FFE8D3" class="familiy has-text-black">
+    {% csrf_token %}
+    <!-- Header -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #FFE8D3">
+                <div class="navbar-brand">
+                    <a class="navbar-item image" href="{{ redirect  }}">
+                        <img src="/static/img/logo_sinfondo%201-min.svg" alt="" class="is-64x64">
+                    </a>
+
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                       data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                  </div>
+
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item">
+                            Inicio
+                        </a>
+                        <a class="navbar-item">
+                            Peliculas
+                        </a>
+                        <a class="navbar-item">
+                            Series
+                        </a>
+                        <a class="navbar-item" href=""><i class="fa-solid fa-magnifying-glass "></i></a>
+                    </div>
+                </div>
+                 <div class="navbar-end">
+                     <div class="navbar-item">
+                         <a><i class="fa-regular fa-bell"></i></a>
+                     </div>
+                    <div class="navbar-item">
+                        <a class="is-link">
+                            <div class="button is-size-5 btt">
+                            <img style="border-radius: 5px" src="{{ user.img }}" alt="">
+                            <p class="ml-2 " style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+         </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      
+    </main>
+
+
+    {% include "footer.html" %}
+    <script defer src="{% static 'js/carrusel.js' %}"></script>
+</body>
+</html>
