@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>Información Usuario</title>
-    <link rel="stylesheet" href="/static/bulma/css/style.css">
-    <link rel="stylesheet" href="/static/perfil_usuario.css">
+    <link rel="stylesheet" href="{% static 'bulma/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'perfil_usuario.css' %}">
     <script src="https://kit.fontawesome.com/b9d5886cee.js" crossorigin="anonymous"></script>
 </head>
 <body style="background-color: #FFE8D3" class="is-size-4">
@@ -41,7 +42,6 @@
                      </div>
                     <div class="navbar-item">
                         <div class="button is-size-5 " style="background-color: #FDA657; border-radius: 15px">
-                            <img style="border-radius: 5px" src="{{ user.img }}" alt="">
                             <p class="ml-2 " style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
                         </div>
                     </div>
@@ -53,14 +53,86 @@
     <main class=" ml-6 pl-4 mr-6 pr-4">
         <h1 class="is-size-2 ">Bienvenido, {{ user.nombre_completo }} </h1>
         <div style="background-color: #FFB36D; border-radius: 15px" class="mt-4">
-            <section class="columns">
-                <div class="column is-one-quarter mx-4">
-{#                    oscurecer la imgen al hacer hover y que salga un mas#}
-                    <img src="{{ user.img }}" alt="" style="border-radius: 100px" class="">
+            <form action="" method="post" class="columns p-3">
+                {% csrf_token %}
+                <div class="column is-one-quarter is-flex is-justify-content-center has-text-centered is-align-content-center px-0 p-2 "
+                     style="flex-direction: column">
+                    {% if user.img %}
+                        <section class="is-flex is-justify-content-center">
+                            <img src="{{ user.img }}" alt="" style="border-radius: 50%;"
+                                 class="is-flex is-justify-content">
+                        </section>
+                        <p class="has-text-grey is-size-6 p-2">Pincha en la imagen para <br> cambiar la foto de perfil
+                        </p>
+                    {% else %}
+                        <section class="is-flex is-justify-content-center">
+                            <img src="{% static 'img/perfilenblanco.webp' %}" style="border-radius: 50%; width: 50%">
+                        </section>
+                        <p class="has-text-grey is-size-6 p-2">Pincha en la imagen para <br> cambiar la foto de perfil
+                        </p>
+                    {% endif %}
+                    <label class="mt-4">Fecha de nacimiento:</label>
+                    {% if user.fecha_nacimiento %}
+                        <section class="is-flex is-justify-content-center mt-2">
+                            <input type="text" value="{{ user.fecha_nacimiento }}" class="input is-rounded"
+                                   style="width: 75%; background-color: #D9D9D9;">
+                        </section>
+                    {% else %}
+                        <section class="is-flex is-justify-content-center mt-2">
+                            <input type="text" placeholder="Tu fecha de nacimiento" class="input is-rounded "
+                                   style="width: 75%; background-color: #D9D9D9;">
+                        </section>
+                    {% endif %}
+                    <label class=" mt-4 ">Sexo:</label>
+                    <section class="is-flex is-justify-content-center mt-2">
+                        <input type="text" value="{{ user.sexo }}" class="input is-rounded"
+                               style="width: 75%; background-color: #D9D9D9;">
+                    </section>
                 </div>
-            </section>
+                <div class="column px-0 p-2 ">
+                    <h2 class="is-size-3">Configura tu perfil</h2>
+                    <section class="columns">
+                        <div class="column mt-3 is-flex is-flex-direction-column">
+                            <label for="">Nombre de Usuario:</label>
+                            <input type="text" value="{{ user.username }}" class="input is-rounded mt-2"
+                                   style="background-color: #D9D9D9; width: 50%">
+                            <label class="mt-3" for="">Nombre Completo:</label>
+                            <input type="text" value="{{ user.nombre_completo }}" class="input is-rounded mt-2"
+                                   style="background-color: #D9D9D9; width: 50%">
+                        </div>
+                        <div class="column mt-3 is-flex is-flex-direction-column">
+                            <label for="">Correo electrónico:</label>
+                            <input type="text" value="{{ user.email }}" class="input is-rounded mt-2"
+                                   style="background-color: #D9D9D9; width: 50%" disabled>
+                            <label class="mt-3" for="">Contraseña:</label>
+                            <input type="password" placeholder="xxxxxxxxxx" class="input is-rounded mt-2 int"
+                                   style="background-color: #D9D9D9; width: 50%" disabled>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Plataformas:</h3>
+                        {% for p in plataforma %}
+                            
+                        {% endfor %}
+                    </section>
+                </div>
+            </form>
+            <div id="modal-js-example" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="box">
+                        <p>Modal JS example</p>
+                        <!-- Your content -->
+                    </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+            <button class="js-modal-trigger button is-info" data-target="modal-js-example">
+                Cambiar contraseña
+            </button>
         </div>
     </main>
     {% endblock %}
+    <script src="{% static 'js/modals.js' %}"></script>
 </body>
 </html>

@@ -1,0 +1,7 @@
+input::placeholder{
+    color: black !important;
+}
+input{
+    border: none !important;
+    color: black !important;
+}

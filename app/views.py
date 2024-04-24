@@ -2,9 +2,12 @@ from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
-
+from datetime import datetime
 import os
 from django.core.files import File
+import random
+import smtplib
+from django.core.mail import send_mail
 
 
 
@@ -189,3 +192,25 @@ def add_plataformas():
                 # Create a new instance of the model with the desired path
                 new_plataforma = plataforma(nombre=name, img=relative_path)
                 new_plataforma.save()
+
+# def calcular_edad(fecha_nacimiento):
+#     nacimiento = datetime.strptime(fecha_nacimiento, '%Y-%m-%d')
+#     hoy = datetime.now()
+#     edad = hoy.year - nacimiento.year - ((hoy.month, hoy.day) < (nacimiento.month, nacimiento.day))
+#     return edad
+# edad = calcular_edad(User.fecha_nacimiento)
+
+def generate_code():
+    return random.randint(100000, 999999)
+
+def send_email(user_email, code):
+    send_mail(
+        'Codigo de verificación',
+        f'Tu codigo de verificación es {code}',
+        'onlywatch.info@gmail.es',
+        [user_email],
+        fail_silently=False,
+    )
+
+def verify_code(user_input, code):
+    return user_input == code
