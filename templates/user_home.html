@@ -3,10 +3,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Inicio</title>
     <script src="https://kit.fontawesome.com/2eb7a633b0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/static/bulma/css/style.css" />
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
 
 
 
@@ -17,34 +17,33 @@
     <header>
         <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #FFE8D3">
                 <div class="navbar-brand">
-                    <a class="navbar-item image" href="{{ redirect  }}">
-                        <img src="/static/img/logo_sinfondo%201-min.svg" alt="" class="is-64x64">
+                    <a class="navbar-item image " href="{{ redirect  }}">
+                        <img src="/static/img/logo_sinfondo 1.png" alt="" class="is-96x96">
                     </a>
-
                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
                        data-target="navbarBasicExample">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
                     </a>
                   </div>
-
                 <div id="navbarBasicExample" class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item">
+                        <a class="navbar-item has-text-black">
                             Inicio
                         </a>
-                        <a class="navbar-item">
+                        <a class="navbar-item has-text-black">
                             Peliculas
                         </a>
-                        <a class="navbar-item">
+                        <a class="navbar-item has-text-black">
                             Series
                         </a>
-                        <a class="navbar-item" href=""><i class="fa-solid fa-magnifying-glass "></i></a>
+                        <a class="navbar-item has-text-black" href=""><i class="fa-solid fa-magnifying-glass "></i></a>
                     </div>
-                </div>
-                 <div class="navbar-end">
+                    <div class="navbar-end">
                      <div class="navbar-item">
                          <a><i class="fa-regular fa-bell"></i></a>
                      </div>
@@ -56,17 +55,76 @@
                             </div>
                         </a>
                     </div>
+                 </div>
                 </div>
          </nav>
     </header>
 
     <!-- Main content -->
-    <main>
-      
+    <!-- Gallery | Cards @a7v8x-->
+    <main class="mb-6 mt-3">
+       <div class="columns is-centered mb-4">
+            <div class="slider" x-data="{start: true, end: false}">
+              <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+                <div class="slider__item">
+                  <img class="slider__image" src="https://images.unsplash.com/photo-1599422314077-f4dfdaa4cd09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODR8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
+                  <div class="slider__info">
+                    <h2>This is a card</h2>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <img class="slider__image" src="https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
+                  <div class="slider__info">
+                    <h2>This is a card</h2>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <img class="slider__image" src="https://images.unsplash.com/photo-1608501821300-4f99e58bba77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxhYnN0cmFjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
+                  <div class="slider__info">
+                    <h2>This is a card</h2>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <img class="slider__image" src="https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
+                  <div class="slider__info">
+                    <h2>This is a card</h2>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <img class="slider__image" src="https://images.unsplash.com/photo-1604871000636-074fa5117945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
+                  <div class="slider__info">
+                    <h2>This is a card</h2>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <img class="slider__image" src="https://images.unsplash.com/photo-1555448248-2571daf6344b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
+                  <div class="slider__info">
+                    <h2>This is a card</h2>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <img class="slider__image" src="https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
+                  <div class="slider__info">
+                    <h2>This is a card</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="slider__nav">
+                <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth * -1, behavior: 'smooth'});" x-bind:class="start ? '' : 'slider__nav__button--active'">Previous</button>
+                <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth, behavior: 'smooth'});" x-bind:class="end ? '' : 'slider__nav__button--active'">Next</button>
+              </div>
+            </div>
+       </div>
+       <div class="columns is-centered">
+            <div class="column ml-5 mr-5">
+                <p class="is-bold is-uppercase">Continuar viendo: </p>
+            </div>
+       </div>
     </main>
 
 
     {% include "footer.html" %}
-    <script defer src="{% static 'js/carrusel.js' %}"></script>
+    <script src="{% static 'js/navbar.js' %} "></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
 </body>
 </html>
