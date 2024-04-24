@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
@@ -7,7 +8,7 @@ from django.core.files import File
 
 
 
-# Create your views here.
+# Create your views here
 from django.shortcuts import render, redirect
 from .models import *
 from django.http import HttpResponse
@@ -21,10 +22,10 @@ def mostrar_peliculas(request):
     return render(request, 'admi.html', {'peliculas': peliculas})
 def do_login(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
+        email = request.POST.get('email')
         password = request.POST.get('password')
 
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, email=email, password=password)
 
         if user is not None:
             login(request, user)
@@ -66,7 +67,7 @@ def register(request):
         if len(errors) != 0:
             return render(request, "register.html", {"errores": errors, "username": username})
         else:
-            user = User.objects.create_user(username=username, email=mail, password=make_password(password), nombre_completo=nombre_completo)
+            user = User.objects.create(username=username, email=mail, password=make_password(password), nombre_completo=nombre_completo)
             user.save()
             return redirect("login")
 
