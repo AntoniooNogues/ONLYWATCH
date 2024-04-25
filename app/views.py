@@ -38,7 +38,8 @@ def do_logout(request):
     logout(request)
     return redirect('login')
 def mostrar_inicio(request):
-    return render(request, 'user_home.html')
+    pelis = pelicula.objects.all()
+    return render(request, 'user_home.html', {'peliculas': pelis})
 
 def register(request):
     if request.method == 'GET':

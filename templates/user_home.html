@@ -62,53 +62,19 @@
 
     <!-- Main content -->
     <!-- Gallery | Cards @a7v8x-->
-    <main class="mb-6 mt-3">
+    <main class="mb-6 mt-5">
        <div class="columns is-centered mb-4">
             <div class="slider" x-data="{start: true, end: false}">
               <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
                   <!-- Slider items: 10 min <> 15-20 max -->
-                <div class="slider__item">
-                  <img class="slider__image" src="https://images.unsplash.com/photo-1599422314077-f4dfdaa4cd09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODR8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
-                  <div class="slider__info">
-                    <h2>This is a card</h2>
-                  </div>
-                </div>
-                <div class="slider__item">
-                  <img class="slider__image" src="https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
-                  <div class="slider__info">
-                    <h2>This is a card</h2>
-                  </div>
-                </div>
-                <div class="slider__item">
-                  <img class="slider__image" src="https://images.unsplash.com/photo-1608501821300-4f99e58bba77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxhYnN0cmFjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
-                  <div class="slider__info">
-                    <h2>This is a card</h2>
-                  </div>
-                </div>
-                <div class="slider__item">
-                  <img class="slider__image" src="https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
-                  <div class="slider__info">
-                    <h2>This is a card</h2>
-                  </div>
-                </div>
-                <div class="slider__item">
-                  <img class="slider__image" src="https://images.unsplash.com/photo-1604871000636-074fa5117945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
-                  <div class="slider__info">
-                    <h2>This is a card</h2>
-                  </div>
-                </div>
-                <div class="slider__item">
-                  <img class="slider__image" src="https://images.unsplash.com/photo-1555448248-2571daf6344b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
-                  <div class="slider__info">
-                    <h2>This is a card</h2>
-                  </div>
-                </div>
-                <div class="slider__item">
-                  <img class="slider__image" src="https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fGFic3RyYWN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Image">
-                  <div class="slider__info">
-                    <h2>This is a card</h2>
-                  </div>
-                </div>
+                  {% for p in peliculas %}
+                        <div class="slider__item">
+                            <img class="slider__image" src="{{ p.img }}" alt="Imagen de la pelicula {{ p.nombre }}">
+                            <div class="slider__info">
+                                <h2>{{ p.nombre }}</h2>
+                            </div>
+                        </div>
+                {% endfor %}
               </div>
               <div class="slider__nav has-text-black is-bold">
                 <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth * -1, behavior: 'smooth'});" x-bind:class="start ? '' : 'slider__nav__button--active'">Previo</button>

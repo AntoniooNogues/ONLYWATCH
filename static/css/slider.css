@@ -47,7 +47,7 @@ body {
 .slider__content::-webkit-scrollbar {
   height: 0.5rem;
   width: 0.5rem;
-  border-radius: 1rem;
+  border-radius: 5rem;
   background: var(--scrollbackground);
 }
 .slider__content::-webkit-scrollbar-thumb {
@@ -92,6 +92,11 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.slider__item:hover{
+  transform: scale(1.01) ;
+  transition: 2s ease-out;
 }
 
 .slider__info {
