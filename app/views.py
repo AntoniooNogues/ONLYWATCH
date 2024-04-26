@@ -165,10 +165,11 @@ def editar_serie(request, id):
         return redirect('/administrador/')
 
 def configuracion(request):
-    usuario = request.user.username
-    if usuario is not None:
-        user = User.objects.get(username=usuario)
-        return render(request, 'User_information.html', {'user': user})
+    user = User.objects.get(id=request.user.id)
+    user_plataformas = user.usuario_plataforma_set.all()
+    plataformas_1 = [up.plataforma for up in user_plataformas]
+    if user is not None:
+        return render(request, 'User_information.html', {'user': user, 'plataformas': plataformas_1})
     else:
         return render(request, 'login.html')
 
@@ -214,3 +215,9 @@ def send_email(user_email, code):
 
 def verify_code(user_input, code):
     return user_input == code
+
+
+def mostar_plataformas_usuario(request):
+    usuario = User.objects.get(id=request.user.id)
+    plataformas_1 = usuario.usuario_plataforma_set.all()
+    return render(request, 'User_information.html', {'plataformas': plataformas_1})

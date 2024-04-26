@@ -42,6 +42,7 @@ urlpatterns = [
     path('usuario/perfil', views.configuracion, name='configuracion'),
     path('home/', views.mostrar_inicio, name='home'),
     path('plataformas/', views.plataformas, name='plataformas'),
+    path('peliculas/', views.mostar_plataformas_usuario, name='peliculas'),
 ]
 
 if settings.DEBUG:

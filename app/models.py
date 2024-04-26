@@ -196,6 +196,13 @@ class plataforma_serie(models.Model):
     def __str__(self):
         return f"{self.plataforma} {self.serie}"
 
+class usuario_plataforma(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    plataforma = models.ForeignKey(plataforma, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.usuario} {self.plataforma}"
+
 class personaje_pelicula(models.Model):
     nombre_personaje = models.CharField(max_length=50)
     actor = models.ForeignKey(actor, on_delete=models.CASCADE)

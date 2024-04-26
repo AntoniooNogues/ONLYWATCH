@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
+        {% load static %}
     <meta charset="UTF-8">
     <title>Información Usuario</title>
     <link rel="stylesheet" href="{% static 'bulma/css/style.css' %}">
@@ -93,10 +93,10 @@
                     <h2 class="is-size-3">Configura tu perfil</h2>
                     <section class="columns">
                         <div class="column mt-3 is-flex is-flex-direction-column">
-                            <label for="">Nombre de Usuario:</label>
+                            <label >Nombre de Usuario:</label>
                             <input type="text" value="{{ user.username }}" class="input is-rounded mt-2"
                                    style="background-color: #D9D9D9; width: 50%">
-                            <label class="mt-3" for="">Nombre Completo:</label>
+                            <label class="mt-3" >Nombre Completo:</label>
                             <input type="text" value="{{ user.nombre_completo }}" class="input is-rounded mt-2"
                                    style="background-color: #D9D9D9; width: 50%">
                         </div>
@@ -104,16 +104,24 @@
                             <label for="">Correo electrónico:</label>
                             <input type="text" value="{{ user.email }}" class="input is-rounded mt-2"
                                    style="background-color: #D9D9D9; width: 50%" disabled>
-                            <label class="mt-3" for="">Contraseña:</label>
-                            <input type="password" placeholder="xxxxxxxxxx" class="input is-rounded mt-2 int"
+                            <label class="mt-3">Contraseña:</label>
+                            <input type="password" value="xxxxxxxx" class="input is-rounded mt-2 int"
                                    style="background-color: #D9D9D9; width: 50%" disabled>
                         </div>
                     </section>
-                    <section>
+                    <section class="is-flex is-flex-direction-column">
                         <h3>Plataformas:</h3>
-                        {% for p in plataforma %}
-                            
-                        {% endfor %}
+                        <div class="columns is-multiline is-mobile my-2">
+                            {% for p in plataformas %}
+                                <div class="column is-2-desktop is-3-tablet is-6-mobile center-image">
+                                    <figure class="is-128x128">
+                                        <img src="{{ p.img.url }}" alt="{{ p.nombre }}">
+                                    </figure>
+                                </div>
+                            {% empty %}
+                                <p>No dispones de plataformas vinculadas.</p>
+                            {% endfor %}
+                        </div>
                     </section>
                 </div>
             </form>
