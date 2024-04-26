@@ -49,7 +49,7 @@
                      </div>
                     <div class="navbar-item">
                         <a class="is-link">
-                            <div class="button is-size-5 btt">
+                            <div class="button is-size-6 btt">
                             <img style="border-radius: 5px" src="{{ user.img }}" alt="">
                             <p class="ml-2 " style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
                             </div>
@@ -63,11 +63,11 @@
     <!-- Main content -->
     <!-- Gallery | Cards @a7v8x-->
     <main class="mb-6 mt-5">
-       <div class="columns is-centered mb-4">
+       <div class="columns is-centered">
             <div class="slider" x-data="{start: true, end: false}">
               <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
                   <!-- Slider items: 10 min <> 15-20 max -->
-                  {% for p in peliculas %}
+                  {% for p in header %}
                         <div class="slider__item">
                             <img class="slider__image" src="{{ p.img }}" alt="Imagen de la pelicula {{ p.nombre }}">
                             <div class="slider__info">
@@ -82,11 +82,26 @@
               </div>
             </div>
        </div>
-       <div class="columns is-centered">
+       <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
+       <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
+       <div class="columns is-centered mr-5 ml-5">
             <div class="column ml-5 mr-5">
-                <p class="is-bold is-uppercase">Continuar viendo: </p>
+                <p class="is-bold is-uppercase" style="font-weight: 900">Continuar viendo: </p>
             </div>
-       </div>
+            <div class="columns is-multiline is-mobile">
+                {% for pl in pelicula %}
+                    <div class="column is-one-fifth-desktop is-half-mobile">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="{{ pl.img }}" alt="Imagen de la pelicula {{ pl.nombre }}">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>  
+        </div>
     </main>
 
 
