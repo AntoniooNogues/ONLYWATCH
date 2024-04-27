@@ -4,15 +4,14 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
 from datetime import datetime
 import os
+from django.contrib import messages
 from django.core.files import File
 import random
 import smtplib
 from django.core.mail import send_mail
-
-
-
 # Create your views here
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 from .models import *
 from django.http import HttpResponse
 
@@ -167,9 +166,10 @@ def editar_serie(request, id):
 def configuracion(request):
     user = User.objects.get(id=request.user.id)
     user_plataformas = user.usuario_plataforma_set.all()
+    plataformas_totales = plataforma.objects.all()
     plataformas_1 = [up.plataforma for up in user_plataformas]
     if user is not None:
-        return render(request, 'User_information.html', {'user': user, 'plataformas': plataformas_1})
+        return render(request, 'User_information.html', {'user': user, 'plataformas': plataformas_1, 'totales': plataformas_totales})
     else:
         return render(request, 'login.html')
 
@@ -201,23 +201,61 @@ def add_plataformas():
 #     return edad
 # edad = calcular_edad(User.fecha_nacimiento)
 
-def generate_code():
-    return random.randint(100000, 999999)
+# def generate_code():
+#     return random.randint(100000, 999999)
+#
+# def send_email(user_email, code):
+#     send_mail(
+#         'Codigo de verificación',
+#         f'Tu codigo de verificación es {code}',
+#         'onlywatch.info@gmail.es',
+#         [user_email],
+#         fail_silently=False,
+#     )
+#
+# def verify_code(user_input, code):
+#     return user_input == code
 
-def send_email(user_email, code):
-    send_mail(
-        'Codigo de verificación',
-        f'Tu codigo de verificación es {code}',
-        'onlywatch.info@gmail.es',
-        [user_email],
-        fail_silently=False,
-    )
-
-def verify_code(user_input, code):
-    return user_input == code
 
 
-def mostar_plataformas_usuario(request):
-    usuario = User.objects.get(id=request.user.id)
-    plataformas_1 = usuario.usuario_plataforma_set.all()
-    return render(request, 'User_information.html', {'plataformas': plataformas_1})
+def send_verification_code(request):
+    if request.method == 'POST':
+        code = random.randint(100000, 999999)
+        send_mail(
+            'Código de verificación',
+            f'Tu código de verificación es {code}',
+            'onlywatch.info@gmail.es',
+            [request.user.email],
+            fail_silently=False,
+        )
+        request.session['verification_code'] = code
+        messages.success(request, 'Código de verificación enviado')
+    return redirect(reverse('configuracion'))
+
+def verify_code(request):
+    if request.method == 'POST':
+        user_code = int(request.POST['code'])
+        verification_code = request.session.get('verification_code')
+        if user_code == verification_code:
+            del request.session['verification_code']
+            return render(request,'reset_password.html')
+        else:
+            messages.error(request, 'Código de verificación incorrecto')
+            return render(request, 'User_information.html')
+    return redirect('configuracion')
+
+
+
+def vincular_desvincular_plataforma(request, plataforma_id):
+    try:
+        user_plat = usuario_plataforma.objects.get(usuario=request.user, plataforma_id=plataforma_id)
+    except usuario_plataforma.DoesNotExist:
+        # Si la relación no existe, se crea
+        usuario_plataforma.objects.create(usuario=request.user, plataforma_id=plataforma_id)
+    else:
+        # Si la relación existe, se elimina
+        user_plat.delete()
+
+    return redirect('configuracion')
+
+

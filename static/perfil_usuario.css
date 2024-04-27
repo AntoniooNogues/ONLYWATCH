@@ -5,3 +5,35 @@ input{
     border: none !important;
     color: black !important;
 }
+.center{
+    justify-content: center !important;
+}
+.buton:hover{
+    background-color: rgba(26, 163, 252, 0.8) !important;
+    border-radius: 40% !important;
+}
+.platform-container {
+    position: relative;
+}
+
+.platform {
+    border: 2px solid gray; /* Estilo predeterminado */
+}
+
+.vinculada {
+    border-color: green; /* Estilo para las plataformas vinculadas */
+}
+
+.no-vinculada {
+    border-color: gray; /* Estilo para las plataformas no vinculadas */
+}
+
+.platform-container .platform .delete-icon {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
