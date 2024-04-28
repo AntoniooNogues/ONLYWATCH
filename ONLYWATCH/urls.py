@@ -46,6 +46,7 @@ urlpatterns = [
     path('verify_code/', views.verify_code, name='verify_code'),
     path('vincular_desvincular_plataforma/<int:plataforma_id>/', views.vincular_desvincular_plataforma,
          name='vincular_desvincular_plataforma'),
+    path('editar_perfil/', views.configurar_perfil, name='editar_perfil'),
 ]
 
 if settings.DEBUG:

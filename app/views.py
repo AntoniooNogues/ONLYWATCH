@@ -258,4 +258,21 @@ def vincular_desvincular_plataforma(request, plataforma_id):
 
     return redirect('configuracion')
 
+def configurar_perfil(request):
+    if request.method == 'POST':
+        user = User.objects.get(id=request.user.id)
+        user.img = request.POST.get('foto_perfil')
+        user.fecha_nacimiento = request.POST.get('user_fecha_nacimiento')
+        user.sexo = request.POST.get('user_sexo')
+        user.username = request.POST.get('user_username')
+        user.nombre_completo = request.POST.get('user_nombre_completo')
+        # Acceder al archivo de imagen enviado por el usuario
+        if 'foto_perfil' in request.FILES:
+            imagen = request.FILES['foto_perfil']
+            user.img = imagen  # Guardar la imagen en el campo correspondiente del modelo de usuario
+
+        user.save()
+        return redirect('configuracion')
+    return redirect('configuracion')
+
 

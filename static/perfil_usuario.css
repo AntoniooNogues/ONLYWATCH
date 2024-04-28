@@ -29,11 +29,16 @@ input{
 }
 
 .platform-container .platform .delete-icon {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    background-color: white;
-    border-radius: 50%;
-    padding: 5px;
-    cursor: pointer;
+    position: absolute !important;
+    top: -10px  !important;
+    left: -10px !important;
+    background-color: white !important;
+    border-radius: 50% !important;
+    padding: 5px !important;
+    cursor: pointer !important;
+}
+.large-modal {
+    width: 60vw !important; /* 80% del ancho de la ventana */
+    height: 50vh !important; /* 80% de la altura de la ventana */
+    overflow-x: hidden !important; /* Sin barra de desplazamiento horizontal */
 }
