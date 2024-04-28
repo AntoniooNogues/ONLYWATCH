@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <script src="https://kit.fontawesome.com/2eb7a633b0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/bulma/css/style.css" />
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+
+
+
+</head>
+<body style="background-color: #FFE8D3" class="familiy has-text-black">
+    {% csrf_token %}
+    <!-- Header -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #FFE8D3">
+                <div class="navbar-brand">
+                    <a class="navbar-item image " href="{{ redirect  }}">
+                        <img src="/static/img/logo_sinfondo 1.png" alt="" class="is-96x96">
+                    </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                       data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                  </div>
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item has-text-black">
+                            Inicio
+                        </a>
+                        <a class="navbar-item has-text-black">
+                            Peliculas
+                        </a>
+                        <a class="navbar-item has-text-black">
+                            Series
+                        </a>
+                        <a class="navbar-item has-text-black" href=""><i class="fa-solid fa-magnifying-glass "></i></a>
+                    </div>
+                    <div class="navbar-end">
+                     <div class="navbar-item">
+                         <a><i class="fa-regular fa-bell"></i></a>
+                     </div>
+                    <div class="navbar-item">
+                        <a class="is-link">
+                            <div class="button is-size-6 btt">
+                            <img style="border-radius: 5px" src="{{ user.img }}" alt="">
+                            <p class="ml-2 " style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
+                            </div>
+                        </a>
+                    </div>
+                 </div>
+                </div>
+         </nav>
+    </header>
+
+    <!-- Main content -->
+    <!-- Gallery | Cards @a7v8x-->
+    <main class="mb-6 mt-5">
+       <div class="columns is-centered">
+            <div class="slider" x-data="{start: true, end: false}">
+              <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+                  <!-- Slider items: 10 min <> 15-20 max -->
+                  {% for p in header %}
+                        <div class="slider__item">
+                            <img class="slider__image" src="{{ p.img }}" alt="Imagen de la pelicula {{ p.nombre }}">
+                            <div class="slider__info">
+                                <h2>{{ p.nombre }}</h2>
+                            </div>
+                        </div>
+                {% endfor %}
+              </div>
+              <div class="slider__nav has-text-black is-bold">
+                <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth * -1, behavior: 'smooth'});" x-bind:class="start ? '' : 'slider__nav__button--active'">Previo</button>
+                <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth, behavior: 'smooth'});" x-bind:class="end ? '' : 'slider__nav__button--active'">Siguiente</button>
+              </div>
+            </div>
+       </div>
+       <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
+       <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
+       <div class="columns is-centered mr-5 ml-5">
+            <div class="column ml-5 mr-5">
+                <p class="is-bold is-uppercase" style="font-weight: 900">Continuar viendo: </p>
+            </div>
+            <div class="columns is-multiline is-mobile">
+                {% for pl in pelicula %}
+                    <div class="column is-one-fifth-desktop is-half-mobile">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="{{ pl.img }}" alt="Imagen de la pelicula {{ pl.nombre }}">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>  
+        </div>
+    </main>
+
+
+    {% include "footer.html" %}
+    <script src="{% static 'js/navbar.js' %} "></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
+</body>
+</html>

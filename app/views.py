@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
-from datetime import datetime
+
 import os
 from django.contrib import messages
 from django.core.files import File
@@ -12,6 +12,9 @@ from django.core.mail import send_mail
 # Create your views here
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
+from django.conf import settings
+# Create your views here.
+from django.shortcuts import render, redirect
 from .models import *
 from django.http import HttpResponse
 
@@ -43,7 +46,9 @@ def do_logout(request):
     logout(request)
     return redirect('login')
 def mostrar_inicio(request):
-    return render(request, 'inicio.html')
+    headerPyS = pelicula.objects.all()[:5].random + serie.objects.all()[:5].random
+    p = pelicula.objects.all()
+    return render(request, 'user_home.html', {'header': headerPyS, 'pelicula': p})
 
 def register(request):
     if request.method == 'GET':
