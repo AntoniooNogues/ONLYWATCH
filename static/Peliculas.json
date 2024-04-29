@@ -1,0 +1,484 @@
+[
+    {
+        "nombre": "Anatomía de una caída",
+        "img": "https://www.justwatch.com/images/poster/312565626/s166/anatomie-dune-chute",
+        "sinopsis": "Una mujer debe demostrar su inocencia después de ser acusada del asesinato de su esposo, quien fue encontrado muerto al pie de un acantilado. A medida que el juicio avanza, los secretos de la pareja salen a la luz, y la línea entre verdad y mentira se vuelve cada vez más difusa.",
+        "anyo_estreno": 2023,
+        "director": "Justine Triet",
+        "trailer": "https://youtu.be/Qg_2qB_Q7Pc"
+    },
+    {
+        "nombre": "Pobres Criaturas",
+        "img": "https://www.justwatch.com/images/poster/312181920/s166/pobres-criaturas",
+        "sinopsis": "Bella revive y está ansiosa por aprender a vivir. El científico Dr. Godwin Baxter revive a Bella, una joven que vuelve a la vida con ganas de experimentar el mundo que la rodea. Para lograr su cometido, Bella se escapa con Duncan Wedderburn, un abogado astuto y libertino que la lleva a través de todos los continentes, un viaje en el que Bella podrá vivir ajena a los prejuicios, promoviendo la igualdad y la liberación.",
+        "anyo_estreno": 2023,
+        "director": "Yorgos Lanthimos",
+        "trailer": "https://www.youtube.com/watch?v=WNfF_WA5kWY&pp=ygUYUG9icmVzIENyaWF0dXJhcyB0cmFpbGVy"
+    },
+    {
+        "nombre": "Oppenheimer",
+        "img": "https://www.justwatch.com/images/poster/306300008/s166/oppenheimer",
+        "sinopsis": "La mente detrás de la creación de la bomba nuclear que alteró el mundo. 'Oppenheimer' cuenta la historia del físico estadounidense J. Robert Oppenheimer y de su trabajo para desarrollar la bomba atómica en el Laboratorio de Los Álamos durante el Proyecto Manhattan. Los bombardeos atómicos de Hiroshima y Nagasaki marcaron el resto de su vida, convirtiéndole en un firme opositor al desarrollo de la bomba de hidrógeno durante la Guerra Fría.",
+        "anyo_estreno": 2023,
+        "director": "Christopher Nolan",
+        "trailer": "https://www.youtube.com/watch?v=JpUd4BS7yI0&pp=ygUTT3BwZW5oZWltZXIgdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "Dune: Parte dos",
+        "img": "https://www.justwatch.com/images/poster/312371513/s166/dune-parte-dos",
+        "sinopsis": "Paul Atreides vuelve a comandar a los Fremen en 'Dune: parte dos'. Siguiendo los acontecimientos de 'Dune: Parte Uno', Paul Atreides se ha ganado su derecho a acompañar a los Fremen a través de Arrakis, que ahora está ocupada por sus enemigos jurados de la Casa Harkonnen. Acompañado por su madre, Lady Jessica, ¿qué le depara el destino al profetizado Lisan al Gaib?",
+        "anyo_estreno": 2024,
+        "director": "Denis Villeneuve",
+        "trailer": "https://www.youtube.com/watch?v=Qv7I3wDfFzI&pp=ygUXRHVuZTogUGFydGUgZG9zIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "Con Todos Menos Contigo",
+        "img": "https://images.justwatch.com/poster/312178510/s166/con-todos-menos-contigo",
+        "sinopsis": "Una comedia romántica donde una mujer descubre que ha sido excluida de todas las redes sociales por sus amigos, y decide embarcarse en un viaje para reconciliarse con cada uno de ellos. En el proceso, descubre que la amistad y el amor pueden encontrarse en los lugares más inesperados.",
+        "anyo_estreno": 2023,
+        "director": "Will Gluck",
+        "trailer": "https://www.youtube.com/watch?v=a9fCMC2pNYY&pp=ygUfQ29uIFRvZG9zIE1lbm9zIENvbnRpZ28gdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "Dune",
+        "img": "https://images.justwatch.com/poster/285570933/s166/dune-2021",
+        "sinopsis": "Adaptación de la épica novela de ciencia ficción de Frank Herbert. Sigue la historia de Paul Atreides, un joven heredero de una poderosa familia que se traslada al planeta desértico de Arrakis. A medida que se ve envuelto en intrigas políticas y profecías místicas, Paul debe abrazar su destino para cambiar el curso de la galaxia.",
+        "anyo_estreno": 2021,
+        "director": "Denis Villeneuve",
+        "trailer": "https://www.youtube.com/watch?v=mSY_NbSmaUI&pp=ygUMRHVuZSB0cmFpbGVy"
+    },
+    {
+        "nombre": "Ocho apellidos marroquís",
+        "img": "https://images.justwatch.com/poster/309504919/s166/ocho-apellidos-marroquis",
+        "sinopsis": "Una comedia que sigue las aventuras de un joven español que viaja a Marruecos para encontrar el amor. Su actitud desenfadada y sus intentos por encajar en la cultura local resultan en situaciones cómicas mientras intenta ganarse el corazón de una mujer y la aceptación de su familia.",
+        "anyo_estreno": 2023,
+        "director": "Álvaro Fernández Armero",
+        "trailer": "https://www.youtube.com/watch?v=5FLMMzpmunI&pp=ygUgT2NobyBhcGVsbGlkb3MgbWFycm9xdcOtc3RyYWlsZXI%3D"
+    },
+    {
+        "nombre": "La zona de interés",
+        "img": "https://images.justwatch.com/poster/313306007/s166/the-zone-of-interest",
+        "sinopsis": "Una película con un ángulo distinto en la época del nazismo. Rudolf Höss, un comandante de Auschwitz, se esfuerza junto a su esposa Hedwig en tener una vida de ensueño para su familia en una casa con jardín ubicada en el campo.",
+        "anyo_estreno": 2023,
+        "director": "Desconocido",
+        "trailer": "https://www.youtube.com/watch?v=_FQwmkszP3I&pp=ygUbTGEgem9uYSBkZSBpbnRlcsOpcyB0cmFpbGVy"
+    },
+    {
+        "nombre": "Guerra civil",
+        "img": "https://images.justwatch.com/poster/313065520/s166/civil-war-2024-0",
+        "sinopsis": "Una guerra civil se cierne sobre Estados Unidos. En un futuro cercano, un grupo de periodistas viaja por el país americano para cubrir una guerra civil que afecta a toda la nación. La lucha por la supervivencia, las milicias extremistas y la violencia reinante serán las protagonistas de la noticia.",
+        "anyo_estreno": 2024,
+        "director": "Alex Garland",
+        "trailer": "https://www.youtube.com/watch?v=52VObbnbggk&pp=ygUUR3VlcnJhIGNpdmlsIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "Vidas pasadas",
+        "img": "https://images.justwatch.com/poster/312083218/s166/past-lives",
+        "sinopsis": "El encuentro con un amigo de la infancia plantea dudas en Past Lives. De niños, Nora y Hae Sung solían ser inseparables. Pero cuando la familia de Nora emigra de Corea del Sur, ambos pierden el contacto. Veinte años después, la vida de Nora es completamente distinta: Está felizmente casada con un estadounidense y vive en Nueva York, lejos de su tierra natal. Cuando su amigo de la infancia Hae Sung reaparece de repente en su vida, Nora se pregunta cómo habría sido su vida si se hubiera quedado en Corea del Sur. ¿Es Hae Sung su alma gemela? ¿Y la vida de Nora está determinada por el destino o por sus propias decisiones?",
+        "anyo_estreno": 2023,
+        "director": "Celine Song",
+        "trailer": "https://www.youtube.com/watch?v=zle1xaJLRWo&pp=ygUVVmlkYXMgcGFzYWRhcyB0cmFpbGVy"
+    },
+    {
+        "nombre": "Road House (De profesión: duro)",
+        "img": "https://images.justwatch.com/poster/312971293/s166/road-house-2024",
+        "sinopsis": "Una nueva versión del clásico, donde un joven y carismático guardia de seguridad es contratado para mantener el orden en un club nocturno famoso por su clientela problemática. Pero cuando la violencia se vuelve personal, se ve obligado a luchar para proteger a sus amigos y su ciudad.",
+        "anyo_estreno": 2024,
+        "director": "Doug Liman",
+        "trailer": "https://www.youtube.com/watch?v=P1GvJtVpTok&pp=ygUoUm9hZCBIb3VzZSAoRGUgcHJvZmVzacOzbjogZHVybykgdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "The Gentlemen: Los señores de la mafia",
+        "img": "https://images.justwatch.com/poster/250866885/s166/the-gentlemen-los-senores-de-la-mafia",
+        "sinopsis": "Una comedia de acción dirigida por Guy Ritchie, que narra la historia de un capo de la droga británico que planea vender su lucrativo imperio a un consorcio de millonarios estadounidenses. A medida que las negociaciones se intensifican, las traiciones y los engaños provocan caos y violencia en el inframundo londinense.",
+        "anyo_estreno": 2020,
+        "director": "Guy Ritchie",
+        "trailer": "https://www.youtube.com/watch?v=SywTszaosOo&pp=ygUvVGhlIEdlbnRsZW1lbjogTG9zIHNlw7FvcmVzIGRlIGxhIG1hZmlhIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "El maestro que prometió el mar",
+        "img": "https://images.justwatch.com/poster/312535161/s166/el-maestro-que-prometio-el-mar",
+        "sinopsis": "Un drama inspirador sobre un profesor comprometido con la educación en un pueblo costero. A pesar de los desafíos sociales y económicos, el maestro promete a sus estudiantes un viaje al mar, lo que los impulsa a superarse a sí mismos. La película explora temas de esperanza, resiliencia y el poder de la educación.",
+        "anyo_estreno": 2023,
+        "director": "Patricia Font",
+        "trailer": "https://www.youtube.com/watch?v=2WzmW9EWJtE&pp=ygUnRWwgbWFlc3RybyBxdWUgcHJvbWV0acOzIGVsIG1hciB0cmFpbGVy"
+    },
+    {
+        "nombre": "Memories of Murder (Crónica de un asesino en serie)",
+        "img": "https://images.justwatch.com/poster/11114784/s166/memories-of-murder",
+        "sinopsis": "Un thriller surcoreano basado en hechos reales. Narra la investigación de una serie de brutales asesinatos en una zona rural en la década de 1980. Dos detectives muy diferentes deben trabajar juntos para atrapar al asesino, pero el caso los lleva a cuestionar sus propias creencias y métodos.",
+        "anyo_estreno": 2003,
+        "director": "Bong Joon-ho",
+        "trailer": "https://www.youtube.com/watch?v=SjDN7wr0HDc&pp=ygU8TWVtb3JpZXMgb2YgTXVyZGVyIChDcsOzbmljYSBkZSB1biBhc2VzaW5vIGVuIHNlcmllKSB0cmFpbGVy"
+    },
+    {
+        "nombre": "Nadie",
+        "img": "https://images.justwatch.com/poster/245111714/s166/nadie",
+        "sinopsis": "Un thriller de acción que sigue a un hombre aparentemente común que se convierte en el objetivo de un peligroso cartel ruso después de un incidente aparentemente menor. A medida que su pasado violento sale a la luz, el protagonista demuestra que es mucho más peligroso de lo que parece.        ",
+        "anyo_estreno": 2021,
+        "director": "Ilya Naishuller",
+        "trailer": "https://www.youtube.com/watch?v=Mzrib73dVbc&pp=ygUNTmFkaWUgdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "Desconocidos",
+        "img": "https://images.justwatch.com/poster/311490082/s166/all-of-us-strangers",
+        "sinopsis": "Un viaje al pasado para curar el presente. Adam vive solo en su apartamento de Londres hasta que conoce a Harry, un chico que pone patas arriba su vida. A medida que ambos avanzan en su relación, a Adam comienzan a atormentarle los recuerdos del pasado, por lo que decide volver a su ciudad natal. Allí, sus padres, que murieron 30 años atrás, parecen estar tan vivos como antes de su muerte.",
+        "anyo_estreno": 2023,
+        "director": "Andrew Haigh",
+        "trailer": "https://www.youtube.com/watch?v=uqWoYBitIxc&pp=ygUURGVzY29ub2NpZG9zIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "Beekeeper: El protector",
+        "img": "https://images.justwatch.com/poster/308666439/s166/the-beekeeper-2024",
+        "sinopsis": "Un apicultor busca vengarse de la organización clandestina para la que trabajó. Clay es un apicultor que lleva una vida tranquila y rutinaria mientras cuida a sus abejas. Todo cambia cuando su vecina y amiga se suicida tras haber sido víctima de una estafa de phishing. Ahí Clay decide vengarse de la organización culpable de la estafa, una formación clandestina que recibe el nombre de 'apicultores' y de la que él formó parte en el pasado.",
+        "anyo_estreno": 2024,
+        "director": "David Ayer",
+        "trailer": "https://www.youtube.com/watch?v=oJm0t84q8c8&pp=ygUfQmVla2VlcGVyOiBFbCBwcm90ZWN0b3IgdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "Cazafantasmas: Más allá",
+        "img": "https://images.justwatch.com/poster/314093375/s166/cazafantasmas-mas-alla",
+        "sinopsis": "Una continuación de la serie clásica, donde una familia se muda a una ciudad rural y descubre su conexión con los Cazafantasmas originales. Juntos, deben enfrentarse a nuevas amenazas sobrenaturales y desentrañar los misterios que dejaron atrás sus antepasados.",
+        "anyo_estreno": 2021,
+        "director": "Jason Reitman",
+        "trailer": "https://www.youtube.com/watch?v=1I1JrPgoM8U&pp=ygUhQ2F6YWZhbnRhc21hczogTcOhcyBhbGzDoSB0cmFpbGVy"
+    },
+    {
+        "nombre": "Los que se quedan",
+        "img": "https://images.justwatch.com/poster/309843621/s166/the-holdovers",
+        "sinopsis": "Un drama emocional que explora las vidas de aquellos que permanecen en un pequeño pueblo después de un evento devastador. A medida que intentan reconstruir sus vidas y relaciones, se dan cuenta de que el amor y la comunidad son esenciales para superar la tragedia.",
+        "anyo_estreno": 2023,
+        "director": "Alexander Payne",
+        "trailer": "https://www.youtube.com/watch?v=8TNBCpiFTRI&pp=ygUZTG9zIHF1ZSBzZSBxdWVkYW4gdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "Días Perfectos",
+        "img": "https://images.justwatch.com/poster/310277687/s166/perfect-days",
+        "sinopsis": "Un drama íntimo que sigue la vida de un trabajador de limpieza urbana en una gran ciudad. A través de su rutina diaria, la película explora la belleza en las cosas simples y las conexiones inesperadas con otras personas, mostrando cómo la bondad y la empatía pueden transformar vidas",
+        "anyo_estreno": 2023,
+        "director": "Wim Wenders",
+        "trailer": "https://www.youtube.com/watch?v=YvGtMf-hapc&pp=ygUXRMOtYXMgUGVyZmVjdG9zIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "Robot Dreams",
+        "img": "https://images.justwatch.com/poster/312648562/s166/robot-dreams",
+        "sinopsis": "Una película de animación que sigue la amistad entre un perro robot y su dueño humano. Juntos, exploran un mundo futurista lleno de aventuras y desafíos. La historia aborda temas de amistad, lealtad y la importancia de soñar, incluso cuando parece imposible.",
+        "anyo_estreno": 2023,
+        "director": "Pablo Berger",
+        "trailer": "https://www.youtube.com/watch?v=0CHV_ZDlhrA&pp=ygUUUm9ib3QgRHJlYW1zIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "Argylle",
+        "img": "https://images.justwatch.com/poster/312420531/s166/argylle",
+        "sinopsis": "Amnesia, espionaje y bestsellers en un combo trepidante. Argylle es un espía de clase mundial que tiene amnesia y que ha sido engañado para que crea que es un novelista de libros de espionaje. Poco a poco irá recuperando la memoria y recordará quién es realmente.",
+        "anyo_estreno": 2024,
+        "director": "Matthew Vaughn",
+        "trailer": "https://www.youtube.com/watch?v=Nd3qNVGIhq0&pp=ygUPQXJneWxsZSB0cmFpbGVy"
+    },
+    {
+        "nombre": "Rebel Moon (Parte dos): La guerrera que deja marcas",
+        "img": "https://images.justwatch.com/poster/314298201/s166/rebel-moon-parte-dos-la-guerrera-que-deja-marcas",
+        "sinopsis": "La continuación de la saga épica de ciencia ficción dirigida por Zack Snyder. Después de los eventos de la primera película, los rebeldes se enfrentan a nuevas amenazas y desafíos mientras luchan contra un imperio opresivo. En esta segunda parte, una guerrera emerge como líder, dejando su huella en la batalla por la libertad y la justicia.",
+        "anyo_estreno": 2024,
+        "director": "Zack Snyder",
+        "trailer": "https://www.youtube.com/watch?v=bEPhEMMfweo&pp=ygU6UmViZWwgTW9vbiAoUGFydGUgZG9zKTogTGEgZ3VlcnJlcmEgcXVlIGRlamEgbWFyY2FzdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "Wonka",
+        "img": "https://images.justwatch.com/poster/311798306/s166/wonka",
+        "sinopsis": "Un viaje en el tiempo a través de la vida de Willy Wonka. Es excéntrico, imprevisible y su fábrica de chocolate está llena de maravillas y trampas a partes iguales: Willy Wonka es realmente un bicho raro. Pero, ¿quién era antes de construir su fábrica de chocolate? ¿Quién era antes de los tickets dorados en tabletas de chocolate y los Oompa Loompas? ¿Y cómo se convirtió Wonka en el extravagante chocolatero que conocemos?",
+        "anyo_estreno": 2023,
+        "director": "Paul King",
+        "trailer": "https://www.youtube.com/watch?v=EJoom2F-7nI&pp=ygUNV29ua2EgdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "Napoleon",
+        "img": "https://images.justwatch.com/poster/310541108/s166/napoleon-2023",
+        "sinopsis": "Los orígenes y el ascenso al poder de uno de los líderes militares más grandes de la historia Reflejo de la vida de personal del militar francés a través de la relación con su esposa y amor verdadero, Josefina. Desde sus comienzos hasta el momento en el que se convierte en todo un emperador.",
+        "anyo_estreno": 2023,
+        "director": "Ridley Scott",
+        "trailer": "https://www.youtube.com/watch?v=mh-zT7iSQro&pp=ygUQTmFwb2xlb24gdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "Wish: El poder de los deseos",
+        "img": "https://images.justwatch.com/poster/311330455/s166/wish-el-poder-de-los-deseos",
+        "sinopsis": "La nueva producción de animación de Disney recuerda a sus clásicos de siempre En ‘Wish: El Poder de los Deseos’, Asha tiene la misión de derrocar al Rey Magnífico, quien gobierna la región de Rosas. Para lograrlo, echará mano de la ayuda de sus deseos y la pequeña bola de energía ilimitada Star, para demostrar que cuando el deseo de una persona conecta con la magia de las estrellas, pueden ocurrir cosas increíbles.",
+        "anyo_estreno": 2023,
+        "director": "Fawn Veerasunthorn",
+        "trailer": "https://www.youtube.com/watch?v=CdDxYZkCj6c&pp=ygUkV2lzaDogRWwgcG9kZXIgZGUgbG9zIGRlc2VvcyB0cmFpbGVy"
+    },
+    {
+        "nombre": "Los asesinos de la luna",
+        "img": "https://images.justwatch.com/poster/307559674/s166/killers-of-the-flower-moon",
+        "sinopsis": "La película que refleja la investigación del FBI sobre los espeluznantes asesinatos contra la tribu Osage. La película está ambientada en la Oklahoma de los años 20 y describe los asesinatos en serie de los miembros de la tribu Osage, uno de los crímenes más brutales cometidos tras el descubrimiento de petróleo en tierras indígenas que llegó a conocerse como el 'Reinado del terror'. Estos asesinatos desencadenaron una importante investigación del FBI dirigida por su fundador, J. Edgar Hoover y por el ex Ranger de Texas Tom White.",
+        "anyo_estreno": 2023,
+        "director": "Martin Scorsese",
+        "trailer": "https://www.youtube.com/watch?v=HyyWd2XI1EE&pp=ygUfTG9zIGFzZXNpbm9zIGRlIGxhIGx1bmEgdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "American Fiction",
+        "img": "https://images.justwatch.com/poster/311628871/s166/untitled-cord-jefferson-film",
+        "sinopsis": "Una comedia dramática que explora la experiencia de los escritores afroamericanos en el contexto de la industria editorial estadounidense. La trama aborda temas de raza, identidad y creatividad mientras sigue a un autor que intenta equilibrar sus valores con las expectativas del mercado literario.",
+        "anyo_estreno": 2023,
+        "director": "Cord Jefferson",
+        "trailer": "https://www.youtube.com/watch?v=k9Zi_rvkU5E&pp=ygUYYW1lcmljYW4gZmljdGlvbiB0cmFpbGVy"
+    },
+    {
+        "nombre": "Interestelar",
+        "img": "https://images.justwatch.com/poster/193089381/s166/interstellar",
+        "sinopsis": "Una película de ciencia ficción dirigida por Christopher Nolan que sigue a un grupo de astronautas que viajan a través de un agujero de gusano en busca de un nuevo hogar para la humanidad. Con temas de amor, sacrificio y la relación entre el espacio y el tiempo, Interestelar es una historia épica sobre el futuro de la humanidad y el alcance de la exploración espacial.",
+        "anyo_estreno": 2014,
+        "director": "Christopher Nolan",
+        "trailer": "https://www.youtube.com/watch?v=UoSSbmD9vqc&pp=ygUUSW50ZXJlc3RlbGFyIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "Prisioneros",
+        "img": "https://images.justwatch.com/poster/99687201/s166/prisioneros",
+        "sinopsis": "Un thriller de suspense que sigue a dos familias que buscan a sus hijas desaparecidas. Hugh Jackman interpreta a un padre desesperado por encontrar a su hija, mientras que Jake Gyllenhaal es el detective encargado del caso. A medida que el tiempo avanza sin respuestas, las tensiones aumentan y se cruzan límites morales en la búsqueda de justicia.",
+        "anyo_estreno": 2013,
+        "director": "Denis Villeneuve",
+        "trailer": "https://www.youtube.com/watch?v=AiN1ahjVb3Y&pp=ygUTUHJpc2lvbmVyb3MgdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "Los Juegos del Hambre: Balada de Pájaros Cantores y Serpientes",
+        "img": "https://images.justwatch.com/poster/308808127/s166/the-hunger-games-the-ballad-of-songbirds-and-snakes",
+        "sinopsis": "Un joven Coriolanus Snow se encuentra con la horma de su zapato en su búsqueda del poder. 64 años antes de los Juegos del Hambre tal y como los conocemos, Coriolanus Snow aún está lejos de ser el presidente. Proviene de una familia extremadamente rica, pero es huérfano y vive en la pobreza con su abuela y su primo. Al destacar en sus estudios en la Academia, la escuela más prestigiosa del país, es seleccionado como mentor de Lucy Gray Braid, la tribuna del Distrito 12. Mientras se entrena, Coriolanus se enamora de su protegida, y hará cualquier cosa para ayudarla a ganar los Juegos del Hambre.",
+        "anyo_estreno": 2023,
+        "director": "Francis Lawrence",
+        "trailer": "https://www.youtube.com/watch?v=IWjAy4lIyoY&pp=ygVHTG9zIEp1ZWdvcyBkZWwgSGFtYnJlOiBCYWxhZGEgZGUgUMOhamFyb3MgQ2FudG9yZXMgeSBTZXJwaWVudGVzIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "Fallen Leaves",
+        "img": "https://images.justwatch.com/poster/314306516/s166/fallen-leaves",
+        "sinopsis": "Un drama contemporáneo que narra la historia de dos personas cuyas vidas están marcadas por la pérdida y el dolor. A través de encuentros inesperados y conexiones emocionales, descubren que el amor y la esperanza pueden florecer incluso en los momentos más oscuros.",
+        "anyo_estreno": 2023,
+        "director": "Aki Kaurismäki",
+        "trailer": "https://www.youtube.com/watch?v=XThHlWoDeNo&pp=ygUVZmFsbGVuIGxlYXZlcyB0cmFpbGVy"
+    },
+    {
+        "nombre": "Pared con pared",
+        "img": "https://images.justwatch.com/poster/313679323/s166/pared-con-pared",
+        "sinopsis": "Una comedia romántica que se centra en dos vecinos que, a pesar de sus diferencias, desarrollan una relación inesperada. Los conflictos y malentendidos iniciales se convierten en una fuente de comedia y romance mientras aprenden a conocerse y comprenderse mutuamente.",
+        "anyo_estreno": 2024,
+        "director": "Patricia Font",
+        "trailer": "https://www.youtube.com/watch?v=jRUheYjIVew&pp=ygUXUGFyZWQgY29uIHBhcmVkIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "Fabricante de lágrimas",
+        "img": "https://images.justwatch.com/poster/313530862/s166/fabbricante-di-lacrime",
+        "sinopsis": "Un drama sobre un autor famoso por escribir historias tristes y conmovedoras. A medida que su éxito crece, el escritor se da cuenta de que sus historias han tenido un impacto en su vida personal y en las personas que lo rodean. La película explora temas de creatividad, emoción y las repercusiones del arte en la vida real.",
+        "anyo_estreno": 2024,
+        "director": "Alessandro Genovesi",
+        "trailer": "https://www.youtube.com/watch?v=IsyN8eTyTcI&pp=ygUfRmFicmljYW50ZSBkZSBsw6FncmltYXMgdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "Parásitos",
+        "img": "https://images.justwatch.com/poster/165507436/s166/parasitos",
+        "sinopsis": "Una película surcoreana ganadora del Óscar dirigida por Bong Joon-ho. Sigue a la familia Kim, que se infiltra en la rica familia Park, aprovechando oportunidades para mejorar su situación económica. A medida que la familia Kim se vuelve parte de la vida de los Park, la tensión y el suspenso aumentan, llevando a un final explosivo que explora las divisiones de clase y la lucha por la supervivencia.",
+        "anyo_estreno": 2019,
+        "director": "Bong Joon-ho",
+        "trailer": "https://www.youtube.com/watch?v=90dWVETAdtI&pp=ygUSUGFyw6FzaXRvcyB0cmFpbGVy"
+    },
+    {
+        "nombre": "Madame Web",
+        "img": "https://images.justwatch.com/poster/311776793/s166/madame-web",
+        "sinopsis": "El debut de Madame Web en la gran pantalla. En los cómics de Marvel, Madame Web es una anciana llamada Cassandra Webb que ha perdido la vista pero tiene habilidades psíquicas. Aparece, sobre todo, como un personaje secundario en el universo de Spider-Man. Sin embargo, ahora ha llegado su momento para tener un papel protagonista. ¿Qué aventuras vivirá en su estreno en cines?",
+        "anyo_estreno": 2024,
+        "director": "S.J. Clarkson",
+        "trailer": "https://www.youtube.com/watch?v=plv6ppDBGCk&pp=ygUSTWFkYW1lIFdlYiB0cmFpbGVy"
+    },
+    {
+        "nombre": "Suzume",
+        "img": "https://images.justwatch.com/poster/304829198/s166/suzume-no-tojimari",
+        "sinopsis": "Dos jóvenes emprenden un épico viaje para cerrar las puertas del desastre. Suzume es una chica de 17 años que vive en un pequeño y tranquilo pueblo de la región de Kyushu. Un día, conoce a un joven que busca una puerta ancestral. Viajan juntos y encuentran una vieja puerta de una casa abandonada en las montañas. A partir de ese momento, empiezan a aparecer otras puertas similares por todo Japón, pero tienen una característica especial. Cuando estas puertas se abren, desencadenan desastres en el país. Suzume y el joven deben emprender un viaje por todo Japón para cerrar todas esas puertas que atentan contra la humanidad.",
+        "anyo_estreno": 2022,
+        "director": "Makoto Shinkai",
+        "trailer": "https://www.youtube.com/watch?v=8OEn2k4YCHM&pp=ygUOU3V6dW1lIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "Sound of Freedom",
+        "img": "https://www.justwatch.com/images/poster/307687529/s166/sound-of-freedom",
+        "sinopsis": "Una película de acción y drama basada en hechos reales. Narra la historia de un exagente federal que arriesga su vida para rescatar a niños víctimas del tráfico humano. A través de intensas secuencias de acción y momentos emocionales, el film destaca la lucha contra la trata de personas y el heroísmo de quienes la combaten.",
+        "anyo_estreno": 2023,
+        "director": "Alejandro Monteverde",
+        "trailer": "https://www.youtube.com/watch?v=H82uvLvszQ0&pp=ygUac291bmQgb2YgZnJlZWRvbSB0cmFpbGVyw6c%3D"
+    },
+    {
+        "nombre": "Kung Fu Panda",
+        "img": "https://www.justwatch.com/images/poster/312538889/s166/kung-fu-panda",
+        "sinopsis": "Una comedia animada que sigue a Po, un panda torpe y amante de la comida, que inesperadamente es elegido para convertirse en el Guerrero Dragón. A lo largo de su entrenamiento y aventuras, Po aprende sobre el kung fu y la importancia de la autoconfianza mientras se prepara para enfrentar a un peligroso villano.",
+        "anyo_estreno": 2008,
+        "director": "Mark Osborne",
+        "trailer": "https://www.youtube.com/watch?v=yD8rNMiaX-w&pp=ygUVS3VuZyBGdSBQYW5kYSB0cmFpbGVy"
+    },
+    {
+        "nombre": "Misión: Imposible - Sentencia mortal parte uno",
+        "img": "https://www.justwatch.com/images/poster/305934816/s166/mision-imposible-7",
+        "sinopsis": "Ethan Hunt se enfrenta a su aventura más dura hasta la fecha en 'Misión: Imposible - Dead Reckoning Primera Parte'. El agente de operaciones de campo para el IMF, una agencia de élite dedicada al espionaje que se encarga de llevar a cabo peligrosas y delicadas misiones internacionales que se consideran «imposibles», vuelve a la carga junto a la agente Ilsa Faust (Rebecca Ferguson).",
+        "anyo_estreno": 2023,
+        "director": "Christopher McQuarrie",
+        "trailer": "https://www.youtube.com/watch?v=XoDmKCZBeeI&pp=ygU3TWlzacOzbjogSW1wb3NpYmxlIC0gU2VudGVuY2lhIG1vcnRhbCBwYXJ0ZSB1bm8gdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "La vida de Brian",
+        "img": "https://www.justwatch.com/images/poster/77686298/s166/la-vida-de-brian",
+        "sinopsis": "Una comedia satírica de Monty Python que sigue la vida de Brian Cohen, un hombre nacido el mismo día que Jesucristo y que es confundido con el Mesías. La película parodia la religión, la política y la sociedad de la época, usando el humor irreverente y absurdo característico de Monty Python.",
+        "anyo_estreno": 1979,
+        "director": "Terry Jones",
+        "trailer": "https://www.youtube.com/watch?v=0-E6bKzb1lw&pp=ygUYTGEgdmlkYSBkZSBCcmlhbiB0cmFpbGVy"
+    },
+    {
+        "nombre": "Beau tiene miedo",
+        "img": "https://images.justwatch.com/poster/305923929/s166/beau-tiene-miedo",
+        "sinopsis": "El viaje de Beau hacia su madre está lleno de obstáculos imposibles. Beau solo quiere visitar a su madre. Su madre, para quien él es el mejor regalo de su vida. Pero en el camino acechan infinitos peligros. Bosques oscuros. Gente con armas. Gente que quiere hacerle daño mientras le sonríen amablemente. Se abren otras realidades, muy alejadas de la de Beau. Y pasan los años, las décadas y los siglos. Pero una cosa sigue igual: Beau tiene miedo.",
+        "anyo_estreno": 2023,
+        "director": "Ari Aster",
+        "trailer": "https://www.youtube.com/watch?v=PuiWDn976Ek&pp=ygUYQmVhdSB0aWVuZSBtaWVkbyB0cmFpbGVy"
+    },
+    {
+        "nombre": "El indomable Will Hunting",
+        "img": "https://images.justwatch.com/poster/309073311/s166/el-indomable-will-hunting",
+        "sinopsis": "Un drama que cuenta la historia de Will Hunting, un joven genio autodidacta que trabaja como conserje en el MIT. Cuando es arrestado por agredir a un oficial, es enviado a terapia con un psicólogo, quien lo ayuda a enfrentar sus problemas emocionales y descubrir su potencial.",
+        "anyo_estreno": 1997,
+        "director": "Gus Van Sant",
+        "trailer": "https://www.youtube.com/watch?v=ReIJ1lbL-Q8&pp=ygUhRWwgaW5kb21hYmxlIFdpbGwgSHVudGluZyB0cmFpbGVy"
+    },
+    {
+        "nombre": "Super Mario Bros: La película",
+        "img": "https://images.justwatch.com/poster/302796037/s166/super-mario-bros-the-movie",
+        "sinopsis": "Mario, Luigi, Toad y la Princesa Peach deben enfrentarse a Bowser para salvar el Reino Champiñón. Es corpulento, su armadura está llena de púas y no tiene piedad: En el Reino Champiñón no hay mayor amenaza que Bowser, el rey de los Koopas. ¿Conseguirá Mario derrotar al poderoso Bowser con la ayuda de su hermano Luigi y del champiñón Toad? ¿Y acaso se encontrará con una princesa en apuros en su viaje?",
+        "anyo_estreno": 2023,
+        "director": "Aaron Horvath",
+        "trailer": "https://www.youtube.com/watch?v=_1f2RLdxQfA&pp=ygUmU3VwZXIgTWFyaW8gQnJvczogTGEgcGVsw61jdWxhIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "The Boys in the Boat",
+        "img": "https://images.justwatch.com/poster/311250890/s166/the-boys-in-the-boat",
+        "sinopsis": "Una historia inspiradora sobre el equipo de remo de la Universidad de Washington, que compitió en los Juegos Olímpicos de 1936 en Berlín. El film narra el viaje de los jóvenes remeros mientras superan adversidades y desafíos para alcanzar el éxito en el deporte.",
+        "anyo_estreno": 2023,
+        "director": "George Clooney",
+        "trailer": "https://www.youtube.com/watch?v=dfEA-udzjjQ&pp=ygUcVGhlIEJveXMgaW4gdGhlIEJvYXQgdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "La favorita",
+        "img": "https://images.justwatch.com/poster/106042485/s166/la-favorita",
+        "sinopsis": "Un drama histórico ambientado en la corte de la Reina Ana de Inglaterra a principios del siglo XVIII. Narra la rivalidad entre Sarah Churchill y Abigail Masham, quienes compiten por el favor de la reina. Con intrigas políticas y relaciones complicadas, la película explora el poder y la ambición.",
+        "anyo_estreno": 2018,
+        "director": "Yorgos Lanthimos",
+        "trailer": "https://www.youtube.com/watch?v=fqEl2Z0dHn8&pp=ygUTTGEgZmF2b3JpdGEgdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "La última noche",
+        "img": "https://images.justwatch.com/poster/301130148/s166/silent-night",
+        "sinopsis": "Una película de acción y suspenso que sigue a un hombre atrapado en una situación peligrosa durante una noche crítica. A medida que lucha por sobrevivir, debe tomar decisiones difíciles y enfrentarse a amenazas inesperadas.",
+        "anyo_estreno": 2021,
+        "director": "Camille Griffin",
+        "trailer": "https://www.youtube.com/watch?v=5TaL2i71PCc&pp=ygUYTGEgw7psdGltYSBub2NoZSB0cmFpbGVy"
+    },
+    {
+        "nombre": "The Beasts",
+        "img": "https://images.justwatch.com/poster/302177791/s166/as-bestas",
+        "sinopsis": "Un thriller psicológico centrado en una familia que vive en una comunidad aislada donde ocurren eventos extraños y aterradores. A medida que la familia intenta comprender lo que está sucediendo, se enfrentan a situaciones cada vez más peligrosas.",
+        "anyo_estreno": 2022,
+        "director": "Rodrigo Sorogoyen",
+        "trailer": "https://www.youtube.com/watch?v=GmgdYXYQYac&pp=ygUSVGhlIEJlYXN0cyB0cmFpbGVy"
+    },
+    {
+        "nombre": "Your Name",
+        "img": "https://images.justwatch.com/poster/27428092/s166/your-name",
+        "sinopsis": "Un anime japonés que cuenta la historia de dos adolescentes, Mitsuha y Taki, que misteriosamente intercambian cuerpos. A medida que intentan entender y adaptarse a esta extraña situación, descubren secretos y desarrollan una conexión especial que trasciende el tiempo y el espacio.",
+        "anyo_estreno": 2016,
+        "director": "Makoto Shinkai",
+        "trailer": "https://www.youtube.com/watch?v=yPPaLgSXYlM&pp=ygURWW91ciBOYW1lIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "El insoportable peso de un talento descomunal",
+        "img": "https://images.justwatch.com/poster/294032190/s166/the-unbearable-weight-of-massive-talent",
+        "sinopsis": "Una comedia protagonizada por Nicolas Cage, quien interpreta una versión exagerada de sí mismo. La película sigue sus aventuras mientras es contratado para asistir a una fiesta privada, pero pronto se ve envuelto en una trama de espionaje y crimen, combinando humor y acción.",
+        "anyo_estreno": 2022,
+        "director": "Tom Gormican",
+        "trailer": "https://www.youtube.com/watch?v=uSB5jsS-vDo&pp=ygU2RWwgaW5zb3BvcnRhYmxlIHBlc28gZGUgdW4gdGFsZW50byBkZXNjb211bmFsICB0cmFpbGVy"
+    },
+    {
+        "nombre": "El justiciero: Capítulo final",
+        "img": "https://images.justwatch.com/poster/307435637/s166/the-equalizer-3",
+        "sinopsis": "Robert McCall regresa en 'The Equalizer 3' para proteger a los más vulnerables. Como antiguo marine y agente de la DIA, Robert McCall quiere utilizar sus habilidades para el bien. Dotado de músculos de acero y una mente ágil, vuelve a proteger a aquellos a los que la ley no puede ayudar en 'The Equalizer 3' (título en España: 'El protector 3'). El ex marine Robert McCall conoce a una joven que se encuentra en las garras de la mafia rusa. Aunque había decidido llevar una vida tranquila y dejar de trabajar como agente, se propone ayudarla.",
+        "anyo_estreno": 2023,
+        "director": "Antoine Fuqua",
+        "trailer": "https://www.youtube.com/watch?v=iZIxAvKSYac&pp=ygUnRWwganVzdGljaWVybzogQ2Fww610dWxvIGZpbmFsICB0cmFpbGVy"
+    },
+    {
+        "nombre": "Garra De Hierro",
+        "img": "https://images.justwatch.com/poster/311705109/s166/the-iron-claw",
+        "sinopsis": "Lucha libre, familia y drama. La película se basa en la historia real de los hermanos Von Erich, que se convirtiendo en dos de los rostros más conocidos de la lucha libre a principios de los años 80. Todo bajo la sombra de su padre, quién les recordará siempre que lo más importante es el deporte.",
+        "anyo_estreno": 2023,
+        "director": "Sean Durkin",
+        "trailer": "https://www.youtube.com/watch?v=JEMiiYpNAqk&pp=ygUYR2FycmEgRGUgSGllcnJvICB0cmFpbGVy"
+    },
+    {
+        "nombre": "El reino de los cielos",
+        "img": "https://images.justwatch.com/poster/140685247/s166/el-reino-de-los-cielos",
+        "sinopsis": "Un drama histórico épico dirigido por Ridley Scott, ambientado durante las Cruzadas. Narra la historia de Balian de Ibelin, un herrero que se convierte en caballero y debe defender Jerusalén contra las fuerzas del sultán Saladino. La película explora temas de fe, guerra y reconciliación.",
+        "anyo_estreno": 2005,
+        "director": "Ridley Scott",
+        "trailer": "https://www.youtube.com/watch?v=GkYwn0HjaIs&pp=ygUfRWwgcmVpbm8gZGUgbG9zIGNpZWxvcyAgdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "Los niños de Winton",
+        "img": "https://images.justwatch.com/poster/312104064/s166/one-life-2023",
+        "sinopsis": "Un documental que cuenta la historia de Nicholas Winton, un hombre que salvó la vida de cientos de niños judíos durante la Segunda Guerra Mundial al organizarlos para que escaparan de la Checoslovaquia ocupada por los nazis. El film resalta el heroísmo y el impacto positivo que una sola persona puede tener en muchas vidas.",
+        "anyo_estreno": 2023,
+        "director": "James Hawes",
+        "trailer": "https://www.youtube.com/watch?v=OrfBqy0yXLg&pp=ygUdTG9zIG5pw7FvcyBkZSBXaW50b24gIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "Crepúsculo",
+        "img": "https://images.justwatch.com/poster/238853618/s166/crepusculo",
+        "sinopsis": "Una historia de romance sobrenatural que sigue a Bella Swan, una adolescente que se muda a un pueblo pequeño y se enamora de Edward Cullen, un vampiro. La película explora su relación y los peligros que enfrentan debido a la naturaleza sobrenatural de Edward y su familia.",
+        "anyo_estreno": 2008,
+        "director": "Catherine Hardwicke",
+        "trailer": "https://www.youtube.com/watch?v=njoiht3soi0&pp=ygUUQ3JlcMO6c2N1bG8gIHRyYWlsZXI%3D"
+    },
+    {
+        "nombre": "La lista de Schindler",
+        "img": "https://images.justwatch.com/poster/179711576/s166/la-lista-de-schindler",
+        "sinopsis": "Un drama histórico basado en hechos reales, dirigido por Steven Spielberg. Narra la historia de Oskar Schindler, un industrial alemán que salvó a cientos de judíos durante el Holocausto al emplearlos en sus fábricas. La película aborda el horror de la Segunda Guerra Mundial y el poder de la compasión.",
+        "anyo_estreno": 1993,
+        "director": "Steven Spielberg",
+        "trailer": "https://www.youtube.com/watch?v=7q-ETFeMxwI&pp=ygUcTGEgbGlzdGEgZGUgU2NoaW5kbGVydHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "El Inocente",
+        "img": "https://images.justwatch.com/poster/238876433/s166/el-inocente",
+        "sinopsis": "Un thriller de suspense que sigue a un hombre que, tras ser liberado de prisión, se ve envuelto en un complot de asesinato y corrupción. A medida que investiga, descubre secretos oscuros que amenazan su libertad y su familia.",
+        "anyo_estreno": 2011,
+        "director": "Brad Furman",
+        "trailer": "https://www.youtube.com/watch?v=FoYWQ3hC5jo&pp=ygUTRWwgSW5vY2VudGUgdHJhaWxlcg%3D%3D"
+    },
+    {
+        "nombre": "Fast & Furious X",
+        "img": "https://images.justwatch.com/poster/305793499/s166/fast-x",
+        "sinopsis": "No hay ni un minuto de descanso para Dom Toretto y su familia. En la nueva entrega de Rápido y Furioso, con Cipher de nuevo en escena, Dom y su familia tendrán que enfrentarse a nuevos desafíos y peligros para proteger a aquellos que más aman. ¿Lograrán estar a la altura de las circunstancias?",
+        "anyo_estreno": 2023,
+        "director": "Louis Leterrier",
+        "trailer": "https://www.youtube.com/watch?v=FDhvbIqTQwI&pp=ygUYRmFzdCAmIEZ1cmlvdXMgWCB0cmFpbGVy"
+    },
+    {
+        "nombre": "Babylon",
+        "img": "https://images.justwatch.com/poster/302436416/s166/babylon-2022",
+        "sinopsis": "Una película de drama ambientada durante la transición de Hollywood del cine mudo al sonoro en los años 1920. La historia sigue a varios personajes mientras lidian con el rápido cambio en la industria del cine, explorando temas de fama, ambición y decadencia.",
+        "anyo_estreno": 2022,
+        "director": "Damien Chazelle",
+        "trailer": "https://www.youtube.com/watch?v=gBil8RpweBE&pp=ygUPQmFieWxvbiB0cmFpbGVy"
+    },
+    {
+        "nombre": "Godzilla: Rey de los Monstruos",
+        "img": "https://images.justwatch.com/poster/140327527/s166/godzilla-rey-de-los-monstruos",
+        "sinopsis": "Los criptozoólogos de la agencia Monarch se enfrentan a un grupo de enormes monstruos: Godzilla, Mothra, Rodan y el enemigo de la humanidad, King Ghidorah. Estas ancianas criaturas harán todo lo posible por sobrevivir, poniendo en riesgo la existencia del ser humano en el planeta.",
+        "anyo_estreno": 2019,
+        "director": "Michael Dougherty",
+        "trailer": "https://www.youtube.com/watch?v=fscvluNWT9U&pp=ygUmR29kemlsbGE6IFJleSBkZSBsb3MgTW9uc3RydW9zIHRyYWlsZXI%3D"
+    }
+]  
+
+

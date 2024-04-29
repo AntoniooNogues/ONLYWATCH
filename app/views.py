@@ -1,15 +1,11 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
-from django.contrib.auth.hashers import check_password
-
 import os
-from django.core.files import File
 from django.conf import settings
-# Create your views here.
 from django.shortcuts import render, redirect
 from .models import *
-from django.http import HttpResponse
 
+import json
 
 def mostrar_admi(request):
     return render(request, 'admi.html')
@@ -38,9 +34,12 @@ def do_logout(request):
     logout(request)
     return redirect('login')
 def mostrar_inicio(request):
-    headerPyS = pelicula.objects.all()[:5].random + serie.objects.all()[:5].random
-    p = pelicula.objects.all()
-    return render(request, 'user_home.html', {'header': headerPyS, 'pelicula': p})
+    "add_peliculas_json()"
+    headerP = list(pelicula.objects.all()[:5])
+    headerS = list(serie.objects.all()[:5])
+    headerPS = headerP + headerS
+    PyS = pelicula.objects.all().union(serie.objects.all())
+    return render(request, 'user_home.html', {'header': headerPS, 'peliyserie': PyS})
 
 def register(request):
     if request.method == 'GET':
@@ -188,3 +187,21 @@ def add_plataformas():
                 # Create a new instance of the model with the desired path
                 new_plataforma = plataforma(nombre=name, img=relative_path)
                 new_plataforma.save()
+
+def add_peliculas_json():
+    with open('static/Peliculas.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+
+    # Itera sobre cada elemento en los datos
+    for item in data:
+        # Crea una nueva instancia del modelo pelicula
+        new_pelicula = pelicula()
+        # Asigna los valores de los campos
+        new_pelicula.nombre = item['nombre']
+        new_pelicula.sinopsis = item['sinopsis']
+        new_pelicula.anyo_estreno = item['anyo_estreno']
+        new_pelicula.director = item['director']
+        # Asigna las URLs de la imagen y el tráiler
+        new_pelicula.img = item['img']
+        new_pelicula.trailer = item['trailer']
+        new_pelicula.save()

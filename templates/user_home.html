@@ -67,11 +67,11 @@
             <div class="slider" x-data="{start: true, end: false}">
               <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
                   <!-- Slider items: 10 min <> 15-20 max -->
-                  {% for p in header %}
+                  {% for psh in header %}
                         <div class="slider__item">
-                            <img class="slider__image" src="{{ p.img }}" alt="Imagen de la pelicula {{ p.nombre }}">
+                            <img class="slider__image" src="{{ psh.img }}" alt="Imagen de la pelicula {{ psh.nombre }}">
                             <div class="slider__info">
-                                <h2>{{ p.nombre }}</h2>
+                                <h2>{{ psh.nombre }}</h2>
                             </div>
                         </div>
                 {% endfor %}
@@ -89,12 +89,12 @@
                 <p class="is-bold is-uppercase" style="font-weight: 900">Continuar viendo: </p>
             </div>
             <div class="columns is-multiline is-mobile">
-                {% for pl in pelicula %}
+                {% for pys in peliyserie %}
                     <div class="column is-one-fifth-desktop is-half-mobile">
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img src="{{ pl.img }}" alt="Imagen de la pelicula {{ pl.nombre }}">
+                                    <img src="{{ pys.img }}" alt="Imagen de la pelicula {{ pys.nombre }}">
                                 </figure>
                             </div>
                         </div>

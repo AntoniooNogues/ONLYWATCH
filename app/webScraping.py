@@ -4,7 +4,7 @@ import time
 
 # URL de la página de películas en JustWatch
 base_url = 'https://www.justwatch.com'
-url = base_url + '/es/peliculas'
+url = base_url + '/es/peliculas?page=3'
 
 # Lista para almacenar los datos de las películas
 movies = []
@@ -23,7 +23,6 @@ while url:
 
         # Extraer datos de cada película
         for section in movies_section:
-            time.sleep(1)
             # Obtener el título de la película
             titulo = section.find('img', "picture-comp__img")['alt']
             link = section.find('a', class_="title-list-grid__item--link")['href']
@@ -64,9 +63,9 @@ while url:
 
 # Mostrar las películas obtenidas
 for movie in movies:
-    print(f"Título: {movie['title']}")
-    print(f"Enlace: https://www.justwatch.com{movie['link']}")
-    print(f"Imagen: {movie['imagen']}")
-    print(f"Sinopsis: {movie['sinopsis']}")
-    print(f"Año de estreno: {movie['anyo_estreno']}")
-    print(f"Director: {movie['director']} \n")
+    print(f"nombre: {movie['title']}")
+    print(f"img: {movie['imagen']}")
+    print(f"sinopsis: {movie['sinopsis']}")
+    print(f"anyo_estreno: {movie['anyo_estreno']}")
+    print(f"director: {movie['director']} ")
+    print(f"trailer: ")
