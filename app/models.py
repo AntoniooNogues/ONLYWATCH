@@ -55,9 +55,9 @@ class serie(models.Model):
     nombre = models.CharField(max_length=100)
     sinopsis = models.TextField()
     img = models.CharField(max_length=300)
-    fecha_estreno = models.DateField()
-    trailer = models.CharField(max_length=300)
-    director = models.CharField(max_length=50)
+    anyo_estreno = models.IntegerField(default=0000)
+    trailer = models.CharField(max_length=500, default="")
+    director = models.CharField(max_length=100, default="")
 
     def __str__(self):
         return self.nombre+" "+self.img+" "+self.trailer+" "+self.director
@@ -79,7 +79,7 @@ class pelicula(models.Model):
     anyo_estreno = models.IntegerField(default=0000)
     img = models.CharField(max_length=500)
     trailer = models.CharField(max_length=500, default="")
-    director = models.CharField(max_length=100, default="2")
+    director = models.CharField(max_length=100, default="")
 
     def __str__(self):
         return f"{self.nombre} {self.sinopsis} {self.anyo_estreno} {self.img} {self.trailer} {self.director}"
