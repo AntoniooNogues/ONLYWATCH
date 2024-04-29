@@ -35,10 +35,13 @@ def do_logout(request):
     return redirect('login')
 def mostrar_inicio(request):
     "add_peliculas_json()"
+    "add_series_json()"
     headerP = list(pelicula.objects.all()[:5])
     headerS = list(serie.objects.all()[:5])
     headerPS = headerP + headerS
-    PyS = pelicula.objects.all().union(serie.objects.all())
+    series = list(serie.objects.all())
+    peliculas = list(pelicula.objects.all())
+    PyS = series + peliculas
     return render(request, 'user_home.html', {'header': headerPS, 'peliyserie': PyS})
 
 def register(request):
@@ -205,3 +208,20 @@ def add_peliculas_json():
         new_pelicula.img = item['img']
         new_pelicula.trailer = item['trailer']
         new_pelicula.save()
+
+def add_series_json():
+    with open('static/Series.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+    for item in data:
+        # Crea una nueva instancia del modelo pelicula
+        new_serie = serie()
+        # Asigna los valores de los campos
+        new_serie.nombre = item['nombre']
+        new_serie.sinopsis = item['sinopsis']
+        new_serie.anyo_estreno = item['anyo_estreno']
+        new_serie.director = item['director']
+        # Asigna las URLs de la imagen y el tráiler
+        new_serie.img = item['img']
+        new_serie.trailer = item['trailer']
+        new_serie.save()
