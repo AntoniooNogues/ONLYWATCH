@@ -76,13 +76,13 @@ class actor(models.Model):
 class pelicula(models.Model):
     nombre = models.CharField(max_length=50)
     sinopsis = models.TextField()
-    fecha_estreno = models.DateField()
-    img = models.CharField(max_length=300)
-    url_trailer = models.CharField(max_length=300)
-    director = models.CharField(max_length=300)
+    anyo_estreno = models.IntegerField(default=0000)
+    img = models.CharField(max_length=500)
+    trailer = models.CharField(max_length=500, default="")
+    director = models.CharField(max_length=100, default="2")
 
     def __str__(self):
-        return f"{self.nombre} {self.sinopsis} {self.fecha_estreno} {self.img} {self.url_trailer} {self.director}"
+        return f"{self.nombre} {self.sinopsis} {self.anyo_estreno} {self.img} {self.trailer} {self.director}"
 
 class foro_serie(models.Model):
     serie = models.ForeignKey(serie, on_delete=models.CASCADE)
