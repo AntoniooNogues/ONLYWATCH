@@ -62,7 +62,7 @@
 
     <!-- Main content -->
     <!-- Gallery | Cards @a7v8x-->
-    <main class="mb-6 mt-5">
+    <main class="column mb-6 mt-5">
        <div class="columns is-centered">
             <div class="slider" x-data="{start: true, end: false}">
               <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
@@ -84,16 +84,14 @@
        </div>
        <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
        <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
-       <div class="columns is-centered mr-5 ml-5">
-            <div class="column ml-5 mr-5">
-                <p class="is-bold is-uppercase" style="font-weight: 900">Continuar viendo: </p>
-            </div>
+       <div class="is-centered mr-5 ml-5">
+       <p class="is-bold is-uppercase pb-3" style="font-weight: 900">Continuar viendo: </p>
             <div class="columns is-multiline is-mobile">
                 {% for pys in peliyserie %}
-                    <div class="column is-one-fifth-desktop is-half-mobile">
+                    <div class="column is-one-fifth-desktop is-one-quarter-tablet is-half-mobile">
                         <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
+                            <div class="card-image is-2by3 ">
+                                <figure class="image">
                                     <img src="{{ pys.img }}" alt="Imagen de la pelicula {{ pys.nombre }}">
                                 </figure>
                             </div>
