@@ -41,7 +41,9 @@ urlpatterns = [
     path('administrador/editar_serie/<int:id>', views.editar_serie, name='editar_serie'),
     path('usuario/perfil', views.configuracion, name='configuracion'),
     path('home/', views.mostrar_inicio, name='home'),
+    path('peliculas/', views.view_peliculas, name='peliculas'),
     path('plataformas/', views.plataformas, name='plataformas'),
+    path('series/', views.view_series, name='series'),
 ]
 
 if settings.DEBUG:

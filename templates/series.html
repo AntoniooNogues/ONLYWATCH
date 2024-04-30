@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <script src="https://kit.fontawesome.com/2eb7a633b0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/bulma/css/style.css" />
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+
+
+
+</head>
+<body style="background-color: #FFE8D3" class="familiy has-text-black">
+    {% csrf_token %}
+    <!-- Header -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #FFE8D3">
+                <div class="navbar-brand">
+                    <a class="navbar-item image">
+                        <img src="/static/img/logo_sinfondo 1.png" alt="" class="is-96x96">
+                    </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                       data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                  </div>
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item has-text-black" href="{% url 'home' %}">
+                            Inicio
+                        </a>
+                        <a class="navbar-item has-text-black" href="{% url 'peliculas' %} ">
+                            Peliculas
+                        </a>
+                        <a class="navbar-item has-text-black" href="">
+                            Series
+                        </a>
+                        <a class="navbar-item has-text-black" href=""><i class="fa-solid fa-magnifying-glass "></i></a>
+                    </div>
+                    <div class="navbar-end">
+                     <div class="navbar-item">
+                         <a><i class="fa-regular fa-bell"></i></a>
+                     </div>
+                    <div class="navbar-item">
+                        <a class="is-link">
+                            <div class="button is-size-6 btt">
+                            <img style="border-radius: 5px" src="{{ user.img }}" alt="">
+                            <p class="ml-2 " style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
+                            </div>
+                        </a>
+                    </div>
+                 </div>
+                </div>
+         </nav>
+    </header>
+
+    <!-- Main content -->
+    <!-- Gallery | Cards @a7v8x-->
+    <main class="column mb-6 mt-5">
+       <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
+       <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
+       <div class="is-centered mr-5 ml-5">
+       <h1 class="is-bold is-uppercase pb-6 is-size-1 has-text-centered mali" style="font-weight: 900">Series </h1>
+            <div class="columns is-multiline is-mobile">
+                {% for s in series %}
+                    <div class="column is-one-fifth-desktop is-half-tablet is-half-mobile">
+                        <div class="card">
+                            <div class="card-image ">
+                                <figure class="image is-2by3">
+                                    <img src="{{ s.img }}" alt="Imagen de la película {{ s.nombre }}">
+                                </figure>
+
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>  
+        </div>
+    </main>
+
+
+    {% include "footer.html" %}
+    <script src="{% static 'js/navbar.js' %} "></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
+</body>
+</html>

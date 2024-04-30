@@ -1,3 +1,5 @@
+import random
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
 import os
@@ -36,9 +38,10 @@ def do_logout(request):
 def mostrar_inicio(request):
     "add_peliculas_json()"
     "add_series_json()"
-    headerP = list(pelicula.objects.all()[:5])
-    headerS = list(serie.objects.all()[:5])
+    headerP = list(pelicula.objects.order_by('?')[:5])
+    headerS = list(serie.objects.order_by('?')[:5])
     headerPS = headerP + headerS
+    random.shuffle(headerPS)
     series = list(serie.objects.all())
     peliculas = list(pelicula.objects.all())
     PyS = series + peliculas
@@ -225,3 +228,11 @@ def add_series_json():
         new_serie.img = item['img']
         new_serie.trailer = item['trailer']
         new_serie.save()
+
+def view_peliculas(request):
+    peliculas = pelicula.objects.all()
+    return render(request, 'peliculas.html', {'peliculas': peliculas})
+
+def view_series(request):
+    series = serie.objects.all()
+    return render(request, 'series.html', {'series': series})
