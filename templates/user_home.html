@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #FFE8D3">
                 <div class="navbar-brand">
-                    <a class="navbar-item image " href="{{ redirect  }}">
+                    <a class="navbar-item image " href="{% url 'peliculas' %}">
                         <img src="/static/img/logo_sinfondo 1.png" alt="" class="is-96x96">
                     </a>
                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
@@ -32,13 +32,13 @@
                   </div>
                 <div id="navbarBasicExample" class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item has-text-black">
+                        <a class="navbar-item has-text-black" href="">
                             Inicio
                         </a>
-                        <a class="navbar-item has-text-black">
+                        <a class="navbar-item has-text-black" href="{% url 'peliculas' %}">
                             Peliculas
                         </a>
-                        <a class="navbar-item has-text-black">
+                        <a class="navbar-item has-text-black" href="{% url 'series' %}">
                             Series
                         </a>
                         <a class="navbar-item has-text-black" href=""><i class="fa-solid fa-magnifying-glass "></i></a>
@@ -90,7 +90,7 @@
                 {% for pys in peliyserie %}
                     <div class="column is-one-fifth-desktop is-one-quarter-tablet is-half-mobile">
                         <div class="card">
-                            <div class="card-image is-2by3 ">
+                            <div class="card-image">
                                 <figure class="image">
                                     <img src="{{ pys.img }}" alt="Imagen de la pelicula {{ pys.nombre }}">
                                 </figure>
