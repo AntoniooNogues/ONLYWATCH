@@ -148,6 +148,7 @@ body {
   pointer-events: none;
   transition: 0.2s ease-out;
   opacity: 0.75;
+
 }
 .slider__nav__button--active {
   opacity: 1;
@@ -172,5 +173,9 @@ body {
 .card{
   max-width: 80% !important;
   margin: 0 auto;
+}
 
+.card-image{
+  box-shadow: rgba(0, 0, 0, 0.25) 0 54px 55px, rgba(0, 0, 0, 0.12) 0 -12px 30px, rgba(0, 0, 0, 0.12) 0 4px 6px, rgba(0, 0, 0, 0.17) 0 12px 13px, rgba(0, 0, 0, 0.09) 0 -3px 5px;
+  border-radius: 15px;
 }
