@@ -50,8 +50,13 @@
                     <div class="navbar-item">
                         <a class="is-link">
                             <div class="button is-size-6 btt">
-                            <img style="border-radius: 5px" src="{{ user.img }}" alt="">
-                            <p class="ml-2 " style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
+                            {% if user.sexo == "NS/NC" %}
+                                <p class="ml-2 " style="color: #0a0a0a">Bienvenido/a, {{ user.username }}</p>
+                            {% elif user.sexo == "Masculino" %}
+                                <p class="ml-2 " style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
+                            {% elif user.sexo == "Femenino" %}
+                                <p class="ml-2 " style="color: #0a0a0a">Bienvenida, {{ user.username }}</p>
+                            {% endif %}
                             </div>
                         </a>
                     </div>
