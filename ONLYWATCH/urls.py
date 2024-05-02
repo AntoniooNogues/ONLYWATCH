@@ -44,6 +44,7 @@ urlpatterns = [
     path('peliculas/', views.view_peliculas, name='peliculas'),
     path('plataformas/', views.plataformas, name='plataformas'),
     path('series/', views.view_series, name='series'),
+    path('pelicula/', views.view_pelicula, name='pelicula'),
 ]
 
 if settings.DEBUG:
