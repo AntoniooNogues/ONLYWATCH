@@ -70,3 +70,4 @@ for movie in movies:
     print(f"Sinopsis: {movie['sinopsis']}")
     print(f"Año de estreno: {movie['anyo_estreno']}")
     print(f"Director: {movie['director']} \n")
+

@@ -16,7 +16,7 @@ from django.conf import settings
 # Create your views here.
 from django.shortcuts import render, redirect
 from .models import *
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 
 def mostrar_admi(request):
@@ -46,7 +46,7 @@ def do_logout(request):
     logout(request)
     return redirect('login')
 def mostrar_inicio(request):
-    headerPyS = pelicula.objects.all()[:5].random + serie.objects.all()[:5].random
+    headerPyS = pelicula.objects.all()[:5]
     p = pelicula.objects.all()
     return render(request, 'user_home.html', {'header': headerPyS, 'pelicula': p})
 
@@ -179,9 +179,16 @@ def configuracion(request):
         return render(request, 'login.html')
 
 def plataformas(request):
-    add_plataformas()
-    plt = plataforma.objects.all()
-    return render(request, 'plataformas.html', {'plataforma': plt})
+    # add_plataformas()
+    user = User.objects.get(id=request.user.id)
+    user_plataformas = user.usuario_plataforma_set.all()
+    plataformas_totales = plataforma.objects.all()
+    plataformas_1 = [up.plataforma for up in user_plataformas]
+    if user is not None:
+        return render(request, 'plataformas.html',
+                      {'user': user, 'plataformas': plataformas_1, 'totales': plataformas_totales})
+    else:
+        return render(request, 'login.html')
 
 
 def add_plataformas():
@@ -260,21 +267,23 @@ def vincular_desvincular_plataforma(request, plataforma_id):
     else:
         # Si la relación existe, se elimina
         user_plat.delete()
+    return redirect('plataformas')
 
-    return redirect('configuracion')
 
 def configurar_perfil(request):
     if request.method == 'POST':
         user = User.objects.get(id=request.user.id)
-        user.img = request.POST.get('foto_perfil')
+        if 'foto_perfil' in request.FILES:  # Verificar si 'foto_perfil' está en request.FILES
+            foto_perfil = request.FILES['foto_perfil']
+            user.img = foto_perfil
         user.fecha_nacimiento = request.POST.get('user_fecha_nacimiento')
         user.sexo = request.POST.get('user_sexo')
         user.username = request.POST.get('user_username')
         user.nombre_completo = request.POST.get('user_nombre_completo')
         # Acceder al archivo de imagen enviado por el usuario
-        if 'foto_perfil' in request.FILES:
-            imagen = request.FILES['foto_perfil']
-            user.img = imagen  # Guardar la imagen en el campo correspondiente del modelo de usuario
+        # if 'foto_perfil' in request.FILES:
+        #     imagen = request.FILES['foto_perfil']
+        #     user.img = imagen  # Guardar la imagen en el campo correspondiente del modelo de usuario
 
         user.save()
         return redirect('configuracion')
