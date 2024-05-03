@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Administrador</title>
-    <link rel="stylesheet" href="/static/bulma/css/admi.css">
+    <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="/static/bulma/css/style.css">
     <script src="https://kit.fontawesome.com/b9d5886cee.js" crossorigin="anonymous"></script>
 
@@ -82,23 +82,26 @@
                       </div>
                     </div>
                     <div class="column">
-                        <label class="label">Fecha de estreno</label>
+                        <label class="label">Año de estreno</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Fecha de estreno de la película" name="fecha_estreno" value="{{ pelicula.fecha_estreno | date:'Y-m-d' }}">
+                          <input class="input" type="text" placeholder="Año de estreno de la película"
+                                 name="fecha_estreno">
                       </div>
                     <label class="label">Imagen</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Imagen de la película" name="img" value="{{ pelicula.img }}">
+                          <input class="input" type="text" placeholder="Imagen de la película" name="img">
                       </div>
                     </div>
                     <div class="column">
                         <label class="label">Trailer</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Url del trailer de la película" name="url_trailer" value="{{ pelicula.url_trailer }}">
+                          <input class="input" type="text" placeholder="Url del trailer de la película"
+                                 name="url_trailer">
                       </div>
                     <label class="label">Director</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Nombre del director la película" name="director" value="{{ pelicula.director }}">
+                          <input class="input" type="text" placeholder="Nombre del director la película"
+                                 name="director">
                       </div>
                     </div>
                 </div>
@@ -116,14 +119,14 @@
                 </div>
             </form>
         </div>
-        <div class="box container">
+        <div class="box container table-container" style="max-height: 1000px; overflow-y: auto;">
              <h4>Listado de peliculas actuales:</h4>
             <table class="table is-fullwidth">
                 <thead>
                     <tr>
                         <th>Nombre</th>
                         <th>Sinopsis</th>
-                        <th>Fecha de estreno</th>
+                        <th>Año&nbsp;de&nbsp;estreno</th>
                         <th>Imagen</th>
                         <th>Trailer</th>
                         <th>Director</th>
@@ -136,9 +139,9 @@
                         <tr>
                         <td> {{ p.nombre }}</td>
                         <td> {{ p.sinopsis }}</td>
-                        <td> {{ p.fecha_estreno }}</td>
-                        <td> {{ p.img }}</td>
-                        <td> {{ p.url_trailer }}</td>
+                            <td> {{ p.anyo_estreno }}</td>
+                            <td><img src="{{ p.img }}" alt="{{ p.nombre }}"></td>
+                            <td style="max-width: 200px; word-wrap: break-word;"> {{ p.trailer }}</td>
                         <td> {{ p.director }}</td>
                         <td><a href="{% url 'eliminar_pelicula' id=p.id %} "><i class="fa-solid fa-trash"></i></a></td>
                         <td><a href="{% url 'editar_pelicula' id=p.id %} "><i class="fa-regular fa-pen-to-square"></i></a></td>
@@ -169,9 +172,10 @@
                       </div>
                     </div>
                     <div class="column">
-                        <label class="label">Fecha de estreno</label>
+                        <label class="label">Año de estreno</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Fecha de estreno de la serie" name="fecha_estreno_serie">
+                          <input class="input" type="text" placeholder="Año de estreno de la serie"
+                                 name="fecha_estreno_serie">
                       </div>
                     <label class="label">Imagen</label>
                       <div class="control">
@@ -203,46 +207,51 @@
                 </div>
             </form>
         </div>
-        <div class="box container">
+         <div class="box container table-container">
              <h4>Listado de series actuales:</h4>
-            <table class="table is-fullwidth">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Sinopsis</th>
-                        <th>Fecha de estreno</th>
-                        <th>Imagen</th>
-                        <th>Trailer</th>
-                        <th>Director</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
+             <div style="overflow-x: auto; max-height: 1000px; overflow-y: auto;">
+                 <table class="table is-fullwidth scrollable-table">
+                     <thead>
+                     <tr>
+                         <th>Nombre</th>
+                         <th>Sinopsis</th>
+                         <th>Año&nbsp;de&nbsp;estreno</th>
+                         <th>Imagen</th>
+                         <th>Trailer</th>
+                         <th>Director</th>
+                         <th></th>
+                         <th></th>
+                     </tr>
+                     </thead>
+                     <tbody>
                      {% for s in series %}
-                        <tr>
-                        <td> {{ s.nombre }}</td>
-                        <td> {{ s.sinopsis }}</td>
-                        <td> {{ s.fecha_estreno }}</td>
-                        <td> {{ s.img }}</td>
-                        <td> {{ s.url_trailer }}</td>
-                        <td> {{ s.director }}</td>
-                        <td><a href="{% url 'eliminar_serie' id=s.id %} "><i class="fa-solid fa-trash"></i></a></td>
-                        <td><a href="{% url 'editar_serie' id=s.id %} "><i class="fa-regular fa-pen-to-square"></i></a></td>
-                        </tr>
-                        {% endfor %}
-                </tbody>
-            </table>
-            <a href="{% url 'mostrar_series'  %} "><button class="button is-success is-grouped-centered">
+                         <tr>
+                             <td> {{ s.nombre }}</td>
+                             <td> {{ s.sinopsis }}</td>
+                             <td> {{ s.anyo_estreno }}</td>
+                             <td><img class="image" src="{{ s.img }}" alt="{{ s.nombre }}"></td>
+                             <td style="max-width: 200px; word-wrap: break-word;"> {{ s.trailer }}</td>
+                             <td> {{ s.director }}</td>
+                             <td><a href="{% url 'eliminar_serie' id=s.id %} "><i class="fa-solid fa-trash"></i></a>
+                             </td>
+                             <td><a href="{% url 'editar_serie' id=s.id %} "><i class="fa-regular fa-pen-to-square"></i></a>
+                             </td>
+                         </tr>
+                     {% endfor %}
+                     </tbody>
+                 </table>
+             </div>
+             <a href="{% url 'mostrar_series' %} ">
+                 <button class="button is-success is-grouped-centered mt-3">
               Actualizar
             </button></a>
         </div>
     </div>
     <div class="usuarios ">
         <h2 class="is-size-2 container mt-6">Usuarios</h2>
-        <div class="box container">
+        <div class="box container table-container">
              <h4>Listado de usarios actuales:</h4>
-            <table class="table is-fullwidth">
+            <table class="table is-fullwidth scrollable-table">
                 <thead>
                     <tr>
                         <th>Username</th>
@@ -261,7 +270,7 @@
                         <td> {{ u.nombre_completo }}</td>
                         <td> {{ u.email }}</td>
                         <td> {{ u.fecha_nacimiento }}</td>
-                        <td> {{ u.img }}</td>
+                            <td><img class="image is-128x128" src="{{ u.img.url }}" alt="{{ u.nombre_completo }}"></td>
                         <td> {{ u.sexo }}</td>
                         <td><a href="{% url 'eliminar_usuario' id=u.id  %} "><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
@@ -273,6 +282,73 @@
             </button></a>
         </div>
     </div>
+        <div>
+            <h2 class="is-size-2 container mt-6">Actores</h2>
+            <div class="box container">
+                <h4>Añadir actores:</h4>
+                <form method="post" action="{% url 'new_actor' %}">
+                    {% csrf_token %}
+                    <div class="field columns mt-1">
+                        <div class="column">
+                            <label class="label">Nombre</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Nombre completo del actor"
+                                       name="nombre_actor">
+                            </div>
+                        </div>
+                        <div class="column">
+                            <label class="label">Imagen</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Imagen del actor" name="img_actor">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="field is-grouped is-grouped-centered">
+                        <p class="control">
+                            <button class="button is-primary" type="submit">
+                                Añadir
+                            </button>
+                        </p>
+                        <p class="control">
+                            <a class="button is-light">
+                                Cancelar
+                            </a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <div class="box container table-container">
+                <h4>Listado de actores:</h4>
+                <table class="table is-fullwidth scrollable-table">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Imagen</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for a in actores %}
+                        <tr>
+                            <td> {{ a.nombre }}</td>
+                            <td><img src="{{ a.img }}" alt="{{ a.nombre }}"></td>
+                            <td><a href="{% url 'eliminar_actor' id=a.id %} "><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                            <td><a href="{% url 'editar_actor' id=a.id %} "><i class="fa-regular fa-pen-to-square"></i></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{% url 'mostrar_actores' %} ">
+                    <button class="button is-success is-grouped-centered">
+                        Actualizar
+                    </button>
+                </a>
+            </div>
+        </div>
     {% endblock %}
     <script src="{% static 'js/navbar.js' %} "></script>
 </body>

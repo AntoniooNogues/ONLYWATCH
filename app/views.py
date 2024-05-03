@@ -114,9 +114,9 @@ def new_peliculas(request):
         new = pelicula()
         new.nombre = request.POST.get('nombre')
         new.sinopsis = request.POST.get('sinopsis')
-        new.fecha_estreno = request.POST.get('fecha_estreno')
+        new.anyo_estreno = request.POST.get('fecha_estreno')
         new.img = request.POST.get('img')
-        new.url_trailer = request.POST.get('url_trailer')
+        new.trailer = request.POST.get('url_trailer')
         new.director = request.POST.get('director')
         new.save()
 
@@ -131,41 +131,60 @@ def new_serie(request):
         new = serie()
         new.nombre = request.POST.get('nombre_serie')
         new.sinopsis = request.POST.get('sinopsis_serie')
-        new.fecha_estreno = request.POST.get('fecha_estreno_serie')
+        new.anyo_estreno = request.POST.get('fecha_estreno_serie')
         new.img = request.POST.get('img_serie')
         new.trailer = request.POST.get('trailer_serie')
         new.director = request.POST.get('director_serie')
         new.save()
 
-        return redirect('/administrador/serie')
+        return redirect('/administrador/series_actuales')
 
+def new_actor(request):
+    if request.method == 'GET':
+        uno = actor.objects.all()
+        return render(request, 'admi.html', {'actor': uno})
+    else:
+        new = actor()
+        new.nombre = request.POST.get('nombre_actor')
+        new.img = request.POST.get('img_actor')
+        new.save()
+
+        return redirect('/administrador/listado_actores')
 
 def mostrar_series(request):
-    series = serie.objects.all()
-    return render(request, 'admi.html', {'series': series})
+    ser = serie.objects.all()
+    return render(request, 'admi.html', {'series': ser})
 
 
 def mostrar_usuarios(request):
     usuarios = User.objects.all()
     return render(request, 'admi.html', {'usuarios': usuarios})
 
+def mostrar_actores(request):
+    actores = actor.objects.all()
+    return render(request, 'admi.html', {'actores': actores})
+
+def eliminar_actor(request, id):
+    actor_eliminar = actor.objects.get(id=id)
+    actor_eliminar.delete()
+    return redirect('/administrador/listado_actores')
 
 def eliminar_usuario(request, id):
     usuario = User.objects.get(id=id)
     usuario.delete()
-    return redirect('/administrador/')
+    return redirect('/administrador/usuarios')
 
 
 def eliminar_pelicula(request, id):
     pelicula_eliminar = pelicula.objects.get(id=id)
     pelicula_eliminar.delete()
-    return redirect('/administrador/')
+    return redirect('/administrador/pelicula')
 
 
 def eliminar_serie(request, id):
     serie_eliminar = serie.objects.get(id=id)
     serie_eliminar.delete()
-    return redirect('/administrador/')
+    return redirect('/administrador/series_actuales')
 
 
 def editar_pelicula(request, id):
@@ -181,7 +200,7 @@ def editar_pelicula(request, id):
         peli.director = request.POST.get('director')
         peli.save()
 
-        return redirect('/administrador/')
+        return redirect('/administrador/pelicula')
 
 
 def editar_serie(request, id):
@@ -197,7 +216,19 @@ def editar_serie(request, id):
         serie_editar.director = request.POST.get('director')
         serie_editar.save()
 
-        return redirect('/administrador/')
+        return redirect('/administrador/series_actuales')
+
+def editar_actor(request, id):
+    actor_editar = actor.objects.get(id=id)
+    if request.method == 'GET':
+        return render(request, 'editar_actor.html', {'actor': actor_editar})
+    else:
+        actor_editar.nombre = request.POST.get('nombre')
+        actor_editar.img = request.POST.get('img')
+        actor_editar.save()
+
+        return redirect('/administrador/listado_actores')
+
 
 
 def configuracion(request):
@@ -257,6 +288,9 @@ def add_peliculas_json():
         new_pelicula.img = item['img']
         new_pelicula.trailer = item['trailer']
         new_pelicula.save()
+def load_movies_data(request):
+    add_peliculas_json()
+    return HttpResponse("Datos de películas cargados correctamente")
 
 
 def add_series_json():
@@ -275,6 +309,9 @@ def add_series_json():
         new_serie.img = item['img']
         new_serie.trailer = item['trailer']
         new_serie.save()
+def load_series_data(request):
+    add_series_json()
+    return HttpResponse("Datos de series cargados correctamente")
 
 
 def view_peliculas(request):
