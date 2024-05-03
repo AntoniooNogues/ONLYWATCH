@@ -191,12 +191,12 @@ body {
     max-width: 100%;
 }
 
-.etiqueta {
-    font-weight: bold;
-    border: 1px solid #000;
-    border-radius: 10px;
-    padding: 8px;
-    background-color: #FDA657;
-    margin-right: 9px;
-
+.estado{
+  padding: 5px;
+  width: 100%;
+  font-size: 16px;
+  font-family: 'Manrope', sans-serif;
+  background-color: #FFA757;
+  font-weight: 700;
+  border-radius: 5px;
 }

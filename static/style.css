@@ -60,5 +60,6 @@ li {
     font-size: 18px;
 }
 a {
-    color: black;
+    color: black; !important;
 }
+
