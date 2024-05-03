@@ -44,7 +44,8 @@ urlpatterns = [
     path('peliculas/', views.view_peliculas, name='peliculas'),
     path('plataformas/', views.plataformas, name='plataformas'),
     path('series/', views.view_series, name='series'),
-    path('pelicula/', views.view_pelicula, name='pelicula'),
+    path('pelicula/<int:id_pelicula>', views.mostrar_pelicula, name='pelicula'),
+
     path('send_verification_code/', views.send_verification_code, name='send_verification_code'),
     path('verify_code/', views.verify_code, name='verify_code'),
     path('vincular_desvincular_plataforma/<int:plataforma_id>/', views.vincular_desvincular_plataforma,

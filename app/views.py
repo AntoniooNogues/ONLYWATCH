@@ -63,10 +63,9 @@ def mostrar_inicio(request):
     headerS = list(serie.objects.order_by('?')[:5])
     headerPS = headerP + headerS
     random.shuffle(headerPS)
-    series = list(serie.objects.all())
-    peliculas = list(pelicula.objects.all())
-    PyS = series + peliculas
-    return render(request, 'user_home.html', {'header': headerPS, 'peliyserie': PyS})
+    series = serie.objects.all().order_by('?')
+    peliculas = pelicula.objects.all().order_by('?')
+    return render(request, 'user_home.html', {'header': headerPS, 'series': series, 'peliculas': peliculas})
 
 
 def register(request):
@@ -324,8 +323,8 @@ def view_series(request):
     return render(request, 'series.html', {'series': series})
 
 
-def view_pelicula(request):
-    peli = pelicula.objects.get(id=1)
+def mostrar_pelicula(request, id_pelicula):
+    peli = pelicula.objects.get(id=id_pelicula)
     plt_pelicula = plataforma_pelicula.objects.filter(pelicula_id=peli).all()
     gen_pelicula = pelicula_genero.objects.filter(pelicula_id=peli).all()
     pj_pelicula = personaje_pelicula.objects.filter(pelicula_id=peli).all()[:6]
