@@ -1,3 +1,5 @@
+import random
+
 from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
@@ -16,15 +18,20 @@ from django.conf import settings
 # Create your views here.
 from django.shortcuts import render, redirect
 from .models import *
+
+import json
 from django.http import HttpResponse, JsonResponse
 
 
 def mostrar_admi(request):
     return render(request, 'admi.html')
 
+
 def mostrar_peliculas(request):
     peliculas = pelicula.objects.all()
     return render(request, 'admi.html', {'peliculas': peliculas})
+
+
 def do_login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -42,13 +49,25 @@ def do_login(request):
 
     # Mostrar formulario de login para método GET
     return render(request, 'login.html')
+
+
 def do_logout(request):
     logout(request)
     return redirect('login')
+
+
 def mostrar_inicio(request):
-    headerPyS = pelicula.objects.all()[:5]
-    p = pelicula.objects.all()
-    return render(request, 'user_home.html', {'header': headerPyS, 'pelicula': p})
+    """add_peliculas_json()
+    add_series_json()"""
+    headerP = list(pelicula.objects.order_by('?')[:5])
+    headerS = list(serie.objects.order_by('?')[:5])
+    headerPS = headerP + headerS
+    random.shuffle(headerPS)
+    series = list(serie.objects.all())
+    peliculas = list(pelicula.objects.all())
+    PyS = series + peliculas
+    return render(request, 'user_home.html', {'header': headerPS, 'peliyserie': PyS})
+
 
 def register(request):
     if request.method == 'GET':
@@ -74,7 +93,8 @@ def register(request):
         if len(errors) != 0:
             return render(request, "register.html", {"errores": errors, "username": username})
         else:
-            user = User.objects.create(username=username, email=mail, password=make_password(password), nombre_completo=nombre_completo)
+            user = User.objects.create(username=username, email=mail, password=make_password(password),
+                                       nombre_completo=nombre_completo)
             user.save()
             return redirect("login")
 
@@ -84,6 +104,7 @@ def reset_password(request):
         return render(request, 'reset_password.html')
     else:
         return render(request, 'reset_password.html')
+
 
 def new_peliculas(request):
     if request.method == 'GET':
@@ -101,6 +122,7 @@ def new_peliculas(request):
 
         return redirect('/administrador/pelicula')
 
+
 def new_serie(request):
     if request.method == 'GET':
         uno = serie.objects.all()
@@ -116,28 +138,36 @@ def new_serie(request):
         new.save()
 
         return redirect('/administrador/serie')
+
+
 def mostrar_series(request):
     series = serie.objects.all()
     return render(request, 'admi.html', {'series': series})
 
+
 def mostrar_usuarios(request):
     usuarios = User.objects.all()
     return render(request, 'admi.html', {'usuarios': usuarios})
+
 
 def eliminar_usuario(request, id):
     usuario = User.objects.get(id=id)
     usuario.delete()
     return redirect('/administrador/')
 
+
 def eliminar_pelicula(request, id):
     pelicula_eliminar = pelicula.objects.get(id=id)
     pelicula_eliminar.delete()
     return redirect('/administrador/')
 
+
 def eliminar_serie(request, id):
     serie_eliminar = serie.objects.get(id=id)
     serie_eliminar.delete()
     return redirect('/administrador/')
+
+
 def editar_pelicula(request, id):
     peli = pelicula.objects.get(id=id)
     if request.method == 'GET':
@@ -152,6 +182,7 @@ def editar_pelicula(request, id):
         peli.save()
 
         return redirect('/administrador/')
+
 
 def editar_serie(request, id):
     serie_editar = serie.objects.get(id=id)
@@ -168,6 +199,7 @@ def editar_serie(request, id):
 
         return redirect('/administrador/')
 
+
 def configuracion(request):
     user = User.objects.get(id=request.user.id)
     user_plataformas = user.usuario_plataforma_set.all()
@@ -177,6 +209,7 @@ def configuracion(request):
         return render(request, 'User_information.html', {'user': user, 'plataformas': plataformas_1, 'totales': plataformas_totales})
     else:
         return render(request, 'login.html')
+
 
 def plataformas(request):
     # add_plataformas()
@@ -193,7 +226,7 @@ def plataformas(request):
 
 def add_plataformas():
     # Directory where the images are located
-    directory = os.path.join(settings.MEDIA_ROOT, 'plataformas')    # Iterate over all files in the directory
+    directory = os.path.join(settings.MEDIA_ROOT, 'plataformas')  # Iterate over all files in the directory
     for filename in os.listdir(directory):
         if filename.endswith('.png'):
             # Get the file name without the extension
@@ -205,6 +238,61 @@ def add_plataformas():
                 # Create a new instance of the model with the desired path
                 new_plataforma = plataforma(nombre=name, img=relative_path)
                 new_plataforma.save()
+
+
+def add_peliculas_json():
+    with open('static/Peliculas.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+
+    # Itera sobre cada elemento en los datos
+    for item in data:
+        # Crea una nueva instancia del modelo pelicula
+        new_pelicula = pelicula()
+        # Asigna los valores de los campos
+        new_pelicula.nombre = item['nombre']
+        new_pelicula.sinopsis = item['sinopsis']
+        new_pelicula.anyo_estreno = item['anyo_estreno']
+        new_pelicula.director = item['director']
+        # Asigna las URLs de la imagen y el tráiler
+        new_pelicula.img = item['img']
+        new_pelicula.trailer = item['trailer']
+        new_pelicula.save()
+
+
+def add_series_json():
+    with open('static/Series.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+    for item in data:
+        # Crea una nueva instancia del modelo pelicula
+        new_serie = serie()
+        # Asigna los valores de los campos
+        new_serie.nombre = item['nombre']
+        new_serie.sinopsis = item['sinopsis']
+        new_serie.anyo_estreno = item['anyo_estreno']
+        new_serie.director = item['director']
+        # Asigna las URLs de la imagen y el tráiler
+        new_serie.img = item['img']
+        new_serie.trailer = item['trailer']
+        new_serie.save()
+
+
+def view_peliculas(request):
+    peliculas = pelicula.objects.all()
+    return render(request, 'peliculas.html', {'peliculas': peliculas})
+
+
+def view_series(request):
+    series = serie.objects.all()
+    return render(request, 'series.html', {'series': series})
+
+
+def view_pelicula(request):
+    peli = pelicula.objects.get(id=1)
+    plt_pelicula = plataforma_pelicula.objects.filter(pelicula_id=peli).all()
+    gen_pelicula = pelicula_genero.objects.filter(pelicula_id=peli).all()
+    return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula})
+
 
 # def calcular_edad(fecha_nacimiento):
 #     nacimiento = datetime.strptime(fecha_nacimiento, '%Y-%m-%d')

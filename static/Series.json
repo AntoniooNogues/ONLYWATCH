@@ -1,0 +1,484 @@
+[
+    {
+      "nombre": "Fallout",
+      "img": "https://es.web.img3.acsta.net/pictures/24/03/08/10/09/2380565.jpg",
+      "sinopsis": "Aventuras en una América postapocalíptica tras la guerra nuclear. Una guerra nuclear ha dejado devastadas grandes partes de la superficie terrestre. Pero la vida en la Tierra no ha desaparecido por completo. Con la ayuda de tecnología rudimentaria, unas pocas almas solitarias vagan por las extensiones destruidas de Norteamérica. ¿Qué viene después del apocalipsis? ¿Qué queda después de la devastación?",
+      "anyo_estreno": 2024,
+      "director": "Ella Purnell",
+      "trailer": "https://www.youtube.com/watch?v=KkEAyuTIZTs&pp=ygUQRmFsbG91dCB0cmFpbGVyIA%3D%3D"
+    },
+    {
+      "nombre": "Shōgun",
+      "img": "https://es.web.img2.acsta.net/pictures/24/01/09/11/53/2662454.jpg",
+      "sinopsis": "Un drama histórico basado en la novela de James Clavell. Sigue a John Blackthorne, un marino inglés que naufraga en Japón en el siglo XVII. A medida que se integra en la sociedad japonesa, se enfrenta a las diferencias culturales y a las tensiones políticas entre clanes.",
+      "anyo_estreno": 2024,
+      "director": "Hiroyuki Sanada",
+      "trailer": "https://www.youtube.com/watch?v=yAN5uspO_hk&pp=ygUPU2jFjWd1bnRyYWlsZXIg"
+    },
+    {
+      "nombre": "El problema de los 3 cuerpos",
+      "img": "https://es.web.img3.acsta.net/pictures/24/03/08/10/40/0547006.jpg",
+      "sinopsis": "Decisiones del pasado que hay que solucionar en el presente. Una decisión terrible tomada en la China de los años 60 se traslada en el tiempo hasta la época actual, en la que varios científicos deben enfrentarse a la mayor amenaza que la humanidad ha conocido nunca.",
+      "anyo_estreno": 2024,
+      "director": "Jovan Adepo",
+      "trailer": "https://www.youtube.com/watch?v=QQSnJLLu0C0&pp=ygUlRWwgcHJvYmxlbWEgZGUgbG9zIDMgY3VlcnBvcyB0cmFpbGVyIA%3D%3D"
+    },
+    {
+      "nombre": "Ripley",
+      "img": "https://es.web.img2.acsta.net/pictures/24/01/24/16/02/4993197.jpg",
+      "sinopsis": "Basada en las novelas de Patricia Highsmith, sigue las aventuras del estafador y asesino Tom Ripley. La serie explora la psicología del personaje mientras se mueve entre el engaño y el crimen para mantener su lujoso estilo de vida.",
+      "anyo_estreno": 2024,
+      "director": "Steven Zaillian",
+      "trailer": "https://www.youtube.com/watch?v=a_0KudFXWQA&pp=ygUPUmlwbGV5IHRyYWlsZXIg"
+    },
+    {
+      "nombre": "Los caballeros",
+      "img": "https://static.wikia.nocookie.net/doblaje/images/e/e8/Los_caballeros_%28serie_de_TV%29.jpg/revision/latest?cb=20240215141741&path-prefix=es",
+      "sinopsis": "Una serie de aventuras que sigue a un grupo de caballeros en un reino medieval. A través de batallas épicas y alianzas políticas, luchan por la justicia y el honor mientras defienden su tierra de enemigos y amenazas mágicas.",
+      "anyo_estreno": 2024,
+      "director": "Theo James",
+      "trailer": "https://www.youtube.com/watch?v=jfP4OGskLis&pp=ygUXTG9zIGNhYmFsbGVyb3MgdHJhaWxlciA%3D"
+    },
+    {
+      "nombre": "Bebe Reno",
+      "img": "https://www.lavanguardia.com/peliculas-series/images/serie/poster/2024/4/w1280/1AMwfBYXeBWkGCCH0o85wrb6ffw.jpg",
+      "sinopsis": "Una serie animada para niños sobre un reno de peluche que cobra vida y se embarca en aventuras mágicas con sus amigos. Cada episodio enseña lecciones valiosas sobre la amistad, la empatía y la valentía.",
+      "anyo_estreno": 2024,
+      "director": "Richard Gadd",
+      "trailer": "https://www.youtube.com/watch?v=vF4zy5lRiuc&pp=ygUbTWkgcmVubyBkZSBwZWx1Y2hlIHRyYWlsZXIg"
+    },
+    {
+      "nombre": "The Chosen",
+      "img": "https://artesiete.es/Posters/the-chosen-t4-1y2.jpg",
+      "sinopsis": "Una serie dramática basada en la vida de Jesús de Nazaret, contada desde la perspectiva de sus seguidores y discípulos. A través de historias bíblicas, la serie explora las enseñanzas de Jesús y el impacto de su mensaje.",
+      "anyo_estreno": 2017,
+      "director": "Dallas Jenkins",
+      "trailer": "https://www.youtube.com/watch?v=K1-FoFj8Jbo&pp=ygUUVGhlIENob3NlbmUgdHJhaWxlciA%3D"
+    },
+    {
+      "nombre": "Reina Roja",
+      "img": "https://pics.filmaffinity.com/Reina_Roja_Serie_de_TV-983415661-large.jpg",
+      "sinopsis": "Antonia Scott y la organización Reina Roja tendrán que resolver un misterioso asesinato. A veces los dones se convierten en maldiciones. Eso puede pensar Antonio Scott, la persona más inteligente de la Tierra, que formó parte de un proyecto policial experimental llamado 'Reina Roja', tras el que acabó perdiéndolo todo. Con el asesinato del hijo de un poderoso magnate, su papel y el de la organización Reina Roja vuelven a ser protagonistas, todo de la mano de Jon Gutiérrez, un policía vasco y con malas pulgas que está a punto de ser expulsado del cuerpo.",
+      "anyo_estreno": 2024,
+      "director": "Victoria Luengo",
+      "trailer": "https://www.youtube.com/watch?v=bH1g07mBHGw&pp=ygUTUmVpbmEgUm9qYSB0cmFpbGVyIA%3D%3D"
+    },
+    {
+      "nombre": "Tokyo Vice",
+      "img": "https://pics.filmaffinity.com/Tokyo_Vice_Serie_de_TV-282293903-large.jpg",
+      "sinopsis": "Un drama basado en las memorias de Jake Adelstein, un periodista estadounidense que trabaja en Tokio. La serie sigue sus experiencias en la cobertura del crimen y la corrupción en la ciudad, explorando el lado oscuro de la sociedad japonesa.",
+      "anyo_estreno": 2022,
+      "director": "Ansel Elgort",
+      "trailer": "https://www.youtube.com/watch?v=l3oWrNQo_Ng&pp=ygUTVG9reW8gVmljZSB0cmFpbGVyIA%3D%3D"
+    },
+    {
+      "nombre": "True Detective",
+      "img": "https://es.web.img3.acsta.net/pictures/14/01/17/13/00/493022.jpg",
+      "sinopsis": "Una serie antológica de crimen y misterio, donde cada temporada presenta un caso diferente con nuevos personajes y escenarios. Los detectives investigan crímenes complejos mientras lidian con sus propias luchas personales y desafíos éticos.",
+      "anyo_estreno": 2014,
+      "director": "Jodie Foster",
+      "trailer": "https://www.youtube.com/watch?v=fVQUcaO4AvE&pp=ygUXVHJ1ZSBEZXRlY3RpdmUgdHJhaWxlciA%3D"
+    },
+    {
+      "nombre": "Fargo",
+      "img": "https://pics.filmaffinity.com/Fargo-790243981-large.jpg",
+      "sinopsis": "El espíritu de los hermanos Coen hecho serie. ‘Fargo’ es una serie policíaca que se ambienta en el mismo universo de la película homónima de 1996. El humor negro domina sus tramas y cada temporada ofrece una nueva historia, ubicada en una época distinta y con personajes diferentes.",
+      "anyo_estreno": 2014,
+      "director": "Juno Temple",
+      "trailer": "https://www.youtube.com/watch?v=ju75Sd4yAZw&pp=ygUORmFyZ28gdHJhaWxlciA%3D"
+    },
+    {
+      "nombre": "Invencible",
+      "img": "https://www.ecartelera.com/carteles-series/1700/1744/001_m.jpg",
+      "sinopsis": "Una serie de animación basada en el cómic de Robert Kirkman. Sigue a Mark Grayson, un adolescente que descubre que su padre es el superhéroe más poderoso del planeta. Mientras desarrolla sus propias habilidades, Mark enfrenta la realidad de ser un superhéroe y las consecuencias de sus acciones.",
+      "anyo_estreno": 2021,
+      "director": "Steven Yeun",
+      "trailer": "https://www.youtube.com/watch?v=ROCIksHW2oc&pp=ygUTSW52ZW5jaWJsZSB0cmFpbGVyIA%3D%3D"
+    },
+    {
+      "nombre": "X-Men '97",
+      "img": "https://pics.filmaffinity.com/X_Men_97_Serie_de_TV-172646853-large.jpg",
+      "sinopsis": "Los mutantes expulsados por la sociedad se unen para combatir a sus enemigos. En la serie de animación X-Men '97, un grupo de mutantes con habilidades sobrehumanas se unen para luchar contra sus enemigos. A causa de sus extraordinarios poderes, los héroes mutantes son a menudo excluidos de la sociedad, algo que molesta especialmente al mutante y antagonista Magneto. En la mansión del profesor Charles Xavier, los X-Men entrenan, enseñan y aprenden juntos antes de entrar en combate.",
+      "anyo_estreno": 2024,
+      "director": "Ray Chase",
+      "trailer": "https://www.youtube.com/watch?v=o-dnfm7cDtU&pp=ygUUICJYLU1lbiAnOTcgdHJhaWxlciA%3D"
+    },
+    {
+      "nombre": "Sugar",
+      "img": "https://pics.filmaffinity.com/Sugar_Serie_de_TV-696640780-large.jpg",
+      "sinopsis": "Una serie de drama que sigue a un joven pastelero en su viaje para abrir su propia pastelería. Con desafíos emocionales y culinarios, la serie explora la pasión por la repostería y el esfuerzo necesario para cumplir los sueños.",
+      "anyo_estreno": 2024,
+      "director": "Colin Farrell",
+      "trailer": "https://www.youtube.com/watch?v=twvPGxuEOEA&pp=ygUOU3VnYXIgdHJhaWxlciA%3D"
+    },
+    {
+      "nombre": "The Bear (El oso)",
+      "img": "https://pics.filmaffinity.com/The_Bear_Serie_de_TV-570630358-large.jpg",
+      "sinopsis": "Un drama de cocina que sigue a un joven chef, Carmen Carmy Berzatto, quien regresa a su ciudad natal para hacerse cargo del restaurante familiar después de la muerte de su hermano. La serie explora el estrés, la familia y la dedicación en un ambiente culinario intenso.",
+      "anyo_estreno": 2022,
+      "director": "Jeremy Allen White",
+      "trailer": "https://www.youtube.com/watch?v=l_6NWUnI95k&pp=ygURVGhlIEJlYXIgdHJhaWxlciA%3D"
+    },
+    {
+      "nombre": "Inspector Rishi",
+      "img": "https://pics.filmaffinity.com/Inspector_Rishi_Serie_de_TV-535324658-large.jpg",
+      "sinopsis": "Un drama policial que sigue a un inspector que investiga crímenes en una gran ciudad. Con cada caso, Rish descubre capas de corrupción y complicidad que lo llevan a cuestionar sus valores y su papel en la justicia.",
+      "anyo_estreno": 2024,
+      "director": "J. S. Nandhini",
+      "trailer": "https://www.youtube.com/watch?v=4CKU89MI0_0&pp=ygUXSW5zcGVjdG9yIFJpc2ggdHJhaWxlciA%3D"
+    },
+    {
+      "nombre": "Halo",
+      "img": "https://es.web.img3.acsta.net/pictures/22/02/21/20/10/2589351.jpg",
+      "sinopsis": "Una serie de ciencia ficción basada en el popular videojuego. Sigue al Jefe Maestro y a otros soldados en un conflicto interestelar entre la humanidad y la raza alienígena conocida como el Covenant. La serie explora batallas épicas y la lucha por la supervivencia de la humanidad.",
+      "anyo_estreno": 2022,
+      "director": "Pablo Schreiber",
+      "trailer": "https://www.youtube.com/watch?v=5mcO5WiBmxM&pp=ygUNSGFsbyB0cmFpbGVyIA%3D%3D"
+    },
+    {
+      "nombre": "Perverso",
+      "img": "https://pics.filmaffinity.com/Perverso_Serie_de_TV-509284106-large.jpg",
+      "sinopsis": "Un thriller psicológico que sigue a un personaje que tiene tendencias oscuras y se involucra en actividades cuestionables. La serie explora la psicología del personaje y las consecuencias de sus acciones.",
+      "anyo_estreno": 2024,
+      "director": "Gustavo Ron",
+      "trailer": "https://www.youtube.com/watch?v=xFcVRi6GRSE&pp=ygURUGVydmVyc28gdHJhaWxlciA%3D"
+    },
+    {
+      "nombre": "Star Wars: La remesa mala",
+      "img": "https://media.themoviedb.org/t/p/w500/dmF2LqFb1Aj8jRktPdYapP7fWyx.jpg",
+      "sinopsis": "Una serie animada del universo Star Wars que sigue a un grupo de clones con habilidades únicas conocidos como La remesa mala. Estos clones se embarcan en misiones peligrosas y enfrentan desafíos durante la era del Imperio.",
+      "anyo_estreno": 2021,
+      "director": "Dee Bradley Baker",
+      "trailer": "https://www.youtube.com/watch?v=Ls9ZN_20mCM&pp=ygUhU3RhciBXYXJzOiBMYSByZW1lc2EgbWFsYXRyYWlsZXIg"
+    },
+    {
+      "nombre": "Nos vemos en otra vida",
+      "img": "https://pics.filmaffinity.com/Nos_vemos_en_otra_vida_Miniserie_de_TV-670006789-large.jpg",
+      "sinopsis": "Una serie dramática que sigue a dos personas cuyos destinos están conectados a lo largo del tiempo y el espacio. A medida que se encuentran en diferentes épocas, descubren que sus vidas están entrelazadas de maneras inesperadas.",
+      "anyo_estreno": 2024,
+      "director": "Roberto Gutiérrez",
+      "trailer": "https://www.youtube.com/watch?v=36nrpEBm8Po&pp=ygUgIE5vcyB2ZW1vcyBlbiBvdHJhIHZpZGEgdHJhaWxlciA%3D"
+    },
+    {
+      "nombre": "Antracita",
+      "img": "https://s3-eu-west-1.amazonaws.com/abandomedia/dbs/foto/dbs_5158_27.jpg",
+      "sinopsis": "Un drama oscuro que narra la vida de un minero de carbón y las dificultades que enfrenta en su trabajo y su comunidad. La serie aborda temas de trabajo duro, lucha por la justicia y la importancia de la familia.",
+      "anyo_estreno": 2024,
+      "director": "Julius Berg",
+      "trailer": "https://www.youtube.com/watch?v=ImV8EqXvFII&pp=ygUSQW50cmFjaXRhIHRyYWlsZXIg"
+    },
+    {
+      "nombre": "Yellowstone",
+      "img": "https://pics.filmaffinity.com/Yellowstone_Serie_de_TV-274665076-large.jpg",
+      "sinopsis": "Un drama moderno que sigue a la familia Dutton, propietaria de un gran rancho en Montana. A través de conflictos con desarrolladores, tribus indígenas y el gobierno, la serie explora la lucha por el control de la tierra y el poder en el oeste americano.",
+      "anyo_estreno": 2018,
+      "director": "Kevin Costner",
+      "trailer": "https://www.youtube.com/watch?v=jr32f0rnK1o&pp=ygUUWWVsbG93c3RvbmUgdHJhaWxlciA%3D"
+    },
+    {
+        "nombre": "El encargado",
+        "img": "https://pics.filmaffinity.com/El_encargado_Serie_de_TV-467125987-large.jpg",
+        "sinopsis": "Una comedia dramática que sigue a un conserje de un edificio de apartamentos. A través de sus interacciones con los inquilinos y su vida diaria, la serie aborda temas de relaciones humanas y la dinámica entre el personal y los residentes.",
+        "anyo_estreno": 2022,
+        "director": "Guillermo Francella",
+        "trailer": "https://www.youtube.com/watch?v=xCOLq6VAS9Y&pp=ygUURWwgZW5jYXJnYWRvdHJhaWxlciA%3D"
+    },
+    {
+        "nombre": "El joven Sheldon",
+        "img": "https://pics.filmaffinity.com/El_joven_Sheldon_Serie_de_TV-276995469-large.jpg",
+        "sinopsis": "Una comedia derivada de The Big Bang Theory que sigue la infancia de Sheldon Cooper, un niño prodigio que crece en Texas. La serie explora sus aventuras en la escuela y su vida familiar, mostrando su desarrollo temprano y sus peculiaridades.",
+        "anyo_estreno": 2017,
+        "director": "Iain Armitage",
+        "trailer": "https://www.youtube.com/watch?v=Ijc8x73tfVc&pp=ygUZRWwgam92ZW4gU2hlbGRvbiB0cmFpbGVyIA%3D%3D"
+    },
+    {
+        "nombre": "Star Trek: Discovery",
+        "img": "https://www.ecartelera.com/carteles-series/200/217/002_m.jpg",
+        "sinopsis": "Una serie de ciencia ficción ambientada en el universo de Star Trek. Sigue a la tripulación de la nave USS Discovery mientras exploran el espacio y enfrentan nuevos desafíos. La serie aborda temas de diversidad, exploración y valentía.",
+        "anyo_estreno": 2017,
+        "director": "Sonequa Martin-Green",
+        "trailer": "https://www.youtube.com/watch?v=6Fi7ZePgh8k&pp=ygUeU3RhciBUcmVrOiBEaXNjb3ZlcnkgIHRyYWlsZXIg"
+    },
+    {
+        "nombre": "Dystopia",
+        "img": "https://pics.filmaffinity.com/Dystopia_Serie_de_TV-577545939-large.jpg",
+        "sinopsis": "Un drama futurista ambientado en un mundo donde la sociedad ha colapsado y la gente vive en un entorno distópico. La serie sigue a un grupo de sobrevivientes que buscan reconstruir su mundo y descubrir la causa del colapso.",
+        "anyo_estreno": 2018,
+        "director": "Michael Coupon",
+        "trailer": "https://www.youtube.com/watch?v=Xg9rTVz6JLc&pp=ugMICgJlcxABGAHKBRJEeXN0b3BpYSAgdHJhaWxlciA%3D"
+    },
+    {
+        "nombre": "Mano de hierro",
+        "img": "https://pics.filmaffinity.com/Mano_de_hierro_Miniserie_de_TV-489432127-large.jpg",
+        "sinopsis": "Un drama de acción centrado en un héroe con fuerza sobrenatural. La serie sigue su lucha contra el crimen y la corrupción, y su papel como protector de su comunidad.",
+        "anyo_estreno": 2024,
+        "director": "Lluís Quílez",
+        "trailer": "https://www.youtube.com/watch?v=OtmxLvHtb_o&pp=ygUYTWFubyBkZSBoaWVycm_Dp3RyYWlsZXIg"
+    },
+    {
+        "nombre": "Parasyte: Los grises",
+        "img": "https://pics.filmaffinity.com/Parasyte_Los_grises_Serie_de_TV-756718396-large.jpg",
+        "sinopsis": "Un anime basado en el manga Parasyte. Sigue a un joven que se encuentra infestado por un parásito alienígena que toma el control de su mano derecha. A medida que lucha para coexistir con el parásito, descubre una conspiración más amplia y otros seres alienígenas peligrosos.",
+        "anyo_estreno": 2024,
+        "director": "Yeon Sang-ho",
+        "trailer": "https://www.youtube.com/watch?v=_Ho8NeAmvXk&pp=ygUdUGFyYXN5dGU6IExvcyBncmlzZXMgdHJhaWxlciA%3D"
+    },
+    {
+        "nombre": "The Rookie",
+        "img": "https://es.web.img2.acsta.net/pictures/24/02/14/12/20/2473879.jpg",
+        "sinopsis": "Un drama policial que sigue a John Nolan, el oficial de policía más antiguo en el LAPD, que comienza su carrera en la policía a una edad mayor que sus compañeros. La serie explora su adaptación al trabajo policial y los desafíos que enfrenta por ser mayor que sus colegas.",
+        "anyo_estreno": 2018,
+        "director": "Nathan Fillion",
+        "trailer": "https://www.youtube.com/watch?v=_HgC1TN8FVk&pp=ygUTVGhlIFJvb2tpZSB0cmFpbGVyIA%3D%3D"
+    },
+    {
+        "nombre": "Machos alfa",
+        "img": "https://es.web.img3.acsta.net/pictures/22/12/12/10/59/3165979.jpg",
+        "sinopsis": "El fin del patriarcado se acerca. Cuatro amigos y sus respectivas parejas ejemplifican cómo han cambiado los roles y la situación del hombre y la mujer en la sociedad española. En sus cuarenta, estos cuatro hombres tendrán que lidiar con la pérdida de privilegios y la resignificación de la masculinidad.",
+        "anyo_estreno": 2022,
+        "director": "Gorka Otxoa",
+        "trailer": "https://www.youtube.com/watch?v=seSA6OzeNpA&pp=ygUUTWFjaG9zIGFsZmEgdHJhaWxlciA%3D"
+    },
+    {
+        "nombre": "Muertos S.L.",
+        "img": "https://pics.filmaffinity.com/Muertos_S_L_Serie_de_TV-497350368-large.jpg",
+        "sinopsis": "Una serie de comedia de zombis que sigue a un grupo de empleados de una funeraria que, tras el brote de zombis, utilizan su empresa para sobrevivir y ayudar a otros. La serie combina elementos de comedia y horror mientras los personajes intentan adaptarse a un mundo lleno de zombis.",
+        "anyo_estreno": 2024,
+        "director": "Carlos Areces",
+        "trailer": "https://www.youtube.com/watch?v=QhTUAKncvOE&pp=ygUUTXVlcnRvcyBTLkwudHJhaWxlciA%3D"
+    },
+    {
+        "nombre": "The Ballad of Renegade Nell",
+        "img": "https://m.media-amazon.com/images/M/MV5BMzgxZjFhMmYtODczNC00ZTAwLThhNmMtZjgzZTY0ZWNkZjdmXkEyXkFqcGdeQXVyMTE2NDA4MDMy._V1_FMjpg_UX1000_.jpg",
+        "sinopsis": "Una serie de aventuras que sigue a Nell Jackson, una mujer que se convierte en una forajida después de ser acusada injustamente de un crimen. Ambientada en la Inglaterra del siglo XVIII, la serie muestra a Nell mientras lucha por sobrevivir y descubrir la verdad detrás de la conspiración que la incriminó, encontrando aliados y enemigos en su camino.",
+        "anyo_estreno": 2024,
+        "director": "Louisa Harland",
+        "trailer": "https://www.youtube.com/watch?v=u9OmmeE_gZc&pp=ygUkVGhlIEJhbGxhZCBvZiBSZW5lZ2FkZSBOZWxsIHRyYWlsZXIg"
+    },
+    {
+        "nombre": "El régimen",
+        "img": "https://pics.filmaffinity.com/El_raegimen_Miniserie_de_TV-344297838-large.jpg",
+        "sinopsis": "Una serie de aventuras que sigue a Nell, una mujer que se convierte en una fuera de la ley en el siglo XVIII. A medida que navega por el mundo del crimen y la traición, encuentra aliados y enemigos en su lucha por la justicia.",
+        "anyo_estreno": 2024,
+        "director": "Kate Winslet",
+        "trailer": "https://www.youtube.com/watch?v=LSJ220atkgU&pp=ygUURWwgcsOpZ2ltZW4gdHJhaWxlciA%3D"
+    },
+    {
+        "nombre": "Anatomía de Grey",
+        "img": "https://es.web.img3.acsta.net/pictures/21/09/14/20/10/3652770.jpg",
+        "sinopsis": "Un drama médico que sigue la vida de los médicos y el personal del Seattle Grace Hospital. A través de casos médicos y relaciones personales, la serie explora el crecimiento profesional y emocional de los personajes a lo largo de las temporadas.",
+        "anyo_estreno": 2005,
+        "director": "Ellen Pompeo",
+        "trailer": "https://www.youtube.com/watch?v=8G4jvn-ncPE&pp=ygUbQW5hdG9tw61hIGRlIEdyZXkgIHRyYWlsZXIg"
+    },
+
+    {
+        "nombre": "Avatar: La leyenda de Aang",
+        "img": "https://es.web.img3.acsta.net/pictures/23/11/09/23/22/1229188.jpg",
+        "sinopsis": "La adaptación con actores reales de 'Avatar: la leyenda de Aang'. Solo el avatar puede ejercer el poder de los cuatro elementos. Sin embargo, este poder conlleva la responsabilidad de mantener el equilibrio del mundo. El Avatar Aang ha estado congelado durante un siglo y, tras su desaparición, se descubren graves consecuencias. La nación del fuego ha extendido su imperio por todo el mundo. Ahora que Katara y Sokka han descubierto el paradero del avatar, ¿podrá este grupo de amigos restablecer el equilibrio entre las cuatro naciones?",
+        "anyo_estreno": 2024,
+        "director": "Gordon Cormier",
+        "trailer": "https://www.youtube.com/watch?v=gapK18-dFMw&pp=ygUkQXZhdGFyOiBMYSBsZXllbmRhIGRlIEFhbmcgIHRyYWlsZXIg"
+    },
+    {
+        "nombre": "Cómo conocí a vuestra madre",
+        "img": "https://www.ecartelera.com/carteles-series/000/96/002.jpg",
+        "sinopsis": "Una comedia que sigue a Ted Mosby mientras relata la historia de cómo conoció a la madre de sus hijos. A través de historias y recuerdos, la serie explora la vida de Ted y sus amigos en Nueva York, centrándose en el amor, la amistad y las experiencias compartidas.",
+        "anyo_estreno": 2005,
+        "director": "Josh Radnor",
+        "trailer": "https://www.youtube.com/watch?v=cjJLEYMzpjc&pp=ygUnQ8OzbW8gY29ub2PDrSBhIHZ1ZXN0cmEgbWFkcmUgIHRyYWlsZXIg"
+    },
+    {
+        "nombre": "La academia",
+        "img": "https://pics.filmaffinity.com/La_Academia_Serie_de_TV-775439777-large.jpg",
+        "sinopsis": "Una serie que sigue a estudiantes en una academia donde se preparan para convertirse en profesionales en diversas disciplinas. La serie aborda temas de crecimiento personal, competencia y camaradería entre los estudiantes.",
+        "anyo_estreno": 2024,
+        "director": "Jacobo Delgado",
+        "trailer": "https://www.youtube.com/watch?v=wF7IaKGzYiY&pp=ygUVTGEgYWNhZGVtaWEgIHRyYWlsZXIg"
+    },
+    {
+        "nombre": "Big Boys",
+        "img": "https://m.media-amazon.com/images/M/MV5BYmVlYzdhZWItNjYwNS00NWUwLTgzOTgtZDFmMTE0MzRlYzY4XkEyXkFqcGdeQXVyMTc2MDI3OTU2._V1_FMjpg_UX1000_.jpg",
+        "sinopsis": "Una comedia que sigue a un grupo de amigos mientras lidian con los desafíos de la vida adulta. Con situaciones cómicas y personajes entrañables, la serie explora el viaje hacia la madurez y el aprendizaje a través de los errores.",
+        "anyo_estreno": 2022,
+        "director": "Jim Archer",
+        "trailer": "https://www.youtube.com/watch?v=KNH2lIkmf3k&pp=ygUSQmlnIEJveXMgIHRyYWlsZXIg"
+    },
+    {
+        "nombre": "La mesías",
+        "img": "https://www.ecartelera.com/carteles-series/2000/2062/001_m.jpg",
+        "sinopsis": "Un thriller religioso y musical obra de Los Javis. Un grupo de música pop cristiano formado por cinco hermanas lanza una canción que se hace viral en España. Ese mismo vídeo moviliza a Enric, un hombre que sigue atormentado por la infancia que vivió, en la que existía un gran fanatismo religioso y una madre con delirios mesiánicos.",
+        "anyo_estreno": 2023,
+        "director": "Roger Casamajor",
+        "trailer": "https://www.youtube.com/watch?v=nQKEnY_KsrQ&pp=ygUUTGEgbWVzw61hcyAgdHJhaWxlciA%3D"
+    },
+    {
+        "nombre": "The Wire (Bajo escucha)",
+        "img": "https://pics.filmaffinity.com/the_wire-650191253-large.jpg",
+        "sinopsis": "Una serie de drama que sigue a un equipo de investigadores que usan escuchas telefónicas para desmantelar una organización criminal. A medida que escuchan conversaciones y recopilan pruebas, enfrentan desafíos éticos y complicaciones legales.",
+        "anyo_estreno": 2002,
+        "director": "Dominic West",
+        "trailer": "https://www.youtube.com/watch?v=5MVs9muUUhw&pp=ygUWQmFqbyBlc2N1Y2hhICB0cmFpbGVyIA%3D%3D"
+    },
+    {
+        "nombre": "The White Lotus",
+        "img": "https://pics.filmaffinity.com/The_White_Lotus_Miniserie_de_TV-477876468-large.jpg",
+        "sinopsis": "Una serie que sigue a huéspedes y empleados en un lujoso resort. La serie explora las tensiones y conflictos que surgen entre ellos, y las verdades ocultas que emergen detrás de la fachada del lujo.",
+        "anyo_estreno": 2021,
+        "director": "F. Murray Abraham",
+        "trailer": "https://www.youtube.com/watch?v=CKyDlmdGc5k&pp=ygUZVGhlIFdoaXRlIExvdHVzICB0cmFpbGVyIA%3D%3D"
+    },
+    {
+        "nombre": "Samurái de ojos azules",
+        "img": "https://pics.filmaffinity.com/Samuraai_de_ojos_azules_Serie_de_TV-118910007-large.jpg",
+        "sinopsis": "Un drama histórico que sigue a un samurái extranjero que llega a Japón en busca de conocimiento y aventura. A medida que se adapta a la cultura japonesa, enfrenta desafíos y conflictos culturales, además de su lucha por ganarse el respeto de sus compañeros samuráis.",
+        "anyo_estreno": 2023,
+        "director": "Maya Erskine",
+        "trailer": "https://www.youtube.com/watch?v=sQMx3QywoxE&pp=ygUhU2FtdXLDoWkgZGUgb2pvcyBhenVsZXMgIHRyYWlsZXIg"
+    },
+    {
+        "nombre": "Los Soprano",
+        "img": "https://es.web.img3.acsta.net/pictures/18/06/29/05/56/3722058.jpg",
+        "sinopsis": "Un drama sobre Tony Soprano, un jefe de la mafia en Nueva Jersey que lucha por equilibrar su vida familiar con sus responsabilidades criminales. La serie explora las complejidades del crimen organizado y las tensiones emocionales de un líder en el bajo mundo.",
+        "anyo_estreno": 1999,
+        "director": "James Gandolfini",
+        "trailer": "https://www.youtube.com/watch?v=MkOK-Ecu-Xo&pp=ygUVTG9zIFNvcHJhbm8gIHRyYWlsZXIg"
+    },
+    {
+        "nombre": "Chernobyl",
+        "img": "https://es.web.img3.acsta.net/pictures/19/04/29/08/21/1692162.jpg?coixp=45&coiyp=73",
+        "sinopsis": "Un drama histórico que narra el desastre nuclear de Chernobyl en 1986 y sus consecuencias. La serie sigue a varios personajes, incluidos científicos y funcionarios del gobierno, mientras enfrentan las repercusiones del desastre y tratan de contener sus efectos.",
+        "anyo_estreno": 2019,
+        "director": "Jared Harris",
+        "trailer": "https://www.youtube.com/watch?v=s9APLXM9Ei8&pp=ygUYQ2hlcm5vYnlsICAyMDE5IHRyYWlsZXIg"
+    },
+    {
+        "nombre": "Generación V",
+        "img": "https://image.tmdb.org/t/p/original/8WF2iRFbghWbE4kg0FzW5Q59bIr.jpg",
+        "sinopsis": "Una serie derivada de The Boys, ambientada en una universidad para jóvenes superhéroes. Sigue a estudiantes con habilidades únicas mientras compiten por ser los mejores y enfrentan desafíos relacionados con su poder y ambición.",
+        "anyo_estreno": 2023,
+        "director": "Jaz Sinclair",
+        "trailer": "https://www.youtube.com/watch?v=XiUcTcANvXo&pp=ygUWR2VuZXJhY2nDs24gViB0cmFpbGVyIA%3D%3D"
+    },
+    {
+        "nombre": "American Horror Story: New York City",
+        "img": "https://pics.filmaffinity.com/American_Horror_Story_NYC_Miniserie_de_TV-968263940-large.jpg",
+        "sinopsis": "Una temporada de American Horror Story ambientada en Nueva York. La serie explora elementos de horror y suspenso mientras sigue a varios personajes que enfrentan terrores sobrenaturales y amenazas oscuras en la ciudad.",
+        "anyo_estreno": 2011,
+        "director": "Emma Roberts",
+        "trailer": "https://www.youtube.com/watch?v=PhZQI_UuzBs&pp=ygUtQW1lcmljYW4gSG9ycm9yIFN0b3J5OiBOZXcgWW9yayBDaXR5IHRyYWlsZXIg"
+    },
+    {
+        "nombre": "Perdidos",
+        "img": "https://www.formulatv.com/images/series/posters/000/27/dest_1.jpg",
+        "sinopsis": "Una serie de drama y misterio que sigue a un grupo de personas que sobreviven a un accidente de avión y quedan varados en una isla misteriosa. A medida que intentan sobrevivir y entender los secretos de la isla, enfrentan desafíos emocionales y paranormales.",
+        "anyo_estreno": 2004,
+        "director": "Matthew Fox",
+        "trailer": "https://www.youtube.com/watch?v=qMXAsu64-Ws&pp=ygURUGVyZGlkb3MgdHJhaWxlciA%3D"
+    },
+    {
+        "nombre": "Sand Land: The Series",
+        "img": "https://m.media-amazon.com/images/M/MV5BZWM2Nzk4MWEtYjc0NC00ZDA1LThiNjctOGM5NDk4Mjg0ZTZkXkEyXkFqcGdeQXVyMTAyMDU2MTU@._V1_.jpg",
+        "sinopsis": "Una serie de animación basada en el manga de Akira Toriyama. Ambientada en un mundo desértico, sigue a un demonio llamado Beelzebub y un sheriff que buscan resolver los problemas de escasez de agua y los conflictos en su sociedad.",
+        "anyo_estreno": 2024,
+        "director": "Mutsumi Tamura",
+        "trailer": "https://www.youtube.com/watch?v=6OymU-fyU-E&pp=ygUeU2FuZCBMYW5kOiBUaGUgU2VyaWVzIHRyYWlsZXIg"
+    },
+    {
+        "nombre": "The Expanse",
+        "img": "https://es.web.img3.acsta.net/pictures/15/12/03/13/20/584466.jpg",
+        "sinopsis": "Una serie de ciencia ficción que sigue a varios personajes a lo largo del sistema solar mientras luchan por el control y el poder en una sociedad dividida. La serie explora conflictos políticos, luchas interplanetarias y secretos que podrían cambiar el destino de la humanidad.",
+        "anyo_estreno": 2015,
+        "director": "Steven Strait",
+        "trailer": "https://www.youtube.com/watch?v=nrC_QzwyQco&pp=ygUUVGhlIEV4cGFuc2UgdHJhaWxlciA%3D"
+    },
+    {
+        "nombre": "La caza del asesino",
+        "img": "https://static.filmin.es/images/es/media/33376/5/poster_0_3.webp",
+        "sinopsis": "Un drama de crimen y misterio que sigue a un detective mientras investiga una serie de asesinatos. A medida que descubre pistas y se enfrenta a obstáculos, se da cuenta de que el asesino tiene un plan complejo y peligroso.",
+        "anyo_estreno": 2024,
+        "director": "Tobias Menzies",
+        "trailer": "https://www.youtube.com/watch?v=tMAx8zknYF8&pp=ygUcTGEgY2F6YSBkZWwgYXNlc2lubyB0cmFpbGVyIA%3D%3D"
+    },
+    {
+        "nombre": "Para toda la humanidad",
+        "img": "https://www.lavanguardia.com/peliculas-series/images/serie/poster/2019/11/w1280/q5vmnIJvXJgstbjCW9Jxhd4GoRJ.jpg",
+        "sinopsis": "Una serie de ciencia ficción que imagina un mundo en el que la Unión Soviética fue la primera en llegar a la luna. La serie explora cómo esta realidad alternativa afecta la carrera espacial y las relaciones entre países.",
+        "anyo_estreno": 2019,
+        "director": "Joel Kinnaman",
+        "trailer": "https://www.youtube.com/watch?v=Neu_OvIHZN4&pp=ygUfUGFyYSB0b2RhIGxhIGh1bWFuaWRhZCB0cmFpbGVyIA%3D%3D"
+    },
+    {
+        "nombre": "Nada",
+        "img": "https://imgsrc.cineserie.com/2023/11/3236151.jpg?ver=1",
+        "sinopsis": "Una serie de drama que sigue a un hombre que decide alejarse de todo y vivir de forma simple. La serie explora su transformación emocional y el impacto que su decisión tiene en las personas de su vida.",
+        "anyo_estreno": 2023,
+        "director": "Gastón Duprat",
+        "trailer": "https://www.youtube.com/watch?v=T5zFRlxUPmc&pp=ygUNTmFkYSB0cmFpbGVyIA%3D%3D"
+    },
+    {
+        "nombre": "El juego de la muerte",
+        "img": "https://images.justwatch.com/poster/310283366/s592/temporada-1",
+        "sinopsis": "Un thriller de acción que sigue a un grupo de personas que participan en un juego mortal donde deben luchar por su supervivencia. A medida que enfrentan desafíos y oponentes peligrosos, descubren secretos ocultos detrás del juego.",
+        "anyo_estreno": 2023,
+        "director": "Ha Byung-hoon",
+        "trailer": "https://www.youtube.com/watch?v=PBrgWouBob8&pp=ygUeRWwganVlZ28gZGUgbGEgbXVlcnRlIHRyYWlsZXIg"
+    },
+    {
+        "nombre": "Merlí",
+        "img": "https://es.web.img3.acsta.net/pictures/21/01/07/05/12/3047149.jpg",
+        "sinopsis": "Una serie dramática española que sigue a Merlí Bergeron, un profesor de filosofía en un instituto. Con un enfoque poco convencional y carismático, Merlí inspira a sus estudiantes y los desafía a pensar de manera crítica. La serie explora temas de educación, juventud, y las relaciones entre profesores y estudiantes.",
+        "anyo_estreno": 2015,
+        "director": "Francesc Orella",
+        "trailer": "https://www.youtube.com/watch?v=edqD0r_fpps&pp=ygUPTWVybMOtIHRyYWlsZXIg"
+      },
+      {
+        "nombre": "La casa del dragón",
+        "img": "https://www.lavanguardia.com/peliculas-series/images/serie/poster/2022/8/w1280/fAos5hPi7TB49KpuIAjvQNZkvwM.jpg",
+        "sinopsis": "La esperada precuela de 10 capítulos de Juego de Tronos trata del origen de la Casa Targaryen. Basada en el libro 'Fuego y sangre' de George R.R. Martin, se desarrolla principalmente en Poniente, 200 años antes de Juego de Tronos. La serie cubre el período turbulento en el que los miembros de la Casa Targaryen se enfrentaron por quién debe sentarse en el Trono de Hierro.",
+        "anyo_estreno": 2022,
+        "director": "Emma D'Arcy",
+        "trailer": "https://www.youtube.com/watch?v=e6m0A5uajfQ&pp=ygUcTGEgY2FzYSBkZWwgZHJhZ8OzbiB0cmFpbGVyIA%3D%3D"
+      },
+      {
+        "nombre": "El descubrimiento de las brujas",
+        "img": "https://pics.filmaffinity.com/El_descubrimiento_de_las_brujas_Serie_de_TV-698151229-large.jpg",
+        "sinopsis": "Una serie de fantasía basada en la trilogía All Souls de Deborah Harkness. Sigue a Diana Bishop, una académica y bruja que descubre un antiguo manuscrito que desata un conflicto entre brujas, vampiros y demonios. Mientras explora sus propios poderes, Diana forma un vínculo con el vampiro Matthew Clairmont y se ve envuelta en una trama de magia y peligro.",
+        "anyo_estreno": 2018,
+        "director": "Teresa Palmer",
+        "trailer": "https://www.youtube.com/watch?v=6iScYU8O73o&pp=ygUoRWwgZGVzY3VicmltaWVudG8gZGUgbGFzIGJydWphcyB0cmFpbGVyIA%3D%3D"
+      },
+      {
+        "nombre": "Soy Extraordinaria",
+        "img": "https://m.media-amazon.com/images/M/MV5BMDIxNTFiYmQtNjVjMC00ZDk4LTg0ZDItNGQ5ZWNkZmUyZGJiXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_.jpg",
+        "sinopsis": "Una comedia dramática que sigue a Jen, una joven que vive en un mundo donde todos desarrollan superpoderes a los 18 años, pero ella es la única que no los tiene. A través de su viaje para descubrir quién es y qué la hace especial, Jen enfrenta desafíos y busca su lugar en un mundo donde todos parecen tener habilidades excepcionales.",
+        "anyo_estreno": 2023,
+        "director": "Mairéad Tyers",
+        "trailer": "https://www.youtube.com/watch?v=hMk1VStyL-w&pp=ygUbU295IEV4dHJhb3JkaW5hcmlhIHRyYWlsZXIg"
+      },
+      {
+        "nombre": "30 Monedas",
+        "img": "https://es.web.img3.acsta.net/pictures/20/11/03/10/32/2229698.jpg?coixp=49&coiyp=45",
+        "sinopsis": "Una serie de horror y misterio dirigida por Álex de la Iglesia. Sigue a un sacerdote exiliado en un pequeño pueblo español que se enfrenta a eventos sobrenaturales relacionados con las 30 monedas por las que Judas traicionó a Jesús. A medida que el sacerdote investiga, descubre una conspiración diabólica y lucha contra fuerzas oscuras.",
+        "anyo_estreno": 2020,
+        "director": "Eduard Fernández",
+        "trailer": "https://www.youtube.com/watch?v=XCHo8MgRjok&pp=ygUUMzAgTW9uZWRhcyAgdHJhaWxlciA%3D"
+      },
+      {
+        "nombre": "The Curse (La maldición)",
+        "img": "https://www.ecartelera.com/carteles-series/2000/2087/001_m.jpg",
+        "sinopsis": "Una serie de terror que sigue a una familia que se muda a una casa con un pasado oscuro. A medida que empiezan a experimentar eventos inexplicables y aterradores, descubren una maldición que amenaza sus vidas. La serie explora temas de miedo, misterio y el impacto de los secretos ocultos.",
+        "anyo_estreno": 2023,
+        "director": "Emma Stone",
+        "trailer": "https://www.youtube.com/watch?v=0W1p3BtanV4&pp=ygUiTGEgbWFsZGljacOzbiAyMDIzICBzZXJpZSB0cmFpbGVyIA%3D%3D"
+      },
+      {
+        "nombre": "Chicago Med",
+        "img": "https://m.media-amazon.com/images/M/MV5BYmZjMDAyZDgtMmJhZi00MmM3LWIxMjktNjRiY2EyNjdjOGY1XkEyXkFqcGdeQXVyMTY0Njc2MTUx._V1_FMjpg_UX1000_.jpg",
+        "sinopsis": "Una serie dramática que forma parte del universo Chicago de Dick Wolf. Sigue a los médicos, enfermeros y personal del Chicago Medical Center mientras enfrentan desafíos médicos y emocionales. La serie explora la vida personal y profesional de los personajes mientras tratan de salvar vidas y manejar situaciones de emergencia.",
+        "anyo_estreno": 2015,
+        "director": "Jessy Schram",
+        "trailer": "https://www.youtube.com/watch?v=BubdHpP4mAI&pp=ygUbQ2hpY2FnbyBNZWQgIHNlcmllIHRyYWlsZXIg"
+      }  
+]
+          

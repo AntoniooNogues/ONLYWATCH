@@ -4,10 +4,10 @@ import time
 
 # URL de la página de películas en JustWatch
 base_url = 'https://www.justwatch.com'
-url = base_url + '/es/peliculas?page=3'
+url = base_url + '/es/series?page=3'
 
 # Lista para almacenar los datos de las películas
-movies = []
+series = []
 
 while url:
     # Realizar la solicitud HTTP
@@ -42,9 +42,10 @@ while url:
                 else:
                     sinopsis = "No esta disponible"
                 anyo_estreno = link_soup.find('span', class_='text-muted').text
-                director = link_soup.find('span', class_='title-credit-name').text
+                director_tag = link_soup.find('span', class_='title-credit-name')
+                director = director_tag.text if director_tag else "..."
 
-                movies.append({
+                series.append({
                     'title': titulo,
                     'link': link,
                     'imagen': img,
@@ -62,10 +63,10 @@ while url:
         break
 
 # Mostrar las películas obtenidas
-for movie in movies:
-    print(f"nombre: {movie['title']}")
-    print(f"img: {movie['imagen']}")
-    print(f"sinopsis: {movie['sinopsis']}")
-    print(f"anyo_estreno: {movie['anyo_estreno']}")
-    print(f"director: {movie['director']} ")
+for serie in series:
+    print(f"nombre: {serie['title']}")
+    print(f"img: {serie['imagen']}")
+    print(f"sinopsis: {serie['sinopsis']}")
+    print(f"anyo_estreno: {serie['anyo_estreno']}")
+    print(f"director: {serie['director']} ")
     print(f"trailer: ")
