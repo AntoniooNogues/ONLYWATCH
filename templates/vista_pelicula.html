@@ -75,12 +75,12 @@
                         <img class="image pt-4" src="{{ pelicula.img }}" alt="Imagen de la película {{ pelicula.nombre }}" style="margin: 0 auto">
                     </figure>
                     <label>
-                        <select class="mt-4 estado" >
-                            <option value="0">Estado de la Película</option>
-                            <option value="1">Viendo</option>
-                            <option value="2">Completada</option>
-                            <option value="3">Pendiente</option>
-                            <option value="4">Abandonada</option>
+                        <select class="mt-4 pl-2 estado" >
+                            <option class="pl-5" value="0">Estado de la Película</option>
+                            <option class="pl-5" value="1">Viendo</option>
+                            <option class="pl-5" value="2">Completada</option>
+                            <option class="pl-5" value="3">Pendiente</option>
+                            <option class="pl-5" value="4">Abandonada</option>
                         </select>
                     </label>
                 </div>
@@ -109,7 +109,7 @@
                         {% endfor %}
                     </div>
                 </div>
-                <a class="is-size-4 has-text-weight-bold is-black hover_link" href="" style="letter-spacing: 2px">Trailer</a>
+                <a class="is-size-4 has-text-weight-bold is-black hover_link" href="{{ pelicula.trailer }}" style="letter-spacing: 2px">Trailer</a>
             </div>
         </div>
         <!-- Reparto -->
@@ -136,7 +136,7 @@
         </div>
         <!-- Comentarios -->
         <div class="column">
-
+            <h2 class="is-size-4 has-text-weight-bold pb-4">Comentarios</h2>
         </div>
     </main>
 
