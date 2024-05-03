@@ -328,7 +328,8 @@ def view_pelicula(request):
     peli = pelicula.objects.get(id=1)
     plt_pelicula = plataforma_pelicula.objects.filter(pelicula_id=peli).all()
     gen_pelicula = pelicula_genero.objects.filter(pelicula_id=peli).all()
-    return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula})
+    pj_pelicula = personaje_pelicula.objects.filter(pelicula_id=peli).all()[:6]
+    return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula})
 
 
 # def calcular_edad(fecha_nacimiento):

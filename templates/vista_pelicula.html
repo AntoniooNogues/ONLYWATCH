@@ -30,7 +30,7 @@
                   </div>
                 <div id="navbarBasicExample" class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item has-text-black" href="">
+                        <a class="navbar-item has-text-black" href="{% url 'home' %}">
                             Inicio
                         </a>
                         <a class="navbar-item has-text-black" href="{% url 'peliculas' %}">
@@ -101,7 +101,7 @@
                         {% endfor %}
                     </div>
                 </div>
-                <div>
+                <div class="mb-6">
                     <p class="is-size-4 has-text-weight-bold pt-2">Generos: </p>
                     <div class="is-flex pt-3 tags are-medium">
                         {% for g in gen %}
@@ -114,14 +114,29 @@
         </div>
         <!-- Reparto -->
         <div class="column">
-            <h2 class="is-size-4 has-text-weight-bold">Reparto</h2>
+            <h2 class="is-size-4 has-text-weight-bold pb-4">Reparto</h2>
             <div class="columns is-multiline">
-                
+                {% for p in pj %}
+                    <div class="column is-2">
+                        <figure>
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image is-2by3 mb-4">
+                                        <img src="{{ p.actor.img }}"
+                                             alt="Imagen del Personaje, {{ p.nombre_personaje }}">
+                                    </figure>
+                                </div>
+                            </div>
+                            <p class="has-text-centered">Actor: {{ p.actor.nombre }}</p>
+                            <p class="has-text-centered">Personaje: {{ p.nombre_personaje }}</p>
+                        </figure>
+                    </div>
+                {% endfor %}
             </div>
         </div>
         <!-- Comentarios -->
         <div class="column">
-            
+
         </div>
     </main>
 

@@ -2,6 +2,9 @@
 :root {
   --scrollcolor: #FDA657;
   --scrollbackground: #be4713;
+  --shadowCard: 0 54px 55px rgba(0, 0, 0, 0.25), 0 -12px 30px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.12), 0 12px 13px rgba(0, 0, 0, 0.17), 0 -3px 5px rgba(0, 0, 0, 0.09);
+
+
 }
 
 * {
@@ -176,9 +179,11 @@ body {
 }
 
 .card-image{
-  box-shadow: rgba(0, 0, 0, 0.25) 0 54px 55px, rgba(0, 0, 0, 0.12) 0 -12px 30px, rgba(0, 0, 0, 0.12) 0 4px 6px, rgba(0, 0, 0, 0.17) 0 12px 13px, rgba(0, 0, 0, 0.09) 0 -3px 5px;
   border-radius: 15px;
+  box-shadow: var(--shadowCard);
 }
+
+
 
 .main-content {
     display: flex;
@@ -198,5 +203,7 @@ body {
   font-family: 'Manrope', sans-serif;
   background-color: #FFA757;
   font-weight: 700;
+  border: 1px transparent;
   border-radius: 5px;
 }
+
