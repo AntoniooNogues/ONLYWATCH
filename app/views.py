@@ -1,13 +1,26 @@
 import random
 
+from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import check_password
+
 import os
+from django.contrib import messages
+from django.core.files import File
+import random
+import smtplib
+from django.core.mail import send_mail
+# Create your views here
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 from django.conf import settings
+# Create your views here.
 from django.shortcuts import render, redirect
 from .models import *
 
 import json
+from django.http import HttpResponse, JsonResponse
 
 
 def mostrar_admi(request):
@@ -101,9 +114,9 @@ def new_peliculas(request):
         new = pelicula()
         new.nombre = request.POST.get('nombre')
         new.sinopsis = request.POST.get('sinopsis')
-        new.fecha_estreno = request.POST.get('fecha_estreno')
+        new.anyo_estreno = request.POST.get('fecha_estreno')
         new.img = request.POST.get('img')
-        new.url_trailer = request.POST.get('url_trailer')
+        new.trailer = request.POST.get('url_trailer')
         new.director = request.POST.get('director')
         new.save()
 
@@ -118,41 +131,60 @@ def new_serie(request):
         new = serie()
         new.nombre = request.POST.get('nombre_serie')
         new.sinopsis = request.POST.get('sinopsis_serie')
-        new.fecha_estreno = request.POST.get('fecha_estreno_serie')
+        new.anyo_estreno = request.POST.get('fecha_estreno_serie')
         new.img = request.POST.get('img_serie')
         new.trailer = request.POST.get('trailer_serie')
         new.director = request.POST.get('director_serie')
         new.save()
 
-        return redirect('/administrador/serie')
+        return redirect('/administrador/series_actuales')
 
+def new_actor(request):
+    if request.method == 'GET':
+        uno = actor.objects.all()
+        return render(request, 'admi.html', {'actor': uno})
+    else:
+        new = actor()
+        new.nombre = request.POST.get('nombre_actor')
+        new.img = request.POST.get('img_actor')
+        new.save()
+
+        return redirect('/administrador/listado_actores')
 
 def mostrar_series(request):
-    series = serie.objects.all()
-    return render(request, 'admi.html', {'series': series})
+    ser = serie.objects.all()
+    return render(request, 'admi.html', {'series': ser})
 
 
 def mostrar_usuarios(request):
     usuarios = User.objects.all()
     return render(request, 'admi.html', {'usuarios': usuarios})
 
+def mostrar_actores(request):
+    actores = actor.objects.all()
+    return render(request, 'admi.html', {'actores': actores})
+
+def eliminar_actor(request, id):
+    actor_eliminar = actor.objects.get(id=id)
+    actor_eliminar.delete()
+    return redirect('/administrador/listado_actores')
 
 def eliminar_usuario(request, id):
     usuario = User.objects.get(id=id)
     usuario.delete()
-    return redirect('/administrador/')
+    return redirect('/administrador/usuarios')
 
 
 def eliminar_pelicula(request, id):
     pelicula_eliminar = pelicula.objects.get(id=id)
     pelicula_eliminar.delete()
-    return redirect('/administrador/')
+    return redirect('/administrador/pelicula')
 
 
 def eliminar_serie(request, id):
     serie_eliminar = serie.objects.get(id=id)
     serie_eliminar.delete()
-    return redirect('/administrador/')
+    return redirect('/administrador/series_actuales')
 
 
 def editar_pelicula(request, id):
@@ -168,7 +200,7 @@ def editar_pelicula(request, id):
         peli.director = request.POST.get('director')
         peli.save()
 
-        return redirect('/administrador/')
+        return redirect('/administrador/pelicula')
 
 
 def editar_serie(request, id):
@@ -184,22 +216,43 @@ def editar_serie(request, id):
         serie_editar.director = request.POST.get('director')
         serie_editar.save()
 
-        return redirect('/administrador/')
+        return redirect('/administrador/series_actuales')
+
+def editar_actor(request, id):
+    actor_editar = actor.objects.get(id=id)
+    if request.method == 'GET':
+        return render(request, 'editar_actor.html', {'actor': actor_editar})
+    else:
+        actor_editar.nombre = request.POST.get('nombre')
+        actor_editar.img = request.POST.get('img')
+        actor_editar.save()
+
+        return redirect('/administrador/listado_actores')
+
 
 
 def configuracion(request):
-    usuario = request.user.username
-    if usuario is not None:
-        user = User.objects.get(username=usuario)
-        return render(request, 'User_information.html', {'user': user})
+    user = User.objects.get(id=request.user.id)
+    user_plataformas = user.usuario_plataforma_set.all()
+    plataformas_totales = plataforma.objects.all()
+    plataformas_1 = [up.plataforma for up in user_plataformas]
+    if user is not None:
+        return render(request, 'User_information.html', {'user': user, 'plataformas': plataformas_1, 'totales': plataformas_totales})
     else:
         return render(request, 'login.html')
 
 
 def plataformas(request):
-    add_plataformas()
-    plt = plataforma.objects.all()
-    return render(request, 'plataformas.html', {'plataforma': plt})
+    # add_plataformas()
+    user = User.objects.get(id=request.user.id)
+    user_plataformas = user.usuario_plataforma_set.all()
+    plataformas_totales = plataforma.objects.all()
+    plataformas_1 = [up.plataforma for up in user_plataformas]
+    if user is not None:
+        return render(request, 'plataformas.html',
+                      {'user': user, 'plataformas': plataformas_1, 'totales': plataformas_totales})
+    else:
+        return render(request, 'login.html')
 
 
 def add_plataformas():
@@ -235,6 +288,9 @@ def add_peliculas_json():
         new_pelicula.img = item['img']
         new_pelicula.trailer = item['trailer']
         new_pelicula.save()
+def load_movies_data(request):
+    add_peliculas_json()
+    return HttpResponse("Datos de películas cargados correctamente")
 
 
 def add_series_json():
@@ -253,6 +309,9 @@ def add_series_json():
         new_serie.img = item['img']
         new_serie.trailer = item['trailer']
         new_serie.save()
+def load_series_data(request):
+    add_series_json()
+    return HttpResponse("Datos de series cargados correctamente")
 
 
 def view_peliculas(request):
@@ -270,3 +329,89 @@ def view_pelicula(request):
     plt_pelicula = plataforma_pelicula.objects.filter(pelicula_id=peli).all()
     gen_pelicula = pelicula_genero.objects.filter(pelicula_id=peli).all()
     return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula})
+
+
+# def calcular_edad(fecha_nacimiento):
+#     nacimiento = datetime.strptime(fecha_nacimiento, '%Y-%m-%d')
+#     hoy = datetime.now()
+#     edad = hoy.year - nacimiento.year - ((hoy.month, hoy.day) < (nacimiento.month, nacimiento.day))
+#     return edad
+# edad = calcular_edad(User.fecha_nacimiento)
+
+# def generate_code():
+#     return random.randint(100000, 999999)
+#
+# def send_email(user_email, code):
+#     send_mail(
+#         'Codigo de verificación',
+#         f'Tu codigo de verificación es {code}',
+#         'onlywatch.info@gmail.es',
+#         [user_email],
+#         fail_silently=False,
+#     )
+#
+# def verify_code(user_input, code):
+#     return user_input == code
+
+
+
+def send_verification_code(request):
+    if request.method == 'POST':
+        code = random.randint(100000, 999999)
+        send_mail(
+            'Código de verificación',
+            f'Tu código de verificación es {code}',
+            'onlywatch.info@gmail.es',
+            [request.user.email],
+            fail_silently=False,
+        )
+        request.session['verification_code'] = code
+        messages.success(request, 'Código de verificación enviado')
+    return redirect(reverse('configuracion'))
+
+def verify_code(request):
+    if request.method == 'POST':
+        user_code = int(request.POST['code'])
+        verification_code = request.session.get('verification_code')
+        if user_code == verification_code:
+            del request.session['verification_code']
+            return render(request,'reset_password.html')
+        else:
+            messages.error(request, 'Código de verificación incorrecto')
+            return render(request, 'User_information.html')
+    return redirect('configuracion')
+
+
+
+def vincular_desvincular_plataforma(request, plataforma_id):
+    try:
+        user_plat = usuario_plataforma.objects.get(usuario=request.user, plataforma_id=plataforma_id)
+    except usuario_plataforma.DoesNotExist:
+        # Si la relación no existe, se crea
+        usuario_plataforma.objects.create(usuario=request.user, plataforma_id=plataforma_id)
+    else:
+        # Si la relación existe, se elimina
+        user_plat.delete()
+    return redirect('plataformas')
+
+
+def configurar_perfil(request):
+    if request.method == 'POST':
+        user = User.objects.get(id=request.user.id)
+        if 'foto_perfil' in request.FILES:  # Verificar si 'foto_perfil' está en request.FILES
+            foto_perfil = request.FILES['foto_perfil']
+            user.img = foto_perfil
+        user.fecha_nacimiento = request.POST.get('user_fecha_nacimiento')
+        user.sexo = request.POST.get('user_sexo')
+        user.username = request.POST.get('user_username')
+        user.nombre_completo = request.POST.get('user_nombre_completo')
+        # Acceder al archivo de imagen enviado por el usuario
+        # if 'foto_perfil' in request.FILES:
+        #     imagen = request.FILES['foto_perfil']
+        #     user.img = imagen  # Guardar la imagen en el campo correspondiente del modelo de usuario
+
+        user.save()
+        return redirect('configuracion')
+    return redirect('configuracion')
+
+

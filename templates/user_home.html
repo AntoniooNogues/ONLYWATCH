@@ -48,7 +48,7 @@
                          <a><i class="fa-regular fa-bell"></i></a>
                      </div>
                     <div class="navbar-item">
-                        <a class="is-link">
+                        <a class="is-link" href="{% url 'configuracion' %}">
                             <div class="button is-size-6 btt">
                             {% if user.sexo == "NS/NC" %}
                                 <p class="ml-2 " style="color: #0a0a0a">Bienvenido/a, {{ user.username }}</p>

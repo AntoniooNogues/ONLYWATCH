@@ -45,6 +45,17 @@ urlpatterns = [
     path('plataformas/', views.plataformas, name='plataformas'),
     path('series/', views.view_series, name='series'),
     path('pelicula/', views.view_pelicula, name='pelicula'),
+    path('send_verification_code/', views.send_verification_code, name='send_verification_code'),
+    path('verify_code/', views.verify_code, name='verify_code'),
+    path('vincular_desvincular_plataforma/<int:plataforma_id>/', views.vincular_desvincular_plataforma,
+         name='vincular_desvincular_plataforma'),
+    path('editar_perfil/', views.configurar_perfil, name='editar_perfil'),
+    path('load_series_data/', views.load_series_data, name='load_series_data'),
+    path('load_movies_data/', views.load_movies_data, name='load_movies_data'),
+    path('administrador/actores', views.new_actor, name='new_actor'),
+    path('administrador/listado_actores', views.mostrar_actores, name='mostrar_actores'),
+    path('administrador/eliminar_actor/<int:id>', views.eliminar_actor, name='eliminar_actor'),
+    path('administrador/editar_actor/<int:id>', views.editar_actor, name='editar_actor'),
 ]
 
 if settings.DEBUG:

@@ -60,6 +60,16 @@ li {
     font-size: 18px;
 }
 a {
-    color: black; !important;
+    color: black;
+}
+.scrollable-table tbody {
+    display: block !important;
+    max-height: 200px !important;  /* Ajusta este valor según tus necesidades */
+    overflow-y: auto !important;
 }
 
+.scrollable-table thead, .scrollable-table tbody tr {
+    display: table !important;
+    width: 100% !important;
+    table-layout: fixed !important;
+}

@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body style="background-color: #FFE8D3" class="familiy has-text-black">
-    {% csrf_token %} 
+  {% csrf_token %}
+  {% load static %}
+
     <!-- Header -->
     <header>
          <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #FFE8D3">
@@ -38,10 +40,12 @@
                          <i class="fa-regular fa-bell"></i>
                      </div>
                     <div class="navbar-item">
-                        <div class="button is-size-5 " style="background-color: #FDA657; border-radius: 15px">
+                        <a href="{% url 'configuracion' %}">
+                            <div class="button is-size-5 " style="background-color: #FDA657; border-radius: 15px">
                             <img style="border-radius: 5px" src="{{ user.img }}" alt="">
                             <p class="ml-2 " style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
                         </div>
+                        </a>
                     </div>
                 </div>
          </nav>
@@ -52,21 +56,37 @@
         <div class="title ml-4 mb-4">
             <h3 class="has-text-black">Elige las plataformas que dispongas de streaming:</h3>
         </div>
+        {#        <div class="columns is-multiline is-mobile is-justify-content-center imagenes mt-5">#}
+        {#            {% for plt in plataforma %}#}
+        {#                <div class="column is-2-desktop is-3-tablet is-6-mobile center-image">#}
+        {#                    <figure class="image is-96x96 ">#}
+        {#                        <img src="{{ plt.img.url }}" alt="{{ plt.nombre }}" id="{{ plt.nombre }}">#}
+        {#                    </figure>#}
+        {#                </div>#}
+        {#            {% endfor %}#}
+        {#        </div>#}
         <div class="columns is-multiline is-mobile is-justify-content-center imagenes mt-5">
-            {% for plt in plataforma %}
-                <div class="column is-2-desktop is-3-tablet is-6-mobile mt-5 mb-5 center-image">
-                    <figure class="image is-128x128 imagenes">
-                        <img src="{{ plt.img.url }}" alt="{{ plt.nombre }}" id="{{ plt.nombre }}">
+            {% for p in totales %}
+                <div class="platform  {% if p in plataformas %}vinculada{% else %}no-vinculada{% endif %} column is-2-desktop is-3-tablet is-6-mobile center-image">
+                    <figure class="is-96x96">
+                        <img src="{{ p.img.url }}" alt="{{ p.nombre }}" id="plataforma_{{ p.id }}"
+                             class="plataforma-imagen">
                     </figure>
+                    <!-- Agrega el icono "+" o "-" dependiendo de si la plataforma está vinculada -->
+                    {% if p in plataformas %}
+                        <i class="fas fa-minus"></i>
+                    {% else %}
+                        <i class="fas fa-plus"></i>
+                    {% endif %}
                 </div>
             {% endfor %}
         </div>
         <div class="buttons is-centered">
-            <button class="button is-medium mt-5 boton" style="border: 3px solid #FFB36D; border-radius: 25px; background-color: #FB752D;">ACEPTAR</button>
+            <a href="{% url 'configuracion' %}"><button class="button is-medium mt-5 boton" style="border: 3px solid #FFB36D; border-radius: 25px; background-color: #FB752D;">ACEPTAR</button></a>
         </div>
     </main>
-    <br>
-
+  <br>
+  <script src="{% static 'js/plataforma.js' %}"></script>
     <!-- Formulario -->
     {% include "footer.html" %}
   </body>

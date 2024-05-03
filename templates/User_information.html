@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        {% load static %}
     <meta charset="UTF-8">
     <title>Información Usuario</title>
-    <link rel="stylesheet" href="/static/bulma/css/style.css">
-    <link rel="stylesheet" href="/static/perfil_usuario.css">
+    <link rel="stylesheet" href="{% static 'bulma/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'perfil_usuario.css' %}">
+    <link>
     <script src="https://kit.fontawesome.com/b9d5886cee.js" crossorigin="anonymous"></script>
 </head>
 <body style="background-color: #FFE8D3" class="is-size-4">
@@ -29,7 +31,8 @@
     
                 <div id="navbarBasicExample" class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item">
+                        <img src="{% static 'img/logo_sinfondo 1.png' %}" alt="Logo" class="image is-48x48 mt-1">
+                        <a href="{% url 'home' %}" class="navbar-item">
                             Inicio
                         </a>
                         <a class="navbar-item" href=""><i class="fa-solid fa-magnifying-glass "></i></a>
@@ -41,7 +44,6 @@
                      </div>
                     <div class="navbar-item">
                         <div class="button is-size-5 " style="background-color: #FDA657; border-radius: 15px">
-                            <img style="border-radius: 5px" src="{{ user.img }}" alt="">
                             <p class="ml-2 " style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
                         </div>
                     </div>
@@ -53,14 +55,126 @@
     <main class=" ml-6 pl-4 mr-6 pr-4">
         <h1 class="is-size-2 ">Bienvenido, {{ user.nombre_completo }} </h1>
         <div style="background-color: #FFB36D; border-radius: 15px" class="mt-4">
-            <section class="columns">
-                <div class="column is-one-quarter mx-4">
-{#                    oscurecer la imgen al hacer hover y que salga un mas#}
-                    <img src="{{ user.img }}" alt="" style="border-radius: 100px" class="">
+            <form action="{% url 'editar_perfil' %}" enctype="multipart/form-data" method="post" class="columns p-3 mb-6">
+                {% csrf_token %}
+                <div class="column is-one-quarter is-flex is-justify-content-center has-text-centered is-align-content-center px-0 p-2 "
+                     style="flex-direction: column">
+                    {% if user.img %}
+                        <label for="file-input" class="is-flex is-justify-content-center">
+                            <img  src="{{ user.img.url }}" alt="" style="border-radius: 50%; width: 80%"
+                                 class="is-flex is-justify-content image ">
+                        </label>
+                        <input id="file-input" name="foto_perfil" type="file" accept="image/png, image/gif, image/jpeg"
+                               style="display: none"/>
+                        <p class="has-text-grey is-size-6 p-2">Pincha en la imagen para <br> cambiar la foto de
+                            perfil
+                        </p>
+                    {% else %}
+                        <label for="file-input" class="is-flex is-justify-content-center">
+                            <img src="{% static 'img/perfilenblanco.webp' %}"
+                                 style="border-radius: 50%; width: 50%">
+                        </label>
+                        <input id="file-input" name="foto_perfil" type="file" accept="image/png, image/gif, image/jpeg"
+                               style="display: none"/>
+                        <p class="has-text-grey is-size-6 p-2">Pincha en la imagen para <br> cambiar la foto de
+                            perfil
+                        </p>
+                    {% endif %}
+                    <label class="mt-4">Fecha de nacimiento:</label>
+                    {% if user.fecha_nacimiento %}
+                        <section class="is-flex is-justify-content-center mt-2">
+                            <input type="text" name="user_fecha_nacimiento" value="{{ user.fecha_nacimiento|date:"Y-m-d" }}" class="input is-rounded"
+                                   style="width: 75%; background-color: #D9D9D9;">
+                        </section>
+                    {% else %}
+                        <section class="is-flex is-justify-content-center mt-2">
+                            <input type="text" name="user_fecha_nacimiento" placeholder="Tu fecha de nacimiento" class="input is-rounded "
+                                   style="width: 75%; background-color: #D9D9D9;">
+                        </section>
+                    {% endif %}
+                    <label class=" mt-4 ">Sexo:</label>
+                    <section class="is-flex is-justify-content-center mt-2">
+                        <input type="text" name="user_sexo" value="{{ user.sexo }}" class="input is-rounded"
+                               style="width: 75%; background-color: #D9D9D9;">
+                    </section>
                 </div>
-            </section>
+                <div class="column px-0 p-2 ">
+                    <h2 class="is-size-3">Configura tu perfil</h2>
+                    <section class="columns is-flex center is-multiline">
+                        <div class="column mt-3 is-flex is-flex-direction-column center is-full-mobile">
+                            <label >Nombre de Usuario:</label>
+                            <input type="text" name="user_username" value="{{ user.username }}" class="input is-rounded mt-2 "
+                                   style="background-color: #D9D9D9; width: 50%">
+                            <label class="mt-3" >Nombre Completo:</label>
+                            <input type="text" name="user_nombre_completo" value="{{ user.nombre_completo }}" class="input is-rounded mt-2"
+                                   style="background-color: #D9D9D9; width: 50%">
+                        </div>
+                        <div class="column mt-3 is-flex is-flex-direction-column is-full-mobile">
+                            <label for="">Correo electrónico:</label>
+                            <input type="text" value="{{ user.email }}" class="input is-rounded mt-2"
+                                   style="background-color: #D9D9D9; width: 50%" disabled>
+                            <label class="mt-3">Contraseña:</label>
+                            <input type="password" value="xxxxxxxx" class="input is-rounded mt-2 int"
+                                   style="background-color: #D9D9D9; width: 50%" disabled>
+                            <div style="width: 25%">
+                                <button type="button"
+                                        class="js-modal-trigger button is-info is-rounded mt-1 is-fullwidth-mobile"
+                                        data-target="modal-js-example">
+                                    Cambiar contraseña
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="is-flex is-justify-content-center">
+                        <button type="submit" class="button"> Guardar cambios </button>
+                    </section>
+                    <section class="is-flex is-flex-direction-column">
+                        <div class="is-flex">
+                            <h3>Plataformas:</h3>
+                            <a href="{% url 'plataformas' %}" style="background-color: transparent; border: none"><i
+                                    class="fa-solid fa-circle-plus"></i></a>
+                        </div>
+
+                        <div class="columns is-multiline is-mobile my-2">
+                            {% for p in plataformas %}
+                                <div class="column is-2-desktop is-3-tablet is-6-mobile center-image">
+                                    <figure class="is-128x128">
+                                        <img src="{{ p.img.url }}" alt="{{ p.nombre }}">
+                                    </figure>
+                                </div>
+                            {% empty %}
+                                <p class="ml-3">No dispones de plataformas vinculadas.</p>
+                            {% endfor %}
+                        </div>
+                    </section>
+                </div>
+            </form>
+            <div id="modal-js-example" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="box">
+                        <!-- Formulario para solicitar el envío del código de verificación -->
+                        <form action="{% url 'send_verification_code' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Enviar código de verificación</button>
+                        </form>
+
+                        <!-- Formulario para introducir el código de verificación -->
+                        <form action="{% url 'verify_code' %}" method="post">
+                            {% csrf_token %}
+                            <input type="text" name="code" placeholder="Introduce el código de verificación">
+                            <button type="submit">Verificar código</button>
+                        </form>
+                    </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
         </div>
     </main>
+        <br>
     {% endblock %}
+    {% include "footer.html" %}
+    <script src="{% static 'js/modals.js' %}"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
 </body>
 </html>

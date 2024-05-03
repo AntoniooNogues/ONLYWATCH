@@ -36,7 +36,7 @@ class User(AbstractBaseUser):
     nombre_completo = models.CharField(max_length=150, null=True)
     email = models.EmailField(unique=True)
     fecha_nacimiento = models.DateField(null=True)
-    img = models.CharField(max_length=300, null=True)
+    img = models.ImageField(upload_to='foto_perfil_usuarios/', blank=True, null=True)
     sexo = models.CharField(max_length=25, default="NS/NC", null=True)
     rol = models.CharField(max_length=50, choices=Rol.choices, default=Rol.USUARIO)
     is_active = models.BooleanField(default=True)
@@ -195,6 +195,13 @@ class plataforma_serie(models.Model):
 
     def __str__(self):
         return f"{self.plataforma} {self.serie}"
+
+class usuario_plataforma(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    plataforma = models.ForeignKey(plataforma, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.usuario} {self.plataforma}"
 
 class personaje_pelicula(models.Model):
     nombre_personaje = models.CharField(max_length=50)
