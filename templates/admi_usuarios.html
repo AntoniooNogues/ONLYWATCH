@@ -1,69 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="shortcut icon" href="/static/img/logo_sinfondo%201.png" />
-    <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" href="/static/bulma/css/style.css">
-    <script src="https://kit.fontawesome.com/b9d5886cee.js" crossorigin="anonymous"></script>
-</head>
-<body  style="background-color: #FFE8D3;">
-{% load static %}
-{% block content %}
-    <header>
-        <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #FFE8D3">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="#">
-                    <img src="/static/img/logo_sinfondo%201.png" alt="">
-                </a>
-    
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                   data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-    
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item">
-                        Inicio
-                    </a>
-    
-                    <a class="navbar-item">
-                        Películas
-                    </a>
-                    <a class="navbar-item">
-                        Series
-                    </a>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            Usuarios
-                        </a>
-    
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                Mensajes
-                            </a>
-                            <a class="navbar-item is-selected">
-                                Foro
-                            </a>
-                            <a class="navbar-item">
-                                Favoritos
-                            </a>
-                            <hr class="navbar-divider">
-                            <a class="navbar-item">
-                                Reportes
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+{% include 'header_admi.html' %}
+     {% block content %}
     <main class="usuarios pb-6">
         <h2 class="is-size-2 container mt-6">Usuarios</h2>
         <div class="box container table-container">
@@ -102,6 +38,4 @@
         </div>
     </main>
     {% endblock %}
-    <script src="{% static 'js/navbar.js' %} "></script>
-</body>
-</html>
+{% include 'footer_admi.html' %}
