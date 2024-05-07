@@ -57,7 +57,7 @@
         <div style="background-color: #FFB36D; border-radius: 15px" class="mt-4">
             <form action="{% url 'editar_perfil' %}" enctype="multipart/form-data" method="post" class="columns p-3 mb-6">
                 {% csrf_token %}
-                <div class="column is-one-quarter is-flex is-justify-content-center has-text-centered is-align-content-center px-0 p-2 "
+                <div class="column is-one-quarter is-flex is-justify-content-center has-text-centered p-0 m-0 "
                      style="flex-direction: column">
                     {% if user.img %}
                         <label for="file-input" class="is-flex is-justify-content-center">
