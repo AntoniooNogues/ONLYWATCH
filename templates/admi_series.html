@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" href="/static/img/logo_sinfondo%201.png" />
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/bulma/css/style.css">
+    <script src="https://kit.fontawesome.com/b9d5886cee.js" crossorigin="anonymous"></script>
+</head>
+<body  style="background-color: #FFE8D3;">
+{% load static %}
+{% block content %}
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #FFE8D3">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <img src="/static/img/logo_sinfondo%201.png" alt="">
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                   data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item">
+                        Inicio
+                    </a>
+
+                    <a class="navbar-item">
+                        Películas
+                    </a>
+                    <a class="navbar-item">
+                        Series
+                    </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            Usuarios
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                                Mensajes
+                            </a>
+                            <a class="navbar-item is-selected">
+                                Foro
+                            </a>
+                            <a class="navbar-item">
+                                Favoritos
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item">
+                                Reportes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="series pb-6">
+        <h2 class="is-size-2 container mt-6">Series</h2>
+        <div class="box container">
+            <h4>Añadir series:</h4>
+            <form method="post" action="{% url 'new_series' %}">
+                {% csrf_token %}
+                <div class="field columns mt-1">
+                    <div class="column">
+                        <label class="label">Nombre</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Nombre de la serie" name="nombre_serie">
+                        </div>
+                        <label class="label">Sinopsis</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Sinopsis de la serie" name="sinopsis_serie">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <label class="label">Año de estreno</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Año de estreno de la serie"
+                                   name="fecha_estreno_serie">
+                        </div>
+                        <label class="label">Imagen</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Imagen de la serie" name="img_serie">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <label class="label">Trailer</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Url del trailer de la serie"
+                                   name="trailer_serie">
+                        </div>
+                        <label class="label">Director</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Nombre del director la serie"
+                                   name="director_serie">
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                    <p class="control">
+                        <button class="button is-primary" type="submit">
+                            Añadir
+                        </button>
+                    </p>
+                    <p class="control">
+                        <a class="button is-light">
+                            Cancelar
+                        </a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <div class="box container table-container">
+            <h4>Listado de series actuales:</h4>
+            <div style="max-height: 1000px; overflow-x: auto; overflow-y: auto;">
+                <table class="table is-fullwidth scrollable-table">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Sinopsis</th>
+                        <th>Año&nbsp;de&nbsp;estreno</th>
+                        <th>Imagen</th>
+                        <th>Trailer</th>
+                        <th>Director</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for s in series %}
+                        <tr>
+                            <td> {{ s.nombre }}</td>
+                            <td> {{ s.sinopsis }}</td>
+                            <td> {{ s.anyo_estreno }}</td>
+                            <td><img class="image" src="{{ s.img }}" alt="{{ s.nombre }}"></td>
+                            <td style="max-width: 200px; word-wrap: break-word;"> {{ s.trailer }}</td>
+                            <td> {{ s.director }}</td>
+                            <td><a href="{% url 'eliminar_serie' id=s.id %} "><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                            <td><a href="{% url 'editar_serie' id=s.id %} "><i class="fa-regular fa-pen-to-square"></i></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <a href="{% url 'mostrar_series' %} ">
+                <button class="button is-success is-grouped-centered mt-3">
+                    Actualizar
+                </button>
+            </a>
+        </div>
+    </main>
+    {% endblock %}
+    <script src="{% static 'js/navbar.js' %} "></script>
+</body>
+</html>

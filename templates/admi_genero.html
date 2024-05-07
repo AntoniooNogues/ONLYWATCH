@@ -1,0 +1,68 @@
+{% include 'header_admi.html' %}
+{% block content %}
+    <main>
+        <h2 class="is-size-2 container">Géneros</h2>
+        <div class="box container sombra">
+            <h4>Añadir géneros:</h4>
+            <form method="post" action="{% url 'new_genero' %}">
+                {% csrf_token %}
+                <div class="field columns mt-1">
+                    <div class="column">
+                        <label class="label">Nombre</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Nombre del género" name="nombre">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <label class="label">Descripción</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Descripción del genero" name="descripcion">
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                    <p class="control">
+                        <button class="button is-primary" type="submit">
+                            Añadir
+                        </button>
+                    </p>
+                    <p class="control">
+                        <button type="reset" class="button is-light">
+                            Cancelar
+                        </button>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <div class="box container table-container">
+            <h4>Listado de géneros actuales:</h4>
+            <div style="max-height: 1000px; overflow-y: auto; overflow-x: auto">
+                <table class="table is-fullwidth">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for g in generos %}
+                        <tr>
+                            <td> {{ g.nombre }}</td>
+                            <td> {{ g.descripcion }}</td>
+                            <td><a href="{% url 'editar_genero' id=g.id %} "><i
+                                    class="fa-regular fa-pen-to-square"></i></a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <a href="{% url 'mostrar_generos' %} ">
+                <button class="button is-success is-grouped-centered mt-2">
+                    Actualizar
+                </button>
+            </a>
+        </div>
+    </main>
+{% endblock %}
+{% include 'footer_admi.html' %}

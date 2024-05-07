@@ -24,12 +24,12 @@ from django.http import HttpResponse, JsonResponse
 
 
 def mostrar_admi(request):
-    return render(request, 'admi.html')
+    return render(request, 'admi_pelicula.html')
 
 
 def mostrar_peliculas(request):
     peliculas = pelicula.objects.all()
-    return render(request, 'admi.html', {'peliculas': peliculas})
+    return render(request, 'admi_pelicula.html', {'peliculas': peliculas})
 
 
 def do_login(request):
@@ -109,7 +109,7 @@ def reset_password(request):
 def new_peliculas(request):
     if request.method == 'GET':
         uno = pelicula.objects.all()
-        return render(request, 'admi.html', {'peliculas': uno})
+        return render(request, 'admi_pelicula.html', {'peliculas': uno})
     else:
         new = pelicula()
         new.nombre = request.POST.get('nombre')
@@ -126,7 +126,7 @@ def new_peliculas(request):
 def new_serie(request):
     if request.method == 'GET':
         uno = serie.objects.all()
-        return render(request, 'admi.html', {'serie': uno})
+        return render(request, 'admi_series.html', {'serie': uno})
     else:
         new = serie()
         new.nombre = request.POST.get('nombre_serie')
@@ -142,7 +142,7 @@ def new_serie(request):
 def new_actor(request):
     if request.method == 'GET':
         uno = actor.objects.all()
-        return render(request, 'admi.html', {'actor': uno})
+        return render(request, 'admi_actores.html', {'actor': uno})
     else:
         new = actor()
         new.nombre = request.POST.get('nombre_actor')
@@ -153,16 +153,16 @@ def new_actor(request):
 
 def mostrar_series(request):
     ser = serie.objects.all()
-    return render(request, 'admi.html', {'series': ser})
+    return render(request, 'admi_series.html', {'series': ser})
 
 
 def mostrar_usuarios(request):
     usuarios = User.objects.all()
-    return render(request, 'admi.html', {'usuarios': usuarios})
+    return render(request, 'admi_usuarios.html', {'usuarios': usuarios})
 
 def mostrar_actores(request):
     actores = actor.objects.all()
-    return render(request, 'admi.html', {'actores': actores})
+    return render(request, 'admi_actores.html', {'actores': actores})
 
 def eliminar_actor(request, id):
     actor_eliminar = actor.objects.get(id=id)
@@ -405,13 +405,43 @@ def configurar_perfil(request):
         user.sexo = request.POST.get('user_sexo')
         user.username = request.POST.get('user_username')
         user.nombre_completo = request.POST.get('user_nombre_completo')
-        # Acceder al archivo de imagen enviado por el usuario
-        # if 'foto_perfil' in request.FILES:
-        #     imagen = request.FILES['foto_perfil']
-        #     user.img = imagen  # Guardar la imagen en el campo correspondiente del modelo de usuario
-
         user.save()
         return redirect('configuracion')
     return redirect('configuracion')
+
+def mostrar_generos(request):
+    generos = genero.objects.all()
+    return render(request, 'admi_genero.html', {'generos': generos})
+
+def add_uniones_peliculas(request, id):
+    pelicula_unir = pelicula.objects.get(id=id)
+    if request.method == 'GET':
+        return render(request, 'unir_pelicula.html', {'pelicula': pelicula_unir})
+    else:
+
+        return redirect('/administrador/listado_actores')
+
+def new_genero(request):
+    if request.method == 'GET':
+        uno = genero.objects.all()
+        return render(request, 'admi_genero.html', {'generos': uno})
+    else:
+        new = genero()
+        new.nombre = request.POST.get('nombre')
+        new.descripcion = request.POST.get('descripcion')
+        new.save()
+
+        return redirect('/administrador/listado_generos')
+
+def editar_genero(request, id):
+    genero_editar = genero.objects.get(id=id)
+    if request.method == 'GET':
+        return render(request, 'editar_genero.html', {'genero': genero_editar})
+    else:
+        genero_editar.nombre = request.POST.get('nombre')
+        genero_editar.descripcion = request.POST.get('descripcion')
+        genero_editar.save()
+
+        return redirect('/administrador/listado_generos')
 
 

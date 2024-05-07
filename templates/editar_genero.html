@@ -1,0 +1,41 @@
+{% include 'header_admi.html' %}
+{% block content %}
+    <main>
+        <h2 class="is-size-2 container">Géneros</h2>
+        <div class="box container">
+            <h4>Modificar género:</h4>
+            <form method="post" action="{% url 'editar_genero'   id=genero.id %}">
+                {% csrf_token %}
+                <div class="field columns mt-1">
+                    <div class="column">
+                        <label class="label">Nombre</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Nombre del género" name="nombre"
+                                   value="{{ genero.nombre }}">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <label class="label">Descripción</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Descripción del género" name="descripcion"
+                                   value="{{ genero.descripcion }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                    <p class="control">
+                        <button class="button is-primary" type="submit">
+                            Editar
+                        </button>
+                    </p>
+                    <p class="control">
+                        <button onclick="window.history.back();" class="button is-light">
+                            Cancelar
+                        </button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </main>
+{% endblock %}
+{% include 'footer_admi.html' %}

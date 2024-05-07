@@ -1,0 +1,102 @@
+{% include 'header_admi.html' %}
+     {% block content %}
+        <main class="peliculas pb-6">
+        <h2 class="is-size-2 container">Películas</h2>
+            <div class="box container sombra">
+            <h4>Añadir películas:</h4>
+            <form method="post" action="{% url 'new_peliculas'  %}">
+                  {% csrf_token %}
+                <div class="field columns mt-1">
+                    <div class="column">
+                        <label class="label">Nombre</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Nombre de la película" name="nombre" value="{{ pelicula.nombre }}">
+                      </div>
+                        <label class="label">Sinopsis</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Sinopsis de la película" name="sinopsis" value="{{ pelicula.sinopsis }}">
+                      </div>
+                    </div>
+                    <div class="column">
+                        <label class="label">Año de estreno</label>
+                      <div class="control">
+                          <input class="input" type="text" placeholder="Año de estreno de la película"
+                                 name="fecha_estreno">
+                      </div>
+                    <label class="label">Imagen</label>
+                      <div class="control">
+                          <input class="input" type="text" placeholder="Imagen de la película" name="img">
+                      </div>
+                    </div>
+                    <div class="column">
+                        <label class="label">Trailer</label>
+                      <div class="control">
+                          <input class="input" type="text" placeholder="Url del trailer de la película"
+                                 name="url_trailer">
+                      </div>
+                    <label class="label">Director</label>
+                      <div class="control">
+                          <input class="input" type="text" placeholder="Nombre del director la película"
+                                 name="director">
+                      </div>
+                    </div>
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                      <p class="control">
+                          <button class="button is-primary" type="submit">
+                          Añadir
+                          </button>
+                      </p>
+                      <p class="control">
+                          <button type="reset" class="button is-light">
+                          Cancelar
+                          </button>
+                      </p>
+                </div>
+            </form>
+        </div>
+            <div class="box container table-container">
+             <h4>Listado de peliculas actuales:</h4>
+                <div style="max-height: 1000px; overflow-y: auto; overflow-x: auto">
+                    <table class="table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Sinopsis</th>
+                        <th>Año&nbsp;de&nbsp;estreno</th>
+                        <th>Imagen</th>
+                        <th>Trailer</th>
+                        <th>Director</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                     {% for p in peliculas %}
+                        <tr>
+                        <td> {{ p.nombre }}</td>
+                        <td> {{ p.sinopsis }}</td>
+                            <td> {{ p.anyo_estreno }}</td>
+                            <td>
+                                <img src="{{ p.img }}" alt="{{ p.nombre }}">
+                            </td>
+                            <td style="max-width: 200px; word-wrap: break-word;"> {{ p.trailer }}</td>
+                        <td> {{ p.director }}</td>
+                        <td><a href="{% url 'eliminar_pelicula' id=p.id %} "><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="{% url 'editar_pelicula' id=p.id %} "><i class="fa-regular fa-pen-to-square"></i></a></td>
+                        <td><a href="{% url 'vincular_pelicula' id=p.id %}"><i class="fa-solid fa-plus-minus"></i></a></td>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+                </div>
+                <a href="{% url 'mostrarPeliculas' %} ">
+                    <button class="button is-success is-grouped-centered mt-2">
+                        Actualizar
+                    </button>
+                </a>
+        </div>
+        </main>
+    {% endblock %}
+{% include 'footer_admi.html' %}

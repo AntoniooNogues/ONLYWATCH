@@ -5,6 +5,9 @@ body {
     font-family: "Manrope", sans-serif;
     margin: 0;
 }
+html, body {
+    min-height: 100vh;
+}
 .fondo {
     background-image: url("/static/img/fondo_registro_login.png");
 }
@@ -62,14 +65,4 @@ li {
 a {
     color: black;
 }
-.scrollable-table tbody {
-    display: block !important;
-    max-height: 200px !important;  /* Ajusta este valor según tus necesidades */
-    overflow-y: auto !important;
-}
 
-.scrollable-table thead, .scrollable-table tbody tr {
-    display: table !important;
-    width: 100% !important;
-    table-layout: fixed !important;
-}

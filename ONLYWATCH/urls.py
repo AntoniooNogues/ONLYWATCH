@@ -28,12 +28,12 @@ urlpatterns = [
     path('register/', views.register, name='signup'),
     path('login/reset_password', views.reset_password, name='reset_password'),
 
-    path('inicio_admi/', views.mostrar_admi),
-    path('administrador/', views.mostrar_peliculas, name='admi'),
-    path('administrador/pelicula', views.new_peliculas, name='new_peliculas'),
-    path('administrador/serie', views.new_serie, name='new_series'),
+    path('administrador/', views.mostrar_admi, name='inicio_admi'),
+    path('administrador/peliculas_actuales', views.mostrar_peliculas, name='mostrarPeliculas'),
+    path('administrador/new_pelicula', views.new_peliculas, name='new_peliculas'),
+    path('administrador/new_serie', views.new_serie, name='new_series'),
     path('administrador/series_actuales', views.mostrar_series, name='mostrar_series'),
-    path('administrador/usuarios', views.mostrar_usuarios, name='mostrar_usuarios'),
+    path('administrador/usuarios_actuales', views.mostrar_usuarios, name='mostrar_usuarios'),
     path('administrador/eliminar_usuario/<int:id>', views.eliminar_usuario, name='eliminar_usuario'),
     path('administrador/eliminar_pelicula/<int:id>', views.eliminar_pelicula, name='eliminar_pelicula'),
     path('administrador/eliminar_serie/<int:id>', views.eliminar_serie, name='eliminar_serie'),
@@ -52,10 +52,14 @@ urlpatterns = [
     path('editar_perfil/', views.configurar_perfil, name='editar_perfil'),
     path('load_series_data/', views.load_series_data, name='load_series_data'),
     path('load_movies_data/', views.load_movies_data, name='load_movies_data'),
-    path('administrador/actores', views.new_actor, name='new_actor'),
+    path('administrador/new_actores', views.new_actor, name='new_actor'),
     path('administrador/listado_actores', views.mostrar_actores, name='mostrar_actores'),
     path('administrador/eliminar_actor/<int:id>', views.eliminar_actor, name='eliminar_actor'),
     path('administrador/editar_actor/<int:id>', views.editar_actor, name='editar_actor'),
+    path('administrador/pelicula/vincular_pelicula/<int:id>', views.add_uniones_peliculas, name='vincular_pelicula'),
+    path('administrador/listado_generos', views.mostrar_generos, name='mostrar_generos'),
+    path('administrador/new_genero', views.new_genero, name='new_genero'),
+    path('administrador/editar_genero/<int:id>', views.editar_genero, name='editar_genero'),
 ]
 
 if settings.DEBUG:
