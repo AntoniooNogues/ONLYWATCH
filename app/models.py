@@ -146,9 +146,6 @@ class temporada(models.Model):
 
 class capitulo(models.Model):
     nombre = models.CharField(max_length=100)
-    sinopsis = models.TextField()
-    img = models.CharField(max_length=300)
-    fecha_estreno = models.DateField()
     temporada = models.ForeignKey(temporada, on_delete=models.CASCADE)
 
     def __str__(self):
