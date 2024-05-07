@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
 
+    # path('', views.cargar_datos_sql, name='cargar_datos_sql'),
     # Acceso de Usuario/No Usuario a Login, Registro, Logout y Reinicio de Contraseña
     path('login/', views.do_login, name='login'),
     path('logout/', views.do_logout, name='logout'),

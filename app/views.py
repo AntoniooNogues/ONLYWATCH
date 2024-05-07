@@ -415,7 +415,7 @@ def configurar_perfil(request):
     return redirect('configuracion')
 
 
-def add_vinculacion_genero(request):
+def add_vinculacion_genero_json():
     with open('static/Generos.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
         # Itera sobre cada elemento en los datos
@@ -425,7 +425,7 @@ def add_vinculacion_genero(request):
         g.descripcion = gen['descripcion']
         g.save()
 
-def vinculacion_genero_pelicula(request):
+def vinculacion_genero_pelicula_json():
     with open('static/Generos_Peliculas.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
         # Itera sobre cada elemento en los datos
@@ -434,7 +434,7 @@ def vinculacion_genero_pelicula(request):
             g.pelicula_id = gen['id_pelicula']
             g.genero_id = gen['id_genero']
             g.save()
-def vinculacion_genero_serie(request):
+def vinculacion_genero_serie_json():
     with open('static/Generos_Series.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
         # Itera sobre cada elemento en los datos
@@ -444,3 +444,11 @@ def vinculacion_genero_serie(request):
             g.genero_id = gen['id_genero']
             g.save()
 
+def cargar_datos_sql(request):
+    add_series_json()
+    add_peliculas_json()
+    add_plataformas()
+    add_vinculacion_genero_json()
+    vinculacion_genero_pelicula_json()
+    vinculacion_genero_serie_json()
+    return HttpResponse("Datos de generos cargados correctamente")
