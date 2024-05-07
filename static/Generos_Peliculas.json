@@ -1,0 +1,494 @@
+[
+  {
+    "id_pelicula": 1,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 2,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 3,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 3,
+    "id_genero": 2
+  },
+  {
+    "id_pelicula": 3,
+    "id_genero": 8
+  },
+  {
+    "id_pelicula": 4,
+    "id_genero": 3
+  },
+  {
+    "id_pelicula": 4,
+    "id_genero": 4
+  },
+  {
+    "id_pelicula": 5,
+    "id_genero": 5
+  },
+  {
+    "id_pelicula": 6,
+    "id_genero": 3
+  },
+  {
+    "id_pelicula": 6,
+    "id_genero": 4
+  },
+  {
+    "id_pelicula": 7,
+    "id_genero": 6
+  },
+  {
+    "id_pelicula": 8,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 8,
+    "id_genero": 8
+  },
+  {
+    "id_pelicula": 9,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 9,
+    "id_genero": 11
+  },
+  {
+    "id_pelicula": 10,
+    "id_genero": 10
+  },
+  {
+    "id_pelicula": 11,
+    "id_genero": 5
+  },
+  {
+    "id_pelicula": 11,
+    "id_genero": 10
+  },
+  {
+    "id_pelicula": 12,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 12,
+    "id_genero": 2
+  },
+  {
+    "id_pelicula": 13,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 13,
+    "id_genero": 11
+  },
+  {
+    "id_pelicula": 13,
+    "id_genero": 8
+  },
+  {
+    "id_pelicula": 14,
+    "id_genero": 11
+  },
+  {
+    "id_pelicula": 14,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 14,
+    "id_genero": 12
+  },
+  {
+    "id_pelicula": 15,
+    "id_genero": 10
+  },
+  {
+    "id_pelicula": 15,
+    "id_genero": 15
+  },
+  {
+    "id_pelicula": 16,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 16,
+    "id_genero": 15
+  },
+  {
+    "id_pelicula": 17,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 17,
+    "id_genero": 15
+  },
+  {
+    "id_pelicula": 17,
+    "id_genero": 8
+  },
+  {
+    "id_pelicula": 18,
+    "id_genero": 6
+  },
+  {
+    "id_pelicula": 18,
+    "id_genero": 4
+  },
+  {
+    "id_pelicula": 18,
+    "id_genero": 9
+  },
+  {
+    "id_pelicula": 19,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 20,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 20,
+    "id_genero": 22
+  },
+  {
+    "id_pelicula": 21,
+    "id_genero": 17
+  },
+  {
+    "id_pelicula": 21,
+    "id_genero": 3
+  },
+  {
+    "id_pelicula": 22,
+    "id_genero": 10
+  },
+  {
+    "id_pelicula": 22,
+    "id_genero": 15
+  },
+  {
+    "id_pelicula": 23,
+    "id_genero": 3
+  },
+  {
+    "id_pelicula": 23,
+    "id_genero": 17
+  },
+  {
+    "id_pelicula": 24,
+    "id_genero": 21
+  },
+  {
+    "id_pelicula": 24,
+    "id_genero": 4
+  },
+  {
+    "id_pelicula": 25,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 25,
+    "id_genero": 2
+  },
+  {
+    "id_pelicula": 25,
+    "id_genero": 8
+  },
+  {
+    "id_pelicula": 26,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 26,
+    "id_genero": 9
+  },
+  {
+    "id_pelicula": 27,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 27,
+    "id_genero": 15
+  },
+  {
+    "id_pelicula": 27,
+    "id_genero": 8
+  },
+  {
+    "id_pelicula": 28,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 29,
+    "id_genero": 3
+  },
+  {
+    "id_pelicula": 29,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 30,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 30,
+    "id_genero": 11
+  },
+  {
+    "id_pelicula": 30,
+    "id_genero": 12
+  },
+  {
+    "id_pelicula": 31,
+    "id_genero": 3
+  },
+  {
+    "id_pelicula": 31,
+    "id_genero": 4
+  },
+  {
+    "id_pelicula": 31,
+    "id_genero": 13
+  },
+  {
+    "id_pelicula": 32,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 33,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 33,
+    "id_genero": 22
+  },
+  {
+    "id_pelicula": 34,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 35,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 35,
+    "id_genero": 15
+  },
+  {
+    "id_pelicula": 36,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 37,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 37,
+    "id_genero": 22
+  },
+  {
+    "id_pelicula": 38,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 38,
+    "id_genero": 15
+  },
+  {
+    "id_pelicula": 38,
+    "id_genero": 8
+  },
+  {
+    "id_pelicula": 39,
+    "id_genero": 17
+  },
+  {
+    "id_pelicula": 39,
+    "id_genero": 6
+  },
+  {
+    "id_pelicula": 39,
+    "id_genero": 4
+  },
+  {
+    "id_pelicula": 40,
+    "id_genero": 10
+  },
+  {
+    "id_pelicula": 40,
+    "id_genero": 15
+  },
+  {
+    "id_pelicula": 41,
+    "id_genero": 6
+  },
+  {
+    "id_pelicula": 42,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 43,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 44,
+    "id_genero": 10
+  },
+  {
+    "id_pelicula": 44,
+    "id_genero": 4
+  },
+  {
+    "id_pelicula": 45,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 45,
+    "id_genero": 2
+  },
+  {
+    "id_pelicula": 45,
+    "id_genero": 8
+  },
+  {
+    "id_pelicula": 46,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 46,
+    "id_genero": 2
+  },
+  {
+    "id_pelicula": 46,
+    "id_genero": 8
+  },
+  {
+    "id_pelicula": 47,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 47,
+    "id_genero": 15
+  },
+  {
+    "id_pelicula": 48,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 49,
+    "id_genero": 17
+  },
+  {
+    "id_pelicula": 49,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 49,
+    "id_genero": 22
+  },
+  {
+    "id_pelicula": 50,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 50,
+    "id_genero": 2
+  },
+  {
+    "id_pelicula": 51,
+    "id_genero": 10
+  },
+  {
+    "id_pelicula": 51,
+    "id_genero": 15
+  },
+  {
+    "id_pelicula": 52,
+    "id_genero": 10
+  },
+  {
+    "id_pelicula": 52,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 53,
+    "id_genero": 10
+  },
+  {
+    "id_pelicula": 53,
+    "id_genero": 4
+  },
+  {
+    "id_pelicula": 53,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 54,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 54,
+    "id_genero": 2
+  },
+  {
+    "id_pelicula": 54,
+    "id_genero": 8
+  },
+  {
+    "id_pelicula": 55,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 55,
+    "id_genero": 9
+  },
+  {
+    "id_pelicula": 55,
+    "id_genero": 22
+  },
+  {
+    "id_pelicula": 56,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 56,
+    "id_genero": 2
+  },
+  {
+    "id_pelicula": 56,
+    "id_genero": 8
+  },
+  {
+    "id_pelicula": 57,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 57,
+    "id_genero": 15
+  },
+  {
+    "id_pelicula": 58,
+    "id_genero": 10
+  },
+  {
+    "id_pelicula": 58,
+    "id_genero": 4
+  },
+  {
+    "id_pelicula": 59,
+    "id_genero": 1
+  },
+  {
+    "id_pelicula": 60,
+    "id_genero": 10
+  },
+  {
+    "id_pelicula": 60,
+    "id_genero": 4
+  }
+]
