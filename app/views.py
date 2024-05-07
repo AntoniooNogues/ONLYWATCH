@@ -415,3 +415,32 @@ def configurar_perfil(request):
     return redirect('configuracion')
 
 
+def add_vinculacion_genero(request):
+    with open('static/Generos.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+    for gen in data:
+        g = genero()
+        g.nombre = gen['nombre']
+        g.descripcion = gen['descripcion']
+        g.save()
+
+def vinculacion_genero_pelicula(request):
+    with open('static/Generos_Peliculas.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+        for gen in data:
+            g = pelicula_genero()
+            g.pelicula_id = gen['id_pelicula']
+            g.genero_id = gen['id_genero']
+            g.save()
+def vinculacion_genero_serie(request):
+    with open('static/Generos_Series.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+        for gen in data:
+            g = serie_genero()
+            g.serie_id = gen['id_serie']
+            g.genero_id = gen['id_genero']
+            g.save()
+
