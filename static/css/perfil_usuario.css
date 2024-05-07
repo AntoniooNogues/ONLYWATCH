@@ -1,0 +1,45 @@
+@import 'style.css';
+input::placeholder{
+    color: black !important;
+}
+input{
+    border: none !important;
+    color: black !important;
+}
+.center{
+    justify-content: center !important;
+}
+.buton:hover{
+    background-color: rgba(26, 163, 252, 0.8) !important;
+    border-radius: 40% !important;
+}
+.platform-container {
+    position: relative;
+}
+
+.platform {
+    border: 2px solid gray; /* Estilo predeterminado */
+}
+
+.vinculada {
+    border-color: green; /* Estilo para las plataformas vinculadas */
+}
+
+.no-vinculada {
+    border-color: gray; /* Estilo para las plataformas no vinculadas */
+}
+
+.platform-container .platform .delete-icon {
+    position: absolute !important;
+    top: -10px  !important;
+    left: -10px !important;
+    background-color: white !important;
+    border-radius: 50% !important;
+    padding: 5px !important;
+    cursor: pointer !important;
+}
+.large-modal {
+    width: 60vw !important; /* 80% del ancho de la ventana */
+    height: 50vh !important; /* 80% de la altura de la ventana */
+    overflow-x: hidden !important; /* Sin barra de desplazamiento horizontal */
+}
