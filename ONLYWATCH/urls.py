@@ -60,6 +60,9 @@ urlpatterns = [
     path('administrador/listado_generos', views.mostrar_generos, name='mostrar_generos'),
     path('administrador/new_genero', views.new_genero, name='new_genero'),
     path('administrador/editar_genero/<int:id>', views.editar_genero, name='editar_genero'),
+    path('administrador/pelicula/vincular_pelicula/vincular_genero/<int:id>/', views.vincular_desvincular_genero_pelicula, name='toggle_genre'),
+    path('administrador/pelicula/vincular_pelicula/vincular_plataforma/<int:id>/', views.vincular_desvincular_plataforma_pelicula, name='plataforma_pelicula'),
+
 ]
 
 if settings.DEBUG:

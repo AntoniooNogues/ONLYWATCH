@@ -17,6 +17,8 @@ from django.urls import reverse
 from django.conf import settings
 # Create your views here.
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
+
 from .models import *
 
 import json
@@ -414,9 +416,15 @@ def mostrar_generos(request):
     return render(request, 'admi_genero.html', {'generos': generos})
 
 def add_uniones_peliculas(request, id):
-    pelicula_unir = pelicula.objects.get(id=id)
+    pelicula_instancia = pelicula.objects.get(id=id)
+    pelicula_generos = pelicula_instancia.pelicula_genero_set.all()
+    generos_totales = genero.objects.all()
+    generos_vinculados = [up.genero for up in pelicula_generos]
+    plataformas_totales = plataforma.objects.all()
+    pelicula_plataforma = pelicula_instancia.plataforma_pelicula_set.all()
+    plataformas_vinculadas = [up.plataforma for up in pelicula_plataforma]
     if request.method == 'GET':
-        return render(request, 'unir_pelicula.html', {'pelicula': pelicula_unir})
+        return render(request, 'unir_pelicula.html', {'pelicula': pelicula_instancia, 'generos': generos_totales ,'genero_vinculado': generos_vinculados, 'plataformas_totales': plataformas_totales, 'plataformas_vinculadas': plataformas_vinculadas,'actores': actor.objects.all()})
     else:
 
         return redirect('/administrador/listado_actores')
@@ -443,5 +451,31 @@ def editar_genero(request, id):
         genero_editar.save()
 
         return redirect('/administrador/listado_generos')
+def vincular_desvincular_genero_pelicula(request, id):
+    genero_id = request.GET.get('generoId')
+    # Obtén las instancias completas de la película y el género
+    pelicula_instancia = pelicula.objects.get(id=id)
+    genero_instancia = genero.objects.get(id=genero_id)
+    try:
+        # Intenta obtener la relación existente entre la película y el género
+        gen_pel = pelicula_genero.objects.get(pelicula=pelicula_instancia, genero=genero_instancia)
+    except pelicula_genero.DoesNotExist:
+        # Si la relación no existe, se crea
+        pelicula_genero.objects.create(pelicula=pelicula_instancia, genero=genero_instancia)
+    else:
+        # Si la relación existe, se elimina
+        gen_pel.delete()
+    return redirect('vincular_pelicula', id=pelicula_instancia.id)
 
-
+def vincular_desvincular_plataforma_pelicula(request, id):
+    plataformaId = request.GET.get('plataformaId')
+    plataforma_instancia = plataforma.objects.get(id=plataformaId)
+    try:
+        pla_pel = plataforma_pelicula.objects.get(plataforma=plataforma_instancia, pelicula=pelicula.objects.get(id=id))
+    except plataforma_pelicula.DoesNotExist:
+        # Si la relación no existe, se crea
+        plataforma_pelicula.objects.create(plataforma=plataforma_instancia, pelicula=pelicula.objects.get(id=id))
+    else:
+        # Si la relación existe, se elimina
+        pla_pel.delete()
+    return redirect('vincular_pelicula', id=id)
