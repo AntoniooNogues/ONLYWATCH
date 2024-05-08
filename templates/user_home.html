@@ -1,70 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Inicio</title>
-    <script src="https://kit.fontawesome.com/2eb7a633b0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/static/bulma/css/style.css" />
-    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+{% include 'header_home_usuario.html' %}
 
-
-
-</head>
-<body style="background-color: #FFE8D3" class="familiy has-text-black">
+    
+    {% load static %}
+    {% block content %}
     {% csrf_token %}
-    <!-- Header -->
-    <header>
-        <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #FFE8D3">
-                <div class="navbar-brand">
-                    <a class="navbar-item image " href="{% url 'peliculas' %}">
-                        <img src="/static/img/logo_sinfondo 1.png" alt="" class="is-96x96">
-                    </a>
-                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                       data-target="navbarBasicExample">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                  </div>
-                <div id="navbarBasicExample" class="navbar-menu">
-                    <div class="navbar-start">
-                        <a class="navbar-item has-text-black" href="">
-                            Inicio
-                        </a>
-                        <a class="navbar-item has-text-black" href="{% url 'peliculas' %}">
-                            Peliculas
-                        </a>
-                        <a class="navbar-item has-text-black" href="{% url 'series' %}">
-                            Series
-                        </a>
-                        <a class="navbar-item has-text-black" href=""><i class="fa-solid fa-magnifying-glass "></i></a>
-                    </div>
-                    <div class="navbar-end">
-                     <div class="navbar-item">
-                         <a><i class="fa-regular fa-bell"></i></a>
-                     </div>
-                    <div class="navbar-item">
-                        <a class="is-link" href="{% url 'configuracion' %}">
-                            <div class="button is-size-6 btt">
-                            {% if user.sexo == "NS/NC" %}
-                                <p class="ml-2 " style="color: #0a0a0a">Bienvenido/a, {{ user.username }}</p>
-                            {% elif user.sexo == "Masculino" %}
-                                <p class="ml-2 " style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
-                            {% elif user.sexo == "Femenino" %}
-                                <p class="ml-2 " style="color: #0a0a0a">Bienvenida, {{ user.username }}</p>
-                            {% endif %}
-                            </div>
-                        </a>
-                    </div>
-                 </div>
-                </div>
-         </nav>
-    </header>
-
     <!-- Main content -->
     <!-- Gallery | Cards @a7v8x-->
     <main class="column mb-6 mt-5">
@@ -120,7 +59,7 @@
         </div>
     </main>
 
-
+    {% endblock %}
     {% include "footer.html" %}
     <script src="{% static 'js/navbar.js' %} "></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
