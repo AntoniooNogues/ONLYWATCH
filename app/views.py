@@ -582,3 +582,36 @@ def pelicula_favorita(request, id_pelicula):
         es_favorito = False
     return JsonResponse({'es_favorito': es_favorito})
 
+def mostrar_serie(request, id):
+    serie_editar = serie.objects.get(id=id)
+    plt_serie = plataforma_serie.objects.filter(serie_id=id).all()
+    gen_serie = serie_genero.objects.filter(serie_id=id).all()
+    pj_serie = personaje_serie.objects.filter(serie_id=id).all()[:6]
+    es_favorito = series_favoritas.objects.filter(usuario=request.user, serie=serie_editar).exists()
+    valoracion_media = valoracion_serie.objects.filter(serie=serie_editar).aggregate(Avg('valoracion'))
+
+    return render(request, 'vista_serie.html', {'serie': serie_editar, 'plt': plt_serie, 'gen': gen_serie, 'pj': pj_serie, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
+
+def valorar_serie(request, id):
+    if request.method == 'POST':
+        serie_valorar = get_object_or_404(serie, id=id)
+        valoracion = request.POST.get('valoracion')
+        try:
+           valor = valoracion_serie.objects.get(usuario=request.user, serie=serie_valorar)
+        except valoracion_serie.DoesNotExist:
+            valoracion_serie.objects.create(usuario=request.user, serie=serie_valorar, valoracion=valoracion)
+        else:
+            messages.error(request, 'Ya has valorado esta serie anteriormente.')
+        return redirect('serie', id=id)
+
+def serie_favorita(request, id):
+    serie_instancia = get_object_or_404(serie, id=id)
+    try:
+        fav = series_favoritas.objects.get(usuario=request.user, serie=serie_instancia)
+    except series_favoritas.DoesNotExist:
+        series_favoritas.objects.create(usuario=request.user, serie=serie_instancia)
+        es_favorito = True
+    else:
+        fav.delete()
+        es_favorito = False
+    return JsonResponse({'es_favorito': es_favorito})
