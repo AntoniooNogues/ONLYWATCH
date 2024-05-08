@@ -168,11 +168,6 @@ body {
     background-color: transparent !important;
     font-size: 20px;
 }
-
-#navbarBasicExample{
-    background-color: #FFE8D3 !important;
-}
-
 .card{
   max-width: 80% !important;
   margin: 0 auto;

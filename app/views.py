@@ -58,7 +58,7 @@ def do_login(request):
 
 def do_logout(request):
     logout(request)
-    return redirect('login')
+    return redirect('home')
 
 
 def mostrar_inicio(request):
