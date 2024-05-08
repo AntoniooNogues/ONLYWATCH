@@ -533,6 +533,19 @@ def vinculacion_plataforma_series_json():
             g.plataforma_id = gen['plataforma_id']
             g.save()
 
+def add_temporadas_json():
+    with open('static/Temporadas.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+        for d in data:
+            tem = temporada()
+            tem.nombre = d['nombre']
+            tem.sinopsis = d['sinopsis']
+            tem.img = d['img']
+            tem.fecha_estreno = d['fecha_estreno']
+            tem.serie_id = d['serie_id']
+            tem.save()
+        return HttpResponse("Datos de temporadas cargados correctamente")
 def cargar_datos_sql(request):
     add_series_json()
     add_peliculas_json()
@@ -542,6 +555,7 @@ def cargar_datos_sql(request):
     vinculacion_genero_serie_json()
     vinculacion_plataforma_pelis_json()
     vinculacion_plataforma_series_json()
+    add_temporadas_json()
     return HttpResponse("Datos de generos cargados correctamente")
 
 def valorar_pelicula(request, id_pelicula):
