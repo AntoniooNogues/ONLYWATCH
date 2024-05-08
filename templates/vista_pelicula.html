@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,6 +62,7 @@
          </nav>
     </header>
 
+
     <!-- Main Content -->
     <main class="mb-6 ml-1 columns main-content">
         <!-- Informacion de Pelicula -->
@@ -87,7 +87,13 @@
             </div>
             <!-- Titulo (Año Estreno) + Me Gusta, Sinopsis, Director, Plataforma, Generos -->
             <div class="column title-details is-9 pl-5">
-                <h1 class="is-size-3">{{ pelicula.nombre }} <span> ({{ pelicula.anyo_estreno }})</span> <a id="corazon" onclick="changeIcon('corazon')"><i class="fa-regular fa-heart"></i></a></h1>
+                <h1 class="is-size-3">{{ pelicula.nombre }} <span> ({{ pelicula.anyo_estreno }})</span>
+                    {% if es_favorito %}
+                        <a class="pelicula_favorita fa-solid fa-heart" id="corazon"></a>
+                    {% else %}
+                        <a class="pelicula_favorita fa-regular fa-heart" id="corazon"></a>
+                    {% endif %}
+                </h1>
                 <p class="is-size-4 has-text-weight-bold pt-2">Sinopsis</p>
                 <p class="is-size-5 has-text-justified">{{ pelicula.sinopsis }}</p>
                 <p class="is-size-4 has-text-weight-bold pt-2">Director: <span class="has-text-weight-normal is-size-5">{{ pelicula.director }}</span></p>
@@ -110,6 +116,22 @@
                     </div>
                 </div>
                 <a class="is-size-4 has-text-weight-bold is-black hover_link" href="{{ pelicula.trailer }}" style="letter-spacing: 2px">Trailer</a>
+                <div>
+                    <p class="is-size-4 has-text-weight-bold pt-2">Puntuación media: <span class="has-text-weight-normal is-size-5">{{ valoracion_media.valoracion__avg|floatformat:2 }}</span></p>
+                        Añade tu puntuación:
+                    <form method="POST" action="{% url 'valorar_pelicula' pelicula.id %}">
+                        {% csrf_token %}
+                        <input type="number" name="valoracion" min="0" max="10" required>
+                        <input type="submit" value="Valorar">
+                    </form>
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
             </div>
         </div>
         <!-- Reparto -->
@@ -143,6 +165,29 @@
 
     <!-- Footer -->
     {% include "footer.html" %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    ç
+    <script>
+        $(document).ready(function () {
+            $("#corazon").click(function () {
+                var peliculaId = {{ pelicula.id }};
+                $.ajax({
+                    url: '/pelicula_favorita/' + peliculaId + '/',
+                    data: {
+                        'peliculaId': peliculaId
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.es_favorito) {
+                            $("#corazon").removeClass('fa-regular fa-heart').addClass('fa-solid fa-heart');
+                        } else {
+                            $("#corazon").removeClass('fa-solid fa-heart').addClass('fa-regular fa-heart');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
     <script src="{% static 'js/index.js' %} "></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
 </body>

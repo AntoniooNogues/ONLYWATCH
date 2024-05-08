@@ -6,11 +6,14 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
 
 import os
+
 from django.contrib import messages
+from django.core.exceptions import ValidationError
 from django.core.files import File
 import random
 import smtplib
 from django.core.mail import send_mail
+from django.db.models import Avg
 # Create your views here
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
@@ -330,7 +333,10 @@ def mostrar_pelicula(request, id_pelicula):
     plt_pelicula = plataforma_pelicula.objects.filter(pelicula_id=peli).all()
     gen_pelicula = pelicula_genero.objects.filter(pelicula_id=peli).all()
     pj_pelicula = personaje_pelicula.objects.filter(pelicula_id=peli).all()[:6]
-    return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula})
+    es_favorito = peliculas_favoritas.objects.filter(usuario=request.user, pelicula=peli).exists()
+    valoracion_media = valoracion_pelicula.objects.filter(pelicula=peli).aggregate(Avg('valoracion'))
+
+    return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
 
 
 # def calcular_edad(fecha_nacimiento):
@@ -508,6 +514,25 @@ def vinculacion_genero_serie_json():
             g.genero_id = gen['id_genero']
             g.save()
 
+def vinculacion_plataforma_pelis_json():
+    with open('static/Plataformas_Peliculas.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+        for gen in data:
+            g = plataforma_pelicula()
+            g.pelicula_id = gen['pelicula_id']
+            g.plataforma_id = gen['plataforma_id']
+            g.save()
+def vinculacion_plataforma_series_json():
+    with open('static/Plataformas_Series.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+        for gen in data:
+            g = plataforma_serie()
+            g.serie_id = gen['serie_id']
+            g.plataforma_id = gen['plataforma_id']
+            g.save()
+
 def cargar_datos_sql(request):
     add_series_json()
     add_peliculas_json()
@@ -515,4 +540,31 @@ def cargar_datos_sql(request):
     add_vinculacion_genero_json()
     vinculacion_genero_pelicula_json()
     vinculacion_genero_serie_json()
+    vinculacion_plataforma_pelis_json()
+    vinculacion_plataforma_series_json()
     return HttpResponse("Datos de generos cargados correctamente")
+
+def valorar_pelicula(request, id_pelicula):
+    if request.method == 'POST':
+        pelicula_valorar = get_object_or_404(pelicula, id=id_pelicula)
+        valoracion = request.POST.get('valoracion')
+        try:
+           valor = valoracion_pelicula.objects.get(usuario=request.user, pelicula=pelicula_valorar)
+        except valoracion_pelicula.DoesNotExist:
+            valoracion_pelicula.objects.create(usuario=request.user, pelicula=pelicula_valorar, valoracion=valoracion)
+        else:
+            messages.error(request, 'Ya has valorado esta película anteriormente.')
+        return redirect('pelicula', id_pelicula=id_pelicula)
+
+def pelicula_favorita(request, id_pelicula):
+    pelicula_instancia = get_object_or_404(pelicula, id=id_pelicula)
+    try:
+        fav = peliculas_favoritas.objects.get(usuario=request.user, pelicula=pelicula_instancia)
+    except peliculas_favoritas.DoesNotExist:
+        peliculas_favoritas.objects.create(usuario=request.user, pelicula=pelicula_instancia)
+        es_favorito = True
+    else:
+        fav.delete()
+        es_favorito = False
+    return JsonResponse({'es_favorito': es_favorito})
+
