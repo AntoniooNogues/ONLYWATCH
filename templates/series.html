@@ -75,14 +75,15 @@
             <div class="columns is-multiline is-mobile">
                 {% for s in series %}
                     <div class="column is-one-quarter-widescreen is-one-quarter-desktop is-one-quarter-tablet is-half-mobile">
-                        <div class="card">
-                            <div class="card-image ">
-                                <figure class="image is-2by3">
-                                    <img src="{{ s.img }}" alt="Imagen de la película {{ s.nombre }}">
-                                </figure>
-
+                        <a href="{% url 'serie' s.id %}">
+                            <div class="card">
+                                <div class="card-image ">
+                                    <figure class="image is-2by3">
+                                        <img src="{{ s.img }}" alt="Imagen de la película {{ s.nombre }}">
+                                    </figure>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 {% endfor %}
             </div>  

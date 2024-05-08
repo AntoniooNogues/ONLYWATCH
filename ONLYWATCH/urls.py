@@ -61,6 +61,9 @@ urlpatterns = [
     path('pelicula/<int:id_pelicula>', views.mostrar_pelicula, name='pelicula'),
     path('pelicula/valorar/<int:id_pelicula>', views.valorar_pelicula, name='valorar_pelicula'),
     path('pelicula_favorita/<int:id_pelicula>/', views.pelicula_favorita, name='pelicula_favorita'),
+    path('serie/<int:id>', views.mostrar_serie, name='serie'),
+    path('serie/valorar/<int:id>', views.valorar_serie, name='valorar_serie'),
+    path('serie_favorita/<int:id>/', views.serie_favorita, name='serie_favorita'),
 
     # Paginas de configuracion de Usuario
     path('usuario/perfil', views.configuracion, name='configuracion'),
