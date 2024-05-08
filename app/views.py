@@ -292,9 +292,6 @@ def add_peliculas_json():
         new_pelicula.img = item['img']
         new_pelicula.trailer = item['trailer']
         new_pelicula.save()
-def load_movies_data(request):
-    add_peliculas_json()
-    return HttpResponse("Datos de películas cargados correctamente")
 
 
 def add_series_json():
@@ -313,9 +310,7 @@ def add_series_json():
         new_serie.img = item['img']
         new_serie.trailer = item['trailer']
         new_serie.save()
-def load_series_data(request):
-    add_series_json()
-    return HttpResponse("Datos de series cargados correctamente")
+
 
 
 def view_peliculas(request):
