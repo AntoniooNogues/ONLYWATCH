@@ -1,0 +1,149 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ pelicula.nombre }}</title>
+    <script src="https://kit.fontawesome.com/2eb7a633b0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/bulma/css/style.css" />
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+</head>
+<body style="background-color: #FFE8D3; overflow-x: hidden;" class="familiy has-text-black">
+    {% csrf_token %}
+    <!-- Header -->
+    <header class="mb-3">
+        <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #FFE8D3">
+                <div class="navbar-brand">
+                    <a class="navbar-item image " href="{% url 'peliculas' %}">
+                        <img src="/static/img/logo_sinfondo 1.png" alt="" class="is-96x96">
+                    </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                       data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                  </div>
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item has-text-black" href="{% url 'home' %}">
+                            Inicio
+                        </a>
+                        <a class="navbar-item has-text-black" href="{% url 'peliculas' %}">
+                            Peliculas
+                        </a>
+                        <a class="navbar-item has-text-black" href="{% url 'series' %}">
+                            Series
+                        </a>
+                        <a class="navbar-item has-text-black" href=""><i class="fa-solid fa-magnifying-glass "></i></a>
+                    </div>
+                    <div class="navbar-end">
+                     <div class="navbar-item">
+                         <a><i class="fa-regular fa-bell"></i></a>
+                     </div>
+                    <div class="navbar-item">
+                        <a class="is-link">
+                            <div class="button is-size-6 btt">
+                            {% if user.sexo == "NS/NC" %}
+                                <p class="" style="color: #0a0a0a">Bienvenido/a, {{ user.username }}</p>
+                            {% elif user.sexo == "Masculino" %}
+                                <p class="" style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
+                            {% elif user.sexo == "Femenino" %}
+                                <p class="" style="color: #0a0a0a">Bienvenida, {{ user.username }}</p>
+                            {% endif %}
+                            </div>
+                        </a>
+                    </div>
+                 </div>
+                </div>
+         </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mb-6 ml-1 columns main-content">
+        <!-- Informacion de Pelicula -->
+        <div class="columns ">
+            <!-- Imagen, Estado -->
+            <div class="columns ml-2 main-content is-3" >
+                <!-- Imagen, Estado -->
+                <div class="column">
+                    <figure>
+                        <img class="image pt-4" src="{{ pelicula.img }}" alt="Imagen de la película {{ pelicula.nombre }}" style="margin: 0 auto">
+                    </figure>
+                    <label>
+                        <select class="mt-4 pl-2 estado" >
+                            <option class="pl-5" value="0">Estado de la Película</option>
+                            <option class="pl-5" value="1">Viendo</option>
+                            <option class="pl-5" value="2">Completada</option>
+                            <option class="pl-5" value="3">Pendiente</option>
+                            <option class="pl-5" value="4">Abandonada</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <!-- Titulo (Año Estreno) + Me Gusta, Sinopsis, Director, Plataforma, Generos -->
+            <div class="column title-details is-9 pl-5">
+                <h1 class="is-size-3">{{ pelicula.nombre }} <span> ({{ pelicula.anyo_estreno }})</span> <a id="corazon" onclick="changeIcon('corazon')"><i class="fa-regular fa-heart"></i></a></h1>
+                <p class="is-size-4 has-text-weight-bold pt-2">Sinopsis</p>
+                <p class="is-size-5 has-text-justified">{{ pelicula.sinopsis }}</p>
+                <p class="is-size-4 has-text-weight-bold pt-2">Director: <span class="has-text-weight-normal is-size-5">{{ pelicula.director }}</span></p>
+                <div>
+                    <p class="is-size-4 has-text-weight-bold pt-2">Plataformas: </p>
+                    <div class="is-flex pt-3">
+                        {% for p in plt %}
+                            <figure class="mr-3">
+                                <img class="image is-64x64" src="{{ p.plataforma.img.url}}" alt="{{ p.plataforma.nombre }}"/>
+                            </figure>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <p class="is-size-4 has-text-weight-bold pt-2">Generos: </p>
+                    <div class="is-flex pt-3 tags are-medium">
+                        {% for g in gen %}
+                            <p class="tag is-size-5 has-text-weight-bold is-black ">{{ g.genero.nombre }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <a class="is-size-4 has-text-weight-bold is-black hover_link" href="{{ pelicula.trailer }}" style="letter-spacing: 2px">Trailer</a>
+            </div>
+        </div>
+        <!-- Reparto -->
+        <div class="column">
+            <h2 class="is-size-4 has-text-weight-bold pb-4">Reparto</h2>
+            <div class="columns is-multiline">
+                {% for p in pj %}
+                    <div class="column is-2">
+                        <figure>
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image is-2by3 mb-4">
+                                        <img src="{{ p.actor.img }}"
+                                             alt="Imagen del Personaje, {{ p.nombre_personaje }}">
+                                    </figure>
+                                </div>
+                            </div>
+                            <p class="has-text-centered">Actor: {{ p.actor.nombre }}</p>
+                            <p class="has-text-centered">Personaje: {{ p.nombre_personaje }}</p>
+                        </figure>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- Comentarios -->
+        <div class="column">
+            <h2 class="is-size-4 has-text-weight-bold pb-4">Comentarios</h2>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    {% include "footer.html" %}
+    <script src="{% static 'js/index.js' %} "></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
+</body>
+</html>

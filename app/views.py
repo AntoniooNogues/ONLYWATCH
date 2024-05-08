@@ -65,10 +65,9 @@ def mostrar_inicio(request):
     headerS = list(serie.objects.order_by('?')[:5])
     headerPS = headerP + headerS
     random.shuffle(headerPS)
-    series = list(serie.objects.all())
-    peliculas = list(pelicula.objects.all())
-    PyS = series + peliculas
-    return render(request, 'user_home.html', {'header': headerPS, 'peliyserie': PyS})
+    series = serie.objects.all().order_by('?')
+    peliculas = pelicula.objects.all().order_by('?')
+    return render(request, 'user_home.html', {'header': headerPS, 'series': series, 'peliculas': peliculas})
 
 
 def register(request):
@@ -326,11 +325,12 @@ def view_series(request):
     return render(request, 'series.html', {'series': series})
 
 
-def view_pelicula(request):
-    peli = pelicula.objects.get(id=1)
+def mostrar_pelicula(request, id_pelicula):
+    peli = pelicula.objects.get(id=id_pelicula)
     plt_pelicula = plataforma_pelicula.objects.filter(pelicula_id=peli).all()
     gen_pelicula = pelicula_genero.objects.filter(pelicula_id=peli).all()
-    return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula})
+    pj_pelicula = personaje_pelicula.objects.filter(pelicula_id=peli).all()[:6]
+    return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula})
 
 
 # def calcular_edad(fecha_nacimiento):
@@ -441,6 +441,15 @@ def new_genero(request):
 
         return redirect('/administrador/listado_generos')
 
+def add_vinculacion_genero_json():
+    with open('static/Generos.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+    for gen in data:
+        g = genero()
+        g.nombre = gen['nombre']
+        g.descripcion = gen['descripcion']
+        g.save()
 def editar_genero(request, id):
     genero_editar = genero.objects.get(id=id)
     if request.method == 'GET':
@@ -479,3 +488,31 @@ def vincular_desvincular_plataforma_pelicula(request, id):
         # Si la relación existe, se elimina
         pla_pel.delete()
     return redirect('vincular_pelicula', id=id)
+
+def vinculacion_genero_pelicula_json():
+    with open('static/Generos_Peliculas.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+        for gen in data:
+            g = pelicula_genero()
+            g.pelicula_id = gen['id_pelicula']
+            g.genero_id = gen['id_genero']
+            g.save()
+def vinculacion_genero_serie_json():
+    with open('static/Generos_Series.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+        for gen in data:
+            g = serie_genero()
+            g.serie_id = gen['id_serie']
+            g.genero_id = gen['id_genero']
+            g.save()
+
+def cargar_datos_sql(request):
+    add_series_json()
+    add_peliculas_json()
+    add_plataformas()
+    add_vinculacion_genero_json()
+    vinculacion_genero_pelicula_json()
+    vinculacion_genero_serie_json()
+    return HttpResponse("Datos de generos cargados correctamente")

@@ -92,15 +92,28 @@
        <div class="is-centered mr-5 ml-5">
        <p class="is-bold is-uppercase pb-3" style="font-weight: 900">Continuar viendo: </p>
             <div class="columns is-multiline is-mobile">
-                {% for pys in peliyserie %}
+                {% for s in series %}
                     <div class="column is-one-quarter-widescreen is-one-quarter-desktop is-one-quarter-tablet is-half-mobile">
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-2by3">
-                                    <img src="{{ pys.img }}" alt="Imagen de la pelicula {{ pys.nombre }}">
+                                    <img src="{{ s.img }}" alt="Imagen de la pelicula {{ s.nombre }}">
                                 </figure>
                             </div>
                         </div>
+                    </div>
+                {% endfor %}
+                {% for p in peliculas %}
+                    <div class="column is-one-quarter-widescreen is-one-quarter-desktop is-one-quarter-tablet is-half-mobile">
+                        <a href="{% url 'pelicula' id_pelicula=p.id %}">
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image is-2by3">
+                                        <img src="{{ p.img }}" alt="Imagen de la pelicula {{ p.nombre }}">
+                                    </figure>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 {% endfor %}
             </div>  
