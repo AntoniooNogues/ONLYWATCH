@@ -70,9 +70,9 @@ urlpatterns = [
     path('onlywatch/pelicula/<int:id_pelicula>', views.mostrar_pelicula, name='pelicula'),
     path('onlywatch/pelicula/valorar/<int:id_pelicula>', views.valorar_pelicula, name='valorar_pelicula'),
     path('onlywatch/pelicula_favorita/<int:id_pelicula>/', views.pelicula_favorita, name='pelicula_favorita'),
-    path('onlywatch/serie/<int:id>', views.mostrar_serie, name='serie'),
-    path('onlywatch/serie/valorar/<int:id>', views.valorar_serie, name='valorar_serie'),
-    path('onlywatch/serie_favorita/<int:id>/', views.serie_favorita, name='serie_favorita'),
+    path('onlywatch/serie/<int:id_serie>', views.mostrar_serie, name='serie'),
+    path('onlywatch/serie/valorar/<int:id_serie>', views.valorar_serie, name='valorar_serie'),
+    path('onlywatch/serie_favorita/<int:id_serie>/', views.serie_favorita, name='serie_favorita'),
 
     # Paginas de configuracion de Usuario
     path('onlywatch/usuario/perfil', views.configuracion, name='configuracion'),

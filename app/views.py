@@ -333,6 +333,17 @@ def mostrar_pelicula(request, id_pelicula):
 
     return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
 
+def mostrar_serie(request, id_serie):
+    serie_editar = serie.objects.get(id=id_serie)
+    plt_serie = plataforma_serie.objects.filter(serie_id=serie_editar).all()
+    gen_serie = serie_genero.objects.filter(serie_id=serie_editar).all()
+    pj_serie = personaje_serie.objects.filter(serie_id=serie_editar).all()[:6]
+    es_favorito = series_favoritas.objects.filter(usuario=request.user, serie=serie_editar).exists()
+    valoracion_media = valoracion_serie.objects.filter(serie=serie_editar).aggregate(Avg('valoracion'))
+
+    return render(request, 'vista_serie.html', {'serie': serie_editar, 'plt': plt_serie, 'gen': gen_serie, 'pj': pj_serie, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
+
+
 
 # def calcular_edad(fecha_nacimiento):
 #     nacimiento = datetime.strptime(fecha_nacimiento, '%Y-%m-%d')
@@ -577,15 +588,7 @@ def pelicula_favorita(request, id_pelicula):
         es_favorito = False
     return JsonResponse({'es_favorito': es_favorito})
 
-def mostrar_serie(request, id):
-    serie_editar = serie.objects.get(id=id)
-    plt_serie = plataforma_serie.objects.filter(serie_id=id).all()
-    gen_serie = serie_genero.objects.filter(serie_id=id).all()
-    pj_serie = personaje_serie.objects.filter(serie_id=id).all()[:6]
-    es_favorito = series_favoritas.objects.filter(usuario=request.user, serie=serie_editar).exists()
-    valoracion_media = valoracion_serie.objects.filter(serie=serie_editar).aggregate(Avg('valoracion'))
 
-    return render(request, 'vista_serie.html', {'serie': serie_editar, 'plt': plt_serie, 'gen': gen_serie, 'pj': pj_serie, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
 
 def valorar_serie(request, id):
     if request.method == 'POST':
