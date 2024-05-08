@@ -91,6 +91,10 @@
     {
         "nombre": "Médico",
         "descripcion": "Se centra en el entorno médico, incluyendo hospitales, doctores, pacientes y dilemas éticos relacionados con la salud."
+    },
+    {
+        "nombre": "Documental",
+        "descripcion": "Presenta hechos reales, personas, lugares o eventos de manera objetiva, informativa y educativa."
     }
 ]
       
