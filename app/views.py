@@ -292,9 +292,6 @@ def add_peliculas_json():
         new_pelicula.img = item['img']
         new_pelicula.trailer = item['trailer']
         new_pelicula.save()
-def load_movies_data(request):
-    add_peliculas_json()
-    return HttpResponse("Datos de películas cargados correctamente")
 
 
 def add_series_json():
@@ -313,9 +310,7 @@ def add_series_json():
         new_serie.img = item['img']
         new_serie.trailer = item['trailer']
         new_serie.save()
-def load_series_data(request):
-    add_series_json()
-    return HttpResponse("Datos de series cargados correctamente")
+
 
 
 def view_peliculas(request):
@@ -337,6 +332,17 @@ def mostrar_pelicula(request, id_pelicula):
     valoracion_media = valoracion_pelicula.objects.filter(pelicula=peli).aggregate(Avg('valoracion'))
 
     return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
+
+def mostrar_serie(request, id_serie):
+    serie_editar = serie.objects.get(id=id_serie)
+    plt_serie = plataforma_serie.objects.filter(serie_id=serie_editar).all()
+    gen_serie = serie_genero.objects.filter(serie_id=serie_editar).all()
+    pj_serie = personaje_serie.objects.filter(serie_id=serie_editar).all()[:6]
+    es_favorito = series_favoritas.objects.filter(usuario=request.user, serie=serie_editar).exists()
+    valoracion_media = valoracion_serie.objects.filter(serie=serie_editar).aggregate(Avg('valoracion'))
+
+    return render(request, 'vista_serie.html', {'serie': serie_editar, 'plt': plt_serie, 'gen': gen_serie, 'pj': pj_serie, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
+
 
 
 # def calcular_edad(fecha_nacimiento):
@@ -536,6 +542,19 @@ def vinculacion_plataforma_series_json():
             g.plataforma_id = gen['plataforma_id']
             g.save()
 
+def add_temporadas_json():
+    with open('static/Temporadas.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+        for d in data:
+            tem = temporada()
+            tem.nombre = d['nombre']
+            tem.sinopsis = d['sinopsis']
+            tem.img = d['img']
+            tem.fecha_estreno = d['fecha_estreno']
+            tem.serie_id = d['serie_id']
+            tem.save()
+        return HttpResponse("Datos de temporadas cargados correctamente")
 def cargar_datos_sql(request):
     add_series_json()
     add_peliculas_json()
@@ -545,6 +564,7 @@ def cargar_datos_sql(request):
     vinculacion_genero_serie_json()
     vinculacion_plataforma_pelis_json()
     vinculacion_plataforma_series_json()
+    add_temporadas_json()
     return HttpResponse("Datos de generos cargados correctamente")
 
 def valorar_pelicula(request, id_pelicula):
@@ -571,15 +591,7 @@ def pelicula_favorita(request, id_pelicula):
         es_favorito = False
     return JsonResponse({'es_favorito': es_favorito})
 
-def mostrar_serie(request, id):
-    serie_editar = serie.objects.get(id=id)
-    plt_serie = plataforma_serie.objects.filter(serie_id=id).all()
-    gen_serie = serie_genero.objects.filter(serie_id=id).all()
-    pj_serie = personaje_serie.objects.filter(serie_id=id).all()[:6]
-    es_favorito = series_favoritas.objects.filter(usuario=request.user, serie=serie_editar).exists()
-    valoracion_media = valoracion_serie.objects.filter(serie=serie_editar).aggregate(Avg('valoracion'))
 
-    return render(request, 'vista_serie.html', {'serie': serie_editar, 'plt': plt_serie, 'gen': gen_serie, 'pj': pj_serie, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
 
 def valorar_serie(request, id):
     if request.method == 'POST':

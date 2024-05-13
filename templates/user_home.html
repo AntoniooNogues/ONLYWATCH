@@ -34,17 +34,19 @@
                 {% for s in series %}
                     <div class="column is-one-quarter-widescreen is-one-quarter-desktop is-one-quarter-tablet is-half-mobile">
                         <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-2by3">
-                                    <img src="{{ s.img }}" alt="Imagen de la pelicula {{ s.nombre }}">
-                                </figure>
-                            </div>
+                            <a href="{% url 'serie' s.id %}">
+                                <div class="card-image">
+                                    <figure class="image is-2by3">
+                                        <img src="{{ s.img }}" alt="Imagen de la pelicula {{ s.nombre }}">
+                                    </figure>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 {% endfor %}
                 {% for p in peliculas %}
                     <div class="column is-one-quarter-widescreen is-one-quarter-desktop is-one-quarter-tablet is-half-mobile">
-                        <a href="{% url 'pelicula' id_pelicula=p.id %}">
+                        <a href="{% url 'pelicula' p.id %}">
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-2by3">
