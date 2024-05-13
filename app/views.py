@@ -380,8 +380,11 @@ def send_verification_code(request):
             fail_silently=False,
         )
         request.session['verification_code'] = code
-        messages.success(request, 'Código de verificación enviado')
-    return redirect(reverse('configuracion'))
+        mensaje = "El mesaaje ha sido enviado correctamente"
+        return JsonResponse({'mensage': mensaje})
+    else:
+        mensaje = False
+        return JsonResponse({'mensage': mensaje})
 
 def verify_code(request):
     if request.method == 'POST':
