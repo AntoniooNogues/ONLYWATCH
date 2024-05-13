@@ -2,7 +2,7 @@ $(document).ready(function () {
     $('#enviar-codigo').click(function (e) {
         e.preventDefault();
         $.ajax({
-            url: '/send_verification_code/',
+            url: '/onlywatch/send_verification_code/',
             type: 'POST',
             dataType: 'json',
             beforeSend: function(xhr) {
