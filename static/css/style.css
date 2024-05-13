@@ -3,10 +3,6 @@
 
 body {
     font-family: "Manrope", sans-serif;
-    margin: 0;
-}
-html, body {
-    min-height: 100vh;
 }
 .fondo {
     background-image: url("/static/img/fondo_registro_login.png");
@@ -95,5 +91,4 @@ a {
     -moz-box-shadow: 15px 15px 20px 0px rgba(102, 102, 102, 1);
     box-shadow: 15px 15px 20px 0px rgba(102, 102, 102, 1);
     border-radius: 20%;
-
 }
