@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(enlace.dataset.genreId); // Imprimir el valor de data-genreId
             const generoId = enlace.id;
             const peliculaId = document.getElementById('movieId').value;
-            window.location.href = "/administrador/pelicula/vincular_pelicula/vincular_genero/" + peliculaId + "?generoId=" + generoId;
+            window.location.href = "administrador/pelicula/vincular_pelicula/vincular_genero/" + peliculaId + "?generoId=" + generoId;
         });
     });
 });
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         enlace.addEventListener('click', function () {
             const plataformaId = enlace.id;
             const peliculaId = document.getElementById('movieId').value;
-            window.location.href = "/administrador/pelicula/vincular_pelicula/vincular_plataforma/" + peliculaId +  "?plataformaId=" + plataformaId;
+            window.location.href = "administrador/pelicula/vincular_pelicula/vincular_plataforma/" + peliculaId +  "?plataformaId=" + plataformaId;
         });
     });
 });

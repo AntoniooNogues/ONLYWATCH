@@ -605,8 +605,8 @@ def valorar_serie(request, id_serie):
             messages.error(request, 'Ya has valorado esta serie anteriormente.')
         return redirect('serie', id=id_serie)
 
-def serie_favorita(request, id):
-    serie_instancia = get_object_or_404(serie, id=id)
+def serie_favorita(request, id_serie):
+    serie_instancia = get_object_or_404(serie, id=id_serie)
     try:
         fav = series_favoritas.objects.get(usuario=request.user, serie=serie_instancia)
     except series_favoritas.DoesNotExist:

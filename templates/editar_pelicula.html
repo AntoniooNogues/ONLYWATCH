@@ -4,7 +4,7 @@
         <h2 class="is-size-2 container">Películas</h2>
         <div class="box container" >
             <h4>Modificar series:</h4>
-            <form method="post" action="{% url 'editar_pelicula'   id=pelicula.id %}">%}">
+            <form method="post" action="{% url 'editar_pelicula'   id=pelicula.id %}">
                   {% csrf_token %}
                 <div class="field columns mt-1">
                     <div class="column">
@@ -20,7 +20,7 @@
                     <div class="column">
                         <label class="label">Fecha de estreno</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Fecha de estreno de la película" name="fecha_estreno" value="{{ pelicula.fecha_estreno | date:'Y-m-d' }}">
+                        <input class="input" type="text" placeholder="Fecha de estreno de la película" name="fecha_estreno" value="{{ pelicula.anyo_estreno  }}">
                       </div>
                     <label class="label">Imagen</label>
                       <div class="control">
@@ -30,7 +30,7 @@
                     <div class="column">
                         <label class="label">Trailer</label>
                       <div class="control">
-                        <input class="input" type="text" placeholder="Url del trailer de la película" name="url_trailer" value="{{ pelicula.url_trailer }}"> 
+                        <input class="input" type="text" placeholder="Url del trailer de la película" name="url_trailer" value="{{ pelicula.trailer }}"> 
                       </div>
                     <label class="label">Director</label>
                       <div class="control">

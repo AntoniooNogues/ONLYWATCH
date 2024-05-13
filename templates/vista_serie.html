@@ -116,7 +116,7 @@
         $("#corazon").click(function () {
             var serieId = {{ serie.id }};
             $.ajax({
-                url: 'onlywatch/serie_favorita/' + serieId + '/',
+                url: 'onlywatch/serie/serie_favorita/' + serieId + '/',
                 data: {
                     'serieId': serieId
                 },

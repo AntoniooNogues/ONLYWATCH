@@ -114,7 +114,7 @@
             $("#corazon").click(function () {
                 var peliculaId = {{ pelicula.id }};
                 $.ajax({
-                    url: 'onlywatch/pelicula_favorita/' + peliculaId + '/',
+                    url: '/pelicula_favorita/' + peliculaId + '/',
                     data: {
                         'peliculaId': peliculaId
                     },

@@ -1,22 +1,3 @@
-$(document).ready(function () {
-    $('#enviar-codigo').click(function (e) {
-        e.preventDefault();
-        $.ajax({
-            url: '/onlywatch/send_verification_code/',
-            type: 'POST',
-            dataType: 'json',
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
-            },
-            success: function (data) {
-                if (data.mensage) {
-                    $("#mensajes").text("Mensaje enviado con éxito");
-                }
-            },
-        });
-    });
-});
-
 function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -32,5 +13,21 @@ function getCookie(name) {
     return cookieValue;
 }
 
-// Aquí es donde agregas el nuevo código
-
+$(document).ready(function () {
+    $('#enviar-codigo').click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: "send_verification_code/",
+            type: 'POST',
+            dataType: 'json',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
+            },
+            success: function (data) {
+                if (data.mensage) {
+                    $("#mensajes").text("Mensaje enviado con éxito");
+                }
+            },
+        });
+    });
+});

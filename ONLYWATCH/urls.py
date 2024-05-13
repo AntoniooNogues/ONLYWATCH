@@ -68,17 +68,17 @@ urlpatterns = [
     path('onlywatch/plataformas/', views.plataformas, name='plataformas'),
     path('onlywatch/series/', views.view_series, name='series'),
     path('onlywatch/pelicula/<int:id_pelicula>', views.mostrar_pelicula, name='pelicula'),
-    path('onlywatch/pelicula/valorar/<int:id_pelicula>', views.valorar_pelicula, name='valorar_pelicula'),
-    path('onlywatch/pelicula_favorita/<int:id_pelicula>/', views.pelicula_favorita, name='pelicula_favorita'),
+    path('pelicula/valorar/<int:id_pelicula>', views.valorar_pelicula, name='valorar_pelicula'),
+    path('pelicula_favorita/<int:id_pelicula>/', views.pelicula_favorita, name='pelicula_favorita'),
     path('onlywatch/serie/<int:id_serie>', views.mostrar_serie, name='serie'),
-    path('onlywatch/serie/valorar/<int:id_serie>', views.valorar_serie, name='valorar_serie'),
-    path('onlywatch/serie_favorita/<int:id_serie>/', views.serie_favorita, name='serie_favorita'),
+    path('serie/valorar/<int:id_serie>', views.valorar_serie, name='valorar_serie'),
+    path('onlywatch/serie/serie_favorita/<int:id_serie>/', views.serie_favorita, name='serie_favorita'),
 
     # Paginas de configuracion de Usuario
     path('onlywatch/usuario/perfil', views.configuracion, name='configuracion'),
-    path('onlywatch/send_verification_code/', views.send_verification_code, name='send_verification_code'),
-    path('onlywatch/verify_code/', views.verify_code, name='verify_code'),
-    path('onlywatch/vincular_desvincular_plataforma/<int:plataforma_id>/', views.vincular_desvincular_plataforma, name='vincular_desvincular_plataforma'),
+    path('send_verification_code/', views.send_verification_code, name='send_verification_code'),
+    path('verify_code/', views.verify_code, name='verify_code'),
+    path('vincular_desvincular_plataforma/<int:plataforma_id>/', views.vincular_desvincular_plataforma, name='vincular_desvincular_plataforma'),
     path('onlywatch/editar_perfil/', views.configurar_perfil, name='editar_perfil'),
 
 ]
