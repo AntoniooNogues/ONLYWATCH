@@ -66,3 +66,34 @@ a {
     color: black;
 }
 
+@keyframes placeholderMove {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.place::placeholder {
+    animation: placeholderMove 2s infinite !important;
+}
+
+.vinculada {
+    -webkit-box-shadow: 15px 15px 20px 0px rgba(0, 255, 34, 0.75);
+    -moz-box-shadow: 15px 15px 20px 0px rgba(0, 255, 34, 0.75);
+    box-shadow: 15px 15px 20px 0px rgba(0, 255, 34, 0.75);
+    /*box-shadow: 0 0 10px 5px #00ff00;  !* Ajusta el color y el tamaño de la sombra como desees *!*/
+    border-radius: 20%;
+}
+
+.no-vinculada {
+    -webkit-box-shadow: 15px 15px 20px 0px rgba(102, 102, 102, 1);
+    -moz-box-shadow: 15px 15px 20px 0px rgba(102, 102, 102, 1);
+    box-shadow: 15px 15px 20px 0px rgba(102, 102, 102, 1);
+    border-radius: 20%;
+
+}
