@@ -1,30 +1,47 @@
 {% include 'header_home_usuario.html' %}
-    {% csrf_token %}
-    {% load static %}
-    <!-- Main Content -->
-    <main class="mb-6 ml-1 columns main-content">
-        <!-- Informacion de Pelicula -->
-        <div class="columns ">
+{% csrf_token %}
+{% load static %}
+<!-- Main Content -->
+<main class="mb-6 ml-1 columns main-content">
+    <!-- Informacion de Pelicula -->
+    <div class="columns ">
+        <!-- Imagen, Estado -->
+        <div class="columns ml-2 main-content is-3">
             <!-- Imagen, Estado -->
-            <div class="columns ml-2 main-content is-3" >
-                <!-- Imagen, Estado -->
-                <div class="column">
-                    <figure>
-                        <img class="image pt-4" src="{{ serie.img }}" alt="Imagen de la película {{ serie.nombre }}" style="margin: 0 auto">
-                    </figure>
-                    <label>
-                        <select class="mt-4 pl-2 estado" >
-                            <option class="pl-5" value="0">Estado de la Película</option>
-                            <option class="pl-5" value="1">Viendo</option>
-                            <option class="pl-5" value="2">Completada</option>
-                            <option class="pl-5" value="3">Pendiente</option>
-                            <option class="pl-5" value="4">Abandonada</option>
-                        </select>
-                    </label>
-                </div>
+            <div class="column">
+                <figure>
+                    <img class="image pt-4" src="{{ serie.img }}" alt="Imagen de la película {{ serie.nombre }}"
+                         style="margin: 0 auto">
+                </figure>
+                <label>
+                    <select class="mt-4 pl-2 estado">
+                        <option class="pl-5" value="0">Estado de la Película</option>
+                        <option class="pl-5" value="1">Viendo</option>
+                        <option class="pl-5" value="2">Completada</option>
+                        <option class="pl-5" value="3">Pendiente</option>
+                        <option class="pl-5" value="4">Abandonada</option>
+                    </select>
+                </label>
             </div>
-            <!-- Titulo (Año Estreno) + Me Gusta, Sinopsis, Director, Plataforma, Generos -->
-            <div class="column title-details is-9 pl-5">
+            <div class="ml-4">
+                Añade tu puntuación:
+                <form method="POST" action="{% url 'valorar_serie' serie.id %}">
+                    {% csrf_token %}
+                    <input type="number" name="valoracion" min="0" max="10" required>
+                    <input type="submit" value="Valorar">
+                </form>
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+        <!-- Titulo (Año Estreno) + Me Gusta, Sinopsis, Director, Plataforma, Generos -->
+        <div class="column title-details is-9 pl-5">
+            <div class="is-flex" style="align-items: center">
                 <h1 class="is-size-3">{{ serie.nombre }} <span> ({{ serie.anyo_estreno }})</span>
                     {% if es_favorito %}
                         <a class="serie_favorita fa-solid fa-heart" id="corazon"></a>
@@ -32,99 +49,88 @@
                         <a class="serie_favorita fa-regular fa-heart" id="corazon"></a>
                     {% endif %}
                 </h1>
-                <p class="is-size-4 has-text-weight-bold pt-2">Sinopsis</p>
-                <p class="is-size-5 has-text-justified">{{ serie.sinopsis }}</p>
-                <p class="is-size-4 has-text-weight-bold pt-2">Director: <span class="has-text-weight-normal is-size-5">{{ serie.director }}</span></p>
-                <div>
-                    <p class="is-size-4 has-text-weight-bold pt-2">Plataformas: </p>
-                    <div class="is-flex pt-3">
-                        {% for p in plt %}
-                            <figure class="mr-3">
-                                <img class="image is-64x64" src="{{ p.plataforma.img.url}}" alt="{{ p.plataforma.nombre }}"/>
-                            </figure>
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="mb-6">
-                    <p class="is-size-4 has-text-weight-bold pt-2">Generos: </p>
-                    <div class="is-flex pt-3 tags are-medium">
-                        {% for g in gen %}
-                            <p class="tag is-size-5 has-text-weight-bold is-black ">{{ g.genero.nombre }}</p>
-                        {% endfor %}
-                    </div>
-                </div>
-                <a class="is-size-4 has-text-weight-bold is-black hover_link" href="{{ serie.trailer }}" style="letter-spacing: 2px">Trailer</a>
-                <div>
-                    <p class="is-size-4 has-text-weight-bold pt-2">Puntuación media: <span class="has-text-weight-normal is-size-5">{{ valoracion_media.valoracion__avg|floatformat:2 }}</span></p>
-                        Añade tu puntuación:
-                    <form method="POST" action="{% url 'valorar_serie' serie.id %}">
-                        {% csrf_token %}
-                        <input type="number" name="valoracion" min="0" max="10" required>
-                        <input type="submit" value="Valorar">
-                    </form>
-                    {% if messages %}
-                        <ul class="messages">
-                            {% for message in messages %}
-                                <p>{{ message }}</p>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
+                <p class="is-size-4 has-text-weight-bold pl-4">Media: <span
+                        class="has-text-weight-normal is-size-5">{{ valoracion_media.valoracion__avg|floatformat:2 }}</span>
+                </p>
             </div>
-        </div>
-        <!-- Reparto -->
-        <div class="column">
-            <h2 class="is-size-4 has-text-weight-bold pb-4">Reparto</h2>
-            <div class="columns is-multiline">
-                {% for p in pj %}
-                    <div class="column is-2">
-                        <figure>
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-2by3 mb-4">
-                                        <img src="{{ p.actor.img }}"
-                                             alt="Imagen del Personaje, {{ p.nombre_personaje }}">
-                                    </figure>
-                                </div>
-                            </div>
-                            <p class="has-text-centered">Actor: {{ p.actor.nombre }}</p>
-                            <p class="has-text-centered">Personaje: {{ p.nombre_personaje }}</p>
+            <p class="is-size-4 has-text-weight-bold pt-2">Sinopsis</p>
+            <p class="is-size-5 has-text-justified">{{ serie.sinopsis }}</p>
+            <p class="is-size-4 has-text-weight-bold pt-2">Director: <span
+                    class="has-text-weight-normal is-size-5">{{ serie.director }}</span></p>
+            <div>
+                <p class="is-size-4 has-text-weight-bold pt-2">Plataformas: </p>
+                <div class="is-flex pt-3">
+                    {% for p in plt %}
+                        <figure class="mr-3">
+                            <img class="image is-64x64" src="{{ p.plataforma.img.url }}"
+                                 alt="{{ p.plataforma.nombre }}"/>
                         </figure>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
+            <div class="mb-2">
+                <p class="is-size-4 has-text-weight-bold pt-2">Generos: </p>
+                <div class="is-flex pt-3 tags are-medium">
+                    {% for g in gen %}
+                        <p class="tag is-size-5 has-text-weight-bold is-black ">{{ g.genero.nombre }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <a class="is-size-4 has-text-weight-bold is-black hover_link" href="{{ serie.trailer }}"
+               style="letter-spacing: 2px;  color: #cc700e">Trailer</a>
         </div>
-        <!-- Comentarios -->
-        <div class="column">
-            <h2 class="is-size-4 has-text-weight-bold pb-4">Comentarios</h2>
+    </div>
+    <!-- Reparto -->
+    <div class="column">
+        <h2 class="is-size-4 has-text-weight-bold pb-4">Reparto</h2>
+        <div class="columns is-multiline">
+            {% for p in pj %}
+                <div class="column is-2">
+                    <figure>
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-2by3 mb-4">
+                                    <img src="{{ p.actor.img }}"
+                                         alt="Imagen del Personaje, {{ p.nombre_personaje }}">
+                                </figure>
+                            </div>
+                        </div>
+                        <p class="has-text-centered">Actor: {{ p.actor.nombre }}</p>
+                        <p class="has-text-centered">Personaje: {{ p.nombre_personaje }}</p>
+                    </figure>
+                </div>
+            {% endfor %}
         </div>
-    </main>
+    </div>
+    <!-- Comentarios -->
+    <div class="column">
+        <h2 class="is-size-4 has-text-weight-bold pb-4">Comentarios</h2>
+    </div>
+</main>
 
-    <!-- Footer -->
-    {% include "footer.html" %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#corazon").click(function () {
-                var serieId = {{ serie.id }};
-                $.ajax({
-                    url: '/serie_favorita/' + serieId + '/',
-                    data: {
-                        'serieId': serieId
-                    },
-                    dataType: 'json',
-                    success: function (data) {
-                        if (data.es_favorito) {
-                            $("#corazon").removeClass('fa-regular fa-heart').addClass('fa-solid fa-heart');
-                        } else {
-                            $("#corazon").removeClass('fa-solid fa-heart').addClass('fa-regular fa-heart');
-                        }
+<!-- Footer -->
+{% include "footer.html" %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#corazon").click(function () {
+            var serieId = {{ serie.id }};
+            $.ajax({
+                url: 'onlywatch/serie_favorita/' + serieId + '/',
+                data: {
+                    'serieId': serieId
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.es_favorito) {
+                        $("#corazon").removeClass('fa-regular fa-heart').addClass('fa-solid fa-heart');
+                    } else {
+                        $("#corazon").removeClass('fa-solid fa-heart').addClass('fa-regular fa-heart');
                     }
-                });
+                }
             });
         });
-    </script>
-    <script src="{% static 'js/index.js' %} "></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
-</body>
-</html>
+    });
+</script>
+<script src="{% static 'js/index.js' %} "></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>

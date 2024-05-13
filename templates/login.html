@@ -12,19 +12,15 @@
     <link rel="stylesheet" href="/static/css/style.css"/>
 </head>
 <body class="familiy has-text-black">
-<header class="py-4 header-gradient">
+<header class="py-2 header-gradient">
     <section class="columns">
         <div class="column is-one-quarter">
           <span class="level-item">
-            <img
-                    src="/static/img/logoSmall.svg"
-                    alt="Logo pequeño de Onlywatch"
-                    class="is-hidden-desktop-only is-hidden-tablet-only"
-            />
+            <img src="/static/img/logoSmall.svg" alt="Logo pequeño de Onlywatch" class="is-hidden-desktop-only is-hidden-tablet-only is-hidden-mobile" style="width: 52px; height: 52px" />
           </span>
         </div>
         <div class="column is-half">
-            <h1 class="title is-1 has-text-centered mali letter-spacing has-text-black">
+            <h1 class="title is-2 has-text-centered mali letter-spacing has-text-black" style="align-items: center">
                 Inicio de Sesión
             </h1>
         </div>
@@ -35,50 +31,41 @@
     <div class="hero-body">
         <div class="container">
             <div class="columns is-centered">
-                <div class="column is-10-tablet is-10-desktop is-8-widescreen">
+                <div class="column is-7-tablet is-5-desktop is-5-widescreen">
                     <div class="card-content card-gradient">
                         <header class="is-align-content-center is-align-items-center is-justify-content-center">
                             <div class="is-flex is-align-items-center is-justify-content-center mt-3">
-                                <img src="/static/img/logoSmall.svg"
-                                     alt=""
-                                     class="image is-128x128"
-                                />
+                                <img src="/static/img/logoSmall.svg" alt="Logo Pequeño de ONLYWATCH" class="image is-96x96"/>
                             </div>
-                            <p class="is-bold is-size-4 has-text-centered">
-                                <span class="is-size-2">ONLYWATCH</span><br/>
+                            <p class="is-bold is-size-5 has-text-centered">
+                                <span class="is-size-4">ONLYWATCH</span><br/>
                                 EXPERIENCIAS SIN LÍMITES
                             </p>
                         </header>
                         <div class="content">
                             <form action="{% url 'login' %}" class="mt-4 ml-4 mr-4" method="post">
                                 {% csrf_token %}
-                                <div class="field">
+                                <div class="field mb-4">
                                     <div class="control has-icons-left is-flex">
-                                        <input type="email" name="email" id="email" class="input is-medium"
+                                        <input type="email" name="email" id="email" class="input is-medium mb-3"
                                                placeholder="Correo Electrónico" required/>
-                                        <span class="icon is-left has-text-black">
-                                <i class="fa-solid fa-envelope"></i>
-                            </span>
+                                        <span class="icon is-left has-text-black"><i class="fa-solid fa-envelope"></i></span>
                                     </div>
                                 </div>
-                                <div class="field mt-6 mb-6">
+                                <div class="field mt-3 mb-6">
                                     <div class="control has-icons-left">
                                         <div class="field has-addons">
                                             <div class="control is-expanded">
-                                                <input type="password" id="password1" name="password"
-                                                       placeholder="Contraseña" class="input is-medium is-fullwidth"
-                                                       required/>
+                                                <input type="password" id="password1" name="password" placeholder="Contraseña" class="input is-medium is-fullwidth" required/>
                                                 <span class="icon is-left has-text-black">
-                              <i class="fa-solid fa-lock"></i>
-                            </span>
+                                                    <i class="fa-solid fa-lock"></i>
+                                                </span>
                                             </div>
                                             <div class="control">
-                                                <button type="button" class="button is-medium"
-                                                        id="togglePasswordVisibility1"
-                                                        style=" border: 2px solid #842507; background-color: #F2D9CD;">
-                                  <span class="icon is-small has-text-black">
-                                      <i class="fa-solid fa-eye"></i>
-                                  </span>
+                                                <button type="button" class="button is-medium" id="togglePasswordVisibility1" style=" border: 2px solid #842507; background-color: #F2D9CD;">
+                                                    <span class="icon is-small has-text-black">
+                                                        <i class="fa-solid fa-eye"></i>
+                                                    </span>
                                                 </button>
                                             </div>
                                         </div>
@@ -86,7 +73,7 @@
                                     <a href="{% url 'reset_password' %}" class="is-pulled-right blanco mt-2">¿Has
                                         olvidado tu contraseña?</a>
                                 </div>
-                                <div class="field mt-6 mb-3">
+                                <div class="field mt-3 mb-3">
                                     <button type="submit" class="bg_footer button is-fullwidth is-size-5"
                                             style="height: 52px">
                                         <strong class="has-text-centered">Acceder</strong>

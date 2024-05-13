@@ -3,10 +3,6 @@
 
 body {
     font-family: "Manrope", sans-serif;
-    margin: 0;
-}
-html, body {
-    min-height: 100vh;
 }
 .fondo {
     background-image: url("/static/img/fondo_registro_login.png");
@@ -31,7 +27,7 @@ li {
 }
 .header-gradient {
     background: rgb(251, 117, 45);
-    background: linear-gradient(90deg, rgba(251, 117, 45, 1) 0%, rgba(189, 76, 25, 1) 50%, rgba(132, 37, 7, 1) 100%);
+    background: linear-gradient(90deg, rgba(251, 117, 45, 1) 0%, rgb(224, 91, 32) 50%, rgb(206, 104, 56) 80%);
 }
 .card-gradient {
     background: rgb(251, 117, 45);
@@ -95,5 +91,4 @@ a {
     -moz-box-shadow: 15px 15px 20px 0px rgba(102, 102, 102, 1);
     box-shadow: 15px 15px 20px 0px rgba(102, 102, 102, 1);
     border-radius: 20%;
-
 }
