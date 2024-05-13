@@ -27,7 +27,7 @@ li {
 }
 .header-gradient {
     background: rgb(251, 117, 45);
-    background: linear-gradient(90deg, rgba(251, 117, 45, 1) 0%, rgba(189, 76, 25, 1) 50%, rgba(132, 37, 7, 1) 100%);
+    background: linear-gradient(90deg, rgba(251, 117, 45, 1) 0%, rgb(224, 91, 32) 50%, rgb(206, 104, 56) 80%);
 }
 .card-gradient {
     background: rgb(251, 117, 45);
