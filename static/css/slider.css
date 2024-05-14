@@ -171,11 +171,11 @@ body {
 .card{
   max-width: 80% !important;
   margin: 0 auto;
+  box-shadow: var(--shadowCard);
 }
 
 .card-image{
   border-radius: 15px;
-  box-shadow: var(--shadowCard);
 }
 
 

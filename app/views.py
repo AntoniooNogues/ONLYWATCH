@@ -315,6 +315,9 @@ def add_series_json():
 
 def view_peliculas(request):
     peliculas = pelicula.objects.all()
+    for p in peliculas:
+        p.valoracion_media = valoracion_pelicula.objects.filter(pelicula=p).aggregate(Avg('valoracion'))['valoracion__avg']
+        p.es_favorito = peliculas_favoritas.objects.filter(usuario=request.user, pelicula=p).exists()
     return render(request, 'peliculas.html', {'peliculas': peliculas})
 
 
