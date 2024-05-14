@@ -4,9 +4,9 @@ function adjustHeroSize() {
 
         if (screenWidth >= 1920) {
             heroElement.classList.remove('is-small');
-            heroElement.classList.add('is-large');
+            heroElement.classList.add('is-medium');
         } else {
-            heroElement.classList.remove('is-large');
+            heroElement.classList.remove('is-medium');
             heroElement.classList.add('is-small');
         }
     }
