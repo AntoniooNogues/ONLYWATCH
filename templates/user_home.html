@@ -7,8 +7,8 @@
 <!-- Gallery | Cards @a7v8x-->
 <main class="column mb-6 mt-5">
     <div class="columns is-centered" style="margin: 0 auto">
-        <div class="slider" x-data="{start: true, end: false}">
-            <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+        <div class="slider">
+            <div class="slider__content">
                 <!-- Slider items: 10 min <> 15-20 max -->
                 {% for psh in header %}
                     <div class="slider__item">
@@ -24,16 +24,12 @@
                     </div>
                 {% endfor %}
             </div>
-            <div class="slider__nav has-text-black is-bold">
-                <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth * -1, behavior: 'smooth'});" x-bind:class="start ? '' : 'slider__nav__button--active'">Previo                </button>
-                <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth, behavior: 'smooth'});" x-bind:class="end ? '' : 'slider__nav__button--active'">Siguiente</button>
-            </div>
         </div>
     </div>
     <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
     <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
-    <div class="is-centered mr-5 ml-5" id="series_peliculas">
-        <div class="columns is-multiline is-mobile">
+    <div class="is-centered mr-5 ml-5 mt-5" id="series_peliculas" >
+        <div class="columns is-multiline is-mobile" >
             {% for item in page_obj %}
                 <div class="column is-one-quarter-widescreen is-one-quarter-desktop is-one-quarter-tablet is-full-mobile">
                     <div class="card">
