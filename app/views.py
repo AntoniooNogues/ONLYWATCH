@@ -1,5 +1,5 @@
 import random
-
+from django.core.paginator import Paginator
 from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
@@ -68,10 +68,20 @@ def mostrar_inicio(request):
     headerS = list(serie.objects.order_by('?')[:5])
     headerPS = headerP + headerS
     random.shuffle(headerPS)
-    series = serie.objects.all().order_by('?')
-    peliculas = pelicula.objects.all().order_by('?')
-    return render(request, 'user_home.html', {'header': headerPS, 'series': series, 'peliculas': peliculas})
 
+
+    series_list = list(serie.objects.all().order_by('?'))
+    peliculas_list = list(pelicula.objects.all().order_by('?'))
+
+    combined_list = series_list + peliculas_list
+    random.shuffle(combined_list)
+
+    paginator = Paginator(combined_list, 20)  # Show 20 items per page
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'user_home.html', {'header': headerPS, 'page_obj': page_obj})
 
 def register(request):
     if request.method == 'GET':
