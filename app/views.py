@@ -70,11 +70,10 @@ def mostrar_inicio(request):
     random.shuffle(headerPS)
 
 
-    series_list = list(serie.objects.all().order_by('?'))
-    peliculas_list = list(pelicula.objects.all().order_by('?'))
+    series_list = list(serie.objects.all())
+    peliculas_list = list(pelicula.objects.all())
 
     combined_list = series_list + peliculas_list
-    random.shuffle(combined_list)
 
     paginator = Paginator(combined_list, 20)  # Show 20 items per page
 

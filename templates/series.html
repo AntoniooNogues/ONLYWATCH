@@ -28,25 +28,28 @@
         </div>
         <div class="mt-5">
             <nav class="pagination is-small is-centered" role="navigation" aria-label="pagination">
-                {% if page_obj.has_previous %}
-                    <a href="?page={{ page_obj.previous_page_number }}" id="pagination-previous"
-                       class="pagination-previous">Previous</a>
-                {% endif %}
-                {% if page_obj.has_next %}
-                    <a href="?page={{ page_obj.next_page_number }}" id="pagination-next" class="pagination-next">Next
-                        page</a>
-                {% endif %}
                 <ul id="pagination-list" class="pagination-list">
+                    {% if page_obj.number > 2 %}
+                        <li><a href="?page=1" class="pagination-link is-size-6 has-text-black"
+                               aria-label="Goto page 1">1</a></li>
+                        <li><span class="pagination-ellipsis">&hellip;</span></li>
+                    {% endif %}
                     {% for i in page_obj.paginator.page_range %}
                         {% if page_obj.number == i %}
-                            <li><a class="pagination-link" aria-label="Page {{ i }}" aria-current="page">{{ i }}</a>
-                            </li>
-                        {% else %}
-                            <li><a href="?page={{ i }}" class="pagination-link"
-                                   aria-label="Goto page {{ i }}">{{ i }}</a>
-                            </li>
+                            <li><a class="pagination-link is-size-6 has-text-black" aria-label="Page {{ i }}"
+                                   aria-current="page">{{ i }}</a></li>
+                        {% elif page_obj.number > i|add:-2 and page_obj.number < i|add:2 %}
+                            <li><a href="?page={{ i }}" class="pagination-link is-size-6 has-text-black"
+                                   aria-label="Goto page {{ i }}">{{ i }}</a></li>
                         {% endif %}
                     {% endfor %}
+                    {% if page_obj.number < page_obj.paginator.num_pages|add:-1 %}
+                        <li><span class="pagination-ellipsis">&hellip;</span></li>
+                        <li><a href="?page={{ page_obj.paginator.num_pages }}"
+                               class="pagination-link is-size-6 has-text-black"
+                               aria-label="Goto page {{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
