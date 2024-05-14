@@ -325,12 +325,19 @@ def add_series_json():
 
 def view_peliculas(request):
     peliculas = pelicula.objects.all()
-    return render(request, 'peliculas.html', {'peliculas': peliculas})
+    paginator = Paginator(peliculas, 20)  # Show 20 items per page
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'peliculas.html', {'page_obj': page_obj})
 
 
 def view_series(request):
     series = serie.objects.all()
-    return render(request, 'series.html', {'series': series})
+    paginator = Paginator(series, 20)  # Show 20 items per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'series.html', {'page_obj': page_obj})
 
 
 def mostrar_pelicula(request, id_pelicula):

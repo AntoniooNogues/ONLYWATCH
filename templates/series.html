@@ -1,17 +1,17 @@
 {% include 'header_home_usuario.html' %}
-    
-    {% load static %}
-    {% block content %}
+
+{% load static %}
+{% block content %}
     {% csrf_token %}
     <!-- Main content -->
     <!-- Gallery | Cards @a7v8x-->
     <main class="column mb-6 mt-5">
-       <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
-       <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
-       <div class="is-centered mr-5 ml-5">
-       <h1 class="is-bold is-uppercase pb-6 is-size-1 has-text-centered mali" style="font-weight: 900">Series </h1>
+        <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
+        <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
+        <div class="is-centered mr-5 ml-5">
+            <h1 class="is-bold is-uppercase pb-6 is-size-3 has-text-centered" style="font-weight: 900">Series </h1>
             <div class="columns is-multiline is-mobile">
-                {% for s in series %}
+                {% for s in page_obj %}
                     <div class="column is-one-quarter-widescreen is-one-quarter-desktop is-one-quarter-tablet is-half-mobile">
                         <a href="{% url 'serie' s.id %}">
                             <div class="card">
@@ -24,13 +24,35 @@
                         </a>
                     </div>
                 {% endfor %}
-            </div>  
+            </div>
+        </div>
+        <div class="mt-5">
+            <nav class="pagination is-small is-centered" role="navigation" aria-label="pagination">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" id="pagination-previous"
+                       class="pagination-previous">Previous</a>
+                {% endif %}
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" id="pagination-next" class="pagination-next">Next
+                        page</a>
+                {% endif %}
+                <ul id="pagination-list" class="pagination-list">
+                    {% for i in page_obj.paginator.page_range %}
+                        {% if page_obj.number == i %}
+                            <li><a class="pagination-link" aria-label="Page {{ i }}" aria-current="page">{{ i }}</a>
+                            </li>
+                        {% else %}
+                            <li><a href="?page={{ i }}" class="pagination-link"
+                                   aria-label="Goto page {{ i }}">{{ i }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </nav>
         </div>
     </main>
 
-    {% endblock %}
-    {% include "footer.html" %}
-    <script src="{% static 'js/navbar.js' %} "></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
-</body>
-</html>
+{% endblock %}
+{% include "footer.html" %}
+<script src="{% static 'js/navbar.js' %} "></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
