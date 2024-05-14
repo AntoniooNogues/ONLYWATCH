@@ -1,0 +1,675 @@
+[
+    {   
+        "nombre": "El fin",
+        "numero_capitulo": 1,
+        "temporada_id": 1 
+    },
+    {
+        "nombre": "El objetivo",
+        "numero_capitulo": 2,
+        "temporada_id": 1 
+    },
+    {
+        "nombre": "La cabeza",
+        "numero_capitulo": 3,
+        "temporada_id": 1 
+    },
+    {
+        "nombre": "Los necrófagos",
+        "numero_capitulo": 4,
+        "temporada_id": 1
+    },
+    {
+        "nombre": "El pasado",
+        "numero_capitulo": 5,
+        "temporada_id": 1
+    },{
+        "nombre": "La trampa",
+        "numero_capitulo": 6,
+        "temporada_id": 1 
+    },{
+        "nombre": "La radio",
+        "numero_capitulo": 7,
+        "temporada_id": 1
+    },{
+        "nombre": "El comienzo",
+        "numero_capitulo": 8,
+        "temporada_id": 1 
+    },{
+        "nombre": "Anjin",
+        "numero_capitulo": 1,
+        "temporada_id":  2
+    },{
+        "nombre": "Sirvientes de dos amos",
+        "numero_capitulo": 2,
+        "temporada_id":  2
+    },{
+        "nombre": "Mañana es mañana",
+        "numero_capitulo": 3,
+        "temporada_id": 2 
+    },{
+        "nombre": "Las ocho vallas",
+        "numero_capitulo": 4,
+        "temporada_id":  2
+    },{
+        "nombre": "Roto hasta el puño",
+        "numero_capitulo": 5,
+        "temporada_id":  2
+    },{
+        "nombre": "Las damas del mundo del Sauce",
+        "numero_capitulo": 6,
+        "temporada_id":  2
+    },{
+        "nombre": "Una varilla de incienso",
+        "numero_capitulo": 7,
+        "temporada_id": 2 
+    },{
+        "nombre": "El abismo de la vida",
+        "numero_capitulo": 8,
+        "temporada_id": 2 
+    },{
+        "nombre": "Cielo Carmesí",
+        "numero_capitulo": 9,
+        "temporada_id": 2 
+    },{
+        "nombre": "El sueño de un sueño",
+        "numero_capitulo": 10,
+        "temporada_id": 2 
+    },{
+        "nombre": "Cuenta atrás",
+        "numero_capitulo": 1,
+        "temporada_id": 3 
+    },{
+        "nombre": "Costa Roja",
+        "numero_capitulo": 2,
+        "temporada_id": 3 
+    },{
+        "nombre": "Destructor de mundos",
+        "numero_capitulo": 3,
+        "temporada_id": 3 
+    },{
+        "nombre": "Nuestro Señor",
+        "numero_capitulo": 4,
+        "temporada_id": 3 
+    },{
+        "nombre": "Juicio Final",
+        "numero_capitulo": 5,
+        "temporada_id": 3  
+    },{
+        "nombre": "Las estrellas, nuestro destino",
+        "numero_capitulo": 6,
+        "temporada_id": 3 
+    },{
+        "nombre": "Avanzar a toda costa",
+        "numero_capitulo": 7,
+        "temporada_id": 3 
+    },{
+        "nombre": "Vallado",
+        "numero_capitulo": 8,
+        "temporada_id": 3 
+    },{
+        "nombre": "UN HOMBRE DIFÍCIL DE ENCONTRAR",
+        "numero_capitulo": 1,
+        "temporada_id": 4 
+    },{
+        "nombre": "SIETE MISERICORDIAS",
+        "numero_capitulo": 2,
+        "temporada_id": 4 
+    },{
+        "nombre": "SOMMERSO",
+        "numero_capitulo": 3,
+        "temporada_id":  4
+    },{
+        "nombre": "LA DOLCE VITA",
+        "numero_capitulo": 4,
+        "temporada_id": 4 
+    },{
+        "nombre": "LUCIO",
+        "numero_capitulo": 5,
+        "temporada_id": 4 
+    },{
+        "nombre": "UN OBJETO CONTUNDENTE",
+        "numero_capitulo": 6,
+        "temporada_id": 4
+    },{
+        "nombre": "UN MACABRO ESPECTÁCULO",
+        "numero_capitulo": 7,
+        "temporada_id": 4  
+    },{
+        "nombre": "NARCISSUS",
+        "numero_capitulo": 8,
+        "temporada_id": 4 
+    },{
+        "nombre": "Refinamiento con agresión",
+        "numero_capitulo": 1,
+        "temporada_id": 5 
+    },{
+        "nombre": "Han llamado a Tommy Supercherías",
+        "numero_capitulo": 2,
+        "temporada_id":  5
+    },{
+        "nombre": "¿Dónde está mi hierba?",
+        "numero_capitulo": 3,
+        "temporada_id":  5
+    },{
+        "nombre": "Un caballero desagradable",
+        "numero_capitulo": 4,
+        "temporada_id":  5
+    },{
+        "nombre": "Tengo cientos de primos",
+        "numero_capitulo": 5,
+        "temporada_id": 5 
+    },{
+        "nombre": "Cualquier eventualidad",
+        "numero_capitulo": 6,
+        "temporada_id": 5 
+    },{
+        "nombre": "No sin peligro",
+        "numero_capitulo": 7,
+        "temporada_id": 5 
+    },{
+        "nombre": "El Evangelio según Bobby Glass",
+        "numero_capitulo": 8,
+        "temporada_id": 5 
+    },{
+        "nombre": "Episodio I",
+        "numero_capitulo": 1,
+        "temporada_id":  6
+    },{
+        "nombre": "Episodio II",
+        "numero_capitulo": 2,
+        "temporada_id": 6 
+    },{
+        "nombre": "Episodio III",
+        "numero_capitulo": 3,
+        "temporada_id":  6
+    },{
+        "nombre": "Episodio IV",
+        "numero_capitulo": 4,
+        "temporada_id":  6
+    },{
+        "nombre": "Episodio V",
+        "numero_capitulo": 5,
+        "temporada_id": 6 
+    },{
+        "nombre": "Episodio VI",
+        "numero_capitulo": 6,
+        "temporada_id":  6
+    },{
+        "nombre": "Episodio VII",
+        "numero_capitulo": 7,
+        "temporada_id":  6
+    },{
+        "nombre": "Te he llamado por tu nombre",
+        "numero_capitulo": 1,
+        "temporada_id": 7 
+    },{
+        "nombre": "Sabbat",
+        "numero_capitulo": 2,
+        "temporada_id": 7
+    },{
+        "nombre": "Jesús ama a los niños",
+        "numero_capitulo": 3,
+        "temporada_id": 7 
+    },{
+        "nombre": "La roca sobre la que se edificó",
+        "numero_capitulo": 4,
+        "temporada_id":  7
+    },{
+        "nombre": "Regalo de bodas",
+        "numero_capitulo": 5,
+        "temporada_id":  7
+    },{
+        "nombre": "Compasión indescriptible",
+        "numero_capitulo": 6,
+        "temporada_id":  7
+    },{
+        "nombre": "Invitaciones",
+        "numero_capitulo": 7,
+        "temporada_id":  7
+    },{
+        "nombre": "Yo soy Él",
+        "numero_capitulo": 8,
+        "temporada_id":  7
+    },{
+        "nombre": "Trueno",
+        "numero_capitulo": 1,
+        "temporada_id": 8 
+    },{
+        "nombre": "Te vi",
+        "numero_capitulo": 2,
+        "temporada_id": 8 
+    },{
+        "nombre": "Mateo 4:24",
+        "numero_capitulo": 3,
+        "temporada_id": 8 
+    },{
+        "nombre": "La ocasion perfecta",
+        "numero_capitulo": 4,
+        "temporada_id":  8
+    },{
+        "nombre": "Espíritu",
+        "numero_capitulo": 5,
+        "temporada_id": 8 
+    },{
+        "nombre": "Ilícito",
+        "numero_capitulo": 6,
+        "temporada_id":  8
+    },{
+        "nombre": "Ajuste de cuentas",
+        "numero_capitulo": 7,
+        "temporada_id": 8 
+    },{
+        "nombre": "Más allá de las montañas",
+        "numero_capitulo": 8,
+        "temporada_id": 8 
+    },{
+        "nombre": "Christmas",
+        "numero_capitulo": 9,
+        "temporada_id": 8 
+    },{
+        "nombre": "Regreso a casa",
+        "numero_capitulo": 1,
+        "temporada_id": 9 
+    },{
+        "nombre": "De dos en dos",
+        "numero_capitulo": 2,
+        "temporada_id": 9 
+    },{
+        "nombre": "Médico, cúrate a ti mismo",
+        "numero_capitulo": 3,
+        "temporada_id": 9 
+    },{
+        "nombre": "Limpieza, Parte 1",
+        "numero_capitulo": 4,
+        "temporada_id": 9 
+    },{
+        "nombre": "Limpieza, Parte 2",
+        "numero_capitulo": 5,
+        "temporada_id": 9 
+    },{
+        "nombre": "Tensión en el campamento",
+        "numero_capitulo": 6,
+        "temporada_id": 9 
+    },{
+        "nombre": "Oídos para oír",
+        "numero_capitulo": 7,
+        "temporada_id": 9 
+    },{
+        "nombre": "Sustento",
+        "numero_capitulo": 8,
+        "temporada_id": 9 
+    },{
+        "nombre": "Un salto al vacío",
+        "numero_capitulo": 1,
+        "temporada_id": 10 
+    },{
+        "nombre": "Un tatuaje",
+        "numero_capitulo": 2,
+        "temporada_id": 10 
+    },{
+        "nombre": "Una pastilla",
+        "numero_capitulo": 3,
+        "temporada_id": 10
+    },{
+        "nombre": "Una tortilla",
+        "numero_capitulo": 4,
+        "temporada_id": 10 
+    },{
+        "nombre": "Una decisión",
+        "numero_capitulo": 5,
+        "temporada_id": 10 
+    },{
+        "nombre": "Un disfraz",
+        "numero_capitulo": 6,
+        "temporada_id": 10 
+    },{
+        "nombre": "Un espejo",
+        "numero_capitulo": 7,
+        "temporada_id": 10 
+    },{
+        "nombre": "La Prueba",
+        "numero_capitulo": 1,
+        "temporada_id": 11 
+    },{
+        "nombre": "Kishi Kaisei",
+        "numero_capitulo": 2,
+        "temporada_id":11  
+    },{
+        "nombre": "Entendimiento",
+        "numero_capitulo": 3,
+        "temporada_id":11  
+    },{
+        "nombre": "A mi manera",
+        "numero_capitulo": 4,
+        "temporada_id":11  
+    },{
+        "nombre": "Todos pagan",
+        "numero_capitulo": 5,
+        "temporada_id": 11 
+    },{
+        "nombre": "La información vale oro",
+        "numero_capitulo": 6,
+        "temporada_id":11  
+    },{
+        "nombre": "A veces desaparecen",
+        "numero_capitulo": 7,
+        "temporada_id":11  
+    },{
+        "nombre": "Yoshino",
+        "numero_capitulo": 8,
+        "temporada_id": 11 
+    },{
+        "nombre": "No te atrevas a fallar",
+        "numero_capitulo": 1,
+        "temporada_id": 12 
+    },{
+        "nombre": "Sé mi número uno",
+        "numero_capitulo": 2,
+        "temporada_id": 12 
+    },{
+        "nombre": "Ley vieja, enfoque nuevo",
+        "numero_capitulo": 3,
+        "temporada_id": 12 
+    },{
+        "nombre": "Como un hombre nuevo",
+        "numero_capitulo": 4,
+        "temporada_id": 12 
+    },{
+        "nombre": "Todos pagan",
+        "numero_capitulo": 5,
+        "temporada_id": 12 
+    },{
+        "nombre": "Te escojo a ti",
+        "numero_capitulo": 6,
+        "temporada_id": 12 
+    },{
+        "nombre": "La guerra en casa",
+        "numero_capitulo": 7,
+        "temporada_id": 12 
+    },{
+        "nombre": "El camino noble",
+        "numero_capitulo": 8,
+        "temporada_id": 12 
+    },{
+        "nombre": "Consecuencias",
+        "numero_capitulo": 9,
+        "temporada_id": 12 
+    },{
+        "nombre": "Fin del juego",
+        "numero_capitulo": 10,
+        "temporada_id": 12 
+    },{
+        "nombre": "La larga y clara oscuridad",
+        "numero_capitulo": 1,
+        "temporada_id":  13
+    },{
+        "nombre": "Visiones",
+        "numero_capitulo": 2,
+        "temporada_id": 13 
+    },{
+        "nombre": "La habitación cerrada",
+        "numero_capitulo": 3,
+        "temporada_id": 13 
+    },{
+        "nombre": "¿Quién anda ahí?",
+        "numero_capitulo": 4,
+        "temporada_id": 13 
+    },{
+        "nombre": "El sino secreto de toda la vida",
+        "numero_capitulo": 5,
+        "temporada_id":  13
+    },{
+        "nombre": "Casas encantadas",
+        "numero_capitulo": 6,
+        "temporada_id": 13 
+    },{
+        "nombre": "Después de irte",
+        "numero_capitulo": 7,
+        "temporada_id":  13
+    },{
+        "nombre": "Forma y vacío",
+        "numero_capitulo": 8,
+        "temporada_id": 13 
+    },{
+        "nombre": "El libro occidental de los muertos",
+        "numero_capitulo": 1,
+        "temporada_id": 14  
+    },{
+        "nombre": "La noche te encuentra",
+        "numero_capitulo": 2,
+        "temporada_id":  14
+    },{
+        "nombre": "Quizá mañana",
+        "numero_capitulo": 3,
+        "temporada_id": 14 
+    },{
+        "nombre": "Caerá",
+        "numero_capitulo": 4,
+        "temporada_id":  14
+    },{
+        "nombre": "Otras vidas",
+        "numero_capitulo": 5,
+        "temporada_id":  14
+    },{
+        "nombre": "Iglesia en ruinas",
+        "numero_capitulo": 6,
+        "temporada_id":  14
+    },{
+        "nombre": "Habitaciones de motel",
+        "numero_capitulo": 7,
+        "temporada_id": 14 
+    },{
+        "nombre": "",
+        "numero_capitulo": 8,
+        "temporada_id": 14 
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },{
+        "nombre": "",
+        "numero_capitulo": ,
+        "temporada_id":  
+    },
+]
