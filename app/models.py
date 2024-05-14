@@ -146,10 +146,11 @@ class temporada(models.Model):
 
 class capitulo(models.Model):
     nombre = models.CharField(max_length=100)
+    numero_capitulo = models.IntegerField()
     temporada = models.ForeignKey(temporada, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.temporada} {self.nombre} {self.sinopsis} {self.img} {self.fecha_estreno}"
+        return f"{self.nombre} {self.temporada}"
 
 class valoracion_serie(models.Model):
     valoracion = models.IntegerField(null=True)
