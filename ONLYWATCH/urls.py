@@ -25,10 +25,10 @@ urlpatterns = [
 
     # path('', views.cargar_datos_sql, name='cargar_datos_sql'),
     # Acceso de Usuario/No Usuario a Login, Registro, Logout y Reinicio de Contraseña
-    path('onlywatch/login/', views.do_login, name='login'),
-    path('onlywatch/logout/', views.do_logout, name='logout'),
-    path('onlywatch/register/', views.register, name='signup'),
-    path('onlywatch/login/reset_password', views.reset_password, name='reset_password'),
+    path('login/', views.do_login, name='login'),
+    path('logout/', views.do_logout, name='logout'),
+    path('register/', views.register, name='signup'),
+    path('login/reset_password', views.reset_password, name='reset_password'),
 
 
     # Administracion de la Aplicacion
@@ -63,23 +63,23 @@ urlpatterns = [
     path('administrador/pelicula/vincular_pelicula/vincular_plataforma/<int:id>/', views.vincular_desvincular_plataforma_pelicula, name='plataforma_pelicula'),
 
     # Paginas de la Aplicacion Peliculas/Series
-    path('onlywatch/home/', views.mostrar_inicio, name='home'),
-    path('onlywatch/peliculas/', views.view_peliculas, name='peliculas'),
-    path('onlywatch/plataformas/', views.plataformas, name='plataformas'),
-    path('onlywatch/series/', views.view_series, name='series'),
-    path('onlywatch/pelicula/<int:id_pelicula>', views.mostrar_pelicula, name='pelicula'),
+    path('', views.mostrar_inicio, name='home'),
+    path('peliculas/', views.view_peliculas, name='peliculas'),
+    path('plataformas/', views.plataformas, name='plataformas'),
+    path('series/', views.view_series, name='series'),
+    path('pelicula/<int:id_pelicula>', views.mostrar_pelicula, name='pelicula'),
     path('pelicula/valorar/<int:id_pelicula>', views.valorar_pelicula, name='valorar_pelicula'),
     path('pelicula_favorita/<int:id_pelicula>/', views.pelicula_favorita, name='pelicula_favorita'),
-    path('onlywatch/serie/<int:id_serie>', views.mostrar_serie, name='serie'),
+    path('serie/<int:id_serie>', views.mostrar_serie, name='serie'),
     path('serie/valorar/<int:id_serie>', views.valorar_serie, name='valorar_serie'),
-    path('onlywatch/serie/serie_favorita/<int:id_serie>/', views.serie_favorita, name='serie_favorita'),
+    path('serie/serie_favorita/<int:id_serie>/', views.serie_favorita, name='serie_favorita'),
 
     # Paginas de configuracion de Usuario
-    path('onlywatch/usuario/perfil', views.configuracion, name='configuracion'),
+    path('usuario/perfil', views.configuracion, name='configuracion'),
     path('send_verification_code/', views.send_verification_code, name='send_verification_code'),
     path('verify_code/', views.verify_code, name='verify_code'),
     path('vincular_desvincular_plataforma/<int:plataforma_id>/', views.vincular_desvincular_plataforma, name='vincular_desvincular_plataforma'),
-    path('onlywatch/editar_perfil/', views.configurar_perfil, name='editar_perfil'),
+    path('editar_perfil/', views.configurar_perfil, name='editar_perfil'),
 
 ]
 
