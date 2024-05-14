@@ -8,10 +8,16 @@
 <main class="column mb-6 mt-5">
     <div class="columns is-centered">
         <div class="slider" x-data="{start: true, end: false}">
-            <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+            <div class="slider__content" x-ref="slider"
+                 x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
                 <!-- Slider items: 10 min <> 15-20 max -->
                 {% for psh in header %}
                     <div class="slider__item">
+                        {% if psh|class_name == 'serie' %}
+                            <a href="{% url 'serie' psh.id %}">
+                        {% else %}
+                            <a href="{% url 'pelicula' psh.id %}">
+                        {% endif %}
                         <img class="slider__image" src="{{ psh.img }}" alt="Imagen de la pelicula {{ psh.nombre }}">
                         <div class="slider__info">
                             <h2>{{ psh.nombre }}</h2>
@@ -69,7 +75,8 @@
                     {% if page_obj.number == i %}
                         <li><a class="pagination-link" aria-label="Page {{ i }}" aria-current="page">{{ i }}</a></li>
                     {% else %}
-                        <li><a href="?page={{ i }}" class="pagination-link" aria-label="Goto page {{ i }}">{{ i }}</a></li>
+                        <li><a href="?page={{ i }}" class="pagination-link" aria-label="Goto page {{ i }}">{{ i }}</a>
+                        </li>
                     {% endif %}
                 {% endfor %}
             </ul>
