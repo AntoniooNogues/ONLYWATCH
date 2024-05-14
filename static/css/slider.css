@@ -33,9 +33,11 @@ body {
 }
 
 .slider {
-  width: 100%;
-  max-width: 1250px;
+  width: 100% !important;  /* Adjust this to change the width of the slider */
+  max-width: 800px !important;
   margin: 0 auto;
+    overflow: hidden;
+
 }
 
 .slider__content {
@@ -67,19 +69,19 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-width: 100%;
-  width: 100%;
+  min-width: 37% !important;/* Adjust this to change the width of each item */
+  width: 100% !important;
   border-radius: 0.25rem;
   overflow: hidden;
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 2/3;
   border: 1px solid #000;
 
 }
-@media (min-width: 460px) {
-  .slider__item {
-    aspect-ratio: 2/3;
-    min-width: calc((100% / 2) - 2rem);
+@media (max-width: 940px) {
+  h2 {
+    color: #1f1101 !important;
+    margin: 0 auto !important;
   }
 }
 @media (min-width: 940px) {
@@ -90,11 +92,12 @@ body {
 
 .slider__image {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 100% !important; /* Adjust this to change the width of the image */
+  height: 100% !important;
   -o-object-fit: fill;
      object-fit: fill;
   position: absolute;
+  aspect-ratio: 2/3;
   top: 0;
   left: 0;
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, .7));
@@ -103,7 +106,9 @@ body {
 
 .slider__info {
   position: relative;
-  padding: 1rem 2rem 2rem;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  text-align: center;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(32, 50, 57, 0));
 }
 .slider__info h2 {
@@ -112,7 +117,6 @@ body {
   line-height: 1.1;
   font-weight: 700;
   font-size: 1.25rem;
-  margin: 0;
 }
 
 .slider__item:hover .slider__info h2{
@@ -202,3 +206,8 @@ body {
   border-radius: 5px;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
