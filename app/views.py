@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
 
+
 import os
 
 from django.contrib import messages
@@ -62,21 +63,17 @@ def do_logout(request):
 
 
 def mostrar_inicio(request):
-    """add_peliculas_json()
-    add_series_json()"""
+    #Parte Superior de Home
     headerP = list(pelicula.objects.order_by('?')[:5])
     headerS = list(serie.objects.order_by('?')[:5])
     headerPS = headerP + headerS
     random.shuffle(headerPS)
-
-
+    #Parte Peliculas y Series de Home
     series_list = list(serie.objects.all())
     peliculas_list = list(pelicula.objects.all())
-
     combined_list = series_list + peliculas_list
-
+    #Paginacion de Home
     paginator = Paginator(combined_list, 20)  # Show 20 items per page
-
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
@@ -659,3 +656,6 @@ def serie_favorita(request, id_serie):
         fav.delete()
         es_favorito = False
     return JsonResponse({'es_favorito': es_favorito})
+
+
+
