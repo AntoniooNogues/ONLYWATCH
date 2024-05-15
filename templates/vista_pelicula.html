@@ -1,19 +1,21 @@
 {% include 'header_home_usuario.html' %}
-    {% csrf_token %}
-    {% load static %}
-    <!-- Main Content -->
-    <main class="mb-6 ml-1 columns main-content">
-        <!-- Informacion de Pelicula -->
-        <div class="columns ">
+{% csrf_token %}
+{% load static %}
+<!-- Main Content -->
+<main class="mb-6 ml-1 columns main-content">
+    <!-- Informacion de Pelicula -->
+    <div class="columns ">
+        <!-- Imagen, Estado -->
+        <div class="columns ml-2 main-content is-3">
             <!-- Imagen, Estado -->
-            <div class="columns ml-2 main-content is-3" >
-                <!-- Imagen, Estado -->
-                <div class="column">
-                    <figure>
-                        <img class="image pt-4" src="{{ pelicula.img }}" alt="Imagen de la película {{ pelicula.nombre }}" style="margin: 0 auto">
-                    </figure>
+            <div class="column">
+                <figure>
+                    <img class="image pt-4" src="{{ pelicula.img }}" alt="Imagen de la película {{ pelicula.nombre }}"
+                         style="margin: 0 auto">
+                </figure>
+                {% if user.is_authenticated %}
                     <label>
-                        <select class="mt-4 pl-2 estado" >
+                        <select class="mt-4 pl-2 estado">
                             <option class="pl-5" value="0">Estado de la Película</option>
                             <option class="pl-5" value="1">Viendo</option>
                             <option class="pl-5" value="2">Completada</option>
@@ -21,9 +23,12 @@
                             <option class="pl-5" value="4">Abandonada</option>
                         </select>
                     </label>
-                </div>
+                {% endif %}
+            </div>
+            <!-- Valoracion -->
+            {% if user.is_authenticated %}
                 <div class="ml-4">
-                        Añade tu puntuación:
+                    Añade tu puntuación:
                     <form method="POST" action="{% url 'valorar_pelicula' pelicula.id %}">
                         {% csrf_token %}
                         <input type="number" name="valoracion" min="0" max="10" required>
@@ -37,98 +42,103 @@
                         </ul>
                     {% endif %}
                 </div>
-            </div>
-            <!-- Titulo (Año Estreno) + Me Gusta, Sinopsis, Director, Plataforma, Generos -->
-            <div class="column title-details is-9 pl-5">
-                <div class="is-flex" style="align-items: center">
-                    <h1 class="is-size-3">{{ pelicula.nombre }} <span> ({{ pelicula.anyo_estreno }})</span>
+            {% endif %}
+        </div>
+        <!-- Titulo (Año Estreno) + Me Gusta, Sinopsis, Director, Plataforma, Generos -->
+        <div class="column title-details is-9 pl-5">
+            <div class="is-flex" style="align-items: center">
+                <h1 class="is-size-3">{{ pelicula.nombre }} <span> ({{ pelicula.anyo_estreno }})</span>
+                    {% if user.is_authenticated %}
                         {% if es_favorito %}
                             <a class="pelicula_favorita fa-solid fa-heart" id="corazon"></a>
                         {% else %}
                             <a class="pelicula_favorita fa-regular fa-heart" id="corazon"></a>
                         {% endif %}
-
-                    </h1>
-                    <p class="is-size-4 has-text-weight-bold pl-4  ">Media:
-                        <span class="has-text-weight-normal is-size-5">{{ valoracion_media.valoracion__avg|floatformat:2 }}</span>
-                    </p>
-                </div>
-                <p class="is-size-4 has-text-weight-bold pt-2">Sinopsis</p>
-                <p class="is-size-5 has-text-justified">{{ pelicula.sinopsis }}</p>
-                <p class="is-size-4 has-text-weight-bold pt-2">Director: <span class="has-text-weight-normal is-size-5">{{ pelicula.director }}</span></p>
-                <div>
-                    <p class="is-size-4 has-text-weight-bold pt-2">Plataformas: </p>
-                    <div class="is-flex pt-3">
-                        {% for p in plt %}
-                            <figure class="mr-3">
-                                <img class="image is-64x64" src="{{ p.plataforma.img.url}}" alt="{{ p.plataforma.nombre }}"/>
-                            </figure>
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <p class="is-size-4 has-text-weight-bold pt-2">Generos: </p>
-                    <div class="is-flex pt-3 tags are-medium">
-                        {% for g in gen %}
-                            <p class="tag is-size-5 has-text-weight-bold is-black ">{{ g.genero.nombre }}</p>
-                        {% endfor %}
-                    </div>
-                </div>
-                <a class="is-size-4 has-text-weight-bold hover_link" href="{{ pelicula.trailer }}" style="letter-spacing: 2px; color: #cc700e">Trailer</a>
+                    {% endif %}
+                </h1>
+                <p class="is-size-4 has-text-weight-bold pl-4  ">Media:
+                    <span class="has-text-weight-normal is-size-5">{{ valoracion_media.valoracion__avg|floatformat:2 }}</span>
+                </p>
             </div>
-        </div>
-        <!-- Reparto -->
-        <div class="column">
-            <h2 class="is-size-4 has-text-weight-bold pb-4">Reparto</h2>
-            <div class="columns is-multiline">
-                {% for p in pj %}
-                    <div class="column is-2">
-                        <figure>
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-2by3 mb-4">
-                                        <img src="{{ p.actor.img }}"
-                                             alt="Imagen del Personaje, {{ p.nombre_personaje }}">
-                                    </figure>
-                                </div>
-                            </div>
-                            <p class="has-text-centered">Actor: {{ p.actor.nombre }}</p>
-                            <p class="has-text-centered">Personaje: {{ p.nombre_personaje }}</p>
+            <p class="is-size-4 has-text-weight-bold pt-2">Sinopsis</p>
+            <p class="is-size-5 has-text-justified">{{ pelicula.sinopsis }}</p>
+            <p class="is-size-4 has-text-weight-bold pt-2">Director: <span
+                    class="has-text-weight-normal is-size-5">{{ pelicula.director }}</span></p>
+            <div>
+                <p class="is-size-4 has-text-weight-bold pt-2">Plataformas: </p>
+                <div class="is-flex pt-3">
+                    {% for p in plt %}
+                        <figure class="mr-3">
+                            <img class="image is-64x64" src="{{ p.plataforma.img.url }}"
+                                 alt="{{ p.plataforma.nombre }}"/>
                         </figure>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
+            <div class="mb-2">
+                <p class="is-size-4 has-text-weight-bold pt-2">Generos: </p>
+                <div class="is-flex pt-3 tags are-medium">
+                    {% for g in gen %}
+                        <p class="tag is-size-5 has-text-weight-bold is-black ">{{ g.genero.nombre }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <a class="is-size-4 has-text-weight-bold hover_link" href="{{ pelicula.trailer }}"
+               style="letter-spacing: 2px; color: #cc700e">Trailer</a>
         </div>
-        <!-- Comentarios -->
-        <div class="column">
-            <h2 class="is-size-4 has-text-weight-bold pb-4">Comentarios</h2>
+    </div>
+    <!-- Reparto -->
+    <div class="column">
+        <h2 class="is-size-4 has-text-weight-bold pb-4">Reparto</h2>
+        <div class="columns is-multiline">
+            {% for p in pj %}
+                <div class="column is-2">
+                    <figure>
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-2by3 mb-4">
+                                    <img src="{{ p.actor.img }}"
+                                         alt="Imagen del Personaje, {{ p.nombre_personaje }}">
+                                </figure>
+                            </div>
+                        </div>
+                        <p class="has-text-centered">Actor: {{ p.actor.nombre }}</p>
+                        <p class="has-text-centered">Personaje: {{ p.nombre_personaje }}</p>
+                    </figure>
+                </div>
+            {% endfor %}
         </div>
-    </main>
+    </div>
+    <!-- Comentarios -->
+    <div class="column">
+        <h2 class="is-size-4 has-text-weight-bold pb-4">Comentarios</h2>
+    </div>
+</main>
 
 
-    <!-- Footer -->
-    {% include "footer.html" %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#corazon").click(function () {
-                var peliculaId = {{ pelicula.id }};
-                $.ajax({
-                    url: '/pelicula_favorita/' + peliculaId + '/',
-                    data: {
-                        'peliculaId': peliculaId
-                    },
-                    dataType: 'json',
-                    success: function (data) {
-                        if (data.es_favorito) {
-                            $("#corazon").removeClass('fa-regular fa-heart').addClass('fa-solid fa-heart');
-                        } else {
-                            $("#corazon").removeClass('fa-solid fa-heart').addClass('fa-regular fa-heart');
-                        }
+<!-- Footer -->
+{% include "footer.html" %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#corazon").click(function () {
+            var peliculaId = {{ pelicula.id }};
+            $.ajax({
+                url: '/pelicula_favorita/' + peliculaId + '/',
+                data: {
+                    'peliculaId': peliculaId
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.es_favorito) {
+                        $("#corazon").removeClass('fa-regular fa-heart').addClass('fa-solid fa-heart');
+                    } else {
+                        $("#corazon").removeClass('fa-solid fa-heart').addClass('fa-regular fa-heart');
                     }
-                });
+                }
             });
         });
-    </script>
-    <script src="{% static 'js/index.js' %} "></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
+    });
+</script>
+<script src="{% static 'js/index.js' %} "></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>

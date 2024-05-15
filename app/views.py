@@ -340,24 +340,47 @@ def view_series(request):
 
 
 def mostrar_pelicula(request, id_pelicula):
-    peli = pelicula.objects.get(id=id_pelicula)
-    plt_pelicula = plataforma_pelicula.objects.filter(pelicula_id=peli).all()
-    gen_pelicula = pelicula_genero.objects.filter(pelicula_id=peli).all()
-    pj_pelicula = personaje_pelicula.objects.filter(pelicula_id=peli).all()[:6]
-    es_favorito = peliculas_favoritas.objects.filter(usuario=request.user, pelicula=peli).exists()
-    valoracion_media = valoracion_pelicula.objects.filter(pelicula=peli).aggregate(Avg('valoracion'))
+    if request.user.is_authenticated:
+        peli = pelicula.objects.get(id=id_pelicula)
+        plt_pelicula = plataforma_pelicula.objects.filter(pelicula_id=peli).all()
+        gen_pelicula = pelicula_genero.objects.filter(pelicula_id=peli).all()
+        pj_pelicula = personaje_pelicula.objects.filter(pelicula_id=peli).all()[:6]
+        es_favorito = peliculas_favoritas.objects.filter(usuario=request.user, pelicula=peli).exists()
+        valoracion_media = valoracion_pelicula.objects.filter(pelicula=peli).aggregate(Avg('valoracion'))
+        return render(request, 'vista_pelicula.html',
+                      {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula,
+                       'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
+    else:
+        peli = pelicula.objects.get(id=id_pelicula)
+        plt_pelicula = plataforma_pelicula.objects.filter(pelicula_id=peli).all()
+        gen_pelicula = pelicula_genero.objects.filter(pelicula_id=peli).all()
+        pj_pelicula = personaje_pelicula.objects.filter(pelicula_id=peli).all()[:6]
+        valoracion_media = valoracion_pelicula.objects.filter(pelicula=peli).aggregate(Avg('valoracion'))
+        return render(request, 'vista_pelicula.html',
+                      {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula,
+                       'valoracion_media': valoracion_media})
 
-    return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
 
 def mostrar_serie(request, id_serie):
-    serie_editar = serie.objects.get(id=id_serie)
-    plt_serie = plataforma_serie.objects.filter(serie_id=serie_editar).all()
-    gen_serie = serie_genero.objects.filter(serie_id=serie_editar).all()
-    pj_serie = personaje_serie.objects.filter(serie_id=serie_editar).all()[:6]
-    es_favorito = series_favoritas.objects.filter(usuario=request.user, serie=serie_editar).exists()
-    valoracion_media = valoracion_serie.objects.filter(serie=serie_editar).aggregate(Avg('valoracion'))
-
-    return render(request, 'vista_serie.html', {'serie': serie_editar, 'plt': plt_serie, 'gen': gen_serie, 'pj': pj_serie, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
+    if request.user.is_authenticated:
+        serie_editar = serie.objects.get(id=id_serie)
+        plt_serie = plataforma_serie.objects.filter(serie_id=serie_editar).all()
+        gen_serie = serie_genero.objects.filter(serie_id=serie_editar).all()
+        pj_serie = personaje_serie.objects.filter(serie_id=serie_editar).all()[:6]
+        es_favorito = series_favoritas.objects.filter(usuario=request.user, serie=serie_editar).exists()
+        valoracion_media = valoracion_serie.objects.filter(serie=serie_editar).aggregate(Avg('valoracion'))
+        return render(request, 'vista_serie.html',
+                      {'serie': serie_editar, 'plt': plt_serie, 'gen': gen_serie, 'pj': pj_serie,
+                       'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
+    else:
+        serie_editar = serie.objects.get(id=id_serie)
+        plt_serie = plataforma_serie.objects.filter(serie_id=serie_editar).all()
+        gen_serie = serie_genero.objects.filter(serie_id=serie_editar).all()
+        pj_serie = personaje_serie.objects.filter(serie_id=serie_editar).all()[:6]
+        valoracion_media = valoracion_serie.objects.filter(serie=serie_editar).aggregate(Avg('valoracion'))
+        return render(request, 'vista_serie.html',
+                      {'serie': serie_editar, 'plt': plt_serie, 'gen': gen_serie, 'pj': pj_serie,
+                       'valoracion_media': valoracion_media})
 
 
 
@@ -585,15 +608,19 @@ def cargar_datos_sql(request):
 
 def valorar_pelicula(request, id_pelicula):
     if request.method == 'POST':
-        pelicula_valorar = get_object_or_404(pelicula, id=id_pelicula)
-        valoracion = request.POST.get('valoracion')
-        try:
-           valor = valoracion_pelicula.objects.get(usuario=request.user, pelicula=pelicula_valorar)
-        except valoracion_pelicula.DoesNotExist:
-            valoracion_pelicula.objects.create(usuario=request.user, pelicula=pelicula_valorar, valoracion=valoracion)
+        if request.user.is_authenticated:
+            pelicula_valorar = get_object_or_404(pelicula, id=id_pelicula)
+            valoracion = request.POST.get('valoracion')
+            try:
+               valor = valoracion_pelicula.objects.get(usuario=request.user, pelicula=pelicula_valorar)
+            except valoracion_pelicula.DoesNotExist:
+                valoracion_pelicula.objects.create(usuario=request.user, pelicula=pelicula_valorar, valoracion=valoracion)
+            else:
+                messages.error(request, 'Ya has valorado esta película anteriormente.')
+            return redirect('pelicula', id_pelicula=id_pelicula)
         else:
-            messages.error(request, 'Ya has valorado esta película anteriormente.')
-        return redirect('pelicula', id_pelicula=id_pelicula)
+            return redirect('pelicula', id_pelicula=id_pelicula)
+
 
 def pelicula_favorita(request, id_pelicula):
     pelicula_instancia = get_object_or_404(pelicula, id=id_pelicula)

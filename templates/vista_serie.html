@@ -14,44 +14,52 @@
                          style="margin: 0 auto">
                 </figure>
                 <label>
-                    <select class="mt-4 pl-2 estado">
-                        <option class="pl-5" value="0">Estado de la Película</option>
-                        <option class="pl-5" value="1">Viendo</option>
-                        <option class="pl-5" value="2">Completada</option>
-                        <option class="pl-5" value="3">Pendiente</option>
-                        <option class="pl-5" value="4">Abandonada</option>
-                    </select>
+                    {% if user.is_authenticated %}
+                        <select class="mt-4 pl-2 estado">
+                            <option class="pl-5" value="0">Estado de la Película</option>
+                            <option class="pl-5" value="1">Viendo</option>
+                            <option class="pl-5" value="2">Completada</option>
+                            <option class="pl-5" value="3">Pendiente</option>
+                            <option class="pl-5" value="4">Abandonada</option>
+                        </select>
+                    {% endif %}
                 </label>
             </div>
-            <div class="ml-4">
-                Añade tu puntuación:
-                <form method="POST" action="{% url 'valorar_serie' serie.id %}">
-                    {% csrf_token %}
-                    <input type="number" name="valoracion" min="0" max="10" required>
-                    <input type="submit" value="Valorar">
-                </form>
-                {% if messages %}
-                    <ul class="messages">
-                        {% for message in messages %}
-                            <p>{{ message }}</p>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </div>
+            {% if user.is_authenticated %}
+                <div class="ml-4">
+                    Añade tu puntuación:
+                    <form method="POST" action="{% url 'valorar_serie' serie.id %}">
+                        {% csrf_token %}
+                        <input type="number" name="valoracion" min="0" max="10" required>
+                        <input type="submit" value="Valorar">
+                    </form>
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            {% endif %}
         </div>
         <!-- Titulo (Año Estreno) + Me Gusta, Sinopsis, Director, Plataforma, Generos -->
         <div class="column title-details is-9 pl-5">
             <div class="is-flex" style="align-items: center">
+
                 <h1 class="is-size-3">{{ serie.nombre }} <span> ({{ serie.anyo_estreno }})</span>
-                    {% if es_favorito %}
-                        <a class="serie_favorita fa-solid fa-heart" id="corazon"></a>
-                    {% else %}
-                        <a class="serie_favorita fa-regular fa-heart" id="corazon"></a>
+                    {% if user.is_authenticated %}
+                        {% if es_favorito %}
+                            <a class="serie_favorita fa-solid fa-heart" id="corazon"></a>
+                        {% else %}
+                            <a class="serie_favorita fa-regular fa-heart" id="corazon"></a>
+                        {% endif %}
                     {% endif %}
                 </h1>
                 <p class="is-size-4 has-text-weight-bold pl-4">Media: <span
                         class="has-text-weight-normal is-size-5">{{ valoracion_media.valoracion__avg|floatformat:2 }}</span>
                 </p>
+
             </div>
             <p class="is-size-4 has-text-weight-bold pt-2">Sinopsis</p>
             <p class="is-size-5 has-text-justified">{{ serie.sinopsis }}</p>
