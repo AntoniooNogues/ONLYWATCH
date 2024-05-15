@@ -206,4 +206,19 @@ body {
   border-radius: 5px;
 }
 
-
+#search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  margin-left: 10px;
+}
+input#search-input{
+    height: 30px;
+  align-content: center;
+  border-color: black;
+  font-size: 14px;
+}
+input#search-input:hover, input#search-input:focus{
+    border-color: black;
+  box-shadow: none;
+}
