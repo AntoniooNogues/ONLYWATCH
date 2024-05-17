@@ -234,9 +234,6 @@ input#search-input:hover, input#search-input:focus{
 }
 
 .filtros button{
-  background: rgb(251,117,46) !important;
-  background: linear-gradient(180deg, rgba(251,117,46,0.5) 0%, rgba(249,91,22,0.5) 50%, rgba(194,46,12,0.5) 100%) !important;
-  border: 1px solid #000 !important;
   font-size: 0.85rem !important;
   font-weight: 600;
   border-radius: 5px !important;
@@ -284,9 +281,14 @@ input#search-input:hover, input#search-input:focus{
   background-size: 45%;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, auto);
-    gap: 15px;
+
+.contenido{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 34%;
+  height: 100vh;
+  background-color: #c59375 !important;
+  padding: 20px;
+  z-index: 1000;
 }
