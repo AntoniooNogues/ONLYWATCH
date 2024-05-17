@@ -20,6 +20,7 @@ function updateYearDisplay(year) {
         updateYearDisplay(maxYear); // Actualiza el año mostrado
     };
 
-function updateYearDisplay(year) {
-    document.getElementById('yearDisplay').innerText = year;
+function  updateGenreDisplay(genre) {
+    document.getElementById('genreDisplay').innerText = genre;
 }
+

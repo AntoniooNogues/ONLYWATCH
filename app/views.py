@@ -67,6 +67,8 @@ def mostrar_inicio(request):
     headerS = list(serie.objects.order_by('?')[:5])
     headerPS = headerP + headerS
     random.shuffle(headerPS)
+    gen=genero.objects.all()
+
     #Parte Peliculas y Series de Home
     series_list = list(serie.objects.all())
     peliculas_list = list(pelicula.objects.all())
@@ -76,7 +78,7 @@ def mostrar_inicio(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'user_home.html', {'header': headerPS, 'page_obj': page_obj})
+    return render(request, 'user_home.html', {'header': headerPS, 'page_obj': page_obj, 'generos': gen})
 
 def register(request):
     if request.method == 'GET':
