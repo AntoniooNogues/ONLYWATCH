@@ -339,10 +339,10 @@ def view_series(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     if request.user.is_authenticated:
-        for p in page_obj:
-            p.valoracion_media = valoracion_pelicula.objects.filter(pelicula=p).aggregate(Avg('valoracion'))[
+        for s in page_obj:
+            s.valoracion_media = valoracion_serie.objects.filter(serie=s).aggregate(Avg('valoracion'))[
                 'valoracion__avg']
-            p.es_favorito = peliculas_favoritas.objects.filter(usuario=request.user, pelicula=p).exists()
+            s.es_favorito = series_favoritas.objects.filter(usuario=request.user, serie=s).exists()
             return render(request, 'series.html', {'series': series, 'page_obj': page_obj})
     else:
         return render(request, 'series.html', {'series': series, 'page_obj': page_obj})
