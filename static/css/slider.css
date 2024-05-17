@@ -191,7 +191,6 @@ body {
 
 * {
     box-sizing: border-box;
-    max-width: 100%;
 }
 
 .estado{
@@ -283,5 +282,11 @@ input#search-input:hover, input#search-input:focus{
   cursor: pointer;
   box-shadow:0 0 11px 8px rgba(0,0,0,0.26);
   background-size: 45%;
+}
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 15px;
 }
