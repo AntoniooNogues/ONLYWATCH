@@ -5,7 +5,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
 
-
 import os
 
 from django.contrib import messages
@@ -326,6 +325,10 @@ def view_peliculas(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'peliculas.html', {'page_obj': page_obj})
+    for p in peliculas:
+        p.valoracion_media = valoracion_pelicula.objects.filter(pelicula=p).aggregate(Avg('valoracion'))['valoracion__avg']
+        p.es_favorito = peliculas_favoritas.objects.filter(usuario=request.user, pelicula=p).exists()
+    return render(request, 'peliculas.html', {'peliculas': peliculas})
 
 
 def view_series(request):
@@ -357,6 +360,7 @@ def mostrar_pelicula(request, id_pelicula):
                       {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula,
                        'valoracion_media': valoracion_media})
 
+    return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
 
 def mostrar_serie(request, id_serie):
     if request.user.is_authenticated:
@@ -617,7 +621,6 @@ def valorar_pelicula(request, id_pelicula):
             return redirect('pelicula', id_pelicula=id_pelicula)
         else:
             return redirect('pelicula', id_pelicula=id_pelicula)
-
 
 def pelicula_favorita(request, id_pelicula):
     pelicula_instancia = get_object_or_404(pelicula, id=id_pelicula)
