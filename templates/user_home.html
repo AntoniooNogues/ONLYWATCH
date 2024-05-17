@@ -28,11 +28,12 @@
     </div>
     <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
     <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
-    <div class="is-centered mr-5 ml-5 mt-5" id="series_peliculas" >
-        <div class="columns is-multiline is-mobile" >
+
+    <div class="mr-5 ml-5 mt-5" id="series_peliculas">
+        <div class="columns is-multiline is-centered is-mobile">
             {% for item in page_obj %}
-                <div class="column is-one-quarter-widescreen is-one-quarter-desktop is-one-quarter-tablet is-full-mobile">
-                    <div class="card">
+                <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
+                    <div class="card has-text-centered">
                         {% if item|class_name == 'serie' %}
                             <a href="{% url 'serie' item.id %}">
                         {% else %}

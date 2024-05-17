@@ -15,8 +15,7 @@
                 Peliculas </h1>
             <div class="columns is-multiline is-mobile">
                 {% for p in peliculas %}
-                    <div class="column is-one-quarter-widescreen is-one-quarter-desktop is-one-quarter-tablet is-half-mobile">
-
+                    <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
                         <div class="card">
                             <a href="{% url 'pelicula' id_pelicula=p.id %}">
                                 <div class="card-image">
@@ -29,16 +28,17 @@
                                  style="background-color: #FFE8D3">
                                 <h3>Puntuación: <span class="has-text-weight-bold"
                                                       style="color: #FDA657">{{ p.valoracion_media }} </span></h3>
-                                {% if p.es_favorito %}
-                                    <a class="pelicula_favorita fa-solid fa-heart corazon" data-id="{{ p.id }}"
-                                       style="font-size: 22px"></a>
-                                {% else %}
-                                    <a class="pelicula_favorita fa-regular fa-heart corazon" data-id="{{ p.id }}"
-                                       style="font-size: 22px"></a>
+                                {% if user.is_authenticated %}
+                                    {% if p.es_favorito %}
+                                        <a class="pelicula_favorita fa-solid fa-heart corazon" data-id="{{ p.id }}"
+                                           style="font-size: 22px"></a>
+                                    {% else %}
+                                        <a class="pelicula_favorita fa-regular fa-heart corazon" data-id="{{ p.id }}"
+                                           style="font-size: 22px"></a>
+                                    {% endif %}
                                 {% endif %}
                             </div>
                         </div>
-
                     </div>
                 {% endfor %}
             </div>
@@ -69,6 +69,7 @@
                     </ul>
                 </nav>
             </div>
+        </div>
     </main>
 
 {% endblock %}
