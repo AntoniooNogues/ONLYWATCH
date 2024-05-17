@@ -321,14 +321,16 @@ def add_series_json():
 def view_peliculas(request):
     peliculas = pelicula.objects.all()
     paginator = Paginator(peliculas, 20)  # Show 20 items per page
-
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'peliculas.html', {'page_obj': page_obj})
-    for p in peliculas:
-        p.valoracion_media = valoracion_pelicula.objects.filter(pelicula=p).aggregate(Avg('valoracion'))['valoracion__avg']
-        p.es_favorito = peliculas_favoritas.objects.filter(usuario=request.user, pelicula=p).exists()
-    return render(request, 'peliculas.html', {'peliculas': peliculas})
+    if request.user.is_authenticated:
+        for p in page_obj:
+            p.valoracion_media = valoracion_pelicula.objects.filter(pelicula=p).aggregate(Avg('valoracion'))['valoracion__avg']
+            p.es_favorito = peliculas_favoritas.objects.filter(usuario=request.user, pelicula=p).exists()
+            return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj})
+    else:
+        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj})
+
 
 
 def view_series(request):
@@ -336,7 +338,14 @@ def view_series(request):
     paginator = Paginator(series, 20)  # Show 20 items per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'series.html', {'page_obj': page_obj})
+    if request.user.is_authenticated:
+        for p in page_obj:
+            p.valoracion_media = valoracion_pelicula.objects.filter(pelicula=p).aggregate(Avg('valoracion'))[
+                'valoracion__avg']
+            p.es_favorito = peliculas_favoritas.objects.filter(usuario=request.user, pelicula=p).exists()
+            return render(request, 'series.html', {'series': series, 'page_obj': page_obj})
+    else:
+        return render(request, 'series.html', {'series': series, 'page_obj': page_obj})
 
 
 def mostrar_pelicula(request, id_pelicula):
