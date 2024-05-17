@@ -6,7 +6,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
 
 import os
-
+from .decorators import *
 from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.core.files import File
@@ -27,7 +27,7 @@ from .models import *
 import json
 from django.http import HttpResponse, JsonResponse
 
-
+@check_user_role('ADMIN')
 def mostrar_admi(request):
     return render(request, 'admi_pelicula.html')
 

@@ -9,7 +9,7 @@
     <link rel="icon" href="{% static 'img/logo_sinfondo 1.png' %}">
 </head>
 <body>
-<section class="hero is-primary is-fullheight">
+<section class="hero is-fullheight" style="background-color: #FFE8D3;">
     <div class="hero-body">
         <div class="container">
             <div class="columns is-centered">
@@ -17,16 +17,16 @@
                     <form action="" method="post" class="box">
                         {% csrf_token %}
                         <div class="field">
-                            <label for="" class="label">Email</label>
+                            <label for="email" class="label">Email</label>
                             <div class="control has-icons-left">
-                                <input type="email" placeholder="e.g. bobsmith@gmail.com" class="input" name="email" required>
+                                <input type="email" placeholder="ejemplo@gmail.com" class="input" name="email" required>
                                 <span class="icon is-small is-left">
                                     <i class="fa fa-envelope"></i>
                                 </span>
                             </div>
                         </div>
                         <div class="field">
-                            <label for="" class="label">Password</label>
+                            <label for="password" class="label">Password</label>
                             <div class="control has-icons-left">
                                 <input type="password" placeholder="*******" class="input" name="password" required>
                                 <span class="icon is-small is-left">
@@ -34,13 +34,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="field">
-                            <label for="" class="checkbox">
-                                <input type="checkbox">
-                                Remember me
-                            </label>
-                        </div>
-                        <div class="field">
+                        <div class="field is-flex is-justify-content-center ">
                             <button type="submit" class="button is-success">
                                 Login
                             </button>
