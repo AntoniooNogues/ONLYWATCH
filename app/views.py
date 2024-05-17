@@ -6,7 +6,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
 
 import os
-
+from .decorators import *
 from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.core.files import File
@@ -27,7 +27,7 @@ from .models import *
 import json
 from django.http import HttpResponse, JsonResponse
 
-
+@check_user_role('ADMIN')
 def mostrar_admi(request):
     return render(request, 'admi_pelicula.html')
 
@@ -320,31 +320,40 @@ def add_series_json():
 
 def view_peliculas(request):
     peliculas = pelicula.objects.all()
-    paginator = Paginator(peliculas, 20)  # Show 20 items per page
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
     if request.user.is_authenticated:
-        for p in page_obj:
-            p.valoracion_media = valoracion_pelicula.objects.filter(pelicula=p).aggregate(Avg('valoracion'))['valoracion__avg']
-            p.es_favorito = peliculas_favoritas.objects.filter(usuario=request.user, pelicula=p).exists()
-            return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj})
+        for p in peliculas:
+            valoracion_media = valoracion_pelicula.objects.filter(pelicula=p).aggregate(Avg('valoracion'))['valoracion__avg']
+            p.valoracion_media = valoracion_media
+            es_favorito = peliculas_favoritas.objects.filter(usuario=request.user, pelicula=p).exists()
+            p.es_favorito = es_favorito
+        paginator = Paginator(peliculas, 20)  # Show 20 items per page
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj})
     else:
+        paginator = Paginator(peliculas, 20)  # Show 20 items per page
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
         return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj})
 
 
 
 def view_series(request):
     series = serie.objects.all()
-    paginator = Paginator(series, 20)  # Show 20 items per page
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
     if request.user.is_authenticated:
-        for s in page_obj:
-            s.valoracion_media = valoracion_serie.objects.filter(serie=s).aggregate(Avg('valoracion'))[
+        for s in series:
+            valoracion_media = valoracion_serie.objects.filter(serie=s).aggregate(Avg('valoracion'))[
                 'valoracion__avg']
+            s.valoracion_media = 'No valorado' if valoracion_media is None else valoracion_media
             s.es_favorito = series_favoritas.objects.filter(usuario=request.user, serie=s).exists()
-            return render(request, 'series.html', {'series': series, 'page_obj': page_obj})
+        paginator = Paginator(series, 20)  # Show 20 items per page
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        return render(request, 'series.html', {'series': series, 'page_obj': page_obj})
     else:
+        paginator = Paginator(series, 20)  # Show 20 items per page
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
         return render(request, 'series.html', {'series': series, 'page_obj': page_obj})
 
 
@@ -668,6 +677,22 @@ def serie_favorita(request, id_serie):
         fav.delete()
         es_favorito = False
     return JsonResponse({'es_favorito': es_favorito})
+
+def login_admi(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(request, email=email, password=password)
+        if user is not None and user.is_staff:
+            login(request, user)
+            # Redirección tras un login exitoso
+            return redirect('admi')
+        else:
+            # Mensaje de error si la autenticación falla
+            return render(request, 'login_admi.html', {"error": "No se ha podido iniciar sesión intentalo de nuevo"})
+
+    # Mostrar formulario de login para método GET
+    return render(request, 'login_admi.html')
 
 
 def filtrar(request):

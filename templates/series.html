@@ -13,15 +13,29 @@
             <div class="columns is-multiline is-mobile">
                 {% for s in page_obj %}
                     <div class="column is-one-fifth-fullhd-only is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
-                        <a href="{% url 'serie' s.id %}">
-                            <div class="card">
+                        <div class="card">
+                            <a href="{% url 'serie' s.id %}">
                                 <div class="card-image ">
                                     <figure class="image is-2by3">
                                         <img src="{{ s.img }}" alt="Imagen de la película {{ s.nombre }}">
                                     </figure>
                                 </div>
+                            </a>
+                            <div class="card-content valoracion is-flex is-align-items-center is-justify-content-space-between p-3"
+                                 style="background-color: #FFE8D3">
+                                <h3>Puntuación: <span class="has-text-weight-bold"
+                                                      style="color: #FDA657">{{ s.valoracion_media }} </span></h3>
+                                {% if user.is_authenticated %}
+                                    {% if s.es_favorito %}
+                                        <a class="serie_favorita fa-solid fa-heart corazon" data-id="{{ s.id }}"
+                                           style="font-size: 22px"></a>
+                                    {% else %}
+                                        <a class="serie_favorita fa-regular fa-heart corazon" data-id="{{ s.id }}"
+                                           style="font-size: 22px"></a>
+                                    {% endif %}
+                                {% endif %}
                             </div>
-                        </a>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
@@ -58,4 +72,29 @@
 {% endblock %}
 {% include "footer.html" %}
 <script src="{% static 'js/navbar.js' %} "></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".corazon").click(function () {
+            var serieid = $(this).data('id');
+            var corazon = $(this);
+            $.ajax({
+                url: '/serie_favorita/' + serieid + '/',
+                data: {
+                    'peliculaId': serieid
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.es_favorito) {
+                        corazon.removeClass('fa-regular fa-heart').addClass('fa-solid fa-heart');
+                    } else {
+                        corazon.removeClass('fa-solid fa-heart').addClass('fa-regular fa-heart');
+                    }
+                }
+            });
+        });
+    });
+</script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
+</body>
+</html>

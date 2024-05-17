@@ -29,7 +29,7 @@
                                 <h3>Puntuación: <span class="has-text-weight-bold"
                                                       style="color: #FDA657">{{ p.valoracion_media }} </span></h3>
                                 {% if user.is_authenticated %}
-                                    {% if p.es_favorito %}
+                                    {% if p.es_favorito %}  
                                         <a class="pelicula_favorita fa-solid fa-heart corazon" data-id="{{ p.id }}"
                                            style="font-size: 22px"></a>
                                     {% else %}

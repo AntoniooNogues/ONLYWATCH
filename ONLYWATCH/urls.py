@@ -32,8 +32,9 @@ urlpatterns = [
 
 
     # Administracion de la Aplicacion
-    path('inicio_admi/', views.mostrar_admi),
-    path('administrador/', views.mostrar_peliculas, name='admi'),
+    path('admin_login/', views.login_admi, name='admin_login'),
+    path('inicio_admi/', views.mostrar_admi, name='admi'),
+    path('administrador/', views.mostrar_peliculas, name='admiPeliculas'),
     path('administrador/pelicula', views.new_peliculas, name='new_peliculas'),
     path('administrador/serie', views.new_serie, name='new_series'),
     path('administrador/', views.mostrar_admi, name='inicio_admi'),
@@ -72,7 +73,7 @@ urlpatterns = [
     path('pelicula_favorita/<int:id_pelicula>/', views.pelicula_favorita, name='pelicula_favorita'),
     path('serie/<int:id_serie>', views.mostrar_serie, name='serie'),
     path('serie/valorar/<int:id_serie>', views.valorar_serie, name='valorar_serie'),
-    path('serie/serie_favorita/<int:id_serie>/', views.serie_favorita, name='serie_favorita'),
+    path('serie_favorita/<int:id_serie>/', views.serie_favorita, name='serie_favorita'),
 
     # Paginas de configuracion de Usuario
     path('usuario/perfil', views.configuracion, name='configuracion'),
