@@ -12,7 +12,7 @@
             <h1 class="is-bold is-uppercase pb-6 is-size-3 has-text-centered" style="font-weight: 900">Series </h1>
             <div class="columns is-multiline is-mobile">
                 {% for s in page_obj %}
-                    <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
+                    <div class="column is-one-fifth-fullhd-only is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
                         <a href="{% url 'serie' s.id %}">
                             <div class="card">
                                 <div class="card-image ">
