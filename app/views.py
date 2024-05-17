@@ -670,4 +670,18 @@ def serie_favorita(request, id_serie):
     return JsonResponse({'es_favorito': es_favorito})
 
 
+def filtrar(request):
+    referer = request.META.get('HTTP_REFERER', '')
+    fragment = referer.split('#')[-1] if '#' in referer else ''
+    filters = dict(item.split('=') for item in fragment.split('&') if '=' in item)
 
+    year = filters.get('year', None)
+
+    if year is not None:
+        peliculas = Pelicula.objects.filter(year=year)
+        series = Serie.objects.filter(year=year)
+    else:
+        peliculas = Pelicula.objects.all()
+        series = Serie.objects.all()
+
+    return render(request, 'user_home.html', {'peliculas': peliculas, 'series': series})

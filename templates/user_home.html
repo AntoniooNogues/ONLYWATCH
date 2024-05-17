@@ -13,12 +13,12 @@
                 {% for psh in header %}
                     <div class="slider__item">
                         {% if psh|class_name == 'serie' %}
-                            <a href="{% url 'serie' psh.id %}">
+                            <a href="{% url 'serie' psh.id %}"></a>
                         {% else %}
-                            <a href="{% url 'pelicula' psh.id %}">
+                            <a href="{% url 'pelicula' psh.id %}"></a>
                         {% endif %}
                         <img class="slider__image" src="{{ psh.img }}" alt="Imagen de la pelicula {{ psh.nombre }}">
-                        <div class="slider__info">
+                        <div class="slider__info " style="width: 100%">
                             <h2>{{ psh.nombre }}</h2>
                         </div>
                     </div>
@@ -28,23 +28,63 @@
     </div>
     <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
     <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
-
     <div class="mr-5 ml-5 mt-5" id="series_peliculas">
+        <div class="mt-4 pl-5 mb-5 is-flex filtros" style="gap: 2rem">
+            <p class="is-align-content-center"><span><i class="fa-solid fa-filter fa-lg pr-2"
+                                                        style="color: #be4713;"></i> Filtros: </span></p>
+            <div class="dropdown">
+                <div class="dropdown-trigger">
+                    <button class="button is-small has-text-black has-text" aria-haspopup="true"
+                            aria-controls="dropdown-menu">
+                        Año de Estreno <span><i class="fa-solid fa-caret-down pl-3 fa-lg"></i></span>
+                    </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div class="dropdown-content"
+                         style="background: linear-gradient(180deg, rgba(251,117,46,0.9) 0%, rgba(249,91,22,0.9) 50%, rgba(194,46,12,0.9) 100%) !important;">
+                        <div class="slider-container">
+                            <div class="year-display dropdown-item has-text-black" style="font-weight: 800"
+                                 id="yearDisplay">{% now 'Y' %}</div>
+                            <div class="flex-container ml-2 mr-2">
+                                <input type="range" id="yearSlider" class="yearSlider" min="1900" max="{% now 'Y' %}"
+                                       value="{% now 'Y' %}"
+                                       oninput="updateYearDisplay(this.value)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="button is-small has-text-black has-text">Género <span><i
+                    class="fa-solid fa-caret-down pl-3 fa-lg"></i></span></button>
+            <button class="button is-small has-text-black has-text">Plataformas <span><i
+                    class="fa-solid fa-caret-down pl-3 fa-lg"></i></span></button>
+            <button class="button is-small has-text-black has-text">Calificación <span><i
+                    class="fa-solid fa-caret-down pl-3 fa-lg"></i></span></button>
+            <button class="button is-small has-text-black has-text">Reiniciar <span><i
+                    class="fa-solid fa-caret-down pl-3 fa-lg"></i></span></button>
+        </div>
         <div class="columns is-multiline is-centered is-mobile">
+
             {% for item in page_obj %}
                 <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
                     <div class="card has-text-centered">
                         {% if item|class_name == 'serie' %}
                             <a href="{% url 'serie' item.id %}">
+                                <div class="card-image">
+                                    <figure class="image is-2by3">
+                                        <img src="{{ item.img }}" alt="Imagen de {{ item.nombre }}">
+                                    </figure>
+                                </div>
+                            </a>
                         {% else %}
                             <a href="{% url 'pelicula' item.id %}">
+                                <div class="card-image">
+                                    <figure class="image is-2by3">
+                                        <img src="{{ item.img }}" alt="Imagen de {{ item.nombre }}">
+                                    </figure>
+                                </div>
+                            </a>
                         {% endif %}
-                        <div class="card-image">
-                            <figure class="image is-2by3">
-                                <img src="{{ item.img }}" alt="Imagen de {{ item.nombre }}">
-                            </figure>
-                        </div>
-                        </a>
                     </div>
                 </div>
             {% endfor %}
@@ -81,5 +121,5 @@
 
 
 {% include "footer.html" %}
-<script src="{% static 'js/navbar.js' %} "></script>
+<script src="{% static '/js/filtros.js' %}"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
