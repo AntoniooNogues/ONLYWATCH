@@ -30,81 +30,87 @@
     <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
     <div class="mr-5 ml-5 mt-5" id="series_peliculas">
         <div class="mt-4 pl-5 mb-5 is-flex filtros" style="gap: 2rem">
-            <p class="is-align-content-center"><span><i class="fa-solid fa-filter fa-lg pr-2"
-                                                        style="color: #be4713;"></i> Filtros: </span></p>
-            <div class="dropdown">
-                <div class="dropdown-trigger">
-                    <button class="button is-small has-text-black has-text" aria-haspopup="true"
-                            aria-controls="dropdown-menu"> Año de Estreno <span><i
-                            class="fa-solid fa-caret-down pl-3 fa-lg"></i></span></button>
+            <button class="button is-small has-text-black" aria-haspopup="true" aria-controls="left-menu"
+                    id="mostrar-btn">
+                <i class="fa-solid fa-filter fa-lg pr-2" style="color: #be4713;"></i>Filtros
+            </button>
+            <div class="contenido" id="informacion" style="overflow-y: auto;">
+                <div style="display: flex; justify-content: flex-end;">
+                    <button class="delete has-text-black" id="cerrar"></button>
                 </div>
-                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                    <div class="dropdown-content"
-                         style="background: linear-gradient(180deg, rgba(251,117,46,0.9) 0%, rgba(249,91,22,0.9) 50%, rgba(194,46,12,0.9) 100%) !important;">
-                        <div class="slider-container">
-                            <div class="year-display dropdown-item has-text-black" style="font-weight: 800"
-                                 id="yearDisplay">{% now 'Y' %}</div>
-                            <div class="flex-container ml-2 mr-2">
-                                <input type="range" id="yearSlider" class="yearSlider" min="1900" max="{% now 'Y' %}"
-                                       value="{% now 'Y' %}" oninput="updateYearDisplay(this.value)">
+                <div>
+                    <h3 class="has-text-black has-text-centered has-text-weight-bold is-size-5">Año de estreno</h3>
+                    <div class="year-display dropdown-item has-text-black is-size-4" style="font-weight: 800"
+                         id="yearDisplay">{% now 'Y' %}</div>
+                    <div class="flex-container ml-2 mr-2">
+                        <input type="range" id="yearSlider" class="yearSlider" min="1900" max="{% now 'Y' %}"
+                               value="{% now 'Y' %}" oninput="updateYearDisplay(this.value)">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="has-text-black has-text-centered has-text-weight-bold is-size-5 mt-3 mb-3">Géneros</h3>
+                    <div class="columns is-multiline is-mobile ml-4">
+                        {% for g in generos %}
+                            <div class="column is-half">
+                                <div class="slider-container">
+                                    <label class="checkbox is-medium is-flex is-align-items-center"
+                                           style="margin-right: 5px;">
+                                        <input type="checkbox" id="genre" name="genre" value="{{ g.id }}"
+                                               class="genreSlider mr-2" onchange="updateGenreDisplay(this.value)">
+                                        <span class="has-text-black" style="font-weight: 800">{{ g.nombre }}</span>
+                                    </label>
+                                </div>
                             </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
-            </div>
-            <div class="dropdown">
-                <div class="dropdown-trigger">
-                    <button class="button is-small has-text-black has-text" aria-haspopup="true"
-                            aria-controls="dropdown-menu"> Género <span><i
-                            class="fa-solid fa-caret-down pl-3 fa-lg"></i></span></button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                    <div class="dropdown-content"
-                         style="background: linear-gradient(180deg, rgba(251,117,46,0.9) 0%, rgba(249,91,22,0.9) 50%, rgba(194,46,12,0.9) 100%) !important; max-width: none !important;">
-                        <div class="grid-container">
-                            {% for g in generos %}
-                                <div class="slider-container is-flex  is-justify-content-center">
-                                    <input type="checkbox" id="genre" name="genre" value="{{ g.id }}" class="genreSlider is-justify-content-center" oninput="updateGenreDisplay(this.value)">
-                                    <div class="year-display dropdown-item has-text-black is-justify-content-center is-align-content-center" style="font-weight: 800" id="yearDisplay">{{ g.nombre }}</div>
+                <div style="margin: 0; padding: 0">
+                    <h3 class="has-text-black has-text-centered has-text-weight-bold is-size-5 mt-3 mb-3">
+                        Plataformas</h3>
+                    <div class="columns is-multiline is-centered">
+                        {% for p in plataformas %}
+                            <div class="column is-half is-flex is-justify-content-center">
+                                <div class="slider-container">
+                                    <figure class="image is-64x64">
+                                        <img src="{{ p.img.url }}" alt="Imagen de la plataforma {{ p.nombre }}"
+                                             style="display: block; margin: 0 auto;">
+                                    </figure>
                                 </div>
-                            {% endfor %}
-                        </div>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
-            </div>
-            <button class="button is-small has-text-black has-text">Plataformas <span><i
-                    class="fa-solid fa-caret-down pl-3 fa-lg"></i></span></button>
-            <button class="button is-small has-text-black has-text">Calificación <span><i
-                    class="fa-solid fa-caret-down pl-3 fa-lg"></i></span></button>
-            <button class="button is-small has-text-black has-text">Reiniciar <span><i
-                    class="fa-solid fa-caret-down pl-3 fa-lg"></i></span></button>
-        </div>
-        <div class="columns is-multiline is-centered is-mobile">
 
-            {% for item in page_obj %}
-                <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
-                    <div class="card has-text-centered">
-                        {% if item|class_name == 'serie' %}
-                            <a href="{% url 'serie' item.id %}">
-                                <div class="card-image">
-                                    <figure class="image is-2by3">
-                                        <img src="{{ item.img }}" alt="Imagen de {{ item.nombre }}">
-                                    </figure>
-                                </div>
-                            </a>
-                        {% else %}
-                            <a href="{% url 'pelicula' item.id %}">
-                                <div class="card-image">
-                                    <figure class="image is-2by3">
-                                        <img src="{{ item.img }}" alt="Imagen de {{ item.nombre }}">
-                                    </figure>
-                                </div>
-                            </a>
-                        {% endif %}
-                    </div>
-                </div>
-            {% endfor %}
+            </div>
         </div>
+
+    </div>
+    <div class="columns is-multiline is-centered is-mobile">
+
+        {% for item in page_obj %}
+            <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
+                <div class="card has-text-centered">
+                    {% if item|class_name == 'serie' %}
+                        <a href="{% url 'serie' item.id %}">
+                            <div class="card-image">
+                                <figure class="image is-2by3">
+                                    <img src="{{ item.img }}" alt="Imagen de {{ item.nombre }}">
+                                </figure>
+                            </div>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'pelicula' item.id %}">
+                            <div class="card-image">
+                                <figure class="image is-2by3">
+                                    <img src="{{ item.img }}" alt="Imagen de {{ item.nombre }}">
+                                </figure>
+                            </div>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
     </div>
     <div class="mt-5">
         <nav class="pagination is-small is-centered" role="navigation" aria-label="pagination">
