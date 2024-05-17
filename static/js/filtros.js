@@ -1,12 +1,20 @@
 // Funcion para desplegar los dropdowns de los filtros
-document.addEventListener('DOMContentLoaded', function () {
-    var dropdowns = document.querySelectorAll('.dropdown');
-    dropdowns.forEach(function (dropdown) {
-        dropdown.querySelector('.dropdown-trigger button').addEventListener('click', function () {
-            dropdown.classList.toggle('is-active');
-        });
-    });
-});
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('informacion').style.display = 'none';
+  });
+
+  document.getElementById('mostrar-btn').addEventListener('click', function() {
+    var informacion = document.getElementById('informacion');
+    if (informacion.style.display === 'none') {
+      informacion.style.display = 'block';
+    } else {
+      informacion.style.display = 'none';
+    }
+  });
+
+  document.getElementById('cerrar').addEventListener('click', function() {
+    document.getElementById('informacion').style.display = 'none';
+  });
 
 // Funcion para seleccionar y mostrar el año seleccionado para el filtro de año
 function updateYearDisplay(year) {
