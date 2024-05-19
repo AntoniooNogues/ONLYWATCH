@@ -654,8 +654,9 @@ def pelicula_favorita(request, id_pelicula):
 
 
 
-def valorar_serie(request, id_serie):
+def valorar_serie(request, ):
     if request.method == 'POST':
+        id_serie = request.POST.get('serie_id')
         serie_valorar = get_object_or_404(serie, id=id_serie)
         valoracion = request.POST.get('valoracion')
         try:
@@ -664,7 +665,7 @@ def valorar_serie(request, id_serie):
             valoracion_serie.objects.create(usuario=request.user, serie=serie_valorar, valoracion=valoracion)
         else:
             messages.error(request, 'Ya has valorado esta serie anteriormente.')
-        return redirect('serie', id=id_serie)
+        return mostrar_serie(request, id_serie)
 
 def serie_favorita(request, id_serie):
     serie_instancia = get_object_or_404(serie, id=id_serie)

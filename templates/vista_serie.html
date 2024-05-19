@@ -28,8 +28,9 @@
             {% if user.is_authenticated %}
                 <div class="ml-4">
                     Añade tu puntuación:
-                    <form method="POST" action="{% url 'valorar_serie' serie.id %}">
+                    <form method="POST" action="{% url 'valorar_serie'  %}">
                         {% csrf_token %}
+                        <input type="hidden" name="serie_id" value="{{ serie.id }}">
                         <input type="number" name="valoracion" min="0" max="10" required>
                         <input type="submit" value="Valorar">
                     </form>
@@ -93,16 +94,8 @@
         <h2 class="is-size-4 has-text-weight-bold pb-4">Reparto</h2>
         <div class="columns is-multiline">
             {% for p in pj %}
-                <div class="column is-2">
-                    <figure>
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-2by3 mb-4">
-                                    <img src="{{ p.actor.img }}"
-                                         alt="Imagen del Personaje, {{ p.nombre_personaje }}">
-                                </figure>
-                            </div>
-                        </div>
+                <div class="column is-2 ">
+                    <figure class="box">
                         <p class="has-text-centered">Actor: {{ p.actor.nombre }}</p>
                         <p class="has-text-centered">Personaje: {{ p.nombre_personaje }}</p>
                     </figure>

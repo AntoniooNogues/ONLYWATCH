@@ -72,20 +72,20 @@ urlpatterns = [
     path('pelicula/valorar/<int:id_pelicula>', views.valorar_pelicula, name='valorar_pelicula'),
     path('pelicula_favorita/<int:id_pelicula>/', views.pelicula_favorita, name='pelicula_favorita'),
     path('serie/<int:id_serie>', views.mostrar_serie, name='serie'),
-    path('serie/valorar/<int:id_serie>', views.valorar_serie, name='valorar_serie'),
+    path('serie/valorar/', views.valorar_serie, name='valorar_serie'),
     path('serie_favorita/<int:id_serie>/', views.serie_favorita, name='serie_favorita'),
 
     # Paginas de configuracion de Usuario
     path('usuario/perfil', views.configuracion, name='configuracion'),
     path('send_verification_code/', views.send_verification_code, name='send_verification_code'),
     path('verify_code/', views.verify_code, name='verify_code'),
-    path('vincular_desvincular_plataforma/<int:plataforma_id>/', views.vincular_desvincular_plataforma, name='vincular_desvincular_plataforma'),
+    path('plataformas/vincular_desvincular_plataforma/<int:plataforma_id>/', views.vincular_desvincular_plataforma, name='vincular_desvincular_plataforma'),
     path('editar_perfil/', views.configurar_perfil, name='editar_perfil'),
 
     # Cargar datos
     # path('cargar_datos/actores/pelicula', views.anadir_actores_personaje_pelicula, name='cargar_datos_pelis_actores'),
     # path('cargar_datos/actores/serie', views.anadir_actores_personaje_serie, name='cargar_datos_series_actores'),
-    path('cargar_datos/anadir_base_datos/actores_personajes', views.cargar_actores_personajes, name='cargar_base_datos_actores_personajes'),
+    # path('cargar_datos/anadir_base_datos/actores_personajes', views.cargar_actores_personajes, name='cargar_base_datos_actores_personajes'),
 ]
 
 if settings.DEBUG:
