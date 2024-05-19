@@ -3,6 +3,8 @@
 
 body {
     font-family: "Manrope", sans-serif;
+    min-height: 100vh;
+    margin: 0;
 }
 .fondo {
     background-image: url("/static/img/fondo_registro_login.png");

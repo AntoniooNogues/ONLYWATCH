@@ -694,5 +694,143 @@ def login_admi(request):
     # Mostrar formulario de login para método GET
     return render(request, 'login_admi.html')
 
+def anadir_actores_personaje_pelicula(request):
+    # Diccionario para almacenar actores únicos
+    actores_unicos = {}
+    actor_id = 1
 
+    # Lista para personajes
+    personajes = []
 
+    # Leer el archivo pelicula_acotores_v1.json
+    with open('static/pelicula_acotores_v1.json', 'r', encoding='utf-8') as file:
+        datos_peliculas = json.load(file)
+
+    # Procesar datos
+    for pelicula in datos_peliculas:
+        pelicula_id = pelicula["pelicula_id"]
+        for actor in pelicula["actores"]:
+            nombre_actor = actor["nombre"]
+            if nombre_actor not in actores_unicos:
+                actores_unicos[nombre_actor] = {
+                    "id": actor_id,
+                    "nombre": nombre_actor
+                }
+                actor_id += 1
+            personajes.append({
+                "nombre_personaje": actor["nombre_personaje"],
+                "actor_id": actores_unicos[nombre_actor]["id"],
+                "pelicula_id": pelicula_id
+            })
+
+    # Crear JSON para actores
+    json_actores = [{"id": actor["id"], "nombre": actor["nombre"]} for actor in
+                    actores_unicos.values()]
+
+    # Crear JSON para personajes
+    json_personajes = personajes
+
+    # Guardar JSON en archivos
+    with open('actores.json', 'w', encoding='utf-8') as f:
+        json.dump(json_actores, f, indent=4, ensure_ascii=False)
+
+    with open('personajes_pelicula.json', 'w', encoding='utf-8') as f:
+        json.dump(json_personajes, f, indent=4, ensure_ascii=False)
+
+    return HttpResponse("JSON de actores y personajes generados con éxito.")
+
+def anadir_actores_personaje_serie(request):
+    # Diccionario para almacenar actores únicos
+    actores_unicos = {}
+    actor_id = 303
+
+    # Lista para personajes
+    personajes = []
+
+    # Leer el archivo pelicula_acotores_v1.json
+    with open('static/serie_actores_v1.json', 'r', encoding='utf-8') as file:
+        datos_peliculas = json.load(file)
+
+    # Load the JSON file
+    with open('static/actores.json', 'r', encoding='utf-8') as f:
+        existing_actors = json.load(f)
+
+    # Convert the list of dictionaries to a list of actor names
+    existing_actor_names = [actor['nombre'] for actor in existing_actors]
+
+    # Procesar datos
+    for serie in datos_peliculas:
+        serie_id = serie["serie_id"]
+        for actor in serie["actores"]:
+            nombre_actor = actor["nombre"]
+            if nombre_actor not in existing_actor_names:
+                actores_unicos[nombre_actor] = {
+                    "id": actor_id,
+                    "nombre": nombre_actor
+                }
+                actor_id += 1
+            if nombre_actor in actores_unicos:
+                personajes.append({
+                    "nombre_personaje": actor["nombre_personaje"],
+                    "actor_id": actores_unicos[nombre_actor]["id"],
+                    "serie_id": serie_id
+                })
+
+    # Crear JSON para actores
+    json_actores = [{"id": actor["id"], "nombre": actor["nombre"]} for actor in
+                    actores_unicos.values()]
+
+    # Crear JSON para personajes
+    json_personajes = personajes
+
+    existing_actors.extend(json_actores)
+
+    # Guardar JSON en archivos
+    with open('actores.json', 'w', encoding='utf-8') as f:
+        json.dump(existing_actors, f, indent=4, ensure_ascii=False)
+
+    with open('personaje_serie.json', 'w', encoding='utf-8') as f:
+        json.dump(json_personajes, f, indent=4, ensure_ascii=False)
+
+    return HttpResponse("JSON de actores y personajes generados con éxito.")
+
+def anadir_actores():
+    with open('static/actores.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+    for gen in data:
+        g = actor()
+        g.id = gen['id']
+        g.nombre = gen['nombre']
+        g.save()
+    return HttpResponse("Datos de actores cargados correctamente")
+
+def anadir_personaje_pelicula():
+    with open('static/personajes_pelicula.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+    for gen in data:
+        g = personaje_pelicula()
+        g.nombre_personaje = gen['nombre_personaje']
+        g.actor_id = gen['actor_id']
+        g.pelicula_id = gen['pelicula_id']
+        g.save()
+    return HttpResponse("Datos de personajes de peliculas cargados correctamente")
+
+def anadir_personaje_serie():
+    with open('static/personaje_serie.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+    for gen in data:
+        g = personaje_serie()
+        g.nombre_personaje = gen['nombre_personaje']
+        g.actor_id = gen['actor_id']
+        g.serie_id = gen['serie_id']
+        g.save()
+    return HttpResponse("Datos de personajes de series cargados correctamente")
+
+def cargar_actores_personajes(request):
+    anadir_actores()
+    # anadir_personaje_pelicula()
+    anadir_personaje_serie()
+    return HttpResponse("Datos de actores y personajes cargados correctamente")
