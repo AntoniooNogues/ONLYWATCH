@@ -67,6 +67,8 @@ def mostrar_inicio(request):
     headerS = list(serie.objects.order_by('?')[:5])
     headerPS = headerP + headerS
     random.shuffle(headerPS)
+    gen=genero.objects.all()
+    plt = plataforma.objects.all()
     #Parte Peliculas y Series de Home
     series_list = list(serie.objects.all())
     peliculas_list = list(pelicula.objects.all())
@@ -76,7 +78,7 @@ def mostrar_inicio(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'user_home.html', {'header': headerPS, 'page_obj': page_obj})
+    return render(request, 'user_home.html', {'header': headerPS, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
 
 def register(request):
     if request.method == 'GET':
@@ -728,13 +730,25 @@ def anadir_actores_personaje_pelicula(request):
     json_actores = [{"id": actor["id"], "nombre": actor["nombre"]} for actor in
                     actores_unicos.values()]
 
+def filtrar(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+
+        generosSeleccionados = data.get('generos')
+        plataformasSeleccionadas = data.get('plataformas')
     # Crear JSON para personajes
     json_personajes = personajes
 
+        # Aquí puedes procesar los datos como necesites
     # Guardar JSON en archivos
     with open('actores.json', 'w', encoding='utf-8') as f:
         json.dump(json_actores, f, indent=4, ensure_ascii=False)
 
+        # Envía una respuesta al cliente
+        return JsonResponse({'message': 'Datos recibidos correctamente'})
+
+    else:
+        return JsonResponse({'error': 'Invalid request'}, status=400)
     with open('personajes_pelicula.json', 'w', encoding='utf-8') as f:
         json.dump(json_personajes, f, indent=4, ensure_ascii=False)
 

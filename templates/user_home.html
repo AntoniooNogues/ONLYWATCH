@@ -14,13 +14,21 @@
                     <div class="slider__item">
                         {% if psh|class_name == 'serie' %}
                             <a href="{% url 'serie' psh.id %}">
+                                <img class="slider__image" src="{{ psh.img }}"
+                                     alt="Imagen de la pelicula {{ psh.nombre }}">
+                                <div class="slider__info " style="width: 100%">
+                                    <h2>{{ psh.nombre }}</h2>
+                                </div>
+                            </a>
                         {% else %}
                             <a href="{% url 'pelicula' psh.id %}">
+                                <img class="slider__image" src="{{ psh.img }}"
+                                     alt="Imagen de la pelicula {{ psh.nombre }}">
+                                <div class="slider__info " style="width: 100%">
+                                    <h2>{{ psh.nombre }}</h2>
+                                </div>
+                            </a>
                         {% endif %}
-                        <img class="slider__image" src="{{ psh.img }}" alt="Imagen de la pelicula {{ psh.nombre }}">
-                        <div class="slider__info">
-                            <h2>{{ psh.nombre }}</h2>
-                        </div>
                     </div>
                 {% endfor %}
             </div>
@@ -28,27 +36,128 @@
     </div>
     <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
     <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
-
     <div class="mr-5 ml-5 mt-5" id="series_peliculas">
-        <div class="columns is-multiline is-centered is-mobile">
-            {% for item in page_obj %}
-                <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
-                    <div class="card has-text-centered">
-                        {% if item|class_name == 'serie' %}
-                            <a href="{% url 'serie' item.id %}">
-                        {% else %}
-                            <a href="{% url 'pelicula' item.id %}">
-                        {% endif %}
-                        <div class="card-image">
-                            <figure class="image is-2by3">
-                                <img src="{{ item.img }}" alt="Imagen de {{ item.nombre }}">
-                            </figure>
+        <div class="mt-4 pl-5 mb-5 is-flex filtros is-align-content-center is-justify-content-center"
+             style="flex-direction: column;">
+            <div class="is-flex is-align-items-center" style="gap: 2rem;">
+                <span class="has-text-black is-size-4 has-text-weight-bold">Filtros:</span>
+                <div class="dropdown" id="dropdown-year">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-year">
+                            <span>Año de estreno</span>
+                            <span class="icon is-small">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu-year" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <div class="year-display has-text-black is-size-4 has-text-centered pb-2"
+                                     style="font-weight: 800" id="yearDisplay">{% now 'Y' %}</div>
+                                <div class="flex-container ml-2 mr-2">
+                                    <input type="range" id="yearSlider" class="yearSlider" min="1900"
+                                           max="{% now 'Y' %}" value="{% now 'Y' %}"
+                                           oninput="updateYearDisplay(this.value)"></div>
+                            </div>
                         </div>
-                        </a>
                     </div>
                 </div>
-            {% endfor %}
+
+                <div class="dropdown" id="dropdown-genres">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-genres">
+                            <span>Géneros</span>
+                            <span class="icon is-small">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu-genres" role="menu">
+                        <div class="dropdown-content scrollable-dropdown">
+                            {% for g in generos %}
+                                <a href="#" class="dropdown-item" onclick="stopPropagation()">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="generos" value="{{ g.id }}" class="mr-2"> {{ g.nombre }}
+                                    </label>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown" id="dropdown-platforms">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-platforms">
+                            <span>Plataformas</span>
+                            <span class="icon is-small">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu-platforms" role="menu">
+                        <div class="dropdown-content scrollable-dropdown">
+                            {% for p in plataformas %}
+                                <a href="#" class="dropdown-item" onclick="stopPropagation()">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="platformas" value="{{ p.id }}" class="mr-2"> {{ p.nombre }}
+                                    </label>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown" id="dropdown-rating">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-rating">
+                            <span>Puntuación media de usuarios</span>
+                            <span class="icon is-small">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu-rating" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <div class="year-display has-text-black is-size-4 has-text-centered pb-2"
+                                     style="font-weight: 800" id="puntuacionDisplay">5
+                                </div>
+                                <div class="flex-container ml-2 mr-2">
+                                    <input type="range" id="ratingSlider" class="yearSlider" min="0" max="10" value="5"
+                                           oninput="updatePuntuacionDisplay(this.value)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="columns is-multiline is-centered is-mobile">
+        {% for item in page_obj %}
+            <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
+                <div class="card has-text-centered">
+                    {% if item|class_name == 'serie' %}
+                        <a href="{% url 'serie' item.id %}">
+                            <div class="card-image">
+                                <figure class="image is-2by3">
+                                    <img src="{{ item.img }}" alt="Imagen de {{ item.nombre }}">
+                                </figure>
+                            </div>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'pelicula' item.id %}">
+                            <div class="card-image">
+                                <figure class="image is-2by3">
+                                    <img src="{{ item.img }}" alt="Imagen de {{ item.nombre }}">
+                                </figure>
+                            </div>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
     </div>
     <div class="mt-5">
         <nav class="pagination is-small is-centered" role="navigation" aria-label="pagination">
@@ -81,5 +190,5 @@
 
 
 {% include "footer.html" %}
-<script src="{% static 'js/navbar.js' %} "></script>
+<script src="{% static '/js/filtros.js' %}"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
