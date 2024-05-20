@@ -11,11 +11,11 @@
         <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
         <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
         <div class="is-centered mr-5 ml-5">
-            <h1 class="is-bold is-uppercase pb-6 is-size-1 has-text-centered mali" style="font-weight: 900">
+            <h1 class="is-bold is-uppercase pb-6 is-size-2 has-text-centered mali" style="font-weight: 900">
                 Peliculas </h1>
             <div class="columns is-multiline is-mobile">
                 {% for p in page_obj %}
-                    <div class="column is-one-fifth-fullhd-only is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
+                    <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
                         <div class="card">
                             <a href="{% url 'pelicula' id_pelicula=p.id %}">
                                 <div class="card-image">
