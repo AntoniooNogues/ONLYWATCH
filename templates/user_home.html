@@ -13,14 +13,22 @@
                 {% for psh in header %}
                     <div class="slider__item">
                         {% if psh|class_name == 'serie' %}
-                            <a href="{% url 'serie' psh.id %}"></a>
+                            <a href="{% url 'serie' psh.id %}">
+                                <img class="slider__image" src="{{ psh.img }}"
+                                     alt="Imagen de la pelicula {{ psh.nombre }}">
+                                <div class="slider__info " style="width: 100%">
+                                    <h2>{{ psh.nombre }}</h2>
+                                </div>
+                            </a>
                         {% else %}
-                            <a href="{% url 'pelicula' psh.id %}"></a>
+                            <a href="{% url 'pelicula' psh.id %}">
+                                <img class="slider__image" src="{{ psh.img }}"
+                                     alt="Imagen de la pelicula {{ psh.nombre }}">
+                                <div class="slider__info " style="width: 100%">
+                                    <h2>{{ psh.nombre }}</h2>
+                                </div>
+                            </a>
                         {% endif %}
-                        <img class="slider__image" src="{{ psh.img }}" alt="Imagen de la pelicula {{ psh.nombre }}">
-                        <div class="slider__info " style="width: 100%">
-                            <h2>{{ psh.nombre }}</h2>
-                        </div>
                     </div>
                 {% endfor %}
             </div>
@@ -29,64 +37,104 @@
     <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
     <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
     <div class="mr-5 ml-5 mt-5" id="series_peliculas">
-        <div class="mt-4 pl-5 mb-5 is-flex filtros" style="gap: 2rem">
-            <button class="button is-small has-text-black" aria-haspopup="true" aria-controls="left-menu"
-                    id="mostrar-btn">
-                <i class="fa-solid fa-filter fa-lg pr-2" style="color: #be4713;"></i>Filtros
-            </button>
-            <div class="contenido" id="informacion" style="overflow-y: auto;">
-                <div style="display: flex; justify-content: flex-end;">
-                    <button class="delete has-text-black" id="cerrar"></button>
-                </div>
-                <div>
-                    <h3 class="has-text-black has-text-centered has-text-weight-bold is-size-5">Año de estreno</h3>
-                    <div class="year-display dropdown-item has-text-black is-size-4" style="font-weight: 800"
-                         id="yearDisplay">{% now 'Y' %}</div>
-                    <div class="flex-container ml-2 mr-2">
-                        <input type="range" id="yearSlider" class="yearSlider" min="1900" max="{% now 'Y' %}"
-                               value="{% now 'Y' %}" oninput="updateYearDisplay(this.value)">
+        <div class="mt-4 pl-5 mb-5 is-flex filtros is-align-content-center is-justify-content-center"
+             style="flex-direction: column;">
+            <div class="is-flex is-align-items-center" style="gap: 2rem;">
+                <span class="has-text-black is-size-4 has-text-weight-bold">Filtros:</span>
+                <div class="dropdown" id="dropdown-year">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-year">
+                            <span>Año de estreno</span>
+                            <span class="icon is-small">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                        </button>
                     </div>
-                </div>
-                <div>
-                    <h3 class="has-text-black has-text-centered has-text-weight-bold is-size-5 mt-3 mb-3">Géneros</h3>
-                    <div class="columns is-multiline is-mobile ml-4">
-                        {% for g in generos %}
-                            <div class="column is-half">
-                                <div class="slider-container">
-                                    <label class="checkbox is-medium is-flex is-align-items-center"
-                                           style="margin-right: 5px;">
-                                        <input type="checkbox" id="genre" name="genre" value="{{ g.id }}"
-                                               class="genreSlider mr-2" onchange="updateGenreDisplay(this.value)">
-                                        <span class="has-text-black" style="font-weight: 800">{{ g.nombre }}</span>
-                                    </label>
-                                </div>
+                    <div class="dropdown-menu" id="dropdown-menu-year" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <div class="year-display has-text-black is-size-4 has-text-centered pb-2"
+                                     style="font-weight: 800" id="yearDisplay">{% now 'Y' %}</div>
+                                <div class="flex-container ml-2 mr-2">
+                                    <input type="range" id="yearSlider" class="yearSlider" min="1900"
+                                           max="{% now 'Y' %}" value="{% now 'Y' %}"
+                                           oninput="updateYearDisplay(this.value)"></div>
                             </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                <div style="margin: 0; padding: 0">
-                    <h3 class="has-text-black has-text-centered has-text-weight-bold is-size-5 mt-3 mb-3">
-                        Plataformas</h3>
-                    <div class="columns is-multiline is-centered">
-                        {% for p in plataformas %}
-                            <div class="column is-half is-flex is-justify-content-center">
-                                <div class="slider-container">
-                                    <figure class="image is-64x64">
-                                        <img src="{{ p.img.url }}" alt="Imagen de la plataforma {{ p.nombre }}"
-                                             style="display: block; margin: 0 auto;">
-                                    </figure>
-                                </div>
-                            </div>
-                        {% endfor %}
+                        </div>
                     </div>
                 </div>
 
+                <div class="dropdown" id="dropdown-genres">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-genres">
+                            <span>Géneros</span>
+                            <span class="icon is-small">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu-genres" role="menu">
+                        <div class="dropdown-content scrollable-dropdown">
+                            {% for g in generos %}
+                                <a href="#" class="dropdown-item" onclick="stopPropagation()">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="generos" value="{{ g.id }}" class="mr-2"> {{ g.nombre }}
+                                    </label>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown" id="dropdown-platforms">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-platforms">
+                            <span>Plataformas</span>
+                            <span class="icon is-small">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu-platforms" role="menu">
+                        <div class="dropdown-content scrollable-dropdown">
+                            {% for p in plataformas %}
+                                <a href="#" class="dropdown-item" onclick="stopPropagation()">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="platformas" value="{{ p.id }}" class="mr-2"> {{ p.nombre }}
+                                    </label>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown" id="dropdown-rating">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-rating">
+                            <span>Puntuación media de usuarios</span>
+                            <span class="icon is-small">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu-rating" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <div class="year-display has-text-black is-size-4 has-text-centered pb-2"
+                                     style="font-weight: 800" id="puntuacionDisplay">5
+                                </div>
+                                <div class="flex-container ml-2 mr-2">
+                                    <input type="range" id="ratingSlider" class="yearSlider" min="0" max="10" value="5"
+                                           oninput="updatePuntuacionDisplay(this.value)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
     <div class="columns is-multiline is-centered is-mobile">
-
         {% for item in page_obj %}
             <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
                 <div class="card has-text-centered">
@@ -110,7 +158,6 @@
                 </div>
             </div>
         {% endfor %}
-    </div>
     </div>
     <div class="mt-5">
         <nav class="pagination is-small is-centered" role="navigation" aria-label="pagination">
