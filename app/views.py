@@ -698,17 +698,16 @@ def login_admi(request):
 
 
 def filtrar(request):
-    referer = request.META.get('HTTP_REFERER', '')
-    fragment = referer.split('#')[-1] if '#' in referer else ''
-    filters = dict(item.split('=') for item in fragment.split('&') if '=' in item)
+    if request.method == 'POST':
+        data = json.loads(request.body)
 
-    year = filters.get('year', None)
+        generosSeleccionados = data.get('generos')
+        plataformasSeleccionadas = data.get('plataformas')
 
-    if year is not None:
-        peliculas = Pelicula.objects.filter(year=year)
-        series = Serie.objects.filter(year=year)
+        # Aquí puedes procesar los datos como necesites
+
+        # Envía una respuesta al cliente
+        return JsonResponse({'message': 'Datos recibidos correctamente'})
+
     else:
-        peliculas = Pelicula.objects.all()
-        series = Serie.objects.all()
-
-    return render(request, 'user_home.html', {'peliculas': peliculas, 'series': series})
+        return JsonResponse({'error': 'Invalid request'}, status=400)

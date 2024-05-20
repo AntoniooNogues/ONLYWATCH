@@ -1,34 +1,100 @@
-// Funcion para desplegar los dropdowns de los filtros
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('informacion').style.display = 'none';
-  });
+function updateYearDisplay(value) {
+    document.getElementById('yearDisplay').textContent = value;
+}
 
-  document.getElementById('mostrar-btn').addEventListener('click', function() {
-    var informacion = document.getElementById('informacion');
-    if (informacion.style.display === 'none') {
-      informacion.style.display = 'block';
-    } else {
-      informacion.style.display = 'none';
+function updatePuntuacionDisplay(value) {
+    document.getElementById('puntuacionDisplay').textContent = value;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    function toggleDropdown(event) {
+        event.stopPropagation();
+        const dropdown = event.currentTarget.closest('.dropdown');
+
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(drp => {
+            if (drp !== dropdown) {
+                drp.classList.remove('is-active');
+            }
+        });
+
+        dropdown.classList.toggle('is-active');
     }
-  });
 
-  document.getElementById('cerrar').addEventListener('click', function() {
-    document.getElementById('informacion').style.display = 'none';
-  });
+    const dropdownTriggers = document.querySelectorAll('.dropdown-trigger button');
 
-// Funcion para seleccionar y mostrar el año seleccionado para el filtro de año
-function updateYearDisplay(year) {
-    document.getElementById('yearDisplay').innerText = year;
+    dropdownTriggers.forEach(button => {
+        button.addEventListener('click', toggleDropdown);
+    });
+
+    const checkboxes = document.querySelectorAll('.dropdown-item input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const labels = document.querySelectorAll('.dropdown-item label');
+
+    labels.forEach(label => {
+        label.addEventListener('click', function(event) {
+            // Detén la propagación del evento para evitar que el dropdown se cierre
+            event.stopPropagation();
+        });
+    });
+});
+
+let generosSeleccionados = [];
+let plataformasSeleccionadas = [];
+
+document.querySelectorAll('input[name="generos"]').forEach((checkbox) => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            generosSeleccionados.push(this.value);
+        } else {
+            var index = generosSeleccionados.indexOf(this.value);
+            if (index !== -1) {
+                generosSeleccionados.splice(index, 1);
+            }
+        }
+    });
+});
+
+document.querySelectorAll('input[name="platformas"]').forEach((checkbox) => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            plataformasSeleccionadas.push(this.value);
+        } else {
+            var index = plataformasSeleccionadas.indexOf(this.value);
+            if (index !== -1) {
+                plataformasSeleccionadas.splice(index, 1);
+            }
+        }
+    });
+});
+
+
+
+function enviarDatosServidor() {
+    fetch('/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            generos: generosSeleccionados,
+            plataformas: plataformasSeleccionadas,
+        }),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch((error) => {
+        console.error('Error:', error);
+    });
 }
 
- window.onload = function() {
-        var yearSlider = document.getElementById('yearSlider');
-        var maxYear = yearSlider.getAttribute('max');
-        yearSlider.value = maxYear; // Establece el valor inicial en el máximo
-        updateYearDisplay(maxYear); // Actualiza el año mostrado
-    };
-
-function  updateGenreDisplay(genre) {
-    document.getElementById('genreDisplay').innerText = genre;
-}
-
+document.querySelectorAll('input[name="generos"], input[name="platformas"]').forEach((checkbox) => {
+    checkbox.addEventListener('change', enviarDatosServidor);
+});

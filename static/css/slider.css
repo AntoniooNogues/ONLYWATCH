@@ -282,13 +282,14 @@ input#search-input:hover, input#search-input:focus{
 }
 
 
-.contenido{
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 34%;
-  height: 100vh;
-  background-color: #c59375 !important;
-  padding: 20px;
-  z-index: 1000;
+/* Oculta el dropdown por defecto */
+.scrollable-dropdown {
+    max-height: 200px; /* Ajusta este valor según el tamaño de tus elementos */
+    overflow-y: auto;
+}
+
+/* Muestra el dropdown cuando se pasa el mouse por encima */
+.navbar-item.has-dropdown.is-hoverable:hover .scrollable-dropdown {
+    max-height: 200px;
+    visibility: visible;
 }
