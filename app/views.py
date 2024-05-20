@@ -131,7 +131,7 @@ def new_peliculas(request):
         new.director = request.POST.get('director')
         new.save()
 
-        return redirect('/administrador/pelicula')
+        return redirect('/administracion/pelicula')
 
 
 def new_serie(request):
@@ -148,7 +148,7 @@ def new_serie(request):
         new.director = request.POST.get('director_serie')
         new.save()
 
-        return redirect('/administrador/series_actuales')
+        return redirect('/administracion/series_actuales')
 
 def new_actor(request):
     if request.method == 'GET':
@@ -160,7 +160,7 @@ def new_actor(request):
         new.img = request.POST.get('img_actor')
         new.save()
 
-        return redirect('/administrador/listado_actores')
+        return redirect('/administracion/listado_actores')
 
 def mostrar_series(request):
     ser = serie.objects.all()
@@ -178,24 +178,24 @@ def mostrar_actores(request):
 def eliminar_actor(request, id):
     actor_eliminar = actor.objects.get(id=id)
     actor_eliminar.delete()
-    return redirect('/administrador/listado_actores')
+    return redirect('/administracion/listado_actores')
 
 def eliminar_usuario(request, id):
     usuario = User.objects.get(id=id)
     usuario.delete()
-    return redirect('/administrador/usuarios')
+    return redirect('/administracion/usuarios')
 
 
 def eliminar_pelicula(request, id):
     pelicula_eliminar = pelicula.objects.get(id=id)
     pelicula_eliminar.delete()
-    return redirect('/administrador/pelicula')
+    return redirect('/administracion/pelicula')
 
 
 def eliminar_serie(request, id):
     serie_eliminar = serie.objects.get(id=id)
     serie_eliminar.delete()
-    return redirect('/administrador/series_actuales')
+    return redirect('/administracion/series_actuales')
 
 
 def editar_pelicula(request, id):
@@ -211,7 +211,7 @@ def editar_pelicula(request, id):
         peli.director = request.POST.get('director')
         peli.save()
 
-        return redirect('/administrador/pelicula')
+        return redirect('/administracion/pelicula')
 
 
 def editar_serie(request, id):
@@ -227,7 +227,7 @@ def editar_serie(request, id):
         serie_editar.director = request.POST.get('director')
         serie_editar.save()
 
-        return redirect('/administrador/series_actuales')
+        return redirect('/administracion/series_actuales')
 
 def editar_actor(request, id):
     actor_editar = actor.objects.get(id=id)
@@ -238,7 +238,7 @@ def editar_actor(request, id):
         actor_editar.img = request.POST.get('img')
         actor_editar.save()
 
-        return redirect('/administrador/listado_actores')
+        return redirect('/administracion/listado_actores')
 
 
 
@@ -502,7 +502,7 @@ def add_uniones_peliculas(request, id):
         return render(request, 'unir_pelicula.html', {'pelicula': pelicula_instancia, 'generos': generos_totales ,'genero_vinculado': generos_vinculados, 'plataformas_totales': plataformas_totales, 'plataformas_vinculadas': plataformas_vinculadas,'actores': actor.objects.all()})
     else:
 
-        return redirect('/administrador/listado_actores')
+        return redirect('/administracion/listado_actores')
 
 def new_genero(request):
     if request.method == 'GET':
@@ -514,7 +514,7 @@ def new_genero(request):
         new.descripcion = request.POST.get('descripcion')
         new.save()
 
-        return redirect('/administrador/listado_generos')
+        return redirect('/administracion/listado_generos')
 
 def add_vinculacion_genero_json():
     with open('static/Generos.json', 'r', encoding='utf-8') as file:
@@ -534,7 +534,7 @@ def editar_genero(request, id):
         genero_editar.descripcion = request.POST.get('descripcion')
         genero_editar.save()
 
-        return redirect('/administrador/listado_generos')
+        return redirect('/administracion/listado_generos')
 def vincular_desvincular_genero_pelicula(request, id):
     genero_id = request.GET.get('generoId')
     # Obtén las instancias completas de la película y el género
@@ -689,7 +689,7 @@ def login_admi(request):
         if user is not None and user.is_staff:
             login(request, user)
             # Redirección tras un login exitoso
-            return redirect('admi')
+            return redirect('administracion_home')
         else:
             # Mensaje de error si la autenticación falla
             return render(request, 'login_admi.html', {"error": "No se ha podido iniciar sesión intentalo de nuevo"})
