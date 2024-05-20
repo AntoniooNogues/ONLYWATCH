@@ -697,63 +697,6 @@ def login_admi(request):
     # Mostrar formulario de login para método GET
     return render(request, 'login_admi.html')
 
-def anadir_actores_personaje_pelicula(request):
-    # Diccionario para almacenar actores únicos
-    actores_unicos = {}
-    actor_id = 1
-
-    # Lista para personajes
-    personajes = []
-
-    # Leer el archivo pelicula_acotores_v1.json
-    with open('static/pelicula_acotores_v1.json', 'r', encoding='utf-8') as file:
-        datos_peliculas = json.load(file)
-
-    # Procesar datos
-    for pelicula in datos_peliculas:
-        pelicula_id = pelicula["pelicula_id"]
-        for actor in pelicula["actores"]:
-            nombre_actor = actor["nombre"]
-            if nombre_actor not in actores_unicos:
-                actores_unicos[nombre_actor] = {
-                    "id": actor_id,
-                    "nombre": nombre_actor
-                }
-                actor_id += 1
-            personajes.append({
-                "nombre_personaje": actor["nombre_personaje"],
-                "actor_id": actores_unicos[nombre_actor]["id"],
-                "pelicula_id": pelicula_id
-            })
-
-    # Crear JSON para actores
-    json_actores = [{"id": actor["id"], "nombre": actor["nombre"]} for actor in
-                    actores_unicos.values()]
-
-def filtrar(request):
-    if request.method == 'POST':
-        data = json.loads(request.body)
-
-        generosSeleccionados = data.get('generos')
-        plataformasSeleccionadas = data.get('plataformas')
-    # Crear JSON para personajes
-    json_personajes = personajes
-
-        # Aquí puedes procesar los datos como necesites
-    # Guardar JSON en archivos
-    with open('actores.json', 'w', encoding='utf-8') as f:
-        json.dump(json_actores, f, indent=4, ensure_ascii=False)
-
-        # Envía una respuesta al cliente
-        return JsonResponse({'message': 'Datos recibidos correctamente'})
-
-    else:
-        return JsonResponse({'error': 'Invalid request'}, status=400)
-    with open('personajes_pelicula.json', 'w', encoding='utf-8') as f:
-        json.dump(json_personajes, f, indent=4, ensure_ascii=False)
-
-    return HttpResponse("JSON de actores y personajes generados con éxito.")
-
 def anadir_actores_personaje_serie(request):
     # Diccionario para almacenar actores únicos
     actores_unicos = {}
@@ -849,3 +792,18 @@ def cargar_actores_personajes(request):
     # anadir_personaje_pelicula()
     anadir_personaje_serie()
     return HttpResponse("Datos de actores y personajes cargados correctamente")
+
+def filtrar(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+
+        generosSeleccionados = data.get('generos')
+        plataformasSeleccionadas = data.get('plataformas')
+
+        # Aquí puedes procesar los datos como necesites
+
+        # Envía una respuesta al cliente
+        return JsonResponse({'message': 'Datos recibidos correctamente'})
+
+    else:
+        return JsonResponse({'error': 'Invalid request'}, status=400)
