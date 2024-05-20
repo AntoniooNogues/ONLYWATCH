@@ -1,55 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <script src="https://kit.fontawesome.com/2eb7a633b0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/static/bulma/css/style.css" />
-    <link rel="stylesheet" href="/static/css/style.css" />
-  </head>
-  <body style="background-color: #FFE8D3" class="familiy has-text-black">
+{% include 'header_home_usuario.html' %}
   {% csrf_token %}
   {% load static %}
 
     <!-- Header -->
-    <header>
-         <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #FFE8D3">
-                <div class="navbar-brand">
-                    <a class="navbar-item image" href="#">
-                        <img src="/static/img/logo_sinfondo%201.png" alt="" class="is-64x64">
-                    </a>
-
-                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                       data-target="navbarBasicExample">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
-
-                <div id="navbarBasicExample" class="navbar-menu">
-                    <div class="navbar-start">
-                        <a class="navbar-item" href="{% url 'home' %}">Inicio</a>
-                        <a class="navbar-item" href=""><i class="fa-solid fa-magnifying-glass "></i></a>
-                    </div>
-                </div>
-                 <div class="navbar-end">
-                     <div class="navbar-item">
-                         <i class="fa-regular fa-bell"></i>
-                     </div>
-                    <div class="navbar-item">
-                        <a href="{% url 'configuracion' %}">
-                            <div class="button is-size-5 " style="background-color: #FDA657; border-radius: 15px">
-                            <img style="border-radius: 5px" src="{{ user.img }}" alt="">
-                            <p class="ml-2 " style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
-                        </div>
-                        </a>
-                    </div>
-                </div>
-         </nav>
-    </header>
+    
 
     <!-- Main -->
     <main class="container mt-5 mb-1">
@@ -65,9 +19,9 @@
         {#                </div>#}
         {#            {% endfor %}#}
         {#        </div>#}
-        <div class="columns is-multiline is-mobile is-justify-content-center imagenes mt-5">
+        <div class="columns is-multiline is-mobile is-justify-content-center imagenes mt-5 ">
             {% for p in totales %}
-                <div class="platform  column is-2-desktop is-3-tablet is-6-mobile center-image">
+                <div class="platform  column is-2-desktop is-3-tablet is-6-mobile center-image is-flex is-align-content-center is-justify-content-center">
                     <figure class="image is-96x96">
                         <img src="{{ p.img.url }}" alt="{{ p.nombre }}" id="plataforma_{{ p.id }}"
                              class="m-0 p-0 plataforma-imagen {% if p in plataformas %}vinculada{% else %}no-vinculada{% endif %}">
@@ -88,6 +42,6 @@
   <br>
   <script src="{% static 'js/plataforma.js' %}"></script>
     <!-- Formulario -->
-    {% include "footer.html" %}
-  </body>
-</html>
+    <div class="fixed-footer">
+        {% include "footer.html" %}
+    </div>

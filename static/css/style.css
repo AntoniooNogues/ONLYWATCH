@@ -3,8 +3,8 @@
 
 body {
     font-family: "Manrope", sans-serif;
-    min-height: 100vh;
-    margin: 0;
+    min-height: 100vh !important;
+    margin: 0 !important;
 }
 .fondo {
     background-image: url("/static/img/fondo_registro_login.png");
@@ -93,4 +93,10 @@ a {
     -moz-box-shadow: 15px 15px 20px 0px rgba(102, 102, 102, 1);
     box-shadow: 15px 15px 20px 0px rgba(102, 102, 102, 1);
     border-radius: 20%;
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

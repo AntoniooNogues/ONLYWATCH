@@ -56,12 +56,12 @@
                         {% endif %}
                     {% endif %}
                 </h1>
-                <p class="is-size-4 has-text-weight-bold pl-4  ">Media:
-                    <span class="has-text-weight-normal is-size-5">{{ valoracion_media.valoracion__avg|floatformat:2 }}</span>
-                </p>
             </div>
+            <p class="is-size-4 has-text-weight-bold pt-2">Media: <span
+                    class="has-text-weight-normal is-size-5">{{ valoracion_media.valoracion__avg|floatformat:2 }}</span>
+            </p>
             <p class="is-size-4 has-text-weight-bold pt-2">Sinopsis</p>
-            <p class="is-size-5 has-text-justified">{{ pelicula.sinopsis }}</p>
+            <p class="is-size-5 has-text-justified mr-5">{{ pelicula.sinopsis }}</p>
             <p class="is-size-4 has-text-weight-bold pt-2">Director: <span
                     class="has-text-weight-normal is-size-5">{{ pelicula.director }}</span></p>
             <div>
@@ -88,7 +88,7 @@
         </div>
     </div>
     <!-- Reparto -->
-    <div class="column">
+    <div class="column mr-3">
         <h2 class="is-size-4 has-text-weight-bold pb-4">Reparto</h2>
         <div class="columns is-multiline">
             {% for p in pj %}
@@ -104,6 +104,57 @@
     <!-- Comentarios -->
     <div class="column">
         <h2 class="is-size-4 has-text-weight-bold pb-4">Comentarios</h2>
+        <section class="section">
+        <div class="container">
+            <h1 class="is-size-4 has-text-weight-bold has-text-black pb-3">Foro de Opiniones</h1>
+
+            <div class="box">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="field">
+                        <label class="label">Comentario</label>
+                        <div class="control">
+                            <textarea class="textarea" name="content" placeholder="Escribe tu comentario aquí..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Calificación</label>
+                        <div class="control">
+                            <input class="input" type="number" name="rating" min="1" max="5">
+                        </div>
+                    </div>
+
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button class="button is-link" type="submit">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div>
+                {% for comment in comments %}
+                <article class="media">
+                    <figure class="media-left">
+                        <p class="image is-64x64">
+                            <img src="https://bulma.io/images/placeholders/128x128.png">
+                        </p>
+                    </figure>
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>{{ comment.user.username }}</strong> <small>{{ comment.rating }}/5 estrellas</small> <small>{{ comment.created_at }}</small>
+                                <br>
+                                {{ comment.content }}
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
     </div>
 </main>
 
@@ -115,6 +166,7 @@
     $(document).ready(function () {
         $("#corazon").click(function () {
             var peliculaId = {{ pelicula.id }};
+ 
             $.ajax({
                 url: '/pelicula_favorita/' + peliculaId + '/',
                 data: {
