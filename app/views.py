@@ -789,7 +789,7 @@ def anadir_personaje_serie():
 
 def cargar_actores_personajes(request):
     anadir_actores()
-    # anadir_personaje_pelicula()
+    anadir_personaje_pelicula()
     anadir_personaje_serie()
     return HttpResponse("Datos de actores y personajes cargados correctamente")
 
