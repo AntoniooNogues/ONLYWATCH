@@ -1,0 +1,1956 @@
+[
+  {
+    "pelicula_id": 1,
+    "titulo": "Anatomía de una caída",
+    "actores": [
+      {
+        "nombre": "Tom Hanks",
+        "img": "https://es.web.img2.acsta.net/pictures/16/04/26/10/00/472541.jpg",
+        "nombre_personaje": "Raymond Burr"
+      },
+      {
+        "nombre": "Anne Hathaway",
+        "img": "https://es.web.img2.acsta.net/pictures/19/10/16/01/22/0121805.jpg",
+        "nombre_personaje": "Eleanor Lambert"
+      },
+      {
+        "nombre": "Jeremy Strong",
+        "img": "https://images.ecestaticos.com/dj1vRqtvquy6UMqPk848sSTwq2A=/201x30:2171x1507/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F3e5%2F6bb%2F145%2F3e56bb1453074ec58004cbe130577b51.jpg",
+        "nombre_personaje": "Lee Isaacs"
+      },
+      {
+        "nombre": "Rosie Byrne",
+        "img": "https://images.mubicdn.net/images/cast_member/16198/cache-4103-1611519826/image-w856.jpg?size=800x",
+        "nombre_personaje": "Hannah Roark"
+      },
+      {
+        "nombre": "Eva Mendes",
+        "img": "https://www.elconfidencialdigital.com/media/elconfidencialdigital/images/2023/02/20/2023022012134958387.jpg",
+        "nombre_personaje": "Donna Taylor"
+      },
+      {
+        "nombre": "Timothy Olyphant",
+        "img": "https://m.media-amazon.com/images/M/MV5BMTc2NzY0OTA2Ml5BMl5BanBnXkFtZTYwNDYzODgz._V1_.jpg",
+        "nombre_personaje": "Hastings"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 2,
+    "titulo": "Pobres Criaturas",
+    "actores": [
+      {
+        "nombre": "Sharon Horgan",
+        "img": "https://static.wikia.nocookie.net/doblaje/images/f/f0/Sharonhogan.jpg/revision/latest?cb=20201014024722&path-prefix=es",
+        "nombre_personaje": "Gwen"
+      },
+      {
+        "nombre": "Anne-Marie Duff",
+        "img": "https://m.media-amazon.com/images/M/MV5BNTk0NzYxMTg1M15BMl5BanBnXkFtZTcwMzgyMjAyMw@@._V1_.jpg",
+        "nombre_personaje": "Erin"
+      },
+      {
+        "nombre": "Eve Birthistle",
+        "img": "https://es.web.img2.acsta.net/medias/nmedia/18/35/96/46/20163300.jpg",
+        "nombre_personaje": "Sarah"
+      },
+      {
+        "nombre": "Demi Moore",
+        "img": "https://phantom-telva.unidadeditorial.es/31c11b8a4e66332331cc7d58fe1c82ed/resize/828/f/jpg/assets/multimedia/imagenes/2022/03/17/16475102990895.jpg",
+        "nombre_personaje": "Anna"
+      },
+      {
+        "nombre": "Joaquin Phoenix",
+        "img": "https://media.revistagq.com/photos/5e410c5051036000083a6075/1:1/w_3000,h_3000,c_limit/curiosidades-joaquin-phoenix-oscar.jpg",
+        "nombre_personaje": "Arthur"
+      },
+      {
+        "nombre": "Danny DeVito",
+        "img": "https://cdn.britannica.com/02/215002-050-513175D0/American-actor-Danny-DeVito-2016.jpg",
+        "nombre_personaje": "Mr. Kindly"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 3,
+    "titulo": "Oppenheimer",
+    "actores": [
+      {
+        "nombre": "Cillian Murphy",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Cillian_Murphy_at_Berlinale_2024%2C_Ausschnitt.jpg/640px-Cillian_Murphy_at_Berlinale_2024%2C_Ausschnitt.jpg",
+        "nombre_personaje": "J. Robert Oppenheimer"
+      },
+      {
+        "nombre": "Emily Blunt",
+        "img": "https://static.wikia.nocookie.net/universo-reynandez/images/2/20/Emily_Blunt.jpg/revision/latest?cb=20220614175209&path-prefix=es",
+        "nombre_personaje": "Katherine Oppenheimer"
+      },
+      {
+        "nombre": "Matt Damon",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Matt_Damon%2C_Berlinale_2023_%28cropped%29.jpg",
+        "nombre_personaje": "Leslie Groves"
+      },
+      {
+        "nombre": "Robert Downey Jr.",
+        "img": "https://media.gq.com.mx/photos/5ffa22129274cd36fe35681a/1:1/w_2027,h_2027,c_limit/robert-downey-jr-star-wars.jpg",
+        "nombre_personaje": "Lewis Strauss"
+      },
+      {
+        "nombre": "Florence Pugh",
+        "img": "https://static.wikia.nocookie.net/doblaje/images/8/81/Florence_Pugh_2024.jpg/revision/latest?cb=20240314003539&path-prefix=es",
+        "nombre_personaje": "Jean Tatlock"
+      },
+      {
+        "nombre": "Josh Brolin",
+        "img": "https://static.wikia.nocookie.net/doblaje/images/5/5d/Josh_Brolin.jpg/revision/latest?cb=20240407220159&path-prefix=es",
+        "nombre_personaje": "Edward Teller"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 4,
+    "titulo": "Dune",
+    "actores": [
+      {
+        "nombre": "Timothée Chalamet",
+        "img": "https://pics.filmaffinity.com/183457761387722-nm_200.jpg",
+        "nombre_personaje": "Paul Atreides"
+      },
+      {
+        "nombre": "Zendaya",
+        "img": "https://media.vogue.mx/photos/5de2ec5638e2b300084b0fc7/1:1/w_2000,h_2000,c_limit/Zendaya.jpg",
+        "nombre_personaje": "Chani"
+      },
+      {
+        "nombre": "Oscar Isaac",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/OscarIsaac-byPhilipRomano.jpg/640px-OscarIsaac-byPhilipRomano.jpg",
+        "nombre_personaje": "Duke Leto Atreides"
+      },
+      {
+        "nombre": "Rebecca Ferguson",
+        "img": "https://cdn.britannica.com/39/247539-050-B8127C0B/Rebecca-Ferguson-actress-BAFTA-Awards-2023.jpg",
+        "nombre_personaje": "Lady Jessica"
+      },
+      {
+        "nombre": "Jason Momoa",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Jason_Momoa_%2843055621224%29_%28cropped%29.jpg/800px-Jason_Momoa_%2843055621224%29_%28cropped%29.jpg",
+        "nombre_personaje": "Duncan Idaho"
+      },
+      {
+        "nombre": "Josh Brolin",
+        "img": "http://example.com/img_josh_brolin.jpg",
+        "nombre_personaje": "Gurney Halleck"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 5,
+    "titulo": "Con Todos Menos Contigo",
+    "actores": [
+      {
+        "nombre": "Meryl Streep",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/4/46/Meryl_Streep_December_2018.jpg",
+        "nombre_personaje": "Brenda Starr"
+      },
+      {
+        "nombre": "George Clooney",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/8/8d/George_Clooney_2016.jpg",
+        "nombre_personaje": "Jack Weil"
+      },
+      {
+        "nombre": "Cate Blanchett",
+        "img": "https://pics.filmaffinity.com/042338713639231-nm_200.jpg",
+        "nombre_personaje": "Eleanor Vance"
+      },
+      {
+        "nombre": "Jamie Lee Curtis",
+        "img": "https://aws-modapedia.vogue.es/prod/designs/v1/assets/640x853/2233.jpg",
+        "nombre_personaje": "Lily Kean"
+      },
+      {
+        "nombre": "Chris Pine",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Chris_Pine_%26_Gal_Gadot_at_the_2018_Comic-Con_International_%28cropped%29.jpg/1200px-Chris_Pine_%26_Gal_Gadot_at_the_2018_Comic-Con_International_%28cropped%29.jpg",
+        "nombre_personaje": "Brie Evantee"
+      },
+      {
+        "nombre": "Rob Morgan",
+        "img": "https://static.wikia.nocookie.net/marvelcinematicuniverse/images/f/f1/Rob_Morgan.png/revision/latest?cb=20181029180503&path-prefix=es",
+        "nombre_personaje": "Dr. Teddy Oglethorpe"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 6,
+    "titulo": "Dune",
+    "actores": [
+      {
+        "nombre": "Timothée Chalamet",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Timoth%C3%A9e_Chalamet_Cannes_Film_Festival_2022.jpg/1200px-Timoth%C3%A9e_Chalamet_Cannes_Film_Festival_2022.jpg",
+        "nombre_personaje": "Paul Atreides"
+      },
+      {
+        "nombre": "Rebecca Ferguson",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Rebecca_Ferguson_2022.jpg/1200px-Rebecca_Ferguson_2022.jpg",
+        "nombre_personaje": "Lady Jessica"
+      },
+      {
+        "nombre": "Oscar Isaac",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Oscar_Isaac_2021.jpg/1200px-Oscar_Isaac_2021.jpg",
+        "nombre_personaje": "Duke Leto Atreides"
+      },
+      {
+        "nombre": "Jason Momoa",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Jason_Momoa_2022.jpg/1200px-Jason_Momoa_2022.jpg",
+        "nombre_personaje": "Duncan Idaho"
+      },
+      {
+        "nombre": "Zendaya",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Zendaya_2022_Met_Gala.jpg/1200px-Zendaya_2022_Met_Gala.jpg",
+        "nombre_personaje": "Chani"
+      },
+      {
+        "nombre": "Javier Bardem",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Javier_Bardem_2022.jpg/1200px-Javier_Bardem_2022.jpg",
+        "nombre_personaje": "Stilgar"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 7,
+    "titulo": "Ocho apellidos marroquíes",
+    "actores": [
+      {
+        "nombre": "Javier Cámara",
+        "img": "upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Javier_C%C3%A1mara_2022.jpg/1200px-Javier_C%C3%A1mara_2022.jpg",
+        "nombre_personaje": "Bernardo Riaño"
+      },
+      {
+        "nombre": "Ana de Armas",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Ana_de_Armas_2022.jpg/1200px-Ana_de_Armas_2022.jpg",
+        "nombre_personaje": "Gloria Montes"
+      },
+      {
+        "nombre": "Carolina Lapausa",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Carolina_Lapausa_2022.jpg/1200px-Carolina_Lapausa_2022.jpg",
+        "nombre_personaje": "Susana"
+      },
+      {
+        "nombre": "Jesús Guzmán",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Jes%C3%BAs_Guzm%C3%A1n_2022.jpg/1200px-Jes%C3%BAs_Guzm%C3%A1n_2022.jpg",
+        "nombre_personaje": "Paco"
+      },
+      {
+        "nombre": "Miren Ibarguren",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Miren_Ibarguren_2022.jpg/1200px-Miren_Ibarguren_2022.jpg",
+        "nombre_personaje": "Clara"
+      },
+      {
+        "nombre": "Alberto Chicote",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Alberto_Chicote_2022.jpg/1200px-Alberto_Chicote_2022.jpg",
+        "nombre_personaje": "Ramón"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 8,
+    "titulo": "La zona de interés",
+    "actores": [
+      {
+        "nombre": "Daniel Brühl",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Daniel_Br%C3%B1hl_2022.jpg/1200px-Daniel_Br%C3%B1hl_2022.jpg",
+        "nombre_personaje": "Martin Rauch"
+      },
+      {
+        "nombre": "Claire Foy",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Claire_Foy_2022.jpg/1200px-Claire_Foy_2022.jpg",
+        "nombre_personaje": "Elizabeth Shaw"
+      },
+      {
+        "nombre": "Jérémie Renier",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/J%C3%A9r%C3%A9mie_Renier_2022.jpg/1200px-J%C3%A9r%C3%A9mie_Renier_2022.jpg",
+        "nombre_personaje": "Hans Hoffmann"
+      },
+      {
+        "nombre": "Paula Beer",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Paula_Beer_2022.jpg/1200px-Paula_Beer_2022.jpg",
+        "nombre_personaje": "Anna Brandt"
+      },
+      {
+        "nombre": "Michael Gould",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Michael_Gould_2022.jpg/1200px-Michael_Gould_2022.jpg",
+        "nombre_personaje": "Thomas Miller"
+      },
+      {
+        "nombre": "Meta Golding",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Meta_Golding_2022.jpg/1200px-Meta_Golding_2022.jpg",
+        "nombre_personaje": "Barbara"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 9,
+    "titulo": "Guerra civil",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Josh Brolin",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Josh_Brolin_2020.jpg/1200px-Josh_Brolin_2020.jpg",
+        "nombre_personaje": "Thanos"
+      },
+      {
+        "nombre": "Robert Downey Jr.",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Robert_Downey_Jr._%282019%29.jpg/1200px-Robert_Downey_Jr._%282019%29.jpg",
+        "nombre_personaje": "Tony Stark"
+      },
+      {
+        "nombre": "Chris Evans",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Chris_Evans_2022.jpg/1200px-Chris_Evans_2022.jpg",
+        "nombre_personaje": "Steve Rogers"
+      },
+      {
+        "nombre": "Chris Hemsworth",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Chris_Hemsworth_2022.jpg/1200px-Chris_Hemsworth_2022.jpg",
+        "nombre_personaje": "Thor"
+      },
+      {
+        "nombre": "Mark Ruffalo",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Mark_Ruffalo_2019.jpg/1200px-Mark_Ruffalo_2019.jpg",
+        "nombre_personaje": "Bruce Banner"
+      },
+      {
+        "nombre": "Scarlett Johansson",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Scarlett_Johansson_2022.jpg/1200px-Scarlett_Johansson_2022.jpg",
+        "nombre_personaje": "Natasha Romanoff"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 10,
+    "titulo": "Vidas pasadas",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Anne Hathaway",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Anne_Hathaway_2022.jpg/1200px-Anne_Hathaway_2022.jpg",
+        "nombre_personaje": "Laura Burnham"
+      },
+      {
+        "nombre": "Javier Bardem",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Javier_Bardem_2022.jpg/1200px-Javier_Bardem_2022.jpg",
+        "nombre_personaje": "Paco Valencia"
+      },
+      {
+        "nombre": "Penélope Cruz",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Pen%C3%A9lope_Cruz_2022.jpg/1200px-Pen%C3%A9lope_Cruz_2022.jpg",
+        "nombre_personaje": "Clara Ruíz"
+      },
+      {
+        "nombre": "Matt Damon",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Matt_Damon_2022.jpg/1200px-Matt_Damon_2022.jpg",
+        "nombre_personaje": "Jim Beam"
+      },
+      {
+        "nombre": "Michelle Williams",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Michelle_Williams_2022.jpg/1200px-Michelle_Williams_2022.jpg",
+        "nombre_personaje": "Isabella Elkin"
+      },
+      {
+        "nombre": "Jessica Chastain",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Jessica_Chastain_2022.jpg/1200px-Jessica_Chastain_2022.jpg",
+        "nombre_personaje": "Cecilia Torres"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 11,
+    "titulo": "Road House (De profesión: duro)",
+    "anio": 1989,
+    "actores": [
+      {
+        "nombre": "Patrick Swayze",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Patrick_Swayze_1989.jpg/1200px-Patrick_Swayze_1989.jpg",
+        "nombre_personaje": "Dalton"
+      },
+      {
+        "nombre": "Sam Elliott",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Sam_Elliott_2018.jpg/1200px-Sam_Elliott_2018.jpg",
+        "nombre_personaje": "Wade Garrett"
+      },
+      {
+        "nombre": "Kelly Lynch",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Kelly_Lynch_1989.jpg/1200px-Kelly_Lynch_1989.jpg",
+        "nombre_personaje": "Elizabeth Clay"
+      },
+      {
+        "nombre": "Ben Gazzara",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Ben_Gazzara_2008.jpg/1200px-Ben_Gazzara_2008.jpg",
+        "nombre_personaje": "Brad Wesley"
+      },
+      {
+        "nombre": "Terry Crews",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Terry_Crews_2016.jpg/1200px-Terry_Crews_2016.jpg",
+        "nombre_personaje": "Ernie"
+      },
+      {
+        "nombre": "Kevin Tighe",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Kevin_Tighe_2008.jpg/1200px-Kevin_Tighe_2008.jpg",
+        "nombre_personaje": "O'Neil"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 12,
+    "titulo": "The Gentlemen: Los señores de la mafia",
+    "anio": 2020,
+    "actores": [
+      {
+        "nombre": "Charlie Hunnam",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Charlie_Hunnam_2020.jpg/1200px-Charlie_Hunnam_2020.jpg",
+        "nombre_personaje": "Raymond \"Ray\" Hastings"
+      },
+      {
+        "nombre": "Matthew McConaughey",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Matthew_McConaughey_2020.jpg/1200px-Matthew_McConaughey_2020.jpg",
+        "nombre_personaje": "Mickey Pearson"
+      },
+      {
+        "nombre": "Henry Golding",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Henry_Golding_2022.jpg/1200px-Henry_Golding_2022.jpg",
+        "nombre_personaje": "Dry Eye"
+      },
+      {
+        "nombre": "Colin Farrell",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Colin_Farrell_2022.jpg/1200px-Colin_Farrell_2022.jpg",
+        "nombre_personaje": "Coach"
+      },
+      {
+        "nombre": "Michelle Dockery",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Michelle_Dockery_2019.jpg/1200px-Michelle_Dockery_2019.jpg",
+        "nombre_personaje": "Rosalind Pearson"
+      },
+      {
+        "nombre": "Jeremy Strong",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Jeremy_Strong_2019.jpg/1200px-Jeremy_Strong_2019.jpg",
+        "nombre_personaje": "Tom"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 13,
+    "titulo": "Titanic",
+    "anio": 1997,
+    "actores": [
+      {
+        "nombre": "Leonardo DiCaprio",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Leonardo_DiCaprio_2022.jpg/1200px-Leonardo_DiCaprio_2022.jpg",
+        "nombre_personaje": "Jack Dawson"
+      },
+      {
+        "nombre": "Kate Winslet",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Kate_Winslet_2022.jpg/1200px-Kate_Winslet_2022.jpg",
+        "nombre_personaje": "Rose DeWitt Bukater"
+      },
+      {
+        "nombre": "Billy Zane",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Billy_Zane_2022.jpg/1200px-Billy_Zane_2022.jpg",
+        "nombre_personaje": "Cal Hockley"
+      },
+      {
+        "nombre": "Kathy Bates",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Kathy_Bates_2022.jpg/1200px-Kathy_Bates_2022.jpg",
+        "nombre_personaje": "Margaret \"Molly\" Brown"
+      },
+      {
+        "nombre": "Frances Fisher",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Frances_Fisher_2022.jpg/1200px-Frances_Fisher_2022.jpg",
+        "nombre_personaje": "Ruth DeWitt Bukater"
+      },
+      {
+        "nombre": "Victor Garber",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Victor_Garber_2022.jpg/1200px-Victor_Garber_2022.jpg",
+        "nombre_personaje": "Spicer Lovejoy"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 14,
+    "titulo": "Memories of Murder (Crónica de un asesino en serie)",
+    "anio": 2003,
+    "actores": [
+      {
+        "nombre": "Song Kang-ho",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Song_Kang-ho_2019.jpg/1200px-Song_Kang-ho_2019.jpg",
+        "nombre_personaje": "Detective Park Doo-man"
+      },
+      {
+        "nombre": "Kim Sang-ho",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Kim_Sang-ho_%28actor%29.jpg/1200px-Kim_Sang-ho_%28actor%29.jpg",
+        "nombre_personaje": "Detective Seo Tae-yoon"
+      },
+      {
+        "nombre": "Kang Hye-jung",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Kang_Hye-jung_2012.jpg/1200px-Kang_Hye-jung_2012.jpg",
+        "nombre_personaje": "Kwak Young-goo"
+      },
+      {
+        "nombre": "Park Hae-il",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Park_Hae-il_2019.jpg/1200px-Park_Hae-il_2019.jpg",
+        "nombre_personaje": "Nam Ju-ho"
+      },
+      {
+        "nombre": "Na Young-hee",
+        "img": "https://no_disponible.jpg",
+        "nombre_personaje": "Kim Young-chul"
+      },
+      {
+        "nombre": "Byun Hee-bong",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Byun_Hee-bong_2019.jpg/1200px-Byun_Hee-bong_2019.jpg",
+        "nombre_personaje": "Chief Kang"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 15,
+    "titulo": "Nadie",
+    "anio": 2021,
+    "actores": [
+      {
+        "nombre": "Bob Odenkirk",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Bob_Odenkirk_2022.jpg/1200px-Bob_Odenkirk_2022.jpg",
+        "nombre_personaje": "Hutch Mansell"
+      },
+      {
+        "nombre": "Connie Nielsen",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Connie_Nielsen_2022.jpg/1200px-Connie_Nielsen_2022.jpg",
+        "nombre_personaje": "Becca Mansell"
+      },
+      {
+        "nombre": "Michael Keaton",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Michael_Keaton_2022.jpg/1200px-Michael_Keaton_2022.jpg",
+        "nombre_personaje": "Harold \"Harry\" Mansell"
+      },
+      {
+        "nombre": "Eli Gorey",
+        "img": "https://no_disponible.jpg",
+        "nombre_personaje": "Charlie"
+      },
+      {
+        "nombre": "Christopher Lloyd",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Christopher_Lloyd_2019.jpg/1200px-Christopher_Lloyd_2019.jpg",
+        "nombre_personaje": "Papa John"
+      },
+      {
+        "nombre": "Benicio del Toro",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Benicio_del_Toro_2022.jpg/1200px-Benicio_del_Toro_2022.jpg",
+        "nombre_personaje": "Pavel"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 16,
+    "titulo": "Desconocidos (2021)",
+    "anio": 2021,
+    "actores": [
+      {
+        "nombre": "Liam Neeson",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Liam_Neeson_2019.jpg/1200px-Liam_Neeson_2019.jpg",
+        "nombre_personaje": "Alex Lewis"
+      },
+      {
+        "nombre": "January Jones",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/January_Jones_2019.jpg/1200px-January_Jones_2019.jpg",
+        "nombre_personaje": "Natalie Jones"
+      },
+      {
+        "nombre": "Aidan Turner",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Aidan_Turner_2019.jpg/1200px-Aidan_Turner_2019.jpg",
+        "nombre_personaje": "Dr. Martin Jordan"
+      },
+      {
+        "nombre": "Frank Grillo",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Frank_Grillo_2019.jpg/1200px-Frank_Grillo_2019.jpg",
+        "nombre_personaje": "Derek Mills"
+      },
+      {
+        "nombre": "Colin Salmon",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Colin_Salmon_2013.jpg/1200px-Colin_Salmon_2013.jpg",
+        "nombre_personaje": "Jorgen Nordstrom"
+      },
+      {
+        "nombre": "Kim Coates",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Kim_Coates_2019.jpg/1200px-Kim_Coates_2019.jpg",
+        "nombre_personaje": "Gus"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 17,
+    "titulo": "Beekeeper: El protector",
+    "anio": 2024,
+    "actores": [
+      {
+        "nombre": "Jason Statham",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Leonardo_DiCaprio_2022.jpg/1200px-Leonardo_DiCaprio_2022.jpg",
+        "nombre_personaje": "Adam Clay"
+      },
+      {
+        "nombre": "Emmy Raver-Lampman",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Emmy_Raver-Lampman_2022.jpg/1200px-Emmy_Raver-Lampman_2022.jpg",
+        "nombre_personaje": "Agent Verona Parker"
+      },
+      {
+        "nombre": "Josh Hutcherson",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Josh_Hutcherson_2022.jpg/1200px-Josh_Hutcherson_2022.jpg",
+        "nombre_personaje": "Derek Danforth"
+      },
+      {
+        "nombre": "Bobby Naderi",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Bobby_Naderi_2019.jpg/1200px-Bobby_Naderi_2019.jpg",
+        "nombre_personaje": "Agent Matt Wiley"
+      },
+      {
+        "nombre": "Phylicia Rashad",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Phylicia_Rashad_2022.jpg/1200px-Phylicia_Rashad_2022.jpg",
+        "nombre_personaje": "Eloise Parker"
+      },
+      {
+        "nombre": "Jeremy Irons",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Jeremy_Irons_2019.jpg/1200px-Jeremy_Irons_2019.jpg",
+        "nombre_personaje": "Wallace Westwyld"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 18,
+    "titulo": "Cazafantasmas: Más allá",
+    "anio": 2021,
+    "actores": [
+      {
+        "nombre": "Carrie Coon",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Carrie_Coon_2022.jpg/1200px-Carrie_Coon_2022.jpg",
+        "nombre_personaje": "Callie Spengler"
+      },
+      {
+        "nombre": "Finn Wolfhard",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Finn_Wolfhard_2022.jpg/1200px-Finn_Wolfhard_2022.jpg",
+        "nombre_personaje": "Trevor Spengler"
+      },
+      {
+        "nombre": "Mckenna Grace",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Mckenna_Grace_2022.jpg/1200px-Mckenna_Grace_2022.jpg",
+        "nombre_personaje": "Phoebe Spengler"
+      },
+      {
+        "nombre": "Paul Rudd",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Paul_Rudd_2022.jpg/1200px-Paul_Rudd_2022.jpg",
+        "nombre_personaje": "Gary Grooberson"
+      },
+      {
+        "nombre": "Sigourney Weaver",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Sigourney_Weaver_2022.jpg/1200px-Sigourney_Weaver_2022.jpg",
+        "nombre_personaje": "Dana Barrett"
+      },
+      {
+        "nombre": "Bill Murray",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Bill_Murray_2022.jpg/1200px-Bill_Murray_2022.jpg",
+        "nombre_personaje": "Dr. Peter Venkman"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 19,
+    "titulo": "Los que se quedan",
+    "anio": 2021,
+    "actores": [
+      {
+        "nombre": "Anne Hathaway",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Anne_Hathaway_2022.jpg/1200px-Anne_Hathaway_2022.jpg",
+        "nombre_personaje": "Alex Newman"
+      },
+      {
+        "nombre": "T.J. Miller",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/T.J._Miller_2019.jpg/1200px-T.J._Miller_2019.jpg",
+        "nombre_personaje": "Dan"
+      },
+      {
+        "nombre": "Peter Dinklage",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Peter_Dinklage_2022.jpg/1200px-Peter_Dinklage_2022.jpg",
+        "nombre_personaje": "Patrick"
+      },
+      {
+        "nombre": "Ben Shenkman",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Ben_Shenkman_2022.jpg/1200px-Ben_Shenkman_2022.jpg",
+        "nombre_personaje": "Mitch"
+      },
+      {
+        "nombre": "Mary Holland",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mary_Holland_2022.jpg/1200px-Mary_Holland_2022.jpg",
+        "nombre_personaje": "Suzie"
+      },
+      {
+        "nombre": "June Squibb",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/June_Squibb_2022.jpg/1200px-June_Squibb_2022.jpg",
+        "nombre_personaje": "Grandma"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 20,
+    "titulo": "Días Perfectos",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Timothée Chalamet",
+        "nombre_personaje": "Lee"
+      },
+      {
+        "nombre": "Armie Hammer",
+        "nombre_personaje": "Oliver"
+      },
+      {
+        "nombre": "Michael Stuhlbarg",
+        "nombre_personaje": "Mr. Perlman"
+      },
+      {
+        "nombre": "Maya Hawke",
+        "nombre_personaje": "Marla"
+      },
+      {
+        "nombre": "Luca Guadagnino",
+        "nombre_personaje": "Mr. Perlman's Father"
+      },
+      {
+        "nombre": "Alia Shawkat",
+        "nombre_personaje": "Tallie"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 21,
+    "titulo": "Robot Dreams",
+    "anio": 2023,
+    "actores": [
+      {
+        "nombre": "Ewan McGregor",
+        "nombre_personaje": "Alex"
+      },
+      {
+        "nombre": "Hilary Swank",
+        "nombre_personaje": "Claire"
+      },
+      {
+        "nombre": "Léa Seydoux",
+        "nombre_personaje": "Nina"
+      },
+      {
+        "nombre": "Anthony Hopkins",
+        "nombre_personaje": "Dr. David Swan"
+      },
+      {
+        "nombre": "Will Poulter",
+        "nombre_personaje": "Leo"
+      },
+      {
+        "nombre": "Olivia Cooke",
+        "nombre_personaje": "Sophie"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 22,
+    "titulo": "Argylle",
+    "anio": 2023,
+    "actores": [
+      {
+        "nombre": "Henry Cavill",
+        "nombre_personaje": "John Argylle"
+      },
+      {
+        "nombre": "Bryce Dallas Howard",
+        "nombre_personaje": "Ana Marquez"
+      },
+      {
+        "nombre": "Sam Rockwell",
+        "nombre_personaje": "Detective Frank Figgis"
+      },
+      {
+        "nombre": "Bryan Cranston",
+        "nombre_personaje": "John Bishop"
+      },
+      {
+        "nombre": "Samuel L. Jackson",
+        "nombre_personaje": "Kingpin"
+      },
+      {
+        "nombre": "Cary Elwes",
+        "nombre_personaje": "Morgan"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 23,
+    "titulo": "Rebel Moon (Parte dos): La guerrera que deja marcas",
+    "anio": 2025,
+    "actores": [
+      {
+        "nombre": "Sofia Boutella",
+        "nombre_personaje": "Kora"
+      },
+      {
+        "nombre": "Charlie Hunnam",
+        "nombre_personaje": "Dagan"
+      },
+      {
+        "nombre": "Djimon Hounsou",
+        "nombre_personaje": "Warlord Raymar"
+      },
+      {
+        "nombre": "Ray Fisher",
+        "nombre_personaje": "Benny"
+      },
+      {
+        "nombre": "Rupert Friend",
+        "nombre_personaje": "Viscount Remy"
+      },
+      {
+        "nombre": "Zana Marjanovic",
+        "nombre_personaje": "Bex"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 24,
+    "titulo": "Wonka",
+    "anio": 2023,
+    "actores": [
+      {
+        "nombre": "Timothée Chalamet",
+        "nombre_personaje": "Willy Wonka"
+      },
+      {
+        "nombre": "Keegan-Michael Key",
+        "nombre_personaje": "Willy Wonka (adulto)"
+      },
+      {
+        "nombre": "Olivia Colman",
+        "nombre_personaje": "Sra. Bucket"
+      },
+      {
+        "nombre": "Sally Hawkins",
+        "nombre_personaje": "Sra. Gloop"
+      },
+      {
+        "nombre": "Matt Lucas",
+        "nombre_personaje": "Sr. Wonka"
+      },
+      {
+        "nombre": "Simon Farnaby",
+        "nombre_personaje": "Sr. Salt"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 25,
+    "titulo": "Napoleon",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Joaquin Phoenix",
+        "nombre_personaje": "Napoleón Bonaparte"
+      },
+      {
+        "nombre": "Vanessa Kirby",
+        "nombre_personaje": "Josefina de Beauharnais"
+      },
+      {
+        "nombre": "Shia LaBeouf",
+        "nombre_personaje": "Tallien"
+      },
+      {
+        "nombre": "Tony Shalhoub",
+        "nombre_personaje": "Sieyès"
+      },
+      {
+        "nombre": "Marwan Kenzari",
+        "nombre_personaje": "Lucien Bonaparte"
+      },
+      {
+        "nombre": "Adewale Akinnuoye-Agbaje",
+        "nombre_personaje": "Toussaint Louverture"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 26,
+    "titulo": "Wish: El poder de los deseos",
+    "anio": 2023,
+    "actores": [
+      {
+        "nombre": "Ryan Reynolds",
+        "nombre_personaje": "Mike Ryland"
+      },
+      {
+        "nombre": "Mariah Carey",
+        "nombre_personaje": "La Hada Madrina"
+      },
+      {
+        "nombre": "Ariana Grande",
+        "nombre_personaje": "Princesa Wish"
+      },
+      {
+        "nombre": "Keanu Reeves",
+        "nombre_personaje": "Sr. Wish"
+      },
+      {
+        "nombre": "Billy Porter",
+        "nombre_personaje": "Sra. Wish"
+      },
+      {
+        "nombre": "Pete Davidson",
+        "nombre_personaje": "Wish"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 27,
+    "titulo": "Los asesinos de la luna",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Robert De Niro",
+        "nombre_personaje": "Frank Sheeran"
+      },
+      {
+        "nombre": "Al Pacino",
+        "nombre_personaje": "Jimmy Hoffa"
+      },
+      {
+        "nombre": "Joe Pesci",
+        "nombre_personaje": "Russell Bufalino"
+      },
+      {
+        "nombre": "Ray Liotta",
+        "nombre_personaje": "Henry Hill"
+      },
+      {
+        "nombre": "Anna Paquin",
+        "nombre_personaje": "Helen Sheeran"
+      },
+      {
+        "nombre": "Jesse Plemons",
+        "nombre_personaje": "Joey Colombo"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 28,
+    "titulo": "American Fiction",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "George Clooney",
+        "nombre_personaje": "Jack Swagger"
+      },
+      {
+        "nombre": "Brad Pitt",
+        "nombre_personaje": "Roy O'Bannon"
+      },
+      {
+        "nombre": "Matt Damon",
+        "nombre_personaje": "Lester Varga"
+      },
+      {
+        "nombre": "Ben Affleck",
+        "nombre_personaje": "John Ridgeway"
+      },
+      {
+        "nombre": "Casey Affleck",
+        "nombre_personaje": "Patrick Kenzie"
+      },
+      {
+        "nombre": "Don Cheadle",
+        "nombre_personaje": "Basher Tarr"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 29,
+    "titulo": "Interestelar",
+    "anio": 2014,
+    "actores": [
+      {
+        "nombre": "Matthew McConaughey",
+        "nombre_personaje": "Cooper"
+      },
+      {
+        "nombre": "Anne Hathaway",
+        "nombre_personaje": "Amelia Brand"
+      },
+      {
+        "nombre": "Jessica Chastain",
+        "nombre_personaje": "Murph"
+      },
+      {
+        "nombre": "Michael Caine",
+        "nombre_personaje": "Prof. Brand"
+      },
+      {
+        "nombre": "Bill Irwin",
+        "nombre_personaje": "TARS"
+      },
+      {
+        "nombre": "Mackenzie Foy",
+        "nombre_personaje": "Murph (joven)"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 30,
+    "titulo": "Prisioneros",
+    "anio": 2013,
+    "actores": [
+      {
+        "nombre": "Hugh Jackman",
+        "nombre_personaje": "Keller Dover"
+      },
+      {
+        "nombre": "Jake Gyllenhaal",
+        "nombre_personaje": "Detective Loki"
+      },
+      {
+        "nombre": "Paul Dano",
+        "nombre_personaje": "Alex Jones"
+      },
+      {
+        "nombre": "Maria Bello",
+        "nombre_personaje": "Grace Dover"
+      },
+      {
+        "nombre": "Melissa McCarthy",
+        "nombre_personaje": "Nancy Jones"
+      },
+      {
+        "nombre": "Terrence Howard",
+        "nombre_personaje": "Detective Carter"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 31,
+    "titulo": "Los Juegos del Hambre: Balada de Pájaros Cantores y Serpientes",
+    "anio": 2023,
+    "actores": [
+      {
+        "nombre": "Tom Blyth",
+        "nombre_personaje": "Coriolanus Snow"
+      },
+      {
+        "nombre": "Rachel Zegler",
+        "nombre_personaje": "Lucy Gray Baird"
+      },
+      {
+        "nombre": "Hunter Schafer",
+        "nombre_personaje": "Tigris Snow"
+      },
+      {
+        "nombre": "Viola Davis",
+        "nombre_personaje": "Dr. Volumnia Gaul"
+      },
+      {
+        "nombre": "Peter Dinklage",
+        "nombre_personaje": "Casca Highbottom"
+      },
+      {
+        "nombre": "Josh Hutcherson",
+        "nombre_personaje": "Young President Snow"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 32,
+    "titulo": "Fallen Leaves",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Tom Cruise",
+        "nombre_personaje": "John John"
+      },
+      {
+        "nombre": "Milla Jovovich",
+        "nombre_personaje": "Jane Doe"
+      },
+      {
+        "nombre": "Djimon Hounsou",
+        "nombre_personaje": "The Professor"
+      },
+      {
+        "nombre": "Thandie Newton",
+        "nombre_personaje": "Lorraine"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 33,
+    "titulo": "Pared con pared",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Penélope Cruz",
+        "nombre_personaje": "Janis"
+      },
+      {
+        "nombre": "Antonio Banderas",
+        "nombre_personaje": "Maximo"
+      },
+      {
+        "nombre": "Oscar Martínez",
+        "nombre_personaje": "Alberto"
+      },
+      {
+        "nombre": "Cecilia Roth",
+        "nombre_personaje": "Elena"
+      },
+      {
+        "nombre": "Manuela Vives",
+        "nombre_personaje": "Gloria"
+      },
+      {
+        "nombre": "Inma Cuesta",
+        "nombre_personaje": "Ana"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 34,
+    "titulo": "Fabricante de lágrimas",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Will Smith",
+        "nombre_personaje": "Henry Clayton"
+      },
+      {
+        "nombre": "Zendaya",
+        "nombre_personaje": "Aaliyah"
+      },
+      {
+        "nombre": "Michael B. Jordan",
+        "nombre_personaje": "Jayden"
+      },
+      {
+        "nombre": "Angela Bassett",
+        "nombre_personaje": "Evelyn Clayton"
+      },
+      {
+        "nombre": "Pete Davidson",
+        "nombre_personaje": "Danny"
+      },
+      {
+        "nombre": "Russell Crowe",
+        "nombre_personaje": "Jack"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 35,
+    "titulo": "Parásitos",
+    "anio": 2019,
+    "actores": [
+      {
+        "nombre": "Song Kang-ho",
+        "nombre_personaje": "Ki-taek Kim"
+      },
+      {
+        "nombre": "Lee Sun-kyun",
+        "nombre_personaje": "Dong-ik Park"
+      },
+      {
+        "nombre": "Cho Yeo-jeong",
+        "nombre_personaje": "Yeon-kyo Park"
+      },
+      {
+        "nombre": "Choi Woo-shik",
+        "nombre_personaje": "Ki-woo Kim"
+      },
+      {
+        "nombre": "Park So-dam",
+        "nombre_personaje": "Ki-jung Kim"
+      },
+      {
+        "nombre": "Lee Jung-eun",
+        "nombre_personaje": "Gook-moon Chung"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 36,
+    "titulo": "Madame Web",
+    "anio": 2023,
+    "actores": [
+      {
+        "nombre": "Dakota Johnson",
+        "nombre_personaje": "Madame Web"
+      },
+      {
+        "nombre": "Sydney Sweeney",
+        "nombre_personaje": "Julia Carpenter"
+      },
+      {
+        "nombre": "Celeste O'Connor",
+        "nombre_personaje": "Anya Petrova"
+      },
+      {
+        "nombre": "Emma Roberts",
+        "nombre_personaje": "Mary Jane Watson"
+      },
+      {
+        "nombre": "Adam Scott",
+        "nombre_personaje": "Ben Reilly"
+      },
+      {
+        "nombre": "Tahir Rahim",
+        "nombre_personaje": "Ezekiel Stane"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 37,
+    "titulo": "Suzume",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Suzuko Hara",
+        "nombre_personaje": "Suzume Iwato"
+      },
+      {
+        "nombre": "Kotaro Nakamura",
+        "nombre_personaje": "Souta Munakata"
+      },
+      {
+        "nombre": "Nanami Amamiya",
+        "nombre_personaje": "Tamaki Suzuhara"
+      },
+      {
+        "nombre": "Shota Hayama",
+        "nombre_personaje": "Shin Shinoda"
+      },
+      {
+        "nombre": "Hiroshi Kamiya",
+        "nombre_personaje": "Hitoshi Tamura"
+      },
+      {
+        "nombre": "Masayoshi Takagi",
+        "nombre_personaje": "Yasajiro Konno"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 38,
+    "titulo": "Sonido de la libertad",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Kevin Hart",
+        "nombre_personaje": "Alwyn"
+      },
+      {
+        "nombre": "Jamie Foxx",
+        "nombre_personaje": "Don Shirley"
+      },
+      {
+        "nombre": "Tiffany Haddish",
+        "nombre_personaje": "Etta James"
+      },
+      {
+        "nombre": "Octavia Spencer",
+        "nombre_personaje": "Mahalia Jackson"
+      },
+      {
+        "nombre": "Jon Hamm",
+        "nombre_personaje": "Tom Dewitt"
+      },
+      {
+        "nombre": "Taraji P. Henson",
+        "nombre_personaje": "Aimee"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 39,
+    "titulo": "Kung Fu Panda",
+    "anio": 2008,
+    "actores": [
+      {
+        "nombre": "Jack Black",
+        "nombre_personaje": "Po"
+      },
+      {
+        "nombre": "Dustin Hoffman",
+        "nombre_personaje": "Shifu"
+      },
+      {
+        "nombre": "Angelina Jolie",
+        "nombre_personaje": "Tigresa"
+      },
+      {
+        "nombre": "Seth Rogen",
+        "nombre_personaje": "Mantis"
+      },
+      {
+        "nombre": "Lucy Liu",
+        "nombre_personaje": "Víbora"
+      },
+      {
+        "nombre": "Ian McShane",
+        "nombre_personaje": "Maestro Buey"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 40,
+    "titulo": "Misión: Imposible - Sentencia mortal parte uno",
+    "anio": 2023,
+    "actores": [
+      {
+        "nombre": "Tom Cruise",
+        "nombre_personaje": "Ethan Hunt"
+      },
+      {
+        "nombre": "Ving Rhames",
+        "nombre_personaje": "Luther Stickell"
+      },
+      {
+        "nombre": "Simon Pegg",
+        "nombre_personaje": "Benji Dunn"
+      },
+      {
+        "nombre": "Rebecca Ferguson",
+        "nombre_personaje": "Ilsa Faust"
+      },
+      {
+        "nombre": "Henry Cavill",
+        "nombre_personaje": "August Walker"
+      },
+      {
+        "nombre": "Vanessa Kirby",
+        "nombre_personaje": "Alana Ingram"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 41,
+    "titulo": "La vida de Brian",
+    "anio": 1979,
+    "actores": [
+      {
+        "nombre": "John Cleese",
+        "nombre_personaje": "Brian"
+      },
+      {
+        "nombre": "Terry Jones",
+        "nombre_personaje": "Madre de Brian"
+      },
+      {
+        "nombre": "Michael Palin",
+        "nombre_personaje": "Padre de Brian"
+      },
+      {
+        "nombre": "Eric Idle",
+        "nombre_personaje": "Varios personajes"
+      },
+      {
+        "nombre": "Graham Chapman",
+        "nombre_personaje": "Varios personajes"
+      },
+      {
+        "nombre": "Neil Innes",
+        "nombre_personaje": "Varios personajes"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 42,
+    "titulo": "Beau tiene miedo",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Bill Murray",
+        "nombre_personaje": "Beau Joseph"
+      },
+      {
+        "nombre": "Léa Seydoux",
+        "nombre_personaje": "Sunita"
+      },
+      {
+        "nombre": "Joe Pesci",
+        "nombre_personaje": "Ricky"
+      },
+      {
+        "nombre": "Anna Faris",
+        "nombre_personaje": "Heather"
+      },
+      {
+        "nombre": "Michael Stuhlbarg",
+        "nombre_personaje": "Howard"
+      },
+      {
+        "nombre": "Lakeith Stanfield",
+        "nombre_personaje": "Miles"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 43,
+    "titulo": "El indomable Will Hunting",
+    "anio": 1997,
+    "actores": [
+      {
+        "nombre": "Matt Damon",
+        "nombre_personaje": "Will Hunting"
+      },
+      {
+        "nombre": "Robin Williams",
+        "nombre_personaje": "Sean Maguire"
+      },
+      {
+        "nombre": "Ben Affleck",
+        "nombre_personaje": "Chuckie Sullivan"
+      },
+      {
+        "nombre": "Minnie Driver",
+        "nombre_personaje": "Skylar"
+      },
+      {
+        "nombre": "Stellan Skarsgård",
+        "nombre_personaje": "Gerald Lambeau"
+      },
+      {
+        "nombre": "Casey Affleck",
+        "nombre_personaje": "Morgan O'Mally"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 44,
+    "titulo": "Super Mario Bros: La película",
+    "anio": 2023,
+    "actores": [
+      {
+        "nombre": "Chris Pratt",
+        "nombre_personaje": "Mario"
+      },
+      {
+        "nombre": "Anya Taylor-Joy",
+        "nombre_personaje": "Princesa Peach"
+      },
+      {
+        "nombre": "Charlie Day",
+        "nombre_personaje": "Luigi"
+      },
+      {
+        "nombre": "Jack Black",
+        "nombre_personaje": "Bowser"
+      },
+      {
+        "nombre": "Seth Rogen",
+        "nombre_personaje": "Donkey Kong"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 45,
+    "titulo": "The Boys in the Boat",
+    "anio": 2023,
+    "actores": [
+      {
+        "nombre": "Daniel Radcliffe",
+        "nombre_personaje": "Joe Rantz"
+      },
+      {
+        "nombre": "Luke Wilson",
+        "nombre_personaje": "Alfieri"
+      },
+      {
+        "nombre": "Jeremy Irvine",
+        "nombre_personaje": "Wood"
+      },
+      {
+        "nombre": "Patrick Schwarzenegger",
+        "nombre_personaje": "Lasky"
+      },
+      {
+        "nombre": "Ben Whishaw",
+        "nombre_personaje": "George Pocock"
+      },
+      {
+        "nombre": "David Krumholtz",
+        "nombre_personaje": "Ulbrick"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 46,
+    "titulo": "La favorita",
+    "anio": 2018,
+    "actores": [
+      {
+        "nombre": "Olivia Colman",
+        "nombre_personaje": "Reina Ana"
+      },
+      {
+        "nombre": "Emma Stone",
+        "nombre_personaje": "Abigail Masham"
+      },
+      {
+        "nombre": "Rachel Weisz",
+        "nombre_personaje": "Sarah Churchill"
+      },
+      {
+        "nombre": "James Franco",
+        "nombre_personaje": "Duque de Marlborough"
+      },
+      {
+        "nombre": "Nicholas Hoult",
+        "nombre_personaje": "Harley"
+      },
+      {
+        "nombre": "Mark Gatiss",
+        "nombre_personaje": "Dr. Harley"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 47,
+    "titulo": "La última noche",
+    "anio": 2021,
+    "actores": [
+      {
+        "nombre": "Casey Affleck",
+        "nombre_personaje": "Jack"
+      },
+      {
+        "nombre": "Monica Bellucci",
+        "nombre_personaje": "Donna"
+      },
+      {
+        "nombre": "Charlie Plummer",
+        "nombre_personaje": "Danny"
+      },
+      {
+        "nombre": "Margo Robbie",
+        "nombre_personaje": "Jean"
+      },
+      {
+        "nombre": "Aldis Hodge",
+        "nombre_personaje": "Andre"
+      },
+      {
+        "nombre": "John Ortiz",
+        "nombre_personaje": "Detective De Graff"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 48,
+    "titulo": "Las bestias",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Jessie Buckley",
+        "nombre_personaje": "Lorna"
+      },
+      {
+        "nombre": "Rory Kinnear",
+        "nombre_personaje": "Gabe"
+      },
+      {
+        "nombre": "Emily Watson",
+        "nombre_personaje": "Judith"
+      },
+      {
+        "nombre": "Scott Mescudi",
+        "nombre_personaje": "Martin"
+      },
+      {
+        "nombre": "Valeria Olmedo",
+        "nombre_personaje": "Ania"
+      },
+      {
+        "nombre": "Lionel Abelando",
+        "nombre_personaje": "Tuya"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 49,
+    "titulo": "Tu nombre",
+    "anio": 2016,
+    "actores": [
+      {
+        "nombre": "Mitsuha Miyamizu",
+        "nombre_personaje": "Mitsuha Miyamizu"
+      },
+      {
+        "nombre": "Taki Tachibana",
+        "nombre_personaje": "Taki Tachibana"
+      },
+      {
+        "nombre": "Ryūnosuke Kamiya",
+        "nombre_personaje": "Padre de Mitsuha"
+      },
+      {
+        "nombre": "Mitsuko Ito",
+        "nombre_personaje": "Abuela de Mitsuha"
+      },
+      {
+        "nombre": "Karen Miyamizu",
+        "nombre_personaje": "Hermana menor de Mitsuha"
+      },
+      {
+        "nombre": "Toshiki Kamiya",
+        "nombre_personaje": "Padre de Mitsuha"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 50,
+    "titulo": "El insoportable peso de un talento descomunal",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Nicolas Cage",
+        "nombre_personaje": "Nicolas Cage"
+      },
+      {
+        "nombre": "Pedro Pascal",
+        "nombre_personaje": "Javi"
+      },
+      {
+        "nombre": "Tiffany Haddish",
+        "nombre_personaje": "Vivian"
+      },
+      {
+        "nombre": "Neil Patrick Harris",
+        "nombre_personaje": "Richard Pace"
+      },
+      {
+        "nombre": "Sharon Horgan",
+        "nombre_personaje": "Rica"
+      },
+      {
+        "nombre": "Demi Moore",
+        "nombre_personaje": "Olivia Henson"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 51,
+    "titulo": "El justiciero: Capítulo final (The Equalizer 3)",
+    "anio": 2023,
+    "actores": [
+      {
+        "nombre": "Denzel Washington",
+        "nombre_personaje": "Robert McCall"
+      },
+      {
+        "nombre": "Dakota Fanning",
+        "nombre_personaje": "Astrid"
+      },
+      {
+        "nombre": "Martins Idgors",
+        "nombre_personaje": "Yuri"
+      },
+      {
+        "nombre": "Haley Bennett",
+        "nombre_personaje": "Fay"
+      },
+      {
+        "nombre": "Vicent Cassel",
+        "nombre_personaje": "Arsen"
+      },
+      {
+        "nombre": "James Badge Dale",
+        "nombre_personaje": "Bill"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 52,
+    "titulo": "Garra De Hierro",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Henry Cavill",
+        "nombre_personaje": "T'Challa / Black Panther"
+      },
+      {
+        "nombre": "Letitia Wright",
+        "nombre_personaje": "Shuri"
+      },
+      {
+        "nombre": "Lupita Nyong'o",
+        "nombre_personaje": "Nakia"
+      },
+      {
+        "nombre": "Danai Gurira",
+        "nombre_personaje": "Okoye"
+      },
+      {
+        "nombre": "Martin Freeman",
+        "nombre_personaje": "Everett K. Ross"
+      },
+      {
+        "nombre": "Tenoch Huerta Mejía",
+        "nombre_personaje": "Namor"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 53,
+    "titulo": "El reino de los cielos",
+    "anio": 2005,
+    "actores": [
+      {
+        "nombre": "Orlando Bloom",
+        "nombre_personaje": "Balian de Ibelin"
+      },
+      {
+        "nombre": "Eva Green",
+        "nombre_personaje": "Sibylla"
+      },
+      {
+        "nombre": "Liam Neeson",
+        "nombre_personaje": "Godfrey de Ibelin"
+      },
+      {
+        "nombre": "Jeremy Irons",
+        "nombre_personaje": "Rey Richard"
+      },
+      {
+        "nombre": "Edward Norton",
+        "nombre_personaje": "Fídel"
+      },
+      {
+        "nombre": "Ghassan Massoud",
+        "nombre_personaje": "Saladino"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 54,
+    "titulo": "Los niños de Winton",
+    "anio": 2006,
+    "actores": [
+      {
+        "nombre": "Emily Watson",
+        "nombre_personaje": "Colette Rivet"
+      },
+      {
+        "nombre": "Anna Maxwell Martin",
+        "nombre_personaje": "Miss Cross"
+      },
+      {
+        "nombre": "Toby Jones",
+        "nombre_personaje": "Nicholas Winton"
+      },
+      {
+        "nombre": "Roger Allam",
+        "nombre_personaje": "Martin Dohrn"
+      },
+      {
+        "nombre": "Stratford Johns",
+        "nombre_personaje": "Sir Nicholas Winton"
+      },
+      {
+        "nombre": "Stephen Fry",
+        "nombre_personaje": "Narrador"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 55,
+    "titulo": "Crepúsculo",
+    "anio": 2008,
+    "actores": [
+      {
+        "nombre": "Kristen Stewart",
+        "nombre_personaje": "Bella Swan"
+      },
+      {
+        "nombre": "Robert Pattinson",
+        "nombre_personaje": "Edward Cullen"
+      },
+      {
+        "nombre": "Taylor Lautner",
+        "nombre_personaje": "Jacob Black"
+      },
+      {
+        "nombre": "Peter Facinelli",
+        "nombre_personaje": "Dr. Carlisle Cullen"
+      },
+      {
+        "nombre": "Ashley Greene",
+        "nombre_personaje": "Alice Cullen"
+      },
+      {
+        "nombre": "Elizabeth Reaser",
+        "nombre_personaje": "Esme Cullen"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 56,
+    "titulo": "La lista de Schindler",
+    "anio": 1993,
+    "actores": [
+      {
+        "nombre": "Liam Neeson",
+        "nombre_personaje": "Oskar Schindler"
+      },
+      {
+        "nombre": "Ralph Fiennes",
+        "nombre_personaje": "Amon Göth"
+      },
+      {
+        "nombre": "Embeth Davidtz",
+        "nombre_personaje": "Emilie Schindler"
+      },
+      {
+        "nombre": "Ben Kingsley",
+        "nombre_personaje": "Itzhak Stern"
+      },
+      {
+        "nombre": "Caroline Goodall",
+        "nombre_personaje": "Madre de Emilie Schindler"
+      },
+      {
+        "nombre": "Jonathan Depp",
+        "nombre_personaje": "Asistente de Amon Göth"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 57,
+    "titulo": "El Inocente",
+    "anio": 2021,
+    "actores": [
+      {
+        "nombre": "Mario Casas",
+        "nombre_personaje": "Mateo Vidal"
+      },
+      {
+        "nombre": "Aura Garrido",
+        "nombre_personaje": "Olivia Costa"
+      },
+      {
+        "nombre": "Alexandra Jiménez",
+        "nombre_personaje": "Lorena Ortiz"
+      },
+      {
+        "nombre": "José Coronado",
+        "nombre_personaje": "Inspector Héctor Planes"
+      },
+      {
+        "nombre": "Ana Wagener",
+        "nombre_personaje": "Juana"
+      },
+      {
+        "nombre": "Xenia Tostado",
+        "nombre_personaje": "Hawa"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 58,
+    "titulo": "Fast & Furious X",
+    "anio": 2023,
+    "actores": [
+      {
+        "nombre": "Vin Diesel",
+        "nombre_personaje": "Dominic Toretto"
+      },
+      {
+        "nombre": "Michelle Rodriguez",
+        "nombre_personaje": "Letty Ortiz"
+      },
+      {
+        "nombre": "Jason Momoa",
+        "nombre_personaje": "Jakob Toretto"
+      },
+      {
+        "nombre": "Tyrese Gibson",
+        "nombre_personaje": "Roman Pearce"
+      },
+      {
+        "nombre": "Ludacris",
+        "nombre_personaje": "Tej Parker"
+      },
+      {
+        "nombre": "Jordana Brewster",
+        "nombre_personaje": "Mia Toretto"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 59,
+    "titulo": "Babylon",
+    "anio": 2022,
+    "actores": [
+      {
+        "nombre": "Brad Pitt",
+        "nombre_personaje": "Jack Conrad"
+      },
+      {
+        "nombre": "Margot Robbie",
+        "nombre_personaje": "Nellie LaRoy"
+      },
+      {
+        "nombre": "Tobey Maguire",
+        "nombre_personaje": "Charlie Chaplin"
+      },
+      {
+        "nombre": "Olivia Wilde",
+        "nombre_personaje": "Eleanor Fendell"
+      },
+      {
+        "nombre": "Spike Jonze",
+        "nombre_personaje": "Max Reinhardt"
+      },
+      {
+        "nombre": "Jean Smart",
+        "nombre_personaje": "Queen Mary"
+      }
+    ]
+  },
+  {
+    "pelicula_id": 60,
+    "titulo": "Godzilla: Rey de los Monstruos",
+    "anio": 2019,
+    "actores": [
+      {
+        "nombre": "Kyle Chandler",
+        "nombre_personaje": "Mark Russell"
+      },
+      {
+        "nombre": "Vera Farmiga",
+        "nombre_personaje": "Madison Russell"
+      },
+      {
+        "nombre": "Millie Bobby Brown",
+        "nombre_personaje": "Madison Russell (joven)"
+      },
+      {
+        "nombre": "Ken Watanabe",
+        "nombre_personaje": "Serizawa"
+      },
+      {
+        "nombre": "Bradley Whitford",
+        "nombre_personaje": "Hijo del Dr. Serizawa"
+      },
+      {
+        "nombre": "Sally Hawkins",
+        "nombre_personaje": "Dra. Emma Russell"
+      }
+    ]
+  }
+]

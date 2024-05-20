@@ -1,0 +1,1802 @@
+[
+  {
+    "serie_id": 1,
+    "titulo": "Fallout",
+    "actores": [
+      {
+        "nombre": "Walter Goggins",
+        "nombre_personaje": "Cooper Howard"
+      },
+      {
+        "nombre": "Ella Purnell",
+        "nombre_personaje": "Lucy"
+      },
+      {
+        "nombre": "Aaron Moten",
+        "nombre_personaje": "Maximus"
+      },
+      {
+        "nombre": "Moises Arias",
+        "nombre_personaje": "Norm"
+      },
+      {
+        "nombre": "Johnny Pemberton",
+        "nombre_personaje": "Thaddeus"
+      },
+      {
+        "nombre": "Dave Register",
+        "nombre_personaje": "Chet"
+      }
+    ]
+  },
+  {
+    "serie_id": 2,
+    "titulo": "Shōgun",
+    "actores": [
+      {
+        "nombre": "John Rhys-Davies",
+        "nombre_personaje": "Lord Toranaga"
+      },
+      {
+        "nombre": "Toshiro Mifune",
+        "nombre_personaje": "Ishido"
+      },
+      {
+        "nombre": "Richard Chamberlain",
+        "nombre_personaje": "John Blackthorne"
+      },
+      {
+        "nombre": "Mako Iwamatsu",
+        "nombre_personaje": "Toda Hirotada"
+      },
+      {
+        "nombre": "Lynn Minmei",
+        "nombre_personaje": "Mariko"
+      },
+      {
+        "nombre": "John Fujioka",
+        "nombre_personaje": "Genjiro"
+      }
+    ]
+  },
+  {
+    "serie_id": 3,
+    "titulo": "El problema de los 3 cuerpos",
+    "actores": [
+      {
+        "nombre": "Eiza González",
+        "nombre_personaje": "Trisolaran"
+      },
+      {
+        "nombre": "Benedict Wong",
+        "nombre_personaje": "Ye Wenjie"
+      },
+      {
+        "nombre": "John Bradley",
+        "nombre_personaje": "Wang Miao"
+      },
+      {
+        "nombre": "Liam Cunningham",
+        "nombre_personaje": "Weyland"
+      },
+      {
+        "nombre": "Jovan Adepo",
+        "nombre_personaje": "**Desconocido**"
+      },
+      {
+        "nombre": "Zhenwei Wang",
+        "nombre_personaje": "Yang Dong"
+      }
+    ]
+  },
+  {
+    "serie_id": 4,
+    "titulo": "Ripley",
+    "actores": [
+      {
+        "nombre": "Andrew Scott",
+        "nombre_personaje": "Tom Ripley"
+      },
+      {
+        "nombre": "Dakota Fanning",
+        "nombre_personaje": "Marge Sherwood"
+      },
+      {
+        "nombre": "Gwyneth Paltrow",
+        "nombre_personaje": "Dickie Greenleaf"
+      },
+      {
+        "nombre": "Kim Dickens",
+        "nombre_personaje": "Dickie Greenleaf (voz)"
+      },
+      {
+        "nombre": "Firas Nassar",
+        "nombre_personaje": "Freddie Miles"
+      },
+      {
+        "nombre": "Alia Shawkat",
+        "nombre_personaje": "Kimmy Dexter"
+      }
+    ]
+  },
+  {
+    "serie_id": 5,
+    "titulo": "The Gentlemen (Los Caballeros)",
+    "actores": [
+      {
+        "nombre": "Charlie Hunnam",
+        "nombre_personaje": "Ray"
+      },
+      {
+        "nombre": "Matthew McConaughey",
+        "nombre_personaje": "Mickey Pearson"
+      },
+      {
+        "nombre": "Henry Golding",
+        "nombre_personaje": "Dry Eye"
+      },
+      {
+        "nombre": "Michelle Dockery",
+        "nombre_personaje": "Rosalind Pearson"
+      },
+      {
+        "nombre": "Jeremy Strong",
+        "nombre_personaje": "Logan"
+      },
+      {
+        "nombre": "Colin Farrell",
+        "nombre_personaje": "Coach"
+      }
+    ]
+  },
+  {
+    "serie_id": 6,
+    "titulo": "Baby Reindeer (Mi reno de peluche)",
+    "actores": [
+      {
+        "nombre": "Mark Hamill",
+        "nombre_personaje": "Santa Claus"
+      },
+      {
+        "nombre": "David Tennant",
+        "nombre_personaje": "Abe"
+      },
+      {
+        "nombre": "Iain Armitage",
+        "nombre_personaje": "Arthur"
+      },
+      {
+        "nombre": "Eli Harte",
+        "nombre_personaje": "Lily"
+      },
+      {
+        "nombre": "Jim Parsons",
+        "nombre_personaje": "Mr. Doogle"
+      },
+      {
+        "nombre": "Kristine Lilly",
+        "nombre_personaje": "Mrs. Doogle"
+      }
+    ]
+  },
+  {
+    "serie_id": 7,
+    "titulo": "The Chosen",
+    "actores": [
+      {
+        "nombre": "Jonathan Roumie",
+        "nombre_personaje": "Jesús"
+      },
+      {
+        "nombre": "Shahar Sasso",
+        "nombre_personaje": "Pedro"
+      },
+      {
+        "nombre": "Elizabeth Taber",
+        "nombre_personaje": "María Magdalena"
+      },
+      {
+        "nombre": "R. Scott Heming",
+        "nombre_personaje": "Tomás"
+      },
+      {
+        "nombre": "Noah James Shector",
+        "nombre_personaje": "Santiago"
+      },
+      {
+        "nombre": "Paraskevi Kevala",
+        "nombre_personaje": "Marta"
+      }
+    ]
+  },
+  {
+    "serie_id": 8,
+    "titulo": "Reina Roja",
+    "actores": [
+      {
+        "nombre": "Melina Matthews",
+        "nombre_personaje": "Mencía del Valle"
+      },
+      {
+        "nombre": "Iván Messeguer",
+        "nombre_personaje": "Cristóbal Gormaz"
+      },
+      {
+        "nombre": "Victoria Abril",
+        "nombre_personaje": "Doña Mencía"
+      },
+      {
+        "nombre": "Adrián Navarro",
+        "nombre_personaje": "Mario Expósito"
+      },
+      {
+        "nombre": "Gonzalo Saldaña",
+        "nombre_personaje": "Don Iñigo"
+      },
+      {
+        "nombre": "Óscar Jaenada",
+        "nombre_personaje": "Conrado Solís"
+      }
+    ]
+  },
+  {
+    "serie_id": 9,
+    "titulo": "Tokyo Vice",
+    "actores": [
+      {
+        "nombre": "Ansel Elgort",
+        "nombre_personaje": "Jake Adelstein"
+      },
+      {
+        "nombre": "Ken Watanabe",
+        "nombre_personaje": "Hiroki Katagiri"
+      },
+      {
+        "nombre": "Shunsuke Kubozuka",
+        "nombre_personaje": "Ryuichi Kurosawa"
+      },
+      {
+        "nombre": "Rinko Kikuchi",
+        "nombre_personaje": "Samantha"
+      },
+      {
+        "nombre": "Eijiro Toda",
+        "nombre_personaje": "Shinichi Okazaki"
+      },
+      {
+        "nombre": "Ayami Nakajo",
+        "nombre_personaje": "Miyuki"
+      }
+    ]
+  },
+  {
+    "serie_id": 10,
+    "titulo": "True Detective",
+    "actores": [
+      {
+        "nombre": "Matthew McConaughey",
+        "nombre_personaje": "Rust Cohle"
+      },
+      {
+        "nombre": "Woody Harrelson",
+        "nombre_personaje": "Marty Hart"
+      },
+      {
+        "nombre": "Michelle Williams",
+        "nombre_personaje": "Carrie Mathison"
+      },
+      {
+        "nombre": "Mahershala Ali",
+        "nombre_personaje": "Wayne Hays"
+      },
+      {
+        "nombre": "Scoot McNairy",
+        "nombre_personaje": "Tom Purcell"
+      },
+      {
+        "nombre": "Carmen Ejogo",
+        "nombre_personaje": "Amelia Reuther"
+      }
+    ]
+  },
+  {
+    "serie_id": 11,
+    "titulo": "Fargo",
+    "actores": [
+      {
+        "nombre": "Billy Bob Thornton",
+        "nombre_personaje": "Lorne Malvo"
+      },
+      {
+        "nombre": "Martin Freeman",
+        "nombre_personaje": "Lester Nygaard"
+      },
+      {
+        "nombre": "Allison Tolman",
+        "nombre_personaje": "Molly Solverson"
+      },
+      {
+        "nombre": "Ewan McGregor",
+        "nombre_personaje": "Emmit Stussy"
+      },
+      {
+        "nombre": "Noah Hawley",
+        "nombre_personaje": "Noah Hawley"
+      },
+      {
+        "nombre": "Carrie Coon",
+        "nombre_personaje": "Gloria Burgle"
+      }
+    ]
+  },
+  {
+    "serie_id": 12,
+    "titulo": "Invencible",
+    "actores": [
+      {
+        "nombre": "Steven Yeun",
+        "nombre_personaje": "Mark Grayson / Invencible"
+      },
+      {
+        "nombre": "J.K. Simmons",
+        "nombre_personaje": "Nolan Grayson / Omni-Man"
+      },
+      {
+        "nombre": "Sandra Oh",
+        "nombre_personaje": "Debbie Grayson"
+      },
+      {
+        "nombre": "Ross Marquand",
+        "nombre_personaje": "Robot"
+      },
+      {
+        "nombre": "Khary Payton",
+        "nombre_personaje": "Augustus Marks / Titan"
+      },
+      {
+        "nombre": "Kevin Michael Richardson",
+        "nombre_personaje": "Cecil Stedman"
+      }
+    ]
+  },
+  {
+    "serie_id": 13,
+    "titulo": "X-Men '97",
+    "actores": [
+      {
+        "nombre": "Cal Dodd",
+        "nombre_personaje": "Charles Xavier / Profesor X"
+      },
+      {
+        "nombre": "Anika Henderson",
+        "nombre_personaje": "Jean Grey / Fénix"
+      },
+      {
+        "nombre": "Stephen Stanton",
+        "nombre_personaje": "Scott Summers / Cíclope"
+      },
+      {
+        "nombre": "Kimberly Brooks",
+        "nombre_personaje": "Ororo Munroe / Tormenta"
+      },
+      {
+        "nombre": "Robert C. Bailey",
+        "nombre_personaje": "Logan / Lobezno"
+      },
+      {
+        "nombre": "Alyson Leigh Rosen",
+        "nombre_personaje": "Rogue"
+      }
+    ]
+  },
+  {
+    "serie_id": 14,
+    "titulo": "Sugar",
+    "actores": [
+      {
+        "nombre": "Dawn O'Donnell",
+        "nombre_personaje": "Sugar"
+      },
+      {
+        "nombre": "Sean Bean",
+        "nombre_personaje": "Earl"
+      },
+      {
+        "nombre": "Farah Adebayo",
+        "nombre_personaje": "Aisha"
+      },
+      {
+        "nombre": "David Warner",
+        "nombre_personaje": "Kingsley"
+      },
+      {
+        "nombre": "Theo James",
+        "nombre_personaje": "Fraser"
+      },
+      {
+        "nombre": "Colin Salmon",
+        "nombre_personaje": "DCI Fletcher"
+      }
+    ]
+  },
+  {
+    "serie_id": 15,
+    "titulo": "The Bear (El oso)",
+    "actores": [
+      {
+        "nombre": "Jeremy Allen White",
+        "nombre_personaje": "Carmy Berzatto"
+      },
+      {
+        "nombre": "Ebon Moss-Bachrach",
+        "nombre_personaje": "Richie Jermaine"
+      },
+      {
+        "nombre": "Ayo Edebiri",
+        "nombre_personaje": "Sydney"
+      },
+      {
+        "nombre": "Lionel Boyce",
+        "nombre_personaje": "Leslie"
+      },
+      {
+        "nombre": "Abby Elliott",
+        "nombre_personaje": "Sydney"
+      },
+      {
+        "nombre": "Shari Redstone",
+        "nombre_personaje": ""
+      }
+    ]
+  },
+  {
+    "serie_id": 16,
+    "titulo": "Inspector Rishi",
+    "actores": [
+      {
+        "nombre": "Vineet Kumar",
+        "nombre_personaje": "Rishi Mathur"
+      },
+      {
+        "nombre": "Siddhi Mahadiwale",
+        "nombre_personaje": "Pooja Virani"
+      },
+      {
+        "nombre": "Aditya Srivastava",
+        "nombre_personaje": "Alok Chaturvedi"
+      },
+      {
+        "nombre": "Shubhankar Tak",
+        "nombre_personaje": "Karan Sharma"
+      },
+      {
+        "nombre": "Anjali Patil",
+        "nombre_personaje": "Devika Mathur"
+      },
+      {
+        "nombre": "Ahana Kumra",
+        "nombre_personaje": "Shefali"
+      }
+    ]
+  },
+  {
+    "serie_id": 17,
+    "titulo": "Halo",
+    "actores": [
+      {
+        "nombre": "Pablo Schreiber",
+        "nombre_personaje": "John-117 / Master Chief"
+      },
+      {
+        "nombre": "Natascha McElhone",
+        "nombre_personaje": "Dr. Halsey"
+      },
+      {
+        "nombre": "Yolanda Ross",
+        "nombre_personaje": "Soren-062"
+      },
+      {
+        "nombre": "Shabana Azmi",
+        "nombre_personaje": "Margaret Parangosky"
+      },
+      {
+        "nombre": "Bokeen Woodbine",
+        "nombre_personaje": "Robert Mendez"
+      },
+      {
+        "nombre": "Charlie Murphy",
+        "nombre_personaje": "Fred Johnson"
+      }
+    ]
+  },
+  {
+    "serie_id": 18,
+    "titulo": "Perverso",
+    "actores": [
+      {
+        "nombre": "Dennis Haysbert",
+        "nombre_personaje": "God"
+      },
+      {
+        "nombre": "AJ Buckley",
+        "nombre_personaje": "Amenadiel"
+      },
+      {
+        "nombre": "Tom Ellis",
+        "nombre_personaje": "Lucifer Morningstar"
+      },
+      {
+        "nombre": "Lauren German",
+        "nombre_personaje": "Chloe Decker"
+      },
+      {
+        "nombre": "Kevin Rankin",
+        "nombre_personaje": "Captain Kevin Daniels"
+      },
+      {
+        "nombre": "D.B. Woodside",
+        "nombre_personaje": "Amenadiel"
+      }
+    ]
+  },
+  {
+    "serie_id": 19,
+    "titulo": "Star Wars: La remesa mala",
+    "actores": [
+      {
+        "nombre": "Dee Bradley Baker",
+        "nombre_personaje": "Hunter, Echo, Wrecker, Tech y Crosshair"
+      },
+      {
+        "nombre": "Michelle Ang",
+        "nombre_personaje": "Omega"
+      },
+      {
+        "nombre": "Temuerra Morrison",
+        "nombre_personaje": "Boba Fett"
+      },
+      {
+        "nombre": "Ming-Na Wen",
+        "nombre_personaje": "Fennec Shand"
+      },
+      {
+        "nombre": "Matthew Wood",
+        "nombre_personaje": "Gungi"
+      },
+      {
+        "nombre": "Lena Headey",
+        "nombre_personaje": "Cal Kestis"
+      }
+    ]
+  },
+  {
+    "serie_id": 20,
+    "titulo": "Nos vemos en otra vida",
+    "actores": [
+      {
+        "nombre": "Justin Timberlake",
+        "nombre_personaje": "Adam Reed"
+      },
+      {
+        "nombre": "Mila Kunis",
+        "nombre_personaje": "Annie Sloan"
+      },
+      {
+        "nombre": "Jake Johnson",
+        "nombre_personaje": "Ian Mendes"
+      },
+      {
+        "nombre": "Gugu Mbatha-Raw",
+        "nombre_personaje": "Hannah Wells"
+      },
+      {
+        "nombre": "Janet Montgomery",
+        "nombre_personaje": "Rebecca Pearson"
+      },
+      {
+        "nombre": "Christopher Walken",
+        "nombre_personaje": "Dr. Henry Leeds"
+      }
+    ]
+  },
+  {
+    "serie_id": 21,
+    "titulo": "Antracita",
+    "actores": [
+      {
+        "nombre": "Marta Etura",
+        "nombre_personaje": "Elena"
+      },
+      {
+        "nombre": "Guillermo Toledo",
+        "nombre_personaje": "Nacho"
+      },
+      {
+        "nombre": "Mónica López",
+        "nombre_personaje": "Begoña"
+      },
+      {
+        "nombre": "Luis Zahera",
+        "nombre_personaje": "Tomás"
+      },
+      {
+        "nombre": "Yolanda Barrasa",
+        "nombre_personaje": "Isabel"
+      },
+      {
+        "nombre": "Gorka Otxoa",
+        "nombre_personaje": "Iñigo"
+      }
+    ]
+  },
+  {
+    "serie_id": 22,
+    "titulo": "Yellowstone",
+    "actores": [
+      {
+        "nombre": "Kevin Costner",
+        "nombre_personaje": "John Dutton"
+      },
+      {
+        "nombre": "Luke Grimes",
+        "nombre_personaje": "Kayce Dutton"
+      },
+      {
+        "nombre": "Kelly Reilly",
+        "nombre_personaje": "Beth Dutton"
+      },
+      {
+        "nombre": "Wes Bentley",
+        "nombre_personaje": "Jamie Dutton"
+      },
+      {
+        "nombre": "Cole Hauser",
+        "nombre_personaje": "Rip Wheeler"
+      },
+      {
+        "nombre": "Gil Birmingham",
+        "nombre_personaje": "Thomas Rainwater"
+      }
+    ]
+  },
+  {
+    "serie_id": 23,
+    "titulo": "El encargado",
+    "actores": [
+      {
+        "nombre": "Javier Gutiérrez",
+        "nombre_personaje": "Javier"
+      },
+      {
+        "nombre": "Joseba Etxandi",
+        "nombre_personaje": "Bermejo"
+      },
+      {
+        "nombre": "Barbra Rey",
+        "nombre_personaje": "Doña Lola"
+      },
+      {
+        "nombre": "Macho Aldeguer",
+        "nombre_personaje": "Vicente"
+      },
+      {
+        "nombre": "Miriam Giovanelli",
+        "nombre_personaje": "Sandra"
+      },
+      {
+        "nombre": "Natalia de Molina",
+        "nombre_personaje": "Miriam"
+      }
+    ]
+  },
+  {
+    "serie_id": 24,
+    "titulo": "El joven Sheldon",
+    "actores": [
+      {
+        "nombre": "Iain Armitage",
+        "nombre_personaje": "Sheldon Cooper"
+      },
+      {
+        "nombre": "Zoe Perry",
+        "nombre_personaje": "Mary Cooper"
+      },
+      {
+        "nombre": "Lance Barber",
+        "nombre_personaje": "George Cooper Sr."
+      },
+      {
+        "nombre": "Montana Maniçconi",
+        "nombre_personaje": "Missy Cooper"
+      },
+      {
+        "nombre": "Raegan Revord",
+        "nombre_personaje": "Melanie 'Meemaw' Cooper"
+      },
+      {
+        "nombre": "Jim Parsons",
+        "nombre_personaje": "Sheldon Cooper (adulto) (voz)"
+      }
+    ]
+  },
+  {
+    "serie_id": 25,
+    "titulo": "Star Trek: Discovery",
+    "actores": [
+      {
+        "nombre": "Sonequa Martin-Green",
+        "nombre_personaje": "Michael Burnham"
+      },
+      {
+        "nombre": "Doug Jones",
+        "nombre_personaje": "Saru"
+      },
+      {
+        "nombre": "Anthony Rapp",
+        "nombre_personaje": "Paul Stamets"
+      },
+      {
+        "nombre": "Mary Wiseman",
+        "nombre_personaje": "Sylvia Tilly"
+      },
+      {
+        "nombre": "Shazad Latif",
+        "nombre_personaje": "Ash Tyler"
+      },
+      {
+        "nombre": "Jason Isaacs",
+        "nombre_personaje": "Gabriel Lorca"
+      }
+    ]
+  },
+  {
+    "serie_id": 26,
+    "titulo": "Dystopia",
+    "actores": [
+      {
+        "nombre": "John Simm",
+        "nombre_personaje": "Will Travis"
+      },
+      {
+        "nombre": "Joanne Froggatt",
+        "nombre_personaje": "Georgina Campbell"
+      },
+      {
+        "nombre": "Jonathan Bailey",
+        "nombre_personaje": "Liam Stewart"
+      },
+      {
+        "nombre": "Amiyah Miller",
+        "nombre_personaje": "Anya"
+      },
+      {
+        "nombre": "Louis Partridge",
+        "nombre_personaje": "Sekou"
+      },
+      {
+        "nombre": "Charlotte Riley",
+        "nombre_personaje": "Hannah"
+      }
+    ]
+  },
+  {
+    "serie_id": 27,
+    "titulo": "Mano de hierro",
+    "actores": [
+      {
+        "nombre": "Jessica Alba",
+        "nombre_personaje": "Jessica Jones"
+      },
+      {
+        "nombre": "Krysten Ritter",
+        "nombre_personaje": "Rachel Lindsay/Hellcat"
+      },
+      {
+        "nombre": "David Tennant",
+        "nombre_personaje": "Kilgrave"
+      },
+      {
+        "nombre": "Rosario Dawson",
+        "nombre_personaje": "Claire Temple"
+      },
+      {
+        "nombre": "Erin Moriarty",
+        "nombre_personaje": "Hope Shlottman"
+      },
+      {
+        "nombre": "Eka Darville",
+        "nombre_personaje": "Malcolm Ducasse"
+      }
+    ]
+  },
+  {
+    "serie_id": 28,
+    "titulo": "Parasyte: Los grises",
+    "actores": [
+      {
+        "nombre": "Shôta Hayama",
+        "nombre_personaje": "Shinichi Izumi"
+      },
+      {
+        "nombre": "Ayumi Tani",
+        "nombre_personaje": "Murano Satomi"
+      },
+      {
+        "nombre": "Kôichi Yamadera",
+        "nombre_personaje": "Migi"
+      },
+      {
+        "nombre": "Akira Ishida",
+        "nombre_personaje": "Ryôko Tamiya"
+      },
+      {
+        "nombre": "Miyu Sawashiro",
+        "nombre_personaje": "Kana Koyama"
+      },
+      {
+        "nombre": "Junko Minagawa",
+        "nombre_personaje": "Nobuko Tamura"
+      }
+    ]
+  },
+  {
+    "serie_id": 29,
+    "titulo": "The Rookie",
+    "actores": [
+      {
+        "nombre": "Nathan Fillion",
+        "nombre_personaje": "John Nolan"
+      },
+      {
+        "nombre": "Mekia Cox",
+        "nombre_personaje": "Nyla Harper"
+      },
+      {
+        "nombre": "Alyssa Diaz",
+        "nombre_personaje": "Angela Lopez"
+      },
+      {
+        "nombre": "Melissa O'Neil",
+        "nombre_personaje": "Lucy Chen"
+      },
+      {
+        "nombre": "Afton Williamson",
+        "nombre_personaje": "Talia Bishop"
+      },
+      {
+        "nombre": "Eric Winter",
+        "nombre_personaje": "Tim Bradford"
+      }
+    ]
+  },
+  {
+    "serie_id": 30,
+    "titulo": "Machos alfa",
+    "actores": [
+      {
+        "nombre": "Alberto Garrido",
+        "nombre_personaje": "Darío Guerra"
+      },
+      {
+        "nombre": "Raquel Meroño",
+        "nombre_personaje": "Raquel Alarcón"
+      },
+      {
+        "nombre": "Fernando Guillén Cuervo",
+        "nombre_personaje": "Luis Guerra"
+      },
+      {
+        "nombre": "Gorka Otxoa",
+        "nombre_personaje": "Beto"
+      },
+      {
+        "nombre": "Paula Valls",
+        "nombre_personaje": "Olivia"
+      },
+      {
+        "nombre": "Kira Miró",
+        "nombre_personaje": "Lola"
+      }
+    ]
+  },
+  {
+    "serie_id": 31,
+    "titulo": "Muertos S.L.",
+    "actores": [
+      {
+        "nombre": "Maggie Civantos",
+        "nombre_personaje": "Isa Sierra"
+      },
+      {
+        "nombre": "Javier Botet",
+        "nombre_personaje": "Jaime Cepeda"
+      },
+      {
+        "nombre": "Victoria Agüero",
+        "nombre_personaje": "Esther Jiménez"
+      },
+      {
+        "nombre": "Miki Esparbé",
+        "nombre_personaje": "David Montero"
+      },
+      {
+        "nombre": "Ana García Bergua",
+        "nombre_personaje": "Lola García"
+      },
+      {
+        "nombre": "Juan Carlos Cifuentes",
+        "nombre_personaje": "Carlos Fernández"
+      }
+    ]
+  },
+  {
+    "serie_id": 32,
+    "titulo": "The Ballad of Renegade Nell",
+    "actores": [
+      {
+        "nombre": "Jane Russell",
+        "nombre_personaje": "Nell Bray"
+      },
+      {
+        "nombre": "Roy Rogers",
+        "nombre_personaje": "Dale Harding"
+      },
+      {
+        "nombre": "Walter Brennan",
+        "nombre_personaje": "Judge Ike Walton"
+      },
+      {
+        "nombre": "Anthony Quinn",
+        "nombre_personaje": "Sierrapinto"
+      },
+      {
+        "nombre": "Dean Jagger",
+        "nombre_personaje": "Clay Allison"
+      },
+      {
+        "nombre": "Jeff Corey",
+        "nombre_personaje": "Sheriff Rawlins"
+      }
+    ]
+  },
+  {
+    "serie_id": 33,
+    "titulo": "El régimen",
+    "actores": [
+      {
+        "nombre": "Daniel Brühl",
+        "nombre_personaje": "Klaus Mann"
+      },
+      {
+        "nombre": "Maria Schrader",
+        "nombre_personaje": "Erika Mann"
+      },
+      {
+        "nombre": "Oliver Masucci",
+        "nombre_personaje": "Gottfried Benn"
+      },
+      {
+        "nombre": "Sebastian Koch",
+        "nombre_personaje": "Joseph Goebbels"
+      },
+      {
+        "nombre": "Carla Juri",
+        "nombre_personaje": "Annemarie Heinrich"
+      },
+      {
+        "nombre": "Liliane Ross",
+        "nombre_personaje": "Katia Mann"
+      }
+    ]
+  },
+  {
+    "serie_id": 34,
+    "titulo": "Anatomía de Grey",
+    "actores": [
+      {
+        "nombre": "Ellen Pompeo",
+        "nombre_personaje": "Meredith Grey"
+      },
+      {
+        "nombre": "Justin Chambers",
+        "nombre_personaje": "Alex Karev"
+      },
+      {
+        "nombre": "Sandra Oh",
+        "nombre_personaje": "Cristina Yang"
+      },
+      {
+        "nombre": "Chandra Wilson",
+        "nombre_personaje": "Miranda Bailey"
+      },
+      {
+        "nombre": "James Pickens Jr.",
+        "nombre_personaje": "Richard Webber"
+      },
+      {
+        "nombre": "Kevin McKidd",
+        "nombre_personaje": "Owen Hunt"
+      }
+    ]
+  },
+  {
+    "serie_id": 35,
+    "titulo": "Avatar: La leyenda de Aang",
+    "actores": [
+      {
+        "nombre": "Zachery Tyler Eisen",
+        "nombre_personaje": "Aang (voz)"
+      },
+      {
+        "nombre": "Mae Whitman",
+        "nombre_personaje": "Katara (voz)"
+      },
+      {
+        "nombre": "Jack De Sena",
+        "nombre_personaje": "Sokka (voz)"
+      },
+      {
+        "nombre": "Dante Basco",
+        "nombre_personaje": "Zuko (voz)"
+      },
+      {
+        "nombre": "Jessie Flower",
+        "nombre_personaje": "Toph (voz)"
+      },
+      {
+        "nombre": "Dee Bradley Baker",
+        "nombre_personaje": "Appa (voz) y Momo (voz)"
+      }
+    ]
+  },
+  {
+    "serie_id": 36,
+    "titulo": "Cómo conocí a vuestra madre",
+    "actores": [
+      {
+        "nombre": "Josh Radnor",
+        "nombre_personaje": "Ted Mosby"
+      },
+      {
+        "nombre": "Jason Segel",
+        "nombre_personaje": "Marshall Eriksen"
+      },
+      {
+        "nombre": "Cobie Smulders",
+        "nombre_personaje": "Robin Scherbatsky"
+      },
+      {
+        "nombre": "Neil Patrick Harris",
+        "nombre_personaje": "Barney Stinson"
+      },
+      {
+        "nombre": "Alyson Hannigan",
+        "nombre_personaje": "Lily Aldrin"
+      },
+      {
+        "nombre": "Bob Saget",
+        "nombre_personaje": "Ted Mosby del futuro (voz)"
+      }
+    ]
+  },
+  {
+    "serie_id": 37,
+    "titulo": "La academia",
+    "actores": [
+      {
+        "nombre": "Elliot Page",
+        "nombre_personaje": "Vanya Hargreeves"
+      },
+      {
+        "nombre": "Tom Hopper",
+        "nombre_personaje": "Luther Hargreeves"
+      },
+      {
+        "nombre": "David Castañeda",
+        "nombre_personaje": "Diego Hargreeves"
+      },
+      {
+        "nombre": "Emmy Raver-Lampman",
+        "nombre_personaje": "Allison Hargreeves"
+      },
+      {
+        "nombre": "Robert Sheehan",
+        "nombre_personaje": "Klaus Hargreeves"
+      },
+      {
+        "nombre": "Aidan Gallagher",
+        "nombre_personaje": "Cinco Hargreeves"
+      }
+    ]
+  },
+  {
+    "serie_id": 38,
+    "titulo": "Big Boys",
+    "actores": [
+      {
+        "nombre": "John Stamos",
+        "nombre_personaje": "Jack Spencer"
+      },
+      {
+        "nombre": "Kevin Richardson",
+        "nombre_personaje": "Max Maxwell"
+      },
+      {
+        "nombre": "Wendy Raquel Robinson",
+        "nombre_personaje": "Dr. Cheryl Burke"
+      },
+      {
+        "nombre": "Christopher Rich",
+        "nombre_personaje": "Mikey Bublé"
+      },
+      {
+        "nombre": "Kim Fields",
+        "nombre_personaje": "Candy"
+      },
+      {
+        "nombre": "Daniella Perkins",
+        "nombre_personaje": "Emily"
+      }
+    ]
+  },
+  {
+    "serie_id": 39,
+    "titulo": "La mesías",
+    "actores": [
+      {
+        "nombre": "Michelle Monaghan",
+        "nombre_personaje": "Eva"
+      },
+      {
+        "nombre": "Mehmet Günsür",
+        "nombre_personaje": "Al-Masri"
+      },
+      {
+        "nombre": "Ayman El Naggar",
+        "nombre_personaje": "Sharif"
+      },
+      {
+        "nombre": "Tom Hollander",
+        "nombre_personaje": "Peter"
+      },
+      {
+        "nombre": "Eve Hewson",
+        "nombre_personaje": "Rebecca"
+      },
+      {
+        "nombre": "Beau Bridges",
+        "nombre_personaje": "Jerry"
+      }
+    ]
+  },
+  {
+    "serie_id": 40,
+    "titulo": "The Wire (Bajo escucha)",
+    "actores": [
+      {
+        "nombre": "Idris Elba",
+        "nombre_personaje": "Stringer Bell"
+      },
+      {
+        "nombre": "Dominic West",
+        "nombre_personaje": "Jimmy McNulty"
+      },
+      {
+        "nombre": "Sonja Sohn",
+        "nombre_personaje": "Kima Greggs"
+      },
+      {
+        "nombre": "Lance Reddick",
+        "nombre_personaje": "Cedric Daniels"
+      },
+      {
+        "nombre": "Wendy S. Williams",
+        "nombre_personaje": "Bubbles"
+      },
+      {
+        "nombre": "Michael Kenneth Williams",
+        "nombre_personaje": "Omar Little"
+      }
+    ]
+  },
+  {
+    "serie_id": 41,
+    "titulo": "The White Lotus",
+    "actores": [
+      {
+        "nombre": "Murray Bartlett",
+        "nombre_personaje": "Armond"
+      },
+      {
+        "nombre": "Alexandra Daddario",
+        "nombre_personaje": "Rachel Patton"
+      },
+      {
+        "nombre": "Jennifer Coolidge",
+        "nombre_personaje": "Tanya McQuoid"
+      },
+      {
+        "nombre": "Jake Lacy",
+        "nombre_personaje": "Shane Mossback"
+      },
+      {
+        "nombre": "Connie Britton",
+        "nombre_personaje": "Nicole Mossback"
+      },
+      {
+        "nombre": "Steve Zahn",
+        "nombre_personaje": "Mark Mossback"
+      }
+    ]
+  },
+  {
+    "serie_id": 42,
+    "titulo": "Samurái de ojos azules",
+    "actores": [
+      {
+        "nombre": "Ruriko Asaoka",
+        "nombre_personaje": "Sakura"
+      },
+      {
+        "nombre": "Shôta Hayama",
+        "nombre_personaje": "Kyôchirô Kiryû"
+      },
+      {
+        "nombre": "Hiroaki Hirata",
+        "nombre_personaje": "Jinzaburô Washizu"
+      },
+      {
+        "nombre": "Akio Ôtsuka",
+        "nombre_personaje": "Saburô Ichimonji"
+      },
+      {
+        "nombre": "Minami Takayama",
+        "nombre_personaje": "Oichi"
+      },
+      {
+        "nombre": "Katsuhiko Ishii",
+        "nombre_personaje": "Shintarô Itô"
+      }
+    ]
+  },
+  {
+    "serie_id": 43,
+    "titulo": "Los Soprano",
+    "actores": [
+      {
+        "nombre": "James Gandolfini",
+        "nombre_personaje": "Tony Soprano"
+      },
+      {
+        "nombre": "Edie Falco",
+        "nombre_personaje": "Carmela Soprano"
+      },
+      {
+        "nombre": "Lorraine Bracco",
+        "nombre_personaje": "Dr. Jennifer Melfi"
+      },
+      {
+        "nombre": "Michael Imperioli",
+        "nombre_personaje": "Christopher Moltisanti"
+      },
+      {
+        "nombre": "Tony Sirico",
+        "nombre_personaje": "Paulie Walnuts"
+      },
+      {
+        "nombre": "Steven Van Zandt",
+        "nombre_personaje": "Sil Silvio Dante"
+      }
+    ]
+  },
+  {
+    "serie_id": 44,
+    "titulo": "Chernobyl",
+    "actores": [
+      {
+        "nombre": "Jared Harris",
+        "nombre_personaje": "Valery Legasov"
+      },
+      {
+        "nombre": "Stellan Skarsgård",
+        "nombre_personaje": "Boris Shcherbina"
+      },
+      {
+        "nombre": "Emily Watson",
+        "nombre_personaje": "Ulana Khomyuk"
+      },
+      {
+        "nombre": "Paul Ritter",
+        "nombre_personaje": "Vasily Ignatenko"
+      },
+      {
+        "nombre": "Jessie Buckley",
+        "nombre_personaje": "Lyubov Aksenova"
+      },
+      {
+        "nombre": "Adam Nagaitis",
+        "nombre_personaje": "Vasily Kolesnikov"
+      }
+    ]
+  },
+  {
+    "serie_id": 45,
+    "titulo": "Generación V",
+    "actores": [
+      {
+        "nombre": "Jack Quaid",
+        "nombre_personaje": "Hughie Campbell"
+      },
+      {
+        "nombre": "Karen Fukuhara",
+        "nombre_personaje": "Kimiko"
+      },
+      {
+        "nombre": "Chace Crawford",
+        "nombre_personaje": "The Deep"
+      },
+      {
+        "nombre": "Giancarlo Esposito",
+        "nombre_personaje": "Vought"
+      },
+      {
+        "nombre": "Antony Starr",
+        "nombre_personaje": "Homelander"
+      },
+      {
+        "nombre": "Erin Moriarty",
+        "nombre_personaje": "Starlight"
+      }
+    ]
+  },
+  {
+    "serie_id": 46,
+    "titulo": "American Horror Story: New York City",
+    "actores": [
+      {
+        "nombre": "Evan Peters",
+        "nombre_personaje": "Detective Patrick Cody"
+      },
+      {
+        "nombre": "Leslie Grossman",
+        "nombre_personaje": "Barbara Read"
+      },
+      {
+        "nombre": "Billie Lourd",
+        "nombre_personaje": "Lara Chamberlain"
+      },
+      {
+        "nombre": "Caligula Pariz",
+        "nombre_personaje": "Detective Charles Montgomery"
+      },
+      {
+        "nombre": "Patti LuPone",
+        "nombre_personaje": "Dede Gardner"
+      },
+      {
+        "nombre": "Zachary Quinto",
+        "nombre_personaje": "Henry Wu"
+      }
+    ]
+  },
+  {
+    "serie_id": 47,
+    "titulo": "Perdidos",
+    "actores": [
+      {
+        "nombre": "Matthew Fox",
+        "nombre_personaje": "Jack Shephard"
+      },
+      {
+        "nombre": "Evangeline Lilly",
+        "nombre_personaje": "Kate Austen"
+      },
+      {
+        "nombre": "Jorge Garcia",
+        "nombre_personaje": "Hugo Reyes"
+      },
+      {
+        "nombre": "Josh Holloway",
+        "nombre_personaje": "James \"Sawyer\" Ford"
+      },
+      {
+        "nombre": "Yunjin Kim",
+        "nombre_personaje": "Sun-Hwa Kwon"
+      },
+      {
+        "nombre": "Daniel Dae Kim",
+        "nombre_personaje": "Jin-Soo Kwon"
+      }
+    ]
+  },
+  {
+    "serie_id": 48,
+    "titulo": "Sand Land: The Series",
+    "actores": [
+      {
+        "nombre": "Chiaki Kobayashi",
+        "nombre_personaje": "Yuzuru Tachibana"
+      },
+      {
+        "nombre": "Tomoko Morozuka",
+        "nombre_personaje": "Paimai"
+      },
+      {
+        "nombre": "Kazuhiro Yamaji",
+        "nombre_personaje": "Kiriha"
+      },
+      {
+        "nombre": "Yūma Uchida",
+        "nombre_personaje": "Shuna"
+      },
+      {
+        "nombre": "Maaya Sakamoto",
+        "nombre_personaje": "Iwao"
+      },
+      {
+        "nombre": "Yūichi Nakamura",
+        "nombre_personaje": "Raoh"
+      }
+    ]
+  },
+  {
+    "serie_id": 49,
+    "titulo": "The Expanse",
+    "actores": [
+      {
+        "nombre": "Steven Strait",
+        "nombre_personaje": "James Holden"
+      },
+      {
+        "nombre": "Wes Chatham",
+        "nombre_personaje": "Amos Burton"
+      },
+      {
+        "nombre": "Shohreh Aghdashloo",
+        "nombre_personaje": "Chrisjen Avasarala"
+      },
+      {
+        "nombre": "Dominique Tipper",
+        "nombre_personaje": "Naomi Nagata"
+      },
+      {
+        "nombre": "Cas Anvar",
+        "nombre_personaje": "Alex Kamal"
+      },
+      {
+        "nombre": "Frankie Adams",
+        "nombre_personaje": "Bobbie Draper"
+      }
+    ]
+  },
+  {
+    "serie_id": 50,
+    "titulo": "La caza del asesino",
+    "actores": [
+      {
+        "nombre": "Gerard Butler",
+        "nombre_personaje": "Joe Miller"
+      },
+      {
+        "nombre": "Michael Keaton",
+        "nombre_personaje": "Detective Stanley White"
+      },
+      {
+        "nombre": "Michelle Rodriguez",
+        "nombre_personaje": "Lisa Ramsey"
+      },
+      {
+        "nombre": "Morgan Freeman",
+        "nombre_personaje": "Alex Murphy"
+      },
+      {
+        "nombre": "Danny Glover",
+        "nombre_personaje": "Earl Hickey"
+      },
+      {
+        "nombre": "Kim Basinger",
+        "nombre_personaje": "Janet Royce"
+      }
+    ]
+  },
+  {
+    "serie_id": 51,
+    "titulo": "Para toda la humanidad",
+    "actores": [
+      {
+        "nombre": "Joel Kinnaman",
+        "nombre_personaje": "Ed Baldwin"
+      },
+      {
+        "nombre": "Sarah Jones",
+        "nombre_personaje": "Tracy Stevens"
+      },
+      {
+        "nombre": "Shantel VanSanten",
+        "nombre_personaje": "Karen Baldwin"
+      },
+      {
+        "nombre": "Wrenn Schmidt",
+        "nombre_personaje": "Margo Madison"
+      },
+      {
+        "nombre": "Dylan O'Brien",
+        "nombre_personaje": "Alexei Petrov"
+      },
+      {
+        "nombre": "Corey Stoll",
+        "nombre_personaje": "Buzz Aldrin"
+      }
+    ]
+  },
+  {
+    "serie_id": 52,
+    "titulo": "Nada",
+    "actores": [
+      {
+        "nombre": "Juan Pablo Cuello",
+        "nombre_personaje": "Juan Pablo \"Nando\" Navarro"
+      },
+      {
+        "nombre": "Adriana Ugarte",
+        "nombre_personaje": "Olivia Costa"
+      },
+      {
+        "nombre": "Luis Zahera",
+        "nombre_personaje": "Sergio \"El Pastor\" Pastor"
+      },
+      {
+        "nombre": "Anna Castillo",
+        "nombre_personaje": "Laura Vidal"
+      },
+      {
+        "nombre": "Alberto Jiménez",
+        "nombre_personaje": "Jaime Torres"
+      },
+      {
+        "nombre": "María León",
+        "nombre_personaje": "Blanca Portillo"
+      }
+    ]
+  },
+  {
+    "serie_id": 53,
+    "titulo": "El juego de la muerte",
+    "actores": [
+      {
+        "nombre": "Lee Jung-jae",
+        "nombre_personaje": "Seong Gi-hun"
+      },
+      {
+        "nombre": "Jung Woo-sung",
+        "nombre_personaje": "Hwang Jun-ho"
+      },
+      {
+        "nombre": "Lee Byung-hun",
+        "nombre_personaje": "Front Man"
+      },
+      {
+        "nombre": "Gong Yoo",
+        "nombre_personaje": "Sang-woo"
+      },
+      {
+        "nombre": "Jung Ho-yeon",
+        "nombre_personaje": "Kang Sae-byeok"
+      },
+      {
+        "nombre": "Cha Woo-young",
+        "nombre_personaje": "Ji-yeong"
+      }
+    ]
+  },
+  {
+    "serie_id": 54,
+    "titulo": "Merlí",
+    "actores": [
+      {
+        "nombre": "Francesc Orella",
+        "nombre_personaje": "Merlí Bergeron"
+      },
+      {
+        "nombre": "Aitor Luna",
+        "nombre_personaje": "Bruno Bergeron"
+      },
+      {
+        "nombre": "David Solans",
+        "nombre_personaje": "Pol Rubio"
+      },
+      {
+        "nombre": "Mariona Gollobart",
+        "nombre_personaje": "Berta Prats"
+      },
+      {
+        "nombre": "Meritxell Elías",
+        "nombre_personaje": "Marina Blanc"
+      },
+      {
+        "nombre": "Pau Vilarrubí",
+        "nombre_personaje": "Gerard Escribano"
+      }
+    ]
+  },
+  {
+    "serie_id": 55,
+    "titulo": "La casa del dragón",
+    "actores": [
+      {
+        "nombre": "Matt Smith",
+        "nombre_personaje": "Daemon Targaryen"
+      },
+      {
+        "nombre": "Paddy Considine",
+        "nombre_personaje": "Viserys I Targaryen"
+      },
+      {
+        "nombre": "Olivia Cooke",
+        "nombre_personaje": "Alicent Hightower"
+      },
+      {
+        "nombre": "Emma D'Arcy",
+        "nombre_personaje": "Rhaenyra Targaryen"
+      },
+      {
+        "nombre": "Steve Toussaint",
+        "nombre_personaje": "Lord Corlys Velaryon"
+      },
+      {
+        "nombre": "Eve Best",
+        "nombre_personaje": "Rhaenys Targaryen"
+      }
+    ]
+  },
+  {
+    "serie_id": 56,
+    "titulo": "El descubrimiento de las brujas",
+    "actores": [
+      {
+        "nombre": "Matthew Goode",
+        "nombre_personaje": "Matthew Clairmont"
+      },
+      {
+        "nombre": "Teresa Palmer",
+        "nombre_personaje": "Diana Bishop"
+      },
+      {
+        "nombre": "Edward Ashley-Cooper",
+        "nombre_personaje": "Peter Knox"
+      },
+      {
+        "nombre": "Valarie Pettiford",
+        "nombre_personaje": "Emily Bennett"
+      },
+      {
+        "nombre": "Aiysha Hart",
+        "nombre_personaje": "Miriam Shephard"
+      },
+      {
+        "nombre": "Louis Partridge",
+        "nombre_personaje": "Jack Beaufort"
+      }
+    ]
+  },
+  {
+    "serie_id": 57,
+    "titulo": "Soy Extraordinaria",
+    "actores": [
+      {
+        "nombre": "María Pedraza",
+        "nombre_personaje": "Jani"
+      },
+      {
+        "nombre": "Oona Roche",
+        "nombre_personaje": "Ursula"
+      },
+      {
+        "nombre": "José de Luna",
+        "nombre_personaje": "Fernando"
+      },
+      {
+        "nombre": "Carolina Bang",
+        "nombre_personaje": "Gloria"
+      },
+      {
+        "nombre": "Ricardo Gómez",
+        "nombre_personaje": "Bruno"
+      },
+      {
+        "nombre": "Nadia de Santiago",
+        "nombre_personaje": "Sara"
+      }
+    ]
+  },
+  {
+    "serie_id": 58,
+    "titulo": "30 Monedas",
+    "actores": [
+      {
+        "nombre": "Eduard Fernández",
+        "nombre_personaje": "Padre Vergara"
+      },
+      {
+        "nombre": "Macarena Gómez",
+        "nombre_personaje": "Elena"
+      },
+      {
+        "nombre": "Miguel Ángel Silvestre",
+        "nombre_personaje": "Paco"
+      },
+      {
+        "nombre": "Megan Montaner",
+        "nombre_personaje": "Mermelada"
+      },
+      {
+        "nombre": "Manuela Velasco",
+        "nombre_personaje": "Rosa"
+      },
+      {
+        "nombre": "Adrián Viador",
+        "nombre_personaje": "Manuel"
+      }
+    ]
+  },
+  {
+    "serie_id": 59,
+    "titulo": "The Curse (La maldición)",
+    "actores": [
+      {
+        "nombre": "Jessie Buckley",
+        "nombre_personaje": "Erin Gray"
+      },
+      {
+        "nombre": "Garret Hedlund",
+        "nombre_personaje": "Jake Conroy"
+      },
+      {
+        "nombre": "Alia Shawkat",
+        "nombre_personaje": "Paige"
+      },
+      {
+        "nombre": "Gugu Mbatha-Raw",
+        "nombre_personaje": "Sydney"
+      },
+      {
+        "nombre": "Imogen Poots",
+        "nombre_personaje": "Flora"
+      },
+      {
+        "nombre": "Marina de Tavira",
+        "nombre_personaje": "Alma"
+      }
+    ]
+  },
+  {
+    "serie_id": 60,
+    "titulo": "Chicago Med",
+    "actores": [
+      {
+        "nombre": "Nick Gehlfuss",
+        "nombre_personaje": "Dr. Will Halstead"
+      },
+      {
+        "nombre": "Yaya DaCosta",
+        "nombre_personaje": "April Sexton"
+      },
+      {
+        "nombre": "Colin Donnell",
+        "nombre_personaje": "Dr. Connor Rhodes"
+      },
+      {
+        "nombre": "Brian Tee",
+        "nombre_personaje": "Dr. Ethan Choi"
+      },
+      {
+        "nombre": "Marlyne Barrett",
+        "nombre_personaje": "Maggie Dawson"
+      },
+      {
+        "nombre": "S. Epatha Merkerson",
+        "nombre_personaje": "Sharon Goodwin"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1787 @@
+[
+    {
+        "nombre_personaje": "Raymond Burr",
+        "actor_id": 1,
+        "pelicula_id": 1
+    },
+    {
+        "nombre_personaje": "Eleanor Lambert",
+        "actor_id": 2,
+        "pelicula_id": 1
+    },
+    {
+        "nombre_personaje": "Lee Isaacs",
+        "actor_id": 3,
+        "pelicula_id": 1
+    },
+    {
+        "nombre_personaje": "Hannah Roark",
+        "actor_id": 4,
+        "pelicula_id": 1
+    },
+    {
+        "nombre_personaje": "Donna Taylor",
+        "actor_id": 5,
+        "pelicula_id": 1
+    },
+    {
+        "nombre_personaje": "Hastings",
+        "actor_id": 6,
+        "pelicula_id": 1
+    },
+    {
+        "nombre_personaje": "Gwen",
+        "actor_id": 7,
+        "pelicula_id": 2
+    },
+    {
+        "nombre_personaje": "Erin",
+        "actor_id": 8,
+        "pelicula_id": 2
+    },
+    {
+        "nombre_personaje": "Sarah",
+        "actor_id": 9,
+        "pelicula_id": 2
+    },
+    {
+        "nombre_personaje": "Anna",
+        "actor_id": 10,
+        "pelicula_id": 2
+    },
+    {
+        "nombre_personaje": "Arthur",
+        "actor_id": 11,
+        "pelicula_id": 2
+    },
+    {
+        "nombre_personaje": "Mr. Kindly",
+        "actor_id": 12,
+        "pelicula_id": 2
+    },
+    {
+        "nombre_personaje": "J. Robert Oppenheimer",
+        "actor_id": 13,
+        "pelicula_id": 3
+    },
+    {
+        "nombre_personaje": "Katherine Oppenheimer",
+        "actor_id": 14,
+        "pelicula_id": 3
+    },
+    {
+        "nombre_personaje": "Leslie Groves",
+        "actor_id": 15,
+        "pelicula_id": 3
+    },
+    {
+        "nombre_personaje": "Lewis Strauss",
+        "actor_id": 16,
+        "pelicula_id": 3
+    },
+    {
+        "nombre_personaje": "Jean Tatlock",
+        "actor_id": 17,
+        "pelicula_id": 3
+    },
+    {
+        "nombre_personaje": "Edward Teller",
+        "actor_id": 18,
+        "pelicula_id": 3
+    },
+    {
+        "nombre_personaje": "Paul Atreides",
+        "actor_id": 19,
+        "pelicula_id": 4
+    },
+    {
+        "nombre_personaje": "Chani",
+        "actor_id": 20,
+        "pelicula_id": 4
+    },
+    {
+        "nombre_personaje": "Duke Leto Atreides",
+        "actor_id": 21,
+        "pelicula_id": 4
+    },
+    {
+        "nombre_personaje": "Lady Jessica",
+        "actor_id": 22,
+        "pelicula_id": 4
+    },
+    {
+        "nombre_personaje": "Duncan Idaho",
+        "actor_id": 23,
+        "pelicula_id": 4
+    },
+    {
+        "nombre_personaje": "Gurney Halleck",
+        "actor_id": 18,
+        "pelicula_id": 4
+    },
+    {
+        "nombre_personaje": "Brenda Starr",
+        "actor_id": 24,
+        "pelicula_id": 5
+    },
+    {
+        "nombre_personaje": "Jack Weil",
+        "actor_id": 25,
+        "pelicula_id": 5
+    },
+    {
+        "nombre_personaje": "Eleanor Vance",
+        "actor_id": 26,
+        "pelicula_id": 5
+    },
+    {
+        "nombre_personaje": "Lily Kean",
+        "actor_id": 27,
+        "pelicula_id": 5
+    },
+    {
+        "nombre_personaje": "Brie Evantee",
+        "actor_id": 28,
+        "pelicula_id": 5
+    },
+    {
+        "nombre_personaje": "Dr. Teddy Oglethorpe",
+        "actor_id": 29,
+        "pelicula_id": 5
+    },
+    {
+        "nombre_personaje": "Paul Atreides",
+        "actor_id": 19,
+        "pelicula_id": 6
+    },
+    {
+        "nombre_personaje": "Lady Jessica",
+        "actor_id": 22,
+        "pelicula_id": 6
+    },
+    {
+        "nombre_personaje": "Duke Leto Atreides",
+        "actor_id": 21,
+        "pelicula_id": 6
+    },
+    {
+        "nombre_personaje": "Duncan Idaho",
+        "actor_id": 23,
+        "pelicula_id": 6
+    },
+    {
+        "nombre_personaje": "Chani",
+        "actor_id": 20,
+        "pelicula_id": 6
+    },
+    {
+        "nombre_personaje": "Stilgar",
+        "actor_id": 30,
+        "pelicula_id": 6
+    },
+    {
+        "nombre_personaje": "Bernardo Riaño",
+        "actor_id": 31,
+        "pelicula_id": 7
+    },
+    {
+        "nombre_personaje": "Gloria Montes",
+        "actor_id": 32,
+        "pelicula_id": 7
+    },
+    {
+        "nombre_personaje": "Susana",
+        "actor_id": 33,
+        "pelicula_id": 7
+    },
+    {
+        "nombre_personaje": "Paco",
+        "actor_id": 34,
+        "pelicula_id": 7
+    },
+    {
+        "nombre_personaje": "Clara",
+        "actor_id": 35,
+        "pelicula_id": 7
+    },
+    {
+        "nombre_personaje": "Ramón",
+        "actor_id": 36,
+        "pelicula_id": 7
+    },
+    {
+        "nombre_personaje": "Martin Rauch",
+        "actor_id": 37,
+        "pelicula_id": 8
+    },
+    {
+        "nombre_personaje": "Elizabeth Shaw",
+        "actor_id": 38,
+        "pelicula_id": 8
+    },
+    {
+        "nombre_personaje": "Hans Hoffmann",
+        "actor_id": 39,
+        "pelicula_id": 8
+    },
+    {
+        "nombre_personaje": "Anna Brandt",
+        "actor_id": 40,
+        "pelicula_id": 8
+    },
+    {
+        "nombre_personaje": "Thomas Miller",
+        "actor_id": 41,
+        "pelicula_id": 8
+    },
+    {
+        "nombre_personaje": "Barbara",
+        "actor_id": 42,
+        "pelicula_id": 8
+    },
+    {
+        "nombre_personaje": "Thanos",
+        "actor_id": 18,
+        "pelicula_id": 9
+    },
+    {
+        "nombre_personaje": "Tony Stark",
+        "actor_id": 16,
+        "pelicula_id": 9
+    },
+    {
+        "nombre_personaje": "Steve Rogers",
+        "actor_id": 43,
+        "pelicula_id": 9
+    },
+    {
+        "nombre_personaje": "Thor",
+        "actor_id": 44,
+        "pelicula_id": 9
+    },
+    {
+        "nombre_personaje": "Bruce Banner",
+        "actor_id": 45,
+        "pelicula_id": 9
+    },
+    {
+        "nombre_personaje": "Natasha Romanoff",
+        "actor_id": 46,
+        "pelicula_id": 9
+    },
+    {
+        "nombre_personaje": "Laura Burnham",
+        "actor_id": 2,
+        "pelicula_id": 10
+    },
+    {
+        "nombre_personaje": "Paco Valencia",
+        "actor_id": 30,
+        "pelicula_id": 10
+    },
+    {
+        "nombre_personaje": "Clara Ruíz",
+        "actor_id": 47,
+        "pelicula_id": 10
+    },
+    {
+        "nombre_personaje": "Jim Beam",
+        "actor_id": 15,
+        "pelicula_id": 10
+    },
+    {
+        "nombre_personaje": "Isabella Elkin",
+        "actor_id": 48,
+        "pelicula_id": 10
+    },
+    {
+        "nombre_personaje": "Cecilia Torres",
+        "actor_id": 49,
+        "pelicula_id": 10
+    },
+    {
+        "nombre_personaje": "Dalton",
+        "actor_id": 50,
+        "pelicula_id": 11
+    },
+    {
+        "nombre_personaje": "Wade Garrett",
+        "actor_id": 51,
+        "pelicula_id": 11
+    },
+    {
+        "nombre_personaje": "Elizabeth Clay",
+        "actor_id": 52,
+        "pelicula_id": 11
+    },
+    {
+        "nombre_personaje": "Brad Wesley",
+        "actor_id": 53,
+        "pelicula_id": 11
+    },
+    {
+        "nombre_personaje": "Ernie",
+        "actor_id": 54,
+        "pelicula_id": 11
+    },
+    {
+        "nombre_personaje": "O'Neil",
+        "actor_id": 55,
+        "pelicula_id": 11
+    },
+    {
+        "nombre_personaje": "Raymond \"Ray\" Hastings",
+        "actor_id": 56,
+        "pelicula_id": 12
+    },
+    {
+        "nombre_personaje": "Mickey Pearson",
+        "actor_id": 57,
+        "pelicula_id": 12
+    },
+    {
+        "nombre_personaje": "Dry Eye",
+        "actor_id": 58,
+        "pelicula_id": 12
+    },
+    {
+        "nombre_personaje": "Coach",
+        "actor_id": 59,
+        "pelicula_id": 12
+    },
+    {
+        "nombre_personaje": "Rosalind Pearson",
+        "actor_id": 60,
+        "pelicula_id": 12
+    },
+    {
+        "nombre_personaje": "Tom",
+        "actor_id": 3,
+        "pelicula_id": 12
+    },
+    {
+        "nombre_personaje": "Jack Dawson",
+        "actor_id": 61,
+        "pelicula_id": 13
+    },
+    {
+        "nombre_personaje": "Rose DeWitt Bukater",
+        "actor_id": 62,
+        "pelicula_id": 13
+    },
+    {
+        "nombre_personaje": "Cal Hockley",
+        "actor_id": 63,
+        "pelicula_id": 13
+    },
+    {
+        "nombre_personaje": "Margaret \"Molly\" Brown",
+        "actor_id": 64,
+        "pelicula_id": 13
+    },
+    {
+        "nombre_personaje": "Ruth DeWitt Bukater",
+        "actor_id": 65,
+        "pelicula_id": 13
+    },
+    {
+        "nombre_personaje": "Spicer Lovejoy",
+        "actor_id": 66,
+        "pelicula_id": 13
+    },
+    {
+        "nombre_personaje": "Detective Park Doo-man",
+        "actor_id": 67,
+        "pelicula_id": 14
+    },
+    {
+        "nombre_personaje": "Detective Seo Tae-yoon",
+        "actor_id": 68,
+        "pelicula_id": 14
+    },
+    {
+        "nombre_personaje": "Kwak Young-goo",
+        "actor_id": 69,
+        "pelicula_id": 14
+    },
+    {
+        "nombre_personaje": "Nam Ju-ho",
+        "actor_id": 70,
+        "pelicula_id": 14
+    },
+    {
+        "nombre_personaje": "Kim Young-chul",
+        "actor_id": 71,
+        "pelicula_id": 14
+    },
+    {
+        "nombre_personaje": "Chief Kang",
+        "actor_id": 72,
+        "pelicula_id": 14
+    },
+    {
+        "nombre_personaje": "Hutch Mansell",
+        "actor_id": 73,
+        "pelicula_id": 15
+    },
+    {
+        "nombre_personaje": "Becca Mansell",
+        "actor_id": 74,
+        "pelicula_id": 15
+    },
+    {
+        "nombre_personaje": "Harold \"Harry\" Mansell",
+        "actor_id": 75,
+        "pelicula_id": 15
+    },
+    {
+        "nombre_personaje": "Charlie",
+        "actor_id": 76,
+        "pelicula_id": 15
+    },
+    {
+        "nombre_personaje": "Papa John",
+        "actor_id": 77,
+        "pelicula_id": 15
+    },
+    {
+        "nombre_personaje": "Pavel",
+        "actor_id": 78,
+        "pelicula_id": 15
+    },
+    {
+        "nombre_personaje": "Alex Lewis",
+        "actor_id": 79,
+        "pelicula_id": 16
+    },
+    {
+        "nombre_personaje": "Natalie Jones",
+        "actor_id": 80,
+        "pelicula_id": 16
+    },
+    {
+        "nombre_personaje": "Dr. Martin Jordan",
+        "actor_id": 81,
+        "pelicula_id": 16
+    },
+    {
+        "nombre_personaje": "Derek Mills",
+        "actor_id": 82,
+        "pelicula_id": 16
+    },
+    {
+        "nombre_personaje": "Jorgen Nordstrom",
+        "actor_id": 83,
+        "pelicula_id": 16
+    },
+    {
+        "nombre_personaje": "Gus",
+        "actor_id": 84,
+        "pelicula_id": 16
+    },
+    {
+        "nombre_personaje": "Adam Clay",
+        "actor_id": 85,
+        "pelicula_id": 17
+    },
+    {
+        "nombre_personaje": "Agent Verona Parker",
+        "actor_id": 86,
+        "pelicula_id": 17
+    },
+    {
+        "nombre_personaje": "Derek Danforth",
+        "actor_id": 87,
+        "pelicula_id": 17
+    },
+    {
+        "nombre_personaje": "Agent Matt Wiley",
+        "actor_id": 88,
+        "pelicula_id": 17
+    },
+    {
+        "nombre_personaje": "Eloise Parker",
+        "actor_id": 89,
+        "pelicula_id": 17
+    },
+    {
+        "nombre_personaje": "Wallace Westwyld",
+        "actor_id": 90,
+        "pelicula_id": 17
+    },
+    {
+        "nombre_personaje": "Callie Spengler",
+        "actor_id": 91,
+        "pelicula_id": 18
+    },
+    {
+        "nombre_personaje": "Trevor Spengler",
+        "actor_id": 92,
+        "pelicula_id": 18
+    },
+    {
+        "nombre_personaje": "Phoebe Spengler",
+        "actor_id": 93,
+        "pelicula_id": 18
+    },
+    {
+        "nombre_personaje": "Gary Grooberson",
+        "actor_id": 94,
+        "pelicula_id": 18
+    },
+    {
+        "nombre_personaje": "Dana Barrett",
+        "actor_id": 95,
+        "pelicula_id": 18
+    },
+    {
+        "nombre_personaje": "Dr. Peter Venkman",
+        "actor_id": 96,
+        "pelicula_id": 18
+    },
+    {
+        "nombre_personaje": "Alex Newman",
+        "actor_id": 2,
+        "pelicula_id": 19
+    },
+    {
+        "nombre_personaje": "Dan",
+        "actor_id": 97,
+        "pelicula_id": 19
+    },
+    {
+        "nombre_personaje": "Patrick",
+        "actor_id": 98,
+        "pelicula_id": 19
+    },
+    {
+        "nombre_personaje": "Mitch",
+        "actor_id": 99,
+        "pelicula_id": 19
+    },
+    {
+        "nombre_personaje": "Suzie",
+        "actor_id": 100,
+        "pelicula_id": 19
+    },
+    {
+        "nombre_personaje": "Grandma",
+        "actor_id": 101,
+        "pelicula_id": 19
+    },
+    {
+        "nombre_personaje": "Lee",
+        "actor_id": 19,
+        "pelicula_id": 20
+    },
+    {
+        "nombre_personaje": "Oliver",
+        "actor_id": 102,
+        "pelicula_id": 20
+    },
+    {
+        "nombre_personaje": "Mr. Perlman",
+        "actor_id": 103,
+        "pelicula_id": 20
+    },
+    {
+        "nombre_personaje": "Marla",
+        "actor_id": 104,
+        "pelicula_id": 20
+    },
+    {
+        "nombre_personaje": "Mr. Perlman's Father",
+        "actor_id": 105,
+        "pelicula_id": 20
+    },
+    {
+        "nombre_personaje": "Tallie",
+        "actor_id": 106,
+        "pelicula_id": 20
+    },
+    {
+        "nombre_personaje": "Alex",
+        "actor_id": 107,
+        "pelicula_id": 21
+    },
+    {
+        "nombre_personaje": "Claire",
+        "actor_id": 108,
+        "pelicula_id": 21
+    },
+    {
+        "nombre_personaje": "Nina",
+        "actor_id": 109,
+        "pelicula_id": 21
+    },
+    {
+        "nombre_personaje": "Dr. David Swan",
+        "actor_id": 110,
+        "pelicula_id": 21
+    },
+    {
+        "nombre_personaje": "Leo",
+        "actor_id": 111,
+        "pelicula_id": 21
+    },
+    {
+        "nombre_personaje": "Sophie",
+        "actor_id": 112,
+        "pelicula_id": 21
+    },
+    {
+        "nombre_personaje": "John Argylle",
+        "actor_id": 113,
+        "pelicula_id": 22
+    },
+    {
+        "nombre_personaje": "Ana Marquez",
+        "actor_id": 114,
+        "pelicula_id": 22
+    },
+    {
+        "nombre_personaje": "Detective Frank Figgis",
+        "actor_id": 115,
+        "pelicula_id": 22
+    },
+    {
+        "nombre_personaje": "John Bishop",
+        "actor_id": 116,
+        "pelicula_id": 22
+    },
+    {
+        "nombre_personaje": "Kingpin",
+        "actor_id": 117,
+        "pelicula_id": 22
+    },
+    {
+        "nombre_personaje": "Morgan",
+        "actor_id": 118,
+        "pelicula_id": 22
+    },
+    {
+        "nombre_personaje": "Kora",
+        "actor_id": 119,
+        "pelicula_id": 23
+    },
+    {
+        "nombre_personaje": "Dagan",
+        "actor_id": 56,
+        "pelicula_id": 23
+    },
+    {
+        "nombre_personaje": "Warlord Raymar",
+        "actor_id": 120,
+        "pelicula_id": 23
+    },
+    {
+        "nombre_personaje": "Benny",
+        "actor_id": 121,
+        "pelicula_id": 23
+    },
+    {
+        "nombre_personaje": "Viscount Remy",
+        "actor_id": 122,
+        "pelicula_id": 23
+    },
+    {
+        "nombre_personaje": "Bex",
+        "actor_id": 123,
+        "pelicula_id": 23
+    },
+    {
+        "nombre_personaje": "Willy Wonka",
+        "actor_id": 19,
+        "pelicula_id": 24
+    },
+    {
+        "nombre_personaje": "Willy Wonka (adulto)",
+        "actor_id": 124,
+        "pelicula_id": 24
+    },
+    {
+        "nombre_personaje": "Sra. Bucket",
+        "actor_id": 125,
+        "pelicula_id": 24
+    },
+    {
+        "nombre_personaje": "Sra. Gloop",
+        "actor_id": 126,
+        "pelicula_id": 24
+    },
+    {
+        "nombre_personaje": "Sr. Wonka",
+        "actor_id": 127,
+        "pelicula_id": 24
+    },
+    {
+        "nombre_personaje": "Sr. Salt",
+        "actor_id": 128,
+        "pelicula_id": 24
+    },
+    {
+        "nombre_personaje": "Napoleón Bonaparte",
+        "actor_id": 11,
+        "pelicula_id": 25
+    },
+    {
+        "nombre_personaje": "Josefina de Beauharnais",
+        "actor_id": 129,
+        "pelicula_id": 25
+    },
+    {
+        "nombre_personaje": "Tallien",
+        "actor_id": 130,
+        "pelicula_id": 25
+    },
+    {
+        "nombre_personaje": "Sieyès",
+        "actor_id": 131,
+        "pelicula_id": 25
+    },
+    {
+        "nombre_personaje": "Lucien Bonaparte",
+        "actor_id": 132,
+        "pelicula_id": 25
+    },
+    {
+        "nombre_personaje": "Toussaint Louverture",
+        "actor_id": 133,
+        "pelicula_id": 25
+    },
+    {
+        "nombre_personaje": "Mike Ryland",
+        "actor_id": 134,
+        "pelicula_id": 26
+    },
+    {
+        "nombre_personaje": "La Hada Madrina",
+        "actor_id": 135,
+        "pelicula_id": 26
+    },
+    {
+        "nombre_personaje": "Princesa Wish",
+        "actor_id": 136,
+        "pelicula_id": 26
+    },
+    {
+        "nombre_personaje": "Sr. Wish",
+        "actor_id": 137,
+        "pelicula_id": 26
+    },
+    {
+        "nombre_personaje": "Sra. Wish",
+        "actor_id": 138,
+        "pelicula_id": 26
+    },
+    {
+        "nombre_personaje": "Wish",
+        "actor_id": 139,
+        "pelicula_id": 26
+    },
+    {
+        "nombre_personaje": "Frank Sheeran",
+        "actor_id": 140,
+        "pelicula_id": 27
+    },
+    {
+        "nombre_personaje": "Jimmy Hoffa",
+        "actor_id": 141,
+        "pelicula_id": 27
+    },
+    {
+        "nombre_personaje": "Russell Bufalino",
+        "actor_id": 142,
+        "pelicula_id": 27
+    },
+    {
+        "nombre_personaje": "Henry Hill",
+        "actor_id": 143,
+        "pelicula_id": 27
+    },
+    {
+        "nombre_personaje": "Helen Sheeran",
+        "actor_id": 144,
+        "pelicula_id": 27
+    },
+    {
+        "nombre_personaje": "Joey Colombo",
+        "actor_id": 145,
+        "pelicula_id": 27
+    },
+    {
+        "nombre_personaje": "Jack Swagger",
+        "actor_id": 25,
+        "pelicula_id": 28
+    },
+    {
+        "nombre_personaje": "Roy O'Bannon",
+        "actor_id": 146,
+        "pelicula_id": 28
+    },
+    {
+        "nombre_personaje": "Lester Varga",
+        "actor_id": 15,
+        "pelicula_id": 28
+    },
+    {
+        "nombre_personaje": "John Ridgeway",
+        "actor_id": 147,
+        "pelicula_id": 28
+    },
+    {
+        "nombre_personaje": "Patrick Kenzie",
+        "actor_id": 148,
+        "pelicula_id": 28
+    },
+    {
+        "nombre_personaje": "Basher Tarr",
+        "actor_id": 149,
+        "pelicula_id": 28
+    },
+    {
+        "nombre_personaje": "Cooper",
+        "actor_id": 57,
+        "pelicula_id": 29
+    },
+    {
+        "nombre_personaje": "Amelia Brand",
+        "actor_id": 2,
+        "pelicula_id": 29
+    },
+    {
+        "nombre_personaje": "Murph",
+        "actor_id": 49,
+        "pelicula_id": 29
+    },
+    {
+        "nombre_personaje": "Prof. Brand",
+        "actor_id": 150,
+        "pelicula_id": 29
+    },
+    {
+        "nombre_personaje": "TARS",
+        "actor_id": 151,
+        "pelicula_id": 29
+    },
+    {
+        "nombre_personaje": "Murph (joven)",
+        "actor_id": 152,
+        "pelicula_id": 29
+    },
+    {
+        "nombre_personaje": "Keller Dover",
+        "actor_id": 153,
+        "pelicula_id": 30
+    },
+    {
+        "nombre_personaje": "Detective Loki",
+        "actor_id": 154,
+        "pelicula_id": 30
+    },
+    {
+        "nombre_personaje": "Alex Jones",
+        "actor_id": 155,
+        "pelicula_id": 30
+    },
+    {
+        "nombre_personaje": "Grace Dover",
+        "actor_id": 156,
+        "pelicula_id": 30
+    },
+    {
+        "nombre_personaje": "Nancy Jones",
+        "actor_id": 157,
+        "pelicula_id": 30
+    },
+    {
+        "nombre_personaje": "Detective Carter",
+        "actor_id": 158,
+        "pelicula_id": 30
+    },
+    {
+        "nombre_personaje": "Coriolanus Snow",
+        "actor_id": 159,
+        "pelicula_id": 31
+    },
+    {
+        "nombre_personaje": "Lucy Gray Baird",
+        "actor_id": 160,
+        "pelicula_id": 31
+    },
+    {
+        "nombre_personaje": "Tigris Snow",
+        "actor_id": 161,
+        "pelicula_id": 31
+    },
+    {
+        "nombre_personaje": "Dr. Volumnia Gaul",
+        "actor_id": 162,
+        "pelicula_id": 31
+    },
+    {
+        "nombre_personaje": "Casca Highbottom",
+        "actor_id": 98,
+        "pelicula_id": 31
+    },
+    {
+        "nombre_personaje": "Young President Snow",
+        "actor_id": 87,
+        "pelicula_id": 31
+    },
+    {
+        "nombre_personaje": "John John",
+        "actor_id": 163,
+        "pelicula_id": 32
+    },
+    {
+        "nombre_personaje": "Jane Doe",
+        "actor_id": 164,
+        "pelicula_id": 32
+    },
+    {
+        "nombre_personaje": "The Professor",
+        "actor_id": 120,
+        "pelicula_id": 32
+    },
+    {
+        "nombre_personaje": "Lorraine",
+        "actor_id": 165,
+        "pelicula_id": 32
+    },
+    {
+        "nombre_personaje": "Janis",
+        "actor_id": 47,
+        "pelicula_id": 33
+    },
+    {
+        "nombre_personaje": "Maximo",
+        "actor_id": 166,
+        "pelicula_id": 33
+    },
+    {
+        "nombre_personaje": "Alberto",
+        "actor_id": 167,
+        "pelicula_id": 33
+    },
+    {
+        "nombre_personaje": "Elena",
+        "actor_id": 168,
+        "pelicula_id": 33
+    },
+    {
+        "nombre_personaje": "Gloria",
+        "actor_id": 169,
+        "pelicula_id": 33
+    },
+    {
+        "nombre_personaje": "Ana",
+        "actor_id": 170,
+        "pelicula_id": 33
+    },
+    {
+        "nombre_personaje": "Henry Clayton",
+        "actor_id": 171,
+        "pelicula_id": 34
+    },
+    {
+        "nombre_personaje": "Aaliyah",
+        "actor_id": 20,
+        "pelicula_id": 34
+    },
+    {
+        "nombre_personaje": "Jayden",
+        "actor_id": 172,
+        "pelicula_id": 34
+    },
+    {
+        "nombre_personaje": "Evelyn Clayton",
+        "actor_id": 173,
+        "pelicula_id": 34
+    },
+    {
+        "nombre_personaje": "Danny",
+        "actor_id": 139,
+        "pelicula_id": 34
+    },
+    {
+        "nombre_personaje": "Jack",
+        "actor_id": 174,
+        "pelicula_id": 34
+    },
+    {
+        "nombre_personaje": "Ki-taek Kim",
+        "actor_id": 67,
+        "pelicula_id": 35
+    },
+    {
+        "nombre_personaje": "Dong-ik Park",
+        "actor_id": 175,
+        "pelicula_id": 35
+    },
+    {
+        "nombre_personaje": "Yeon-kyo Park",
+        "actor_id": 176,
+        "pelicula_id": 35
+    },
+    {
+        "nombre_personaje": "Ki-woo Kim",
+        "actor_id": 177,
+        "pelicula_id": 35
+    },
+    {
+        "nombre_personaje": "Ki-jung Kim",
+        "actor_id": 178,
+        "pelicula_id": 35
+    },
+    {
+        "nombre_personaje": "Gook-moon Chung",
+        "actor_id": 179,
+        "pelicula_id": 35
+    },
+    {
+        "nombre_personaje": "Madame Web",
+        "actor_id": 180,
+        "pelicula_id": 36
+    },
+    {
+        "nombre_personaje": "Julia Carpenter",
+        "actor_id": 181,
+        "pelicula_id": 36
+    },
+    {
+        "nombre_personaje": "Anya Petrova",
+        "actor_id": 182,
+        "pelicula_id": 36
+    },
+    {
+        "nombre_personaje": "Mary Jane Watson",
+        "actor_id": 183,
+        "pelicula_id": 36
+    },
+    {
+        "nombre_personaje": "Ben Reilly",
+        "actor_id": 184,
+        "pelicula_id": 36
+    },
+    {
+        "nombre_personaje": "Ezekiel Stane",
+        "actor_id": 185,
+        "pelicula_id": 36
+    },
+    {
+        "nombre_personaje": "Suzume Iwato",
+        "actor_id": 186,
+        "pelicula_id": 37
+    },
+    {
+        "nombre_personaje": "Souta Munakata",
+        "actor_id": 187,
+        "pelicula_id": 37
+    },
+    {
+        "nombre_personaje": "Tamaki Suzuhara",
+        "actor_id": 188,
+        "pelicula_id": 37
+    },
+    {
+        "nombre_personaje": "Shin Shinoda",
+        "actor_id": 189,
+        "pelicula_id": 37
+    },
+    {
+        "nombre_personaje": "Hitoshi Tamura",
+        "actor_id": 190,
+        "pelicula_id": 37
+    },
+    {
+        "nombre_personaje": "Yasajiro Konno",
+        "actor_id": 191,
+        "pelicula_id": 37
+    },
+    {
+        "nombre_personaje": "Alwyn",
+        "actor_id": 192,
+        "pelicula_id": 38
+    },
+    {
+        "nombre_personaje": "Don Shirley",
+        "actor_id": 193,
+        "pelicula_id": 38
+    },
+    {
+        "nombre_personaje": "Etta James",
+        "actor_id": 194,
+        "pelicula_id": 38
+    },
+    {
+        "nombre_personaje": "Mahalia Jackson",
+        "actor_id": 195,
+        "pelicula_id": 38
+    },
+    {
+        "nombre_personaje": "Tom Dewitt",
+        "actor_id": 196,
+        "pelicula_id": 38
+    },
+    {
+        "nombre_personaje": "Aimee",
+        "actor_id": 197,
+        "pelicula_id": 38
+    },
+    {
+        "nombre_personaje": "Po",
+        "actor_id": 198,
+        "pelicula_id": 39
+    },
+    {
+        "nombre_personaje": "Shifu",
+        "actor_id": 199,
+        "pelicula_id": 39
+    },
+    {
+        "nombre_personaje": "Tigresa",
+        "actor_id": 200,
+        "pelicula_id": 39
+    },
+    {
+        "nombre_personaje": "Mantis",
+        "actor_id": 201,
+        "pelicula_id": 39
+    },
+    {
+        "nombre_personaje": "Víbora",
+        "actor_id": 202,
+        "pelicula_id": 39
+    },
+    {
+        "nombre_personaje": "Maestro Buey",
+        "actor_id": 203,
+        "pelicula_id": 39
+    },
+    {
+        "nombre_personaje": "Ethan Hunt",
+        "actor_id": 163,
+        "pelicula_id": 40
+    },
+    {
+        "nombre_personaje": "Luther Stickell",
+        "actor_id": 204,
+        "pelicula_id": 40
+    },
+    {
+        "nombre_personaje": "Benji Dunn",
+        "actor_id": 205,
+        "pelicula_id": 40
+    },
+    {
+        "nombre_personaje": "Ilsa Faust",
+        "actor_id": 22,
+        "pelicula_id": 40
+    },
+    {
+        "nombre_personaje": "August Walker",
+        "actor_id": 113,
+        "pelicula_id": 40
+    },
+    {
+        "nombre_personaje": "Alana Ingram",
+        "actor_id": 129,
+        "pelicula_id": 40
+    },
+    {
+        "nombre_personaje": "Brian",
+        "actor_id": 206,
+        "pelicula_id": 41
+    },
+    {
+        "nombre_personaje": "Madre de Brian",
+        "actor_id": 207,
+        "pelicula_id": 41
+    },
+    {
+        "nombre_personaje": "Padre de Brian",
+        "actor_id": 208,
+        "pelicula_id": 41
+    },
+    {
+        "nombre_personaje": "Varios personajes",
+        "actor_id": 209,
+        "pelicula_id": 41
+    },
+    {
+        "nombre_personaje": "Varios personajes",
+        "actor_id": 210,
+        "pelicula_id": 41
+    },
+    {
+        "nombre_personaje": "Varios personajes",
+        "actor_id": 211,
+        "pelicula_id": 41
+    },
+    {
+        "nombre_personaje": "Beau Joseph",
+        "actor_id": 96,
+        "pelicula_id": 42
+    },
+    {
+        "nombre_personaje": "Sunita",
+        "actor_id": 109,
+        "pelicula_id": 42
+    },
+    {
+        "nombre_personaje": "Ricky",
+        "actor_id": 142,
+        "pelicula_id": 42
+    },
+    {
+        "nombre_personaje": "Heather",
+        "actor_id": 212,
+        "pelicula_id": 42
+    },
+    {
+        "nombre_personaje": "Howard",
+        "actor_id": 103,
+        "pelicula_id": 42
+    },
+    {
+        "nombre_personaje": "Miles",
+        "actor_id": 213,
+        "pelicula_id": 42
+    },
+    {
+        "nombre_personaje": "Will Hunting",
+        "actor_id": 15,
+        "pelicula_id": 43
+    },
+    {
+        "nombre_personaje": "Sean Maguire",
+        "actor_id": 214,
+        "pelicula_id": 43
+    },
+    {
+        "nombre_personaje": "Chuckie Sullivan",
+        "actor_id": 147,
+        "pelicula_id": 43
+    },
+    {
+        "nombre_personaje": "Skylar",
+        "actor_id": 215,
+        "pelicula_id": 43
+    },
+    {
+        "nombre_personaje": "Gerald Lambeau",
+        "actor_id": 216,
+        "pelicula_id": 43
+    },
+    {
+        "nombre_personaje": "Morgan O'Mally",
+        "actor_id": 148,
+        "pelicula_id": 43
+    },
+    {
+        "nombre_personaje": "Mario",
+        "actor_id": 217,
+        "pelicula_id": 44
+    },
+    {
+        "nombre_personaje": "Princesa Peach",
+        "actor_id": 218,
+        "pelicula_id": 44
+    },
+    {
+        "nombre_personaje": "Luigi",
+        "actor_id": 219,
+        "pelicula_id": 44
+    },
+    {
+        "nombre_personaje": "Bowser",
+        "actor_id": 198,
+        "pelicula_id": 44
+    },
+    {
+        "nombre_personaje": "Donkey Kong",
+        "actor_id": 201,
+        "pelicula_id": 44
+    },
+    {
+        "nombre_personaje": "Joe Rantz",
+        "actor_id": 220,
+        "pelicula_id": 45
+    },
+    {
+        "nombre_personaje": "Alfieri",
+        "actor_id": 221,
+        "pelicula_id": 45
+    },
+    {
+        "nombre_personaje": "Wood",
+        "actor_id": 222,
+        "pelicula_id": 45
+    },
+    {
+        "nombre_personaje": "Lasky",
+        "actor_id": 223,
+        "pelicula_id": 45
+    },
+    {
+        "nombre_personaje": "George Pocock",
+        "actor_id": 224,
+        "pelicula_id": 45
+    },
+    {
+        "nombre_personaje": "Ulbrick",
+        "actor_id": 225,
+        "pelicula_id": 45
+    },
+    {
+        "nombre_personaje": "Reina Ana",
+        "actor_id": 125,
+        "pelicula_id": 46
+    },
+    {
+        "nombre_personaje": "Abigail Masham",
+        "actor_id": 226,
+        "pelicula_id": 46
+    },
+    {
+        "nombre_personaje": "Sarah Churchill",
+        "actor_id": 227,
+        "pelicula_id": 46
+    },
+    {
+        "nombre_personaje": "Duque de Marlborough",
+        "actor_id": 228,
+        "pelicula_id": 46
+    },
+    {
+        "nombre_personaje": "Harley",
+        "actor_id": 229,
+        "pelicula_id": 46
+    },
+    {
+        "nombre_personaje": "Dr. Harley",
+        "actor_id": 230,
+        "pelicula_id": 46
+    },
+    {
+        "nombre_personaje": "Jack",
+        "actor_id": 148,
+        "pelicula_id": 47
+    },
+    {
+        "nombre_personaje": "Donna",
+        "actor_id": 231,
+        "pelicula_id": 47
+    },
+    {
+        "nombre_personaje": "Danny",
+        "actor_id": 232,
+        "pelicula_id": 47
+    },
+    {
+        "nombre_personaje": "Jean",
+        "actor_id": 233,
+        "pelicula_id": 47
+    },
+    {
+        "nombre_personaje": "Andre",
+        "actor_id": 234,
+        "pelicula_id": 47
+    },
+    {
+        "nombre_personaje": "Detective De Graff",
+        "actor_id": 235,
+        "pelicula_id": 47
+    },
+    {
+        "nombre_personaje": "Lorna",
+        "actor_id": 236,
+        "pelicula_id": 48
+    },
+    {
+        "nombre_personaje": "Gabe",
+        "actor_id": 237,
+        "pelicula_id": 48
+    },
+    {
+        "nombre_personaje": "Judith",
+        "actor_id": 238,
+        "pelicula_id": 48
+    },
+    {
+        "nombre_personaje": "Martin",
+        "actor_id": 239,
+        "pelicula_id": 48
+    },
+    {
+        "nombre_personaje": "Ania",
+        "actor_id": 240,
+        "pelicula_id": 48
+    },
+    {
+        "nombre_personaje": "Tuya",
+        "actor_id": 241,
+        "pelicula_id": 48
+    },
+    {
+        "nombre_personaje": "Mitsuha Miyamizu",
+        "actor_id": 242,
+        "pelicula_id": 49
+    },
+    {
+        "nombre_personaje": "Taki Tachibana",
+        "actor_id": 243,
+        "pelicula_id": 49
+    },
+    {
+        "nombre_personaje": "Padre de Mitsuha",
+        "actor_id": 244,
+        "pelicula_id": 49
+    },
+    {
+        "nombre_personaje": "Abuela de Mitsuha",
+        "actor_id": 245,
+        "pelicula_id": 49
+    },
+    {
+        "nombre_personaje": "Hermana menor de Mitsuha",
+        "actor_id": 246,
+        "pelicula_id": 49
+    },
+    {
+        "nombre_personaje": "Padre de Mitsuha",
+        "actor_id": 247,
+        "pelicula_id": 49
+    },
+    {
+        "nombre_personaje": "Nicolas Cage",
+        "actor_id": 248,
+        "pelicula_id": 50
+    },
+    {
+        "nombre_personaje": "Javi",
+        "actor_id": 249,
+        "pelicula_id": 50
+    },
+    {
+        "nombre_personaje": "Vivian",
+        "actor_id": 194,
+        "pelicula_id": 50
+    },
+    {
+        "nombre_personaje": "Richard Pace",
+        "actor_id": 250,
+        "pelicula_id": 50
+    },
+    {
+        "nombre_personaje": "Rica",
+        "actor_id": 7,
+        "pelicula_id": 50
+    },
+    {
+        "nombre_personaje": "Olivia Henson",
+        "actor_id": 10,
+        "pelicula_id": 50
+    },
+    {
+        "nombre_personaje": "Robert McCall",
+        "actor_id": 251,
+        "pelicula_id": 51
+    },
+    {
+        "nombre_personaje": "Astrid",
+        "actor_id": 252,
+        "pelicula_id": 51
+    },
+    {
+        "nombre_personaje": "Yuri",
+        "actor_id": 253,
+        "pelicula_id": 51
+    },
+    {
+        "nombre_personaje": "Fay",
+        "actor_id": 254,
+        "pelicula_id": 51
+    },
+    {
+        "nombre_personaje": "Arsen",
+        "actor_id": 255,
+        "pelicula_id": 51
+    },
+    {
+        "nombre_personaje": "Bill",
+        "actor_id": 256,
+        "pelicula_id": 51
+    },
+    {
+        "nombre_personaje": "T'Challa / Black Panther",
+        "actor_id": 113,
+        "pelicula_id": 52
+    },
+    {
+        "nombre_personaje": "Shuri",
+        "actor_id": 257,
+        "pelicula_id": 52
+    },
+    {
+        "nombre_personaje": "Nakia",
+        "actor_id": 258,
+        "pelicula_id": 52
+    },
+    {
+        "nombre_personaje": "Okoye",
+        "actor_id": 259,
+        "pelicula_id": 52
+    },
+    {
+        "nombre_personaje": "Everett K. Ross",
+        "actor_id": 260,
+        "pelicula_id": 52
+    },
+    {
+        "nombre_personaje": "Namor",
+        "actor_id": 261,
+        "pelicula_id": 52
+    },
+    {
+        "nombre_personaje": "Balian de Ibelin",
+        "actor_id": 262,
+        "pelicula_id": 53
+    },
+    {
+        "nombre_personaje": "Sibylla",
+        "actor_id": 263,
+        "pelicula_id": 53
+    },
+    {
+        "nombre_personaje": "Godfrey de Ibelin",
+        "actor_id": 79,
+        "pelicula_id": 53
+    },
+    {
+        "nombre_personaje": "Rey Richard",
+        "actor_id": 90,
+        "pelicula_id": 53
+    },
+    {
+        "nombre_personaje": "Fídel",
+        "actor_id": 264,
+        "pelicula_id": 53
+    },
+    {
+        "nombre_personaje": "Saladino",
+        "actor_id": 265,
+        "pelicula_id": 53
+    },
+    {
+        "nombre_personaje": "Colette Rivet",
+        "actor_id": 238,
+        "pelicula_id": 54
+    },
+    {
+        "nombre_personaje": "Miss Cross",
+        "actor_id": 266,
+        "pelicula_id": 54
+    },
+    {
+        "nombre_personaje": "Nicholas Winton",
+        "actor_id": 267,
+        "pelicula_id": 54
+    },
+    {
+        "nombre_personaje": "Martin Dohrn",
+        "actor_id": 268,
+        "pelicula_id": 54
+    },
+    {
+        "nombre_personaje": "Sir Nicholas Winton",
+        "actor_id": 269,
+        "pelicula_id": 54
+    },
+    {
+        "nombre_personaje": "Narrador",
+        "actor_id": 270,
+        "pelicula_id": 54
+    },
+    {
+        "nombre_personaje": "Bella Swan",
+        "actor_id": 271,
+        "pelicula_id": 55
+    },
+    {
+        "nombre_personaje": "Edward Cullen",
+        "actor_id": 272,
+        "pelicula_id": 55
+    },
+    {
+        "nombre_personaje": "Jacob Black",
+        "actor_id": 273,
+        "pelicula_id": 55
+    },
+    {
+        "nombre_personaje": "Dr. Carlisle Cullen",
+        "actor_id": 274,
+        "pelicula_id": 55
+    },
+    {
+        "nombre_personaje": "Alice Cullen",
+        "actor_id": 275,
+        "pelicula_id": 55
+    },
+    {
+        "nombre_personaje": "Esme Cullen",
+        "actor_id": 276,
+        "pelicula_id": 55
+    },
+    {
+        "nombre_personaje": "Oskar Schindler",
+        "actor_id": 79,
+        "pelicula_id": 56
+    },
+    {
+        "nombre_personaje": "Amon Göth",
+        "actor_id": 277,
+        "pelicula_id": 56
+    },
+    {
+        "nombre_personaje": "Emilie Schindler",
+        "actor_id": 278,
+        "pelicula_id": 56
+    },
+    {
+        "nombre_personaje": "Itzhak Stern",
+        "actor_id": 279,
+        "pelicula_id": 56
+    },
+    {
+        "nombre_personaje": "Madre de Emilie Schindler",
+        "actor_id": 280,
+        "pelicula_id": 56
+    },
+    {
+        "nombre_personaje": "Asistente de Amon Göth",
+        "actor_id": 281,
+        "pelicula_id": 56
+    },
+    {
+        "nombre_personaje": "Mateo Vidal",
+        "actor_id": 282,
+        "pelicula_id": 57
+    },
+    {
+        "nombre_personaje": "Olivia Costa",
+        "actor_id": 283,
+        "pelicula_id": 57
+    },
+    {
+        "nombre_personaje": "Lorena Ortiz",
+        "actor_id": 284,
+        "pelicula_id": 57
+    },
+    {
+        "nombre_personaje": "Inspector Héctor Planes",
+        "actor_id": 285,
+        "pelicula_id": 57
+    },
+    {
+        "nombre_personaje": "Juana",
+        "actor_id": 286,
+        "pelicula_id": 57
+    },
+    {
+        "nombre_personaje": "Hawa",
+        "actor_id": 287,
+        "pelicula_id": 57
+    },
+    {
+        "nombre_personaje": "Dominic Toretto",
+        "actor_id": 288,
+        "pelicula_id": 58
+    },
+    {
+        "nombre_personaje": "Letty Ortiz",
+        "actor_id": 289,
+        "pelicula_id": 58
+    },
+    {
+        "nombre_personaje": "Jakob Toretto",
+        "actor_id": 23,
+        "pelicula_id": 58
+    },
+    {
+        "nombre_personaje": "Roman Pearce",
+        "actor_id": 290,
+        "pelicula_id": 58
+    },
+    {
+        "nombre_personaje": "Tej Parker",
+        "actor_id": 291,
+        "pelicula_id": 58
+    },
+    {
+        "nombre_personaje": "Mia Toretto",
+        "actor_id": 292,
+        "pelicula_id": 58
+    },
+    {
+        "nombre_personaje": "Jack Conrad",
+        "actor_id": 146,
+        "pelicula_id": 59
+    },
+    {
+        "nombre_personaje": "Nellie LaRoy",
+        "actor_id": 293,
+        "pelicula_id": 59
+    },
+    {
+        "nombre_personaje": "Charlie Chaplin",
+        "actor_id": 294,
+        "pelicula_id": 59
+    },
+    {
+        "nombre_personaje": "Eleanor Fendell",
+        "actor_id": 295,
+        "pelicula_id": 59
+    },
+    {
+        "nombre_personaje": "Max Reinhardt",
+        "actor_id": 296,
+        "pelicula_id": 59
+    },
+    {
+        "nombre_personaje": "Queen Mary",
+        "actor_id": 297,
+        "pelicula_id": 59
+    },
+    {
+        "nombre_personaje": "Mark Russell",
+        "actor_id": 298,
+        "pelicula_id": 60
+    },
+    {
+        "nombre_personaje": "Madison Russell",
+        "actor_id": 299,
+        "pelicula_id": 60
+    },
+    {
+        "nombre_personaje": "Madison Russell (joven)",
+        "actor_id": 300,
+        "pelicula_id": 60
+    },
+    {
+        "nombre_personaje": "Serizawa",
+        "actor_id": 301,
+        "pelicula_id": 60
+    },
+    {
+        "nombre_personaje": "Hijo del Dr. Serizawa",
+        "actor_id": 302,
+        "pelicula_id": 60
+    },
+    {
+        "nombre_personaje": "Dra. Emma Russell",
+        "actor_id": 126,
+        "pelicula_id": 60
+    }
+]
