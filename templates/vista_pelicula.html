@@ -56,12 +56,12 @@
                         {% endif %}
                     {% endif %}
                 </h1>
-                <p class="is-size-4 has-text-weight-bold pl-4  ">Media:
-                    <span class="has-text-weight-normal is-size-5">{{ valoracion_media.valoracion__avg|floatformat:2 }}</span>
-                </p>
             </div>
+            <p class="is-size-4 has-text-weight-bold pt-2">Media: <span
+                    class="has-text-weight-normal is-size-5">{{ valoracion_media.valoracion__avg|floatformat:2 }}</span>
+            </p>
             <p class="is-size-4 has-text-weight-bold pt-2">Sinopsis</p>
-            <p class="is-size-5 has-text-justified">{{ pelicula.sinopsis }}</p>
+            <p class="is-size-5 has-text-justified mr-5">{{ pelicula.sinopsis }}</p>
             <p class="is-size-4 has-text-weight-bold pt-2">Director: <span
                     class="has-text-weight-normal is-size-5">{{ pelicula.director }}</span></p>
             <div>
@@ -88,7 +88,7 @@
         </div>
     </div>
     <!-- Reparto -->
-    <div class="column">
+    <div class="column mr-3">
         <h2 class="is-size-4 has-text-weight-bold pb-4">Reparto</h2>
         <div class="columns is-multiline">
             {% for p in pj %}
