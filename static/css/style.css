@@ -94,3 +94,9 @@ a {
     box-shadow: 15px 15px 20px 0px rgba(102, 102, 102, 1);
     border-radius: 20%;
 }
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
