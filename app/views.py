@@ -31,7 +31,7 @@ from django.http import HttpResponse, JsonResponse
 def mostrar_admi(request):
     return render(request, 'admi_pelicula.html')
 
-
+@check_user_role('ADMIN')
 def mostrar_peliculas(request):
     peliculas = pelicula.objects.all()
     return render(request, 'admi_pelicula.html', {'peliculas': peliculas})
@@ -116,7 +116,7 @@ def reset_password(request):
     else:
         return render(request, 'reset_password.html')
 
-
+@check_user_role('ADMIN')
 def new_peliculas(request):
     if request.method == 'GET':
         uno = pelicula.objects.all()
@@ -133,7 +133,7 @@ def new_peliculas(request):
 
         return redirect('/administrador/pelicula')
 
-
+@check_user_role('ADMIN')
 def new_serie(request):
     if request.method == 'GET':
         uno = serie.objects.all()
@@ -150,6 +150,7 @@ def new_serie(request):
 
         return redirect('/administrador/series_actuales')
 
+@check_user_role('ADMIN')
 def new_actor(request):
     if request.method == 'GET':
         uno = actor.objects.all()
@@ -162,42 +163,55 @@ def new_actor(request):
 
         return redirect('/administrador/listado_actores')
 
+
+@check_user_role('ADMIN')
 def mostrar_series(request):
     ser = serie.objects.all()
     return render(request, 'admi_series.html', {'series': ser})
 
 
+@check_user_role('ADMIN')
 def mostrar_usuarios(request):
     usuarios = User.objects.all()
     return render(request, 'admi_usuarios.html', {'usuarios': usuarios})
 
+
+@check_user_role('ADMIN')
 def mostrar_actores(request):
     actores = actor.objects.all()
     return render(request, 'admi_actores.html', {'actores': actores})
 
+
+@check_user_role('ADMIN')
 def eliminar_actor(request, id):
     actor_eliminar = actor.objects.get(id=id)
     actor_eliminar.delete()
     return redirect('/administrador/listado_actores')
 
+
+@check_user_role('ADMIN')
 def eliminar_usuario(request, id):
     usuario = User.objects.get(id=id)
     usuario.delete()
     return redirect('/administrador/usuarios')
 
 
+@check_user_role('ADMIN')
 def eliminar_pelicula(request, id):
     pelicula_eliminar = pelicula.objects.get(id=id)
     pelicula_eliminar.delete()
     return redirect('/administrador/pelicula')
 
 
+@check_user_role('ADMIN')
 def eliminar_serie(request, id):
     serie_eliminar = serie.objects.get(id=id)
     serie_eliminar.delete()
     return redirect('/administrador/series_actuales')
 
 
+
+@check_user_role('ADMIN')
 def editar_pelicula(request, id):
     peli = pelicula.objects.get(id=id)
     if request.method == 'GET':
@@ -214,6 +228,7 @@ def editar_pelicula(request, id):
         return redirect('/administrador/pelicula')
 
 
+@check_user_role('ADMIN')
 def editar_serie(request, id):
     serie_editar = serie.objects.get(id=id)
     if request.method == 'GET':
@@ -229,6 +244,8 @@ def editar_serie(request, id):
 
         return redirect('/administrador/series_actuales')
 
+
+@check_user_role('ADMIN')
 def editar_actor(request, id):
     actor_editar = actor.objects.get(id=id)
     if request.method == 'GET':
@@ -490,6 +507,8 @@ def mostrar_generos(request):
     generos = genero.objects.all()
     return render(request, 'admi_genero.html', {'generos': generos})
 
+
+@check_user_role('ADMIN')
 def add_uniones_peliculas(request, id):
     pelicula_instancia = pelicula.objects.get(id=id)
     pelicula_generos = pelicula_instancia.pelicula_genero_set.all()
@@ -504,6 +523,8 @@ def add_uniones_peliculas(request, id):
 
         return redirect('/administrador/listado_actores')
 
+
+@check_user_role('ADMIN')
 def new_genero(request):
     if request.method == 'GET':
         uno = genero.objects.all()
@@ -516,6 +537,7 @@ def new_genero(request):
 
         return redirect('/administrador/listado_generos')
 
+
 def add_vinculacion_genero_json():
     with open('static/Generos.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
@@ -525,6 +547,9 @@ def add_vinculacion_genero_json():
         g.nombre = gen['nombre']
         g.descripcion = gen['descripcion']
         g.save()
+
+
+@check_user_role('ADMIN')
 def editar_genero(request, id):
     genero_editar = genero.objects.get(id=id)
     if request.method == 'GET':
@@ -535,6 +560,9 @@ def editar_genero(request, id):
         genero_editar.save()
 
         return redirect('/administrador/listado_generos')
+
+
+@check_user_role('ADMIN')
 def vincular_desvincular_genero_pelicula(request, id):
     genero_id = request.GET.get('generoId')
     # Obtén las instancias completas de la película y el género
@@ -551,6 +579,8 @@ def vincular_desvincular_genero_pelicula(request, id):
         gen_pel.delete()
     return redirect('vincular_pelicula', id=pelicula_instancia.id)
 
+
+@check_user_role('ADMIN')
 def vincular_desvincular_plataforma_pelicula(request, id):
     plataformaId = request.GET.get('plataformaId')
     plataforma_instancia = plataforma.objects.get(id=plataformaId)
@@ -573,6 +603,7 @@ def vinculacion_genero_pelicula_json():
             g.pelicula_id = gen['id_pelicula']
             g.genero_id = gen['id_genero']
             g.save()
+
 def vinculacion_genero_serie_json():
     with open('static/Generos_Series.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
