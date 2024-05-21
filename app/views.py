@@ -90,7 +90,7 @@ def register(request):
         password = request.POST.get('password1')
         password_confirmacion = request.POST.get('password2')
 
-
+        errors = []
 
         if password != password_confirmacion:
             errors.append("Las contraseñas no coinciden")
