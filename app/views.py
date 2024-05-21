@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
 from django.db.models import Q
-
+import re
 import os
 from .decorators import *
 from django.contrib import messages
@@ -96,6 +96,16 @@ def register(request):
 
         if password != password_confirmacion:
             errors.append("Las contraseñas no coinciden")
+
+        if len(password) < 8:
+            errors.append("La contraseña debe tener al menos 8 caracteres")
+
+        if not re.search(r"\d", password):
+            errors.append("La contraseña debe contener al menos un número")
+
+        if not re.search(r"[A-Z]", password):
+            errors.append("La contraseña debe contener al menos una letra mayúscula")
+
         existe_usuario = User.objects.filter(username=username).exists()
         if existe_usuario:
             errors.append("Ya existe un usuario con ese nombre")
@@ -106,8 +116,7 @@ def register(request):
         if len(errors) != 0:
             return render(request, "register.html", {"errores": errors, "username": username})
         else:
-            user = User.objects.create(username=username, email=mail, password=make_password(password),
-                                       nombre_completo=nombre_completo)
+            user = User.objects.create(username=username, email=mail, password=make_password(password), nombre_completo=nombre_completo)
             user.save()
             return redirect("login")
 
@@ -659,6 +668,9 @@ def valorar_pelicula(request, id_pelicula):
         if request.user.is_authenticated:
             pelicula_valorar = get_object_or_404(pelicula, id=id_pelicula)
             valoracion = request.POST.get('valoracion')
+            if valoracion > 10 and valoracion < 0:
+                messages.error(request, 'La valoración solo es posible entre 0-10.')
+                return redirect('pelicula', id_pelicula=id_pelicula)
             try:
                valor = valoracion_pelicula.objects.get(usuario=request.user, pelicula=pelicula_valorar)
             except valoracion_pelicula.DoesNotExist:
