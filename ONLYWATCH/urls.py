@@ -65,6 +65,7 @@ urlpatterns = [
 
     # Paginas de la Aplicacion Peliculas/Series
     path('', views.mostrar_inicio, name='home'),
+    path('filtrar', views.filtrar, name='filtrar'),
     path('buscar/', views.buscar, name='buscar'),
     path('peliculas/', views.view_peliculas, name='peliculas'),
     path('plataformas/', views.plataformas, name='plataformas'),

@@ -831,19 +831,12 @@ def cargar_actores_personajes(request):
     return HttpResponse("Datos de actores y personajes cargados correctamente")
 
 def filtrar(request):
-    if request.method == 'POST':
-        data = json.loads(request.body)
+    generos = request.GET.getlist('generos')
+    plataformas = request.GET.getlist('plataformas')
+    peliculas = pelicula.objects.all()
+    series = serie.objects.all()
 
-        generosSeleccionados = data.get('generos')
-        plataformasSeleccionadas = data.get('plataformas')
 
-        # Aquí puedes procesar los datos como necesites
-
-        # Envía una respuesta al cliente
-        return JsonResponse({'message': 'Datos recibidos correctamente'})
-
-    else:
-        return JsonResponse({'error': 'Invalid request'}, status=400)
 
 
 def buscar(request):
