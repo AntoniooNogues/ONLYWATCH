@@ -25,8 +25,7 @@
                 <header class="is-align-content-center is-align-items-center is-justify-content-center">
                     <div class="is-flex is-align-items-center is-justify-content-center mt-3">
                         <a href="{% url 'home' %}">
-                            <img src="/static/img/logoSmall.svg" alt="Logo Pequeño de ONLYWATCH"
-                                 class="image is-96x96"/>
+                            <img src="/static/img/logoSmall.svg" alt="Logo Pequeño de ONLYWATCH" class="image is-96x96"/>
                         </a>
                     </div>
                     <p class="is-bold is-size-5 has-text-centered">
@@ -46,6 +45,7 @@
                         <div class="field mb-4">
                             <input type="email" name="email" id="email" placeholder="Correo Electrónico" class="input" required/>
                         </div>
+
                         <div class="control has-icons-left">
                             <div class="field has-addons">
                                 <div class="control is-expanded">
@@ -93,19 +93,22 @@
                     <p class="has-text-centered has-text-white is-size-6"> ¿Dispones de una cuenta? <a href="{% url 'login' %}" class="register">Inicia Sesión</a></p>
                 </footer>
             </div>
+            <div class="notification is-danger is-light is-hidden notificacion">
+                <button class="delete"></button>
+                <p class="errores has-text-black has-text-weight-bold"></p>
+            </div>
         </div>
     </div>
 </div>
 
 
 
-<div class="notification is-hidden">
-    <p style="color: red">{{ errores }}</p> <br>
-</div>
 
+<script>
+    var errores = "{{ errores }}";
 
+</script>
 <!-- Footer -->
-<script src="/static/js/ajustarPantalla.js"></script>
 <script src="/static/js/index.js"></script>
 </body>
 

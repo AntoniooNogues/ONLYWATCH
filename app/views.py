@@ -114,7 +114,7 @@ def register(request):
             errors.append("Ya existe un usuario con ese email")
 
         if len(errors) != 0:
-            return render(request, "register.html", {"errores": errors, "username": username})
+            return render(request, "register.html", {"errores": errors})
         else:
             user = User.objects.create(username=username, email=mail, password=make_password(password), nombre_completo=nombre_completo)
             user.save()

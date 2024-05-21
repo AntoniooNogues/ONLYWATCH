@@ -100,3 +100,11 @@ a {
     bottom: 0;
     width: 100%;
 }
+
+.notificacion{
+    position: fixed !important;
+    top: 5px ;
+    right: 5px ;
+    background-color: rgba(255, 0, 0, 0.7) !important;
+
+}

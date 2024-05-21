@@ -27,3 +27,32 @@ if (togglePasswordVisibilityButton2) {
         togglePasswordVisibility("password2", "togglePasswordVisibility2");
     });
 }
+
+
+function decodeHtml(html) {
+    var txt = document.createElement('textarea');
+    txt.innerHTML = html;
+    return txt.value;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (errores) {
+        var decodedErrores = decodeHtml(errores);
+        var erroresArray = JSON.parse(decodedErrores.replace(/'/g, '"'));
+        var erroresElement = document.querySelector('.errores');
+        var notificationElement = document.querySelector('.notification.is-danger.is-light');
+        var deleteButton = document.querySelector('.delete');
+
+        if (erroresArray.length !== 0) {
+            erroresElement.textContent = erroresArray.join(', ');
+            notificationElement.classList.remove('is-hidden');
+        } else {
+            notificationElement.classList.add('is-hidden');
+        }
+
+        // Add event listener to the delete button
+        deleteButton.addEventListener('click', function () {
+            notificationElement.classList.add('is-hidden');
+        });
+    }
+});
