@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
+from django.db.models import Q
 
 import os
 from .decorators import *
@@ -77,6 +78,7 @@ def mostrar_inicio(request):
     paginator = Paginator(combined_list, 20)  # Show 20 items per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+
 
     return render(request, 'user_home.html', {'header': headerPS, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
 
@@ -384,20 +386,15 @@ def mostrar_pelicula(request, id_pelicula):
         pj_pelicula = personaje_pelicula.objects.filter(pelicula_id=peli).all()[:6]
         es_favorito = peliculas_favoritas.objects.filter(usuario=request.user, pelicula=peli).exists()
         valoracion_media = valoracion_pelicula.objects.filter(pelicula=peli).aggregate(Avg('valoracion'))
-        return render(request, 'vista_pelicula.html',
-                      {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula,
-                       'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
+        return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
     else:
         peli = pelicula.objects.get(id=id_pelicula)
         plt_pelicula = plataforma_pelicula.objects.filter(pelicula_id=peli).all()
         gen_pelicula = pelicula_genero.objects.filter(pelicula_id=peli).all()
         pj_pelicula = personaje_pelicula.objects.filter(pelicula_id=peli).all()[:6]
         valoracion_media = valoracion_pelicula.objects.filter(pelicula=peli).aggregate(Avg('valoracion'))
-        return render(request, 'vista_pelicula.html',
-                      {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula,
-                       'valoracion_media': valoracion_media})
+        return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'valoracion_media': valoracion_media})
 
-    return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
 
 def mostrar_serie(request, id_serie):
     if request.user.is_authenticated:
@@ -837,3 +834,10 @@ def filtrar(request):
 
     else:
         return JsonResponse({'error': 'Invalid request'}, status=400)
+
+
+def buscar(request):
+    texto_busqueda = request.GET.get('buscar', '')
+    peliculas = pelicula.objects.filter(Q(nombre__icontains=texto_busqueda) | Q(nombre__exact=texto_busqueda))
+    series = serie.objects.filter(Q(nombre__icontains=texto_busqueda) | Q(nombre__exact=texto_busqueda))
+    return render(request, 'resultado_busqueda.html', {'peliculas': peliculas, 'series': series, 'texto': texto_busqueda})

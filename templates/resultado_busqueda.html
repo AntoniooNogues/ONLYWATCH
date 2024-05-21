@@ -1,45 +1,50 @@
 {% include 'header_home_usuario.html' %}
-    <h1>Resultados de búsqueda</h1>
-    <h2>Películas</h2>
-    {% if peliculas != 0 %}
-        <div class="columns is-multiline is-centered is-mobile">
-            {% for pelicula in peliculas %}
-                <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
-                    <div class="card has-text-centered">
-                        <a href="{% url 'pelicula' pelicula.id %}">
-                            <div class="card-image">
-                                <figure class="image is-2by3">
-                                    <img src="{{ pelicula.img }}" alt="Imagen de {{ pelicula.nombre }}">
-                                </figure>
-                            </div>
-                        </a>
+<h1 class="has-text-centered is-size-3 mb-3">Resultados de búsqueda: <span>{{ texto }}</span></h1>
+<div class="container">
+    {% if peliculas %}
+        <div class="mb-2 p-5 ">
 
+            <h2 class="is-size-4 pb-5">Películas</h2>
+            <div class="columns is-multiline is-centered is-mobile">
+                {% for pelicula in peliculas %}
+                    <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
+                        <div class="card has-text-centered">
+                            <a href="{% url 'pelicula' pelicula.id %}">
+                                <div class="card-image">
+                                    <figure class="image is-2by3">
+                                        <img src="{{ pelicula.img }}" alt="Imagen de {{ pelicula.nombre }}">
+                                    </figure>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-    {% else %}
-        <p>No se encontraron películas, con los parametros de busqueda</p>
     {% endif %}
-    <h2>Series</h2>
-    {% if series != 0 %}
-        <div class="columns is-multiline is-centered is-mobile">
-            {% for serie in series %}
-                <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
-                    <div class="card has-text-centered">
-                        <a href="{% url 'serie' serie.id %}">
-                            <div class="card-image">
-                                <figure class="image is-2by3">
-                                    <img src="{{ serie.img }}" alt="Imagen de {{ serie.nombre }}">
-                                </figure>
-                            </div>
-                        </a>
+    {% if series %}
+        <div class=" mt-2 p-5">
+            <h2 class="is-size-4 pb-5">Series</h2>
+            <div class="columns is-multiline is-centered is-mobile">
+                {% for serie in series %}
+                    <div class="column is-one-third-fullhd is-one-third-widescreen -is-one-third-desktop is-one-third-tablet is-full-mobile">
+                        <div class="card has-text-centered">
+                            <a href="{% url 'serie' serie.id %}">
+                                <div class="card-image">
+                                    <figure class="image is-2by3">
+                                        <img src="{{ serie.img }}" alt="Imagen de {{ serie.nombre }}">
+                                    </figure>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
-        </div>
-    {% else %}
-        <p>No se encontraron películas, con los parametros de busqueda</p>
-    {% endif %}
+                {% endfor %}
+            </div>
 
-{% include 'footer.html' %}
+        </div>
+    {% endif %}
+</div>
+
+<div class="fixed-footer">
+    {% include 'footer.html' %}
+</div>
