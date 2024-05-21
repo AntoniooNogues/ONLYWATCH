@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Login</title>
+    <title>Registro</title>
     <script src="https://kit.fontawesome.com/2eb7a633b0.js" crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="/static/bulma/css/style.css"/>
@@ -38,52 +38,27 @@
                     <form action="" method="POST" class="mt-4 ml-4 mr-4">
                         {% csrf_token %}
                         <div class="field mb-4">
-                            <input
-                                    type="text"
-                                    name="username"
-                                    id="username"
-                                    placeholder="Nombre de usuario"
-                                    class="input"
-                                    required
-                            />
+                            <input type="text" name="username" id="username" placeholder="Nombre de usuario" class="input" required/>
                         </div>
                         <div class="field mb-4">
-                            <input
-                                    type="text"
-                                    name="nombre_completo"
-                                    id="nombre_completo"
-                                    placeholder="Nombre y Apellidos"
-                                    class="input"
-                                    required
-                            />
+                            <input type="text" name="nombre_completo" id="nombre_completo" placeholder="Nombre y Apellidos" class="input" required />
                         </div>
                         <div class="field mb-4">
-                            <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    placeholder="Correo Electrónico"
-                                    class="input"
-                                    required
-                            />
+                            <input type="email" name="email" id="email" placeholder="Correo Electrónico" class="input" required/>
                         </div>
                         <div class="control has-icons-left">
                             <div class="field has-addons">
                                 <div class="control is-expanded">
-                                    <input type="password" id="password1" name="password1"
-                                           placeholder="Contraseña" class="input is-medium is-fullwidth"
-                                           required/>
+                                    <input type="password" id="password1" name="password1" placeholder="Contraseña" class="input is-medium is-fullwidth" required/>
                                     <span class="icon is-left has-text-black">
-                            <i class="fa-solid fa-lock"></i>
-                          </span>
+                                        <i class="fa-solid fa-lock"></i>
+                                    </span>
                                 </div>
                                 <div class="control">
-                                    <button type="button" class="button is-medium"
-                                            id="togglePasswordVisibility1"
-                                            style=" border: 2px solid #842507; background-color: #F2D9CD;">
-                                <span class="icon is-small has-text-black">
-                                    <i class="fa-solid fa-eye"></i>
-                                </span>
+                                    <button type="button" class="button is-medium" id="togglePasswordVisibility1" style=" border: 2px solid #842507; background-color: #F2D9CD;">
+                                        <span class="icon is-small has-text-black">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </span>
                                     </button>
                                 </div>
                             </div>
@@ -92,45 +67,30 @@
                             <div class="control has-icons-left">
                                 <div class="field has-addons">
                                     <div class="control is-expanded">
-                                        <input type="password" id="password2" name="password2"
-                                               placeholder="Repetir Contraseña"
-                                               class="input is-medium is-fullwidth" required/>
+                                        <input type="password" id="password2" name="password2" placeholder="Repetir Contraseña" class="input is-medium is-fullwidth" required/>
                                         <span class="icon is-left has-text-black">
-                                <i class="fa-solid fa-lock"></i>
-                              </span>
+                                            <i class="fa-solid fa-lock"></i>
+                                        </span>
                                     </div>
                                     <div class="control">
-                                        <button type="button" class="button is-medium"
-                                                id="togglePasswordVisibility2"
-                                                style=" border: 2px solid #842507; background-color: #F2D9CD;"
-                                        >
-                                    <span class="icon is-small has-text-black">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </span>
+                                        <button type="button" class="button is-medium" id="togglePasswordVisibility2" style=" border: 2px solid #842507; background-color: #F2D9CD;">
+                                            <span class="icon is-small has-text-black">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </span>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="field mt-4 mb-3">
-                            <button
-                                    type="submit"
-                                    class="bg_footer button is-fullwidth is-size-5"
-                                    style="height: 52px"
-                                    value="Save"
-                            >
+                            <button type="submit" class="bg_footer button is-fullwidth is-size-5" style="height: 52px" value="Save" >
                                 <strong class="has-text-centered">Acceder</strong>
                             </button>
                         </div>
                     </form>
                 </div>
                 <footer>
-                    <p class="has-text-centered has-text-white is-size-6">
-                        ¿Dispones de una cuenta?
-                        <a href="{% url 'login' %}" class="register"
-                        >Inicia Sesión</a
-                        >
-                    </p>
+                    <p class="has-text-centered has-text-white is-size-6"> ¿Dispones de una cuenta? <a href="{% url 'login' %}" class="register">Inicia Sesión</a></p>
                 </footer>
             </div>
         </div>
@@ -138,11 +98,11 @@
 </div>
 
 
-{% for e in errores %}
 
-    <p style="color: red">{{ e }}</p>
+<div class="notification is-hidden">
+    <p style="color: red">{{ errores }}</p> <br>
+</div>
 
-{% endfor %}
 
 <!-- Footer -->
 <script src="/static/js/ajustarPantalla.js"></script>
