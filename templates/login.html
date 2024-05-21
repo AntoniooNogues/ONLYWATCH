@@ -81,11 +81,17 @@
                             href="{% url 'signup' %}" class="register"> Registrate</a></p>
                 </footer>
             </div>
+            <div class="notification is-danger is-light is-hidden notificacion p-5">
+                <p class="errores has-text-black has-text-weight-bold"></p>
+                <button class="delete"></button>
+            </div>
         </div>
     </div>
 </div>
 
-
+<script>
+    var errores = "{{ errores }}";
+</script>
 <script src="/static/js/ajustarPantalla.js"></script>
 <script src="/static/js/index.js"></script>
 </body>

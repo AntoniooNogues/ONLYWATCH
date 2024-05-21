@@ -42,16 +42,14 @@ def do_login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-
         user = authenticate(request, email=email, password=password)
-
+        errors = []
         if user is not None:
             login(request, user)
-            # Redirección tras un login exitoso
             return redirect('home')
         else:
-            # Mensaje de error si la autenticación falla
-            return render(request, 'login.html', {"error": "No se ha podido iniciar sesión intentalo de nuevo"})
+            errors.append("No se ha podido iniciar sesión intentalo de nuevo")
+            return render(request, 'login.html', {"errores": errors})
 
     # Mostrar formulario de login para método GET
     return render(request, 'login.html')
@@ -92,7 +90,7 @@ def register(request):
         password = request.POST.get('password1')
         password_confirmacion = request.POST.get('password2')
 
-        errors = []
+
 
         if password != password_confirmacion:
             errors.append("Las contraseñas no coinciden")

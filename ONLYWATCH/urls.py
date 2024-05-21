@@ -27,7 +27,7 @@ urlpatterns = [
     # Acceso de Usuario/No Usuario a Login, Registro, Logout y Reinicio de Contraseña
     path('login/', views.do_login, name='login'),
     path('logout/', views.do_logout, name='logout'),
-    path('register/', views.register, name='signup'),
+    path('registro', views.register, name='signup'),
     path('login/reset_password', views.reset_password, name='reset_password'),
 
 

@@ -106,5 +106,6 @@ a {
     top: 5px ;
     right: 5px ;
     background-color: rgba(255, 0, 0, 0.7) !important;
-
+    font-size: 15px !important;
+    text-align: end;
 }
