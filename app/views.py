@@ -1,4 +1,6 @@
 import random
+
+
 from django.core.paginator import Paginator
 from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
@@ -7,6 +9,9 @@ from django.contrib.auth.hashers import check_password
 from django.db.models import Q
 import re
 import os
+
+from django.db.models.fields import json
+
 from .decorators import *
 from django.contrib import messages
 from django.core.exceptions import ValidationError
@@ -14,19 +19,18 @@ from django.core.files import File
 import random
 import smtplib
 from django.core.mail import send_mail
+from django.core.paginator import Paginator
 from django.db.models import Avg
+from django.http import HttpResponse, JsonResponse
 # Create your views here
-from django.shortcuts import render, redirect, get_object_or_404
-from django.urls import reverse
-from django.conf import settings
+from django.shortcuts import get_object_or_404
 # Create your views here.
 from django.shortcuts import render, redirect
-from django.views.decorators.csrf import csrf_exempt
+from django.template.loader import render_to_string
 
+from .decorators import *
 from .models import *
 
-import json
-from django.http import HttpResponse, JsonResponse
 
 @check_user_role('ADMIN')
 def mostrar_admi(request):
@@ -90,31 +94,29 @@ def register(request):
         password = request.POST.get('password1')
         password_confirmacion = request.POST.get('password2')
 
+        errors = 0
 
-
-        if password != password_confirmacion:
-            errors.append("Las contraseñas no coinciden")
-
-        if len(password) < 8:
-            errors.append("La contraseña debe tener al menos 8 caracteres")
-
-        if not re.search(r"\d", password):
-            errors.append("La contraseña debe contener al menos un número")
-
-        if not re.search(r"[A-Z]", password):
-            errors.append("La contraseña debe contener al menos una letra mayúscula")
+        if password != password_confirmacion or len(password) < 8 or not re.search(r"\d", password) or not re.search(
+                r"[A-Z]", password):
+            errors += 1
+            messages.add_message(request, messages.WARNING, "Contraseña no válida")
 
         existe_usuario = User.objects.filter(username=username).exists()
         if existe_usuario:
-            errors.append("Ya existe un usuario con ese nombre")
+            errors += 1
+            messages.add_message(request, messages.WARNING, "Ya existe un usuario con ese nombre")
         existe_mail = User.objects.filter(email=mail).exists()
         if existe_mail:
-            errors.append("Ya existe un usuario con ese email")
+            errors += 1
+            messages.add_message(request, messages.WARNING, "Ya existe un usuario con ese email")
 
-        if len(errors) != 0:
-            return render(request, "register.html", {"errores": errors})
+
+        if errors != 0:
+            messages_html = render_to_string('mensages.html', {'messages': messages.get_messages(request)})
+            return JsonResponse({'messages_html': messages_html})
         else:
-            user = User.objects.create(username=username, email=mail, password=make_password(password), nombre_completo=nombre_completo)
+            user = User.objects.create(username=username, email=mail, password=make_password(password),
+                                       nombre_completo=nombre_completo)
             user.save()
             return redirect("login")
 
@@ -393,15 +395,33 @@ def mostrar_pelicula(request, id_pelicula):
         pj_pelicula = personaje_pelicula.objects.filter(pelicula_id=peli).all()[:6]
         es_favorito = peliculas_favoritas.objects.filter(usuario=request.user, pelicula=peli).exists()
         valoracion_media = valoracion_pelicula.objects.filter(pelicula=peli).aggregate(Avg('valoracion'))
-        return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
+        foro = foro_pelicula.objects.get(pelicula_id=id_pelicula)
+        comentarios = comentario_pelicula.objects.filter(foro_peliculas_id=foro.id).all()
+        for c in comentarios:
+            c.user = User.objects.get(id=c.usuario_id)
+            try:
+                valoracion = valoracion_pelicula.objects.get(usuario=User.objects.get(id=c.usuario_id),
+                                                             pelicula=peli).valoracion
+            except valoracion_pelicula.DoesNotExist:
+                valoracion = None
+
+            # Asignar 'No tiene valoracion' si la valoración es None
+            c.valoracion_usuario = valoracion if valoracion is not None else ''
+
+        return render(request, 'vista_pelicula.html',
+                      {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula,
+                       'es_favorito': es_favorito, 'valoracion_media': valoracion_media, 'comentarios': comentarios})
     else:
         peli = pelicula.objects.get(id=id_pelicula)
         plt_pelicula = plataforma_pelicula.objects.filter(pelicula_id=peli).all()
         gen_pelicula = pelicula_genero.objects.filter(pelicula_id=peli).all()
         pj_pelicula = personaje_pelicula.objects.filter(pelicula_id=peli).all()[:6]
         valoracion_media = valoracion_pelicula.objects.filter(pelicula=peli).aggregate(Avg('valoracion'))
-        return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'valoracion_media': valoracion_media})
+        return render(request, 'vista_pelicula.html',
+                      {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula,
+                       'valoracion_media': valoracion_media})
 
+    return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
 
 def mostrar_serie(request, id_serie):
     if request.user.is_authenticated:
@@ -666,9 +686,6 @@ def valorar_pelicula(request, id_pelicula):
         if request.user.is_authenticated:
             pelicula_valorar = get_object_or_404(pelicula, id=id_pelicula)
             valoracion = request.POST.get('valoracion')
-            if valoracion > 10 and valoracion < 0:
-                messages.error(request, 'La valoración solo es posible entre 0-10.')
-                return redirect('pelicula', id_pelicula=id_pelicula)
             try:
                valor = valoracion_pelicula.objects.get(usuario=request.user, pelicula=pelicula_valorar)
             except valoracion_pelicula.DoesNotExist:
@@ -686,10 +703,13 @@ def pelicula_favorita(request, id_pelicula):
     except peliculas_favoritas.DoesNotExist:
         peliculas_favoritas.objects.create(usuario=request.user, pelicula=pelicula_instancia)
         es_favorito = True
+        messages.success(request, '¡Te ha gustado esta película!')
     else:
         fav.delete()
         es_favorito = False
-    return JsonResponse({'es_favorito': es_favorito})
+        messages.add_message(request, messages.WARNING, '¡Has quitado de favorito esta película!')
+    messages_html = render_to_string('mensages.html', {'messages': messages.get_messages(request)})
+    return JsonResponse({'es_favorito': es_favorito, 'messages_html': messages_html})
 
 
 
@@ -844,6 +864,38 @@ def filtrar(request):
 
     else:
         return JsonResponse({'error': 'Invalid request'}, status=400)
+
+
+def guardar_comentario(request):
+    if request.method == 'POST':
+        id_pelicula = request.POST.get('pelicula_id')
+        if request.user.is_authenticated:
+            comentario = request.POST.get('comentario_usuario')
+            foro = foro_pelicula.objects.get(pelicula_id=id_pelicula)
+            nuevo_comentario = comentario_pelicula(contenido=comentario, foro_peliculas_id=foro.id, usuario_id=request.user.id)
+            nuevo_comentario.save()
+            messages.success(request, '¡Tu comentario ha sido guardado con éxito!')
+        else:
+            messages.warning(request, 'Debes iniciar sesión para comentar.')
+
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            messages_html = render_to_string('mensages.html', {'messages': messages.get_messages(request)})
+            return JsonResponse({'messages_html': messages_html})
+
+        return redirect('pelicula', id_pelicula=id_pelicula)
+
+
+def crear_foro_peliculas(request):
+    contador = 1
+    peliculas = pelicula.objects.all()
+    for p in peliculas:
+        foro = foro_pelicula()
+        foro.id = contador
+        foro.pelicula_id = p.id
+        foro.save()
+        contador += 1
+
+    return HttpResponse("Foros agregados")
 
 
 def buscar(request):

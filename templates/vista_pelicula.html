@@ -1,6 +1,44 @@
 {% include 'header_home_usuario.html' %}
 {% csrf_token %}
 {% load static %}
+<style>
+    #messages-container {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        width: 300px;
+        z-index: 1000;
+    }
+
+    .notification {
+        padding: 10px;
+        font-size: 0.875rem;
+        margin-bottom: 10px;
+    }
+
+    .background-color-1 {
+        background-color: #fff2e3;
+    }
+
+    .background-color-1 {
+        background-color: #FFE5C6;
+    }
+
+    @keyframes shrink {
+        from {
+            width: 100%;
+        }
+        to {
+            width: 0;
+        }
+    }
+
+    .time-bar {
+        background-color: #f00;
+        height: 2px;
+        animation: shrink 2.4s linear forwards;
+    }
+</style>
 <!-- Main Content -->
 <main class="mb-6 ml-1 columns main-content">
     <!-- Informacion de Pelicula -->
@@ -56,6 +94,9 @@
                         {% endif %}
                     {% endif %}
                 </h1>
+                <p class="is-size-4 has-text-weight-bold pl-4  ">Media:
+                    <span class="has-text-weight-normal is-size-5">{{ valoracion_media.valoracion__avg|floatformat:2 }}</span>
+                </p>
             </div>
             <p class="is-size-4 has-text-weight-bold pt-2">Media: <span
                     class="has-text-weight-normal is-size-5">{{ valoracion_media.valoracion__avg|floatformat:2 }}</span>
@@ -105,58 +146,72 @@
     <div class="column">
         <h2 class="is-size-4 has-text-weight-bold pb-4">Comentarios</h2>
         <section class="section">
-        <div class="container">
-            <h1 class="is-size-4 has-text-weight-bold has-text-black pb-3">Foro de Opiniones</h1>
-
-            <div class="box">
-                <form method="POST">
-                    {% csrf_token %}
-                    <div class="field">
-                        <label class="label">Comentario</label>
-                        <div class="control">
-                            <textarea class="textarea" name="content" placeholder="Escribe tu comentario aquí..."></textarea>
+            <div class="container box">
+                <div class="is-flex is-align-items-center mb-5">
+                    <button class="js-modal-trigger button is-rounded is-warning" data-target="modal-js-example">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <p class="ml-3 is-size-5 has-text-black-20">Añade tu comentario</p>
+                </div>
+                <div>
+                    {% for c in comentarios %}
+                        <div class="columns {% if forloop.counter0|divisibleby:2 %}background-color-1{% else %}background-color-2{% endif %} mx-0 px-0 py-3">
+                            <div class="column is-one-fifth is-flex is-align-content-center is-justify-content-center p-0">
+                                <span class="is-align-content-center has-text-centered">
+                                    <figure class="image is-128x128 is-align-content-center">
+                                        {% if c.user.img %}
+                                            <img class="is-rounded" src="{{ c.user.img.url }}" alt="">
+                                        {% else %}
+                                            <img class="is-rounded" src="{% static 'img/perfilenblanco.webp' %}" alt="">
+                                        {% endif %}
+                                    </figure>
+                                    {% if c.valoracion_usuario %}
+                                        <p class="mt-2">Calificación: {{ c.valoracion_usuario }}</p>
+                                    {% endif %}
+                                </span>
+                            </div>
+                            <div class="column is-flex is-align-items-center">
+                                <p>{{ c.contenido }}</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="field">
-                        <label class="label">Calificación</label>
-                        <div class="control">
-                            <input class="input" type="number" name="rating" min="1" max="5">
-                        </div>
-                    </div>
-
-                    <div class="field is-grouped">
-                        <div class="control">
-                            <button class="button is-link" type="submit">Enviar</button>
-                        </div>
-                    </div>
-                </form>
+                    {% endfor %}
+                </div>
             </div>
 
-            <div>
-                {% for comment in comments %}
-                <article class="media">
-                    <figure class="media-left">
-                        <p class="image is-64x64">
-                            <img src="https://bulma.io/images/placeholders/128x128.png">
-                        </p>
-                    </figure>
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <strong>{{ comment.user.username }}</strong> <small>{{ comment.rating }}/5 estrellas</small> <small>{{ comment.created_at }}</small>
-                                <br>
-                                {{ comment.content }}
-                            </p>
-                        </div>
-                    </div>
-                </article>
-                {% endfor %}
+            <div class="modal" id="modal-js-example">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Escribe tu comentario</p>
+                        <button class="delete" aria-label="close"></button>
+                    </header>
+                    <form action="{% url 'guardar_comentario' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="pelicula_id" value="{{ pelicula.id }}">
+                        <section class="modal-card-body">
+                            <textarea
+                                    class="textarea is-primary"
+                                    placeholder="Escribe aquí tu comentario"
+                                    rows="10"
+                                    name="comentario_usuario"
+                                    maxlength="500"
+                            ></textarea>
+                        </section>
+                        <footer class="modal-card-foot">
+                            <div class="buttons">
+                                <button type="submit" class="button is-success">Guardar</button>
+                                <button type="reset" class="button">Cancelar</button>
+                            </div>
+                        </footer>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     </div>
 </main>
+<div id="messages-container">
+    {% include 'mensages.html' %}
+</div>
 
 
 <!-- Footer -->
@@ -166,23 +221,71 @@
     $(document).ready(function () {
         $("#corazon").click(function () {
             var peliculaId = {{ pelicula.id }};
- 
+
             $.ajax({
                 url: '/pelicula_favorita/' + peliculaId + '/',
+                method: 'POST',  // Cambiado a POST
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken')  // CSRF Token
+                },
                 data: {
                     'peliculaId': peliculaId
                 },
                 dataType: 'json',
                 success: function (data) {
+                    // Actualiza el icono del corazón
                     if (data.es_favorito) {
                         $("#corazon").removeClass('fa-regular fa-heart').addClass('fa-solid fa-heart');
                     } else {
                         $("#corazon").removeClass('fa-solid fa-heart').addClass('fa-regular fa-heart');
                     }
+
+                    // Actualiza los mensajes flash
+                    updateMessages(data.messages_html);
+                },
+                error: function () {
+                    alert('Ocurrió un error. Por favor, intenta de nuevo.');
                 }
             });
         });
     });
+
+    // Función para obtener la cookie CSRF token
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    // Función para actualizar los mensajes flash
+    function updateMessages(messagesHtml) {
+        const messagesContainer = document.getElementById('messages-container');
+        messagesContainer.innerHTML = messagesHtml;
+
+        // Re-bind eventos de los botones de cerrar y auto-dismiss
+        document.querySelectorAll('.notification .delete').forEach(button => {
+            button.addEventListener('click', () => {
+                button.parentElement.remove();
+            });
+        });
+
+        setTimeout(() => {
+            document.querySelectorAll('.notification').forEach(notification => {
+                notification.remove();
+            });
+        }, 3500);
+    }
 </script>
+<script src="{% static 'js/modals.js' %}"></script>
 <script src="{% static 'js/index.js' %} "></script>
+<script src="{% static 'js/mensajes.js' %} "></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>

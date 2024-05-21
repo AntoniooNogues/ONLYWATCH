@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,6 +15,43 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+        }
+
+        #messages-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 300px;
+            z-index: 1000;
+        }
+
+        .notification {
+            padding: 10px;
+            font-size: 0.875rem;
+            margin-bottom: 10px;
+        }
+
+        .background-color-1 {
+            background-color: #fff2e3;
+        }
+
+        .background-color-1 {
+            background-color: #FFE5C6;
+        }
+
+        @keyframes shrink {
+            from {
+                width: 100%;
+            }
+            to {
+                width: 0;
+            }
+        }
+
+        .time-bar {
+            background-color: #f00;
+            height: 2px;
+            animation: shrink 2.4s linear forwards;
         }
     </style>
 </head>
@@ -49,7 +87,7 @@
                         <div class="control has-icons-left">
                             <div class="field has-addons">
                                 <div class="control is-expanded">
-                                    <input type="password" id="password1" name="password1" placeholder="Contraseña" class="input is-medium is-fullwidth" required/>
+                                    <input type="password" id="password1" name="password1" placeholder="Contraseña" class="input is-medium is-fullwidth" title="La contraseña debe tener al menos 8 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula, un número y un carácter especial (por ejemplo, !@#$%^&*)." required/>
                                     <span class="icon is-left has-text-black">
                                         <i class="fa-solid fa-lock"></i>
                                     </span>
@@ -93,22 +131,39 @@
                     <p class="has-text-centered has-text-white is-size-6"> ¿Dispones de una cuenta? <a href="{% url 'login' %}" class="register">Inicia Sesión</a></p>
                 </footer>
             </div>
-            <div class="notification is-danger is-light is-hidden notificacion p-4">
-                <p class="errores has-text-black has-text-weight-bold"></p>
-                <button class="delete"></button>
-            </div>
         </div>
     </div>
 </div>
+<div id="messages-container">
+    {% include 'mensages.html' %}
+</div>
 
 
-
-
+<script src="{% static 'js/mensajes.js' %}"></script>
 <script>
-    var errores = "{{ errores }}";
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
 
+        fetch('registro', {
+            method: 'POST',
+            body: new FormData(event.target)
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Inserta el HTML en la página
+                const messagesContainer = document.getElementById('messages-container');
+                messagesContainer.innerHTML = data.messages_html;
+
+                // Vincula los eventos de las notificaciones y configura la auto-ocultación
+                bindNotificationEvents();
+                document.querySelectorAll('.notification').forEach(notification => {
+                    autoDismissNotification(notification);
+                });
+            })
+            .catch(error => console.error(error));
+    });
 </script>
-<!-- Footer -->
+
 <script src="/static/js/index.js"></script>
 </body>
 
