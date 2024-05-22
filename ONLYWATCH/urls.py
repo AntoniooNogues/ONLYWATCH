@@ -70,6 +70,7 @@ urlpatterns = [
     path('peliculas/', views.view_peliculas, name='peliculas'),
     path('plataformas/', views.plataformas, name='plataformas'),
     path('series/', views.view_series, name='series'),
+    path('personal/', views.usuario_personal, name='personal'),
     path('pelicula/<int:id_pelicula>', views.mostrar_pelicula, name='pelicula'),
     path('pelicula/valorar/<int:id_pelicula>', views.valorar_pelicula, name='valorar_pelicula'),
     path('pelicula_favorita/<int:id_pelicula>/', views.pelicula_favorita, name='pelicula_favorita'),

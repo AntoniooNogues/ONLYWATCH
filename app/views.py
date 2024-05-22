@@ -435,31 +435,6 @@ def mostrar_serie(request, id_serie):
                        'valoracion_media': valoracion_media})
 
 
-
-# def calcular_edad(fecha_nacimiento):
-#     nacimiento = datetime.strptime(fecha_nacimiento, '%Y-%m-%d')
-#     hoy = datetime.now()
-#     edad = hoy.year - nacimiento.year - ((hoy.month, hoy.day) < (nacimiento.month, nacimiento.day))
-#     return edad
-# edad = calcular_edad(User.fecha_nacimiento)
-
-# def generate_code():
-#     return random.randint(100000, 999999)
-#
-# def send_email(user_email, code):
-#     send_mail(
-#         'Codigo de verificación',
-#         f'Tu codigo de verificación es {code}',
-#         'onlywatch.info@gmail.es',
-#         [user_email],
-#         fail_silently=False,
-#     )
-#
-# def verify_code(user_input, code):
-#     return user_input == code
-
-
-
 def send_verification_code(request):
     if request.method == 'POST':
         code = random.randint(100000, 999999)
@@ -917,3 +892,25 @@ def cambiar_password(request):
         return JsonResponse({'messages_html': messages_html})
 
     return render(request, 'reset_password.html')
+
+
+@login_required()
+def usuario_personal(request):
+    usu = request.user.usuario_plataforma_set.all()
+    plataformas_usuario = [up.plataforma for up in usu]
+    contenido_por_plataforma = {}
+    for plataforma in plataformas_usuario:
+        series_en_plataforma = serie.objects.filter(plataforma_serie__plataforma=plataforma)
+        peliculas_en_plataforma = pelicula.objects.filter(plataforma_pelicula__plataforma=plataforma)
+        # Calcula la valoración media para cada serie y película
+        for s in series_en_plataforma:
+            s.valoracion_media = valoracion_serie.objects.filter(serie=s).aggregate(Avg('valoracion'))['valoracion__avg']
+        for p in peliculas_en_plataforma:
+            p.valoracion_media = valoracion_pelicula.objects.filter(pelicula=p).aggregate(Avg('valoracion'))['valoracion__avg']
+
+        contenido_por_plataforma[plataforma.nombre] = {
+                'series': series_en_plataforma,
+                'peliculas': peliculas_en_plataforma
+            }
+
+    return render(request, 'usuario_personal.html', {'contenido_por_plataforma': contenido_por_plataforma})

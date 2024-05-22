@@ -10,7 +10,7 @@
     <link rel="icon" href="{% static 'img/logo_sinfondo 1.png' %}">
 
 </head>
-<body style="background-color: #FFE8D3; overflow-x: hidden; height: 100%" class="familiy has-text-black">
+<body style="background-color: #FFE8D3; height: 100%" class="familiy has-text-black">
 {% csrf_token %}
 <!-- Header -->
 <header class="mb-3" style="background-color: transparent">
@@ -32,6 +32,9 @@
                 <a class="navbar-item has-text-black" href="{% url 'home' %}"> Inicio </a>
                 <a class="navbar-item has-text-black" href="{% url 'peliculas' %}"> Peliculas </a>
                 <a class="navbar-item has-text-black" href="{% url 'series' %}"> Series </a>
+                {% if user.is_authenticated %}
+                     <a class="navbar-item has-text-black" href="{% url 'personal' %}"> Personal </a>
+                {% endif %}
                 <form method="GET" action="/buscar" class="is-flex is-align-content-center is-justify-content-center">
                     <div id="search-container" class="control">
                         <div class="field has-addons">
