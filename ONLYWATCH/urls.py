@@ -78,6 +78,7 @@ urlpatterns = [
     path('serie/valorar/', views.valorar_serie, name='valorar_serie'),
     path('serie_favorita/<int:id_serie>/', views.serie_favorita, name='serie_favorita'),
     path('pelicula/comentario', views.guardar_comentario, name='guardar_comentario'),
+    path('serie/comentario', views.guardar_comentario_serie, name='guardar_comentario_serie'),
 
     # Paginas de configuracion de Usuario
     path('usuario/perfil', views.configuracion, name='configuracion'),
@@ -91,7 +92,7 @@ urlpatterns = [
     # path('cargar_datos/actores/pelicula', views.anadir_actores_personaje_pelicula, name='cargar_datos_pelis_actores'),
     # path('cargar_datos/actores/serie', views.anadir_actores_personaje_serie, name='cargar_datos_series_actores'),
     # path('cargar_datos/anadir_base_datos/actores_personajes', views.cargar_actores_personajes, name='cargar_base_datos_actores_personajes'),
-    # path('foro', views.crear_foro_peliculas )
+
 ]
 
 if settings.DEBUG:

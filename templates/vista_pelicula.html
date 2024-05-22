@@ -54,17 +54,24 @@
                 <!-- Valoracion -->
                 <!-- Falta la personalización de la valoración -->
                 {% if user.is_authenticated %}
-                    <div class="ml-4">
+                    <div class="">
                         Añade tu puntuación:
                         <form method="POST" action="{% url 'valorar_pelicula' pelicula.id %}">
                             {% csrf_token %}
                             <input type="number" name="valoracion" min="0" max="10" required>
                             <input type="submit" value="Valorar">
                         </form>
+                        {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                    <p>{{ message }}</p>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </div>
                 {% endif %}
             </div>
-            
+
         </div>
         <!-- Titulo (Año Estreno) + Me Gusta, Sinopsis, Director, Plataforma, Generos -->
         <div class="column title-details is-9 pl-5">
@@ -231,40 +238,6 @@
         });
     });
 
-    // Función para obtener la cookie CSRF token
-    function getCookie(name) {
-        let cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            const cookies = document.cookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-                const cookie = cookies[i].trim();
-                if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-    }
-
-    // Función para actualizar los mensajes flash
-    function updateMessages(messagesHtml) {
-        const messagesContainer = document.getElementById('messages-container');
-        messagesContainer.innerHTML = messagesHtml;
-
-        // Re-bind eventos de los botones de cerrar y auto-dismiss
-        document.querySelectorAll('.notification .delete').forEach(button => {
-            button.addEventListener('click', () => {
-                button.parentElement.remove();
-            });
-        });
-
-        setTimeout(() => {
-            document.querySelectorAll('.notification').forEach(notification => {
-                notification.remove();
-            });
-        }, 3500);
-    }
 </script>
 <script src="{% static 'js/modals.js' %}"></script>
 <script src="{% static 'js/index.js' %} "></script>
