@@ -1,0 +1,12 @@
+{% if messages %}
+    <div id="messages-container">
+        {% for message in messages %}
+            <div class="notification 
+                        {% if message.tags %}is-{{ message.tags }}{% else %}is-primary{% endif %}">
+                <button class="delete"></button>
+                {{ message }}
+                <div class="time-bar"></div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
