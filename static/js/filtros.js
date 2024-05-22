@@ -27,15 +27,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-let generosSeleccionados = 0;
-let plataformasSeleccionadas = 0;
-
 const filtrarButton = document.getElementById('filtrar');
+
+let generosSeleccionadosId = 0;
+let plataformasSeleccionadasId = 0;
+let generosSeleccionadosName = '';
+let plataformasSeleccionadasName = '';
 
 document.querySelectorAll('input[name="generos"]').forEach((radio) => {
     radio.addEventListener('change', function () {
         if (this.checked) {
-            generosSeleccionados = this.value;  // Assign the value directly
+            generosSeleccionadosId = this.dataset.id;  // Use the data-id attribute
+            generosSeleccionadosName = this.dataset.name;  // Use the data-name attribute
         }
     });
 });
@@ -43,19 +46,19 @@ document.querySelectorAll('input[name="generos"]').forEach((radio) => {
 document.querySelectorAll('input[name="plataformas"]').forEach((radio) => {
     radio.addEventListener('change', function () {
         if (this.checked) {
-            plataformasSeleccionadas = this.value;  // Assign the value directly
+            plataformasSeleccionadasId = this.dataset.id;  // Use the data-id attribute
+            plataformasSeleccionadasName = this.dataset.name;  // Use the data-name attribute
         }
     });
 });
 
-
 filtrarButton.addEventListener('click', function () {
     let url = '/filtrar?';
-    generosSeleccionados.push((genero) => {
-        url += `generos=${genero}&`;
-    });
-    plataformasSeleccionadas.push((plataforma) => {
-        url += `plataformas=${plataforma}&`;
-    });
+    if (generosSeleccionadosName) {
+        url += `generos=${generosSeleccionadosName}&`;
+    }
+    if (plataformasSeleccionadasName) {
+        url += `plataformas=${plataformasSeleccionadasName}&`;
+    }
     window.location.href = url;
 });

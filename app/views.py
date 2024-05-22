@@ -64,7 +64,7 @@ def slider_header():
 
 def paginacion(request, lista_series, lista_peliculas):
     if isinstance(lista_series, QuerySet) and isinstance(lista_peliculas, QuerySet):
-        combined_list = lista_series.union(lista_peliculas)
+        combined_list = list(lista_series) + list(lista_peliculas)
     elif isinstance(lista_series, list) and isinstance(lista_peliculas, list):
         combined_list = lista_series + lista_peliculas
     else:
@@ -651,17 +651,6 @@ def add_temporadas_json():
             tem.serie_id = d['serie_id']
             tem.save()
         return HttpResponse("Datos de temporadas cargados correctamente")
-def cargar_datos_sql(request):
-    add_series_json()
-    add_peliculas_json()
-    add_plataformas()
-    add_vinculacion_genero_json()
-    vinculacion_genero_pelicula_json()
-    vinculacion_genero_serie_json()
-    vinculacion_plataforma_pelis_json()
-    vinculacion_plataforma_series_json()
-    add_temporadas_json()
-    return HttpResponse("Datos de generos cargados correctamente")
 
 def valorar_pelicula(request, id_pelicula):
     if request.method == 'POST':
@@ -833,39 +822,49 @@ def anadir_personaje_serie():
 
 def cargar_actores_personajes(request):
     anadir_actores()
-    # anadir_personaje_pelicula()
+    anadir_personaje_pelicula()
     anadir_personaje_serie()
     return HttpResponse("Datos de actores y personajes cargados correctamente")
 
 def filtrar(request):
     headerPS = slider_header()
+    generos = request.GET.getlist('generos')
+    plataformas = request.GET.getlist('plataformas')
 
-    generos = list(request.GET.getlist('generos'))
-    plataformas = list(request.GET.getlist('plataformas'))
+    if "Disney " in plataformas:
+        plataformas.clear()
+        plataformas.append("Disney+")
+
+    if "Moviestar " in plataformas:
+        plataformas.clear()
+        plataformas.append("Moviestar+")
 
     if len(generos) == 0:
-        peliculas = pelicula.objects.filter(plataforma_pelicula__in=plataformas)
-        series = serie.objects.filter(plataforma_serie__in=plataformas)
-        page_obj = paginacion(request, peliculas, series)
+        fil_plt = plataforma.objects.filter(nombre__in=plataformas).values_list('id', flat=True)
+        peliculas = pelicula.objects.filter(plataforma_pelicula__plataforma_id__in=fil_plt)
+        series = serie.objects.filter(plataforma_serie__plataforma_id__in=fil_plt)
+
         gen = genero.objects.all()
         plt = plataforma.objects.all()
-        return render(request, 'user_home.html',
-                      {'header': headerPS, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
+        return render(request, 'home_filtros.html', {'header': headerPS,  'generos': gen, 'plataformas': plt, 'peliculas': peliculas, 'series': series})
     elif len(plataformas) == 0:
-        peliculas = pelicula.objects.filter(pelicula_genero__in=generos)
-        series = serie.objects.filter(serie_genero__in=generos)
-        page_obj = paginacion(request, peliculas, series)
+        fil_gen = genero.objects.filter(nombre__in=generos).values_list('id', flat=True)
+        peliculas = pelicula.objects.filter(pelicula_genero__genero_id__in=fil_gen)
+        series = serie.objects.filter(serie_genero__genero_id__in=fil_gen)
         gen = genero.objects.all()
         plt = plataforma.objects.all()
-        return render(request, 'user_home.html', {'header': headerPS, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
+        return render(request, 'home_filtros.html', {'header': headerPS,  'generos': gen, 'plataformas': plt, 'peliculas': peliculas, 'series': series})
     else:
-        peliculas = pelicula.objects.filter(pelicula_genero__in=generos, plataforma_pelicula__in=plataformas)
-        series = serie.objects.filter(serie_genero__in=generos, plataforma_serie__in=plataformas)
-        page_obj = paginacion(request, peliculas, series)
+        fil_gen = genero.objects.filter(nombre__in=generos).values_list('id', flat=True)
+        fil_plt = plataforma.objects.filter(nombre__in=plataformas).values_list('id', flat=True)
+
+        peliculas = pelicula.objects.filter(pelicula_genero__genero_id__in=fil_gen, plataforma_pelicula__plataforma_id__in=fil_plt)
+        series = serie.objects.filter(serie_genero__genero_id__in=fil_gen, plataforma_serie__plataforma_id__in=fil_plt)
+
         gen = genero.objects.all()
         plt = plataforma.objects.all()
-        return render(request, 'user_home.html',
-                      {'header': headerPS, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
+
+        return render(request, 'home_filtros.html', {'header': headerPS,  'generos': gen, 'plataformas': plt, 'peliculas': peliculas, 'series': series})
 
 
 def guardar_comentario(request):
@@ -946,3 +945,18 @@ def usuario_personal(request):
             }
 
     return render(request, 'usuario_personal.html', {'contenido_por_plataforma': contenido_por_plataforma})
+
+def cargar_datos_sql(request):
+    add_series_json()
+    add_peliculas_json()
+    add_plataformas()
+    add_vinculacion_genero_json()
+    vinculacion_genero_pelicula_json()
+    vinculacion_genero_serie_json()
+    vinculacion_plataforma_pelis_json()
+    vinculacion_plataforma_series_json()
+    add_temporadas_json()
+    cargar_actores_personajes(request)
+    crear_foro_peliculas(request)
+
+    return HttpResponse("Datos de generos cargados correctamente")
