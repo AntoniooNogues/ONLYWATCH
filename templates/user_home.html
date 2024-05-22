@@ -54,7 +54,7 @@
                             {% for g in generos %}
                                 <a href="#" class="dropdown-item" onclick="stopPropagation()">
                                     <label class="checkbox">
-                                        <input type="checkbox" name="generos" value="{{ g.id }}" class="mr-2"> {{ g.nombre }}
+                                        <input type="radio" name="generos" value="{{ g.id }}" class="mr-2"> {{ g.nombre }}
                                     </label>
                                 </a>
                             {% endfor %}
@@ -75,7 +75,7 @@
                             {% for p in plataformas %}
                                 <a href="#" class="dropdown-item" onclick="stopPropagation()">
                                     <label class="checkbox">
-                                        <input type="checkbox" name="platformas" value="{{ p.id }}" class="mr-2"> {{ p.nombre }}
+                                        <input type="radio" name="plataformas" value="{{ p.id }}" class="mr-2"> {{ p.nombre }}
                                     </label>
                                 </a>
                             {% endfor %}

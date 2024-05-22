@@ -27,37 +27,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
-let generosSeleccionados = [];
-let plataformasSeleccionadas = [];
-
-
+let generosSeleccionados = 0;
+let plataformasSeleccionadas = 0;
 
 const filtrarButton = document.getElementById('filtrar');
 
-document.querySelectorAll('input[name="generos"]').forEach((checkbox) => {
-    checkbox.addEventListener('change', function () {
+document.querySelectorAll('input[name="generos"]').forEach((radio) => {
+    radio.addEventListener('change', function () {
         if (this.checked) {
-            generosSeleccionados.push(this.value);
-        } else {
-            var index = generosSeleccionados.indexOf(this.value);
-            if (index !== -1) {
-                generosSeleccionados.splice(index, 1);
-            }
+            generosSeleccionados = this.value;  // Assign the value directly
         }
     });
 });
 
-document.querySelectorAll('input[name="platformas"]').forEach((checkbox) => {
-    checkbox.addEventListener('change', function () {
+document.querySelectorAll('input[name="plataformas"]').forEach((radio) => {
+    radio.addEventListener('change', function () {
         if (this.checked) {
-            plataformasSeleccionadas.push(this.value);
-        } else {
-            var index = plataformasSeleccionadas.indexOf(this.value);
-            if (index !== -1) {
-                plataformasSeleccionadas.splice(index, 1);
-            }
+            plataformasSeleccionadas = this.value;  // Assign the value directly
         }
     });
 });
@@ -65,10 +51,10 @@ document.querySelectorAll('input[name="platformas"]').forEach((checkbox) => {
 
 filtrarButton.addEventListener('click', function () {
     let url = '/filtrar?';
-    generosSeleccionados.forEach((genero) => {
+    generosSeleccionados.push((genero) => {
         url += `generos=${genero}&`;
     });
-    plataformasSeleccionadas.forEach((plataforma) => {
+    plataformasSeleccionadas.push((plataforma) => {
         url += `plataformas=${plataforma}&`;
     });
     window.location.href = url;
