@@ -658,15 +658,17 @@ def valorar_pelicula(request, id_pelicula):
         if request.user.is_authenticated:
             pelicula_valorar = get_object_or_404(pelicula, id=id_pelicula)
             valoracion = request.POST.get('valoracion')
-            if valoracion > 10 and valoracion < 0:
+            if int(valoracion) > 10 or int(valoracion) < 0:
                 messages.error(request, 'La valoración solo es posible entre 0-10.')
                 return redirect('pelicula', id_pelicula=id_pelicula)
             try:
                valor = valoracion_pelicula.objects.get(usuario=request.user, pelicula=pelicula_valorar)
+               valor.valoracion = valoracion  # Update the existing rating
+               valor.save()  # Save the updated rating
+               messages.success(request, 'Tu valoración ha sido actualizada.')
             except valoracion_pelicula.DoesNotExist:
                 valoracion_pelicula.objects.create(usuario=request.user, pelicula=pelicula_valorar, valoracion=valoracion)
-            else:
-                messages.error(request, 'Ya has valorado esta película anteriormente.')
+                messages.success(request, 'Tu valoración ha sido registrada.')
             return redirect('pelicula', id_pelicula=id_pelicula)
         else:
             return redirect('pelicula', id_pelicula=id_pelicula)
