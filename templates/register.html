@@ -72,7 +72,7 @@
                     </p>
                 </header>
                 <div class="content">
-                    <form action="" method="POST" class="mt-4 ml-4 mr-4">
+                    <form action="{% url 'signup' %}" method="POST" class="mt-4 ml-4 mr-4">
                         {% csrf_token %}
                         <div class="field mb-4">
                             <input type="text" name="username" id="username" placeholder="Nombre de usuario" class="input" required/>
@@ -135,33 +135,23 @@
     </div>
 </div>
 <div id="messages-container">
-    {% include 'mensages.html' %}
+   {% if messages %}
+    <div id="messages-container">
+        {% for message in messages %}
+            <div class="notification 
+                        {% if message.tags %}is-{{ message.tags }}{% else %}is-primary{% endif %}">
+                <button class="delete"></button>
+                {{ message }}
+                <div class="time-bar"></div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
 </div>
 
 
 <script src="{% static 'js/mensajes.js' %}"></script>
 <script>
-    document.querySelector('form').addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        fetch('registro', {
-            method: 'POST',
-            body: new FormData(event.target)
-        })
-            .then(response => response.json())
-            .then(data => {
-                // Inserta el HTML en la página
-                const messagesContainer = document.getElementById('messages-container');
-                messagesContainer.innerHTML = data.messages_html;
-
-                // Vincula los eventos de las notificaciones y configura la auto-ocultación
-                bindNotificationEvents();
-                document.querySelectorAll('.notification').forEach(notification => {
-                    autoDismissNotification(notification);
-                });
-            })
-            .catch(error => console.error(error));
-    });
 </script>
 
 <script src="/static/js/index.js"></script>

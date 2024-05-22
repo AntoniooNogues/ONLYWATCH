@@ -104,13 +104,11 @@ def register(request):
 
 
         if errors != 0:
-            messages_html = render_to_string('mensages.html', {'messages': messages.get_messages(request)})
-            return JsonResponse({'messages_html': messages_html})
+            return render(request, 'register.html', {'messages': messages.get_messages(request)})
         else:
-            user = User.objects.create(username=username, email=mail, password=make_password(password),
-                                       nombre_completo=nombre_completo)
+            user = User.objects.create(username=username, email=mail, password=make_password(password), nombre_completo=nombre_completo)
             user.save()
-            return redirect("login")
+            return redirect('login')
 
 
 def reset_password(request):
