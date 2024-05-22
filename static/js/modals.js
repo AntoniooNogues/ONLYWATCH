@@ -41,3 +41,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+// Función para obtener la cookie CSRF token
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+// Función para actualizar los mensajes flash
+function updateMessages(messagesHtml) {
+    const messagesContainer = document.getElementById('messages-container');
+    messagesContainer.innerHTML = messagesHtml;
+
+    // Re-bind eventos de los botones de cerrar y auto-dismiss
+    document.querySelectorAll('.notification .delete').forEach(button => {
+        button.addEventListener('click', () => {
+            button.parentElement.remove();
+        });
+    });
+
+    setTimeout(() => {
+        document.querySelectorAll('.notification').forEach(notification => {
+            notification.remove();
+        });
+    }, 3500);
+    }

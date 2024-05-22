@@ -1,5 +1,5 @@
 import random
-
+from django.db.models import QuerySet
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.conf import settings
@@ -55,24 +55,34 @@ def do_logout(request):
     logout(request)
     return redirect('login')
 
-
-def mostrar_inicio(request):
-    #Parte Superior de Home
+def slider_header():
     headerP = list(pelicula.objects.order_by('?')[:5])
     headerS = list(serie.objects.order_by('?')[:5])
     headerPS = headerP + headerS
     random.shuffle(headerPS)
-    gen=genero.objects.all()
-    plt = plataforma.objects.all()
-    #Parte Peliculas y Series de Home
-    series_list = list(serie.objects.all())
-    peliculas_list = list(pelicula.objects.all())
-    combined_list = series_list + peliculas_list
-    #Paginacion de Home
+    return headerPS
+
+def paginacion(request, lista_series, lista_peliculas):
+    if isinstance(lista_series, QuerySet) and isinstance(lista_peliculas, QuerySet):
+        combined_list = list(lista_series) + list(lista_peliculas)
+    elif isinstance(lista_series, list) and isinstance(lista_peliculas, list):
+        combined_list = lista_series + lista_peliculas
+    else:
+        raise ValueError('Las listas deben ser del mismo tipo')
+    # Paginacion de Home
     paginator = Paginator(combined_list, 20)  # Show 20 items per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+    return page_obj
 
+def mostrar_inicio(request):
+    series_list = list(serie.objects.all())
+    peliculas_list = list(pelicula.objects.all())
+    #Parte Superior de Home
+    headerPS = slider_header()
+    gen=genero.objects.all()
+    plt = plataforma.objects.all()
+    page_obj = paginacion(request, series_list, peliculas_list)
 
     return render(request, 'user_home.html', {'header': headerPS, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
 
@@ -390,8 +400,7 @@ def mostrar_pelicula(request, id_pelicula):
         for c in comentarios:
             c.user = User.objects.get(id=c.usuario_id)
             try:
-                valoracion = valoracion_pelicula.objects.get(usuario=User.objects.get(id=c.usuario_id),
-                                                             pelicula=peli).valoracion
+                valoracion = valoracion_pelicula.objects.get(usuario=User.objects.get(id=c.usuario_id), pelicula=peli).valoracion
             except valoracion_pelicula.DoesNotExist:
                 valoracion = None
 
@@ -399,17 +408,14 @@ def mostrar_pelicula(request, id_pelicula):
             c.valoracion_usuario = valoracion if valoracion is not None else ''
 
         return render(request, 'vista_pelicula.html',
-                      {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula,
-                       'es_favorito': es_favorito, 'valoracion_media': valoracion_media, 'comentarios': comentarios})
+                      {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media, 'comentarios': comentarios})
     else:
         peli = pelicula.objects.get(id=id_pelicula)
         plt_pelicula = plataforma_pelicula.objects.filter(pelicula_id=peli).all()
         gen_pelicula = pelicula_genero.objects.filter(pelicula_id=peli).all()
         pj_pelicula = personaje_pelicula.objects.filter(pelicula_id=peli).all()[:6]
         valoracion_media = valoracion_pelicula.objects.filter(pelicula=peli).aggregate(Avg('valoracion'))
-        return render(request, 'vista_pelicula.html',
-                      {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula,
-                       'valoracion_media': valoracion_media})
+        return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'valoracion_media': valoracion_media})
 
     return render(request, 'vista_pelicula.html', {'pelicula': peli, 'plt': plt_pelicula, 'gen': gen_pelicula, 'pj': pj_pelicula, 'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
 
@@ -421,9 +427,20 @@ def mostrar_serie(request, id_serie):
         pj_serie = personaje_serie.objects.filter(serie_id=serie_editar).all()[:6]
         es_favorito = series_favoritas.objects.filter(usuario=request.user, serie=serie_editar).exists()
         valoracion_media = valoracion_serie.objects.filter(serie=serie_editar).aggregate(Avg('valoracion'))
+        foro = foro_serie.objects.get(serie_id=id_serie)
+        comentarios = comentario_serie.objects.filter(foro_series_id=foro.id).all()
+        for c in comentarios:
+            c.user = User.objects.get(id=c.usuario_id)
+            try:
+                valoracion = valoracion_serie.objects.get(usuario=User.objects.get(id=c.usuario_id), serie=serie_editar).valoracion
+            except valoracion_serie.DoesNotExist:
+                valoracion = None
+
+            # Asignar 'No tiene valoracion' si la valoración es None
+            c.valoracion_usuario = valoracion if valoracion is not None else ''
         return render(request, 'vista_serie.html',
                       {'serie': serie_editar, 'plt': plt_serie, 'gen': gen_serie, 'pj': pj_serie,
-                       'es_favorito': es_favorito, 'valoracion_media': valoracion_media})
+                       'es_favorito': es_favorito, 'valoracion_media': valoracion_media, 'comentarios': comentarios})
     else:
         serie_editar = serie.objects.get(id=id_serie)
         plt_serie = plataforma_serie.objects.filter(serie_id=serie_editar).all()
@@ -639,32 +656,23 @@ def add_temporadas_json():
             tem.serie_id = d['serie_id']
             tem.save()
         return HttpResponse("Datos de temporadas cargados correctamente")
-def cargar_datos_sql(request):
-    add_series_json()
-    add_peliculas_json()
-    add_plataformas()
-    add_vinculacion_genero_json()
-    vinculacion_genero_pelicula_json()
-    vinculacion_genero_serie_json()
-    vinculacion_plataforma_pelis_json()
-    vinculacion_plataforma_series_json()
-    add_temporadas_json()
-    return HttpResponse("Datos de generos cargados correctamente")
 
 def valorar_pelicula(request, id_pelicula):
     if request.method == 'POST':
         if request.user.is_authenticated:
             pelicula_valorar = get_object_or_404(pelicula, id=id_pelicula)
             valoracion = request.POST.get('valoracion')
-            if valoracion > 10 and valoracion < 0:
+            if int(valoracion) > 10 or int(valoracion) < 0:
                 messages.error(request, 'La valoración solo es posible entre 0-10.')
                 return redirect('pelicula', id_pelicula=id_pelicula)
             try:
                valor = valoracion_pelicula.objects.get(usuario=request.user, pelicula=pelicula_valorar)
+               valor.valoracion = valoracion  # Update the existing rating
+               valor.save()  # Save the updated rating
+               messages.success(request, 'Tu valoración ha sido actualizada.')
             except valoracion_pelicula.DoesNotExist:
                 valoracion_pelicula.objects.create(usuario=request.user, pelicula=pelicula_valorar, valoracion=valoracion)
-            else:
-                messages.error(request, 'Ya has valorado esta película anteriormente.')
+                messages.success(request, 'Tu valoración ha sido registrada.')
             return redirect('pelicula', id_pelicula=id_pelicula)
         else:
             return redirect('pelicula', id_pelicula=id_pelicula)
@@ -819,17 +827,49 @@ def anadir_personaje_serie():
 
 def cargar_actores_personajes(request):
     anadir_actores()
-    # anadir_personaje_pelicula()
+    anadir_personaje_pelicula()
     anadir_personaje_serie()
     return HttpResponse("Datos de actores y personajes cargados correctamente")
 
 def filtrar(request):
+    headerPS = slider_header()
     generos = request.GET.getlist('generos')
     plataformas = request.GET.getlist('plataformas')
-    peliculas = pelicula.objects.all()
-    series = serie.objects.all()
 
+    if "Disney " in plataformas:
+        plataformas.clear()
+        plataformas.append("Disney+")
 
+    if "Moviestar " in plataformas:
+        plataformas.clear()
+        plataformas.append("Moviestar+")
+
+    if len(generos) == 0:
+        fil_plt = plataforma.objects.filter(nombre__in=plataformas).values_list('id', flat=True)
+        peliculas = pelicula.objects.filter(plataforma_pelicula__plataforma_id__in=fil_plt)
+        series = serie.objects.filter(plataforma_serie__plataforma_id__in=fil_plt)
+
+        gen = genero.objects.all()
+        plt = plataforma.objects.all()
+        return render(request, 'home_filtros.html', {'header': headerPS,  'generos': gen, 'plataformas': plt, 'peliculas': peliculas, 'series': series})
+    elif len(plataformas) == 0:
+        fil_gen = genero.objects.filter(nombre__in=generos).values_list('id', flat=True)
+        peliculas = pelicula.objects.filter(pelicula_genero__genero_id__in=fil_gen)
+        series = serie.objects.filter(serie_genero__genero_id__in=fil_gen)
+        gen = genero.objects.all()
+        plt = plataforma.objects.all()
+        return render(request, 'home_filtros.html', {'header': headerPS,  'generos': gen, 'plataformas': plt, 'peliculas': peliculas, 'series': series})
+    else:
+        fil_gen = genero.objects.filter(nombre__in=generos).values_list('id', flat=True)
+        fil_plt = plataforma.objects.filter(nombre__in=plataformas).values_list('id', flat=True)
+
+        peliculas = pelicula.objects.filter(pelicula_genero__genero_id__in=fil_gen, plataforma_pelicula__plataforma_id__in=fil_plt)
+        series = serie.objects.filter(serie_genero__genero_id__in=fil_gen, plataforma_serie__plataforma_id__in=fil_plt)
+
+        gen = genero.objects.all()
+        plt = plataforma.objects.all()
+
+        return render(request, 'home_filtros.html', {'header': headerPS,  'generos': gen, 'plataformas': plt, 'peliculas': peliculas, 'series': series})
 
 
 def guardar_comentario(request):
@@ -850,7 +890,23 @@ def guardar_comentario(request):
 
         return redirect('pelicula', id_pelicula=id_pelicula)
 
+def guardar_comentario_serie(request):
+    if request.method == 'POST':
+        id_serie = request.POST.get('serie_id')
+        if request.user.is_authenticated:
+            comentario = request.POST.get('comentario_usuario')
+            foro = foro_serie.objects.get(serie_id=id_serie)
+            nuevo_comentario = comentario_serie(contenido=comentario, foro_series_id=foro.id, usuario_id=request.user.id)
+            nuevo_comentario.save()
+            messages.success(request, '¡Tu comentario ha sido guardado con éxito!')
+        else:
+            messages.warning(request, 'Debes iniciar sesión para comentar.')
 
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            messages_html = render_to_string('mensages.html', {'messages': messages.get_messages(request)})
+            return JsonResponse({'messages_html': messages_html})
+
+        return redirect('serie', id_serie=id_serie)
 def crear_foro_peliculas(request):
     contador = 1
     peliculas = pelicula.objects.all()
@@ -863,6 +919,17 @@ def crear_foro_peliculas(request):
 
     return HttpResponse("Foros agregados")
 
+def crear_foro_series(request):
+    contador = 1
+    series = serie.objects.all()
+    for s in series:
+        foro = foro_serie()
+        foro.id = contador
+        foro.serie_id = s.id
+        foro.save()
+        contador += 1
+
+    return HttpResponse("Foros agregados")
 
 def buscar(request):
     texto_busqueda = request.GET.get('buscar', '')
@@ -910,3 +977,19 @@ def usuario_personal(request):
             }
 
     return render(request, 'usuario_personal.html', {'contenido_por_plataforma': contenido_por_plataforma})
+
+def cargar_datos_sql(request):
+    add_series_json()
+    add_peliculas_json()
+    add_plataformas()
+    add_vinculacion_genero_json()
+    vinculacion_genero_pelicula_json()
+    vinculacion_genero_serie_json()
+    vinculacion_plataforma_pelis_json()
+    vinculacion_plataforma_series_json()
+    add_temporadas_json()
+    cargar_actores_personajes(request)
+    crear_foro_peliculas(request)
+    crear_foro_series(request)
+
+    return HttpResponse("Datos de generos cargados correctamente")

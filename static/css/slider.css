@@ -284,12 +284,8 @@ input#search-input:hover, input#search-input:focus{
 
 /* Oculta el dropdown por defecto */
 .scrollable-dropdown {
-    max-height: 200px; /* Ajusta este valor según el tamaño de tus elementos */
+    max-height: 170px !important;
     overflow-y: auto;
 }
 
-/* Muestra el dropdown cuando se pasa el mouse por encima */
-.navbar-item.has-dropdown.is-hoverable:hover .scrollable-dropdown {
-    max-height: 200px;
-    visibility: visible;
-}
+

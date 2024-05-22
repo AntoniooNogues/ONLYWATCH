@@ -27,49 +27,38 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
-let generosSeleccionados = [];
-let plataformasSeleccionadas = [];
-
-
-
 const filtrarButton = document.getElementById('filtrar');
 
-document.querySelectorAll('input[name="generos"]').forEach((checkbox) => {
-    checkbox.addEventListener('change', function () {
+let generosSeleccionadosId = 0;
+let plataformasSeleccionadasId = 0;
+let generosSeleccionadosName = '';
+let plataformasSeleccionadasName = '';
+
+document.querySelectorAll('input[name="generos"]').forEach((radio) => {
+    radio.addEventListener('change', function () {
         if (this.checked) {
-            generosSeleccionados.push(this.value);
-        } else {
-            var index = generosSeleccionados.indexOf(this.value);
-            if (index !== -1) {
-                generosSeleccionados.splice(index, 1);
-            }
+            generosSeleccionadosId = this.dataset.id;  // Use the data-id attribute
+            generosSeleccionadosName = this.dataset.name;  // Use the data-name attribute
         }
     });
 });
 
-document.querySelectorAll('input[name="platformas"]').forEach((checkbox) => {
-    checkbox.addEventListener('change', function () {
+document.querySelectorAll('input[name="plataformas"]').forEach((radio) => {
+    radio.addEventListener('change', function () {
         if (this.checked) {
-            plataformasSeleccionadas.push(this.value);
-        } else {
-            var index = plataformasSeleccionadas.indexOf(this.value);
-            if (index !== -1) {
-                plataformasSeleccionadas.splice(index, 1);
-            }
+            plataformasSeleccionadasId = this.dataset.id;  // Use the data-id attribute
+            plataformasSeleccionadasName = this.dataset.name;  // Use the data-name attribute
         }
     });
 });
-
 
 filtrarButton.addEventListener('click', function () {
     let url = '/filtrar?';
-    generosSeleccionados.forEach((genero) => {
-        url += `generos=${genero}&`;
-    });
-    plataformasSeleccionadas.forEach((plataforma) => {
-        url += `plataformas=${plataforma}&`;
-    });
+    if (generosSeleccionadosName) {
+        url += `generos=${generosSeleccionadosName}&`;
+    }
+    if (plataformasSeleccionadasName) {
+        url += `plataformas=${plataformasSeleccionadasName}&`;
+    }
     window.location.href = url;
 });

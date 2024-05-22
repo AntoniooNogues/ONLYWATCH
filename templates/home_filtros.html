@@ -36,9 +36,8 @@
     </div>
     <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
     <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
-    <div class="mr-5 ml-5 mt-5" id="series_peliculas">
-        <div class="mt-4 pl-5 mb-5 is-flex filtros is-align-content-center is-justify-content-center"
-             style="flex-direction: column;">
+    <div class="mr-5 ml-5 mt-6" id="series_peliculas">
+        <div class="mt-4 pl-5 mb-5 is-flex filtros is-align-content-center is-justify-content-center" style="flex-direction: column;">
             <div>
                 <span class="has-text-black is-size-5 has-text-weight-bold">Filtros:</span>
                 <div class="dropdown ml-3 mr-3" id="dropdown-genres">
@@ -93,56 +92,32 @@
         </div>
     </div>
     <div class="columns is-multiline is-centered is-mobile">
-        {% for item in page_obj %}
+        {% for p in peliculas %}
             <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
                 <div class="card has-text-centered">
-                    {% if item|class_name == 'serie' %}
-                        <a href="{% url 'serie' item.id %}">
-                            <div class="card-image">
-                                <figure class="image is-2by3">
-                                    <img src="{{ item.img }}" alt="Imagen de {{ item.nombre }}">
-                                </figure>
-                            </div>
-                        </a>
-                    {% else %}
-                        <a href="{% url 'pelicula' item.id %}">
-                            <div class="card-image">
-                                <figure class="image is-2by3">
-                                    <img src="{{ item.img }}" alt="Imagen de {{ item.nombre }}">
-                                </figure>
-                            </div>
-                        </a>
-                    {% endif %}
+                    <a href="{% url 'pelicula' p.id %}">
+                        <div class="card-image">
+                            <figure class="image is-2by3">
+                                <img src="{{ p.img }}" alt="Imagen de {{ p.nombre }}">
+                            </figure>
+                        </div>
+                    </a>
                 </div>
             </div>
         {% endfor %}
-    </div>
-    <div class="mt-5">
-        <nav class="pagination is-small is-centered" role="navigation" aria-label="pagination">
-            <ul id="pagination-list" class="pagination-list">
-                {% if page_obj.number > 2 %}
-                    <li><a href="?page=1" class="pagination-link is-size-6 has-text-black"
-                           aria-label="Goto page 1">1</a></li>
-                    <li><span class="pagination-ellipsis">&hellip;</span></li>
-                {% endif %}
-                {% for i in page_obj.paginator.page_range %}
-                    {% if page_obj.number == i %}
-                        <li><a class="pagination-link is-size-6 has-text-black" aria-label="Page {{ i }}"
-                               aria-current="page">{{ i }}</a></li>
-                    {% elif page_obj.number > i|add:-2 and page_obj.number < i|add:2 %}
-                        <li><a href="?page={{ i }}" class="pagination-link is-size-6 has-text-black"
-                               aria-label="Goto page {{ i }}">{{ i }}</a></li>
-                    {% endif %}
-                {% endfor %}
-                {% if page_obj.number < page_obj.paginator.num_pages|add:-1 %}
-                    <li><span class="pagination-ellipsis">&hellip;</span></li>
-                    <li><a href="?page={{ page_obj.paginator.num_pages }}"
-                           class="pagination-link is-size-6 has-text-black"
-                           aria-label="Goto page {{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
-                    </li>
-                {% endif %}
-            </ul>
-        </nav>
+        {% for s in series %}
+            <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
+                <div class="card has-text-centered">
+                    <a href="{% url 'serie' s.id %}">
+                        <div class="card-image">
+                            <figure class="image is-2by3">
+                                <img src="{{ s.img }}" alt="Imagen de {{ s.nombre }}">
+                            </figure>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 </main>
 
