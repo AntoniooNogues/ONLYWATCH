@@ -2,6 +2,30 @@
 
 {% load static %}
 {% block content %}
+    <style>
+        .card {
+            position: relative;
+        }
+
+        .corazon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 22px;
+            color: #FF0000; /* Ajusta el color del corazón según tus necesidades */
+            background-color: #FFFFFF; /* Fondo blanco */
+            border-radius: 50%; /* Forma redonda */
+            padding: 5px; /* Espacio alrededor del ícono */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra para mejor visibilidad */
+        }
+
+        .card-content {
+            padding-top: 30px; /* Ajusta el padding para que el contenido no se solape con el corazón */
+        }
+    </style>
     {% csrf_token %}
     <!-- Main content -->
     <!-- Gallery | Cards @a7v8x-->
@@ -21,10 +45,8 @@
                                     </figure>
                                 </div>
                             </a>
-                            <div class="card-content valoracion is-flex is-align-items-center is-justify-content-space-between p-3"
+                            <div class="card-content valoracion is-flex is-align-items-center is-justify-content-space-between p-0"
                                  style="background-color: #FFE8D3">
-                                <h3>Puntuación: <span class="has-text-weight-bold"
-                                                      style="color: #FDA657">{{ s.valoracion_media }} </span></h3>
                                 {% if user.is_authenticated %}
                                     {% if s.es_favorito %}
                                         <a class="serie_favorita fa-solid fa-heart corazon" data-id="{{ s.id }}"

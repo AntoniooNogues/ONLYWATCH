@@ -39,6 +39,23 @@
         height: 2px;
         animation: shrink 2.4s linear forwards;
     }
+
+    .equal-height-columns {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .equal-height-columns .column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .equal-height-columns .box {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 </style>
 <main class="mb-6 ml-1 columns main-content">
     <!-- Informacion de Pelicula -->
@@ -60,13 +77,6 @@
                             <input type="number" name="valoracion" min="0" max="10" required>
                             <input type="submit" value="Valorar">
                         </form>
-                        {% if messages %}
-                            <ul class="messages">
-                                {% for message in messages %}
-                                    <p>{{ message }}</p>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
                     </div>
                 {% endif %}
             </div>
@@ -119,7 +129,7 @@
     <!-- Reparto -->
     <div class="column mr-3">
         <h2 class="is-size-4 has-text-weight-bold pb-4">Reparto</h2>
-        <div class="columns is-multiline">
+        <div class="columns is-multiline equal-height-columns">
             {% for p in pj %}
                 <div class="column is-2 ">
                     <figure class="box">
@@ -220,6 +230,7 @@
                     } else {
                         $("#corazon").removeClass('fa-solid fa-heart').addClass('fa-regular fa-heart');
                     }
+                    updateMessages(data.messages_html);
                 }
             });
         });
