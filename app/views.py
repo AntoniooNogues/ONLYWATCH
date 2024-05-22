@@ -1,5 +1,5 @@
 import random
-
+from django.db.models import QuerySet
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.conf import settings
@@ -55,24 +55,34 @@ def do_logout(request):
     logout(request)
     return redirect('login')
 
-
-def mostrar_inicio(request):
-    #Parte Superior de Home
+def slider_header():
     headerP = list(pelicula.objects.order_by('?')[:5])
     headerS = list(serie.objects.order_by('?')[:5])
     headerPS = headerP + headerS
     random.shuffle(headerPS)
-    gen=genero.objects.all()
-    plt = plataforma.objects.all()
-    #Parte Peliculas y Series de Home
-    series_list = list(serie.objects.all())
-    peliculas_list = list(pelicula.objects.all())
-    combined_list = series_list + peliculas_list
-    #Paginacion de Home
+    return headerPS
+
+def paginacion(request, lista_series, lista_peliculas):
+    if isinstance(lista_series, QuerySet) and isinstance(lista_peliculas, QuerySet):
+        combined_list = lista_series.union(lista_peliculas)
+    elif isinstance(lista_series, list) and isinstance(lista_peliculas, list):
+        combined_list = lista_series + lista_peliculas
+    else:
+        raise ValueError('Las listas deben ser del mismo tipo')
+    # Paginacion de Home
     paginator = Paginator(combined_list, 20)  # Show 20 items per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+    return page_obj
 
+def mostrar_inicio(request):
+    series_list = list(serie.objects.all())
+    peliculas_list = list(pelicula.objects.all())
+    #Parte Superior de Home
+    headerPS = slider_header()
+    gen=genero.objects.all()
+    plt = plataforma.objects.all()
+    page_obj = paginacion(request, series_list, peliculas_list)
 
     return render(request, 'user_home.html', {'header': headerPS, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
 
@@ -828,12 +838,34 @@ def cargar_actores_personajes(request):
     return HttpResponse("Datos de actores y personajes cargados correctamente")
 
 def filtrar(request):
-    generos = request.GET.getlist('generos')
-    plataformas = request.GET.getlist('plataformas')
-    peliculas = pelicula.objects.all()
-    series = serie.objects.all()
+    headerPS = slider_header()
 
+    generos = list(request.GET.getlist('generos'))
+    plataformas = list(request.GET.getlist('plataformas'))
 
+    if len(generos) == 0:
+        peliculas = pelicula.objects.filter(plataforma_pelicula__in=plataformas)
+        series = serie.objects.filter(plataforma_serie__in=plataformas)
+        page_obj = paginacion(request, peliculas, series)
+        gen = genero.objects.all()
+        plt = plataforma.objects.all()
+        return render(request, 'user_home.html',
+                      {'header': headerPS, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
+    elif len(plataformas) == 0:
+        peliculas = pelicula.objects.filter(pelicula_genero__in=generos)
+        series = serie.objects.filter(serie_genero__in=generos)
+        page_obj = paginacion(request, peliculas, series)
+        gen = genero.objects.all()
+        plt = plataforma.objects.all()
+        return render(request, 'user_home.html', {'header': headerPS, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
+    else:
+        peliculas = pelicula.objects.filter(pelicula_genero__in=generos, plataforma_pelicula__in=plataformas)
+        series = serie.objects.filter(serie_genero__in=generos, plataforma_serie__in=plataformas)
+        page_obj = paginacion(request, peliculas, series)
+        gen = genero.objects.all()
+        plt = plataforma.objects.all()
+        return render(request, 'user_home.html',
+                      {'header': headerPS, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
 
 
 def guardar_comentario(request):
