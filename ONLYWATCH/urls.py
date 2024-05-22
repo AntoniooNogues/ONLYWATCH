@@ -29,6 +29,7 @@ urlpatterns = [
     path('logout/', views.do_logout, name='logout'),
     path('registro', views.register, name='signup'),
     path('login/reset_password', views.reset_password, name='reset_password'),
+    path('usuario/reset_password', views.cambiar_password, name='cambiar_password'),
 
 
     # Administracion de la Aplicacion

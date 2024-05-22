@@ -1,31 +1,21 @@
+import os
 import random
+import re
 
-
-from django.core.paginator import Paginator
 from django.conf import settings
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
-from django.contrib.auth.hashers import check_password
-from django.db.models import Q
-import re
-import os
-
-from django.db.models.fields import json
-
-from .decorators import *
-from django.contrib import messages
-from django.core.exceptions import ValidationError
-from django.core.files import File
-import random
-import smtplib
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.core.paginator import Paginator
 from django.db.models import Avg
+from django.db.models import Q
+from django.db.models.fields import json
 from django.http import HttpResponse, JsonResponse
 # Create your views here
 from django.shortcuts import get_object_or_404
 # Create your views here.
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.template.loader import render_to_string
 
 from .decorators import *
@@ -473,15 +463,20 @@ def mostrar_serie(request, id_serie):
 def send_verification_code(request):
     if request.method == 'POST':
         code = random.randint(100000, 999999)
-        send_mail(
-            'Código de verificación',
-            f'Tu código de verificación es {code}',
+        context = {
+            'code': code,
+        }
+        email_html_message = render_to_string('modelo_email.html', context)
+        email = EmailMessage(
+            'Codigo de verificación',
+            email_html_message,
             'onlywatch.info@gmail.es',
             [request.user.email],
-            fail_silently=False,
         )
+        email.content_subtype = 'html'
+        email.send()
         request.session['verification_code'] = code
-        mensaje = "El mesaaje ha sido enviado correctamente"
+        mensaje = "El mesaje ha sido enviado correctamente"
         return JsonResponse({'mensage': mensaje})
     else:
         mensaje = False
@@ -903,3 +898,22 @@ def buscar(request):
     peliculas = pelicula.objects.filter(Q(nombre__icontains=texto_busqueda) | Q(nombre__exact=texto_busqueda))
     series = serie.objects.filter(Q(nombre__icontains=texto_busqueda) | Q(nombre__exact=texto_busqueda))
     return render(request, 'resultado_busqueda.html', {'peliculas': peliculas, 'series': series, 'texto': texto_busqueda})
+
+
+@login_required()
+def cambiar_password(request):
+    if request.method == 'POST':
+        new_password = request.POST.get('password')
+        confirm_password = request.POST.get('password2')
+        if new_password != confirm_password:
+            messages.add_message(request, messages.WARNING, 'Las contraseñas no coinciden.')
+            messages_html = render_to_string('mensages.html', {'messages': messages.get_messages(request)})
+            return JsonResponse({'messages_html': messages_html})
+
+        request.user.set_password(new_password)
+        request.user.save()
+        messages.add_message(request, messages.SUCCESS, 'Cambio de contraseña realizado con existo.')
+        messages_html = render_to_string('mensages.html', {'messages': messages.get_messages(request)})
+        return JsonResponse({'messages_html': messages_html})
+
+    return render(request, 'reset_password.html')

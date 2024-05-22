@@ -131,5 +131,27 @@
     {% endblock %}
     {% include "footer.html" %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#enviar-codigo').click(function (e) {
+            e.preventDefault();  // Evita que el formulario se envíe de la forma predeterminada
+            $.ajax({
+                url: $(this).parent().attr('action'),  // Obtiene la URL del atributo 'action' del formulario
+                type: 'post',
+                data: $(this).parent().serialize(),  // Serializa los datos del formulario
+                dataType: 'json'
+            })
+                .done(function (response) {
+                    // Aquí puedes manejar la respuesta del servidor
+                    // Por ejemplo, puedes mostrar un mensaje en la página
+                    $('#mensajes').text(response.mensage);
+                })
+                .fail(function () {
+                    // Aquí puedes manejar los casos en que la solicitud falla
+                    $('#mensajes').text('Hubo un error al enviar el código de verificación.');
+                });
+        });
+    });
+</script>
     <script src="{% static 'js/modals.js' %}"></script>
     <script src="{% static 'js/ajax.js' %}"></script>
