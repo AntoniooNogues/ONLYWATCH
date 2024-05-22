@@ -352,6 +352,8 @@ def add_series_json():
 
 def view_peliculas(request):
     peliculas = pelicula.objects.all()
+    gen = genero.objects.all()
+    plt = plataforma.objects.all()
     if request.user.is_authenticated:
         for p in peliculas:
             valoracion_media = valoracion_pelicula.objects.filter(pelicula=p).aggregate(Avg('valoracion'))['valoracion__avg']
@@ -361,17 +363,19 @@ def view_peliculas(request):
         paginator = Paginator(peliculas, 20)  # Show 20 items per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
-        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj})
+        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
     else:
         paginator = Paginator(peliculas, 20)  # Show 20 items per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
-        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj})
+        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
 
 
 
 def view_series(request):
     series = serie.objects.all()
+    gen = genero.objects.all()
+    plt = plataforma.objects.all()
     if request.user.is_authenticated:
         for s in series:
             valoracion_media = valoracion_serie.objects.filter(serie=s).aggregate(Avg('valoracion'))[
@@ -381,12 +385,12 @@ def view_series(request):
         paginator = Paginator(series, 20)  # Show 20 items per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
-        return render(request, 'series.html', {'series': series, 'page_obj': page_obj})
+        return render(request, 'series.html', {'series': series, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
     else:
         paginator = Paginator(series, 20)  # Show 20 items per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
-        return render(request, 'series.html', {'series': series, 'page_obj': page_obj})
+        return render(request, 'series.html', {'series': series, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
 
 
 def mostrar_pelicula(request, id_pelicula):
@@ -993,5 +997,79 @@ def cargar_datos_sql(request):
     cargar_actores_personajes(request)
     crear_foro_peliculas(request)
     crear_foro_series(request)
-
     return HttpResponse("Datos de generos cargados correctamente")
+
+
+def filtrar_series(request):
+    generos = request.GET.getlist('generos')
+    plataformas = request.GET.getlist('plataformas')
+
+    if "Disney " in plataformas:
+        plataformas.clear()
+        plataformas.append("Disney+")
+
+    if "Moviestar " in plataformas:
+        plataformas.clear()
+        plataformas.append("Moviestar+")
+
+    if len(generos) == 0:
+        fil_plt = plataforma.objects.filter(nombre__in=plataformas).values_list('id', flat=True)
+        series = serie.objects.filter(plataforma_serie__plataforma_id__in=fil_plt)
+
+        gen = genero.objects.all()
+        plt = plataforma.objects.all()
+        return render(request, 'series.html', {'generos': gen, 'plataformas': plt, 'series': series})
+
+    elif len(plataformas) == 0:
+        fil_gen = genero.objects.filter(nombre__in=generos).values_list('id', flat=True)
+        series = serie.objects.filter(serie_genero__genero_id__in=fil_gen)
+        gen = genero.objects.all()
+        plt = plataforma.objects.all()
+        return render(request, 'series.html', { 'generos': gen, 'plataformas': plt, 'series': series})
+    else:
+        fil_gen = genero.objects.filter(nombre__in=generos).values_list('id', flat=True)
+        fil_plt = plataforma.objects.filter(nombre__in=plataformas).values_list('id', flat=True)
+
+        series = serie.objects.filter(serie_genero__genero_id__in=fil_gen, plataforma_serie__plataforma_id__in=fil_plt)
+
+        gen = genero.objects.all()
+        plt = plataforma.objects.all()
+
+        return render(request, 'series.html', { 'generos': gen, 'plataformas': plt, 'series': series})
+
+
+def filtrar_pelicula(request):
+    generos = request.GET.getlist('generos')
+    plataformas = request.GET.getlist('plataformas')
+
+    if "Disney " in plataformas:
+        plataformas.clear()
+        plataformas.append("Disney+")
+
+    if "Moviestar " in plataformas:
+        plataformas.clear()
+        plataformas.append("Moviestar+")
+
+    if len(generos) == 0:
+        fil_plt = plataforma.objects.filter(nombre__in=plataformas).values_list('id', flat=True)
+        peliculas = pelicula.objects.filter(plataforma_pelicula__plataforma_id__in=fil_plt)
+
+        gen = genero.objects.all()
+        plt = plataforma.objects.all()
+        return render(request, 'home_filtros.html', {'generos': gen, 'plataformas': plt, 'peliculas': peliculas})
+    elif len(plataformas) == 0:
+        fil_gen = genero.objects.filter(nombre__in=generos).values_list('id', flat=True)
+        peliculas = pelicula.objects.filter(pelicula_genero__genero_id__in=fil_gen)
+        gen = genero.objects.all()
+        plt = plataforma.objects.all()
+        return render(request, 'home_filtros.html', {'generos': gen, 'plataformas': plt, 'peliculas': peliculas})
+    else:
+        fil_gen = genero.objects.filter(nombre__in=generos).values_list('id', flat=True)
+        fil_plt = plataforma.objects.filter(nombre__in=plataformas).values_list('id', flat=True)
+
+        peliculas = pelicula.objects.filter(pelicula_genero__genero_id__in=fil_gen, plataforma_pelicula__plataforma_id__in=fil_plt)
+
+        gen = genero.objects.all()
+        plt = plataforma.objects.all()
+
+        return render(request, 'home_filtros.html', {'generos': gen, 'plataformas': plt, 'peliculas': peliculas})

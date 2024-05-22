@@ -6,7 +6,8 @@
 <!-- Main content -->
 <!-- Gallery | Cards @a7v8x-->
 <main class="column mb-6 mt-5">
-    <div class="columns is-centered" style="margin: 0 auto">
+    {% if header %}
+        <div class="columns is-centered" style="margin: 0 auto">
         <div class="slider">
             <div class="slider__content">
                 <!-- Slider items: 10 min <> 15-20 max -->
@@ -33,11 +34,13 @@
                 {% endfor %}
             </div>
         </div>
+    {% endif %}
     </div>
     <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
     <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
     <div class="mr-5 ml-5 mt-6" id="series_peliculas">
-        <div class="mt-4 pl-5 mb-5 is-flex filtros is-align-content-center is-justify-content-center" style="flex-direction: column;">
+        <div class="mt-4 pl-5 mb-5 is-flex filtros is-align-content-center is-justify-content-center"
+             style="flex-direction: column;">
             <div>
                 <span class="has-text-black is-size-5 has-text-weight-bold">Filtros:</span>
                 <div class="dropdown ml-3 mr-3" id="dropdown-genres">
