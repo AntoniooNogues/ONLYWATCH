@@ -13,36 +13,26 @@
                     <img class="image pt-4" src="{{ serie.img }}" alt="Imagen de la película {{ serie.nombre }}"
                          style="margin: 0 auto">
                 </figure>
-                <label>
-                    {% if user.is_authenticated %}
-                        <select class="mt-4 pl-2 estado">
-                            <option class="pl-5" value="0">Estado de la Película</option>
-                            <option class="pl-5" value="1">Viendo</option>
-                            <option class="pl-5" value="2">Completada</option>
-                            <option class="pl-5" value="3">Pendiente</option>
-                            <option class="pl-5" value="4">Abandonada</option>
-                        </select>
-                    {% endif %}
-                </label>
+                {% if user.is_authenticated %}
+                    <div class="">
+                        Añade tu puntuación:
+                        <form method="POST" action="{% url 'valorar_serie' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="serie_id" value="{{ serie.id }}">
+                            <input type="number" name="valoracion" min="0" max="10" required>
+                            <input type="submit" value="Valorar">
+                        </form>
+                        {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                    <p>{{ message }}</p>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                {% endif %}
             </div>
-            {% if user.is_authenticated %}
-                <div class="ml-4">
-                    Añade tu puntuación:
-                    <form method="POST" action="{% url 'valorar_serie' %}">
-                        {% csrf_token %}
-                        <input type="hidden" name="serie_id" value="{{ serie.id }}">
-                        <input type="number" name="valoracion" min="0" max="10" required>
-                        <input type="submit" value="Valorar">
-                    </form>
-                    {% if messages %}
-                        <ul class="messages">
-                            {% for message in messages %}
-                                <p>{{ message }}</p>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
-            {% endif %}
+
         </div>
         <!-- Titulo (Año Estreno) + Me Gusta, Sinopsis, Director, Plataforma, Generos -->
         <div class="column title-details is-9 pl-5">
