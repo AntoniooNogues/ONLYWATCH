@@ -1,9 +1,8 @@
-import os
 import random
-import re
 
-from django.conf import settings
 from django.contrib import messages
+from django.core.paginator import Paginator
+from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import make_password
 from django.core.mail import EmailMessage
@@ -17,10 +16,13 @@ from django.shortcuts import get_object_or_404
 # Create your views here.
 from django.shortcuts import render
 from django.template.loader import render_to_string
-
+import re
+import os
 from .decorators import *
 from .models import *
 
+import json
+from django.http import HttpResponse, JsonResponse
 
 @check_user_role('ADMIN')
 def mostrar_admi(request):
@@ -656,6 +658,9 @@ def valorar_pelicula(request, id_pelicula):
         if request.user.is_authenticated:
             pelicula_valorar = get_object_or_404(pelicula, id=id_pelicula)
             valoracion = request.POST.get('valoracion')
+            if valoracion > 10 and valoracion < 0:
+                messages.error(request, 'La valoración solo es posible entre 0-10.')
+                return redirect('pelicula', id_pelicula=id_pelicula)
             try:
                valor = valoracion_pelicula.objects.get(usuario=request.user, pelicula=pelicula_valorar)
             except valoracion_pelicula.DoesNotExist:
@@ -821,19 +826,12 @@ def cargar_actores_personajes(request):
     return HttpResponse("Datos de actores y personajes cargados correctamente")
 
 def filtrar(request):
-    if request.method == 'POST':
-        data = json.loads(request.body)
+    generos = request.GET.getlist('generos')
+    plataformas = request.GET.getlist('plataformas')
+    peliculas = pelicula.objects.all()
+    series = serie.objects.all()
 
-        generosSeleccionados = data.get('generos')
-        plataformasSeleccionadas = data.get('plataformas')
 
-        # Aquí puedes procesar los datos como necesites
-
-        # Envía una respuesta al cliente
-        return JsonResponse({'message': 'Datos recibidos correctamente'})
-
-    else:
-        return JsonResponse({'error': 'Invalid request'}, status=400)
 
 
 def guardar_comentario(request):

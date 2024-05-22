@@ -1,11 +1,3 @@
-function updateYearDisplay(value) {
-    document.getElementById('yearDisplay').textContent = value;
-}
-
-function updatePuntuacionDisplay(value) {
-    document.getElementById('puntuacionDisplay').textContent = value;
-}
-
 document.addEventListener('DOMContentLoaded', function () {
     function toggleDropdown(event) {
         event.stopPropagation();
@@ -29,28 +21,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const checkboxes = document.querySelectorAll('.dropdown-item input[type="checkbox"]');
     checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('click', function(event) {
+        checkbox.addEventListener('click', function (event) {
             event.stopPropagation();
         });
     });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const labels = document.querySelectorAll('.dropdown-item label');
 
-    labels.forEach(label => {
-        label.addEventListener('click', function(event) {
-            // Detén la propagación del evento para evitar que el dropdown se cierre
-            event.stopPropagation();
-        });
-    });
-});
 
 let generosSeleccionados = [];
 let plataformasSeleccionadas = [];
 
+
+
+const filtrarButton = document.getElementById('filtrar');
+
 document.querySelectorAll('input[name="generos"]').forEach((checkbox) => {
-    checkbox.addEventListener('change', function() {
+    checkbox.addEventListener('change', function () {
         if (this.checked) {
             generosSeleccionados.push(this.value);
         } else {
@@ -63,7 +50,7 @@ document.querySelectorAll('input[name="generos"]').forEach((checkbox) => {
 });
 
 document.querySelectorAll('input[name="platformas"]').forEach((checkbox) => {
-    checkbox.addEventListener('change', function() {
+    checkbox.addEventListener('change', function () {
         if (this.checked) {
             plataformasSeleccionadas.push(this.value);
         } else {
@@ -76,25 +63,13 @@ document.querySelectorAll('input[name="platformas"]').forEach((checkbox) => {
 });
 
 
-
-function enviarDatosServidor() {
-    fetch('/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            generos: generosSeleccionados,
-            plataformas: plataformasSeleccionadas,
-        }),
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch((error) => {
-        console.error('Error:', error);
+filtrarButton.addEventListener('click', function () {
+    let url = '/filtrar?';
+    generosSeleccionados.forEach((genero) => {
+        url += `generos=${genero}&`;
     });
-}
-
-document.querySelectorAll('input[name="generos"], input[name="platformas"]').forEach((checkbox) => {
-    checkbox.addEventListener('change', enviarDatosServidor);
+    plataformasSeleccionadas.forEach((plataforma) => {
+        url += `plataformas=${plataforma}&`;
+    });
+    window.location.href = url;
 });
