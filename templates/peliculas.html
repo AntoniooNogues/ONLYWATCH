@@ -179,11 +179,13 @@
 {% include "footer.html" %}
 {% endblock %}
 <script src="{% static 'js/mensajes.js' %} "></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
         $(".corazon").click(function () {
             var peliculaId = $(this).data('id');
             var corazon = $(this);
+            console.log('Se ha pulsado el boton')
             $.ajax({
                 url: '/pelicula_favorita/' + peliculaId + '/',
                 data: {
