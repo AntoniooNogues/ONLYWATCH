@@ -114,13 +114,11 @@ def register(request):
 
 
         if errors != 0:
-            messages_html = render_to_string('mensages.html', {'messages': messages.get_messages(request)})
-            return JsonResponse({'messages_html': messages_html})
+            return render(request, 'register.html', {'messages': messages.get_messages(request)})
         else:
-            user = User.objects.create(username=username, email=mail, password=make_password(password),
-                                       nombre_completo=nombre_completo)
+            user = User.objects.create(username=username, email=mail, password=make_password(password), nombre_completo=nombre_completo)
             user.save()
-            return redirect("login")
+            return redirect('login')
 
 
 def reset_password(request):
@@ -352,8 +350,6 @@ def add_series_json():
 
 def view_peliculas(request):
     peliculas = pelicula.objects.all()
-    gen = genero.objects.all()
-    plt = plataforma.objects.all()
     if request.user.is_authenticated:
         for p in peliculas:
             valoracion_media = valoracion_pelicula.objects.filter(pelicula=p).aggregate(Avg('valoracion'))['valoracion__avg']
@@ -363,12 +359,12 @@ def view_peliculas(request):
         paginator = Paginator(peliculas, 20)  # Show 20 items per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
-        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
+        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj})
     else:
         paginator = Paginator(peliculas, 20)  # Show 20 items per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
-        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
+        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj})
 
 
 
@@ -700,18 +696,26 @@ def pelicula_favorita(request, id_pelicula):
 
 
 
-def valorar_serie(request, ):
+def valorar_serie(request):
     if request.method == 'POST':
         id_serie = request.POST.get('serie_id')
-        serie_valorar = get_object_or_404(serie, id=id_serie)
-        valoracion = request.POST.get('valoracion')
-        try:
-           valor = valoracion_serie.objects.get(usuario=request.user, serie=serie_valorar)
-        except valoracion_serie.DoesNotExist:
-            valoracion_serie.objects.create(usuario=request.user, serie=serie_valorar, valoracion=valoracion)
+        if request.user.is_authenticated:
+            serie_valorar = get_object_or_404(serie, id=id_serie)
+            valoracion = request.POST.get('valoracion')
+            if int(valoracion) > 10 or int(valoracion) < 0:
+                messages.error(request, 'La valoración solo es posible entre 0-10.')
+                return redirect('serie', id_serie=id_serie)
+            try:
+               valor = valoracion_serie.objects.get(usuario=request.user, serie=serie_valorar)
+               valor.valoracion = valoracion  # Update the existing rating
+               valor.save()  # Save the updated rating
+               messages.success(request, 'Tu valoración ha sido actualizada.')
+            except valoracion_serie.DoesNotExist:
+                valoracion_serie.objects.create(usuario=request.user, serie=serie_valorar, valoracion=valoracion)
+                messages.success(request, 'Tu valoración ha sido registrada.')
+            return mostrar_serie(request, id_serie)
         else:
-            messages.error(request, 'Ya has valorado esta serie anteriormente.')
-        return mostrar_serie(request, id_serie)
+            return mostrar_serie(request, id_serie)
 
 def serie_favorita(request, id_serie):
     serie_instancia = get_object_or_404(serie, id=id_serie)
@@ -720,10 +724,13 @@ def serie_favorita(request, id_serie):
     except series_favoritas.DoesNotExist:
         series_favoritas.objects.create(usuario=request.user, serie=serie_instancia)
         es_favorito = True
+        messages.success(request, '¡Te ha gustado esta serie!')
     else:
         fav.delete()
         es_favorito = False
-    return JsonResponse({'es_favorito': es_favorito})
+        messages.add_message(request, messages.WARNING, '¡Has quitado de favorito esta serie!')
+    messages_html = render_to_string('mensages.html', {'messages': messages.get_messages(request)})
+    return JsonResponse({'es_favorito': es_favorito, 'messages_html': messages_html})
 
 def login_admi(request):
     if request.method == 'POST':
@@ -997,7 +1004,32 @@ def cargar_datos_sql(request):
     cargar_actores_personajes(request)
     crear_foro_peliculas(request)
     crear_foro_series(request)
+
     return HttpResponse("Datos de generos cargados correctamente")
+
+
+def enviar_email_login(request):
+    if request.method == 'POST':
+        code = random.randint(100000, 999999)
+        context = {
+            'code': code,
+        }
+        user_email = request.POST.get('correo_user')
+        email_html_message = render_to_string('modelo_email.html', context)
+        email = EmailMessage(
+            'Codigo de verificación',
+            email_html_message,
+            'onlywatch.info@gmail.es',
+            [user_email],
+        )
+        email.content_subtype = 'html'
+        email.send()
+        request.session['verification_code'] = code
+        mensaje = "El mesaje ha sido enviado correctamente"
+        return JsonResponse({'mensage': mensaje})
+    else:
+        mensaje = False
+        return JsonResponse({'mensage': mensaje})
 
 
 def filtrar_series(request):

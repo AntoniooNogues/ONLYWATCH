@@ -29,6 +29,7 @@ urlpatterns = [
     path('registro', views.register, name='signup'),
     path('login/reset_password', views.reset_password, name='reset_password'),
     path('usuario/reset_password', views.cambiar_password, name='cambiar_password'),
+    path('correo_verificacion/', views.enviar_email_login, name='email_login'),
 
 
     # Administracion de la Aplicacion
@@ -90,7 +91,7 @@ urlpatterns = [
     path('editar_perfil/', views.configurar_perfil, name='editar_perfil'),
 
     # Cargar datos
-    #path('cargar_datos_sql/', views.cargar_datos_sql, name='cargar_datos_sql'),
+    path('cargar_datos_sql/', views.cargar_datos_sql, name='cargar_datos_sql'),
     # path('cargar_datos/actores/pelicula', views.anadir_actores_personaje_pelicula, name='cargar_datos_pelis_actores'),
     # path('cargar_datos/actores/serie', views.anadir_actores_personaje_serie, name='cargar_datos_series_actores'),
     # path('cargar_datos/anadir_base_datos/actores_personajes', views.cargar_actores_personajes, name='cargar_base_datos_actores_personajes'),

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,6 +18,7 @@
             align-items: center;
             height: 100vh;
         }
+
     </style>
 </head>
 <body class="familiy has-text-black section fondo" style="height: 100vh">
@@ -66,7 +68,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{% url 'reset_password' %}" class="is-pulled-right blanco mt-2">¿Has olvidado tu
+                            <a id="open-modal" href="" class="is-pulled-right blanco mt-2">¿Has olvidado tu
                                 contraseña?</a>
                         </div>
                         <div class="field mt-3 mb-3">
@@ -86,13 +88,99 @@
                 <button class="delete"></button>
             </div>
         </div>
+        <div id="modal-js-example" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <div class="box">
+                    <h3 class="has-text-centered is-size-3">Olvido de contraseña</h3>
+                    <p class="mt-3">Le enviaremos un código por correo.</p>
+                    <!-- Formulario para solicitar el envío del código de verificación -->
+                    <form action="{% url 'email_login' %}" method="post"
+                          class="is-flex is-justify-content-center mt-3">
+                        {% csrf_token %}
+                        <div class="is-flex is-flex-direction-column is-justify-content-center">
+                            <input type="text" name="correo_user" class="input is-primary"
+                                   style="background-color: white"
+                                   placeholder="Ponga aquí su correo">
+                            <button class="button is-link is-outlined is-light mt-3" type="submit" id="enviar-email">
+                                Pulsa
+                                aquí
+                            </button>
+                        </div>
+
+                    </form>
+                    <!-- Formulario para introducir el código de verificación -->
+                    <form action="{% url 'verify_code' %}" method="post"
+                          class="mt-4">
+                        {% csrf_token %}
+                        <p class="mt-2">Introduzca aquí el codigo proporcionado:</p>
+                        <div class="is-flex is-justify-content-center is-align-items-center mt-4">
+                            <label class="mr-4">
+                                <input class="input mr-4 place is-link" style="background-color: white" type="text"
+                                       name="code"
+                                       placeholder="Introduce el código de verificación"/>
+                            </label>
+                            <button type="submit" class="button ml-4">Verificar código</button>
+                        </div>
+                        <p class="mensajes mt-4" id="mensajes"></p>
+                    </form>
+                </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
     </div>
 </div>
 
+
 <script>
     var errores = "{{ errores }}";
+    document.getElementById('open-modal').addEventListener('click', function (event) {
+        event.preventDefault();
+        document.getElementById('modal-js-example').classList.add('is-active');
+    });
 </script>
 <script src="/static/js/ajustarPantalla.js"></script>
 <script src="/static/js/index.js"></script>
+<script src="{% static 'js/modals.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    $(document).ready(function () {
+        $('#enviar-email').click(function (e) {
+            e.preventDefault();
+            var correo_user = $('input[name="correo_user"]').val();
+            $.ajax({
+                url: "/correo_verificacion/",
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    'correo_user': correo_user
+                },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
+                },
+                success: function (data) {
+                    if (data.mensage) {
+                        $("#mensajes").text(data.mensage);
+                    }
+                },
+            });
+        });
+    });
+</script>
 </body>
 </html>
