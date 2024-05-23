@@ -174,10 +174,15 @@
             </div>
         {% endif %}
     </main>
+    <div id="messages-container">
+        {% include 'mensages.html' %}
+    </div>
 
 {% endblock %}
 {% include "footer.html" %}
-
+<script src="{% static 'js/navbar.js' %} "></script>
+<script src="{% static 'js/mensajes.js' %} "></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
         $(".corazon").click(function () {
@@ -195,6 +200,7 @@
                     } else {
                         corazon.removeClass('fa-solid fa-heart').addClass('fa-regular fa-heart');
                     }
+                    updateMessages(data.messages_html);
                 }
             });
         });
