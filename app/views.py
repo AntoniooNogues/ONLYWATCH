@@ -350,6 +350,8 @@ def add_series_json():
 
 def view_peliculas(request):
     peliculas = pelicula.objects.all()
+    gen = genero.objects.all()
+    plt = plataforma.objects.all()
     if request.user.is_authenticated:
         for p in peliculas:
             valoracion_media = valoracion_pelicula.objects.filter(pelicula=p).aggregate(Avg('valoracion'))['valoracion__avg']
@@ -359,12 +361,12 @@ def view_peliculas(request):
         paginator = Paginator(peliculas, 20)  # Show 20 items per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
-        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj})
+        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
     else:
         paginator = Paginator(peliculas, 20)  # Show 20 items per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
-        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj})
+        return render(request, 'peliculas.html', {'peliculas': peliculas, 'page_obj': page_obj, 'generos': gen, 'plataformas': plt})
 
 
 
@@ -1088,13 +1090,13 @@ def filtrar_pelicula(request):
 
         gen = genero.objects.all()
         plt = plataforma.objects.all()
-        return render(request, 'home_filtros.html', {'generos': gen, 'plataformas': plt, 'peliculas': peliculas})
+        return render(request, 'peliculas.html', {'generos': gen, 'plataformas': plt, 'peliculas': peliculas})
     elif len(plataformas) == 0:
         fil_gen = genero.objects.filter(nombre__in=generos).values_list('id', flat=True)
         peliculas = pelicula.objects.filter(pelicula_genero__genero_id__in=fil_gen)
         gen = genero.objects.all()
         plt = plataforma.objects.all()
-        return render(request, 'home_filtros.html', {'generos': gen, 'plataformas': plt, 'peliculas': peliculas})
+        return render(request, 'peliculas.html', {'generos': gen, 'plataformas': plt, 'peliculas': peliculas})
     else:
         fil_gen = genero.objects.filter(nombre__in=generos).values_list('id', flat=True)
         fil_plt = plataforma.objects.filter(nombre__in=plataformas).values_list('id', flat=True)
@@ -1104,4 +1106,4 @@ def filtrar_pelicula(request):
         gen = genero.objects.all()
         plt = plataforma.objects.all()
 
-        return render(request, 'home_filtros.html', {'generos': gen, 'plataformas': plt, 'peliculas': peliculas})
+        return render(request, 'peliculas.html', {'generos': gen, 'plataformas': plt, 'peliculas': peliculas})
