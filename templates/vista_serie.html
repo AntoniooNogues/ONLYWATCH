@@ -64,9 +64,9 @@
         <div class="columns ml-2 main-content is-3">
             <!-- Imagen, Estado -->
             <div class="column">
-                <figure>
+                <figure class="is-16by9">
                     <img class="image pt-4" src="{{ serie.img }}" alt="Imagen de la película {{ serie.nombre }}"
-                         style="margin: 0 auto">
+                         style="margin: 0 ;">
                 </figure>
                 {% if user.is_authenticated %}
                     <div class="">
