@@ -56,6 +56,11 @@
         flex-direction: column;
         justify-content: center;
     }
+
+    ul, li {
+        list-style-type: none;
+
+    }
 </style>
 <main class="mb-6 ml-1 columns main-content">
     <!-- Informacion de Pelicula -->
@@ -126,6 +131,50 @@
                style="letter-spacing: 2px;  color: #cc700e">Trailer</a>
         </div>
     </div>
+    <!-- Temporadas y Capitulos-->
+    <div class="column">
+        <h2 class="is-size-4 has-text-weight-bold">Temporadas y Capítulos</h2>
+        <section class="section p-4">
+            <div class="container">
+                {% for temporada in temporadas %}
+                    <!-- Temporada -->
+                    <div class="box" style="background-color: #F5D4AD; border: 1px solid #000">
+                        <article class="media">
+                            <div class="media-left">
+                                <figure class="is-16by9">
+                                    <img class="image is-128x128" src="{{ temporada.img }}"
+                                         alt="{{ temporada.nombre }}">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="columns is-vcentered">
+                                    <div class="column is-10">
+                                        <p class="has-text-black has-text-weight-bold pb-3">{{ temporada.nombre }}</p>
+                                        <p class="has-text-black has-text-justified">{{ temporada.sinopsis }}</p>
+                                    </div>
+                                    <div class="column is-2 has-text-centered">
+                                        <i class="fa-solid fa-2xl fa-caret-down toggle-icon has-text-black"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <div class="capitulos-container" style="display: none;">
+                            <ul class="is-flex is-flex-direction-column p-2" style="width: 100%;">
+                                {% for capitulo in temporada.capitulo_set.all %}
+                                    <li class= "has-text-black m-2 p-2 " style="width: 100%; background-color: rgb(248,205,155)">
+                                        <span class="has-text-weight-bold pr-3 is-size-5">Capítulo: {{ capitulo.numero_capitulo }}</span> {{ capitulo.nombre }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Fin de Temporada -->
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+
     <!-- Reparto -->
     <div class="column mr-3">
         <h2 class="is-size-4 has-text-weight-bold pb-4">Reparto</h2>

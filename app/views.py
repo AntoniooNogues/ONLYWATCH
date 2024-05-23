@@ -426,6 +426,8 @@ def mostrar_pelicula(request, id_pelicula):
 def mostrar_serie(request, id_serie):
     if request.user.is_authenticated:
         serie_editar = serie.objects.get(id=id_serie)
+        temporadas = temporada.objects.filter(serie_id=serie_editar).distinct()
+        capitulos = capitulo.objects.filter(temporada__serie_id=serie_editar)
         plt_serie = plataforma_serie.objects.filter(serie_id=serie_editar).all()
         gen_serie = serie_genero.objects.filter(serie_id=serie_editar).all()
         pj_serie = personaje_serie.objects.filter(serie_id=serie_editar).all()[:6]
@@ -444,16 +446,20 @@ def mostrar_serie(request, id_serie):
             c.valoracion_usuario = valoracion if valoracion is not None else ''
         return render(request, 'vista_serie.html',
                       {'serie': serie_editar, 'plt': plt_serie, 'gen': gen_serie, 'pj': pj_serie,
-                       'es_favorito': es_favorito, 'valoracion_media': valoracion_media, 'comentarios': comentarios})
+                       'es_favorito': es_favorito, 'valoracion_media': valoracion_media, 'comentarios': comentarios, "temporadas": temporadas,
+                       "capitulos": capitulos})
     else:
         serie_editar = serie.objects.get(id=id_serie)
+        temporadas = temporada.objects.filter(serie_id=id_serie)
+        capitulos = capitulo.objects.filter(temporada__serie_id=id_serie)
         plt_serie = plataforma_serie.objects.filter(serie_id=serie_editar).all()
         gen_serie = serie_genero.objects.filter(serie_id=serie_editar).all()
         pj_serie = personaje_serie.objects.filter(serie_id=serie_editar).all()[:6]
         valoracion_media = valoracion_serie.objects.filter(serie=serie_editar).aggregate(Avg('valoracion'))
         return render(request, 'vista_serie.html',
                       {'serie': serie_editar, 'plt': plt_serie, 'gen': gen_serie, 'pj': pj_serie,
-                       'valoracion_media': valoracion_media})
+                       'valoracion_media': valoracion_media, "temporadas": temporadas,
+                       "capitulos": capitulos})
 
 
 def send_verification_code(request):
@@ -993,23 +999,6 @@ def usuario_personal(request):
 
     return render(request, 'usuario_personal.html', {'contenido_por_plataforma': contenido_por_plataforma})
 
-def cargar_datos_sql(request):
-    add_series_json()
-    add_peliculas_json()
-    add_plataformas()
-    add_vinculacion_genero_json()
-    vinculacion_genero_pelicula_json()
-    vinculacion_genero_serie_json()
-    vinculacion_plataforma_pelis_json()
-    vinculacion_plataforma_series_json()
-    add_temporadas_json()
-    cargar_actores_personajes(request)
-    crear_foro_peliculas(request)
-    crear_foro_series(request)
-
-    return HttpResponse("Datos de generos cargados correctamente")
-
-
 def enviar_email_login(request):
     if request.method == 'POST':
         code = random.randint(100000, 999999)
@@ -1107,3 +1096,49 @@ def filtrar_pelicula(request):
         plt = plataforma.objects.all()
 
         return render(request, 'peliculas.html', {'generos': gen, 'plataformas': plt, 'peliculas': peliculas})
+
+
+
+def add_temporada_json(request):
+    with open('static/Temporadas.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+        for d in data:
+            tem = temporada()
+            tem.nombre = d['nombre']
+            tem.sinopsis = d['sinopsis']
+            tem.img = d['img']
+            tem.fecha_estreno = d['fecha_estreno']
+            tem.serie_id = d['serie_id']
+            tem.save()
+    return HttpResponse("Datos de temporadas cargados correctamente")
+
+def add_episodios_json(request):
+    with open('static/Episodios.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+        # Itera sobre cada elemento en los datos
+        for d in data:
+            ep = capitulo()
+            ep.nombre = d['nombre']
+            ep.numero_capitulo = d['numero_capitulo']
+            ep.temporada_id = d['temporada_id']
+            ep.save()
+    return HttpResponse("Datos de episodios cargados correctamente")
+
+
+def cargar_datos_sql(request):
+    add_series_json()
+    add_peliculas_json()
+    add_plataformas()
+    add_vinculacion_genero_json()
+    vinculacion_genero_pelicula_json()
+    vinculacion_genero_serie_json()
+    vinculacion_plataforma_pelis_json()
+    vinculacion_plataforma_series_json()
+    add_temporadas_json()
+    cargar_actores_personajes(request)
+    crear_foro_peliculas(request)
+    crear_foro_series(request)
+    add_temporada_json()
+    add_episodios_json()
+    return HttpResponse("Datos de generos cargados correctamente")

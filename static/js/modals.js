@@ -77,3 +77,19 @@ function updateMessages(messagesHtml) {
         });
     }, 3500);
     }
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+        const toggleIcons = document.querySelectorAll('.toggle-icon');
+
+        toggleIcons.forEach(icon => {
+            icon.addEventListener('click', () => {
+                const capitulosContainer = icon.closest('.box').querySelector('.capitulos-container');
+                if (capitulosContainer) {
+                    capitulosContainer.style.display = capitulosContainer.style.display === 'none' ? 'block' : 'none';
+                }
+            });
+        });
+    });
