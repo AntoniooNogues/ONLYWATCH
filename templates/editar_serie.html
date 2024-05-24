@@ -1,0 +1,57 @@
+{% include 'header_admi.html' %}
+{% block content %}
+    <div class="series ">
+        <h2 class="is-size-2 container">Series</h2>
+        <div class="box container" >
+            <h4>Modificar series:</h4>
+            <form method="post" action="{% url 'editar_serie'   id=serie.id %}">    
+                  {% csrf_token %}
+                <div class="field columns mt-1">
+                    <div class="column">
+                        <label class="label">Nombre</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Nombre de la película" name="nombre" value="{{ serie.nombre }}">
+                      </div>
+                        <label class="label">Sinopsis</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Sinopsis de la película" name="sinopsis" value="{{ serie.sinopsis }}">
+                      </div>
+                    </div>
+                    <div class="column">
+                        <label class="label">Fecha de estreno</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Fecha de estreno de la película" name="fecha_estreno" value="{{ serie.anyo_estreno }}">
+                      </div>
+                    <label class="label">Imagen</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Imagen de la película" name="img" value="{{ serie.img }}">
+                      </div>
+                    </div>
+                    <div class="column">
+                        <label class="label">Trailer</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Url del trailer de la película" name="url_trailer" value="{{ serie.trailer }}"> 
+                      </div>
+                    <label class="label">Director</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Nombre del director la película" name="director" value="{{ serie.director }}">
+                      </div>
+                    </div>
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                      <p class="control">
+                          <button class="button is-primary" type="submit">
+                          Editar
+                          </button>
+                      </p>
+                      <p class="control">
+                        <button onclick="window.history.back();" class="button is-light">
+                          Cancelar
+                        </button>
+                      </p>
+                </div>
+            </form>
+        </div>
+    </div>
+   {% endblock %}
+{% include 'footer_admi.html' %}

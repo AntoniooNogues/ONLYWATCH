@@ -1,0 +1,299 @@
+{% include 'header_home_usuario.html' %}
+{% csrf_token %}
+{% load static %}
+<!-- Main Content -->
+<style>
+    #messages-container {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        width: 300px;
+        z-index: 1000;
+    }
+
+    .notification {
+        padding: 10px;
+        font-size: 0.875rem;
+        margin-bottom: 10px;
+    }
+
+    .background-color-1 {
+        background-color: #fff2e3;
+    }
+
+    .background-color-1 {
+        background-color: #FFE5C6;
+    }
+
+    @keyframes shrink {
+        from {
+            width: 100%;
+        }
+        to {
+            width: 0;
+        }
+    }
+
+    .time-bar {
+        background-color: #f00;
+        height: 2px;
+        animation: shrink 2.4s linear forwards;
+    }
+
+    .equal-height-columns {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .equal-height-columns .column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .equal-height-columns .box {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    ul, li {
+        list-style-type: none;
+
+    }
+</style>
+<main class="mb-6 ml-1 columns main-content">
+    <!-- Informacion de Pelicula -->
+    <div class="columns ">
+        <!-- Imagen, Estado -->
+        <div class="columns ml-2 main-content is-3">
+            <!-- Imagen, Estado -->
+            <div class="column mr-2">
+                <figure class="pr-5">
+                    <img class="image pt-4" src="{{ serie.img }}" alt="Imagen de la película {{ serie.nombre }}"
+                         style="margin: 0 ;">
+                </figure>
+                {% if user.is_authenticated %}
+                    <div class="container mr-5 mt-2">
+                        <label class="label has-text-black has-text-weight-bold">Añade tu puntuación:</label>
+                        <form method="POST" action="{% url 'valorar_serie' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="serie_id" value="{{ serie.id }}">
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input valoracion" type="number" name="valoracion" min="0" max="10" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="button is-fullwidth has-text-black has-text-weight-bold " type="submit" value="Valorar" style="background-color: #fb9537">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+        <!-- Titulo (Año Estreno) + Me Gusta, Sinopsis, Director, Plataforma, Generos -->
+        <div class="column title-details is-9 pl-5">
+            <div class="is-flex" style="align-items: center">
+                <h1 class="is-size-3">{{ serie.nombre }} <span> ({{ serie.anyo_estreno }})</span>
+                    {% if user.is_authenticated %}
+                        {% if es_favorito %}
+                            <a class="serie_favorita fa-solid fa-heart" id="corazon"></a>
+                        {% else %}
+                            <a class="serie_favorita fa-regular fa-heart" id="corazon"></a>
+                        {% endif %}
+                    {% endif %}
+                </h1>
+            </div>
+            <p class="is-size-4 has-text-weight-bold pt-2">Media: <span
+                    class="has-text-weight-normal is-size-5">{{ valoracion_media.valoracion__avg|floatformat:2 }}</span>
+            </p>
+            <p class="is-size-4 has-text-weight-bold pt-2">Sinopsis</p>
+            <p class="is-size-5 has-text-justified mr-5">{{ serie.sinopsis }}</p>
+            <p class="is-size-4 has-text-weight-bold pt-2">Director: <span
+                    class="has-text-weight-normal is-size-5">{{ serie.director }}</span></p>
+            <div>
+                <p class="is-size-4 has-text-weight-bold pt-2">Plataformas: </p>
+                <div class="is-flex pt-3">
+                    {% for p in plt %}
+                        <figure class="mr-3">
+                            <img class="image is-64x64" src="{{ p.plataforma.img.url }}"
+                                 alt="{{ p.plataforma.nombre }}"/>
+                        </figure>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="mb-2">
+                <p class="is-size-4 has-text-weight-bold pt-2">Generos: </p>
+                <div class="is-flex pt-3 tags are-medium">
+                    {% for g in gen %}
+                        <p class="tag is-size-5 has-text-weight-bold is-black ">{{ g.genero.nombre }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <a class="is-size-4 has-text-weight-bold is-black hover_link" href="{{ serie.trailer }}"
+               style="letter-spacing: 2px;  color: #cc700e">Trailer</a>
+        </div>
+    </div>
+    <!-- Temporadas y Capitulos-->
+    <div class="column">
+        <h2 class="is-size-4 has-text-weight-bold">Temporadas y Capítulos</h2>
+        <section class="section p-4">
+            <div class="container">
+                {% for temporada in temporadas %}
+                    <!-- Temporada -->
+                    <div class="box" style="background-color: #F5D4AD; border: 1px solid #000">
+                        <article class="media">
+                            <div class="media-left">
+                                <figure class="is-16by9">
+                                    <img class="image is-128x128" src="{{ temporada.img }}"
+                                         alt="{{ temporada.nombre }}">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="columns is-vcentered">
+                                    <div class="column is-10">
+                                        <p class="has-text-black has-text-weight-bold pb-3">{{ temporada.nombre }}</p>
+                                        <p class="has-text-black has-text-justified">{{ temporada.sinopsis }}</p>
+                                    </div>
+                                    <div class="column is-2 has-text-centered">
+                                        <i class="fa-solid fa-2xl fa-caret-down toggle-icon has-text-black"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <div class="capitulos-container" style="display: none;">
+                            <ul class="is-flex is-flex-direction-column p-2" style="width: 100%;">
+                                {% for capitulo in temporada.capitulo_set.all %}
+                                    <li class="has-text-black m-2 p-2 "
+                                        style="width: 100%; background-color: rgb(248,205,155)">
+                                        <span class="has-text-weight-bold pr-3 is-size-5">Capítulo: {{ capitulo.numero_capitulo }}</span> {{ capitulo.nombre }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Fin de Temporada -->
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Reparto -->
+    <div class="column mr-3">
+        <h2 class="is-size-4 has-text-weight-bold pb-4">Reparto</h2>
+        <div class="columns is-multiline equal-height-columns">
+            {% for p in pj %}
+                <div class="column is-2 ">
+                    <figure class="box">
+                        <p class="has-text-centered">Actor: {{ p.actor.nombre }}</p>
+                        <p class="has-text-centered">Personaje: {{ p.nombre_personaje }}</p>
+                    </figure>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Comentarios -->
+    <div class="column">
+        <h2 class="is-size-4 has-text-weight-bold pb-4">Comentarios</h2>
+        <section class="section">
+            <div class="container box">
+                <div class="is-flex is-align-items-center mb-5">
+                    <button class="js-modal-trigger button is-rounded is-warning" data-target="modal-js-example">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <p class="ml-3 is-size-5 has-text-black-20">Añade tu comentario</p>
+                </div>
+                <div>
+                    {% for c in comentarios %}
+                        <div class="columns {% if forloop.counter0|divisibleby:2 %}background-color-1{% else %}background-color-2{% endif %} mx-0 px-0 py-3">
+                            <div class="column is-one-fifth is-flex is-align-content-center is-justify-content-center p-0">
+                                <span class="is-align-content-center has-text-centered">
+                                    <figure class="image is-128x128 is-align-content-center">
+                                        {% if c.user.img %}
+                                            <img class="is-rounded" src="{{ c.user.img.url }}" alt="">
+                                        {% else %}
+                                            <img class="is-rounded" src="{% static 'img/perfilenblanco.webp' %}" alt="">
+                                        {% endif %}
+                                    </figure>
+                                    {% if c.valoracion_usuario %}
+                                        <p class="mt-2">Calificación: {{ c.valoracion_usuario }}</p>
+                                    {% endif %}
+                                </span>
+                            </div>
+                            <div class="column is-flex is-align-items-center">
+                                <p class="has-text-black">{{ c.contenido }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="modal" id="modal-js-example">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Escribe tu comentario</p>
+                        <button class="delete" aria-label="close"></button>
+                    </header>
+                    <form action="{% url 'guardar_comentario_serie' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="serie_id" value="{{ serie.id }}">
+                        <section class="modal-card-body">
+                            <textarea
+                                    class="textarea is-primary"
+                                    placeholder="Escribe aquí tu comentario"
+                                    rows="10"
+                                    name="comentario_usuario"
+                                    maxlength="500"
+                            ></textarea>
+                        </section>
+                        <footer class="modal-card-foot">
+                            <div class="buttons">
+                                <button type="submit" class="button is-success">Guardar</button>
+                                <button type="reset" class="button">Cancelar</button>
+                            </div>
+                        </footer>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<div id="messages-container" class="has-text-weight-bold has-text-black">
+    {% include 'mensages.html' %}
+</div>
+
+<!-- Footer -->
+{% include "footer.html" %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#corazon").click(function () {
+            var serieId = {{ serie.id }};
+            $.ajax({
+                url: '/serie_favorita/' + serieId + '/',
+                data: {
+                    'serieId': serieId
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.es_favorito) {
+                        $("#corazon").removeClass('fa-regular fa-heart').addClass('fa-solid fa-heart');
+                    } else {
+                        $("#corazon").removeClass('fa-solid fa-heart').addClass('fa-regular fa-heart');
+                    }
+                    updateMessages(data.messages_html);
+                }
+            });
+        });
+    });
+</script>
+<script src="{% static 'js/modals.js' %}"></script>
+<script src="{% static 'js/index.js' %} "></script>
+<script src="{% static 'js/mensajes.js' %} "></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>

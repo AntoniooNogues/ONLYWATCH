@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OnlyWatch</title>
+    <script src="https://kit.fontawesome.com/2eb7a633b0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/bulma/css/style.css"/>
+    <link rel="icon" href="{% static 'img/logo_sinfondo 1.png' %}">
+</head>
+<body>
+<section class="hero is-fullheight" style="background-color: #FFE8D3;">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                    <form action="" method="post" class="box">
+                        {% csrf_token %}
+                        <div class="field">
+                            <label for="email" class="label">Email</label>
+                            <div class="control has-icons-left">
+                                <input type="email" placeholder="ejemplo@gmail.com" class="input" name="email" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="password" class="label">Password</label>
+                            <div class="control has-icons-left">
+                                <input type="password" placeholder="*******" class="input" name="password" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field is-flex is-justify-content-center ">
+                            <button type="submit" class="button is-success">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

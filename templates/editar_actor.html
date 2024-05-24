@@ -1,0 +1,41 @@
+{% include 'header_admi.html' %}
+{% block content %}
+    <div class="series ">
+        <h2 class="is-size-2 container">Series</h2>
+        <div class="box container">
+            <h4>Modificar actor:</h4>
+            <form method="post" action="{% url 'editar_actor'   id=actor.id %}">
+                {% csrf_token %}
+                <div class="field columns mt-1">
+                    <div class="column">
+                        <label class="label">Nombre</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Nombre del actor" name="nombre"
+                                   value="{{ actor.nombre }}">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <label class="label">Imagen</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Imagen del actor" name="img"
+                                   value="{{ actor.img }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                    <p class="control">
+                        <button class="button is-primary" type="submit">
+                            Editar
+                        </button>
+                    </p>
+                    <p class="control">
+                        <button onclick="window.history.back();" class="button is-light">
+                            Cancelar
+                        </button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+{% include 'footer_admi.html' %}

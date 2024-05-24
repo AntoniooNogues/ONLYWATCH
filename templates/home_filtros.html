@@ -1,0 +1,130 @@
+{% include 'header_home_usuario.html' %}
+
+{% load custom_filters %}
+{% load static %}
+{% csrf_token %}
+<!-- Main content -->
+<!-- Gallery | Cards @a7v8x-->
+<main class="column mb-6 mt-5">
+    {% if header %}
+        <div class="columns is-centered" style="margin: 0 auto">
+        <div class="slider">
+            <div class="slider__content">
+                <!-- Slider items: 10 min <> 15-20 max -->
+                {% for psh in header %}
+                    <div class="slider__item">
+                        {% if psh|class_name == 'serie' %}
+                            <a href="{% url 'serie' psh.id %}">
+                                <img class="slider__image" src="{{ psh.img }}"
+                                     alt="Imagen de la pelicula {{ psh.nombre }}">
+                                <div class="slider__info " style="width: 100%">
+                                    <h2>{{ psh.nombre }}</h2>
+                                </div>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'pelicula' psh.id %}">
+                                <img class="slider__image" src="{{ psh.img }}"
+                                     alt="Imagen de la pelicula {{ psh.nombre }}">
+                                <div class="slider__info " style="width: 100%">
+                                    <h2>{{ psh.nombre }}</h2>
+                                </div>
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    </div>
+    <!-- Este apartado se puede reutilizar en la pagina principal (usuarios no registrados) -->
+    <!-- Hasta que no se tengan las tablas con los datos no se puede hacer los filtros de las películas-->
+    <div class="mr-5 ml-5 mt-6" id="series_peliculas">
+        <div class="mt-4 pl-5 mb-5 is-flex filtros is-align-content-center is-justify-content-center"
+             style="flex-direction: column;">
+            <div>
+                <span class="has-text-black is-size-5 has-text-weight-bold">Filtros:</span>
+                <div class="dropdown ml-3 mr-3" id="dropdown-genres">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-genres">
+                            <span>Géneros</span>
+                            <span class="icon is-small">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu-genres" role="menu">
+                        <div class="dropdown-content scrollable-dropdown">
+                            {% for g in generos %}
+                                <a href="#" class="dropdown-item" onclick="stopPropagation()">
+                                    <label class="checkbox">
+                                        <input type="radio" name="generos" value="{{ g.id }}" data-id="{{ g.id }}"
+                                               data-name="{{ g.nombre }}" class="mr-2"> {{ g.nombre }}
+                                    </label>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown ml-3 mr-3" id="dropdown-platforms">
+                    <div class="dropdown-trigger is-flex is-align-content-center is-justify-content-center">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-platforms">
+                            <span>Plataformas</span>
+                            <span class="icon is-small">
+                            <i class="fa fa-angle-down  " aria-hidden="true"></i>
+                        </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu-platforms" role="menu">
+                        <div class="dropdown-content scrollable-dropdown">
+                            {% for p in plataformas %}
+                                <a href="#" class="dropdown-item" onclick="stopPropagation()">
+                                    <label class="checkbox">
+                                        <input type="radio" name="plataformas" value="{{ p.id }}" data-id="{{ p.id }}"
+                                               data-name="{{ p.nombre }}" class="mr-2"> {{ p.nombre }}
+
+                                    </label>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <button class="button ml-3" id="filtrar">
+                    <i class="fa-solid fa-filter fa-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="columns is-multiline is-centered is-mobile">
+        {% for p in peliculas %}
+            <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
+                <div class="card has-text-centered">
+                    <a href="{% url 'pelicula' p.id %}">
+                        <div class="card-image">
+                            <figure class="image is-2by3">
+                                <img src="{{ p.img }}" alt="Imagen de {{ p.nombre }}">
+                            </figure>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+        {% for s in series %}
+            <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
+                <div class="card has-text-centered">
+                    <a href="{% url 'serie' s.id %}">
+                        <div class="card-image">
+                            <figure class="image is-2by3">
+                                <img src="{{ s.img }}" alt="Imagen de {{ s.nombre }}">
+                            </figure>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+
+
+{% include "footer.html" %}
+<script src="{% static '/js/filtros.js' %}"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>

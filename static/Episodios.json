@@ -1,0 +1,1783 @@
+[
+  {
+    "nombre": "El fin",
+    "numero_capitulo": 1,
+    "temporada_id": 1
+  },
+  {
+    "nombre": "El objetivo",
+    "numero_capitulo": 2,
+    "temporada_id": 1
+  },
+  {
+    "nombre": "La cabeza",
+    "numero_capitulo": 3,
+    "temporada_id": 1
+  },
+  {
+    "nombre": "Los necrófagos",
+    "numero_capitulo": 4,
+    "temporada_id": 1
+  },
+  {
+    "nombre": "El pasado",
+    "numero_capitulo": 5,
+    "temporada_id": 1
+  },
+  {
+    "nombre": "La trampa",
+    "numero_capitulo": 6,
+    "temporada_id": 1
+  },
+  {
+    "nombre": "La radio",
+    "numero_capitulo": 7,
+    "temporada_id": 1
+  },
+  {
+    "nombre": "El comienzo",
+    "numero_capitulo": 8,
+    "temporada_id": 1
+  },
+  {
+    "nombre": "Anjin",
+    "numero_capitulo": 1,
+    "temporada_id": 2
+  },
+  {
+    "nombre": "Sirvientes de dos amos",
+    "numero_capitulo": 2,
+    "temporada_id": 2
+  },
+  {
+    "nombre": "Mañana es mañana",
+    "numero_capitulo": 3,
+    "temporada_id": 2
+  },
+  {
+    "nombre": "Las ocho vallas",
+    "numero_capitulo": 4,
+    "temporada_id": 2
+  },
+  {
+    "nombre": "Roto hasta el puño",
+    "numero_capitulo": 5,
+    "temporada_id": 2
+  },
+  {
+    "nombre": "Las damas del mundo del Sauce",
+    "numero_capitulo": 6,
+    "temporada_id": 2
+  },
+  {
+    "nombre": "Una varilla de incienso",
+    "numero_capitulo": 7,
+    "temporada_id": 2
+  },
+  {
+    "nombre": "El abismo de la vida",
+    "numero_capitulo": 8,
+    "temporada_id": 2
+  },
+  {
+    "nombre": "Cielo Carmesí",
+    "numero_capitulo": 9,
+    "temporada_id": 2
+  },
+  {
+    "nombre": "El sueño de un sueño",
+    "numero_capitulo": 10,
+    "temporada_id": 2
+  },
+  {
+    "nombre": "Cuenta atrás",
+    "numero_capitulo": 1,
+    "temporada_id": 3
+  },
+  {
+    "nombre": "Costa Roja",
+    "numero_capitulo": 2,
+    "temporada_id": 3
+  },
+  {
+    "nombre": "Destructor de mundos",
+    "numero_capitulo": 3,
+    "temporada_id": 3
+  },
+  {
+    "nombre": "Nuestro Señor",
+    "numero_capitulo": 4,
+    "temporada_id": 3
+  },
+  {
+    "nombre": "Juicio Final",
+    "numero_capitulo": 5,
+    "temporada_id": 3
+  },
+  {
+    "nombre": "Las estrellas, nuestro destino",
+    "numero_capitulo": 6,
+    "temporada_id": 3
+  },
+  {
+    "nombre": "Avanzar a toda costa",
+    "numero_capitulo": 7,
+    "temporada_id": 3
+  },
+  {
+    "nombre": "Vallado",
+    "numero_capitulo": 8,
+    "temporada_id": 3
+  },
+  {
+    "nombre": "UN HOMBRE DIFÍCIL DE ENCONTRAR",
+    "numero_capitulo": 1,
+    "temporada_id": 4
+  },
+  {
+    "nombre": "SIETE MISERICORDIAS",
+    "numero_capitulo": 2,
+    "temporada_id": 4
+  },
+  {
+    "nombre": "SOMMERSO",
+    "numero_capitulo": 3,
+    "temporada_id": 4
+  },
+  {
+    "nombre": "LA DOLCE VITA",
+    "numero_capitulo": 4,
+    "temporada_id": 4
+  },
+  {
+    "nombre": "LUCIO",
+    "numero_capitulo": 5,
+    "temporada_id": 4
+  },
+  {
+    "nombre": "UN OBJETO CONTUNDENTE",
+    "numero_capitulo": 6,
+    "temporada_id": 4
+  },
+  {
+    "nombre": "UN MACABRO ESPECTÁCULO",
+    "numero_capitulo": 7,
+    "temporada_id": 4
+  },
+  {
+    "nombre": "NARCISSUS",
+    "numero_capitulo": 8,
+    "temporada_id": 4
+  },
+  {
+    "nombre": "Refinamiento con agresión",
+    "numero_capitulo": 1,
+    "temporada_id": 5
+  },
+  {
+    "nombre": "Han llamado a Tommy Supercherías",
+    "numero_capitulo": 2,
+    "temporada_id": 5
+  },
+  {
+    "nombre": "¿Dónde está mi hierba?",
+    "numero_capitulo": 3,
+    "temporada_id": 5
+  },
+  {
+    "nombre": "Un caballero desagradable",
+    "numero_capitulo": 4,
+    "temporada_id": 5
+  },
+  {
+    "nombre": "Tengo cientos de primos",
+    "numero_capitulo": 5,
+    "temporada_id": 5
+  },
+  {
+    "nombre": "Cualquier eventualidad",
+    "numero_capitulo": 6,
+    "temporada_id": 5
+  },
+  {
+    "nombre": "No sin peligro",
+    "numero_capitulo": 7,
+    "temporada_id": 5
+  },
+  {
+    "nombre": "El Evangelio según Bobby Glass",
+    "numero_capitulo": 8,
+    "temporada_id": 5
+  },
+  {
+    "nombre": "Episodio I",
+    "numero_capitulo": 1,
+    "temporada_id": 6
+  },
+  {
+    "nombre": "Episodio II",
+    "numero_capitulo": 2,
+    "temporada_id": 6
+  },
+  {
+    "nombre": "Episodio III",
+    "numero_capitulo": 3,
+    "temporada_id": 6
+  },
+  {
+    "nombre": "Episodio IV",
+    "numero_capitulo": 4,
+    "temporada_id": 6
+  },
+  {
+    "nombre": "Episodio V",
+    "numero_capitulo": 5,
+    "temporada_id": 6
+  },
+  {
+    "nombre": "Episodio VI",
+    "numero_capitulo": 6,
+    "temporada_id": 6
+  },
+  {
+    "nombre": "Episodio VII",
+    "numero_capitulo": 7,
+    "temporada_id": 6
+  },
+  {
+    "nombre": "Te he llamado por tu nombre",
+    "numero_capitulo": 1,
+    "temporada_id": 7
+  },
+  {
+    "nombre": "Sabbat",
+    "numero_capitulo": 2,
+    "temporada_id": 7
+  },
+  {
+    "nombre": "Jesús ama a los niños",
+    "numero_capitulo": 3,
+    "temporada_id": 7
+  },
+  {
+    "nombre": "La roca sobre la que se edificó",
+    "numero_capitulo": 4,
+    "temporada_id": 7
+  },
+  {
+    "nombre": "Regalo de bodas",
+    "numero_capitulo": 5,
+    "temporada_id": 7
+  },
+  {
+    "nombre": "Compasión indescriptible",
+    "numero_capitulo": 6,
+    "temporada_id": 7
+  },
+  {
+    "nombre": "Invitaciones",
+    "numero_capitulo": 7,
+    "temporada_id": 7
+  },
+  {
+    "nombre": "Yo soy Él",
+    "numero_capitulo": 8,
+    "temporada_id": 7
+  },
+  {
+    "nombre": "Trueno",
+    "numero_capitulo": 1,
+    "temporada_id": 8
+  },
+  {
+    "nombre": "Te vi",
+    "numero_capitulo": 2,
+    "temporada_id": 8
+  },
+  {
+    "nombre": "Mateo 4:24",
+    "numero_capitulo": 3,
+    "temporada_id": 8
+  },
+  {
+    "nombre": "La ocasion perfecta",
+    "numero_capitulo": 4,
+    "temporada_id": 8
+  },
+  {
+    "nombre": "Espíritu",
+    "numero_capitulo": 5,
+    "temporada_id": 8
+  },
+  {
+    "nombre": "Ilícito",
+    "numero_capitulo": 6,
+    "temporada_id": 8
+  },
+  {
+    "nombre": "Ajuste de cuentas",
+    "numero_capitulo": 7,
+    "temporada_id": 8
+  },
+  {
+    "nombre": "Más allá de las montañas",
+    "numero_capitulo": 8,
+    "temporada_id": 8
+  },
+  {
+    "nombre": "Christmas",
+    "numero_capitulo": 9,
+    "temporada_id": 8
+  },
+  {
+    "nombre": "Regreso a casa",
+    "numero_capitulo": 1,
+    "temporada_id": 9
+  },
+  {
+    "nombre": "De dos en dos",
+    "numero_capitulo": 2,
+    "temporada_id": 9
+  },
+  {
+    "nombre": "Médico, cúrate a ti mismo",
+    "numero_capitulo": 3,
+    "temporada_id": 9
+  },
+  {
+    "nombre": "Limpieza, Parte 1",
+    "numero_capitulo": 4,
+    "temporada_id": 9
+  },
+  {
+    "nombre": "Limpieza, Parte 2",
+    "numero_capitulo": 5,
+    "temporada_id": 9
+  },
+  {
+    "nombre": "Tensión en el campamento",
+    "numero_capitulo": 6,
+    "temporada_id": 9
+  },
+  {
+    "nombre": "Oídos para oír",
+    "numero_capitulo": 7,
+    "temporada_id": 9
+  },
+  {
+    "nombre": "Sustento",
+    "numero_capitulo": 8,
+    "temporada_id": 9
+  },
+  {
+    "nombre": "Un salto al vacío",
+    "numero_capitulo": 1,
+    "temporada_id": 10
+  },
+  {
+    "nombre": "Un tatuaje",
+    "numero_capitulo": 2,
+    "temporada_id": 10
+  },
+  {
+    "nombre": "Una pastilla",
+    "numero_capitulo": 3,
+    "temporada_id": 10
+  },
+  {
+    "nombre": "Una tortilla",
+    "numero_capitulo": 4,
+    "temporada_id": 10
+  },
+  {
+    "nombre": "Una decisión",
+    "numero_capitulo": 5,
+    "temporada_id": 10
+  },
+  {
+    "nombre": "Un disfraz",
+    "numero_capitulo": 6,
+    "temporada_id": 10
+  },
+  {
+    "nombre": "Un espejo",
+    "numero_capitulo": 7,
+    "temporada_id": 10
+  },
+  {
+    "nombre": "La Prueba",
+    "numero_capitulo": 1,
+    "temporada_id": 11
+  },
+  {
+    "nombre": "Kishi Kaisei",
+    "numero_capitulo": 2,
+    "temporada_id": 11
+  },
+  {
+    "nombre": "Entendimiento",
+    "numero_capitulo": 3,
+    "temporada_id": 11
+  },
+  {
+    "nombre": "A mi manera",
+    "numero_capitulo": 4,
+    "temporada_id": 11
+  },
+  {
+    "nombre": "Todos pagan",
+    "numero_capitulo": 5,
+    "temporada_id": 11
+  },
+  {
+    "nombre": "La información vale oro",
+    "numero_capitulo": 6,
+    "temporada_id": 11
+  },
+  {
+    "nombre": "A veces desaparecen",
+    "numero_capitulo": 7,
+    "temporada_id": 11
+  },
+  {
+    "nombre": "Yoshino",
+    "numero_capitulo": 8,
+    "temporada_id": 11
+  },
+  {
+    "nombre": "No te atrevas a fallar",
+    "numero_capitulo": 1,
+    "temporada_id": 12
+  },
+  {
+    "nombre": "Sé mi número uno",
+    "numero_capitulo": 2,
+    "temporada_id": 12
+  },
+  {
+    "nombre": "Ley vieja, enfoque nuevo",
+    "numero_capitulo": 3,
+    "temporada_id": 12
+  },
+  {
+    "nombre": "Como un hombre nuevo",
+    "numero_capitulo": 4,
+    "temporada_id": 12
+  },
+  {
+    "nombre": "Todos pagan",
+    "numero_capitulo": 5,
+    "temporada_id": 12
+  },
+  {
+    "nombre": "Te escojo a ti",
+    "numero_capitulo": 6,
+    "temporada_id": 12
+  },
+  {
+    "nombre": "La guerra en casa",
+    "numero_capitulo": 7,
+    "temporada_id": 12
+  },
+  {
+    "nombre": "El camino noble",
+    "numero_capitulo": 8,
+    "temporada_id": 12
+  },
+  {
+    "nombre": "Consecuencias",
+    "numero_capitulo": 9,
+    "temporada_id": 12
+  },
+  {
+    "nombre": "Fin del juego",
+    "numero_capitulo": 10,
+    "temporada_id": 12
+  },
+  {
+    "nombre": "La larga y clara oscuridad",
+    "numero_capitulo": 1,
+    "temporada_id": 13
+  },
+  {
+    "nombre": "Visiones",
+    "numero_capitulo": 2,
+    "temporada_id": 13
+  },
+  {
+    "nombre": "La habitación cerrada",
+    "numero_capitulo": 3,
+    "temporada_id": 13
+  },
+  {
+    "nombre": "¿Quién anda ahí?",
+    "numero_capitulo": 4,
+    "temporada_id": 13
+  },
+  {
+    "nombre": "El sino secreto de toda la vida",
+    "numero_capitulo": 5,
+    "temporada_id": 13
+  },
+  {
+    "nombre": "Casas encantadas",
+    "numero_capitulo": 6,
+    "temporada_id": 13
+  },
+  {
+    "nombre": "Después de irte",
+    "numero_capitulo": 7,
+    "temporada_id": 13
+  },
+  {
+    "nombre": "Forma y vacío",
+    "numero_capitulo": 8,
+    "temporada_id": 13
+  },
+  {
+    "nombre": "El libro occidental de los muertos",
+    "numero_capitulo": 1,
+    "temporada_id": 14
+  },
+  {
+    "nombre": "La noche te encuentra",
+    "numero_capitulo": 2,
+    "temporada_id": 14
+  },
+  {
+    "nombre": "Quizá mañana",
+    "numero_capitulo": 3,
+    "temporada_id": 14
+  },
+  {
+    "nombre": "Caerá",
+    "numero_capitulo": 4,
+    "temporada_id": 14
+  },
+  {
+    "nombre": "Otras vidas",
+    "numero_capitulo": 5,
+    "temporada_id": 14
+  },
+  {
+    "nombre": "Iglesia en ruinas",
+    "numero_capitulo": 6,
+    "temporada_id": 14
+  },
+  {
+    "nombre": "Habitaciones de motel",
+    "numero_capitulo": 7,
+    "temporada_id": 14
+  },
+  {
+    "nombre": "Estación omega",
+    "numero_capitulo": 8,
+    "temporada_id": 14
+  },
+  {
+    "nombre": " La gran guerra y la memoria moderna",
+    "numero_capitulo": 1,
+    "temporada_id": 15
+  },
+  {
+    "nombre": "Despídete del mañana",
+    "numero_capitulo": 2,
+    "temporada_id": 15
+  },
+  {
+    "nombre": "El gran nunca",
+    "numero_capitulo": 3,
+    "temporada_id": 15
+  },
+  {
+    "nombre": "La hora y el día",
+    "numero_capitulo": 4,
+    "temporada_id": 15
+  },
+  {
+    "nombre": "Si tienes fantasmas",
+    "numero_capitulo": 5,
+    "temporada_id": 15
+  },
+  {
+    "nombre": "Cazadores en la sombra",
+    "numero_capitulo": 6,
+    "temporada_id": 15
+  },
+  {
+    "nombre": "El último país",
+    "numero_capitulo": 7,
+    "temporada_id": 15
+  },
+  {
+    "nombre": "Ahora dan conmigo",
+    "numero_capitulo": 8,
+    "temporada_id": 15
+  },
+  {
+    "nombre": "Parte 1",
+    "numero_capitulo": 1,
+    "temporada_id": 16
+  },
+  {
+    "nombre": "Parte 2",
+    "numero_capitulo": 2,
+    "temporada_id": 16
+  },
+  {
+    "nombre": "Parte 3",
+    "numero_capitulo": 3,
+    "temporada_id": 16
+  },
+  {
+    "nombre": "Parte 4",
+    "numero_capitulo": 4,
+    "temporada_id": 16
+  },
+  {
+    "nombre": "Parte 5",
+    "numero_capitulo": 5,
+    "temporada_id": 16
+  },
+  {
+    "nombre": "Parte 6",
+    "numero_capitulo": 6,
+    "temporada_id": 16
+  },
+  {
+    "nombre": "The Crocodile's Dilemma",
+    "numero_capitulo": 1,
+    "temporada_id": 17
+  },
+  {
+    "nombre": "The Rooster Prince",
+    "numero_capitulo": 2,
+    "temporada_id": 17
+  },
+  {
+    "nombre": "A Muddy Road",
+    "numero_capitulo": 3,
+    "temporada_id": 17
+  },
+  {
+    "nombre": "Eating the Blame",
+    "numero_capitulo": 4,
+    "temporada_id": 17
+  },
+  {
+    "nombre": "The Six Ungraspables",
+    "numero_capitulo": 5,
+    "temporada_id": 17
+  },
+  {
+    "nombre": "Buridan's Ass",
+    "numero_capitulo": 6,
+    "temporada_id": 17
+  },
+  {
+    "nombre": "Who Shaves the Barber?",
+    "numero_capitulo": 7,
+    "temporada_id": 17
+  },
+  {
+    "nombre": "The Heap",
+    "numero_capitulo": 8,
+    "temporada_id": 17
+  },
+  {
+    "nombre": "A Fox, a Rabbit, and a Cabbage",
+    "numero_capitulo": 9,
+    "temporada_id": 17
+  },
+  {
+    "nombre": "Morton's Fork",
+    "numero_capitulo": 10,
+    "temporada_id": 17
+  },
+  {
+    "nombre": "Waiting for Dutch",
+    "numero_capitulo": 1,
+    "temporada_id": 18
+  },
+  {
+    "nombre": "Before the Law",
+    "numero_capitulo": 2,
+    "temporada_id": 18
+  },
+  {
+    "nombre": "The Myth of Sisyphus",
+    "numero_capitulo": 3,
+    "temporada_id": 18
+  },
+  {
+    "nombre": "Fear and Trembling",
+    "numero_capitulo": 4,
+    "temporada_id": 18
+  },
+  {
+    "nombre": "The Gift of the Magi",
+    "numero_capitulo": 5,
+    "temporada_id": 18
+  },
+  {
+    "nombre": "Rhinoceros",
+    "numero_capitulo": 6,
+    "temporada_id": 18
+  },
+  {
+    "nombre": "Did You Do This? No, You Did It",
+    "numero_capitulo": 7,
+    "temporada_id": 18
+  },
+  {
+    "nombre": "Loplop",
+    "numero_capitulo": 8,
+    "temporada_id": 18
+  },
+  {
+    "nombre": "The Castle",
+    "numero_capitulo": 9,
+    "temporada_id": 18
+  },
+  {
+    "nombre": "Palindrome",
+    "numero_capitulo": 10,
+    "temporada_id": 18
+  },
+  {
+    "nombre": "The Law of Vacant Places",
+    "numero_capitulo": 1,
+    "temporada_id": 19
+  },
+  {
+    "nombre": "The Principle of Restricted Choice",
+    "numero_capitulo": 2,
+    "temporada_id": 19
+  },
+  {
+    "nombre": "The Law of Non-Contradiction",
+    "numero_capitulo": 3,
+    "temporada_id": 19
+  },
+  {
+    "nombre": "The Narrow Escape Problem",
+    "numero_capitulo": 4,
+    "temporada_id": 19
+  },
+  {
+    "nombre": "The House of Special Purpose",
+    "numero_capitulo": 5,
+    "temporada_id": 19
+  },
+  {
+    "nombre": "The Lord of No Mercy",
+    "numero_capitulo": 6,
+    "temporada_id": 19
+  },
+  {
+    "nombre": "The Law of Inevitability",
+    "numero_capitulo": 7,
+    "temporada_id": 19
+  },
+  {
+    "nombre": "Who Rules the Land of Denial?",
+    "numero_capitulo": 8,
+    "temporada_id": 19
+  },
+  {
+    "nombre": "Aporia",
+    "numero_capitulo": 9,
+    "temporada_id": 19
+  },
+  {
+    "nombre": "Somebody to Love",
+    "numero_capitulo": 10,
+    "temporada_id": 19
+  },
+  {
+    "nombre": "Welcome to the Alternate Economy",
+    "numero_capitulo": 1,
+    "temporada_id": 20
+  },
+  {
+    "nombre": "The Land of Taking and Killing",
+    "numero_capitulo": 2,
+    "temporada_id": 20
+  },
+  {
+    "nombre": "Raddoppiarlo",
+    "numero_capitulo": 3,
+    "temporada_id": 20
+  },
+  {
+    "nombre": "The Pretend War",
+    "numero_capitulo": 4,
+    "temporada_id": 20
+  },
+  {
+    "nombre": "The Birthplace of Civilization",
+    "numero_capitulo": 5,
+    "temporada_id": 20
+  },
+  {
+    "nombre": "Camp Elegance",
+    "numero_capitulo": 6,
+    "temporada_id": 20
+  },
+  {
+    "nombre": "Lay Away",
+    "numero_capitulo": 7,
+    "temporada_id": 20
+  },
+  {
+    "nombre": "The Nadir",
+    "numero_capitulo": 8,
+    "temporada_id": 20
+  },
+  {
+    "nombre": "East/West",
+    "numero_capitulo": 9,
+    "temporada_id": 20
+  },
+  {
+    "nombre": "Happy",
+    "numero_capitulo": 10,
+    "temporada_id": 20
+  },
+  {
+    "nombre": "Storia Americana",
+    "numero_capitulo": 11,
+    "temporada_id": 20
+  },
+  {
+    "nombre": "The Tragedy of the Commons",
+    "numero_capitulo": 1,
+    "temporada_id": 21
+  },
+  {
+    "nombre": "Trials and Tribulations",
+    "numero_capitulo": 2,
+    "temporada_id": 21
+  },
+  {
+    "nombre": "The Paradox of Intermediate Transactions",
+    "numero_capitulo": 3,
+    "temporada_id": 21
+  },
+  {
+    "nombre": "Insolubilia",
+    "numero_capitulo": 4,
+    "temporada_id": 21
+  },
+  {
+    "nombre": "The Tiger",
+    "numero_capitulo": 5,
+    "temporada_id": 21
+  },
+  {
+    "nombre": "The Tender Trap",
+    "numero_capitulo": 6,
+    "temporada_id": 21
+  },
+  {
+    "nombre": "Linda",
+    "numero_capitulo": 7,
+    "temporada_id": 21
+  },
+  {
+    "nombre": "Blanket",
+    "numero_capitulo": 8,
+    "temporada_id": 21
+  },
+  {
+    "nombre": "The Useless Hand",
+    "numero_capitulo": 9,
+    "temporada_id": 21
+  },
+  {
+    "nombre": "Bisquik",
+    "numero_capitulo": 10,
+    "temporada_id": 21
+  },
+  {
+    "nombre": "It's About Time",
+    "numero_capitulo": 1,
+    "temporada_id": 22
+  },
+  {
+    "nombre": "Here Goes Nothing",
+    "numero_capitulo": 2,
+    "temporada_id": 22
+  },
+  {
+    "nombre": "Who You Calling Ugly?",
+    "numero_capitulo": 3,
+    "temporada_id": 22
+  },
+  {
+    "nombre": "Neil Armstrong, Eat Your Heart Out",
+    "numero_capitulo": 4,
+    "temporada_id": 22
+  },
+  {
+    "nombre": "That Actually Hurt",
+    "numero_capitulo": 5,
+    "temporada_id": 22
+  },
+  {
+    "nombre": "You Look Kinda Dead",
+    "numero_capitulo": 6,
+    "temporada_id": 22
+  },
+  {
+    "nombre": "We Need to Talk",
+    "numero_capitulo": 7,
+    "temporada_id": 22
+  },
+  {
+    "nombre": "Where I Really Come From",
+    "numero_capitulo": 8,
+    "temporada_id": 22
+  },
+  {
+    "nombre": "A Lesson for Your Next Life",
+    "numero_capitulo": 1,
+    "temporada_id": 23
+  },
+  {
+    "nombre": "In About Six Hours, I Lose My Virginity to a Fish",
+    "numero_capitulo": 2,
+    "temporada_id": 23
+  },
+  {
+    "nombre": "And... Let's Begin!",
+    "numero_capitulo": 3,
+    "temporada_id": 23
+  },
+  {
+    "nombre": "Victory Is Ours!",
+    "numero_capitulo": 4,
+    "temporada_id": 23
+  },
+  {
+    "nombre": "This Must Come as a Shock",
+    "numero_capitulo": 5,
+    "temporada_id": 23
+  },
+  {
+    "nombre": "It's Not That Simple",
+    "numero_capitulo": 6,
+    "temporada_id": 23
+  },
+  {
+    "nombre": "I'm Not Going Anywhere",
+    "numero_capitulo": 7,
+    "temporada_id": 23
+  },
+  {
+    "nombre": "I Thought You Were Stronge",
+    "numero_capitulo": 8,
+    "temporada_id": 23
+  },
+  {
+    "nombre": "To Me, My X-Men",
+    "numero_capitulo": 1,
+    "temporada_id": 24
+  },
+  {
+    "nombre": "Mutant Liberation Begins",
+    "numero_capitulo": 2,
+    "temporada_id": 24
+  },
+  {
+    "nombre": "Fire Made Flesh",
+    "numero_capitulo": 3,
+    "temporada_id": 24
+  },
+  {
+    "nombre": "The Darkest Night",
+    "numero_capitulo": 4,
+    "temporada_id": 24
+  },
+  {
+    "nombre": "One Man's Worth: Part 1",
+    "numero_capitulo": 5,
+    "temporada_id": 24
+  },
+  {
+    "nombre": "One Man's Worth: Part 2",
+    "numero_capitulo": 6,
+    "temporada_id": 24
+  },
+  {
+    "nombre": "Sanctuary: Part 1",
+    "numero_capitulo": 7,
+    "temporada_id": 24
+  },
+  {
+    "nombre": "Sanctuary: Part 2",
+    "numero_capitulo": 8,
+    "temporada_id": 24
+  },
+  {
+    "nombre": "Descent",
+    "numero_capitulo": 9,
+    "temporada_id": 24
+  },
+  {
+    "nombre": "The Final Decision",
+    "numero_capitulo": 10,
+    "temporada_id": 24
+  },
+  {
+    "nombre": "Olivia",
+    "numero_capitulo": 1,
+    "temporada_id": 25
+  },
+  {
+    "nombre": "These People, These Places",
+    "numero_capitulo": 2,
+    "temporada_id": 25
+  },
+  {
+    "nombre": "Shibuya Crossing",
+    "numero_capitulo": 3,
+    "temporada_id": 25
+  },
+  {
+    "nombre": "Starry-Eyed",
+    "numero_capitulo": 4,
+    "temporada_id": 25
+  },
+  {
+    "nombre": "Boy in the Corner",
+    "numero_capitulo": 5,
+    "temporada_id": 25
+  },
+  {
+    "nombre": "Go Home",
+    "numero_capitulo": 6,
+    "temporada_id": 25
+  },
+  {
+    "nombre": "The Friends You Keep",
+    "numero_capitulo": 7,
+    "temporada_id": 25
+  },
+  {
+    "nombre": "Farewell",
+    "numero_capitulo": 8,
+    "temporada_id": 25
+  },
+  {
+    "nombre": "System",
+    "numero_capitulo": 1,
+    "temporada_id": 26
+  },
+  {
+    "nombre": "Hands",
+    "numero_capitulo": 2,
+    "temporada_id": 26
+  },
+  {
+    "nombre": "Brigade",
+    "numero_capitulo": 3,
+    "temporada_id": 26
+  },
+  {
+    "nombre": "Dogs",
+    "numero_capitulo": 4,
+    "temporada_id": 26
+  },
+  {
+    "nombre": "Sheridan",
+    "numero_capitulo": 5,
+    "temporada_id": 26
+  },
+  {
+    "nombre": "Ceres",
+    "numero_capitulo": 6,
+    "temporada_id": 26
+  },
+  {
+    "nombre": "Review",
+    "numero_capitulo": 7,
+    "temporada_id": 26
+  },
+  {
+    "nombre": "Braciole",
+    "numero_capitulo": 8,
+    "temporada_id": 26
+  },
+  {
+    "nombre": "Beef",
+    "numero_capitulo": 1,
+    "temporada_id": 27
+  },
+  {
+    "nombre": "Pasta",
+    "numero_capitulo": 2,
+    "temporada_id": 27
+  },
+  {
+    "nombre": "Sundae",
+    "numero_capitulo": 3,
+    "temporada_id": 27
+  },
+  {
+    "nombre": "Honeydew",
+    "numero_capitulo": 4,
+    "temporada_id": 27
+  },
+  {
+    "nombre": "Pop",
+    "numero_capitulo": 5,
+    "temporada_id": 27
+  },
+  {
+    "nombre": "Fishes",
+    "numero_capitulo": 6,
+    "temporada_id": 27
+  },
+  {
+    "nombre": "Forks",
+    "numero_capitulo": 7,
+    "temporada_id": 27
+  },
+  {
+    "nombre": "Bolognese",
+    "numero_capitulo": 8,
+    "temporada_id": 27
+  },
+  {
+    "nombre": "Omelette",
+    "numero_capitulo": 9,
+    "temporada_id": 27
+  },
+  {
+    "nombre": "The Bear",
+    "numero_capitulo": 10,
+    "temporada_id": 27
+  },
+  {
+    "nombre": "The Huntress",
+    "numero_capitulo": 1,
+    "temporada_id": 28
+  },
+  {
+    "nombre": "Devil is in the Details",
+    "numero_capitulo": 2,
+    "temporada_id": 28
+  },
+  {
+    "nombre": "In the Shadows",
+    "numero_capitulo": 3,
+    "temporada_id": 28
+  },
+  {
+    "nombre": "What Lies Beneath",
+    "numero_capitulo": 4,
+    "temporada_id": 28
+  },
+  {
+    "nombre": "Something Wicked",
+    "numero_capitulo": 5,
+    "temporada_id": 28
+  },
+  {
+    "nombre": "The Ties That Bind",
+    "numero_capitulo": 6,
+    "temporada_id": 28
+  },
+  {
+    "nombre": "Deliver us from Evil",
+    "numero_capitulo": 7,
+    "temporada_id": 28
+  },
+  {
+    "nombre": "The Darkest Hour",
+    "numero_capitulo": 8,
+    "temporada_id": 28
+  },
+  {
+    "nombre": "The Secret Cavern",
+    "numero_capitulo": 9,
+    "temporada_id": 28
+  },
+  {
+    "nombre": "Close Encounters",
+    "numero_capitulo": 10,
+    "temporada_id": 28
+  },
+  {
+    "nombre": "Contact",
+    "numero_capitulo": 1,
+    "temporada_id": 29
+  },
+  {
+    "nombre": "Unbound",
+    "numero_capitulo": 2,
+    "temporada_id": 29
+  },
+  {
+    "nombre": "Emergence",
+    "numero_capitulo": 3,
+    "temporada_id": 29
+  },
+  {
+    "nombre": "Homecoming",
+    "numero_capitulo": 4,
+    "temporada_id": 29
+  },
+  {
+    "nombre": "Reckoning",
+    "numero_capitulo": 5,
+    "temporada_id": 29
+  },
+  {
+    "nombre": "Solace",
+    "numero_capitulo": 6,
+    "temporada_id": 29
+  },
+  {
+    "nombre": "Inheritance",
+    "numero_capitulo": 7,
+    "temporada_id": 29
+  },
+  {
+    "nombre": "Allegiance",
+    "numero_capitulo": 8,
+    "temporada_id": 29
+  },
+  {
+    "nombre": "Transcendence",
+    "numero_capitulo": 9,
+    "temporada_id": 29
+  },
+  {
+    "nombre": "Sanctuary",
+    "numero_capitulo": 1,
+    "temporada_id": 30
+  },
+  {
+    "nombre": "Sword",
+    "numero_capitulo": 2,
+    "temporada_id": 30
+  },
+  {
+    "nombre": "Visegrad",
+    "numero_capitulo": 3,
+    "temporada_id": 30
+  },
+  {
+    "nombre": "Reach",
+    "numero_capitulo": 4,
+    "temporada_id": 30
+  },
+  {
+    "nombre": "Aleria",
+    "numero_capitulo": 5,
+    "temporada_id": 30
+  },
+  {
+    "nombre": "Onyx",
+    "numero_capitulo": 6,
+    "temporada_id": 30
+  },
+  {
+    "nombre": "Thermopylae",
+    "numero_capitulo": 7,
+    "temporada_id": 30
+  },
+  {
+    "nombre": "Halo",
+    "numero_capitulo": 8,
+    "temporada_id": 30
+  },
+  {
+    "nombre": "Episodio 1",
+    "numero_capitulo": 1,
+    "temporada_id": 31
+  },
+  {
+    "nombre": "Episodio 2",
+    "numero_capitulo": 2,
+    "temporada_id": 31
+  },
+  {
+    "nombre": "Episodio 3",
+    "numero_capitulo": 3,
+    "temporada_id": 31
+  },
+  {
+    "nombre": "Episodio 4",
+    "numero_capitulo": 4,
+    "temporada_id": 31
+  },
+  {
+    "nombre": "Episodio 5",
+    "numero_capitulo": 5,
+    "temporada_id": 31
+  },
+  {
+    "nombre": "Episodio 6",
+    "numero_capitulo": 6,
+    "temporada_id": 31
+  },
+  {
+    "nombre": "Episodio 7",
+    "numero_capitulo": 7,
+    "temporada_id": 31
+  },
+  {
+    "nombre": "Episodio 8",
+    "numero_capitulo": 8,
+    "temporada_id": 31
+  },
+  {
+    "nombre": "Aftermath",
+    "numero_capitulo": 1,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Cut and Run",
+    "numero_capitulo": 2,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Replacements",
+    "numero_capitulo": 3,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Cornered",
+    "numero_capitulo": 4,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Rampage",
+    "numero_capitulo": 5,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Decommissioned",
+    "numero_capitulo": 6,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Battle Scars",
+    "numero_capitulo": 7,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Reunion",
+    "numero_capitulo": 8,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Bounty Lost",
+    "numero_capitulo": 9,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Common Ground",
+    "numero_capitulo": 10,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Devil's Deal",
+    "numero_capitulo": 11,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Rescue on Ryloth",
+    "numero_capitulo": 12,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Infested",
+    "numero_capitulo": 13,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "War-Mantle",
+    "numero_capitulo": 14,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Return to Kamino",
+    "numero_capitulo": 15,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Kamino Lost",
+    "numero_capitulo": 16,
+    "temporada_id": 32
+  },
+  {
+    "nombre": "Spoils of War",
+    "numero_capitulo": 1,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "Ruins of War",
+    "numero_capitulo": 2,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "The Solitary Clone",
+    "numero_capitulo": 3,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "Faster",
+    "numero_capitulo": 4,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "Entombed",
+    "numero_capitulo": 5,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "Tribe",
+    "numero_capitulo": 6,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "The Clone Conspiracy",
+    "numero_capitulo": 7,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "Truth and Consequences",
+    "numero_capitulo": 8,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "The Crossing",
+    "numero_capitulo": 9,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "Retrieval",
+    "numero_capitulo": 10,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "Metamorphosis",
+    "numero_capitulo": 11,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "The Outpost",
+    "numero_capitulo": 12,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "Pabu",
+    "numero_capitulo": 13,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "Tipping Point",
+    "numero_capitulo": 14,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "The Summit",
+    "numero_capitulo": 15,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "Plan 99",
+    "numero_capitulo": 16,
+    "temporada_id": 33
+  },
+  {
+    "nombre": "Confined",
+    "numero_capitulo": 1,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "Paths Unknown",
+    "numero_capitulo": 2,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "The Reign of Omega",
+    "numero_capitulo": 3,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "Exodus",
+    "numero_capitulo": 4,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "Resistance",
+    "numero_capitulo": 5,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "The Return",
+    "numero_capitulo": 6,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "The Heist",
+    "numero_capitulo": 7,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "Final Reckoning",
+    "numero_capitulo": 8,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "Rebirth",
+    "numero_capitulo": 9,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "Lost Cause",
+    "numero_capitulo": 10,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "Eclipse",
+    "numero_capitulo": 11,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "Shattered Hope",
+    "numero_capitulo": 12,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "Dark Times",
+    "numero_capitulo": 13,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "The Rise of Rebellion",
+    "numero_capitulo": 14,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "The Final Battle",
+    "numero_capitulo": 15,
+    "temporada_id": 34
+  },
+  {
+    "nombre": "Baby",
+    "numero_capitulo": 1,
+    "temporada_id": 35
+  },
+  {
+    "nombre": "Sagitario",
+    "numero_capitulo": 2,
+    "temporada_id": 35
+  },
+  {
+    "nombre": "La línea",
+    "numero_capitulo": 3,
+    "temporada_id": 35
+  },
+  {
+    "nombre": "El corredor",
+    "numero_capitulo": 4,
+    "temporada_id": 35
+  },
+  {
+    "nombre": "El silencio",
+    "numero_capitulo": 5,
+    "temporada_id": 35
+  },
+  {
+    "nombre": "La Maruca",
+    "numero_capitulo": 6,
+    "temporada_id": 35
+  },
+  {
+    "nombre": "Inicio",
+    "numero_capitulo": 1,
+    "temporada_id": 36
+  },
+  {
+    "nombre": "Descubrimiento",
+    "numero_capitulo": 2,
+    "temporada_id": 36
+  },
+  {
+    "nombre": "El legado",
+    "numero_capitulo": 3,
+    "temporada_id": 36
+  },
+  {
+    "nombre": "En la oscuridad",
+    "numero_capitulo": 4,
+    "temporada_id": 36
+  },
+  {
+    "nombre": "La mina",
+    "numero_capitulo": 5,
+    "temporada_id": 36
+  },
+  {
+    "nombre": "El rescate",
+    "numero_capitulo": 6,
+    "temporada_id": 36
+  },
+  {
+    "nombre": "Daybreak",
+    "numero_capitulo": 1,
+    "temporada_id": 37
+  },
+  {
+    "nombre": "New Beginnings",
+    "numero_capitulo": 2,
+    "temporada_id": 37
+  },
+  {
+    "nombre": "The Reek of Desperation",
+    "numero_capitulo": 3,
+    "temporada_id": 37
+  },
+  {
+    "nombre": "The Wild Ones",
+    "numero_capitulo": 4,
+    "temporada_id": 37
+  },
+  {
+    "nombre": "The Long Black Train",
+    "numero_capitulo": 5,
+    "temporada_id": 37
+  },
+  {
+    "nombre": "Land of Wolves",
+    "numero_capitulo": 6,
+    "temporada_id": 37
+  },
+  {
+    "nombre": "Freight Trains and Monsters",
+    "numero_capitulo": 1,
+    "temporada_id": 38
+  },
+  {
+    "nombre": "Touching Your Enemy",
+    "numero_capitulo": 2,
+    "temporada_id": 38
+  },
+  {
+    "nombre": "An Acceptable Surrender",
+    "numero_capitulo": 3,
+    "temporada_id": 38
+  },
+  {
+    "nombre": "Going Back to Cali",
+    "numero_capitulo": 4,
+    "temporada_id": 38
+  },
+  {
+    "nombre": "All for Nothing",
+    "numero_capitulo": 5,
+    "temporada_id": 38
+  },
+  {
+    "nombre": "Blood the Boy",
+    "numero_capitulo": 6,
+    "temporada_id": 38
+  },
+  {
+    "nombre": "Behind Us Only Grey",
+    "numero_capitulo": 1,
+    "temporada_id": 39
+  },
+  {
+    "nombre": "Fight or Flight",
+    "numero_capitulo": 2,
+    "temporada_id": 39
+  },
+  {
+    "nombre": "The Reek of Desperation",
+    "numero_capitulo": 3,
+    "temporada_id": 39
+  },
+  {
+    "nombre": "Only Devils Left",
+    "numero_capitulo": 4,
+    "temporada_id": 39
+  },
+  {
+    "nombre": "All for Nothing",
+    "numero_capitulo": 5,
+    "temporada_id": 39
+  },
+  {
+    "nombre": "Meaner Than Evil",
+    "numero_capitulo": 6,
+    "temporada_id": 39
+  },
+  {
+    "nombre": "Railroad",
+    "numero_capitulo": 1,
+    "temporada_id": 40
+  },
+  {
+    "nombre": "Freight Trains and Monsters",
+    "numero_capitulo": 2,
+    "temporada_id": 40
+  },
+  {
+    "nombre": "An Acceptable Surrender",
+    "numero_capitulo": 3,
+    "temporada_id": 40
+  },
+  {
+    "nombre": "All for Nothing",
+    "numero_capitulo": 4,
+    "temporada_id": 40
+  },
+  {
+    "nombre": "Blood the Boy",
+    "numero_capitulo": 5,
+    "temporada_id": 40
+  },
+  {
+    "nombre": "Meaner Than Evil",
+    "numero_capitulo": 6,
+    "temporada_id": 40
+  },
+  {
+    "nombre": "New Beginnings",
+    "numero_capitulo": 1,
+    "temporada_id": 41
+  },
+  {
+    "nombre": "Touching Your Enemy",
+    "numero_capitulo": 2,
+    "temporada_id": 41
+  },
+  {
+    "nombre": "The Reek of Desperation",
+    "numero_capitulo": 3,
+    "temporada_id": 41
+  },
+  {
+    "nombre": "Land of Wolves",
+    "numero_capitulo": 4,
+    "temporada_id": 41
+  },
+  {
+    "nombre": "Blood the Boy",
+    "numero_capitulo": 5,
+    "temporada_id": 41
+  },
+  {
+    "nombre": "Meaner Than Evil",
+    "numero_capitulo": 6,
+    "temporada_id": 41
+  }
+]
+    

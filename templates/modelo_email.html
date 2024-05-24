@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            color: #ff8937;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: Manrope, sans-serif; color: black">
+<div style="margin: 0 auto; max-width: 960px; padding: 1.5rem; background-color: white; box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1); border-radius: 6px;">
+    <h2 style="font-size: 25px">Estimado usuario,</h2>
+    <p style="font-size: 20px">Gracias por utilizar nuestro servicio. Como parte de nuestro compromiso continuo con la seguridad, hemos generado
+        un código único para ti. Este código te permitirá acceder a nuevas características, recuperar tu cuenta, entre
+        otras acciones.</p>
+
+    <p style="font-size: 20px">Tu código es: <strong>{{ code }}</strong></p>
+
+    <p style="font-size: 20px">Por favor, no compartas este código con nadie. Es personal y único para tu cuenta.</p>
+
+    <p style="font-size: 20px">Si tienes alguna pregunta o necesitas ayuda, no dudes en ponerte en contacto con nosotros.</p>
+</div>
+<!-- Footer from the new HTML code -->
+<div style="margin: 0 auto; max-width: 960px; padding: 1.5rem; background-color: white; box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1); border-radius: 6px; text-align: center">
+    <table style="text-align: center; font-size: 20px" role="presentation" border="0" cellpadding="0" cellspacing="0">
+        <tr style="text-align: center">
+            <td style="text-align: center">
+                <span style="text-align: center" >OnlyWatch, 7-11 Commercial Ct, Belfast BT1 2NB</span>
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td style="font-size: 17px; text-align: center">
+                Powered by <a href="mailto:onlywatch.info@gmail.es">OnlyWatch</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login</title>
+    <script
+            src="https://kit.fontawesome.com/2eb7a633b0.js"
+            crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/static/bulma/css/style.css"/>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+<body class="familiy has-text-black section fondo" style="height: 100vh">
+<div class="container is-vcentered">
+    <div class="columns is-centered is-vcentered">
+        <div class="column is-7-tablet is-7-desktop is-5-widescreen is-11-fullhd-only">
+            <div class="card-content card-gradient">
+                <header class="is-align-content-center is-align-items-center is-justify-content-center">
+                    <div class="is-flex is-align-items-center is-justify-content-center mt-3">
+                        <a href="{% url 'home' %}">
+                            <img src="/static/img/logoSmall.svg" alt="Logo Pequeño de ONLYWATCH"
+                                 class="image is-96x96"/>
+                        </a>
+                    </div>
+                    <p class="is-bold is-size-5 has-text-centered">
+                        <span class="is-size-4">ONLYWATCH</span><br/>
+                        Inicio de Sesión
+                    </p>
+                </header>
+                <div class="content">
+                    <form action="{% url 'login' %}" class="mt-4 ml-4 mr-4" method="post">
+                        {% csrf_token %}
+                        <div class="field mb-4">
+                            <div class="control has-icons-left is-flex">
+                                <input type="email" name="email" id="email" class="input is-medium mb-3"
+                                       placeholder="Correo Electrónico" required/>
+                                <span class="icon is-left has-text-black"><i class="fa-solid fa-envelope"></i></span>
+                            </div>
+                        </div>
+                        <div class="field mt-3 mb-6">
+                            <div class="control has-icons-left">
+                                <div class="field has-addons">
+                                    <div class="control is-expanded">
+                                        <input type="password" id="password1" name="password" placeholder="Contraseña"
+                                               class="input is-medium is-fullwidth" required/>
+                                        <span class="icon is-left has-text-black">
+                                                <i class="fa-solid fa-lock"></i>
+                                            </span>
+                                    </div>
+                                    <div class="control">
+                                        <button type="button" class="button is-medium" id="togglePasswordVisibility1"
+                                                style=" border: 2px solid #842507; background-color: #F2D9CD;">
+                                                <span class="icon is-small has-text-black">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <a id="open-modal" href="" class="is-pulled-right blanco mt-2">¿Has olvidado tu
+                                contraseña?</a>
+                        </div>
+                        <div class="field mt-3 mb-3">
+                            <button type="submit" class="bg_footer button is-fullwidth is-size-5" style="height: 52px">
+                                <strong class="has-text-centered">Acceder</strong>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <footer class="mb-2">
+                    <p class="has-text-centered has-text-white is-size-6">¿No dispones de una cuenta?<a
+                            href="{% url 'signup' %}" class="register"> Registrate</a></p>
+                </footer>
+            </div>
+            <div class="notification is-danger is-light is-hidden notificacion p-5">
+                <p class="errores has-text-black has-text-weight-bold"></p>
+                <button class="delete"></button>
+            </div>
+        </div>
+        <div id="modal-js-example" class="modal ">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <div class="box card-gradient">
+                    <h3 class="has-text-centered is-size-3 has-text-black">Olvido de contraseña</h3>
+                    <p class="mt-3 has-text-black has-text-weight-bold">Le enviaremos un código por correo.</p>
+                    <!-- Formulario para solicitar el envío del código de verificación -->
+                    <form action="{% url 'email_login' %}" method="post"
+                          class="is-flex is-justify-content-center mt-3">
+                        {% csrf_token %}
+                        <div class="is-flex is-flex-direction-column is-justify-content-center">
+                            <input type="text" name="correo_user" class="input "
+                                   style="background-color: white"
+                                   placeholder="Ponga aquí su correo">
+                            <button class="button is-outlined mt-3" type="submit" id="enviar-email">
+                                Pulsa aquí
+                            </button>
+                        </div>
+
+                    </form>
+                    <!-- Formulario para introducir el código de verificación -->
+                    <form action="{% url 'verify_code' %}" method="post"
+                          class="mt-4">
+                        {% csrf_token %}
+                        <p class="mt-2 has-text-black has-text-weight-bold">Introduzca aquí el codigo proporcionado:</p>
+                        <div class="is-flex is-justify-content-center is-align-items-center mt-4">
+                            <label class="mr-4">
+                                <input class="input mr-4 place" style="background-color: white" type="text"
+                                       name="code"
+                                       placeholder="Introduce el código de verificación"/>
+                            </label>
+                            <button type="submit" class="button ml-4">Verificar código</button>
+                        </div>
+                        <p class="mensajes mt-4" id="mensajes"></p>
+                    </form>
+                </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var errores = "{{ errores }}";
+    document.getElementById('open-modal').addEventListener('click', function (event) {
+        event.preventDefault();
+        document.getElementById('modal-js-example').classList.add('is-active');
+    });
+</script>
+<script src="/static/js/ajustarPantalla.js"></script>
+<script src="/static/js/index.js"></script>
+<script src="{% static 'js/modals.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    $(document).ready(function () {
+        $('#enviar-email').click(function (e) {
+            e.preventDefault();
+            var correo_user = $('input[name="correo_user"]').val();
+            $.ajax({
+                url: "/correo_verificacion/",
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    'correo_user': correo_user
+                },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
+                },
+                success: function (data) {
+                    if (data.mensage) {
+                        $("#mensajes").text(data.mensage);
+                    }
+                },
+            });
+        });
+    });
+</script>
+</body>
+</html>

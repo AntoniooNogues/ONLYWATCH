@@ -1,0 +1,100 @@
+[
+
+    {
+        "nombre": "Drama",
+        "descripcion": "Se centra en conflictos emocionales, personales o sociales que enfrentan los personajes."
+    },
+    {
+        "nombre": "Biografía",
+        "descripcion": "Narraciones basadas en la vida de una persona real, explorando sus logros, desafíos y eventos significativos."
+    },
+    {
+        "nombre": "Ciencia ficción",
+        "descripcion": "Explora conceptos científicos o tecnológicos avanzados, a menudo ambientados en el futuro o en mundos alternativos."
+    },
+    {
+        "nombre": "Aventura",
+        "descripcion": "Historias de viajes emocionantes y descubrimientos, a menudo con elementos de riesgo, acción y exploración."
+    },
+    {
+        "nombre": "Comedia romántica",
+        "descripcion": "Combina elementos de comedia y romance, generalmente centrada en las relaciones amorosas entre los personajes principales."
+    },
+    {
+        "nombre": "Comedia",
+        "descripcion": "Busca generar risas y entretenimiento mediante situaciones humorísticas, personajes divertidos y diálogos ingeniosos."
+    },
+    {
+        "nombre": "Comedia negra",
+        "descripcion": "Utiliza el humor para abordar temas oscuros, como la muerte, la enfermedad o la violencia, de manera irreverente o satírica."
+    },
+    {
+        "nombre": "Histórico",
+        "descripcion": "Sitúa la acción en un período pasado de la historia, buscando recrear de manera fiel los eventos y la atmósfera de la época."
+    },
+    {
+        "nombre": "Fantasía",
+        "descripcion": "Incorpora elementos mágicos, sobrenaturales o fantásticos en un mundo imaginario o en situaciones fuera de lo común."
+    },
+    {
+        "nombre": "Acción",
+        "descripcion": "Destaca por secuencias emocionantes de combates, persecuciones y enfrentamientos, generalmente con alto nivel de adrenalina."
+    },
+    {
+        "nombre": "Crimen",
+        "descripcion": "Gira en torno a la comisión, investigación o consecuencias de un delito, a menudo con énfasis en la intriga y el suspenso."
+    },
+    {
+        "nombre": "Misterio",
+        "descripcion": "Se enfoca en la resolución de enigmas, la búsqueda de la verdad o la identificación de culpables, manteniendo la incertidumbre y el suspense."
+    },
+    {
+        "nombre": "Post-apocalíptico",
+        "descripcion": "Explora las consecuencias de un evento catastrófico que ha devastado la sociedad, a menudo ambientado en un mundo desolado o en decadencia."
+    },
+    {
+        "nombre": "Religioso",
+        "descripcion": "Reflexiona sobre temas espirituales, religiosos o éticos, explorando la fe, la moralidad y la relación con lo divino."
+    },
+    {
+        "nombre": "Thriller",
+        "descripcion": "Crea suspense y tensión a través de situaciones peligrosas, giros inesperados y una atmósfera cargada de intriga y suspenso."
+    },
+    {
+        "nombre": "Superhéroes",
+        "descripcion": "Presenta personajes con habilidades extraordinarias o superpoderes, que luchan contra el crimen, el mal o amenazas sobrenaturales."
+    },
+    {
+        "nombre": "Animación",
+        "descripcion": "Utiliza técnicas de animación para crear personajes y mundos ficticios, adecuados tanto para el público infantil como adulto."
+    },
+    {
+        "nombre": "Deportes",
+        "descripcion": "Narra historias relacionadas con competiciones deportivas, destacando el esfuerzo, la superación y la pasión por el deporte."
+    },
+    {
+        "nombre": "Western",
+        "descripcion": "Ubicado en el Viejo Oeste de los Estados Unidos, con elementos de aventura, acción y conflicto entre ley y desorden."
+    },
+    {
+        "nombre": "Horror",
+        "descripcion": "Provoca miedo, terror o suspense a través de situaciones sobrenaturales, monstruos, asesinos o eventos perturbadores."
+    },
+    {
+        "nombre": "Musical",
+        "descripcion": "Incorpora números musicales y canciones como parte integral de la narrativa, expresando emociones y avanzando la trama."
+    },
+    {
+        "nombre": "Romance",
+        "descripcion": "Explora relaciones amorosas, atracción, pasión y conflicto emocional entre los personajes principales."
+    },
+    {
+        "nombre": "Médico",
+        "descripcion": "Se centra en el entorno médico, incluyendo hospitales, doctores, pacientes y dilemas éticos relacionados con la salud."
+    },
+    {
+        "nombre": "Documental",
+        "descripcion": "Presenta hechos reales, personas, lugares o eventos de manera objetiva, informativa y educativa."
+    }
+]
+      

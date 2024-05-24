@@ -1,0 +1,216 @@
+{% include 'header_home_usuario.html' %}
+
+{% load static %}
+{% block content %}
+    <style>
+        .card {
+            position: relative;
+        }
+
+        .corazon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 22px;
+            color: #FF0000; /* Ajusta el color del corazón según tus necesidades */
+            background-color: #FFFFFF; /* Fondo blanco */
+            border-radius: 50%; /* Forma redonda */
+            padding: 5px; /* Espacio alrededor del ícono */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra para mejor visibilidad */
+        }
+
+        .card-content {
+            padding-top: 30px; /* Ajusta el padding para que el contenido no se solape con el corazón */
+        }
+    </style>
+    {% csrf_token %}
+    <main class="column mb-6 mt-5">
+        <div class="is-centered mr-5 ml-5">
+            <h1 class="is-bold is-uppercase pb-3 is-size-2 has-text-centered mali" style="font-weight: 900">Series </h1>
+            <div class="mr-5 ml-5 mt-5" id="series_peliculas">
+                <div class="mt-4 pl-5 mb-5 is-flex filtros is-align-content-center is-justify-content-center"
+                     style="flex-direction: column;">
+                    <div>
+                        <span class="has-text-black is-size-5 has-text-weight-bold">Filtros:</span>
+                        <div class="dropdown ml-3 mr-3" id="dropdown-genres">
+                            <div class="dropdown-trigger">
+                                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-genres">
+                                    <span>Géneros</span>
+                                    <span class="icon is-small">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu-genres" role="menu">
+                                <div class="dropdown-content scrollable-dropdown">
+                                    {% for g in generos %}
+                                        <a href="#" class="dropdown-item" onclick="stopPropagation()">
+                                            <label class="checkbox">
+                                                <input type="radio" name="generos" value="{{ g.id }}"
+                                                       data-id="{{ g.id }}"
+                                                       data-name="{{ g.nombre }}" class="mr-2"> {{ g.nombre }}
+                                            </label>
+                                        </a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown ml-3 mr-3" id="dropdown-platforms">
+                            <div class="dropdown-trigger is-flex is-align-content-center is-justify-content-center">
+                                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-platforms">
+                                    <span>Plataformas</span>
+                                    <span class="icon is-small">
+                            <i class="fa fa-angle-down  " aria-hidden="true"></i>
+                        </span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu-platforms" role="menu">
+                                <div class="dropdown-content scrollable-dropdown">
+                                    {% for p in plataformas %}
+                                        <a href="#" class="dropdown-item" onclick="stopPropagation()">
+                                            <label class="checkbox">
+                                                <input type="radio" name="plataformas" value="{{ p.id }}"
+                                                       data-id="{{ p.id }}"
+                                                       data-name="{{ p.nombre }}" class="mr-2"> {{ p.nombre }}
+
+                                            </label>
+                                        </a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <button class="button ml-3" id="filtrar">
+                            <i class="fa-solid fa-filter fa-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-multiline is-mobile">
+                {% if page_obj %}
+                    {% for s in page_obj %}
+                        <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
+                            <div class="card">
+                                <a href="{% url 'serie' s.id %}">
+                                    <div class="card-image ">
+                                        <figure class="image is-2by3">
+                                            <img src="{{ s.img }}" alt="Imagen de la película {{ s.nombre }}">
+                                        </figure>
+                                    </div>
+                                </a>
+                                <div class="card-content valoracion is-flex is-align-items-center is-justify-content-space-between p-0"
+                                     style="background-color: #FFE8D3">
+                                    {% if user.is_authenticated %}
+                                        {% if s.es_favorito %}
+                                            <a class="serie_favorita fa-solid fa-heart corazon" data-id="{{ s.id }}"
+                                               style="font-size: 22px"></a>
+                                        {% else %}
+                                            <a class="serie_favorita fa-regular fa-heart corazon" data-id="{{ s.id }}"
+                                               style="font-size: 22px"></a>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {% for s in series %}
+                        <div class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
+                            <div class="card">
+                                <a href="{% url 'serie' s.id %}">
+                                    <div class="card-image ">
+                                        <figure class="image is-2by3">
+                                            <img src="{{ s.img }}" alt="Imagen de la película {{ s.nombre }}">
+                                        </figure>
+                                    </div>
+                                </a>
+                                <div class="card-content valoracion is-flex is-align-items-center is-justify-content-space-between p-0"
+                                 style="background-color: #FFE8D3">
+                                {% if user.is_authenticated %}
+                                    {% if s.es_favorito %}
+                                        <a class="serie_favorita fa-solid fa-heart corazon" data-id="{{ s.id }}"
+                                           style="font-size: 22px"></a>
+                                    {% else %}
+                                        <a class="serie_favorita fa-regular fa-heart corazon" data-id="{{ s.id }}"
+                                           style="font-size: 22px"></a>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        {% if page_obj %}
+            <div class="mt-5">
+                <nav class="pagination is-small is-centered" role="navigation" aria-label="pagination">
+                    <ul id="pagination-list" class="pagination-list">
+                        {% if page_obj.number > 2 %}
+                            <li><a href="?page=1" class="pagination-link is-size-6 has-text-black"
+                                   aria-label="Goto page 1">1</a></li>
+                            <li><span class="pagination-ellipsis">&hellip;</span></li>
+                        {% endif %}
+                        {% for i in page_obj.paginator.page_range %}
+                            {% if page_obj.number == i %}
+                                <li><a class="pagination-link is-size-6 has-text-black" aria-label="Page {{ i }}"
+                                       aria-current="page">{{ i }}</a></li>
+                            {% elif page_obj.number > i|add:-2 and page_obj.number < i|add:2 %}
+                                <li><a href="?page={{ i }}" class="pagination-link is-size-6 has-text-black"
+                                       aria-label="Goto page {{ i }}">{{ i }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if page_obj.number < page_obj.paginator.num_pages|add:-1 %}
+                            <li><span class="pagination-ellipsis">&hellip;</span></li>
+                            <li><a href="?page={{ page_obj.paginator.num_pages }}"
+                                   class="pagination-link is-size-6 has-text-black"
+                                   aria-label="Goto page {{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        {% endif %}
+    </main>
+    <div id="messages-container">
+        {% include 'mensages.html' %}
+    </div>
+
+{% endblock %}
+{% if series|length < 6 %}
+    <div class="footer_abajo">
+        {% include "footer.html" %}
+    </div>
+{% else %}
+    {% include "footer.html" %}
+{% endif %}
+<script src="{% static 'js/navbar.js' %} "></script>
+<script src="{% static 'js/mensajes.js' %} "></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".corazon").click(function () {
+            var serieid = $(this).data('id');
+            var corazon = $(this);
+            $.ajax({
+                url: '/serie_favorita/' + serieid + '/',
+                data: {
+                    'peliculaId': serieid
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.es_favorito) {
+                        corazon.removeClass('fa-regular fa-heart').addClass('fa-solid fa-heart');
+                    } else {
+                        corazon.removeClass('fa-solid fa-heart').addClass('fa-regular fa-heart');
+                    }
+                    updateMessages(data.messages_html);
+                }
+            });
+        });
+    });
+</script>
+<script src="{% static '/js/filtros_serie.js' %}"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>

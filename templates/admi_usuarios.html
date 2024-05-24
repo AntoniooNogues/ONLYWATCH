@@ -1,0 +1,49 @@
+{% load static %}
+{% include 'header_admi.html' %}
+     {% block content %}
+    <main class="usuarios pb-6">
+        <h2 class="is-size-2 container mt-6">Usuarios</h2>
+        <div class="box container table-container">
+            <h4>Listado de usarios actuales:</h4>
+            <table class="table is-fullwidth scrollable-table">
+                <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Nombre completo</th>
+                    <th>Email</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Imagen</th>
+                    <th>Sexo</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for u in usuarios %}
+                    <tr>
+                        <td> {{ u.username }}</td>
+                        <td> {{ u.nombre_completo }}</td>
+                        <td> {{ u.email }}</td>
+                        <td> {{ u.fecha_nacimiento }}</td>
+                        {% if u.img %}
+                            <td><img class="image is-128x128" src="{{ u.img.url }}" alt="{{ u.nombre_completo }}"></td>
+                        {% else %}
+                            <td><img class="image is-128x128" src="{% static 'img/perfilenblanco.webp' %} " alt="{{ u.nombre_completo }}"></td>
+                        {% endif %}
+                        <td> {{ u.sexo }}</td>
+                        <td><a href="{% url 'eliminar_usuario' id=u.id %} "><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="{% url 'coment' id=u.id %} "><i class="fa-solid fa-plus-minus"></i></a></td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a href="{% url 'mostrar_usuarios' %} ">
+                <button class="button is-success is-grouped-centered">
+                    Actualizar
+                </button>
+            </a>
+        </div>
+    </main>
+    {% endblock %}
+{% include 'footer_admi.html' %}

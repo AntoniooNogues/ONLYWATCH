@@ -1,0 +1,1672 @@
+[
+    {
+        "nombre_personaje": "Cooper Howard",
+        "actor_id": 303,
+        "serie_id": 1
+    },
+    {
+        "nombre_personaje": "Lucy",
+        "actor_id": 304,
+        "serie_id": 1
+    },
+    {
+        "nombre_personaje": "Maximus",
+        "actor_id": 305,
+        "serie_id": 1
+    },
+    {
+        "nombre_personaje": "Norm",
+        "actor_id": 306,
+        "serie_id": 1
+    },
+    {
+        "nombre_personaje": "Thaddeus",
+        "actor_id": 307,
+        "serie_id": 1
+    },
+    {
+        "nombre_personaje": "Chet",
+        "actor_id": 308,
+        "serie_id": 1
+    },
+    {
+        "nombre_personaje": "Lord Toranaga",
+        "actor_id": 309,
+        "serie_id": 2
+    },
+    {
+        "nombre_personaje": "Ishido",
+        "actor_id": 310,
+        "serie_id": 2
+    },
+    {
+        "nombre_personaje": "John Blackthorne",
+        "actor_id": 311,
+        "serie_id": 2
+    },
+    {
+        "nombre_personaje": "Toda Hirotada",
+        "actor_id": 312,
+        "serie_id": 2
+    },
+    {
+        "nombre_personaje": "Mariko",
+        "actor_id": 313,
+        "serie_id": 2
+    },
+    {
+        "nombre_personaje": "Genjiro",
+        "actor_id": 314,
+        "serie_id": 2
+    },
+    {
+        "nombre_personaje": "Trisolaran",
+        "actor_id": 315,
+        "serie_id": 3
+    },
+    {
+        "nombre_personaje": "Ye Wenjie",
+        "actor_id": 316,
+        "serie_id": 3
+    },
+    {
+        "nombre_personaje": "Wang Miao",
+        "actor_id": 317,
+        "serie_id": 3
+    },
+    {
+        "nombre_personaje": "Weyland",
+        "actor_id": 318,
+        "serie_id": 3
+    },
+    {
+        "nombre_personaje": "**Desconocido**",
+        "actor_id": 319,
+        "serie_id": 3
+    },
+    {
+        "nombre_personaje": "Yang Dong",
+        "actor_id": 320,
+        "serie_id": 3
+    },
+    {
+        "nombre_personaje": "Tom Ripley",
+        "actor_id": 321,
+        "serie_id": 4
+    },
+    {
+        "nombre_personaje": "Dickie Greenleaf",
+        "actor_id": 322,
+        "serie_id": 4
+    },
+    {
+        "nombre_personaje": "Dickie Greenleaf (voz)",
+        "actor_id": 323,
+        "serie_id": 4
+    },
+    {
+        "nombre_personaje": "Freddie Miles",
+        "actor_id": 324,
+        "serie_id": 4
+    },
+    {
+        "nombre_personaje": "Santa Claus",
+        "actor_id": 325,
+        "serie_id": 6
+    },
+    {
+        "nombre_personaje": "Abe",
+        "actor_id": 326,
+        "serie_id": 6
+    },
+    {
+        "nombre_personaje": "Arthur",
+        "actor_id": 327,
+        "serie_id": 6
+    },
+    {
+        "nombre_personaje": "Lily",
+        "actor_id": 328,
+        "serie_id": 6
+    },
+    {
+        "nombre_personaje": "Mr. Doogle",
+        "actor_id": 329,
+        "serie_id": 6
+    },
+    {
+        "nombre_personaje": "Mrs. Doogle",
+        "actor_id": 330,
+        "serie_id": 6
+    },
+    {
+        "nombre_personaje": "Jesús",
+        "actor_id": 331,
+        "serie_id": 7
+    },
+    {
+        "nombre_personaje": "Pedro",
+        "actor_id": 332,
+        "serie_id": 7
+    },
+    {
+        "nombre_personaje": "María Magdalena",
+        "actor_id": 333,
+        "serie_id": 7
+    },
+    {
+        "nombre_personaje": "Tomás",
+        "actor_id": 334,
+        "serie_id": 7
+    },
+    {
+        "nombre_personaje": "Santiago",
+        "actor_id": 335,
+        "serie_id": 7
+    },
+    {
+        "nombre_personaje": "Marta",
+        "actor_id": 336,
+        "serie_id": 7
+    },
+    {
+        "nombre_personaje": "Mencía del Valle",
+        "actor_id": 337,
+        "serie_id": 8
+    },
+    {
+        "nombre_personaje": "Cristóbal Gormaz",
+        "actor_id": 338,
+        "serie_id": 8
+    },
+    {
+        "nombre_personaje": "Doña Mencía",
+        "actor_id": 339,
+        "serie_id": 8
+    },
+    {
+        "nombre_personaje": "Mario Expósito",
+        "actor_id": 340,
+        "serie_id": 8
+    },
+    {
+        "nombre_personaje": "Don Iñigo",
+        "actor_id": 341,
+        "serie_id": 8
+    },
+    {
+        "nombre_personaje": "Conrado Solís",
+        "actor_id": 342,
+        "serie_id": 8
+    },
+    {
+        "nombre_personaje": "Jake Adelstein",
+        "actor_id": 343,
+        "serie_id": 9
+    },
+    {
+        "nombre_personaje": "Ryuichi Kurosawa",
+        "actor_id": 344,
+        "serie_id": 9
+    },
+    {
+        "nombre_personaje": "Samantha",
+        "actor_id": 345,
+        "serie_id": 9
+    },
+    {
+        "nombre_personaje": "Shinichi Okazaki",
+        "actor_id": 346,
+        "serie_id": 9
+    },
+    {
+        "nombre_personaje": "Miyuki",
+        "actor_id": 347,
+        "serie_id": 9
+    },
+    {
+        "nombre_personaje": "Marty Hart",
+        "actor_id": 348,
+        "serie_id": 10
+    },
+    {
+        "nombre_personaje": "Wayne Hays",
+        "actor_id": 349,
+        "serie_id": 10
+    },
+    {
+        "nombre_personaje": "Tom Purcell",
+        "actor_id": 350,
+        "serie_id": 10
+    },
+    {
+        "nombre_personaje": "Amelia Reuther",
+        "actor_id": 351,
+        "serie_id": 10
+    },
+    {
+        "nombre_personaje": "Lorne Malvo",
+        "actor_id": 352,
+        "serie_id": 11
+    },
+    {
+        "nombre_personaje": "Molly Solverson",
+        "actor_id": 353,
+        "serie_id": 11
+    },
+    {
+        "nombre_personaje": "Noah Hawley",
+        "actor_id": 354,
+        "serie_id": 11
+    },
+    {
+        "nombre_personaje": "Mark Grayson / Invencible",
+        "actor_id": 355,
+        "serie_id": 12
+    },
+    {
+        "nombre_personaje": "Nolan Grayson / Omni-Man",
+        "actor_id": 356,
+        "serie_id": 12
+    },
+    {
+        "nombre_personaje": "Debbie Grayson",
+        "actor_id": 357,
+        "serie_id": 12
+    },
+    {
+        "nombre_personaje": "Robot",
+        "actor_id": 358,
+        "serie_id": 12
+    },
+    {
+        "nombre_personaje": "Augustus Marks / Titan",
+        "actor_id": 359,
+        "serie_id": 12
+    },
+    {
+        "nombre_personaje": "Cecil Stedman",
+        "actor_id": 360,
+        "serie_id": 12
+    },
+    {
+        "nombre_personaje": "Charles Xavier / Profesor X",
+        "actor_id": 361,
+        "serie_id": 13
+    },
+    {
+        "nombre_personaje": "Jean Grey / Fénix",
+        "actor_id": 362,
+        "serie_id": 13
+    },
+    {
+        "nombre_personaje": "Scott Summers / Cíclope",
+        "actor_id": 363,
+        "serie_id": 13
+    },
+    {
+        "nombre_personaje": "Ororo Munroe / Tormenta",
+        "actor_id": 364,
+        "serie_id": 13
+    },
+    {
+        "nombre_personaje": "Logan / Lobezno",
+        "actor_id": 365,
+        "serie_id": 13
+    },
+    {
+        "nombre_personaje": "Rogue",
+        "actor_id": 366,
+        "serie_id": 13
+    },
+    {
+        "nombre_personaje": "Sugar",
+        "actor_id": 367,
+        "serie_id": 14
+    },
+    {
+        "nombre_personaje": "Earl",
+        "actor_id": 368,
+        "serie_id": 14
+    },
+    {
+        "nombre_personaje": "Aisha",
+        "actor_id": 369,
+        "serie_id": 14
+    },
+    {
+        "nombre_personaje": "Kingsley",
+        "actor_id": 370,
+        "serie_id": 14
+    },
+    {
+        "nombre_personaje": "Fraser",
+        "actor_id": 371,
+        "serie_id": 14
+    },
+    {
+        "nombre_personaje": "Carmy Berzatto",
+        "actor_id": 372,
+        "serie_id": 15
+    },
+    {
+        "nombre_personaje": "Richie Jermaine",
+        "actor_id": 373,
+        "serie_id": 15
+    },
+    {
+        "nombre_personaje": "Sydney",
+        "actor_id": 374,
+        "serie_id": 15
+    },
+    {
+        "nombre_personaje": "Leslie",
+        "actor_id": 375,
+        "serie_id": 15
+    },
+    {
+        "nombre_personaje": "Sydney",
+        "actor_id": 376,
+        "serie_id": 15
+    },
+    {
+        "nombre_personaje": "",
+        "actor_id": 377,
+        "serie_id": 15
+    },
+    {
+        "nombre_personaje": "Rishi Mathur",
+        "actor_id": 378,
+        "serie_id": 16
+    },
+    {
+        "nombre_personaje": "Pooja Virani",
+        "actor_id": 379,
+        "serie_id": 16
+    },
+    {
+        "nombre_personaje": "Alok Chaturvedi",
+        "actor_id": 380,
+        "serie_id": 16
+    },
+    {
+        "nombre_personaje": "Karan Sharma",
+        "actor_id": 381,
+        "serie_id": 16
+    },
+    {
+        "nombre_personaje": "Devika Mathur",
+        "actor_id": 382,
+        "serie_id": 16
+    },
+    {
+        "nombre_personaje": "Shefali",
+        "actor_id": 383,
+        "serie_id": 16
+    },
+    {
+        "nombre_personaje": "John-117 / Master Chief",
+        "actor_id": 384,
+        "serie_id": 17
+    },
+    {
+        "nombre_personaje": "Dr. Halsey",
+        "actor_id": 385,
+        "serie_id": 17
+    },
+    {
+        "nombre_personaje": "Soren-062",
+        "actor_id": 386,
+        "serie_id": 17
+    },
+    {
+        "nombre_personaje": "Margaret Parangosky",
+        "actor_id": 387,
+        "serie_id": 17
+    },
+    {
+        "nombre_personaje": "Robert Mendez",
+        "actor_id": 388,
+        "serie_id": 17
+    },
+    {
+        "nombre_personaje": "Fred Johnson",
+        "actor_id": 389,
+        "serie_id": 17
+    },
+    {
+        "nombre_personaje": "God",
+        "actor_id": 390,
+        "serie_id": 18
+    },
+    {
+        "nombre_personaje": "Amenadiel",
+        "actor_id": 391,
+        "serie_id": 18
+    },
+    {
+        "nombre_personaje": "Lucifer Morningstar",
+        "actor_id": 392,
+        "serie_id": 18
+    },
+    {
+        "nombre_personaje": "Chloe Decker",
+        "actor_id": 393,
+        "serie_id": 18
+    },
+    {
+        "nombre_personaje": "Captain Kevin Daniels",
+        "actor_id": 394,
+        "serie_id": 18
+    },
+    {
+        "nombre_personaje": "Amenadiel",
+        "actor_id": 395,
+        "serie_id": 18
+    },
+    {
+        "nombre_personaje": "Hunter, Echo, Wrecker, Tech y Crosshair",
+        "actor_id": 396,
+        "serie_id": 19
+    },
+    {
+        "nombre_personaje": "Omega",
+        "actor_id": 397,
+        "serie_id": 19
+    },
+    {
+        "nombre_personaje": "Boba Fett",
+        "actor_id": 398,
+        "serie_id": 19
+    },
+    {
+        "nombre_personaje": "Fennec Shand",
+        "actor_id": 399,
+        "serie_id": 19
+    },
+    {
+        "nombre_personaje": "Gungi",
+        "actor_id": 400,
+        "serie_id": 19
+    },
+    {
+        "nombre_personaje": "Cal Kestis",
+        "actor_id": 401,
+        "serie_id": 19
+    },
+    {
+        "nombre_personaje": "Adam Reed",
+        "actor_id": 402,
+        "serie_id": 20
+    },
+    {
+        "nombre_personaje": "Annie Sloan",
+        "actor_id": 403,
+        "serie_id": 20
+    },
+    {
+        "nombre_personaje": "Ian Mendes",
+        "actor_id": 404,
+        "serie_id": 20
+    },
+    {
+        "nombre_personaje": "Hannah Wells",
+        "actor_id": 405,
+        "serie_id": 20
+    },
+    {
+        "nombre_personaje": "Rebecca Pearson",
+        "actor_id": 406,
+        "serie_id": 20
+    },
+    {
+        "nombre_personaje": "Dr. Henry Leeds",
+        "actor_id": 407,
+        "serie_id": 20
+    },
+    {
+        "nombre_personaje": "Elena",
+        "actor_id": 408,
+        "serie_id": 21
+    },
+    {
+        "nombre_personaje": "Nacho",
+        "actor_id": 409,
+        "serie_id": 21
+    },
+    {
+        "nombre_personaje": "Begoña",
+        "actor_id": 410,
+        "serie_id": 21
+    },
+    {
+        "nombre_personaje": "Tomás",
+        "actor_id": 411,
+        "serie_id": 21
+    },
+    {
+        "nombre_personaje": "Isabel",
+        "actor_id": 412,
+        "serie_id": 21
+    },
+    {
+        "nombre_personaje": "Iñigo",
+        "actor_id": 413,
+        "serie_id": 21
+    },
+    {
+        "nombre_personaje": "John Dutton",
+        "actor_id": 414,
+        "serie_id": 22
+    },
+    {
+        "nombre_personaje": "Kayce Dutton",
+        "actor_id": 415,
+        "serie_id": 22
+    },
+    {
+        "nombre_personaje": "Beth Dutton",
+        "actor_id": 416,
+        "serie_id": 22
+    },
+    {
+        "nombre_personaje": "Jamie Dutton",
+        "actor_id": 417,
+        "serie_id": 22
+    },
+    {
+        "nombre_personaje": "Rip Wheeler",
+        "actor_id": 418,
+        "serie_id": 22
+    },
+    {
+        "nombre_personaje": "Thomas Rainwater",
+        "actor_id": 419,
+        "serie_id": 22
+    },
+    {
+        "nombre_personaje": "Javier",
+        "actor_id": 420,
+        "serie_id": 23
+    },
+    {
+        "nombre_personaje": "Bermejo",
+        "actor_id": 421,
+        "serie_id": 23
+    },
+    {
+        "nombre_personaje": "Doña Lola",
+        "actor_id": 422,
+        "serie_id": 23
+    },
+    {
+        "nombre_personaje": "Vicente",
+        "actor_id": 423,
+        "serie_id": 23
+    },
+    {
+        "nombre_personaje": "Sandra",
+        "actor_id": 424,
+        "serie_id": 23
+    },
+    {
+        "nombre_personaje": "Miriam",
+        "actor_id": 425,
+        "serie_id": 23
+    },
+    {
+        "nombre_personaje": "Sheldon Cooper",
+        "actor_id": 329,
+        "serie_id": 24
+    },
+    {
+        "nombre_personaje": "Mary Cooper",
+        "actor_id": 427,
+        "serie_id": 24
+    },
+    {
+        "nombre_personaje": "George Cooper Sr.",
+        "actor_id": 428,
+        "serie_id": 24
+    },
+    {
+        "nombre_personaje": "Missy Cooper",
+        "actor_id": 429,
+        "serie_id": 24
+    },
+    {
+        "nombre_personaje": "Melanie 'Meemaw' Cooper",
+        "actor_id": 430,
+        "serie_id": 24
+    },
+    {
+        "nombre_personaje": "Sheldon Cooper (adulto) (voz)",
+        "actor_id": 329,
+        "serie_id": 24
+    },
+    {
+        "nombre_personaje": "Michael Burnham",
+        "actor_id": 432,
+        "serie_id": 25
+    },
+    {
+        "nombre_personaje": "Saru",
+        "actor_id": 433,
+        "serie_id": 25
+    },
+    {
+        "nombre_personaje": "Paul Stamets",
+        "actor_id": 434,
+        "serie_id": 25
+    },
+    {
+        "nombre_personaje": "Sylvia Tilly",
+        "actor_id": 435,
+        "serie_id": 25
+    },
+    {
+        "nombre_personaje": "Ash Tyler",
+        "actor_id": 436,
+        "serie_id": 25
+    },
+    {
+        "nombre_personaje": "Gabriel Lorca",
+        "actor_id": 437,
+        "serie_id": 25
+    },
+    {
+        "nombre_personaje": "Will Travis",
+        "actor_id": 438,
+        "serie_id": 26
+    },
+    {
+        "nombre_personaje": "Georgina Campbell",
+        "actor_id": 439,
+        "serie_id": 26
+    },
+    {
+        "nombre_personaje": "Liam Stewart",
+        "actor_id": 440,
+        "serie_id": 26
+    },
+    {
+        "nombre_personaje": "Anya",
+        "actor_id": 441,
+        "serie_id": 26
+    },
+    {
+        "nombre_personaje": "Sekou",
+        "actor_id": 442,
+        "serie_id": 26
+    },
+    {
+        "nombre_personaje": "Hannah",
+        "actor_id": 443,
+        "serie_id": 26
+    },
+    {
+        "nombre_personaje": "Jessica Jones",
+        "actor_id": 444,
+        "serie_id": 27
+    },
+    {
+        "nombre_personaje": "Rachel Lindsay/Hellcat",
+        "actor_id": 445,
+        "serie_id": 27
+    },
+    {
+        "nombre_personaje": "Kilgrave",
+        "actor_id": 326,
+        "serie_id": 27
+    },
+    {
+        "nombre_personaje": "Claire Temple",
+        "actor_id": 447,
+        "serie_id": 27
+    },
+    {
+        "nombre_personaje": "Hope Shlottman",
+        "actor_id": 448,
+        "serie_id": 27
+    },
+    {
+        "nombre_personaje": "Malcolm Ducasse",
+        "actor_id": 449,
+        "serie_id": 27
+    },
+    {
+        "nombre_personaje": "Shinichi Izumi",
+        "actor_id": 450,
+        "serie_id": 28
+    },
+    {
+        "nombre_personaje": "Murano Satomi",
+        "actor_id": 451,
+        "serie_id": 28
+    },
+    {
+        "nombre_personaje": "Migi",
+        "actor_id": 452,
+        "serie_id": 28
+    },
+    {
+        "nombre_personaje": "Ryôko Tamiya",
+        "actor_id": 453,
+        "serie_id": 28
+    },
+    {
+        "nombre_personaje": "Kana Koyama",
+        "actor_id": 454,
+        "serie_id": 28
+    },
+    {
+        "nombre_personaje": "Nobuko Tamura",
+        "actor_id": 455,
+        "serie_id": 28
+    },
+    {
+        "nombre_personaje": "John Nolan",
+        "actor_id": 456,
+        "serie_id": 29
+    },
+    {
+        "nombre_personaje": "Nyla Harper",
+        "actor_id": 457,
+        "serie_id": 29
+    },
+    {
+        "nombre_personaje": "Angela Lopez",
+        "actor_id": 458,
+        "serie_id": 29
+    },
+    {
+        "nombre_personaje": "Lucy Chen",
+        "actor_id": 459,
+        "serie_id": 29
+    },
+    {
+        "nombre_personaje": "Talia Bishop",
+        "actor_id": 460,
+        "serie_id": 29
+    },
+    {
+        "nombre_personaje": "Tim Bradford",
+        "actor_id": 461,
+        "serie_id": 29
+    },
+    {
+        "nombre_personaje": "Darío Guerra",
+        "actor_id": 462,
+        "serie_id": 30
+    },
+    {
+        "nombre_personaje": "Raquel Alarcón",
+        "actor_id": 463,
+        "serie_id": 30
+    },
+    {
+        "nombre_personaje": "Luis Guerra",
+        "actor_id": 464,
+        "serie_id": 30
+    },
+    {
+        "nombre_personaje": "Beto",
+        "actor_id": 413,
+        "serie_id": 30
+    },
+    {
+        "nombre_personaje": "Olivia",
+        "actor_id": 466,
+        "serie_id": 30
+    },
+    {
+        "nombre_personaje": "Lola",
+        "actor_id": 467,
+        "serie_id": 30
+    },
+    {
+        "nombre_personaje": "Isa Sierra",
+        "actor_id": 468,
+        "serie_id": 31
+    },
+    {
+        "nombre_personaje": "Jaime Cepeda",
+        "actor_id": 469,
+        "serie_id": 31
+    },
+    {
+        "nombre_personaje": "Esther Jiménez",
+        "actor_id": 470,
+        "serie_id": 31
+    },
+    {
+        "nombre_personaje": "David Montero",
+        "actor_id": 471,
+        "serie_id": 31
+    },
+    {
+        "nombre_personaje": "Lola García",
+        "actor_id": 472,
+        "serie_id": 31
+    },
+    {
+        "nombre_personaje": "Carlos Fernández",
+        "actor_id": 473,
+        "serie_id": 31
+    },
+    {
+        "nombre_personaje": "Nell Bray",
+        "actor_id": 474,
+        "serie_id": 32
+    },
+    {
+        "nombre_personaje": "Dale Harding",
+        "actor_id": 475,
+        "serie_id": 32
+    },
+    {
+        "nombre_personaje": "Judge Ike Walton",
+        "actor_id": 476,
+        "serie_id": 32
+    },
+    {
+        "nombre_personaje": "Sierrapinto",
+        "actor_id": 477,
+        "serie_id": 32
+    },
+    {
+        "nombre_personaje": "Clay Allison",
+        "actor_id": 478,
+        "serie_id": 32
+    },
+    {
+        "nombre_personaje": "Sheriff Rawlins",
+        "actor_id": 479,
+        "serie_id": 32
+    },
+    {
+        "nombre_personaje": "Erika Mann",
+        "actor_id": 480,
+        "serie_id": 33
+    },
+    {
+        "nombre_personaje": "Gottfried Benn",
+        "actor_id": 481,
+        "serie_id": 33
+    },
+    {
+        "nombre_personaje": "Joseph Goebbels",
+        "actor_id": 482,
+        "serie_id": 33
+    },
+    {
+        "nombre_personaje": "Annemarie Heinrich",
+        "actor_id": 483,
+        "serie_id": 33
+    },
+    {
+        "nombre_personaje": "Katia Mann",
+        "actor_id": 484,
+        "serie_id": 33
+    },
+    {
+        "nombre_personaje": "Meredith Grey",
+        "actor_id": 485,
+        "serie_id": 34
+    },
+    {
+        "nombre_personaje": "Alex Karev",
+        "actor_id": 486,
+        "serie_id": 34
+    },
+    {
+        "nombre_personaje": "Cristina Yang",
+        "actor_id": 357,
+        "serie_id": 34
+    },
+    {
+        "nombre_personaje": "Miranda Bailey",
+        "actor_id": 488,
+        "serie_id": 34
+    },
+    {
+        "nombre_personaje": "Richard Webber",
+        "actor_id": 489,
+        "serie_id": 34
+    },
+    {
+        "nombre_personaje": "Owen Hunt",
+        "actor_id": 490,
+        "serie_id": 34
+    },
+    {
+        "nombre_personaje": "Aang (voz)",
+        "actor_id": 491,
+        "serie_id": 35
+    },
+    {
+        "nombre_personaje": "Katara (voz)",
+        "actor_id": 492,
+        "serie_id": 35
+    },
+    {
+        "nombre_personaje": "Sokka (voz)",
+        "actor_id": 493,
+        "serie_id": 35
+    },
+    {
+        "nombre_personaje": "Zuko (voz)",
+        "actor_id": 494,
+        "serie_id": 35
+    },
+    {
+        "nombre_personaje": "Toph (voz)",
+        "actor_id": 495,
+        "serie_id": 35
+    },
+    {
+        "nombre_personaje": "Appa (voz) y Momo (voz)",
+        "actor_id": 396,
+        "serie_id": 35
+    },
+    {
+        "nombre_personaje": "Ted Mosby",
+        "actor_id": 497,
+        "serie_id": 36
+    },
+    {
+        "nombre_personaje": "Marshall Eriksen",
+        "actor_id": 498,
+        "serie_id": 36
+    },
+    {
+        "nombre_personaje": "Robin Scherbatsky",
+        "actor_id": 499,
+        "serie_id": 36
+    },
+    {
+        "nombre_personaje": "Lily Aldrin",
+        "actor_id": 500,
+        "serie_id": 36
+    },
+    {
+        "nombre_personaje": "Ted Mosby del futuro (voz)",
+        "actor_id": 501,
+        "serie_id": 36
+    },
+    {
+        "nombre_personaje": "Vanya Hargreeves",
+        "actor_id": 502,
+        "serie_id": 37
+    },
+    {
+        "nombre_personaje": "Luther Hargreeves",
+        "actor_id": 503,
+        "serie_id": 37
+    },
+    {
+        "nombre_personaje": "Diego Hargreeves",
+        "actor_id": 504,
+        "serie_id": 37
+    },
+    {
+        "nombre_personaje": "Klaus Hargreeves",
+        "actor_id": 505,
+        "serie_id": 37
+    },
+    {
+        "nombre_personaje": "Cinco Hargreeves",
+        "actor_id": 506,
+        "serie_id": 37
+    },
+    {
+        "nombre_personaje": "Jack Spencer",
+        "actor_id": 507,
+        "serie_id": 38
+    },
+    {
+        "nombre_personaje": "Max Maxwell",
+        "actor_id": 508,
+        "serie_id": 38
+    },
+    {
+        "nombre_personaje": "Dr. Cheryl Burke",
+        "actor_id": 509,
+        "serie_id": 38
+    },
+    {
+        "nombre_personaje": "Mikey Bublé",
+        "actor_id": 510,
+        "serie_id": 38
+    },
+    {
+        "nombre_personaje": "Candy",
+        "actor_id": 511,
+        "serie_id": 38
+    },
+    {
+        "nombre_personaje": "Emily",
+        "actor_id": 512,
+        "serie_id": 38
+    },
+    {
+        "nombre_personaje": "Eva",
+        "actor_id": 513,
+        "serie_id": 39
+    },
+    {
+        "nombre_personaje": "Al-Masri",
+        "actor_id": 514,
+        "serie_id": 39
+    },
+    {
+        "nombre_personaje": "Sharif",
+        "actor_id": 515,
+        "serie_id": 39
+    },
+    {
+        "nombre_personaje": "Peter",
+        "actor_id": 516,
+        "serie_id": 39
+    },
+    {
+        "nombre_personaje": "Rebecca",
+        "actor_id": 517,
+        "serie_id": 39
+    },
+    {
+        "nombre_personaje": "Jerry",
+        "actor_id": 518,
+        "serie_id": 39
+    },
+    {
+        "nombre_personaje": "Stringer Bell",
+        "actor_id": 519,
+        "serie_id": 40
+    },
+    {
+        "nombre_personaje": "Jimmy McNulty",
+        "actor_id": 520,
+        "serie_id": 40
+    },
+    {
+        "nombre_personaje": "Kima Greggs",
+        "actor_id": 521,
+        "serie_id": 40
+    },
+    {
+        "nombre_personaje": "Cedric Daniels",
+        "actor_id": 522,
+        "serie_id": 40
+    },
+    {
+        "nombre_personaje": "Bubbles",
+        "actor_id": 523,
+        "serie_id": 40
+    },
+    {
+        "nombre_personaje": "Omar Little",
+        "actor_id": 524,
+        "serie_id": 40
+    },
+    {
+        "nombre_personaje": "Armond",
+        "actor_id": 525,
+        "serie_id": 41
+    },
+    {
+        "nombre_personaje": "Rachel Patton",
+        "actor_id": 526,
+        "serie_id": 41
+    },
+    {
+        "nombre_personaje": "Tanya McQuoid",
+        "actor_id": 527,
+        "serie_id": 41
+    },
+    {
+        "nombre_personaje": "Shane Mossback",
+        "actor_id": 528,
+        "serie_id": 41
+    },
+    {
+        "nombre_personaje": "Nicole Mossback",
+        "actor_id": 529,
+        "serie_id": 41
+    },
+    {
+        "nombre_personaje": "Mark Mossback",
+        "actor_id": 530,
+        "serie_id": 41
+    },
+    {
+        "nombre_personaje": "Sakura",
+        "actor_id": 531,
+        "serie_id": 42
+    },
+    {
+        "nombre_personaje": "Kyôchirô Kiryû",
+        "actor_id": 450,
+        "serie_id": 42
+    },
+    {
+        "nombre_personaje": "Jinzaburô Washizu",
+        "actor_id": 533,
+        "serie_id": 42
+    },
+    {
+        "nombre_personaje": "Saburô Ichimonji",
+        "actor_id": 534,
+        "serie_id": 42
+    },
+    {
+        "nombre_personaje": "Oichi",
+        "actor_id": 535,
+        "serie_id": 42
+    },
+    {
+        "nombre_personaje": "Shintarô Itô",
+        "actor_id": 536,
+        "serie_id": 42
+    },
+    {
+        "nombre_personaje": "Tony Soprano",
+        "actor_id": 537,
+        "serie_id": 43
+    },
+    {
+        "nombre_personaje": "Carmela Soprano",
+        "actor_id": 538,
+        "serie_id": 43
+    },
+    {
+        "nombre_personaje": "Dr. Jennifer Melfi",
+        "actor_id": 539,
+        "serie_id": 43
+    },
+    {
+        "nombre_personaje": "Christopher Moltisanti",
+        "actor_id": 540,
+        "serie_id": 43
+    },
+    {
+        "nombre_personaje": "Paulie Walnuts",
+        "actor_id": 541,
+        "serie_id": 43
+    },
+    {
+        "nombre_personaje": "Sil Silvio Dante",
+        "actor_id": 542,
+        "serie_id": 43
+    },
+    {
+        "nombre_personaje": "Valery Legasov",
+        "actor_id": 543,
+        "serie_id": 44
+    },
+    {
+        "nombre_personaje": "Vasily Ignatenko",
+        "actor_id": 544,
+        "serie_id": 44
+    },
+    {
+        "nombre_personaje": "Vasily Kolesnikov",
+        "actor_id": 545,
+        "serie_id": 44
+    },
+    {
+        "nombre_personaje": "Hughie Campbell",
+        "actor_id": 546,
+        "serie_id": 45
+    },
+    {
+        "nombre_personaje": "Kimiko",
+        "actor_id": 547,
+        "serie_id": 45
+    },
+    {
+        "nombre_personaje": "The Deep",
+        "actor_id": 548,
+        "serie_id": 45
+    },
+    {
+        "nombre_personaje": "Vought",
+        "actor_id": 549,
+        "serie_id": 45
+    },
+    {
+        "nombre_personaje": "Homelander",
+        "actor_id": 550,
+        "serie_id": 45
+    },
+    {
+        "nombre_personaje": "Starlight",
+        "actor_id": 448,
+        "serie_id": 45
+    },
+    {
+        "nombre_personaje": "Detective Patrick Cody",
+        "actor_id": 552,
+        "serie_id": 46
+    },
+    {
+        "nombre_personaje": "Barbara Read",
+        "actor_id": 553,
+        "serie_id": 46
+    },
+    {
+        "nombre_personaje": "Lara Chamberlain",
+        "actor_id": 554,
+        "serie_id": 46
+    },
+    {
+        "nombre_personaje": "Detective Charles Montgomery",
+        "actor_id": 555,
+        "serie_id": 46
+    },
+    {
+        "nombre_personaje": "Dede Gardner",
+        "actor_id": 556,
+        "serie_id": 46
+    },
+    {
+        "nombre_personaje": "Henry Wu",
+        "actor_id": 557,
+        "serie_id": 46
+    },
+    {
+        "nombre_personaje": "Jack Shephard",
+        "actor_id": 558,
+        "serie_id": 47
+    },
+    {
+        "nombre_personaje": "Kate Austen",
+        "actor_id": 559,
+        "serie_id": 47
+    },
+    {
+        "nombre_personaje": "Hugo Reyes",
+        "actor_id": 560,
+        "serie_id": 47
+    },
+    {
+        "nombre_personaje": "James \"Sawyer\" Ford",
+        "actor_id": 561,
+        "serie_id": 47
+    },
+    {
+        "nombre_personaje": "Sun-Hwa Kwon",
+        "actor_id": 562,
+        "serie_id": 47
+    },
+    {
+        "nombre_personaje": "Jin-Soo Kwon",
+        "actor_id": 563,
+        "serie_id": 47
+    },
+    {
+        "nombre_personaje": "Yuzuru Tachibana",
+        "actor_id": 564,
+        "serie_id": 48
+    },
+    {
+        "nombre_personaje": "Paimai",
+        "actor_id": 565,
+        "serie_id": 48
+    },
+    {
+        "nombre_personaje": "Kiriha",
+        "actor_id": 566,
+        "serie_id": 48
+    },
+    {
+        "nombre_personaje": "Shuna",
+        "actor_id": 567,
+        "serie_id": 48
+    },
+    {
+        "nombre_personaje": "Iwao",
+        "actor_id": 568,
+        "serie_id": 48
+    },
+    {
+        "nombre_personaje": "Raoh",
+        "actor_id": 569,
+        "serie_id": 48
+    },
+    {
+        "nombre_personaje": "James Holden",
+        "actor_id": 570,
+        "serie_id": 49
+    },
+    {
+        "nombre_personaje": "Amos Burton",
+        "actor_id": 571,
+        "serie_id": 49
+    },
+    {
+        "nombre_personaje": "Chrisjen Avasarala",
+        "actor_id": 572,
+        "serie_id": 49
+    },
+    {
+        "nombre_personaje": "Naomi Nagata",
+        "actor_id": 573,
+        "serie_id": 49
+    },
+    {
+        "nombre_personaje": "Alex Kamal",
+        "actor_id": 574,
+        "serie_id": 49
+    },
+    {
+        "nombre_personaje": "Bobbie Draper",
+        "actor_id": 575,
+        "serie_id": 49
+    },
+    {
+        "nombre_personaje": "Joe Miller",
+        "actor_id": 576,
+        "serie_id": 50
+    },
+    {
+        "nombre_personaje": "Alex Murphy",
+        "actor_id": 577,
+        "serie_id": 50
+    },
+    {
+        "nombre_personaje": "Earl Hickey",
+        "actor_id": 578,
+        "serie_id": 50
+    },
+    {
+        "nombre_personaje": "Janet Royce",
+        "actor_id": 579,
+        "serie_id": 50
+    },
+    {
+        "nombre_personaje": "Ed Baldwin",
+        "actor_id": 580,
+        "serie_id": 51
+    },
+    {
+        "nombre_personaje": "Tracy Stevens",
+        "actor_id": 581,
+        "serie_id": 51
+    },
+    {
+        "nombre_personaje": "Karen Baldwin",
+        "actor_id": 582,
+        "serie_id": 51
+    },
+    {
+        "nombre_personaje": "Margo Madison",
+        "actor_id": 583,
+        "serie_id": 51
+    },
+    {
+        "nombre_personaje": "Alexei Petrov",
+        "actor_id": 584,
+        "serie_id": 51
+    },
+    {
+        "nombre_personaje": "Buzz Aldrin",
+        "actor_id": 585,
+        "serie_id": 51
+    },
+    {
+        "nombre_personaje": "Juan Pablo \"Nando\" Navarro",
+        "actor_id": 586,
+        "serie_id": 52
+    },
+    {
+        "nombre_personaje": "Olivia Costa",
+        "actor_id": 587,
+        "serie_id": 52
+    },
+    {
+        "nombre_personaje": "Sergio \"El Pastor\" Pastor",
+        "actor_id": 411,
+        "serie_id": 52
+    },
+    {
+        "nombre_personaje": "Laura Vidal",
+        "actor_id": 589,
+        "serie_id": 52
+    },
+    {
+        "nombre_personaje": "Jaime Torres",
+        "actor_id": 590,
+        "serie_id": 52
+    },
+    {
+        "nombre_personaje": "Blanca Portillo",
+        "actor_id": 591,
+        "serie_id": 52
+    },
+    {
+        "nombre_personaje": "Seong Gi-hun",
+        "actor_id": 592,
+        "serie_id": 53
+    },
+    {
+        "nombre_personaje": "Hwang Jun-ho",
+        "actor_id": 593,
+        "serie_id": 53
+    },
+    {
+        "nombre_personaje": "Front Man",
+        "actor_id": 594,
+        "serie_id": 53
+    },
+    {
+        "nombre_personaje": "Sang-woo",
+        "actor_id": 595,
+        "serie_id": 53
+    },
+    {
+        "nombre_personaje": "Kang Sae-byeok",
+        "actor_id": 596,
+        "serie_id": 53
+    },
+    {
+        "nombre_personaje": "Ji-yeong",
+        "actor_id": 597,
+        "serie_id": 53
+    },
+    {
+        "nombre_personaje": "Merlí Bergeron",
+        "actor_id": 598,
+        "serie_id": 54
+    },
+    {
+        "nombre_personaje": "Bruno Bergeron",
+        "actor_id": 599,
+        "serie_id": 54
+    },
+    {
+        "nombre_personaje": "Pol Rubio",
+        "actor_id": 600,
+        "serie_id": 54
+    },
+    {
+        "nombre_personaje": "Berta Prats",
+        "actor_id": 601,
+        "serie_id": 54
+    },
+    {
+        "nombre_personaje": "Marina Blanc",
+        "actor_id": 602,
+        "serie_id": 54
+    },
+    {
+        "nombre_personaje": "Gerard Escribano",
+        "actor_id": 603,
+        "serie_id": 54
+    },
+    {
+        "nombre_personaje": "Daemon Targaryen",
+        "actor_id": 604,
+        "serie_id": 55
+    },
+    {
+        "nombre_personaje": "Viserys I Targaryen",
+        "actor_id": 605,
+        "serie_id": 55
+    },
+    {
+        "nombre_personaje": "Rhaenyra Targaryen",
+        "actor_id": 606,
+        "serie_id": 55
+    },
+    {
+        "nombre_personaje": "Lord Corlys Velaryon",
+        "actor_id": 607,
+        "serie_id": 55
+    },
+    {
+        "nombre_personaje": "Rhaenys Targaryen",
+        "actor_id": 608,
+        "serie_id": 55
+    },
+    {
+        "nombre_personaje": "Matthew Clairmont",
+        "actor_id": 609,
+        "serie_id": 56
+    },
+    {
+        "nombre_personaje": "Diana Bishop",
+        "actor_id": 610,
+        "serie_id": 56
+    },
+    {
+        "nombre_personaje": "Peter Knox",
+        "actor_id": 611,
+        "serie_id": 56
+    },
+    {
+        "nombre_personaje": "Emily Bennett",
+        "actor_id": 612,
+        "serie_id": 56
+    },
+    {
+        "nombre_personaje": "Miriam Shephard",
+        "actor_id": 613,
+        "serie_id": 56
+    },
+    {
+        "nombre_personaje": "Jack Beaufort",
+        "actor_id": 442,
+        "serie_id": 56
+    },
+    {
+        "nombre_personaje": "Jani",
+        "actor_id": 615,
+        "serie_id": 57
+    },
+    {
+        "nombre_personaje": "Ursula",
+        "actor_id": 616,
+        "serie_id": 57
+    },
+    {
+        "nombre_personaje": "Fernando",
+        "actor_id": 617,
+        "serie_id": 57
+    },
+    {
+        "nombre_personaje": "Gloria",
+        "actor_id": 618,
+        "serie_id": 57
+    },
+    {
+        "nombre_personaje": "Bruno",
+        "actor_id": 619,
+        "serie_id": 57
+    },
+    {
+        "nombre_personaje": "Sara",
+        "actor_id": 620,
+        "serie_id": 57
+    },
+    {
+        "nombre_personaje": "Padre Vergara",
+        "actor_id": 621,
+        "serie_id": 58
+    },
+    {
+        "nombre_personaje": "Elena",
+        "actor_id": 622,
+        "serie_id": 58
+    },
+    {
+        "nombre_personaje": "Paco",
+        "actor_id": 623,
+        "serie_id": 58
+    },
+    {
+        "nombre_personaje": "Mermelada",
+        "actor_id": 624,
+        "serie_id": 58
+    },
+    {
+        "nombre_personaje": "Rosa",
+        "actor_id": 625,
+        "serie_id": 58
+    },
+    {
+        "nombre_personaje": "Manuel",
+        "actor_id": 626,
+        "serie_id": 58
+    },
+    {
+        "nombre_personaje": "Jake Conroy",
+        "actor_id": 627,
+        "serie_id": 59
+    },
+    {
+        "nombre_personaje": "Sydney",
+        "actor_id": 405,
+        "serie_id": 59
+    },
+    {
+        "nombre_personaje": "Flora",
+        "actor_id": 629,
+        "serie_id": 59
+    },
+    {
+        "nombre_personaje": "Alma",
+        "actor_id": 630,
+        "serie_id": 59
+    },
+    {
+        "nombre_personaje": "Dr. Will Halstead",
+        "actor_id": 631,
+        "serie_id": 60
+    },
+    {
+        "nombre_personaje": "April Sexton",
+        "actor_id": 632,
+        "serie_id": 60
+    },
+    {
+        "nombre_personaje": "Dr. Connor Rhodes",
+        "actor_id": 633,
+        "serie_id": 60
+    },
+    {
+        "nombre_personaje": "Dr. Ethan Choi",
+        "actor_id": 634,
+        "serie_id": 60
+    },
+    {
+        "nombre_personaje": "Maggie Dawson",
+        "actor_id": 635,
+        "serie_id": 60
+    },
+    {
+        "nombre_personaje": "Sharon Goodwin",
+        "actor_id": 636,
+        "serie_id": 60
+    }
+]

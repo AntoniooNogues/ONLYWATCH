@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OnlyWatch</title>
+    <script src="https://kit.fontawesome.com/2eb7a633b0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/bulma/css/style.css"/>
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+    <link rel="icon" href="{% static 'img/logo_sinfondo 1.png' %}">
+
+</head>
+<body style="background-color: #FFE8D3; height: 100%" class="familiy has-text-black">
+{% csrf_token %}
+<!-- Header -->
+<header class="mb-3" style="background-color: transparent">
+    <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: transparent">
+        <div class="navbar-brand">
+            <a class="navbar-item image " href="{% url 'home' %}">
+                <img src="/static/img/logo_sinfondo 1.png" alt="" class="is-96x96">
+            </a>
+            <a role="button" class="navbar-burger" id="toggleNavbarButton" aria-label="menu" aria-expanded="false"
+               data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" style="background-color: #FFE8D3;">
+            <div class="navbar-start">
+                <a class="navbar-item has-text-black has-text-centered" href="{% url 'home' %}"> Inicio </a>
+                <a class="navbar-item has-text-black has-text-centered" href="{% url 'peliculas' %}"> Peliculas </a>
+                <a class="navbar-item has-text-black has-text-centered" href="{% url 'series' %}"> Series </a>
+                {% if user.is_authenticated %}
+                    <a class="navbar-item has-text-black has-text-centered" href="{% url 'personal' %}"> Personal </a>
+                {% endif %}
+                <form method="GET" action="/buscar" class="is-flex is-align-content-center is-justify-content-center">
+                    <div id="search-container" class="control">
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                <input type="text" name="buscar" class="input is-medium" id="search-input"
+                                       placeholder="Buscar...">
+                            </div>
+                            <div class="control">
+                                <button type="submit" class="button is-small" id="search-button"
+                                        style="border: 2px solid #000000; background-color: #F2D9CD; border-top-right-radius: 4px; border-bottom-right-radius: 4px">
+                                    <i class="fa-solid fa-search has-text-black" style="border-left: none"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {% if user.is_authenticated %}
+                <div class="navbar-end is-flex is-align-content-center is-justify-content-center" style="background-color: transparent">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link is-arrowless" style="background-color: transparent">
+                            <div class="button is-size-6 btt">
+                                {% if user.sexo == "NS/NC" %}
+                                    <p class="" style="color: #0a0a0a">Bienvenido/a, {{ user.username }}</p>
+                                {% elif user.sexo == "Masculino" %}
+                                    <p class="" style="color: #0a0a0a">Bienvenido, {{ user.username }}</p>
+                                {% elif user.sexo == "Femenino" %}
+                                    <p class="" style="color: #0a0a0a">Bienvenida, {{ user.username }}</p>
+                                {% endif %}
+                            </div>
+                        </a>
+                        <div class="navbar-dropdown pr-3" style="background-color:  #FFE8D3; border-top-color: rgba(249,91,22,0.2)">
+                            <div class="navbar-item is-flex is-justify-content-center is-align-content-center">
+                                <a class="has-text-centered" href="{% url 'configuracion' %}"> Perfil </a>
+                            </div>
+                            <hr class="navbar-divider" style="background-color: rgba(249,91,22,1)">
+                            <div class="navbar-item is-flex is-justify-content-center is-align-content-center">
+                                <a class="has-text-centered pr-2" href="{% url 'logout' %}"> Logout</a>
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="navbar-end mr-2 navbar-end is-flex is-align-content-center is-justify-content-center mt-2" style="background-color: transparent">
+                    <div class="navbar-item has-dropdown is-hoverable" style="align-items: center">
+                        <div class="button is-size-6 btt">
+                            <a href="{% url 'login' %}">
+                                Login
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+
+    </nav>
+    <script src="/static/js/search.js"></script>
+</header>

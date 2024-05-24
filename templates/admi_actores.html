@@ -1,0 +1,71 @@
+{% include 'header_admi.html' %}
+     {% block content %}
+    <main class="pb-6">
+        <h2 class="is-size-2 container mt-6">Actores</h2>
+        <div class="box container">
+            <h4>Añadir actores:</h4>
+            <form method="post" action="{% url 'new_actor' %}">
+                {% csrf_token %}
+                <div class="field columns mt-1">
+                    <div class="column">
+                        <label class="label">Nombre</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Nombre completo del actor"
+                                   name="nombre_actor">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <label class="label">Imagen</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Imagen del actor" name="img_actor">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                    <p class="control">
+                        <button class="button is-primary" type="submit">
+                            Añadir
+                        </button>
+                    </p>
+                    <p class="control">
+                        <a class="button is-light">
+                            Cancelar
+                        </a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <div class="box container table-container">
+            <h4>Listado de actores:</h4>
+            <table class="table is-fullwidth scrollable-table">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for a in actores %}
+                    <tr>
+                        <td> {{ a.nombre }}</td>
+                        <td><img src="{{ a.img }}" alt="{{ a.nombre }}"></td>
+                        <td><a href="{% url 'eliminar_actor' id=a.id %} "><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                        <td><a href="{% url 'editar_actor' id=a.id %} "><i class="fa-regular fa-pen-to-square"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a href="{% url 'mostrar_actores' %} ">
+                <button class="button is-success is-grouped-centered">
+                    Actualizar
+                </button>
+            </a>
+        </div>
+    </main>
+    {% endblock %}
+{% include 'footer_admi.html' %}

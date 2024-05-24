@@ -1,0 +1,52 @@
+{% include 'header_home_usuario.html' %}
+{% csrf_token %}
+{% load static %}
+
+<!-- Header -->
+
+
+<!-- Main -->
+<main class="container mt-5 mb-6">
+    <div class="title ml-4 mb-4">
+        <h3 class="has-text-black">Elige las plataformas que dispongas de streaming:</h3>
+    </div>
+    {#        <div class="columns is-multiline is-mobile is-justify-content-center imagenes mt-5">#}
+    {#            {% for plt in plataforma %}#}
+    {#                <div class="column is-2-desktop is-3-tablet is-6-mobile center-image">#}
+    {#                    <figure class="image is-96x96 ">#}
+    {#                        <img src="{{ plt.img.url }}" alt="{{ plt.nombre }}" id="{{ plt.nombre }}">#}
+    {#                    </figure>#}
+    {#                </div>#}
+    {#            {% endfor %}#}
+    {#        </div>#}
+    <div class="columns is-multiline is-mobile is-justify-content-center imagenes mt-5 ">
+        {% for p in totales %}
+            <div class="platform  column is-2-desktop is-3-tablet is-6-mobile center-image is-flex is-align-content-center is-justify-content-center pl-1 pr-1">
+                <figure class="image is-96x96">
+                    <img src="{{ p.img.url }}" alt="{{ p.nombre }}" id="plataforma_{{ p.id }}"
+                         class="m-0 p-0 plataforma-imagen {% if p in plataformas %}vinculada{% else %}no-vinculada{% endif %}">
+                </figure>
+                <!-- Agrega el icono "+" o "-" dependiendo de si la plataforma está vinculada -->
+                {% if p in plataformas %}
+                    <i class="fas fa-minus"></i>
+                {% else %}
+                    <i class="fas fa-plus"></i>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="buttons is-centered">
+        <a href="{% url 'configuracion' %}">
+            <button class="button is-medium mt-5 boton"
+                    style="border: 3px solid #FFB36D; border-radius: 25px; background-color: #FB752D;">ACEPTAR
+            </button>
+        </a>
+    </div>
+</main>
+<br>
+<div class="footer_abajo">
+    {% include "footer.html" %}
+</div>
+<script src="{% static 'js/plataforma.js' %}"></script>
+<!-- Formulario -->
+
