@@ -516,8 +516,10 @@ def configurar_perfil(request):
         if 'foto_perfil' in request.FILES:  # Verificar si 'foto_perfil' está en request.FILES
             foto_perfil = request.FILES['foto_perfil']
             user.img = foto_perfil
-        user.fecha_nacimiento = request.POST.get('user_fecha_nacimiento')
-        user.sexo = request.POST.get('user_sexo')
+        if user.fecha_nacimiento:
+            user.fecha_nacimiento = request.POST.get('user_fecha_nacimiento')
+        if user.sexo:
+            user.sexo = request.POST.get('user_sexo')
         user.username = request.POST.get('user_username')
         user.nombre_completo = request.POST.get('user_nombre_completo')
         user.save()
@@ -623,19 +625,6 @@ def vinculacion_plataforma_series_json():
             g.plataforma_id = gen['plataforma_id']
             g.save()
 
-def add_temporadas_json():
-    with open('static/Temporadas.json', 'r', encoding='utf-8') as file:
-        data = json.load(file)
-        # Itera sobre cada elemento en los datos
-        for d in data:
-            tem = temporada()
-            tem.nombre = d['nombre']
-            tem.sinopsis = d['sinopsis']
-            tem.img = d['img']
-            tem.fecha_estreno = d['fecha_estreno']
-            tem.serie_id = d['serie_id']
-            tem.save()
-        return HttpResponse("Datos de temporadas cargados correctamente")
 
 def valorar_pelicula(request, id_pelicula):
     if request.method == 'POST':
@@ -1068,7 +1057,6 @@ def filtrar_pelicula(request):
         return render(request, 'peliculas.html', {'generos': gen, 'plataformas': plt, 'peliculas': peliculas})
 
 
-
 def add_temporada_json(request):
     with open('static/Temporadas.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
@@ -1105,7 +1093,6 @@ def cargar_datos_sql(request):
     vinculacion_genero_serie_json()
     vinculacion_plataforma_pelis_json()
     vinculacion_plataforma_series_json()
-    add_temporadas_json()
     cargar_actores_personajes(request)
     crear_foro_peliculas(request)
     crear_foro_series(request)
