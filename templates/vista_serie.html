@@ -74,13 +74,21 @@
                          style="margin: 0 ;">
                 </figure>
                 {% if user.is_authenticated %}
-                    <div class="">
-                        Añade tu puntuación:
+                    <div class="container mr-5 mt-2">
+                        <label class="label has-text-black has-text-weight-bold">Añade tu puntuación:</label>
                         <form method="POST" action="{% url 'valorar_serie' %}">
                             {% csrf_token %}
                             <input type="hidden" name="serie_id" value="{{ serie.id }}">
-                            <input type="number" name="valoracion" min="0" max="10" required>
-                            <input type="submit" value="Valorar">
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input valoracion" type="number" name="valoracion" min="0" max="10" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="button is-fullwidth has-text-black has-text-weight-bold " type="submit" value="Valorar" style="background-color: #fb9537">
+                                </div>
+                            </div>
                         </form>
                     </div>
                 {% endif %}
@@ -160,7 +168,8 @@
                         <div class="capitulos-container" style="display: none;">
                             <ul class="is-flex is-flex-direction-column p-2" style="width: 100%;">
                                 {% for capitulo in temporada.capitulo_set.all %}
-                                    <li class= "has-text-black m-2 p-2 " style="width: 100%; background-color: rgb(248,205,155)">
+                                    <li class="has-text-black m-2 p-2 "
+                                        style="width: 100%; background-color: rgb(248,205,155)">
                                         <span class="has-text-weight-bold pr-3 is-size-5">Capítulo: {{ capitulo.numero_capitulo }}</span> {{ capitulo.nombre }}
                                     </li>
                                 {% endfor %}

@@ -71,12 +71,22 @@
                 <!-- Valoracion -->
                 <!-- Falta la personalización de la valoración -->
                 {% if user.is_authenticated %}
-                    <div class="">
-                        Añade tu puntuación:
+                    <div class="container mr-5 mt-2">
+                        <label class="label has-text-black has-text-weight-bold">Añade tu puntuación:</label>
                         <form method="POST" action="{% url 'valorar_pelicula' pelicula.id %}">
                             {% csrf_token %}
-                            <input type="number" name="valoracion" min="0" max="10" required>
-                            <input type="submit" value="Valorar">
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input valoracion" type="number" name="valoracion" min="0" max="10"
+                                           required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="button is-fullwidth has-text-black has-text-weight-bold" type="submit"
+                                           value="Valorar" style="background-color: #fb9537">
+                                </div>
+                            </div>
                         </form>
                     </div>
                 {% endif %}
