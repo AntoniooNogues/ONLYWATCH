@@ -47,6 +47,11 @@ li {
 .input:hover {
     border: 2px solid #842507;
 }
+.input:focus {
+    box-shadow: none;
+    border-color: #842507;
+}
+
 .input::placeholder {
     color: rgba(0, 0, 0, 0.3);
 }
