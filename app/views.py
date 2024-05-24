@@ -142,7 +142,7 @@ def new_peliculas(request):
         new.director = request.POST.get('director')
         new.save()
 
-        return redirect('/administrador/pelicula')
+        return redirect('/administracion/pelicula')
 
 @check_user_role('ADMIN')
 def new_serie(request):
@@ -159,7 +159,7 @@ def new_serie(request):
         new.director = request.POST.get('director_serie')
         new.save()
 
-        return redirect('/administrador/series_actuales')
+        return redirect('/administracion/series_actuales')
 
 @check_user_role('ADMIN')
 def new_actor(request):
@@ -172,7 +172,7 @@ def new_actor(request):
         new.img = request.POST.get('img_actor')
         new.save()
 
-        return redirect('/administrador/listado_actores')
+        return redirect('/administracion/listado_actores')
 
 
 @check_user_role('ADMIN')
@@ -197,28 +197,28 @@ def mostrar_actores(request):
 def eliminar_actor(request, id):
     actor_eliminar = actor.objects.get(id=id)
     actor_eliminar.delete()
-    return redirect('/administrador/listado_actores')
+    return redirect('/administracion/listado_actores')
 
 
 @check_user_role('ADMIN')
 def eliminar_usuario(request, id):
     usuario = User.objects.get(id=id)
     usuario.delete()
-    return redirect('/administrador/usuarios')
+    return redirect('/administracion/usuarios')
 
 
 @check_user_role('ADMIN')
 def eliminar_pelicula(request, id):
     pelicula_eliminar = pelicula.objects.get(id=id)
     pelicula_eliminar.delete()
-    return redirect('/administrador/pelicula')
+    return redirect('/administracion/pelicula')
 
 
 @check_user_role('ADMIN')
 def eliminar_serie(request, id):
     serie_eliminar = serie.objects.get(id=id)
     serie_eliminar.delete()
-    return redirect('/administrador/series_actuales')
+    return redirect('/administracion/series_actuales')
 
 
 
@@ -236,7 +236,7 @@ def editar_pelicula(request, id):
         peli.director = request.POST.get('director')
         peli.save()
 
-        return redirect('/administrador/pelicula')
+        return redirect('/administracion/pelicula')
 
 
 @check_user_role('ADMIN')
@@ -253,7 +253,7 @@ def editar_serie(request, id):
         serie_editar.director = request.POST.get('director')
         serie_editar.save()
 
-        return redirect('/administrador/series_actuales')
+        return redirect('/administracion/series_actuales')
 
 
 @check_user_role('ADMIN')
@@ -266,7 +266,7 @@ def editar_actor(request, id):
         actor_editar.img = request.POST.get('img')
         actor_editar.save()
 
-        return redirect('/administrador/listado_actores')
+        return redirect('/administracion/listado_actores')
 
 
 
@@ -541,8 +541,8 @@ def add_uniones_peliculas(request, id):
     if request.method == 'GET':
         return render(request, 'unir_pelicula.html', {'pelicula': pelicula_instancia, 'generos': generos_totales ,'genero_vinculado': generos_vinculados, 'plataformas_totales': plataformas_totales, 'plataformas_vinculadas': plataformas_vinculadas,'actores': actor.objects.all()})
     else:
+        return redirect('/administracion/listado_actores')
 
-        return redirect('/administrador/listado_actores')
 
 
 @check_user_role('ADMIN')
@@ -556,7 +556,7 @@ def new_genero(request):
         new.descripcion = request.POST.get('descripcion')
         new.save()
 
-        return redirect('/administrador/listado_generos')
+        return redirect('/administracion/listado_generos')
 
 
 def add_vinculacion_genero_json():
@@ -582,37 +582,7 @@ def editar_genero(request, id):
 
         return redirect('/administracion/listado_generos')
 
-@check_user_role('ADMIN')
-def vincular_desvincular_genero_pelicula(request, id):
-    genero_id = request.GET.get('generoId')
-    # Obtén las instancias completas de la película y el género
-    pelicula_instancia = pelicula.objects.get(id=id)
-    genero_instancia = genero.objects.get(id=genero_id)
-    try:
-        # Intenta obtener la relación existente entre la película y el género
-        gen_pel = pelicula_genero.objects.get(pelicula=pelicula_instancia, genero=genero_instancia)
-    except pelicula_genero.DoesNotExist:
-        # Si la relación no existe, se crea
-        pelicula_genero.objects.create(pelicula=pelicula_instancia, genero=genero_instancia)
-    else:
-        # Si la relación existe, se elimina
-        gen_pel.delete()
-    return redirect('vincular_pelicula', id=pelicula_instancia.id)
 
-
-@check_user_role('ADMIN')
-def vincular_desvincular_plataforma_pelicula(request, id):
-    plataformaId = request.GET.get('plataformaId')
-    plataforma_instancia = plataforma.objects.get(id=plataformaId)
-    try:
-        pla_pel = plataforma_pelicula.objects.get(plataforma=plataforma_instancia, pelicula=pelicula.objects.get(id=id))
-    except plataforma_pelicula.DoesNotExist:
-        # Si la relación no existe, se crea
-        plataforma_pelicula.objects.create(plataforma=plataforma_instancia, pelicula=pelicula.objects.get(id=id))
-    else:
-        # Si la relación existe, se elimina
-        pla_pel.delete()
-    return redirect('vincular_pelicula', id=id)
 
 def vinculacion_genero_pelicula_json():
     with open('static/Generos_Peliculas.json', 'r', encoding='utf-8') as file:
@@ -748,7 +718,7 @@ def login_admi(request):
         if user is not None and user.is_staff:
             login(request, user)
             # Redirección tras un login exitoso
-            return redirect('admi')
+            return redirect('administracion_home')
         else:
             # Mensaje de error si la autenticación falla
             return render(request, 'login_admi.html', {"error": "No se ha podido iniciar sesión intentalo de nuevo"})
@@ -1139,6 +1109,109 @@ def cargar_datos_sql(request):
     cargar_actores_personajes(request)
     crear_foro_peliculas(request)
     crear_foro_series(request)
-    add_temporada_json()
-    add_episodios_json()
+    add_temporada_json(request)
+    add_episodios_json(request)
     return HttpResponse("Datos de generos cargados correctamente")
+
+
+@check_user_role('ADMIN')
+def add_uniones_serie(request, id):
+    serie_instancia = serie.objects.get(id=id)
+    series_generos = serie_instancia.serie_genero_set.all()
+    generos_totales = genero.objects.all()
+    generos_vinculados = [up.genero for up in series_generos]
+    plataformas_totales = plataforma.objects.all()
+    serie_plataforma = serie_instancia.plataforma_serie_set.all()
+    plataformas_vinculadas = [up.plataforma for up in serie_plataforma]
+    if request.method == 'GET':
+        return render(request, 'unir_series.html', {'serie': serie_instancia, 'generos': generos_totales ,'genero_vinculado': generos_vinculados, 'plataformas_totales': plataformas_totales, 'plataformas_vinculadas': plataformas_vinculadas,'actores': actor.objects.all()})
+    else:
+        return redirect('administracion_home')
+
+
+@check_user_role('ADMIN')
+def vincular_desvincular_genero_serie(request, id):
+    genero_id = request.GET.get('generoId')
+    # Obtén las instancias completas de la película y el género
+    serie_instancia = serie.objects.get(id=id)
+    genero_instancia = genero.objects.get(id=genero_id)
+    try:
+        # Intenta obtener la relación existente entre la película y el género
+        gen_pel = serie_genero.objects.get(serie=serie_instancia, genero=genero_instancia)
+    except serie_genero.DoesNotExist:
+        # Si la relación no existe, se crea
+        serie_genero.objects.create(serie=serie_instancia, genero=genero_instancia)
+    else:
+        # Si la relación existe, se elimina
+        gen_pel.delete()
+    return redirect('vincular_serie', id=serie_instancia.id)
+
+
+@check_user_role('ADMIN')
+def vincular_desvincular_plataforma_serie(request, id):
+    plataformaId = request.GET.get('plataformaId')
+    plataforma_instancia = plataforma.objects.get(id=plataformaId)
+    try:
+        pla_pel = plataforma_serie.objects.get(plataforma=plataforma_instancia, serie=serie.objects.get(id=id))
+    except plataforma_serie.DoesNotExist:
+        # Si la relación no existe, se crea
+        plataforma_serie.objects.create(plataforma=plataforma_instancia, serie=serie.objects.get(id=id))
+    else:
+        # Si la relación existe, se elimina
+        pla_pel.delete()
+    return redirect('vincular_serie', id=id)
+
+
+@check_user_role('ADMIN')
+def vincular_desvincular_genero_pelicula(request, id):
+    genero_id = request.GET.get('generoId')
+    # Obtén las instancias completas de la película y el género
+    pelicula_instancia = pelicula.objects.get(id=id)
+    genero_instancia = genero.objects.get(id=genero_id)
+    try:
+        # Intenta obtener la relación existente entre la película y el género
+        gen_pel = pelicula_genero.objects.get(pelicula=pelicula_instancia, genero=genero_instancia)
+    except pelicula_genero.DoesNotExist:
+        # Si la relación no existe, se crea
+        pelicula_genero.objects.create(pelicula=pelicula_instancia, genero=genero_instancia)
+    else:
+        # Si la relación existe, se elimina
+        gen_pel.delete()
+    return redirect('vincular_pelicula', id=pelicula_instancia.id)
+
+
+@check_user_role('ADMIN')
+def vincular_desvincular_plataforma_pelicula(request, id):
+    plataformaId = request.GET.get('plataformaId')
+    plataforma_instancia = plataforma.objects.get(id=plataformaId)
+    try:
+        pla_pel = plataforma_pelicula.objects.get(plataforma=plataforma_instancia, pelicula=pelicula.objects.get(id=id))
+    except plataforma_pelicula.DoesNotExist:
+        # Si la relación no existe, se crea
+        plataforma_pelicula.objects.create(plataforma=plataforma_instancia, pelicula=pelicula.objects.get(id=id))
+    else:
+        # Si la relación existe, se elimina
+        pla_pel.delete()
+    return redirect('vincular_pelicula', id=id)
+
+
+@check_user_role('ADMIN')
+def comentario_visivilidad(request, id):
+    usuario_instancia = User.objects.get(id=id)
+    comentarios_series = comentario_serie.objects.filter(usuario=usuario_instancia)
+    comentarios_peliculas = comentario_pelicula.objects.filter(usuario=usuario_instancia)
+    if request.method == 'GET':
+        return render(request, 'unir_usuarios.html', {'comentarios_series': comentarios_series, 'comentarios_peliculas': comentarios_peliculas,'usuario': usuario_instancia})
+    else:
+        return redirect('administracion_home')
+
+@check_user_role('ADMIN')
+def visivilidad_comentario(request, id):
+    cmt = request.GET.get('comentario')
+    try:
+        comentario = comentario_pelicula.objects.get(id=cmt, usuario_id=id)
+        comentario.visibilidad = not comentario.visibilidad  # Cambia el estado de visibilidad
+        comentario.save()
+    except comentario_pelicula.DoesNotExist:
+        return redirect('administracion_home')
+    return redirect('coment', id=id)

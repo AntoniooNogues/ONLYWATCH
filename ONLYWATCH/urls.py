@@ -14,12 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-from app import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import path
 
+from app import views
 
 urlpatterns = [
 
@@ -36,11 +35,10 @@ urlpatterns = [
     path('administracion/', views.login_admi, name='administracion_login'),
     path('administracion/home/', views.mostrar_admi, name='administracion_home'),
     path('administracion/listado_peliculas', views.mostrar_peliculas, name='admiPeliculas'),
-    path('administracion', views.new_peliculas, name='new_peliculas'),
+    path('administracion/pelicula/', views.new_peliculas, name='new_peliculas'),
     path('administracion/serie', views.new_serie, name='new_series'),
     path('administracion/', views.mostrar_admi, name='inicio_admi'),
     path('administracion/peliculas_actuales', views.mostrar_peliculas, name='mostrarPeliculas'),
-    path('administracion/new_pelicula', views.new_peliculas, name='new_peliculas'),
     path('administracion/new_serie', views.new_serie, name='new_series'),
     path('administracion/series_actuales', views.mostrar_series, name='mostrar_series'),
     path('administracion/usuarios_actuales', views.mostrar_usuarios, name='mostrar_usuarios'),
@@ -58,11 +56,16 @@ urlpatterns = [
     path('administracion/eliminar_actor/<int:id>', views.eliminar_actor, name='eliminar_actor'),
     path('administracion/editar_actor/<int:id>', views.editar_actor, name='editar_actor'),
     path('administracion/pelicula/vincular_pelicula/<int:id>', views.add_uniones_peliculas, name='vincular_pelicula'),
+    path('administracion/serie/vincular_serie/<int:id>', views.add_uniones_serie, name='vincular_serie'),
     path('administracion/listado_generos', views.mostrar_generos, name='mostrar_generos'),
     path('administracion/new_genero', views.new_genero, name='new_genero'),
     path('administracion/editar_genero/<int:id>', views.editar_genero, name='editar_genero'),
-    path('administracion/pelicula/vincular_pelicula/vincular_genero/<int:id>/', views.vincular_desvincular_genero_pelicula, name='toggle_genre'),
+    path('administrador/pelicula/vincular_pelicula/vincular_genero/<int:id>/', views.vincular_desvincular_genero_pelicula, name='toggle_genre'),
     path('administracion/pelicula/vincular_pelicula/vincular_plataforma/<int:id>/', views.vincular_desvincular_plataforma_pelicula, name='plataforma_pelicula'),
+    path('administrador/serie/vincular_serie/vincular_genero/<int:id>/', views.vincular_desvincular_genero_serie, name='gen_serie'),
+    path('administracion/serie/vincular_serie/vincular_plataforma/<int:id>/', views.vincular_desvincular_plataforma_serie, name='plat_serie'),
+    path('administracion/usuario/comentario/<int:id>/', views.visivilidad_comentario, name='visivilidad_comentario'),
+    path('administracion/usuario/comentario_visibilidad/<int:id>/', views.comentario_visivilidad, name='coment'),
 
     # Paginas de la Aplicacion Peliculas/Series
     path('', views.mostrar_inicio, name='home'),

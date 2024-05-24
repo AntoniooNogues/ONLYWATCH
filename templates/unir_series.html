@@ -1,0 +1,61 @@
+{% load static %}
+{% include 'header_admi.html' %}
+    {% block content %}
+    <main class="pb-6">
+        <h1 class="container is-size-3 ">Añadir vinculos a la serie <b>{{ serie.nombre }}</b></h1>
+        <div class="container mt-4 box">
+            <h2 class="is-size-3">Géneros</h2>
+            <table class="table is-fullwidth mt-2">
+                <thead>
+                <tr>
+                    <th>Género</th>
+                    <th>Vincular / Desvincular</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for g in generos %}
+                    <tr>
+                        <th>{{ g.nombre }}</th>
+                        <th>
+                            {% if g in genero_vinculado %}
+                                <a class="toggle-genre genero" id="{{ g.id }}"><i class="fa-solid fa-link"></i></a>
+                            {% else %}
+                                <a class="toggle-genre genero" id="{{ g.id }}"><i class="fa-solid fa-link-slash"></i></a>
+                            {% endif %}
+                        </th>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <input type="hidden" id="serieId" value="{{ serie.id }}">
+
+        <div class="container mt-4 box">
+            <h2 class="is-size-3">Plataformas</h2>
+             <table class="table is-fullwidth mt-2">
+                <thead>
+                <tr>
+                    <th>Plataforma</th>
+                    <th>Vincular / Desvincular</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for p in plataformas_totales %}
+                    <tr>
+                        <th>{{ p.nombre }}</th>
+                        <th>
+                            {% if p in plataformas_vinculadas %}
+                                <a class="plataforma-idd" id="{{ p.id }}"><i class="fa-solid fa-link"></i></a>
+                            {% else %}
+                                <a class="plataforma-idd" id="{{p.id }}"><i class="fa-solid fa-link-slash"></i></a>
+                            {% endif %}
+                        </th>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+    {% endblock %}
+<script src="{% static '/js/vincular_peliculas.js' %}"></script>
+{% include 'footer_admi.html' %}

@@ -1,0 +1,62 @@
+{% load static %}
+{% include 'header_admi.html' %}
+{% block content %}
+    <main class="pb-6">
+        <h1 class="container is-size-3 ">Mostrar/ocultar comentarios del usuario: <b>{{ usuario.username }}</b>
+            ({{ usuario.nombre_completo }})</h1>
+        <div class="container mt-4 box">
+            <h2 class="is-size-3">Comentarios</h2>
+            <table class="table is-fullwidth mt-2">
+                <thead>
+                <tr>
+                    <th>Comentario</th>
+                    <th>Vincular / Desvincular</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for c in comentarios_peliculas %}
+                    <tr>
+                        <th>{{ c.contenido }}</th>
+                        <th>
+                            {% if c.visibilidad %}
+                                <a class="toggle-genre comentario" id="{{ c.id }}"><i
+                                        class="fa-regular fa-eye-slash"></i></a>
+                            {% else %}
+                                <a class="toggle-genre comentario" id="{{ c.id }}"><i class="fa-regular fa-eye"></i></a>
+                            {% endif %}
+                        </th>
+                    </tr>
+                {% endfor %}
+                {% for c in comentarios_series %}
+                    <tr>
+                        <th>{{ c.contenido }}</th>
+                        <th>
+                            {% if c.visibilidad == 'True' %}
+                                <a class="toggle-genre comentario" id="{{ c.id }}"><i
+                                        class="fa-regular fa-eye-slash"></i></a>
+                            {% else %}
+                                <a class="toggle-genre comentario" id="{{ c.id }}"><i class="fa-regular fa-eye"></i></a>
+                            {% endif %}
+                        </th>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <input type="hidden" id="usuarioId" value="{{ usuario.id }}">
+    </main>
+{% endblock %}
+<script>
+    // <---! Visibilidad comentarios de los usuarios --->
+    document.addEventListener('DOMContentLoaded', function () {
+        const Plataforma = document.querySelectorAll('.comentario');
+        Plataforma.forEach(function (enlace) {
+            enlace.addEventListener('click', function () {
+                const comentario = enlace.id;
+                const usuarioId = document.getElementById('usuarioId').value;
+                window.location.href = "/administracion/usuario/comentario/" + usuarioId + "?comentario=" + comentario;
+            });
+        });
+    });
+</script>
+{% include 'footer_admi.html' %}
