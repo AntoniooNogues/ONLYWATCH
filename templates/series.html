@@ -179,7 +179,13 @@
     </div>
 
 {% endblock %}
-{% include "footer.html" %}
+{% if series|length < 6 %}
+    <div class="footer_abajo">
+        {% include "footer.html" %}
+    </div>
+{% else %}
+    {% include "footer.html" %}
+{% endif %}
 <script src="{% static 'js/navbar.js' %} "></script>
 <script src="{% static 'js/mensajes.js' %} "></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

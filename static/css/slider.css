@@ -288,4 +288,8 @@ input#search-input:hover, input#search-input:focus{
     overflow-y: auto;
 }
 
-
+.footer_abajo {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

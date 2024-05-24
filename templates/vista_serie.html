@@ -68,8 +68,8 @@
         <!-- Imagen, Estado -->
         <div class="columns ml-2 main-content is-3">
             <!-- Imagen, Estado -->
-            <div class="column">
-                <figure class="is-16by9">
+            <div class="column mr-2">
+                <figure class="pr-5">
                     <img class="image pt-4" src="{{ serie.img }}" alt="Imagen de la película {{ serie.nombre }}"
                          style="margin: 0 ;">
                 </figure>
@@ -90,7 +90,6 @@
         <!-- Titulo (Año Estreno) + Me Gusta, Sinopsis, Director, Plataforma, Generos -->
         <div class="column title-details is-9 pl-5">
             <div class="is-flex" style="align-items: center">
-
                 <h1 class="is-size-3">{{ serie.nombre }} <span> ({{ serie.anyo_estreno }})</span>
                     {% if user.is_authenticated %}
                         {% if es_favorito %}
