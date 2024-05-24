@@ -55,7 +55,86 @@
                 </tbody>
             </table>
         </div>
+        <div class="container mt-4 box">
+            <h2 class="is-size-3">Actores</h2>
+            <div style="max-height: 1000px; overflow-y: auto; overflow-x: auto">
+                <table class="table is-fullwidth mt-2">
+                    <thead>
+                    <tr>
+                        <th>Actor</th>
+                        <th>Vincular</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for a in actores %}
+                        <tr>
+                            <th>{{ a.nombre }}</th>
+                            <th>
+                                <a class="js-modal-trigger" data-target="modal-js-example" data-actor-id="{{ a.id }}"
+                                   data-pelicula-id="{{ serie.id }}" href=""><i class="fa-solid fa-plus"></i></a>
+                            </th>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container mt-4 box">
+            <h2 class="is-size-3">Personajes</h2>
+            <div style="max-height: 1000px; overflow-y: auto; overflow-x: auto">
+                <table class="table is-fullwidth mt-2">
+                    <thead>
+                    <tr>
+                        <th>Personajes</th>
+                        <th>Desvincular</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for p in personajes %}
+                        <tr>
+                            <th>{{ p.nombre_personaje }}</th>
+                            <th>
+                                <a href="{% url 'eliminar_personaje_serie' id=p.id %}"><i class="fa-solid fa-trash"></i></a>
+                            </th>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </main>
+        <div id="modal-js-example" class="modal">
+            <div class="modal-background"></div>
+
+            <div class="modal-content">
+                <div class="box">
+                    <p>Nombre del perosnaje que interpreta:</p>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <input type="text" class="input" name="nombre_personaje">
+                        <button type="submit" class="button">Guardar</button>
+                        <input type="hidden" name="serieId" id="serieId" value="{{ serie.id }}">
+                    </form>
+
+                </div>
+            </div>
+
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
     {% endblock %}
 <script src="{% static '/js/vincular_peliculas.js' %}"></script>
+<script src="{% static 'js/modals.js' %}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('.js-modal-trigger').forEach(function (trigger) {
+            trigger.addEventListener('click', function (event) {
+                event.preventDefault();
+                var actorId = this.dataset.actorId;
+                var form = document.querySelector('#modal-js-example form');
+                form.action = '/unir_actor_serie/' + actorId;
+                
+            });
+        });
+    });
+</script>
 {% include 'footer_admi.html' %}

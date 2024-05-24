@@ -169,7 +169,6 @@ def new_actor(request):
     else:
         new = actor()
         new.nombre = request.POST.get('nombre_actor')
-        new.img = request.POST.get('img_actor')
         new.save()
 
         return redirect('/administracion/listado_actores')
@@ -538,10 +537,13 @@ def add_uniones_peliculas(request, id):
     plataformas_totales = plataforma.objects.all()
     pelicula_plataforma = pelicula_instancia.plataforma_pelicula_set.all()
     plataformas_vinculadas = [up.plataforma for up in pelicula_plataforma]
+    actores = actor.objects.all()
+    personajes = personaje_pelicula.objects.filter(pelicula_id=id)
+
     if request.method == 'GET':
-        return render(request, 'unir_pelicula.html', {'pelicula': pelicula_instancia, 'generos': generos_totales ,'genero_vinculado': generos_vinculados, 'plataformas_totales': plataformas_totales, 'plataformas_vinculadas': plataformas_vinculadas,'actores': actor.objects.all()})
+        return render(request, 'unir_pelicula.html', {'pelicula': pelicula_instancia, 'generos': generos_totales ,'genero_vinculado': generos_vinculados, 'plataformas_totales': plataformas_totales, 'plataformas_vinculadas': plataformas_vinculadas,'actores': actor.objects.all(), 'personajes': personajes})
     else:
-        return redirect('/administracion/listado_actores')
+        return redirect('vincular_pelicula', id=id)
 
 
 
@@ -1123,8 +1125,10 @@ def add_uniones_serie(request, id):
     plataformas_totales = plataforma.objects.all()
     serie_plataforma = serie_instancia.plataforma_serie_set.all()
     plataformas_vinculadas = [up.plataforma for up in serie_plataforma]
+    actores = actor.objects.all()
+    personajes = personaje_serie.objects.filter(serie_id=id)
     if request.method == 'GET':
-        return render(request, 'unir_series.html', {'serie': serie_instancia, 'generos': generos_totales ,'genero_vinculado': generos_vinculados, 'plataformas_totales': plataformas_totales, 'plataformas_vinculadas': plataformas_vinculadas,'actores': actor.objects.all()})
+        return render(request, 'unir_series.html', {'serie': serie_instancia, 'generos': generos_totales ,'genero_vinculado': generos_vinculados, 'plataformas_totales': plataformas_totales, 'plataformas_vinculadas': plataformas_vinculadas,'actores': actor.objects.all(), 'personajes': personajes})
     else:
         return redirect('administracion_home')
 
@@ -1215,3 +1219,49 @@ def visivilidad_comentario(request, id):
     except comentario_pelicula.DoesNotExist:
         return redirect('administracion_home')
     return redirect('coment', id=id)
+
+
+@check_user_role('ADMIN')
+def unir_actor_pelicula(request, id):
+    actor_instancia = actor.objects.get(id=id)
+    pelicula_id = request.POST.get('peliculaId')
+    if request.method == 'POST':
+        personaje = request.POST.get('nombre_personaje')
+        personaje_pelicula.objects.create(actor=actor_instancia, pelicula_id=pelicula_id, nombre_personaje=personaje)
+        return redirect('vincular_pelicula' , id = pelicula_id)
+    else:
+        return redirect('vincular_pelicula', id = pelicula_id)
+
+
+
+@check_user_role('ADMIN')
+def eliminar_personaje_pelicula(request, id):
+    personaje = personaje_pelicula.objects.get(id=id)
+    pelicula_id = personaje.pelicula_id
+    personaje.delete()
+    return redirect('vincular_pelicula', id=pelicula_id)
+
+@check_user_role('ADMIN')
+def unir_actor_serie(request, id):
+    actor_instancia = actor.objects.get(id=id)
+    serie_id = request.POST.get('serieId')
+    if request.method == 'POST':
+        personaje = request.POST.get('nombre_personaje')
+        personaje_serie.objects.create(actor=actor_instancia, serie_id=serie_id, nombre_personaje=personaje)
+        return redirect('vincular_serie' , id = serie_id)
+    else:
+        return redirect('vincular_serie', id = serie_id)
+
+
+
+@check_user_role('ADMIN')
+def eliminar_personaje_serie(request, id):
+    personaje = personaje_serie.objects.get(id=id)
+    serie_id = personaje.serie_id
+    personaje.delete()
+    return redirect('vincular_serie', id=serie_id)
+
+
+
+
+
