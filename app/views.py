@@ -486,7 +486,10 @@ def send_verification_code(request):
 
 def verify_code(request):
     if request.method == 'POST':
-        user_code = int(request.POST['code'])
+        try:
+            user_code = int(request.POST['code'])
+        except ValueError:
+            user_code = None
         verification_code = request.session.get('verification_code')
         if user_code == verification_code:
             del request.session['verification_code']
