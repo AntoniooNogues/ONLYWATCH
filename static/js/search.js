@@ -5,8 +5,6 @@ document.getElementById('search-input').addEventListener('keypress', function(ev
     }
 });
 
-
-
 // Aplica al navbar que se encuentra en la gran mayoria de las paginas.
 var navbar = document.querySelector('.navbar-menu');
 function toggleNavbar() {
