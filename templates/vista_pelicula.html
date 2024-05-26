@@ -164,25 +164,27 @@
                 </div>
                 <div>
                     {% for c in comentarios %}
-                        <div class="columns {% if forloop.counter0|divisibleby:2 %}background-color-1{% else %}background-color-2{% endif %} mx-0 px-0 py-3">
-                            <div class="column is-one-fifth is-flex is-align-content-center is-justify-content-center p-0">
-                                <span class="is-align-content-center has-text-centered">
-                                    <figure class="image is-128x128 is-align-content-center">
-                                        {% if c.user.img %}
-                                            <img class="is-rounded" src="{{ c.user.img.url }}" alt="">
-                                        {% else %}
-                                            <img class="is-rounded" src="{% static 'img/perfilenblanco.webp' %}" alt="">
+                        {% if c.visibilidad %}
+                            <div class="columns {% if forloop.counter0|divisibleby:2 %}background-color-1{% else %}background-color-2{% endif %} mx-0 px-0 py-3">
+                                <div class="column is-one-fifth is-flex is-align-content-center is-justify-content-center p-0">
+                                    <span class="is-align-content-center has-text-centered">
+                                        <figure class="image is-128x128 is-align-content-center">
+                                            {% if c.user.img %}
+                                                <img class="is-rounded" src="{{ c.user.img.url }}" alt="">
+                                            {% else %}
+                                                <img class="is-rounded" src="{% static 'img/perfilenblanco.webp' %}" alt="">
+                                            {% endif %}
+                                        </figure>
+                                        {% if c.valoracion_usuario %}
+                                            <p class="mt-2">Calificación: {{ c.valoracion_usuario }}</p>
                                         {% endif %}
-                                    </figure>
-                                    {% if c.valoracion_usuario %}
-                                        <p class="mt-2">Calificación: {{ c.valoracion_usuario }}</p>
-                                    {% endif %}
-                                </span>
+                                    </span>
+                                </div>
+                                <div class="column is-flex is-align-items-center">
+                                    <p class="has-text-black">{{ c.contenido }}</p>
+                                </div>
                             </div>
-                            <div class="column is-flex is-align-items-center">
-                                <p class="has-text-black">{{ c.contenido }}</p>
-                            </div>
-                        </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
